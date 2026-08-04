@@ -27,10 +27,20 @@ function normalize(text: string): string {
   return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
+// Mots trop génériques pour identifier un sujet — ignorés par le matching,
+// sinon « manger un plat sain » matche la fiche « plat cuisiné à l'alcool ».
+const GENERIC_WORDS = new Set([
+  'halal', 'haram', 'manger', 'mange', 'plat', 'plats', 'question', 'peut',
+  'peux', 'suis', 'veux', 'voudrais', 'aimerais', 'jaimerais', 'jaimerai',
+  'aime', 'quel', 'quelle', 'quels', 'quelles', 'comment', 'pourquoi',
+  'avec', 'sans', 'pour', 'dans', 'bien', 'bonne', 'salam', 'bonjour',
+  'salut', 'merci', 'estce', 'cest', 'quoi', 'trouver', 'trouve', 'faire',
+]);
+
 function localFallback(question: string): string {
   const words = normalize(question)
     .split(/[^a-z0-9]+/)
-    .filter((w) => w.length > 3);
+    .filter((w) => w.length > 3 && !GENERIC_WORDS.has(w));
 
   let best = null as (typeof QUESTIONS)[number] | null;
   let bestScore = 0;
@@ -46,7 +56,7 @@ function localFallback(question: string): string {
   if (best && bestScore >= 1) {
     return `${best.verdict}\n\n${best.short}\n\n${best.answer[0]}\n\n👉 Réponse complète : ${SITE_URL}/q/${best.slug}`;
   }
-  return "Bonne question ! 🌙 Je peux t'aider sur : les additifs (E120, E471, gélatine…), les produits (Haribo, Kinder…), les restaurants halal, le voyage, le Ramadan et la prière en voyage. Reformule avec l'un de ces sujets ?";
+  return "Je n'ai pas encore de fiche précise sur ce sujet, je préfère te le dire plutôt que de répondre à côté 🌙\n\nVoici ce que je connais bien :\n🔍 Les additifs — E120, E471, gélatine, présure…\n🍬 Les produits — Haribo, Kinder, Coca, Red Bull…\n🍽 Où manger halal — Paris, Lyon, Marseille\n✈️ Le voyage — avion, destinations, Ramadan, prière\n\nEt très bientôt, branché à mon IA complète, je pourrai répondre à tout !";
 }
 
 // ─── Route ────────────────────────────────────────────────────────────────────
