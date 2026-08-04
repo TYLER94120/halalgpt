@@ -8,10 +8,10 @@ const POPULAR_SLUGS = [
   'haribo-halal',
   'gelatine-halal',
   'restaurant-halal-paris',
-  'coca-cola-halal',
+  'voyage-halal-istanbul',
+  'mcdo-halal',
+  'voyage-halal-dubai',
   'repas-halal-avion',
-  'poisson-fruits-de-mer-halal',
-  'kinder-halal',
 ];
 
 export default function HomePage() {
@@ -65,7 +65,13 @@ export default function HomePage() {
           <div className="step">
             <div className="step-emoji">🗺</div>
             <h3>3. Passe à l’action</h3>
-            <p>Adresses halal vérifiées près de toi avec la carte VoyagesHalal, bientôt reliée.</p>
+            <p>
+              Restos, mosquées et hôtels halal vérifiés sur{' '}
+              <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
+                VoyagesHalal.fr
+              </a>
+              , le guide voyage de la famille HalalGPT.
+            </p>
           </div>
         </div>
       </section>

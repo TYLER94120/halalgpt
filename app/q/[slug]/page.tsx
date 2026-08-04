@@ -78,6 +78,14 @@ export default function QuestionPage({ params }: Props) {
         <Link href="/" className="cta-button">
           💬 Poser ma question à HalalGPT
         </Link>
+        {(qa.category === 'Voyage' || qa.category === 'Destinations') && (
+          <p className="cta-secondary">
+            🗺 Adresses halal vérifiées, mosquées et hôtels :{' '}
+            <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
+              VoyagesHalal.fr
+            </a>
+          </p>
+        )}
       </div>
 
       {related.length > 0 && (

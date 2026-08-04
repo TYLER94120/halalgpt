@@ -411,6 +411,18 @@ a {
   margin-bottom: 16px;
 }
 
+.cta-secondary {
+  margin-top: 16px;
+  margin-bottom: 0 !important;
+  font-size: 16px;
+  color: var(--creme-70);
+}
+
+.cta-secondary a {
+  color: var(--or);
+  font-weight: 700;
+}
+
 .cta-button {
   display: inline-flex;
   align-items: center;

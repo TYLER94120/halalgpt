@@ -62,7 +62,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             HalalGPT présente les avis religieux répandus à titre informatif. Pour une situation
             personnelle, rapprochez-vous d’un savant ou d’un organisme de certification.
           </p>
-          <p className="footer-note">Un projet de la famille VoyagesHalal 🗺</p>
+          <p className="footer-note">
+            Un projet de la famille{' '}
+            <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
+              VoyagesHalal.fr
+            </a>{' '}
+            🗺 — le guide du voyage halal
+          </p>
         </footer>
       </body>
     </html>
