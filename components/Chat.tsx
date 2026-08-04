@@ -7,9 +7,6 @@ interface Message {
   content: string;
 }
 
-const WELCOME =
-  "Salam ! 🌙 Je suis HalalGPT. Pose-moi n'importe quelle question halal : additifs, produits, restaurants, voyage, Ramadan…";
-
 const SUGGESTIONS = [
   '🔍 Le E120 est-il halal ?',
   '🍬 Les Haribo sont-ils halal ?',
@@ -18,16 +15,18 @@ const SUGGESTIONS = [
 ];
 
 export default function Chat() {
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: WELCOME },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
 
+  const hasConversation = messages.length > 0;
+
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }, [messages, loading]);
+    if (hasConversation) {
+      endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [messages, loading, hasConversation]);
 
   const send = async (rawText: string) => {
     const text = rawText.replace(/^[^\p{L}\p{N}]+\s*/u, '').trim() || rawText.trim();
@@ -65,8 +64,50 @@ export default function Chat() {
     }
   };
 
-  const showSuggestions = messages.length <= 1 && !loading;
+  const composer = (
+    <form
+      className="chat-composer"
+      onSubmit={(e) => {
+        e.preventDefault();
+        send(input);
+      }}
+    >
+      <input
+        className="chat-input"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Pose ta question halal…"
+        aria-label="Votre question"
+        autoFocus={!hasConversation}
+      />
+      <button
+        type="submit"
+        className="chat-send"
+        disabled={!input.trim() || loading}
+        aria-label="Envoyer"
+      >
+        ➤
+      </button>
+    </form>
+  );
 
+  // ── Mode « Google » : champ visible immédiatement, zéro friction ──
+  if (!hasConversation) {
+    return (
+      <div className="chat chat-landing">
+        {composer}
+        <div className="chat-suggestions">
+          {SUGGESTIONS.map((s) => (
+            <button key={s} type="button" className="chip" onClick={() => send(s)}>
+              {s}
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ── Mode conversation ──
   return (
     <div className="chat">
       <div className="chat-messages">
@@ -84,40 +125,7 @@ export default function Chat() {
         )}
         <div ref={endRef} />
       </div>
-
-      {showSuggestions && (
-        <div className="chat-suggestions">
-          {SUGGESTIONS.map((s) => (
-            <button key={s} type="button" className="chip" onClick={() => send(s)}>
-              {s}
-            </button>
-          ))}
-        </div>
-      )}
-
-      <form
-        className="chat-composer"
-        onSubmit={(e) => {
-          e.preventDefault();
-          send(input);
-        }}
-      >
-        <input
-          className="chat-input"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Pose ta question halal…"
-          aria-label="Votre question"
-        />
-        <button
-          type="submit"
-          className="chat-send"
-          disabled={!input.trim() || loading}
-          aria-label="Envoyer"
-        >
-          ➤
-        </button>
-      </form>
+      {composer}
     </div>
   );
 }

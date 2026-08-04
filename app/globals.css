@@ -102,11 +102,11 @@ a {
 
 .hero {
   text-align: center;
-  padding: 40px 0 24px;
+  padding: 18px 0 14px;
 }
 
 .hero h1 {
-  font-size: clamp(30px, 6vw, 46px);
+  font-size: clamp(24px, 4.5vw, 38px);
   font-weight: 900;
   color: var(--creme);
 }
@@ -116,19 +116,29 @@ a {
 }
 
 .hero-sub {
-  margin-top: 12px;
-  font-size: 18px;
+  margin-top: 8px;
+  font-size: 16px;
   color: var(--creme-70);
 }
 
 /* ─── Chat ── */
 
 .chat {
-  margin-top: 24px;
+  margin-top: 16px;
   background: rgba(27, 67, 50, 0.35);
   border: 1px solid var(--or-doux);
   border-radius: 16px;
   overflow: hidden;
+}
+
+/* Mode « Google » : le champ est le premier élément visible, sans défilement */
+.chat-landing .chat-composer {
+  border-top: none;
+  padding-bottom: 6px;
+}
+
+.chat-landing .chat-suggestions {
+  padding: 10px 20px 18px;
 }
 
 .chat-messages {
