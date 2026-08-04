@@ -141,6 +141,47 @@ a {
   padding: 10px 20px 18px;
 }
 
+/* « La réponse avant la question » : fiches proposées pendant la frappe */
+.suggest-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 16px;
+  gap: 8px;
+}
+
+.suggest-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  min-height: 56px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--or-doux);
+  background: var(--nuit);
+  cursor: pointer;
+  text-align: start;
+  font-family: inherit;
+}
+
+.suggest-item:hover,
+.suggest-item:focus-visible {
+  border-color: var(--or);
+  background: var(--foret);
+}
+
+.suggest-verdict {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--or);
+}
+
+.suggest-question {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--creme);
+}
+
 .chat-messages {
   padding: 20px;
   display: flex;

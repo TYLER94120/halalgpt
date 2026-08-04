@@ -14,10 +14,17 @@ const SUGGESTIONS = [
   '✈️ Repas halal en avion ?',
 ];
 
+interface Suggestion {
+  slug: string;
+  question: string;
+  verdict: string;
+}
+
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const endRef = useRef<HTMLDivElement>(null);
 
   const hasConversation = messages.length > 0;
@@ -28,6 +35,33 @@ export default function Chat() {
     }
   }, [messages, loading, hasConversation]);
 
+  // « La réponse avant la question » : dès 2 lettres tapées, les fiches
+  // correspondantes apparaissent — instantané, zéro appel IA.
+  useEffect(() => {
+    if (hasConversation) return;
+    const q = input.trim();
+    if (q.length < 2) {
+      setSuggestions([]);
+      return;
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/suggest?q=${encodeURIComponent(q)}`, {
+          signal: controller.signal,
+        });
+        const data = (await res.json()) as { suggestions?: Suggestion[] };
+        setSuggestions(data.suggestions ?? []);
+      } catch {
+        /* frappe suivante ou abandon : silencieux */
+      }
+    }, 150);
+    return () => {
+      controller.abort();
+      clearTimeout(timer);
+    };
+  }, [input, hasConversation]);
+
   const send = async (rawText: string) => {
     const text = rawText.replace(/^[^\p{L}\p{N}]+\s*/u, '').trim() || rawText.trim();
     if (!text || loading) return;
@@ -35,6 +69,7 @@ export default function Chat() {
     const next: Message[] = [...messages, { role: 'user', content: text }];
     setMessages(next);
     setInput('');
+    setSuggestions([]);
     setLoading(true);
 
     try {
@@ -96,13 +131,29 @@ export default function Chat() {
     return (
       <div className="chat chat-landing">
         {composer}
-        <div className="chat-suggestions">
-          {SUGGESTIONS.map((s) => (
-            <button key={s} type="button" className="chip" onClick={() => send(s)}>
-              {s}
-            </button>
-          ))}
-        </div>
+        {suggestions.length > 0 ? (
+          <div className="suggest-list" role="listbox" aria-label="Réponses instantanées">
+            {suggestions.map((s) => (
+              <button
+                key={s.slug}
+                type="button"
+                className="suggest-item"
+                onClick={() => send(s.question)}
+              >
+                <span className="suggest-verdict">{s.verdict}</span>
+                <span className="suggest-question">{s.question}</span>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="chat-suggestions">
+            {SUGGESTIONS.map((s) => (
+              <button key={s} type="button" className="chip" onClick={() => send(s)}>
+                {s}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
