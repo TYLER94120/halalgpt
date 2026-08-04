@@ -784,6 +784,450 @@ export const QUESTIONS: QA[] = [
     category: 'Destinations',
     related: ['voyage-halal-dubai', 'voyage-halal-kuala-lumpur', 'repas-halal-avion'],
   },
+
+  // ─── ADDITIFS (vague 3 — les « faciles » très recherchés) ───────────────────
+  {
+    slug: 'e100-halal',
+    question: 'Le E100 (curcumine) est-il halal ?',
+    verdict: '✅ Halal',
+    short:
+      'Le E100 est la curcumine, le colorant jaune du curcuma. Origine végétale : halal sans débat.',
+    answer: [
+      'Le E100 est la curcumine, extraite du curcuma — l’épice jaune des currys. On la retrouve comme colorant dans les moutardes, bouillons, produits laitiers et confiseries.',
+      'Origine 100 % végétale, aucun solvant problématique dans les procédés standards : le E100 est halal, et c’est l’avis unanime des organismes de certification.',
+      'C’est l’un des colorants les plus « propres » du marché — quand un produit l’utilise à la place du E120 (cochenille), c’est bon signe pour le consommateur musulman.',
+    ],
+    category: 'Additifs',
+    related: ['e120-halal', 'e133-halal', 'e150d-halal'],
+  },
+  {
+    slug: 'e133-halal',
+    question: 'Le E133 (bleu brillant) est-il halal ?',
+    verdict: '✅ Halal',
+    short:
+      'Le E133 est un colorant bleu entièrement synthétique, sans ingrédient animal : il est considéré halal.',
+    answer: [
+      'Le E133, ou bleu brillant FCF, colore bonbons bleus, glaces « Schtroumpf », boissons et glaçages. C’est un colorant de synthèse, fabriqué en laboratoire à partir de dérivés pétrochimiques.',
+      'Aucune matière animale, aucun alcool : le E133 est considéré halal par les organismes de certification. Comme pour beaucoup de colorants azoïques, les discussions le concernant relèvent de la santé (hyperactivité débattue chez l’enfant), pas de la licéité.',
+      'Il figure d’ailleurs couramment dans des confiseries certifiées halal — la couleur bleue de vos bonbons halal préférés, c’est probablement lui.',
+    ],
+    category: 'Additifs',
+    related: ['e100-halal', 'e120-halal', 'haribo-halal'],
+  },
+  {
+    slug: 'e150d-halal',
+    question: 'Le E150d (caramel) est-il halal ?',
+    verdict: '✅ Halal',
+    short:
+      'Le E150d est le colorant caramel des sodas, obtenu en chauffant des sucres. Il est halal.',
+    answer: [
+      'Le E150d, ou caramel au sulfite d’ammonium, est le colorant brun des colas et de nombreuses sauces. Il est produit en chauffant des sucres d’origine végétale en présence de composés sulfités et ammoniacaux.',
+      'Tout le procédé est minéral et végétal : pas d’ingrédient animal, pas d’alcool. Le E150d est halal — c’est notamment lui qui colore le Coca-Cola, certifié halal dans de nombreux pays.',
+      'Même conclusion pour ses cousins E150a, E150b et E150c : les quatre caramels colorants sont considérés halal.',
+    ],
+    category: 'Additifs',
+    related: ['coca-cola-halal', 'e100-halal', 'e330-halal'],
+  },
+  {
+    slug: 'e250-nitrite-halal',
+    question: 'Le E250 (nitrite de sodium) est-il halal ?',
+    verdict: '✅ Halal (débat santé, pas religieux)',
+    short:
+      'Le E250 est un sel minéral utilisé dans la charcuterie, y compris halal. Religieusement sans problème ; le débat le concernant est sanitaire.',
+    answer: [
+      'Le E250, nitrite de sodium, est le conservateur emblématique de la charcuterie : il empêche le développement de la bactérie du botulisme et donne leur couleur rosée aux produits. C’est un sel minéral de synthèse — aucune origine animale.',
+      'Religieusement, il est donc halal, et on le retrouve d’ailleurs dans la plupart des charcuteries halal industrielles (blanc de dinde, saucisson halal…). La vraie question qui l’entoure est sanitaire : sa consommation excessive est débattue, et certaines marques — halal comprises — développent des gammes « sans nitrite ».',
+      'À retenir : voir E250 sur une charcuterie halal certifiée n’enlève rien à sa licéité. Si vous souhaitez l’éviter, c’est un choix santé, comme pour tout consommateur.',
+    ],
+    category: 'Additifs',
+    related: ['viande-supermarche-halal', 'e330-halal', 'bouillon-cube-halal'],
+  },
+  {
+    slug: 'e407-carraghenane-halal',
+    question: 'Le E407 (carraghénane) est-il halal ?',
+    verdict: '✅ Halal',
+    short:
+      'Le carraghénane (E407) est extrait d’algues rouges. C’est un gélifiant végétal, halal — et une excellente alternative à la gélatine.',
+    answer: [
+      'Le E407, ou carraghénane, est un gélifiant extrait d’algues rouges récoltées principalement en Asie du Sud-Est. On le trouve dans les flans, desserts lactés, laits végétaux et même certaines confiseries.',
+      'Origine marine et végétale : il est halal sans discussion, toutes écoles confondues. C’est précisément l’un des trois gélifiants (avec la pectine E440 et l’agar-agar E406) qui permettent de fabriquer bonbons et desserts sans gélatine animale.',
+      'Réflexe utile : un « flan » ou une panna cotta industrielle au E407 plutôt qu’à la gélatine est un produit tranquille pour le consommateur musulman.',
+    ],
+    category: 'Additifs',
+    related: ['gelatine-halal', 'e440-pectine-halal', 'e415-xanthane-halal'],
+  },
+  {
+    slug: 'e415-xanthane-halal',
+    question: 'Le E415 (gomme xanthane) est-il halal ?',
+    verdict: '✅ Halal',
+    short:
+      'La gomme xanthane (E415) est produite par fermentation de sucres végétaux. Elle est halal.',
+    answer: [
+      'Le E415, la gomme xanthane, est l’épaississant chouchou de l’industrie (sauces, dressings, glaces, pâtisserie sans gluten). Elle est produite par fermentation de sucres d’origine végétale par une bactérie, puis purifiée et séchée.',
+      'Le procédé ne fait intervenir ni matière animale ni alcool résiduel dans le produit fini : la gomme xanthane est considérée halal par les organismes de certification.',
+      'Même famille tranquille : la gomme guar (E412, graine végétale) et la gomme arabique (E414, sève d’acacia) — toutes halal. Les « gommes » alimentaires sont globalement un rayon sans piège.',
+    ],
+    category: 'Additifs',
+    related: ['e407-carraghenane-halal', 'e440-pectine-halal', 'e330-halal'],
+  },
+  {
+    slug: 'e440-pectine-halal',
+    question: 'Le E440 (pectine) est-il halal ?',
+    verdict: '✅ Halal',
+    short:
+      'La pectine (E440) est extraite de fruits — pommes et agrumes. C’est LE gélifiant halal des confitures et bonbons sans gélatine.',
+    answer: [
+      'Le E440, la pectine, est extraite des pépins et peaux de pommes et d’agrumes. C’est elle qui fait « prendre » les confitures — et de plus en plus de bonbons « sans gélatine ».',
+      'Origine 100 % fruitière : halal à l’unanimité. Quand un paquet de bonbons affiche « pectine » à la place de « gélatine », c’est le signal que cherchent tous les consommateurs musulmans en rayon confiserie.',
+      'Astuce courses : les bonbons végans utilisent par définition pectine, amidon ou agar-agar plutôt que la gélatine — le rayon végan est un allié inattendu du consommateur halal (vérifiez juste l’absence d’arômes alcoolisés).',
+    ],
+    category: 'Additifs',
+    related: ['gelatine-halal', 'haribo-halal', 'e407-carraghenane-halal'],
+  },
+  {
+    slug: 'e466-halal',
+    question: 'Le E466 (CMC) est-il halal ?',
+    verdict: '✅ Halal',
+    short:
+      'Le E466 (carboxyméthylcellulose) est fabriqué à partir de cellulose végétale. Il est halal.',
+    answer: [
+      'Le E466, ou carboxyméthylcellulose (CMC), est un épaississant et stabilisant dérivé de la cellulose — la fibre des plantes et du bois. On le croise dans les glaces, sauces, produits de boulangerie et même le dentifrice.',
+      'Sa matière première est exclusivement végétale et son procédé de fabrication chimique n’implique aucun dérivé animal : le E466 est halal.',
+      'La famille des celluloses (E460 à E469) est logée à la même enseigne : toutes d’origine végétale, toutes halal. Un rayon de plus où vous pouvez lire l’étiquette sereinement.',
+    ],
+    category: 'Additifs',
+    related: ['e415-xanthane-halal', 'e471-halal', 'e330-halal'],
+  },
+
+  // ─── PRODUITS (vague 3 — les marques stars de Google) ───────────────────────
+  {
+    slug: 'oreo-halal',
+    question: 'Les Oreo sont-ils halal ?',
+    verdict: '⚠️ Non certifiés (composition sans gélatine)',
+    short:
+      'Les Oreo vendus en Europe ne contiennent ni gélatine ni ingrédient animal (hors traces de lait), mais ne sont pas certifiés halal.',
+    answer: [
+      'La composition des Oreo européens est simple : farine, sucre, huiles végétales, cacao, amidon, levure chimique, émulsifiants (lécithines). Pas de gélatine, pas de graisse animale — Mondelez l’a confirmé publiquement pour le marché européen.',
+      'La marque précise cependant que les Oreo ne sont « pas certifiés halal » : pas d’audit d’organisme, pas de garantie sur les chaînes de production. C’est le même cas de figure que Nutella ou Kinder — acceptable pour la plupart sur la base de la composition, écarté par les plus stricts.',
+      'En voyage, vous trouverez des Oreo certifiés halal dans les pays musulmans (production locale ou importée certifiée). Même biscuit, tampon en plus.',
+    ],
+    category: 'Produits',
+    related: ['nutella-halal', 'kinder-halal', 'mms-halal'],
+  },
+  {
+    slug: 'pringles-halal',
+    question: 'Les Pringles sont-elles halal ?',
+    verdict: '⚠️ Selon le parfum',
+    short:
+      'Les Pringles Original sont généralement considérées sans souci ; les parfums fromagers et carnés demandent vérification.',
+    answer: [
+      'Les Pringles Original (pomme de terre, huiles, farines, sel) ne contiennent pas d’ingrédient animal problématique : elles sont généralement considérées acceptables, bien que non certifiées.',
+      'Les parfums aromatisés sont plus délicats : les versions fromagères (Sour Cream & Onion, Cheese) posent la question de la présure et des arômes lactés, et certains parfums contiennent les exhausteurs E631/E627 dont l’origine varie. Aucun parfum vendu en France ne contient officiellement de porc, mais l’origine exacte des arômes n’est pas détaillée.',
+      'Réflexe : Original = tranquille pour la plupart ; parfums aromatisés = liste d’ingrédients, et dans le doute les marques de chips certifiées halal des épiceries orientales imitent tous ces goûts.',
+    ],
+    category: 'Produits',
+    related: ['chips-halal', 'e631-e627-halal', 'doritos-halal'],
+  },
+  {
+    slug: 'snickers-mars-twix-halal',
+    question: 'Snickers, Mars et Twix sont-ils halal ?',
+    verdict: '⚠️ Non certifiés (sans gélatine en Europe)',
+    short:
+      'Les barres Mars, Snickers et Twix vendues en Europe ne contiennent pas de gélatine, mais ne sont pas certifiées halal.',
+    answer: [
+      'Bonne nouvelle d’abord : les recettes européennes des barres Snickers, Mars, Twix et Bounty ne contiennent pas de gélatine. Leurs ingrédients : chocolat, caramel (sucre, lait), cacahuètes, nougat — dont le blanc d’œuf, parfaitement halal.',
+      'Comme pour les M&M’s (même groupe Mars), aucune certification halal n’existe en Europe : la composition est acceptable pour la plupart des consommateurs musulmans, sans garantie d’organisme pour les plus exigeants.',
+      'Vigilance voyage : les recettes varient selon les continents — certaines confiseries du groupe ont contenu de la gélatine sur d’autres marchés. Lisez l’étiquette locale, ou profitez des versions certifiées vendues dans les pays musulmans.',
+    ],
+    category: 'Produits',
+    related: ['mms-halal', 'kinder-halal', 'gelatine-halal'],
+  },
+  {
+    slug: 'monster-halal',
+    question: 'Le Monster Energy est-il halal ?',
+    verdict: '✅ Généralement considéré halal',
+    short:
+      'Comme le Red Bull, le Monster ne contient pas d’alcool et sa taurine est synthétique. Il est généralement considéré halal.',
+    answer: [
+      'Le Monster Energy suscite les mêmes questions que le Red Bull — et les réponses sont les mêmes : pas d’alcool dans la recette, et une taurine entièrement synthétique, produite en laboratoire sans aucune origine animale.',
+      'Sa composition (eau gazéifiée, sucre, taurine, caféine, ginseng, vitamines B, arômes) ne contient pas d’ingrédient problématique. Il est vendu librement dans les pays du Golfe et considéré halal par la plupart des avis, sans certification systématique en Europe.',
+      'Le vrai sujet est sanitaire : très forte teneur en caféine et en sucre, déconseillé aux jeunes — une question de santé, pas de licéité. À consommer avec la même modération que n’importe quel énergisant.',
+    ],
+    category: 'Produits',
+    related: ['red-bull-halal', 'coca-cola-halal', 'e330-halal'],
+  },
+  {
+    slug: 'doritos-halal',
+    question: 'Les Doritos sont-ils halal ?',
+    verdict: '⚠️ Selon le parfum',
+    short:
+      'Les Doritos Nature sont sans souci ; les parfums fromagers (Nacho Cheese) posent les questions habituelles de présure et d’arômes.',
+    answer: [
+      'Les Doritos sont des chips de maïs : la base (maïs, huile végétale, sel) est halal sans discussion, et la version Nature l’illustre.',
+      'Les parfums stars — Nacho Cheese en tête — ajoutent fromage en poudre (question de la présure), arômes et parfois des exhausteurs E621/E631. Aucun ingrédient porcin dans les versions françaises, mais l’origine de la présure et des arômes n’est pas précisée : c’est la zone grise classique des snacks fromagers non certifiés.',
+      'Comme pour les Pringles : Nature = OK, parfums = à vérifier selon votre exigence, et les épiceries orientales débordent de tortilla chips certifiées halal aux mêmes saveurs.',
+    ],
+    category: 'Produits',
+    related: ['pringles-halal', 'chips-halal', 'fromage-presure-halal'],
+  },
+  {
+    slug: 'yaourt-halal',
+    question: 'Les yaourts sont-ils halal ?',
+    verdict: '✅ Nature oui — desserts lactés à vérifier',
+    short:
+      'Les yaourts nature sont halal (lait + ferments). Attention en revanche à la gélatine dans certains desserts lactés et mousses.',
+    answer: [
+      'Un yaourt, c’est du lait et des ferments lactiques : halal sans aucune discussion. Yaourts nature, brassés, à la grecque « nature »… aucun souci.',
+      'La vigilance commence avec les desserts lactés : mousses, liégeois, certains yaourts « onctueux » ou allégés peuvent contenir de la gélatine comme texturant — elle apparaît clairement dans la liste d’ingrédients. Les crèmes dessert utilisent plus souvent amidons et carraghénanes (halal).',
+      'Réflexe : le mot « gélatine » sur l’étiquette tranche la question en deux secondes. Et pour les enfants, plusieurs marques proposent des gammes certifiées halal en grande surface.',
+    ],
+    category: 'Produits',
+    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal'],
+  },
+  {
+    slug: 'quick-halal',
+    question: 'Quick est-il halal ?',
+    verdict: '⚠️ Une partie du réseau seulement',
+    short:
+      'Une partie des restaurants Quick est certifiée halal, pas tout le réseau : il faut vérifier votre restaurant sur la liste officielle.',
+    answer: [
+      'Quick est un cas unique dans le fast-food français : une partie de ses restaurants est officiellement certifiée halal (viandes certifiées par des organismes reconnus, affichage en restaurant), tandis que le reste du réseau sert de la viande standard.',
+      'Conséquence : « Quick » tout court ne veut rien dire — tout dépend de VOTRE restaurant. La liste des établissements halal est publiée par l’enseigne et le certificat est affiché sur place ; en cas de doute, demandez-le au comptoir, c’est un réflexe normal et bien accueilli.',
+      'C’est l’exception qui confirme la règle française : McDonald’s et Burger King ne proposent aucun restaurant halal en France, Quick si — mais uniquement dans les restaurants listés.',
+    ],
+    category: 'Produits',
+    related: ['mcdo-halal', 'burger-king-halal', 'kfc-halal'],
+  },
+  {
+    slug: 'burger-king-halal',
+    question: 'Burger King est-il halal en France ?',
+    verdict: '❌ Non en France',
+    short:
+      'Burger King France ne propose pas de viande halal. Comme ses concurrents, l’enseigne est en revanche halal dans les pays musulmans.',
+    answer: [
+      'Burger King France s’approvisionne en filière standard : aucun restaurant halal dans l’Hexagone, et la marque le confirme dans sa communication officielle. Les Whopper français ne sont donc pas halal.',
+      'Reste possible selon votre niveau d’exigence : les options sans viande (le Veggie King, les frites) — avec les questions habituelles de cuissons partagées pour les plus stricts.',
+      'À l’étranger, le tableau change : Burger King est intégralement certifié halal dans les pays musulmans (Maroc, Turquie, Golfe, Asie du Sud-Est). Et en France, la scène des smash burgers halal indépendants n’a jamais été aussi riche — la carte VoyagesHalal en géolocalise près de chez vous.',
+    ],
+    category: 'Produits',
+    related: ['quick-halal', 'mcdo-halal', 'kfc-halal'],
+  },
+
+  // ─── ALIMENTATION (vague 3) ─────────────────────────────────────────────────
+  {
+    slug: 'levure-chimique-halal',
+    question: 'La levure chimique est-elle halal ?',
+    verdict: '✅ Halal',
+    short:
+      'La levure chimique est un mélange minéral (bicarbonate + acide). Rien d’animal, rien de fermenté : halal.',
+    answer: [
+      'La levure chimique des sachets roses n’a de « levure » que le nom : c’est un mélange de bicarbonate de sodium, d’un acide (pyrophosphate ou crème de tartre) et d’amidon. Aucun organisme vivant, aucune fermentation.',
+      'Tous ses composants sont minéraux ou végétaux : la levure chimique est halal sans aucune réserve. Même conclusion pour le bicarbonate seul et la levure de boulanger (un champignon, voir notre fiche levure).',
+      'Petite précision sur la crème de tartre (E336) : elle est récupérée sur les cuves de vinification, mais c’est un cristal minéral purifié sans caractère enivrant — considéré halal par les organismes de certification, à l’image du vinaigre.',
+    ],
+    category: 'Alimentation',
+    related: ['levure-biere-halal', 'vinaigre-halal', 'e330-halal'],
+  },
+  {
+    slug: 'arome-vanille-halal',
+    question: 'L’arôme de vanille est-il halal ?',
+    verdict: '⚠️ Vanilline oui — « extrait » à nuancer',
+    short:
+      'La vanilline (arôme de synthèse) est halal. L’« extrait de vanille » liquide est macéré dans l’alcool — avis partagés sur les traces.',
+    answer: [
+      'Deux produits différents se cachent derrière le goût vanille. La vanilline, arôme de synthèse utilisé dans l’immense majorité des produits industriels (Nutella, biscuits, yaourts) : fabriquée sans alcool résiduel significatif, elle est considérée halal.',
+      'L’« extrait naturel de vanille » liquide, lui, est traditionnellement obtenu par macération de gousses dans une solution alcoolisée (souvent 35 %). Utilisé en petite quantité dans un gâteau, l’alcool devient indétectable — beaucoup de savants tolèrent ces traces techniques non enivrantes, les plus stricts préfèrent l’éviter.',
+      'Alternatives sans débat : gousse de vanille entière, poudre de vanille, ou extraits « sans alcool » à base de glycérine végétale, disponibles en magasin bio et oriental. Pour la pâtisserie maison, la gousse reste la reine.',
+    ],
+    category: 'Alimentation',
+    related: ['cuisine-alcool-halal', 'vinaigre-halal', 'glace-halal'],
+  },
+  {
+    slug: 'gelatine-poisson-halal',
+    question: 'La gélatine de poisson est-elle halal ?',
+    verdict: '✅ Halal',
+    short:
+      'La gélatine de poisson est halal sans condition d’abattage — c’est l’alternative idéale pour bonbons et desserts gélifiés.',
+    answer: [
+      'La gélatine de poisson est extraite des peaux et arêtes de poissons. Le poisson étant halal sans abattage rituel, sa gélatine l’est aussi — c’est l’avis unanime, toutes écoles confondues (y compris hanafite, le poisson étant licite pour tous).',
+      'On la retrouve dans les marshmallows halal, certains bonbons certifiés et des compléments alimentaires. Sur l’étiquette, cherchez « gélatine de poisson » explicitement : la mention « gélatine » seule désigne presque toujours du porc ou du bœuf.',
+      'C’est l’une des trois grandes alternatives halal à la gélatine classique, avec la pectine (E440) et le carraghénane (E407) — de quoi ne plus jamais se priver de chamallows.',
+    ],
+    category: 'Alimentation',
+    related: ['gelatine-halal', 'poisson-fruits-de-mer-halal', 'e440-pectine-halal'],
+  },
+
+  // ─── VOYAGE — VILLES FRANÇAISES (vague 3) ───────────────────────────────────
+  {
+    slug: 'restaurant-halal-nice',
+    question: 'Où manger halal à Nice ?',
+    verdict: '🗺 Guide',
+    short:
+      'À Nice, le quartier de la gare Thiers et l’Ariane concentrent l’offre halal — avec la socca en bonus végétarien niçois.',
+    answer: [
+      'À Nice, le réflexe halal commence autour de la gare Thiers et du boulevard Jean-Jaurès : grillades, kebabs de qualité, restaurants tunisiens et marocains s’y succèdent. Le quartier de l’Ariane, plus excentré, est le cœur communautaire avec boucheries et tables familiales.',
+      'Bonus niçois qui tombe bien : la socca (galette de pois chiches), la pissaladière sans anchois et la cuisine niçoise végétale se dégustent halal par nature — parfait pour goûter local dans le Vieux-Nice sans se poser de questions.',
+      'En été, beaucoup de plages privées et restaurants touristiques servent de l’alcool — la nourriture reste à vérifier au cas par cas comme partout. Certificats pour la viande, affluence locale comme boussole, et la carte VoyagesHalal pour les adresses vérifiées de la Côte d’Azur.',
+    ],
+    category: 'Voyage',
+    related: ['restaurant-halal-marseille', 'restaurant-halal-montpellier', 'restaurant-halal-lyon'],
+  },
+  {
+    slug: 'restaurant-halal-bordeaux',
+    question: 'Où manger halal à Bordeaux ?',
+    verdict: '🗺 Guide',
+    short:
+      'À Bordeaux, direction Saint-Michel et le marché des Capucins : le quartier historique du halal bordelais, complété par la rive droite.',
+    answer: [
+      'À Bordeaux, le quartier Saint-Michel est l’adresse historique : autour du marché des Capucins (« le ventre de Bordeaux »), boucheries halal, rôtisseries, pâtisseries orientales et restaurants maghrébins font vivre le quartier depuis des générations.',
+      'La nouvelle génération bordelaise s’exprime ailleurs : smash burgers, tacos et poulet frit halal essaiment dans le centre et sur la rive droite (Bastide, Lormont, Cenon), portés par une clientèle jeune et exigeante.',
+      'Bordeaux étant la capitale mondiale du vin, beaucoup de restaurants gastronomiques cuisinent à l’alcool — posez la question systématiquement hors des adresses halal. Pour le reste : certificats, avis récents, et la carte VoyagesHalal en renfort.',
+    ],
+    category: 'Voyage',
+    related: ['restaurant-halal-toulouse', 'restaurant-halal-nantes', 'cuisine-alcool-halal'],
+  },
+  {
+    slug: 'restaurant-halal-nantes',
+    question: 'Où manger halal à Nantes ?',
+    verdict: '🗺 Guide',
+    short:
+      'À Nantes, l’offre halal se concentre autour de Talensac, du centre et des quartiers Bellevue et Malakoff — en forte croissance.',
+    answer: [
+      'Nantes a longtemps été discrète sur le halal, mais la donne a changé : autour du marché de Talensac et dans le centre, kebabs de qualité, restaurants orientaux et enseignes de burgers halal se sont multipliés ces dernières années.',
+      'Les quartiers Bellevue, Malakoff et Doulon comptent boucheries halal et adresses familiales, tandis que la périphérie (Saint-Herblain, Rezé) accueille les concepts nouvelle génération — poulet frit, tacos, smash burgers certifiés.',
+      'Conseil local : la scène évolue vite, vérifiez les avis récents et le certificat affiché. Et pour un dessert local sans question à se poser, le gâteau nantais traditionnel contient du rhum — préférez les versions « sans alcool » que proposent certaines pâtisseries, ou passez au berlingot !',
+    ],
+    category: 'Voyage',
+    related: ['restaurant-halal-bordeaux', 'restaurant-halal-lille', 'restaurant-halal-paris'],
+  },
+  {
+    slug: 'restaurant-halal-montpellier',
+    question: 'Où manger halal à Montpellier ?',
+    verdict: '🗺 Guide',
+    short:
+      'À Montpellier, du centre (Gambetta, gare) à La Paillade, l’offre halal est l’une des plus denses du sud de la France.',
+    answer: [
+      'Montpellier est une place forte du halal dans le Sud : autour du cours Gambetta, de la rue du Faubourg Figuerolles et de la gare Saint-Roch, les restaurants orientaux, syriens et maghrébins se comptent par dizaines — dont une belle scène de cuisine levantine.',
+      'Les quartiers Mosson-La Paillade et Petit Bard complètent l’offre familiale (boucheries, rôtisseries), tandis que la jeunesse étudiante fait vivre les enseignes de burgers, tacos et poke halal du centre — Montpellier est l’une des villes les plus jeunes de France, et sa scène halal en profite.',
+      'À vingt minutes, Sète et ses poissons grillés offrent l’escapade parfaite (le poisson est halal partout !). Certificats et affluence locale comme toujours — les adresses vérifiées de l’Hérault arrivent sur la carte VoyagesHalal.',
+    ],
+    category: 'Voyage',
+    related: ['restaurant-halal-marseille', 'restaurant-halal-nice', 'restaurant-halal-toulouse'],
+  },
+
+  // ─── DESTINATIONS (vague 2) ─────────────────────────────────────────────────
+  {
+    slug: 'voyage-halal-le-caire',
+    question: 'Voyager halal au Caire : le guide',
+    verdict: '✦ 8.6 — Très bon halal',
+    short:
+      'Le Caire, ville aux mille minarets : tout est halal, l’histoire islamique est partout, et le koshary vous attend.',
+    answer: [
+      'Le Caire est un bain d’histoire musulmane à ciel ouvert : la mosquée-université Al-Azhar (mille ans de savoir), le Caire islamique classé à l’UNESCO, la citadelle de Saladin, la mosquée Ibn Touloun… et l’appel à la prière depuis mille minarets. Toute la nourriture y est halal par défaut.',
+      'Côté assiette, le koshary (riz-lentilles-pâtes-oignons frits) est le roi de la street food, avec les ful medames, taameya (falafels égyptiens) et grillades. Le bazar Khan el-Khalili, autour d’Al-Azhar, mêle souks, cafés historiques et artisanat.',
+      'Conseils : négociez tout (taxis compris — ou utilisez les applications VTC), prévoyez les pyramides de Gizeh tôt le matin, et gardez de la monnaie pour les pourboires (bakchich), institution locale. HalalScore VoyagesHalal : ✦ 8.6.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-istanbul', 'voyage-halal-marrakech', 'voyage-halal-doha'],
+  },
+  {
+    slug: 'voyage-halal-amsterdam',
+    question: 'Voyager halal à Amsterdam : le guide',
+    verdict: '✦ 7.8 — Bon niveau halal',
+    short:
+      'Amsterdam surprend : une offre halal riche (cuisines surinamaise, turque, marocaine), des mosquées actives, à 3h de train de Paris.',
+    answer: [
+      'Amsterdam est une très bonne surprise halal : les communautés turque, marocaine et surinamaise y ont bâti une offre dense. La spécialité à ne pas manquer : la cuisine surinamaise-javanaise halal (roti, bami, saoto) — introuvable en France et délicieuse.',
+      'Les quartiers De Pijp (marché Albert Cuyp), Oost et Nieuw-West concentrent restaurants et boucheries halal ; les snackbars halal (fricandelle et frites sauce) sont une institution néerlandaise. Attention en revanche au centre touristique : beaucoup d’adresses y mélangent tout — vérifiez le certificat.',
+      'Conseils : la ville se visite à vélo comme un local, le Rijksmuseum et les canaux se moquent de votre régime, et le Thalys met Amsterdam à 3h20 de Paris. Les mosquées (dont la grande mosquée Fatih dans le centre) accueillent facilement les voyageurs. HalalScore VoyagesHalal : ✦ 7.8.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-londres', 'restaurant-halal-paris', 'repas-halal-avion'],
+  },
+  {
+    slug: 'voyage-halal-barcelone',
+    question: 'Voyager halal à Barcelone : le guide',
+    verdict: '✦ 7.3 — Possible avec les bons quartiers',
+    short:
+      'À Barcelone, le Raval est votre quartier général halal — dans une ville où le porc est partout, mieux vaut connaître ses adresses.',
+    answer: [
+      'Barcelone demande un peu de méthode : la cuisine catalane traditionnelle fait la part belle au porc (jambon en vitrine partout) et l’alcool accompagne les tapas. Mais la ville a un atout : le Raval, quartier central où la communauté pakistanaise a ouvert des dizaines de restaurants halal — currys, grillades, biryanis excellents et pas chers.',
+      'Les kebabs et snacks halal sont nombreux autour de la Rambla et dans l’Eixample, et plusieurs restaurants marocains et syriens montent en gamme. Pour la paella, cherchez spécifiquement les versions poisson/fruits de mer dans un établissement de confiance — ou les restaurants halal qui la proposent.',
+      'La Sagrada Família, le parc Güell et la plage de la Barceloneta font le reste. Bonus : la mosquée Tariq bin Ziyad et plusieurs salles de prière au centre. HalalScore VoyagesHalal : ✦ 7.3 — très faisable en connaissant ses quartiers.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-amsterdam', 'voyage-halal-londres', 'poisson-fruits-de-mer-halal'],
+  },
+  {
+    slug: 'voyage-halal-bangkok',
+    question: 'Voyager halal à Bangkok et en Thaïlande : le guide',
+    verdict: '✦ 6.8 — L’aventure préparée',
+    short:
+      'Bangkok cache une vraie Thaïlande musulmane : quartiers halal historiques, certification CICOT, et le sud du pays majoritairement musulman.',
+    answer: [
+      'On l’ignore souvent : la Thaïlande compte des millions de musulmans et Bangkok a ses quartiers halal historiques — autour de la mosquée Haroon (Bang Rak) et surtout le long de Ramkhamhaeng et Phetchaburi, où restaurants et street food halal abondent. Le logo halal officiel thaï (CICOT, losange vert) est votre repère fiable.',
+      'La cuisine thaï musulmane est une merveille : massaman curry (élu parmi les meilleurs plats du monde — d’origine musulmane !), khao mok gai (biryani thaï), satay. Vigilance sur la street food généraliste : porc omniprésent et sauces (huître, poisson fermenté) à questionner.',
+      'Le sud du pays (Krabi, Phuket côté communautés locales, Koh Lanta) est largement musulman : mosquées sur les îles, warungs halal, ambiance familiale. Conseils : temples et palais se visitent épaules couvertes, et le ramadan y est très suivi dans le sud. HalalScore VoyagesHalal : ✦ 6.8 — dépaysement maximal, préparation minimale requise.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-bali', 'voyage-halal-tokyo'],
+  },
+  {
+    slug: 'voyage-halal-sarajevo',
+    question: 'Voyager halal à Sarajevo : le guide',
+    verdict: '✦ 8.4 — La perle musulmane d’Europe',
+    short:
+      'Sarajevo est la capitale musulmane de l’Europe : ćevapi halal, mosquées ottomanes, café bosnien — à 2h de vol, sans dépaysement religieux.',
+    answer: [
+      'Sarajevo est unique : une capitale européenne où l’adhan résonne entre les collines, où la vieille ville ottomane (Baščaršija) aligne mosquées du XVIe siècle, fontaines et artisans du cuivre, et où la nourriture est halal presque partout — la Bosnie est le pays musulman de l’Europe.',
+      'La table bosnienne est généreuse et abordable : ćevapi (petites saucisses grillées servies dans le somun moelleux), burek, dolma, baklava, le tout arrosé de café bosnien préparé à l’ottomane. La mosquée Gazi Husrev-bey et sa medersa sont le cœur spirituel de la ville.',
+      'Conseils : montez au belvédère de la forteresse jaune au coucher du soleil, prenez le téléphérique du mont Trebević, et prévoyez une excursion à Mostar et son pont mythique (2h de route). Le ramadan à Sarajevo — canon d’iftar tiré de la forteresse compris — est une expérience inoubliable. HalalScore VoyagesHalal : ✦ 8.4.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-istanbul', 'voyage-halal-amsterdam', 'ramadan-voyage-jeune'],
+  },
+  {
+    slug: 'voyage-halal-singapour',
+    question: 'Voyager halal à Singapour : le guide',
+    verdict: '✦ 8.5 — Très bon halal',
+    short:
+      'Singapour allie certification MUIS ultra-fiable, hawker centers halal et le quartier magique de Kampong Glam autour de la mosquée du Sultan.',
+    answer: [
+      'Singapour est l’une des destinations halal les plus fiables d’Asie : la certification MUIS, gérée par l’autorité islamique de la cité-État, est rigoureuse et affichée partout — jusque dans les hawker centers (marchés de street food), dont plusieurs sections sont entièrement halal.',
+      'Le quartier à ne pas manquer : Kampong Glam, le quartier malais historique autour de la majestueuse mosquée du Sultan — cafés, boutiques, murtabak et nasi padang. Ajoutez le laksa, le chicken rice halal et les saveurs indo-malaises : la ville est un festin certifié.',
+      'Conseils : Gardens by the Bay et Marina Bay le soir, Sentosa en famille, et l’aéroport de Changi (souvent élu meilleur du monde, salles de prière comprises) mérite d’arriver en avance. Budget à prévoir : Singapour est chère — mais les hawkers halal restent très abordables. HalalScore VoyagesHalal : ✦ 8.5.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-bangkok', 'voyage-halal-dubai'],
+  },
+  {
+    slug: 'voyage-halal-maldives',
+    question: 'Voyager halal aux Maldives : le guide',
+    verdict: '✦ 8.8 — Le paradis, deux formules',
+    short:
+      'Les Maldives sont un pays 100 % musulman : îles locales authentiques et halal intégral, ou resorts de rêve — à choisir en connaissance.',
+    answer: [
+      'On l’oublie derrière les photos de villas sur pilotis : les Maldives sont une république entièrement musulmane. Sur les îles locales (Maafushi, Dhigurah, Thoddoo…), tout est halal, l’adhan rythme la journée, et les guesthouses ont démocratisé le paradis — plages de rêve à prix accessibles, excursions raies manta et requins-baleines comprises.',
+      'Les resorts-îles privées, eux, vivent sous un régime spécial : alcool servi et cuisine internationale (halal disponible, à confirmer à la réservation). Beaucoup de familles musulmanes préfèrent les îles locales pour l’ambiance — ou choisissent un resort en demandant les options halal, nombreux à bien les gérer vu la clientèle du Golfe.',
+      'Conseils : sur les îles locales, le « bikini beach » est la plage dédiée aux touristes, le reste de l’île suit la pudeur locale ; la saison sèche va de décembre à avril ; et le poisson grillé du soir sur la plage est un souvenir pour la vie. HalalScore VoyagesHalal : ✦ 8.8.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-bali', 'voyage-halal-dubai', 'voyage-halal-kuala-lumpur'],
+  },
+  {
+    slug: 'voyage-halal-new-york',
+    question: 'Voyager halal à New York : le guide',
+    verdict: '✦ 7.5 — Bon niveau halal',
+    short:
+      'New York et ses halal carts légendaires : la ville qui a fait du poulet-riz halal une icône, avec des quartiers musulmans entiers à explorer.',
+    answer: [
+      'New York a donné au monde une icône : le halal cart — ces chariots de rue servant le mythique « chicken over rice » sauce blanche, nés des vendeurs égyptiens et devenus patrimoine culinaire de la ville. Des centaines de carts halal quadrillent Manhattan, celui de la 53e/6e Avenue ayant lancé la légende.',
+      'Au-delà des carts : Jackson Heights (Queens) pour la cuisine sud-asiatique halal, Bay Ridge (Brooklyn) pour le monde arabe, Atlantic Avenue pour les épiceries yéménites et l’agneau grillé. Les steakhouses et smash burgers halal se multiplient à Manhattan — la scène est en pleine explosion.',
+      'Conseils : l’Islamic Cultural Center et les mosquées de quartier sont accueillantes, les grands musées (MET, MoMA) et Central Park meublent les journées, et le réflexe reste le même qu’ailleurs : « halal » affiché ne dispense pas de demander qui certifie, surtout hors des quartiers communautaires. HalalScore VoyagesHalal : ✦ 7.5.',
+    ],
+    category: 'Destinations',
+    related: ['voyage-halal-londres', 'voyage-halal-dubai', 'repas-halal-avion'],
+  },
 ];
 
 export function getQuestion(slug: string): QA | undefined {
