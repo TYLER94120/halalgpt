@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'fr_FR',
   },
+  twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
 };
 
