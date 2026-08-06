@@ -13,7 +13,6 @@ export type Category =
   | 'Produits'
   | 'Alimentation'
   | 'Ramadan'
-  | 'Finance'
   | 'Voyage'
   | 'Destinations'
   | 'Pratique';
@@ -1447,161 +1446,6 @@ export const QUESTIONS: QA[] = [
     category: 'Ramadan',
     related: ['dattes-rompre-jeune', 'ramadan-voyage-jeune', 'femme-enceinte-ramadan'],
   },
-  // ─── FINANCE ────────────────────────────────────────────────────────────────
-  {
-    slug: 'interets-banque-halal',
-    question: 'Les intérêts bancaires sont-ils halal ?',
-    verdict: '❌ Le riba est interdit',
-    short:
-      'Percevoir ou payer des intérêts (riba) est interdit par un texte clair du Coran. Un compte courant sans rémunération ne pose pas de problème.',
-    answer: [
-      'L’interdiction du riba (l’intérêt) est l’une des plus explicites du Coran : « Allah a rendu licite le commerce et illicite l’intérêt » (sourate 2, verset 275). Payer ou percevoir des intérêts est donc interdit selon l’avis unanime des écoles — ce n’est pas un point de divergence.',
-      'Concrètement en France : avoir un compte courant classique (non rémunéré) pour son salaire et ses paiements ne pose pas de problème — c’est une nécessité de la vie moderne. Ce sont les produits à intérêts (livrets rémunérés, crédits à la consommation, découverts avec agios) qui sont concernés.',
-      'Si des intérêts te sont versés malgré tout, l’avis répandu chez les savants contemporains : ne pas les garder pour soi, les donner à une œuvre caritative sans intention de récompense (on ne « purifie » pas de l’argent qu’on considère licite — on s’en débarrasse). Et pour épargner, vise les alternatives sans intérêts : immobilier, actions filtrées, or, financement participatif conforme.',
-    ],
-    category: 'Finance',
-    related: ['livret-a-halal', 'credit-immobilier-halal', 'bourse-actions-halal'],
-  },
-  {
-    slug: 'credit-immobilier-halal',
-    question: 'Le crédit immobilier est-il halal ?',
-    verdict: '❌ Interdit (majorité) — alternatives existantes',
-    short:
-      'Le prêt immobilier classique à intérêts relève du riba, interdit pour la majorité des savants. Des financements alternatifs (mourabaha, ijara) se développent en France.',
-    answer: [
-      'Le crédit immobilier classique repose sur l’intérêt : tu rembourses plus que ce que tu as emprunté, en échange du temps. C’est la définition du riba, interdit par le Coran — et c’est la position de la majorité des savants, y compris pour l’achat de sa résidence principale.',
-      'Il existe un avis divergent connu : le Conseil européen de la fatwa a autorisé en 1999 le crédit pour la résidence principale des musulmans vivant en Occident, au nom de la nécessité (absence d’alternative à l’époque). Cet avis est réel mais reste minoritaire et très contesté — et l’argument de la nécessité s’affaiblit à mesure que des alternatives apparaissent.',
-      'Les alternatives en France : la mourabaha (l’organisme achète le bien et te le revend avec une marge fixe, payable en mensualités) et l’ijara (location avec option d’achat conforme). Plusieurs acteurs proposent désormais ces financements en France — compare sérieusement les coûts réels et la conformité (comité charia indépendant) avant de signer, et méfie-toi des montages qui ne changent que le vocabulaire.',
-    ],
-    category: 'Finance',
-    related: ['interets-banque-halal', 'leasing-loa-halal', 'assurance-halal'],
-  },
-  {
-    slug: 'crypto-halal',
-    question: 'La crypto (Bitcoin, Ethereum) est-elle halal ?',
-    verdict: '⚠️ Avis divergents',
-    short:
-      'Les savants divergent : beaucoup tolèrent la détention de cryptos comme actif, mais le staking-prêt à intérêts, les tokens de projets illicites et le trading à effet de levier posent de vrais problèmes.',
-    answer: [
-      'Il n’y a pas de consensus sur les cryptomonnaies. Des savants les considèrent permises comme actif numérique échangeable (c’est une monnaie ou une marchandise valorisée par l’usage) ; d’autres les déconseillent ou les interdisent à cause de la spéculation extrême, de l’absence de valeur tangible et de l’incertitude (gharar). Les deux positions existent chez des savants sérieux.',
-      'Là où c’est plus net : les revenus de type intérêts sont interdits — lending rémunéré, certains stakings assimilés à un prêt à intérêt, comptes « earn » des plateformes. Idem pour les tokens dont le projet est illicite (jeux d’argent, prêt usuraire…) et pour le trading à effet de levier et les futures, qui cumulent riba et pari.',
-      'En pratique, l’approche prudente répandue : si tu investis, fais-le sur des projets solides, en achat simple (spot), avec de l’argent que tu peux perdre, sans levier ni intérêts. Et rappelle-toi que « halal » ne veut pas dire « bon plan » : la volatilité a ruiné plus de gens qu’elle n’en a enrichis.',
-    ],
-    category: 'Finance',
-    related: ['trading-halal', 'bourse-actions-halal', 'interets-banque-halal'],
-  },
-  {
-    slug: 'trading-halal',
-    question: 'Le trading est-il halal ?',
-    verdict: '⚠️ Ça dépend (souvent non)',
-    short:
-      'Acheter des actions de sociétés licites au comptant : permis. CFD, forex avec effet de levier, futures et paris sur les cours : interdits pour la majorité des savants.',
-    answer: [
-      'Tout dépend de ce qu’on appelle « trading ». Acheter au comptant des actions de sociétés à l’activité licite, les détenir et les revendre : c’est du commerce, permis — même si tu les gardes peu de temps.',
-      'Ce qui pose problème, et que la majorité des savants (et les standards de la finance islamique comme l’AAOIFI) interdisent : l’effet de levier (tu trades avec de l’argent prêté à intérêt), le forex avec frais de swap (riba pur), les CFD et futures (tu ne possèdes rien, tu paries sur un cours — gharar et maysir), et la vente à découvert (vendre ce qu’on ne possède pas).',
-      'Sois lucide sur un autre point : le day-trading vendu sur les réseaux sociaux comme revenu facile ressemble davantage au jeu de hasard qu’à l’investissement — statistiquement, la grande majorité des particuliers y perdent. Halal ou pas, la sagesse financière compte aussi.',
-    ],
-    category: 'Finance',
-    related: ['bourse-actions-halal', 'crypto-halal', 'paris-sportifs-halal'],
-  },
-  {
-    slug: 'bourse-actions-halal',
-    question: 'Investir en bourse est-il halal ?',
-    verdict: '✅ Permis avec filtrage',
-    short:
-      'Acheter des actions est permis si l’activité de l’entreprise est licite et si ses ratios financiers passent le filtrage islamique. Des ETF et fonds « charia » simplifient tout.',
-    answer: [
-      'Acheter une action, c’est posséder une part d’entreprise : c’est permis si l’activité est licite. Sont exclues les entreprises d’alcool, de jeux d’argent, de porc, de banque à intérêts, d’armement controversé ou de contenu illicite.',
-      'S’ajoute un filtrage financier, formalisé par les standards de la finance islamique (AAOIFI notamment) : dette portant intérêt limitée (souvent moins de 30-33 % de la capitalisation), revenus illicites accessoires sous ~5 %, à purifier en donnant la part correspondante des dividendes. Des indices existent (Dow Jones Islamic Market, FTSE Shariah…) et des ETF les répliquent — c’est la solution simple pour débuter.',
-      'À éviter : l’achat sur marge (intérêts), les produits dérivés, et les « conseils » de trading rapide. L’investissement conforme qui fonctionne, c’est l’ennuyeux : des parts d’entreprises licites, longtemps. Vérifie aussi la fiscalité française (CTO vs PEA) — rien d’illicite là-dedans, juste de l’optimisation.',
-    ],
-    category: 'Finance',
-    related: ['trading-halal', 'interets-banque-halal', 'crypto-halal'],
-  },
-  {
-    slug: 'assurance-halal',
-    question: 'Les assurances sont-elles halal ?',
-    verdict: '⚠️ Tolérées si obligatoires — takaful en alternative',
-    short:
-      'L’assurance commerciale classique pose problème (incertitude, intérêts) pour la majorité des savants. Les assurances obligatoires (auto, santé) sont permises par nécessité.',
-    answer: [
-      'L’assurance commerciale classique est jugée problématique par la majorité des savants : tu paies des primes fermes contre un remboursement incertain (gharar — aléa contractuel), et l’assureur place tes primes à intérêts. L’alternative conforme s’appelle le takaful : un fonds mutualisé où les membres se couvrent mutuellement, très développé dans certains pays mais encore rare en France.',
-      'Les assurances imposées par la loi française — responsabilité civile auto, assurance habitation du locataire, sécurité sociale et mutuelle d’entreprise obligatoire — sont permises sans débat sérieux : la nécessité et l’obligation légale lèvent l’interdit, et tu n’as pas le choix.',
-      'Pour les assurances facultatives (tous risques étendus, assurances gadgets, extensions de garantie…), l’approche répandue : s’en tenir au nécessaire, préférer l’épargne de précaution personnelle, et guetter les offres takaful qui commencent à arriver sur le marché européen.',
-    ],
-    category: 'Finance',
-    related: ['assurance-vie-halal', 'credit-immobilier-halal', 'interets-banque-halal'],
-  },
-  {
-    slug: 'assurance-vie-halal',
-    question: 'L’assurance-vie est-elle halal ?',
-    verdict: '⚠️ Problématique dans sa forme classique',
-    short:
-      'Le fonds euros de l’assurance-vie repose sur des obligations à intérêts : problématique. Des contrats en unités de compte filtrées peuvent être une piste, avec vigilance.',
-    answer: [
-      'L’assurance-vie française classique cumule deux problèmes : le fonds en euros est massivement investi en obligations — c’est-à-dire des prêts à intérêts (riba) — et le mécanisme assurantiel lui-même comporte l’aléa (gharar) discuté pour les assurances commerciales. La majorité des savants la déconseillent sous cette forme.',
-      'Nuance intéressante : l’assurance-vie est aussi une simple enveloppe fiscale. Un contrat investi à 100 % en unités de compte conformes (ETF ou fonds actions filtrés islamiques, sans fonds euros) se rapproche d’un investissement en bourse licite logé dans une enveloppe avantageuse. Quelques contrats donnent accès à des fonds « charia » — ça existe, mais il faut vérifier ligne par ligne.',
-      'Pour la transmission (le motif fréquent), rappelle-toi que l’islam a ses propres règles d’héritage : l’assurance-vie ne doit pas servir à contourner les parts des héritiers prévues par le droit musulman si tu veux le respecter. Sujet fin — un savant et un notaire valent mieux qu’un forum.',
-    ],
-    category: 'Finance',
-    related: ['assurance-halal', 'bourse-actions-halal', 'livret-a-halal'],
-  },
-  {
-    slug: 'livret-a-halal',
-    question: 'Le Livret A est-il halal ?',
-    verdict: '❌ Les intérêts posent problème',
-    short:
-      'Le Livret A verse des intérêts : c’est du riba. Beaucoup le gardent comme simple compte de dépôt et donnent les intérêts à une œuvre.',
-    answer: [
-      'Le Livret A est un compte d’épargne rémunéré : l’État te verse un intérêt garanti sur ton dépôt. C’est précisément la définition du riba, interdit par le Coran. Le taux attractif ne change rien au principe.',
-      'Que faire si tu en as un ? L’avis répandu chez les savants contemporains : tu peux l’utiliser comme lieu de dépôt sûr, mais les intérêts perçus ne t’appartiennent pas moralement — donne-les intégralement à une œuvre caritative (sans intention de récompense divine, c’est un débarras, pas une aumône). Certains préfèrent le clôturer complètement — position plus prudente.',
-      'Pour faire fructifier une épargne sans riba : immobilier locatif, actions et ETF filtrés, or physique, parts d’entreprises. Et pour l’épargne de précaution, un compte courant simple fait le travail — il ne rapporte rien, mais il ne te fait rien porter non plus.',
-    ],
-    category: 'Finance',
-    related: ['interets-banque-halal', 'bourse-actions-halal', 'assurance-vie-halal'],
-  },
-  {
-    slug: 'leasing-loa-halal',
-    question: 'La LOA / le leasing auto est-il halal ?',
-    verdict: '⚠️ Problématique sous sa forme classique',
-    short:
-      'La LOA classique intègre un coût du crédit assimilé à l’intérêt et des pénalités douteuses. La location simple (LLD) est plus facilement acceptable.',
-    answer: [
-      'La LOA (location avec option d’achat) française est en réalité un crédit déguisé en location : le loyer intègre le financement à intérêts du véhicule, et le contrat cumule des éléments discutés (pénalités, assurances imposées, double nature vente-location du même contrat). La majorité des avis la classent avec le crédit à la consommation : problématique.',
-      'La LLD (location longue durée, sans option d’achat) ressemble davantage à une vraie location — un service payé contre l’usage — et passe mieux auprès des savants, si les pénalités du contrat restent raisonnables.',
-      'Les alternatives dans l’ordre : acheter comptant une voiture d’occasion (le grand classique sous-coté), l’ijara conforme quand elle existe, ou la mourabaha auto proposée par les acteurs de finance islamique en France. Une voiture plus modeste sans crédit bat souvent la belle voiture à mensualités, religieusement et financièrement.',
-    ],
-    category: 'Finance',
-    related: ['credit-immobilier-halal', 'interets-banque-halal', 'assurance-halal'],
-  },
-  {
-    slug: 'paris-sportifs-halal',
-    question: 'Les paris sportifs sont-ils halal ?',
-    verdict: '❌ Interdits (jeu de hasard)',
-    short:
-      'Les paris sportifs relèvent du maysir (jeu d’argent), explicitement interdit par le Coran — quel que soit le sport ou le montant.',
-    answer: [
-      'Les paris sportifs sont interdits, sans divergence sérieuse : miser de l’argent sur un résultat incertain pour en gagner davantage, c’est la définition du maysir (jeu d’argent) que le Coran interdit explicitement aux côtés de l’alcool (sourate 5, verset 90).',
-      'Le fait que tu « analyses » les matchs n’y change rien : le gain vient de la perte des autres parieurs, sans création de valeur ni travail réel — c’est le mécanisme même qui est interdit, pas le niveau de hasard. Petites mises, gros gains, freebets « offerts » : même règle.',
-      'Vaut d’être dit : les bookmakers vivent des pertes des parieurs — la publicité massive vers les jeunes de quartier n’est pas un hasard. L’argent déjà gagné aux paris ? L’avis répandu : s’en séparer en le donnant, et repartir propre. Si l’envie de parier ressemble à une addiction, des structures d’aide existent (comme les consultations jeu excessif des hôpitaux) — c’est un vrai sujet de santé, pas une faiblesse honteuse.',
-    ],
-    category: 'Finance',
-    related: ['loto-jeux-hasard-halal', 'trading-halal', 'interets-banque-halal'],
-  },
-  {
-    slug: 'loto-jeux-hasard-halal',
-    question: 'Le loto et les jeux à gratter sont-ils halal ?',
-    verdict: '❌ Interdits (maysir)',
-    short:
-      'Loto, EuroMillions, tickets à gratter, casino : tous relèvent du jeu d’argent interdit par le Coran, même pour 2 €.',
-    answer: [
-      'Le loto, l’EuroMillions, les tickets à gratter, le casino et les machines à sous relèvent tous du maysir — le jeu d’argent — interdit par un verset explicite : « Le vin, le jeu de hasard, les pierres dressées et les flèches divinatoires ne sont qu’une souillure œuvre du Diable » (sourate 5, verset 90).',
-      'L’argument « je ne mise que 2 € » ne tient pas : l’interdit porte sur le mécanisme (payer pour une chance de gain issue des mises des autres), pas sur le montant. Et l’argument « une partie va à de bonnes causes » non plus — la fin ne rend pas licite le moyen.',
-      'Ce que ça protège, au fond : des millions de foyers modestes financent les cagnottes en rêvant d’une sortie par le haut qui n’arrive statistiquement jamais. L’islam ferme cette porte et oriente vers ce qui construit : le travail, le commerce, l’investissement réel — plus lents, mais réels.',
-    ],
-    category: 'Finance',
-    related: ['paris-sportifs-halal', 'trading-halal', 'crypto-halal'],
-  },
   // ─── ALIMENTATION (animaux, viandes, concepts) ─────────────────────────────
   {
     slug: 'escargots-halal',
@@ -2654,7 +2498,6 @@ export const CATEGORIES: Category[] = [
   'Produits',
   'Alimentation',
   'Ramadan',
-  'Finance',
   'Voyage',
   'Destinations',
   'Pratique',
@@ -2666,7 +2509,6 @@ export const CATEGORY_SLUGS: Record<Category, string> = {
   Produits: 'produits',
   Alimentation: 'alimentation',
   Ramadan: 'ramadan',
-  Finance: 'finance',
   Voyage: 'voyage',
   Destinations: 'destinations',
   Pratique: 'pratique',
@@ -2681,8 +2523,6 @@ export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
     'Viandes, fruits de mer, gélatine, alcool de cuisine… Les grandes questions de l’assiette halal, avec les nuances entre écoles.',
   Ramadan:
     'Jeûne, brossage de dents, piqûres, sport, oublis… Les réponses claires aux questions les plus posées pendant le mois de Ramadan.',
-  Finance:
-    'Crédit, intérêts, bourse, crypto, assurance… L’argent et le halal : les principes, les divergences et les alternatives concrètes.',
   Voyage:
     'Prière en avion, repas halal, jeûne en déplacement… Voyager sereinement en tant que musulman.',
   Destinations:
