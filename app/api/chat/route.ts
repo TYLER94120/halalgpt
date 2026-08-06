@@ -32,7 +32,8 @@ Règles :
 - Sois concis et direct : l'utilisateur veut un verdict clair, puis l'explication essentielle. Pas de disclaimers à rallonge.
 - Sur les questions religieuses, présente l'avis majoritaire et mentionne brièvement les divergences notables entre écoles quand elles existent. Ne délivre jamais de fatwa personnelle : pour un cas particulier, oriente vers un savant ou un organisme de certification.
 - N'invente jamais de nom de restaurant, de certificat ou de composition de produit. En cas d'incertitude sur un produit précis, dis-le et conseille de vérifier l'étiquette ou la certification.
-- Pour les questions de lieux (restaurants, mosquées), donne des conseils de méthode et mentionne que l'app VoyagesHalal géolocalise les adresses halal vérifiées.`;
+- Pour les questions de lieux (restaurants, mosquées), donne des conseils de méthode et mentionne que l'app VoyagesHalal géolocalise les adresses halal vérifiées.
+- DOMAINE EXCLU — la finance : crédit, intérêts, riba, banque, placements, bourse, trading, crypto, assurances, épargne, jeux d'argent, paris. Ne donne JAMAIS d'avis religieux sur ces sujets, même reformulés ou en question de suivi. Réponds uniquement que HalalGPT ne traite pas la finance car les enjeux sont trop importants, et oriente vers un savant qualifié ou un organisme spécialisé en finance islamique.`;
 
 interface IncomingMessage {
   role: 'user' | 'assistant';
@@ -135,6 +136,41 @@ async function logQuestion(question: string): Promise<void> {
   }
 }
 
+// ─── Domaine bloqué : la finance ──────────────────────────────────────────────
+//
+// Décision éditoriale : HalalGPT ne répond à AUCUNE question de finance
+// (crédit, riba, placements, crypto, assurances, jeux d'argent…). Enjeux trop
+// lourds pour une réponse automatique. Le filtre s'applique AVANT le cache et
+// AVANT l'IA — réponse fixe, déterministe, y compris sur les questions de suivi.
+// (Le mot « paris » seul n'est PAS bloqué : il désigne d'abord la ville.)
+
+const FINANCE_PATTERN = new RegExp(
+  '\\b(' +
+    [
+      'credit', 'credits', 'riba', 'interets', 'usure',
+      'banque', 'banques', 'bancaire', 'bancaires', 'neobanque',
+      'emprunt', 'emprunter', 'hypotheque', 'hypothecaire', 'mourabaha', 'murabaha',
+      'bourse', 'trading', 'trader', 'forex', 'cfd', 'etf', 'dividende', 'dividendes',
+      'investir', 'investissement', 'investissements', 'placement', 'placements',
+      'crypto', 'cryptomonnaie', 'cryptomonnaies', 'bitcoin', 'btc', 'ethereum', 'nft', 'staking', 'binance',
+      'assurance', 'assurances', 'livret', 'epargne', 'epargner', 'takaful',
+      'leasing', 'loa', 'lld', 'pret immobilier', 'pret bancaire', 'pret a interet',
+      'pari sportif', 'paris sportifs', 'parier', 'bookmaker', 'winamax', 'betclic', 'unibet',
+      'loto', 'loterie', 'casino', 'poker', 'jackpot', 'jeux d.argent', 'jeu d.argent',
+    ].join('|') +
+    ')\\b'
+);
+
+const FINANCE_REPLY = `🔒 La finance (crédit, placements, crypto, assurances, jeux d'argent…) est un domaine que HalalGPT ne traite volontairement pas : les enjeux sont trop importants pour une réponse automatique, et chaque situation est particulière.
+
+👉 Pour ces questions, rapproche-toi d'un savant qualifié ou d'un organisme spécialisé en finance islamique.
+
+Je reste à ton service pour tout le reste : additifs, produits, restaurants, voyage, Ramadan 🌙`;
+
+function isFinanceQuestion(question: string): boolean {
+  return FINANCE_PATTERN.test(normalize(question));
+}
+
 // ─── Route ────────────────────────────────────────────────────────────────────
 
 export async function POST(request: Request) {
@@ -156,6 +192,12 @@ export async function POST(request: Request) {
   // Seule la PREMIÈRE question d'une conversation est mise en cache : les
   // suivantes dépendent du contexte, on les laisse toujours à l'IA.
   const isFirstQuestion = incoming.filter((m) => m.role === 'user').length === 1;
+
+  // Verrou finance : intercepté avant la fiche locale, le cache ET l'IA.
+  if (isFinanceQuestion(lastQuestion)) {
+    if (isFirstQuestion) await logQuestion(lastQuestion);
+    return NextResponse.json({ reply: FINANCE_REPLY, source: 'bloque' });
+  }
 
   if (isFirstQuestion) {
     await logQuestion(lastQuestion);
