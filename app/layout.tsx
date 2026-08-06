@@ -59,6 +59,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/questions">Toutes les questions</Link>
             <span aria-hidden> · </span>
             <Link href="/">Poser une question</Link>
+            <span aria-hidden> · </span>
+            <Link href="/mentions-legales">Mentions légales</Link>
+            <span aria-hidden> · </span>
+            <Link href="/confidentialite">Confidentialité</Link>
           </p>
           <p className="footer-note">
             HalalGPT présente les avis religieux répandus à titre informatif. Pour une situation

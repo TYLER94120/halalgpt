@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { CATEGORIES, QUESTIONS } from '@/lib/questions';
+import { CATEGORIES, CATEGORY_SLUGS, QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
 
 export const metadata: Metadata = {
@@ -26,7 +26,9 @@ export default function QuestionsPage() {
         if (items.length === 0) return null;
         return (
           <section key={category} className="hub-category">
-            <h2>{category}</h2>
+            <h2>
+              <Link href={`/categorie/${CATEGORY_SLUGS[category]}`}>{category}</Link>
+            </h2>
             <div className="cards">
               {items.map((q) => (
                 <Link key={q.slug} href={`/q/${q.slug}`} className="card">
