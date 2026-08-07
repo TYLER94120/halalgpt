@@ -13,6 +13,8 @@ export type Category =
   | 'Produits'
   | 'Alimentation'
   | 'Ramadan'
+  | 'Prière'
+  | 'Vie quotidienne'
   | 'Voyage'
   | 'Destinations'
   | 'Pratique';
@@ -268,7 +270,7 @@ export const QUESTIONS: QA[] = [
       'Le principe est clair : la préservation de la santé et de la vie prime. En cas de nécessité médicale, prendre un médicament en gélule est permis (règle de la darura), surtout s’il n’existe pas d’équivalent. Ne jamais interrompre un traitement pour cette raison sans avis médical.',
       'Pour les cas non urgents et les compléments : demandez à votre pharmacien une alternative en comprimé, ou des gélules végétales (HPMC, pullulan) de plus en plus courantes. Certains laboratoires précisent « gélatine de poisson » ou « gélule d’origine végétale » sur la boîte.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['gelatine-halal', 'e441-gelatine-halal'],
   },
 
@@ -602,7 +604,7 @@ export const QUESTIONS: QA[] = [
       'Pour la majorité des savants contemporains, l’interdiction du khamr concerne sa consommation ; l’alcool cosmétique, non destiné à être bu, impropre à l’ivresse par usage externe, est permis. Un avis plus strict (considérant l’alcool impur au toucher) existe, notamment dans certaines écoles — ses tenants utilisent les « musc » et parfums sans alcool, très répandus dans les boutiques musulmanes.',
       'En pratique : les deux positions se côtoient sereinement. Si vous préférez la précaution, les huiles parfumées sans alcool ne manquent pas ; sinon, l’avis permissif est solidement argumenté et largement suivi. La prière avec un vêtement parfumé à l’alcool est valide pour la majorité.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['vinaigre-halal', 'medicaments-gelules-halal', 'cuisine-alcool-halal'],
   },
   {
@@ -2260,7 +2262,7 @@ export const QUESTIONS: QA[] = [
       'Ce qui est permis sans débat : le henné (traditionnel et recommandé même), les tatouages éphémères qui s’effacent, et le maquillage semi-permanent fait l’objet d’un débat distinct (certains l’assimilent au tatouage, d’autres non vu son caractère non définitif).',
       'Pour ceux qui se sont fait tatouer avant de pratiquer ou de se convertir : le repentir suffit — un tatouage existant n’est pas un péché qui se renouvelle chaque jour, et l’ablution comme la prière restent parfaitement valides avec (l’encre est sous la peau, l’eau atteint bien la surface). Le retrait au laser n’est pas une obligation, surtout s’il est coûteux ou risqué : c’est l’avis répandu des savants contemporains.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal'],
   },
   {
@@ -2274,7 +2276,7 @@ export const QUESTIONS: QA[] = [
       'Pour les autres emplacements (arcade, lèvre, nombril…) : beaucoup de savants contemporains les déconseillent ou les interdisent — mutilation sans usage établi, imitation de modes, risques médicaux, et exposition d’une zone qui devrait rester couverte pour le nombril. Pour les hommes, la majorité interdit les piercings, la parure corporelle de ce type étant considérée comme féminine dans les textes.',
       'Comme souvent, la question cache la vraie grille de lecture : parure admise et discrète d’un côté, transformation corporelle suivie de modes de l’autre. Pour un piercing déjà posé, le retrait laisse au pire une trace minime — la situation se corrige facilement, contrairement au tatouage.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal'],
   },
   {
@@ -2288,7 +2290,7 @@ export const QUESTIONS: QA[] = [
       'Les solutions pratiques dans l’ordre de fiabilité : poser le vernis quand on est déjà en état d’ablution et le retirer avant de devoir la refaire (ou le porter pendant les règles) ; les vernis « perméables/wudu-friendly » vendus comme laissant passer l’eau existent, mais les tests indépendants sont contrastés — la plupart des savants recommandent de ne pas s’y fier ; le henné, lui, colore sans couche et ne pose aucun problème.',
       'Précision utile : ceci concerne le vernis posé au moment de faire l’ablution. Un vernis posé sur une ablution valide n’annule rien — tu peux prier avec jusqu’à ce que l’ablution soit rompue. D’où la stratégie « pose le vendredi soir, retire avant fajr » que beaucoup ont adoptée.',
     ],
-    category: 'Pratique',
+    category: 'Prière',
     related: ['tatouage-halal', 'rouge-levres-carmin-halal', 'ablutions-chaussettes'],
   },
   {
@@ -2302,7 +2304,7 @@ export const QUESTIONS: QA[] = [
       'D’où les deux positions : tolérance (quantités infimes, usage cosmétique, transformation du pigment) et abstention (même logique que l’alimentaire dès qu’il y a ingestion). Les deux existent chez des gens sérieux — c’est un vrai cas de conscience personnelle.',
       'La sortie par le haut est facile : les gammes sans carmin sont nombreuses (colorants minéraux, la mention « vegan » garantit l’absence de cochenille), et les marques de cosmétiques certifiés halal se multiplient. Pour celles qui veulent le rouge parfait sans la question : il existe, littéralement dans le même rayon.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['e120-halal', 'parfum-alcool-halal', 'maquillage-ramadan'],
   },
   {
@@ -2316,7 +2318,7 @@ export const QUESTIONS: QA[] = [
       'Face à lui, des savants anciens et contemporains reconnus (Ibn Hazm hier, cheikh al-Qaradawi et d’autres récemment) jugent ces hadiths non concluants ou contextuels et permettent la musique dont le contenu est décent — jugeant l’interdit lié aux paroles obscènes, à la débauche associée ou à l’excès qui détourne de la prière, pas aux sons eux-mêmes.',
       'Ce qui fait consensus des deux côtés : paroles vulgaires ou contraires à la foi, ambiances de débauche et musique qui fait manquer les prières posent problème quel que soit l’avis ; et le Coran récité reste au-dessus de tout ce que l’oreille peut recevoir. Pour ta pratique personnelle : renseigne-toi honnêtement des deux positions et suis celle qui correspond à ta démarche — sans juger l’autre camp.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['anniversaire-halal', 'souhaiter-noel-halal', 'halal-definition'],
   },
   {
@@ -2330,7 +2332,7 @@ export const QUESTIONS: QA[] = [
       'L’avis permissif, répandu chez de nombreux savants contemporains : marquer un anniversaire n’est pas un acte d’adoration mais une habitude sociale (‘âda), et les habitudes sont permises par défaut tant qu’elles ne contiennent rien d’interdit. Un gâteau en famille, un cadeau, des invocations pour l’enfant : rien d’illicite en soi. Pas de rite religieux inventé, pas d’extravagance, et l’occasion de remercier Allah pour une année de vie.',
       'En pratique, la ligne de partage passe souvent par le contenu : un dîner familial sobre trouve beaucoup de défenseurs ; ce qui accompagne parfois les fêtes (mixité débridée, alcool, dépenses folles) est problématique pour tout le monde. Comme souvent : renseigne-toi, choisis ta position en conscience, et respecte celle du cousin qui a choisi l’autre.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['souhaiter-noel-halal', 'musique-halal', 'halal-definition'],
   },
   {
@@ -2344,7 +2346,7 @@ export const QUESTIONS: QA[] = [
       'Souhaiter « Joyeux Noël » à un collègue, un voisin, ou le côté non musulman de sa famille est une autre question, réellement débattue. L’avis restrictif (Ibn al-Qayyim, repris par de nombreux savants) y voit une approbation implicite d’un dogme contraire au tawhid. L’avis permissif, porté par plusieurs conseils de fatwa contemporains et savants établis en Occident : une parole de courtoisie envers des gens qui nous souhaitent bien nos fêtes relève de la bienveillance que le Coran recommande envers ceux qui ne nous combattent pas (sourate 60, verset 8) — sans partager leur croyance.',
       'En pratique pour beaucoup de familles franco-musulmanes (mariages mixtes, grands-parents non musulmans), la question est très concrète : maintenir le lien familial est une obligation religieuse, lui. Réponse sereine possible : participer au repas familial sans les rites religieux, formules chaleureuses neutres (« bonnes fêtes », « profite bien de ta famille ») ou vœux directs selon l’avis qu’on suit — les deux positions ont leurs savants.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['anniversaire-halal', 'musique-halal', 'chien-islam'],
   },
   {
@@ -2358,7 +2360,7 @@ export const QUESTIONS: QA[] = [
       'Les arguments s’empilent : nuire à soi-même, nuire aux autres (tabagisme passif — ta famille respire ta fumée), dépendance qui asservit, et argent brûlé (un paquet par jour représente plusieurs milliers d’euros par an, comptés au tribunal du gaspillage).',
       'Si tu fumes : personne ne te juge ici — la dépendance est une réalité médicale. Mais sache que l’arrêt est considéré comme une obligation de préservation de soi par ces avis, que le Ramadan est une rampe de lancement éprouvée, et que les substituts nicotiniques remboursés existent en France. Chaque cigarette non fumée compte.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['chicha-halal', 'puff-vape-halal', 'fumer-ramadan'],
   },
   {
@@ -2372,7 +2374,7 @@ export const QUESTIONS: QA[] = [
       'Le raisonnement des savants contemporains est donc le même que pour la cigarette : nocivité établie → interdiction (ou détestation forte au minimum). Le fait qu’elle soit occasionnelle chez certains atténue le volume, pas le principe — et la dimension sociale (bars à chicha) ajoute souvent des environnements que les mêmes savants déconseillent.',
       'Ironie culturelle à connaître : la chicha n’a rien d’islamique — c’est une habitude sociale ottomane et indienne que les savants de ces mêmes époques critiquaient déjà. La convivialité orientale a mille autres supports : thé à la menthe, café, dattes — le plateau sans le goudron.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['cigarette-halal', 'puff-vape-halal', 'fumer-ramadan'],
   },
   {
@@ -2386,7 +2388,7 @@ export const QUESTIONS: QA[] = [
       'Cas différent : la vape comme outil de sevrage encadré chez un fumeur qui décroche — plusieurs savants la tolèrent comme moindre mal transitoire, comme les substituts nicotiniques. L’intention et la trajectoire comptent : sortir de la dépendance, pas y entrer par une porte fruitée.',
       'Détail ingrédients pour être complet : les e-liquides (propylène glycol, glycérine végétale, arômes, nicotine) ne contiennent généralement rien d’illicite en soi — la glycérine est quasi toujours végétale. Le débat n’est pas dans le flacon, il est dans la dépendance et la nocivité. Une puff « 0 % nicotine » échappe à l’argument de la dépendance mais garde ceux du gaspillage et de l’imitation.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['cigarette-halal', 'chicha-halal', 'fumer-ramadan'],
   },
   {
@@ -2400,7 +2402,7 @@ export const QUESTIONS: QA[] = [
       'Sur la pureté : la salive du chien est impure pour la majorité (lavage rituel en cas de contact avec ustensiles), mais l’école malikite considère le chien vivant comme pur — une divergence classique qui change beaucoup le quotidien de ceux qui en ont un. Toucher un chien n’est en aucun cas un péché ; au pire, on lave avant de prier.',
       'Et un point non négociable dans tous les avis : la maltraitance des animaux est interdite. Le hadith de la femme punie pour avoir enfermé un chat sans le nourrir, et celui de l’homme pardonné pour avoir abreuvé un chien assoiffé (Boukhari), fixent le cadre : celui qui croise un chien errant a le droit — et le mérite — de le nourrir. Ne pas en posséder n’a jamais autorisé à en mépriser un.',
     ],
-    category: 'Pratique',
+    category: 'Vie quotidienne',
     related: ['halal-definition', 'gibier-chasse-halal', 'souhaiter-noel-halal'],
   },
   {
@@ -2442,7 +2444,7 @@ export const QUESTIONS: QA[] = [
       'Côté organisation religieuse : les créneaux des prières ont une plage étendue (dhuhr jusqu’à asr, asr jusqu’au coucher…), ce qui laisse presque toujours une pause utilisable ; en hiver, dhuhr, asr et maghreb tombent serrés — la pause déjeuner et la fin de journée en couvrent l’essentiel. En cas d’impossibilité réelle et ponctuelle, des avis (notamment l’école hanbalite pour le besoin) permettent de regrouper dhuhr-asr ou maghreb-isha — solution d’exception, pas d’habitude ; et la prière manquée par contrainte se rattrape dès que possible.',
       'Conseils de terrain : la discrétion et la fiabilité professionnelle sont tes meilleurs alliés (celui qui fait bien son travail obtient facilement cinq minutes de tranquillité) ; un mot simple au manager ou aux RH débloque souvent une salle ; et beaucoup de collègues prient déjà quelque part dans ton bâtiment — demande. Des millions de musulmans français prient au travail chaque jour sans drame : c’est une logistique, pas un conflit.',
     ],
-    category: 'Pratique',
+    category: 'Prière',
     related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes'],
   },
   {
@@ -2456,7 +2458,7 @@ export const QUESTIONS: QA[] = [
       'Un avis divergent existe, notamment chez Ibn Taymiyya et Ibn Hazm : la prière délibérément abandonnée ne se « rattrape » pas techniquement — le repentir sincère, la régularité parfaite désormais et l’abondance de prières surérogatoires en tiennent lieu. Cet avis, suivi par certains savants contemporains, soulage ceux que l’estimation d’une dette de quinze ans paralyse.',
       'Ce que les deux avis partagent : l’essentiel est le retour immédiat et définitif à la prière — aujourd’hui, pas au prochain Ramadan — et la sincérité du repentir. Estime ta dette sans obsession maladive (une évaluation raisonnable suffit), choisis ta méthode avec un imam qui te connaît, et souviens-toi que la porte du repentir efface ce que la comptabilité n’atteindra jamais.',
     ],
-    category: 'Pratique',
+    category: 'Prière',
     related: ['priere-travail', 'priere-vendredi-obligatoire', 'horaires-priere-voyage'],
   },
   {
@@ -2470,7 +2472,7 @@ export const QUESTIONS: QA[] = [
       'Le cas du travail : l’obligation impose de chercher réellement une solution — pause déjeuner décalée (la jumu‘a dure 30 à 45 minutes dans la plupart des mosquées françaises), aménagement d’horaires, récupération. Beaucoup y parviennent. En cas d’impossibilité véritable (poste non quittable, service continu, risque réel pour l’emploi sans alternative), les savants reconnaissent l’excuse : on prie dhuhr normalement, sans culpabilité maladive — en continuant de chercher une solution durable pour les vendredis suivants.',
       'À connaître en France : de nombreuses mosquées font deux services successifs le vendredi précisément pour les travailleurs, et la khutba de certaines commence à 12h30 pile pour tenir dans une pause d’une heure. Renseigne-toi sur les horaires exacts des mosquées autour du travail — c’est souvent ça, la solution introuvable.',
     ],
-    category: 'Pratique',
+    category: 'Prière',
     related: ['priere-travail', 'rattraper-prieres-ratees', 'horaires-priere-voyage'],
   },
   {
@@ -2484,7 +2486,7 @@ export const QUESTIONS: QA[] = [
       'Le débat porte sur nos chaussettes modernes : les quatre écoles classiques exigent un matériau épais, couvrant et permettant la marche (cuir ou équivalent) — excluant la chaussette fine de coton. Des savants, s’appuyant sur des rapports de compagnons essuyant sur leurs jawrab (chaussettes), permettent l’essuyage sur toute chaussette couvrante et non transparente : avis suivi par beaucoup aujourd’hui, notamment l’hiver ou au travail.',
       'En pratique : enfile tes chaussettes après une ablution complète le matin, et selon l’avis que tu suis, les renouvellements de la journée se font par essuyage — un vrai changement de vie au bureau, en voyage ou par -5°C. Conditions à retenir : ablution complète à l’enfilage, durée limitée, et tout état d’impureté majeure impose le lavage complet. Les « chaussettes de mash » épaisses vendues pour ça cochent toutes les cases des avis stricts.',
     ],
-    category: 'Pratique',
+    category: 'Prière',
     related: ['vernis-ongles-priere', 'priere-travail', 'horaires-priere-voyage'],
   },
 ];
@@ -2498,6 +2500,8 @@ export const CATEGORIES: Category[] = [
   'Produits',
   'Alimentation',
   'Ramadan',
+  'Prière',
+  'Vie quotidienne',
   'Voyage',
   'Destinations',
   'Pratique',
@@ -2509,6 +2513,8 @@ export const CATEGORY_SLUGS: Record<Category, string> = {
   Produits: 'produits',
   Alimentation: 'alimentation',
   Ramadan: 'ramadan',
+  Prière: 'priere',
+  'Vie quotidienne': 'vie-quotidienne',
   Voyage: 'voyage',
   Destinations: 'destinations',
   Pratique: 'pratique',
@@ -2523,6 +2529,10 @@ export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
     'Viandes, fruits de mer, gélatine, alcool de cuisine… Les grandes questions de l’assiette halal, avec les nuances entre écoles.',
   Ramadan:
     'Jeûne, brossage de dents, piqûres, sport, oublis… Les réponses claires aux questions les plus posées pendant le mois de Ramadan.',
+  Prière:
+    'Rattrapage, ablutions, prière au travail, vendredi… Les réponses claires aux questions concrètes de la prière.',
+  'Vie quotidienne':
+    'Musique, tatouage, travail, fêtes, animaux… La vie moderne passée au filtre serein de l’islam, avec les divergences quand il y en a.',
   Voyage:
     'Prière en avion, repas halal, jeûne en déplacement… Voyager sereinement en tant que musulman.',
   Destinations:

@@ -17,9 +17,11 @@ const CATEGORY_EMOJIS: Record<Category, string> = {
   Produits: '🍬',
   Alimentation: '🍽',
   Ramadan: '🌙',
+  Prière: '🤲',
+  'Vie quotidienne': '☀️',
   Voyage: '✈️',
   Destinations: '🗺',
-  Pratique: '🕌',
+  Pratique: '📖',
 };
 
 export default function QuestionsPage() {
