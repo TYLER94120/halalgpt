@@ -644,21 +644,11 @@ a {
 /* ─── Barre de thèmes (page questions) ── */
 
 .filter-bar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  overflow-x: auto;
-  padding: 12px 4px 14px;
-  margin: 8px 0 20px;
-  background: var(--nuit);
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.filter-bar::-webkit-scrollbar {
-  display: none;
+  padding: 4px 0;
+  margin: 8px 0 24px;
 }
 
 .filter-chip {
