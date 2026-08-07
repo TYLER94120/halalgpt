@@ -5,12 +5,13 @@ import { useEffect, useRef, useState } from 'react';
 interface Message {
   role: 'user' | 'assistant';
   content: string;
+  image?: string; // dataURL JPEG (photo de l'utilisateur)
 }
 
 const SUGGESTIONS = [
   '🔍 Le E120 est-il halal ?',
+  '🕌 Comment rattraper mes prières ?',
   '🍬 Les Haribo sont-ils halal ?',
-  '🍽 Où manger halal à Paris ?',
   '✈️ Repas halal en avion ?',
 ];
 
@@ -20,20 +21,65 @@ interface Suggestion {
   verdict: string;
 }
 
+// Redimensionne une photo côté téléphone (max 1024px, JPEG) : envoi léger,
+// analyse IA moins chère, et on reste sous les limites de la requête.
+async function compressImage(file: File): Promise<string> {
+  const dataUrl = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+  const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+    const el = new Image();
+    el.onload = () => resolve(el);
+    el.onerror = reject;
+    el.src = dataUrl;
+  });
+  const max = 1024;
+  const scale = Math.min(1, max / Math.max(img.width, img.height));
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.round(img.width * scale);
+  canvas.height = Math.round(img.height * scale);
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return dataUrl;
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  return canvas.toDataURL('image/jpeg', 0.82);
+}
+
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [pendingImage, setPendingImage] = useState<string | null>(null);
+  const [recording, setRecording] = useState(false);
+  const [speechOK, setSpeechOK] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
+  const lastAssistantRef = useRef<HTMLDivElement>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
+  const recognitionRef = useRef<{ stop: () => void } | null>(null);
 
   const hasConversation = messages.length > 0;
 
+  // ── Défilement intelligent ──
+  // Réponse de l'IA → on montre le DÉBUT de la réponse (pas la fin !).
+  // Message utilisateur / « en train d'écrire » → on suit le bas.
   useEffect(() => {
-    if (hasConversation) {
+    if (!hasConversation) return;
+    const last = messages[messages.length - 1];
+    if (!loading && last?.role === 'assistant') {
+      lastAssistantRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
       endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }, [messages, loading, hasConversation]);
+
+  // Le micro n'est proposé que si le navigateur sait dicter (Chrome, Safari…).
+  useEffect(() => {
+    const w = window as unknown as Record<string, unknown>;
+    setSpeechOK(Boolean(w.SpeechRecognition || w.webkitSpeechRecognition));
+  }, []);
 
   // « La réponse avant la question » : dès 2 lettres tapées, les fiches
   // correspondantes apparaissent — instantané, zéro appel IA.
@@ -62,21 +108,75 @@ export default function Chat() {
     };
   }, [input, hasConversation]);
 
-  const send = async (rawText: string) => {
-    const text = rawText.replace(/^[^\p{L}\p{N}]+\s*/u, '').trim() || rawText.trim();
-    if (!text || loading) return;
+  // ── Dictaphone (Web Speech API, gratuit, dans le navigateur) ──
+  const toggleMic = () => {
+    if (recording) {
+      recognitionRef.current?.stop();
+      return;
+    }
+    const w = window as unknown as {
+      SpeechRecognition?: new () => SpeechRecognitionLike;
+      webkitSpeechRecognition?: new () => SpeechRecognitionLike;
+    };
+    const Ctor = w.SpeechRecognition ?? w.webkitSpeechRecognition;
+    if (!Ctor) return;
+    const rec = new Ctor();
+    rec.lang = 'fr-FR';
+    rec.interimResults = true;
+    rec.continuous = false;
+    rec.onresult = (event) => {
+      let text = '';
+      for (let i = 0; i < event.results.length; i += 1) {
+        text += event.results[i][0].transcript;
+      }
+      setInput(text);
+    };
+    rec.onend = () => setRecording(false);
+    rec.onerror = () => setRecording(false);
+    recognitionRef.current = rec;
+    setRecording(true);
+    rec.start();
+  };
 
-    const next: Message[] = [...messages, { role: 'user', content: text }];
+  const pickPhoto = () => fileRef.current?.click();
+
+  const onPhotoSelected = async (file: File | undefined) => {
+    if (!file) return;
+    try {
+      setPendingImage(await compressImage(file));
+    } catch {
+      /* photo illisible : on ignore sans casser le chat */
+    }
+  };
+
+  const send = async (rawText: string) => {
+    const cleaned = rawText.replace(/^[^\p{L}\p{N}]+\s*/u, '').trim() || rawText.trim();
+    const image = pendingImage;
+    const text = cleaned || (image ? 'Analyse cette photo : est-ce halal ?' : '');
+    if ((!text && !image) || loading) return;
+
+    if (recording) recognitionRef.current?.stop();
+
+    const next: Message[] = [...messages, { role: 'user', content: text, ...(image ? { image } : {}) }];
     setMessages(next);
     setInput('');
     setSuggestions([]);
+    setPendingImage(null);
     setLoading(true);
 
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: next }),
+        // Économie : seule la photo du DERNIER message part vers l'IA,
+        // les photos des anciens messages restent affichées mais ne repartent pas.
+        body: JSON.stringify({
+          messages: next.map((m, i) => ({
+            role: m.role,
+            content: m.content,
+            ...(m.image && i === next.length - 1 ? { image: m.image } : {}),
+          })),
+        }),
       });
       const data = (await res.json()) as { reply?: string };
       setMessages((prev) => [
@@ -108,17 +208,48 @@ export default function Chat() {
       }}
     >
       <input
+        ref={fileRef}
+        type="file"
+        accept="image/*"
+        capture="environment"
+        hidden
+        onChange={(e) => {
+          void onPhotoSelected(e.target.files?.[0]);
+          e.target.value = '';
+        }}
+      />
+      <button
+        type="button"
+        className="chat-tool"
+        onClick={pickPhoto}
+        aria-label="Ajouter une photo (produit, étiquette…)"
+        title="Photo d'un produit ou d'une étiquette"
+      >
+        📷
+      </button>
+      {speechOK && (
+        <button
+          type="button"
+          className={`chat-tool ${recording ? 'recording' : ''}`}
+          onClick={toggleMic}
+          aria-label={recording ? 'Arrêter la dictée' : 'Dicter ma question'}
+          title="Dicter ma question"
+        >
+          🎤
+        </button>
+      )}
+      <input
         className="chat-input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Pose ta question halal…"
+        placeholder={recording ? 'Je t’écoute… 🎙' : 'Pose ta question…'}
         aria-label="Votre question"
         autoFocus={!hasConversation}
       />
       <button
         type="submit"
         className="chat-send"
-        disabled={!input.trim() || loading}
+        disabled={(!input.trim() && !pendingImage) || loading}
         aria-label="Envoyer"
       >
         ➤
@@ -126,11 +257,23 @@ export default function Chat() {
     </form>
   );
 
+  const preview = pendingImage && (
+    <div className="photo-preview">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={pendingImage} alt="Photo à envoyer" />
+      <span>Photo prête — ajoute une question ou envoie directement</span>
+      <button type="button" onClick={() => setPendingImage(null)} aria-label="Retirer la photo">
+        ✕
+      </button>
+    </div>
+  );
+
   // ── Mode « Google » : champ visible immédiatement, zéro friction ──
   if (!hasConversation) {
     return (
       <div className="chat chat-landing">
         {composer}
+        {preview}
         {suggestions.length > 0 ? (
           <div className="suggest-list" role="listbox" aria-label="Réponses instantanées">
             {suggestions.map((s) => (
@@ -159,11 +302,21 @@ export default function Chat() {
   }
 
   // ── Mode conversation ──
+  const lastAssistantIndex = messages.map((m) => m.role).lastIndexOf('assistant');
+
   return (
     <div className="chat">
       <div className="chat-messages">
         {messages.map((m, i) => (
-          <div key={i} className={`bubble ${m.role}`}>
+          <div
+            key={i}
+            className={`bubble ${m.role}`}
+            ref={i === lastAssistantIndex ? lastAssistantRef : undefined}
+          >
+            {m.image && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="bubble-photo" src={m.image} alt="Photo envoyée" />
+            )}
             {m.content}
           </div>
         ))}
@@ -176,7 +329,20 @@ export default function Chat() {
         )}
         <div ref={endRef} />
       </div>
+      {preview}
       {composer}
     </div>
   );
+}
+
+// Typage minimal de l'API de dictée du navigateur (absente des types TS de base).
+interface SpeechRecognitionLike {
+  lang: string;
+  interimResults: boolean;
+  continuous: boolean;
+  onresult: ((event: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null;
+  onend: (() => void) | null;
+  onerror: (() => void) | null;
+  start: () => void;
+  stop: () => void;
 }

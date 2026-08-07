@@ -23,11 +23,13 @@ export default function HomePage() {
     <>
       <section className="hero">
         <h1>
-          Une question <span className="accent">halal</span> ?<br />
-          Une réponse claire, tout de suite.
+          Ton IA <span className="accent">musulmane</span>.<br />
+          Des réponses qui respectent ta religion.
         </h1>
         <p className="hero-sub">
-          Additifs, produits, restaurants, voyage, Ramadan — HalalGPT répond en quelques secondes.
+          Nourriture, produits, Ramadan, voyage, vie de tous les jours… Pose n’importe quelle
+          question : HalalGPT répond toujours en tenant compte de l’islam. Par la voix 🎤, par
+          photo 📷 ou par écrit.
         </p>
       </section>
 
@@ -55,7 +57,10 @@ export default function HomePage() {
           <div className="step">
             <div className="step-emoji">💬</div>
             <h3>1. Pose ta question</h3>
-            <p>E120, Haribo, resto halal à Lyon, repas en avion… tout ce qui touche au halal.</p>
+            <p>
+              Écris, dicte 🎤 ou envoie la photo 📷 d’une étiquette. E120, Haribo, prières,
+              Ramadan, quotidien… tout, vraiment tout.
+            </p>
           </div>
           <div className="step">
             <div className="step-emoji">⚡️</div>

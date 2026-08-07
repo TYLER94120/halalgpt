@@ -4,4 +4,4 @@
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://halalgpt.fr';
 export const SITE_NAME = 'HalalGPT';
-export const SITE_TAGLINE = "L'IA qui répond à toutes vos questions halal";
+export const SITE_TAGLINE = "L'IA musulmane";

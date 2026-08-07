@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_NAME}`,
   },
   description:
-    'Posez votre question halal, obtenez une réponse claire et instantanée : additifs (E120, E471…), produits, restaurants halal, voyage, Ramadan.',
+    "HalalGPT, l'IA musulmane : pose n'importe quelle question, la réponse tient toujours compte de l'islam. Additifs (E120, E471…), produits, Ramadan, prière, voyage, vie quotidienne.",
   openGraph: {
     siteName: SITE_NAME,
     type: 'website',

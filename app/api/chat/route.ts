@@ -25,11 +25,13 @@ export const maxDuration = 60;
 // Redis est optionnel : sans variables d'environnement, les étages 2-3 cache
 // sont simplement sautés (l'étage 1 fonctionne toujours).
 
-const SYSTEM_PROMPT = `Tu es HalalGPT, l'assistant qui répond à toutes les questions halal : additifs alimentaires (E120, E471…), produits et marques, restaurants et voyage halal, Ramadan, pratique religieuse du voyageur.
+const SYSTEM_PROMPT = `Tu es HalalGPT, l'IA musulmane. Ton identité : tu réponds à TOUTE question — religion, nourriture, produits, voyage, Ramadan, vie quotidienne, santé, science, société — en tenant toujours compte de l'islam dans ta réponse. L'utilisateur te choisit précisément parce que tes réponses respectent et intègrent sa religion, contrairement aux IA généralistes.
 
 Règles :
 - Réponds en français (ou dans la langue de l'utilisateur), avec un ton chaleureux et le tutoiement.
 - Sois concis et direct : l'utilisateur veut un verdict clair, puis l'explication essentielle. Pas de disclaimers à rallonge.
+- Pour les sujets non religieux (science, santé, quotidien, conseils), donne d'abord une réponse utile et exacte, puis relie-la naturellement à la perspective islamique quand c'est pertinent (éthique, invocation adaptée, sagesse prophétique) — sans forcer artificiellement et sans inventer de règle religieuse qui n'existe pas.
+- Si l'utilisateur envoie une PHOTO (produit, liste d'ingrédients, plat, boisson, lieu) : identifie ce qui est visible (ingrédients, codes E, mentions, logos de certification) et donne le verdict halal correspondant. Si la liste d'ingrédients est illisible ou absente, dis-le et demande une photo nette de la liste d'ingrédients. Ne devine jamais un ingrédient que tu ne vois pas.
 - Sur les questions religieuses, présente l'avis majoritaire et mentionne brièvement les divergences notables entre écoles quand elles existent. Ne délivre jamais de fatwa personnelle : pour un cas particulier, oriente vers un savant ou un organisme de certification.
 - N'invente jamais de nom de restaurant, de certificat ou de composition de produit. En cas d'incertitude sur un produit précis, dis-le et conseille de vérifier l'étiquette ou la certification.
 - Pour les questions de lieux (restaurants, mosquées), donne des conseils de méthode et mentionne que l'app VoyagesHalal géolocalise les adresses halal vérifiées.
@@ -38,6 +40,16 @@ Règles :
 interface IncomingMessage {
   role: 'user' | 'assistant';
   content: string;
+  /** Photo de l'utilisateur (dataURL JPEG/PNG/WebP), analysée par l'IA. */
+  image?: string;
+}
+
+// Une photo doit être un dataURL image raisonnable (≈ 2 Mo max une fois encodé).
+const IMAGE_PATTERN = /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/;
+const IMAGE_MAX_CHARS = 2_800_000;
+
+function validImage(image: unknown): image is string {
+  return typeof image === 'string' && image.length <= IMAGE_MAX_CHARS && IMAGE_PATTERN.test(image);
 }
 
 // ─── Redis (optionnel) ────────────────────────────────────────────────────────
@@ -177,9 +189,20 @@ export async function POST(request: Request) {
   let incoming: IncomingMessage[];
   try {
     const body = (await request.json()) as { messages?: IncomingMessage[] };
-    incoming = (body.messages ?? []).filter(
-      (m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string'
-    );
+    incoming = (body.messages ?? [])
+      .filter(
+        (m) =>
+          (m.role === 'user' || m.role === 'assistant') &&
+          typeof m.content === 'string' &&
+          (m.content.trim() !== '' || validImage(m.image))
+      )
+      .map((m) => ({
+        role: m.role,
+        content: m.content,
+        // Seule une image valide, portée par le DERNIER message utilisateur,
+        // sera transmise à l'IA (voir plus bas) — le reste est ignoré.
+        ...(m.role === 'user' && validImage(m.image) ? { image: m.image } : {}),
+      }));
   } catch {
     return NextResponse.json({ error: 'Requête invalide' }, { status: 400 });
   }
@@ -188,7 +211,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'messages[] requis' }, { status: 400 });
   }
 
-  const lastQuestion = [...incoming].reverse().find((m) => m.role === 'user')?.content ?? '';
+  const lastUserMessage = [...incoming].reverse().find((m) => m.role === 'user');
+  const lastQuestion = lastUserMessage?.content ?? '';
+  const hasImage = Boolean(lastUserMessage?.image);
   // Seule la PREMIÈRE question d'une conversation est mise en cache : les
   // suivantes dépendent du contexte, on les laisse toujours à l'IA.
   const isFirstQuestion = incoming.filter((m) => m.role === 'user').length === 1;
@@ -199,9 +224,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ reply: FINANCE_REPLY, source: 'bloque' });
   }
 
-  if (isFirstQuestion) {
+  if (isFirstQuestion && lastQuestion.trim()) {
     await logQuestion(lastQuestion);
+  }
 
+  // Avec une photo, la question est unique : fiches et cache ne s'appliquent pas.
+  if (isFirstQuestion && !hasImage) {
     // Étage 1 — fiche locale en correspondance forte : zéro API
     const fiche = strongLocalMatch(lastQuestion);
     if (fiche) return NextResponse.json({ reply: fiche, source: 'fiche' });
@@ -235,7 +263,32 @@ export async function POST(request: Request) {
       betas: ['server-side-fallback-2026-07-01'],
       fallbacks: 'default',
       system: SYSTEM_PROMPT,
-      messages: incoming.slice(-20).map((m) => ({ role: m.role, content: m.content })),
+      messages: incoming.slice(-20).map((m, idx, arr) => {
+        // La photo n'est transmise que sur le dernier message : les tours
+        // suivants gardent le texte seul (économie de tokens).
+        if (m.image && idx === arr.length - 1 && m.role === 'user') {
+          const comma = m.image.indexOf(',');
+          const mediaType = m.image.slice(5, m.image.indexOf(';')) as
+            | 'image/jpeg'
+            | 'image/png'
+            | 'image/webp';
+          return {
+            role: m.role,
+            content: [
+              {
+                type: 'image' as const,
+                source: {
+                  type: 'base64' as const,
+                  media_type: mediaType,
+                  data: m.image.slice(comma + 1),
+                },
+              },
+              { type: 'text' as const, text: m.content || 'Analyse cette photo : est-ce halal ?' },
+            ],
+          };
+        }
+        return { role: m.role, content: m.content };
+      }),
     });
 
     if (response.stop_reason === 'refusal') {
@@ -249,7 +302,7 @@ export async function POST(request: Request) {
       .join('')
       .trim();
 
-    if (reply && isFirstQuestion) {
+    if (reply && isFirstQuestion && !hasImage) {
       const redis = getRedis();
       if (redis) {
         try {
