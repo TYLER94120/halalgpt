@@ -69,11 +69,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             personnelle, rapprochez-vous d’un savant ou d’un organisme de certification.
           </p>
           <p className="footer-note">
-            Un projet de la famille{' '}
+            La famille HalalGPT :{' '}
             <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
-              VoyagesHalal.fr
+              VoyagesHalal.fr 🗺
             </a>{' '}
-            🗺 — le guide du voyage halal
+            — le guide du voyage halal
+            <span aria-hidden> · </span>
+            <a href="https://halalcheck.fr" target="_blank" rel="noopener">
+              HalalCheck.fr ✓
+            </a>{' '}
+            — scanne tes courses, verdict halal immédiat
           </p>
         </footer>
         <Analytics />

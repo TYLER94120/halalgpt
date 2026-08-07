@@ -71,11 +71,15 @@ export default function HomePage() {
             <div className="step-emoji">🗺</div>
             <h3>3. Passe à l’action</h3>
             <p>
-              Restos, mosquées et hôtels halal vérifiés sur{' '}
+              Restos, mosquées et hôtels halal sur{' '}
               <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
                 VoyagesHalal.fr
-              </a>
-              , le guide voyage de la famille HalalGPT.
+              </a>{' '}
+              — et en magasin, scanne le code-barres avec{' '}
+              <a href="https://halalcheck.fr" target="_blank" rel="noopener">
+                HalalCheck.fr
+              </a>{' '}
+              ✓. La même famille.
             </p>
           </div>
         </div>
