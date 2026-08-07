@@ -256,7 +256,7 @@ export default function Chat() {
         className="chat-input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder={recording ? 'Je t’écoute… 🎙' : 'Pose ta question…'}
+        placeholder={recording ? 'Je t’écoute… 🎙' : 'Ta question…'}
         aria-label="Votre question"
         autoFocus={!hasConversation}
       />
