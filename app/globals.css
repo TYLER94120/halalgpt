@@ -686,3 +686,66 @@ a {
 .filter-chip.active .filter-count {
   background: rgba(11, 26, 15, 0.16);
 }
+
+/* ─── Partage (chat + fiches) ── */
+
+.bubble-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.bubble-block .bubble.user {
+  align-self: flex-end;
+}
+
+.bubble-block .bubble.assistant {
+  align-self: flex-start;
+}
+
+.bubble-share {
+  align-self: flex-start;
+  margin: 6px 0 2px;
+  min-height: 44px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--or-doux);
+  background: transparent;
+  color: var(--creme);
+  opacity: 0.8;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.bubble-share:hover {
+  opacity: 1;
+  border-color: var(--or);
+}
+
+.share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 6px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid var(--or-doux);
+  background: var(--foret);
+  color: var(--creme);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.share-btn:hover {
+  border-color: var(--or);
+}

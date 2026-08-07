@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import ShareBar from '@/components/ShareBar';
 import { getQuestion, QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
 
@@ -73,6 +74,8 @@ export default function QuestionPage({ params }: Props) {
         ))}
       </div>
 
+      <ShareBar question={qa.question} verdict={qa.verdict} url={`${SITE_URL}/q/${qa.slug}`} />
+
       <div className="cta-box">
         <p>Une autre question halal ? L’IA te répond en quelques secondes 👇</p>
         <Link href="/" className="cta-button">
@@ -84,6 +87,15 @@ export default function QuestionPage({ params }: Props) {
             <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
               VoyagesHalal.fr
             </a>
+          </p>
+        )}
+        {(qa.category === 'Additifs' || qa.category === 'Produits' || qa.category === 'Alimentation') && (
+          <p className="cta-secondary">
+            🛒 Au supermarché ? Scanne le code-barres du produit :{' '}
+            <a href="https://halalcheck.fr" target="_blank" rel="noopener">
+              HalalCheck.fr
+            </a>{' '}
+            ✓ — verdict immédiat en rayon
           </p>
         )}
       </div>

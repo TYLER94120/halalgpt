@@ -140,6 +140,20 @@ export default function Chat() {
 
   const pickPhoto = () => fileRef.current?.click();
 
+  // Partage d'une réponse : natif sur mobile, WhatsApp en secours.
+  const shareAnswer = async (text: string) => {
+    const payload = `${text}\n\n🌙 Réponse de HalalGPT, l’IA musulmane — https://halalgpt.fr`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'HalalGPT', text: payload });
+      } catch {
+        /* partage annulé */
+      }
+    } else {
+      window.open(`https://wa.me/?text=${encodeURIComponent(payload)}`, '_blank', 'noopener');
+    }
+  };
+
   const onPhotoSelected = async (file: File | undefined) => {
     if (!file) return;
     try {
@@ -308,16 +322,27 @@ export default function Chat() {
     <div className="chat">
       <div className="chat-messages">
         {messages.map((m, i) => (
-          <div
-            key={i}
-            className={`bubble ${m.role}`}
-            ref={i === lastAssistantIndex ? lastAssistantRef : undefined}
-          >
-            {m.image && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img className="bubble-photo" src={m.image} alt="Photo envoyée" />
+          <div key={i} className="bubble-block">
+            <div
+              className={`bubble ${m.role}`}
+              ref={i === lastAssistantIndex ? lastAssistantRef : undefined}
+            >
+              {m.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className="bubble-photo" src={m.image} alt="Photo envoyée" />
+              )}
+              {m.content}
+            </div>
+            {m.role === 'assistant' && (
+              <button
+                type="button"
+                className="bubble-share"
+                onClick={() => shareAnswer(m.content)}
+                aria-label="Partager cette réponse"
+              >
+                📤 Partager
+              </button>
             )}
-            {m.content}
           </div>
         ))}
         {loading && (
