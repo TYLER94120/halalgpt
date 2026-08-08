@@ -1405,3 +1405,83 @@ a {
 .breadcrumb a:hover {
   border-bottom-color: currentColor;
 }
+
+/* ─── La découverte du jour ─────────────────────────────────────────────────
+   Elle doit se lire d'un coup d'œil et donner envie d'être racontée. Le fait
+   est en gros, le verdict est le lien : on n'explique pas avant d'avoir
+   étonné. */
+
+.decouverte {
+  border: 1px solid var(--or-doux);
+  border-radius: 18px;
+  padding: 26px 24px 22px;
+  background: linear-gradient(160deg, rgba(27, 67, 50, 0.28), rgba(11, 26, 15, 0.1));
+}
+
+.decouverte-sur {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--or);
+}
+
+.decouverte-fait {
+  margin: 0 0 20px;
+  font-family: var(--font-titre, inherit);
+  font-size: 1.6rem;
+  line-height: 1.28;
+  font-weight: 600;
+}
+
+.decouverte-bas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.decouverte-lien {
+  font-size: 1rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--or-doux);
+  padding-bottom: 2px;
+}
+
+.decouverte-lien:hover {
+  border-bottom-color: var(--or);
+}
+
+.surprise-bouton {
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--or);
+  background: transparent;
+  color: var(--or);
+  font: inherit;
+  font-size: 0.98rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.surprise-bouton:active {
+  background: var(--or);
+  color: var(--nuit);
+}
+
+@media (max-width: 420px) {
+  .decouverte-fait {
+    font-size: 1.38rem;
+  }
+
+  .decouverte-bas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .surprise-bouton {
+    width: 100%;
+  }
+}

@@ -1,7 +1,14 @@
 import Link from 'next/link';
 
 import Chat from '@/components/Chat';
-import { QUESTIONS } from '@/lib/questions';
+import Surprise from '@/components/Surprise';
+import { QUESTIONS, getQuestion } from '@/lib/questions';
+import { surpriseDuJour } from '@/lib/surprises';
+
+// La decouverte change de quantieme en quantieme. La page reste servie en
+// statique — donc instantanee — et se refabrique toutes les heures : sans
+// cela, elle serait figee sur le jour de la mise en ligne.
+export const revalidate = 3600;
 
 const POPULAR_SLUGS = [
   'e120-halal',
@@ -19,6 +26,9 @@ export default function HomePage() {
     .map((slug) => QUESTIONS.find((q) => q.slug === slug))
     .filter((q): q is NonNullable<typeof q> => Boolean(q));
 
+  const jour = surpriseDuJour();
+  const decouverte = getQuestion(jour.slug);
+
   return (
     <>
       <section className="hero">
@@ -34,6 +44,25 @@ export default function HomePage() {
       </section>
 
       <Chat />
+
+      {/* La decouverte du jour. Elle est posee APRES le chat, jamais avant :
+          la page d'accueil doit rester vide au premier regard, c'est la regle
+          de Mohamed et elle ne bouge pas. Ce qui ramene quelqu'un sur une IA
+          de reponse, ce n'est pas une serie de jours — personne n'a une
+          question halal quotidienne — c'est d'avoir appris ici quelque chose
+          qu'il ignorait, et d'avoir eu envie de le raconter. */}
+      {decouverte && (
+        <section className="section decouverte">
+          <p className="decouverte-sur">La découverte du jour</p>
+          <p className="decouverte-fait">{jour.fait}</p>
+          <div className="decouverte-bas">
+            <Link href={`/q/${decouverte.slug}`} className="decouverte-lien">
+              {decouverte.verdict} — voir pourquoi →
+            </Link>
+            <Surprise exclure={decouverte.slug} />
+          </div>
+        </section>
+      )}
 
       <section className="section">
         <h2>
