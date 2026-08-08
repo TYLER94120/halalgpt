@@ -21,6 +21,45 @@ interface Suggestion {
   verdict: string;
 }
 
+// ─── Mémoire de la conversation ───────────────────────────────────────────────
+// Le chat gardait tout en mémoire vive : fermer l'onglet effaçait l'échange.
+// On garde désormais le fil 7 jours dans le navigateur (rien n'est envoyé à un
+// serveur). Les photos ne sont PAS conservées : trop lourdes pour le stockage
+// local, et l'échange reste lisible sans elles.
+const THREAD_KEY = 'halalgpt:thread';
+const THREAD_MAX_AGE = 7 * 24 * 60 * 60 * 1000;
+const THREAD_MAX_MESSAGES = 20;
+
+function loadThread(): Message[] {
+  try {
+    const raw = localStorage.getItem(THREAD_KEY);
+    if (!raw) return [];
+    const saved = JSON.parse(raw) as { at?: number; messages?: Message[] };
+    if (!saved.at || Date.now() - saved.at > THREAD_MAX_AGE) {
+      localStorage.removeItem(THREAD_KEY);
+      return [];
+    }
+    return Array.isArray(saved.messages) ? saved.messages : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveThread(messages: Message[]): void {
+  try {
+    if (messages.length === 0) {
+      localStorage.removeItem(THREAD_KEY);
+      return;
+    }
+    const light = messages
+      .slice(-THREAD_MAX_MESSAGES)
+      .map(({ role, content }) => ({ role, content }));
+    localStorage.setItem(THREAD_KEY, JSON.stringify({ at: Date.now(), messages: light }));
+  } catch {
+    /* stockage plein ou navigation privée : la conversation reste en mémoire vive */
+  }
+}
+
 // Redimensionne une photo côté téléphone (max 1024px, JPEG) : envoi léger,
 // analyse IA moins chère, et on reste sous les limites de la requête.
 async function compressImage(file: File): Promise<string> {
@@ -55,6 +94,7 @@ export default function Chat() {
   const [pendingImage, setPendingImage] = useState<string | null>(null);
   const [recording, setRecording] = useState(false);
   const [speechOK, setSpeechOK] = useState(false);
+  const [savedThread, setSavedThread] = useState<Message[]>([]);
   const endRef = useRef<HTMLDivElement>(null);
   const lastAssistantRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -79,7 +119,28 @@ export default function Chat() {
   useEffect(() => {
     const w = window as unknown as Record<string, unknown>;
     setSpeechOK(Boolean(w.SpeechRecognition || w.webkitSpeechRecognition));
+    setSavedThread(loadThread());
   }, []);
+
+  // On enregistre le fil à chaque échange terminé. La page d'accueil reste
+  // volontairement vierge au chargement (zéro friction) : la conversation
+  // précédente se reprend d'un geste, elle ne s'impose jamais.
+  useEffect(() => {
+    if (messages.length > 0) saveThread(messages);
+  }, [messages]);
+
+  const resumeThread = () => {
+    setMessages(savedThread);
+    setSavedThread([]);
+  };
+
+  const newConversation = () => {
+    setMessages([]);
+    setSavedThread([]);
+    setInput('');
+    setPendingImage(null);
+    saveThread([]);
+  };
 
   // « La réponse avant la question » : dès 2 lettres tapées, les fiches
   // correspondantes apparaissent — instantané, zéro appel IA.
@@ -304,6 +365,11 @@ export default function Chat() {
           </div>
         ) : (
           <div className="chat-suggestions">
+            {savedThread.length > 0 && (
+              <button type="button" className="chip chip-reprendre" onClick={resumeThread}>
+                ↩︎ Reprendre ma conversation
+              </button>
+            )}
             {SUGGESTIONS.map((s) => (
               <button key={s} type="button" className="chip" onClick={() => send(s)}>
                 {s}
@@ -320,6 +386,11 @@ export default function Chat() {
 
   return (
     <div className="chat">
+      <div className="chat-topbar">
+        <button type="button" className="chat-new" onClick={newConversation}>
+          ✨ Nouvelle question
+        </button>
+      </div>
       <div className="chat-messages">
         {messages.map((m, i) => (
           <div key={i} className="bubble-block">

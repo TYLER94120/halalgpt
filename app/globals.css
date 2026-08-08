@@ -750,3 +750,37 @@ a {
 .share-btn:hover {
   border-color: var(--or);
 }
+
+/* ─── Mémoire de conversation ── */
+
+.chip-reprendre {
+  background: var(--or);
+  color: var(--nuit);
+  border-color: var(--or);
+  font-weight: 700;
+}
+
+.chat-topbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px 0;
+}
+
+.chat-new {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--or-doux);
+  background: transparent;
+  color: var(--creme);
+  opacity: 0.85;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.chat-new:hover {
+  opacity: 1;
+  border-color: var(--or);
+}
