@@ -2489,6 +2489,77 @@ export const QUESTIONS: QA[] = [
     category: 'Prière',
     related: ['vernis-ongles-priere', 'priere-travail', 'horaires-priere-voyage'],
   },
+  // ─── PRIÈRE & VIE GÉNÉRALE (IA musulmane généralisée) ───────────────────────
+  {
+    slug: 'priere-istikhara',
+    question: 'Comment faire la prière d’istikhara ?',
+    verdict: '✅ Sunna recommandée — 2 unités + invocation',
+    short:
+      'Deux unités de prière surérogatoire, puis l’invocation d’istikhara. Elle se fait pour toute décision licite, et la réponse vient par les circonstances — pas forcément par un rêve.',
+    answer: [
+      'La marche à suivre est simple : tu pries deux unités (rak‘a) de prière surérogatoire, en dehors des horaires déconseillés, puis — une fois le salut prononcé — tu récites l’invocation d’istikhara rapportée par Boukhari, en nommant ton affaire au moment prévu. Le Prophète ﷺ l’enseignait à ses compagnons « comme il leur enseignait une sourate du Coran », signe de son importance.',
+      'L’invocation dit en substance : « Ô Allah, je Te demande de m’assister par Ta science, je Te demande capacité par Ta puissance… Si Tu sais que cette affaire est un bien pour moi dans ma religion, ma vie et ma fin, décrète-la pour moi et facilite-la. Si Tu sais qu’elle est un mal pour moi, éloigne-la de moi et éloigne-m’en, et décrète pour moi le bien où qu’il soit. » L’apprendre par cœur en arabe est l’idéal ; en attendant, la comprendre et la dire dans sa langue reste valable pour beaucoup de savants.',
+      'Trois précisions qui règlent 90 % des questions : elle se fait pour toute décision licite (mariage, travail, déménagement, études) — pas pour choisir entre le licite et l’illicite ; le rêve n’est PAS la réponse attendue — la réponse vient par la facilitation ou le blocage des circonstances et par l’apaisement du cœur ; et on peut la répéter plusieurs jours si le cœur reste partagé. Après l’istikhara, tu consultes des gens de confiance (istishâra) et tu décides : la confiance en Allah n’annule pas la réflexion.',
+    ],
+    category: 'Prière',
+    related: ['rattraper-prieres-ratees', 'priere-travail', 'invocation-voyage'],
+  },
+  {
+    slug: 'se-convertir-islam',
+    question: 'Comment se convertir à l’islam ?',
+    verdict: '📖 Deux phrases suffisent',
+    short:
+      'Prononcer la double attestation de foi (chahada) avec conviction suffit : on devient musulman à cet instant. Le reste — grande ablution, prières, apprentissage — vient ensuite, progressivement.',
+    answer: [
+      'La conversion tient en une phrase prononcée avec sincérité : « Ash-hadu an lâ ilâha illa-Llâh, wa ash-hadu anna Muhammadan rasûlu-Llâh » — j’atteste qu’il n’y a de divinité qu’Allah, et j’atteste que Muhammad est Son messager. Il n’y a ni intermédiaire obligatoire, ni cérémonie imposée, ni papier indispensable : à cet instant précis, la personne est musulmane, et tous ses péchés antérieurs sont effacés selon les textes.',
+      'Ce qui suit immédiatement : la grande ablution (ghusl) est recommandée — un lavage complet du corps qui marque le nouveau départ, avis majoritaire —, puis on apprend à faire les ablutions et la prière, la première obligation quotidienne. Personne n’attend d’un nouveau musulman qu’il maîtrise tout en une semaine : la règle constante des savants est la progressivité. Commence par la prière et l’essentiel de la foi, le reste s’apprend avec le temps.',
+      'Côté pratique en France : se présenter à une mosquée permet d’obtenir un certificat de conversion — inutile pour la validité devant Allah, mais demandé pour certaines démarches (mariage religieux, visa pour l’Omra ou le Hajj). Beaucoup de mosquées proposent aussi un accompagnement pour les nouveaux convertis. Un conseil que répètent tous ceux qui sont passés par là : trouve une communauté bienveillante et une personne de confiance à qui poser tes questions — la solitude est le vrai obstacle des premiers mois, pas la difficulté de la religion.',
+    ],
+    category: 'Pratique',
+    related: ['ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition'],
+  },
+  {
+    slug: 'ghusl-grande-ablution',
+    question: 'Comment faire le ghusl (grande ablution) ?',
+    verdict: '📖 Laver tout le corps avec intention',
+    short:
+      'L’essentiel : l’intention, puis faire parvenir l’eau à tout le corps, cheveux compris. La version complète suit la sunna : mains, parties intimes, ablutions, puis le corps.',
+    answer: [
+      'Le ghusl est obligatoire après un rapport conjugal ou une éjaculation, après les règles et les lochies (suites de couches), et il est vivement recommandé le vendredi, pour les deux Aïds et à la conversion. Tant qu’il n’est pas fait, la prière et la récitation du Coran restent suspendues — d’où l’importance de bien le connaître.',
+      'Le strict minimum qui rend le ghusl valide : formuler l’intention dans le cœur, puis faire parvenir l’eau à l’ensemble du corps, sans oublier la racine des cheveux, le nombril, l’arrière des oreilles et entre les orteils. Rien d’autre n’est indispensable — une douche complète avec intention suffit techniquement.',
+      'La forme complète, celle de la sunna : intention, laver les mains, laver les parties intimes, faire des ablutions complètes comme pour la prière, verser l’eau trois fois sur la tête en frottant le cuir chevelu, puis laver tout le corps en commençant par le côté droit. Deux précisions utiles : les femmes n’ont pas l’obligation de défaire leurs tresses pour le ghusl d’impureté majeure si l’eau atteint la racine (hadith d’Oumm Salama) ; et vernis, faux ongles ou extensions imperméables doivent être retirés, puisqu’ils empêchent l’eau d’atteindre la peau. Sans eau ou en cas de maladie, le tayammum (ablution sèche) prend le relais.',
+    ],
+    category: 'Prière',
+    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere'],
+  },
+  {
+    slug: 'psy-therapie-islam',
+    question: 'Consulter un psychologue est-il halal ?',
+    verdict: '✅ Permis et encouragé',
+    short:
+      'Se soigner est encouragé en islam, la santé mentale comprise. Consulter un psychologue est permis — la seule vigilance porte sur des conseils contraires à la religion.',
+    answer: [
+      'Oui, et les savants contemporains sont très largement d’accord. Le principe est posé par un hadith connu : « Ô serviteurs d’Allah, soignez-vous, car Allah n’a pas fait descendre de maladie sans faire descendre son remède » (Tirmidhi, Abou Dawoud). Rien n’exclut la souffrance psychique de cette règle : dépression, anxiété, deuil, traumatisme, troubles obsessionnels se soignent, comme un diabète ou une fracture.',
+      'À dissiper d’emblée : consulter n’est pas un manque de foi. Le Prophète ﷺ lui-même a connu l’année de la tristesse ; le prophète Ya‘qûb a pleuré jusqu’à en perdre la vue ; les grands savants ont écrit sur la mélancolie. Souffrir n’est pas un péché, et refuser un soin par orgueil spirituel n’est pas de la piété. La prière, le Coran et le dhikr apaisent le cœur — ils ne remplacent pas un traitement, ils l’accompagnent.',
+      'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition'],
+  },
+  {
+    slug: 'mauvais-oeil-protection',
+    question: 'Le mauvais œil existe-t-il ? Comment s’en protéger ?',
+    verdict: '📖 Réel — protection par le Coran et les invocations',
+    short:
+      'Le mauvais œil est une réalité affirmée par des hadiths authentiques. La protection se fait par la roqya légiférée : Coran, invocations prophétiques — pas par les amulettes ni les talismans.',
+    answer: [
+      'Le mauvais œil (‘ayn) est une réalité en islam : « Le mauvais œil est réel » (Boukhari, Mouslim), et un autre hadith précise qu’il « fait entrer l’homme dans la tombe ». Il naît souvent d’un regard d’admiration ou d’envie, parfois sans mauvaise intention de la personne qui regarde. Le réflexe préventif recommandé : dire « mâ shâ’a-Llâh, tabâraka-Llâh » quand une chose te plaît chez autrui, et invoquer la bénédiction plutôt que d’exprimer une admiration nue.',
+      'La protection légiférée est simple et gratuite : les invocations du matin et du soir, la sourate al-Fâtiha, le verset du Trône (âyat al-Kursî) avant de dormir, les trois dernières sourates (al-Ikhlâs, al-Falaq, an-Nâs) soufflées dans les mains puis passées sur le corps — comme le faisait le Prophète ﷺ —, et l’invocation qu’il récitait pour protéger ses petits-fils. La roqya, c’est cela : la récitation du Coran sur soi ou sur un proche. Elle est à la portée de tous, sans intermédiaire.',
+      'Ce qui est en revanche écarté par les savants : les amulettes, talismans, fils rouges, « mains de Fatma » portées comme protection, et surtout les voyants, marabouts et désenvoûteurs qui monnaient leurs services — un domaine où l’escroquerie et le charlatanisme prospèrent sur la détresse des gens. Le hadith est sévère envers celui qui consulte un devin. Enfin, une règle d’équilibre : ne pas tout attribuer au mauvais œil. Fatigue, dépression, échecs répétés ont souvent des causes médicales ou matérielles bien réelles — on invoque ET on consulte un médecin.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['psy-therapie-islam', 'priere-istikhara', 'halal-definition'],
+  },
 ];
 
 export function getQuestion(slug: string): QA | undefined {
