@@ -1383,3 +1383,25 @@ a {
   line-height: 1.6;
   opacity: 0.72;
 }
+
+/* La date de mise à jour : sur un sujet où l'on engage sa responsabilité, elle
+   compte autant pour le lecteur que pour Google. Discrète, jamais mise en
+   avant — elle rassure, elle ne se vante pas. */
+.article-date {
+  margin: -6px 0 20px;
+  font-size: 0.88rem;
+  opacity: 0.62;
+}
+
+.article-date time {
+  font-variant-numeric: tabular-nums;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.breadcrumb a:hover {
+  border-bottom-color: currentColor;
+}

@@ -43,7 +43,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : par précaution, la grande majorité des consommateurs musulmans l’évitent. Cherchez les alternatives colorées avec du E162 (betterave) ou du E163 (anthocyanes), parfaitement halal.',
     ],
     category: 'Additifs',
-    related: ['e441-gelatine-halal', 'e471-halal', 'gelatine-halal'],
+    related: ['e441-gelatine-halal', 'e471-halal', 'gelatine-halal', 'e250-nitrite-halal', 'e466-halal', 'e476-halal'],
   },
   {
     slug: 'e441-gelatine-halal',
@@ -71,7 +71,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : si l’emballage indique « origine végétale » ou porte un logo halal, pas de souci. Sinon, contactez la marque ou choisissez un produit certifié. Beaucoup de marques répondent en 24h sur leurs réseaux sociaux.',
     ],
     category: 'Additifs',
-    related: ['e422-glycerine-halal', 'e441-gelatine-halal', 'e120-halal'],
+    related: ['e422-glycerine-halal', 'e441-gelatine-halal', 'e120-halal', 'e466-halal', 'e476-halal', 'e1105-lysozyme-halal'],
   },
   {
     slug: 'e422-glycerine-halal',
@@ -101,7 +101,7 @@ export const QUESTIONS: QA[] = [
       'Alternatives sans souci : pectine de fruits (E440), agar-agar (E406), carraghénanes (E407), gomme de guar (E412) — tous végétaux. Et de plus en plus de marques proposent des gammes « gélatine halal » certifiées, y compris pour les gélules de compléments alimentaires.',
     ],
     category: 'Additifs',
-    related: ['e441-gelatine-halal', 'haribo-halal', 'marshmallow-halal', 'collagene-halal', 'medicaments-gelules-halal'],
+    related: ['e441-gelatine-halal', 'haribo-halal', 'marshmallow-halal', 'collagene-halal', 'medicaments-gelules-halal', 'e250-nitrite-halal'],
   },
   {
     slug: 'fromage-presure-halal',
@@ -115,7 +115,7 @@ export const QUESTIONS: QA[] = [
       'Les plus prudents préfèrent les fromages à présure microbienne — c’est le cas de la majorité des fromages industriels (vérifiez la mention « coagulant microbien ») — ou les fromages certifiés halal, de plus en plus courants. Les deux démarches sont respectables.',
     ],
     category: 'Additifs',
-    related: ['vinaigre-halal', 'e471-halal'],
+    related: ['vinaigre-halal', 'e471-halal', 'e1105-lysozyme-halal'],
   },
   {
     slug: 'vinaigre-halal',
@@ -147,7 +147,7 @@ export const QUESTIONS: QA[] = [
       'Et si tu veux le goût sans l’enquête : les épiceries orientales et les rayons halal proposent désormais des dizaines de marques de bonbons entièrement certifiés, gélatine bovine rituelle ou pectine de fruits. Le choix est bien plus large qu’il y a dix ans.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal'],
+    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal', 'milka-halal'],
   },
   {
     slug: 'mms-halal',
@@ -175,7 +175,7 @@ export const QUESTIONS: QA[] = [
       'À noter : dans certains pays musulmans, les mêmes produits Ferrero sont vendus avec certification halal locale. Si vous voyagez au Maroc, en Turquie ou aux Émirats, vous trouverez des Kinder certifiés. Vérifiez la composition exacte du produit local, elle peut varier d’un pays à l’autre.',
     ],
     category: 'Produits',
-    related: ['mms-halal', 'haribo-halal', 'gelatine-halal'],
+    related: ['mms-halal', 'haribo-halal', 'gelatine-halal', 'milka-halal', 'mentos-halal', 'lu-prince-halal'],
   },
   {
     slug: 'coca-cola-halal',
@@ -189,7 +189,7 @@ export const QUESTIONS: QA[] = [
       'Le Coca-Cola est d’ailleurs officiellement certifié halal dans plusieurs pays musulmans (Arabie saoudite, Émirats, Malaisie…) où il est produit localement. La grande majorité des savants et des consommateurs le considèrent donc permis.',
     ],
     category: 'Produits',
-    related: ['red-bull-halal', 'levure-biere-halal'],
+    related: ['red-bull-halal', 'levure-biere-halal', 'mentos-halal', 'lu-prince-halal', 'danette-halal', 'starbucks-halal'],
   },
   {
     slug: 'red-bull-halal',
@@ -233,7 +233,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : privilégiez les boucheries halal et les rayons certifiés (AVS, ARGML, Achahada… les organismes n’ont pas tous le même niveau d’exigence — renseignez-vous). Pour le poisson, aucune certification n’est nécessaire.',
     ],
     category: 'Alimentation',
-    related: ['poisson-fruits-de-mer-halal', 'restaurant-halal-paris', 'cuisine-alcool-halal'],
+    related: ['poisson-fruits-de-mer-halal', 'restaurant-halal-paris', 'cuisine-alcool-halal', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal'],
   },
   {
     slug: 'poisson-fruits-de-mer-halal',
@@ -247,7 +247,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : si vous suivez l’école hanafite, évitez crevettes et fruits de mer ; sinon, ils sont permis pour la majorité. Le thon, saumon, cabillaud, sardine… ne posent aucun problème pour personne.',
     ],
     category: 'Alimentation',
-    related: ['viande-supermarche-halal', 'restaurant-halal-paris'],
+    related: ['viande-supermarche-halal', 'restaurant-halal-paris', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal'],
   },
   {
     slug: 'cuisine-alcool-halal',
@@ -514,7 +514,7 @@ export const QUESTIONS: QA[] = [
       'La bonne nouvelle pour les amateurs de poulet frit en France : les alternatives halal ne manquent pas — c’est même l’un des segments les plus dynamiques de la restauration halal française, avec des enseignes qui affichent leur certification en caisse. La carte VoyagesHalal t’en géolocalise près de chez toi.',
     ],
     category: 'Produits',
-    related: ['mcdo-halal', 'burger-king-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'viande-supermarche-halal'],
+    related: ['mcdo-halal', 'burger-king-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'viande-supermarche-halal', 'danette-halal'],
   },
   {
     slug: 'chewing-gum-halal',
@@ -704,7 +704,7 @@ export const QUESTIONS: QA[] = [
       'Conseils pratiques : traversez le Bosphore en ferry public (le plus beau « restaurant avec vue » de la ville coûte le prix d’un ticket), prévoyez les prières dans les grandes mosquées ouvertes aux visiteurs, et changez vos euros en ville plutôt qu’à l’aéroport. HalalScore VoyagesHalal : ✦ 8.9.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-dubai', 'voyage-halal-marrakech', 'repas-halal-avion'],
+    related: ['voyage-halal-dubai', 'voyage-halal-marrakech', 'repas-halal-avion', 'voyage-halal-singapour', 'voyage-halal-maldives', 'voyage-halal-new-york'],
   },
   {
     slug: 'voyage-halal-dubai',
@@ -718,7 +718,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : visitez la mosquée de Jumeirah (ouverte aux visiteurs avec visite guidée), prévoyez l’hiver (novembre-mars) pour un climat parfait, et le vendredi matin les horaires s’adaptent à la prière. HalalScore VoyagesHalal : ✦ 9.0.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-doha', 'voyage-halal-istanbul', 'repas-halal-avion'],
+    related: ['voyage-halal-doha', 'voyage-halal-istanbul', 'repas-halal-avion', 'voyage-halal-le-caire', 'voyage-halal-barcelone', 'voyage-halal-sarajevo'],
   },
   {
     slug: 'voyage-halal-kuala-lumpur',
@@ -732,7 +732,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : KL est aussi la porte d’entrée idéale vers Langkawi et les îles ; la saison sèche va de mai à juillet ; et le taux de change rend la gastronomie incroyablement accessible. HalalScore VoyagesHalal : ✦ 9.1.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-bali', 'voyage-halal-doha', 'pays-voyage-halal'],
+    related: ['voyage-halal-bali', 'voyage-halal-doha', 'pays-voyage-halal', 'voyage-halal-le-caire', 'voyage-halal-barcelone', 'voyage-halal-sarajevo'],
   },
   {
     slug: 'voyage-halal-marrakech',
@@ -760,7 +760,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : l’Eurostar met Londres à 2h15 de Paris, les grandes mosquées (East London Mosque, Regent’s Park) accueillent chaleureusement les visiteurs, et les musées nationaux gratuits en font un city-trip familial idéal. HalalScore VoyagesHalal : ✦ 8.0.',
     ],
     category: 'Destinations',
-    related: ['restaurant-halal-paris', 'voyage-halal-istanbul', 'repas-halal-avion'],
+    related: ['restaurant-halal-paris', 'voyage-halal-istanbul', 'repas-halal-avion', 'voyage-halal-singapour', 'voyage-halal-maldives', 'voyage-halal-new-york'],
   },
   {
     slug: 'voyage-halal-tokyo',
@@ -1880,7 +1880,7 @@ export const QUESTIONS: QA[] = [
       'Vigilance aussi sur les produits qui en cachent : chocolats à la guimauve, biscuits type « têtes au chocolat », céréales avec marshmallows, barbe à papa industrielle… La gélatine se glisse partout où ça mousse et rebondit — l’étiquette la mentionne toujours.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'haribo-halal', 'dragibus-halal'],
+    related: ['gelatine-halal', 'haribo-halal', 'dragibus-halal', 'starbucks-halal'],
   },
   {
     slug: 'lu-prince-halal',
