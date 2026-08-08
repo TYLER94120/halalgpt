@@ -49,6 +49,7 @@ function sujet(question: string): string {
 export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
   const [slug, setSlug] = useState(fiches[0]?.slug ?? '');
   const [durees, setDurees] = useState<number[]>(DUREES_PAR_DEFAUT);
+  const [accroche, setAccroche] = useState('Tu en consommes peut-être chaque semaine…');
   const [enLecture, setEnLecture] = useState(false);
   const [temps, setTemps] = useState(0);
 
@@ -57,6 +58,8 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
     const params = new URLSearchParams(window.location.search);
     const demande = params.get('slug');
     if (demande && fiches.some((f) => f.slug === demande)) setSlug(demande);
+    const h = params.get('h');
+    if (h) setAccroche(h);
     const t = params.get('t');
     if (t) {
       const valeurs = t.split(',').map(Number).filter((n) => Number.isFinite(n) && n > 0);
@@ -141,7 +144,7 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
 
         {etape === 'accroche' && (
           <div key="a" className="studio-bloc studio-apparait">
-            <p className="studio-sur">Tu en consommes peut-être chaque semaine…</p>
+            <p className="studio-sur">{accroche}</p>
             <h2 className="studio-titre">
               <Mots texte={sujet(fiche.question)} depart={260} />
             </h2>
