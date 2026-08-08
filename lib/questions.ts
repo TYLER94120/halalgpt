@@ -96,10 +96,12 @@ export const QUESTIONS: QA[] = [
     answer: [
       'La gélatine est partout : bonbons, marshmallows, mousses, gélules de médicaments, yaourts, guimauves. Elle est extraite du collagène de la peau et des os d’animaux — le plus souvent du porc (la moins chère) ou du bœuf.',
       'La règle : gélatine porcine, haram à l’unanimité. Gélatine bovine, halal seulement si l’animal a été abattu selon le rite — ce qui n’est pas le cas de la production industrielle standard. Gélatine de poisson, halal. Un débat existe sur la transformation (istihala) qui purifierait la matière, mais la position majoritaire des organismes de certification reste l’exigence d’une source halal.',
-      'Alternatives sans souci : pectine de fruits (E440), agar-agar (E406), carraghénanes (E407) — tous végétaux. Et de plus en plus de marques proposent des gammes « gélatine halal » certifiées.',
+      'Où elle se cache sans dire son nom : sous le code E441 sur les étiquettes, sous les mots « gélifiant » ou « stabilisant » dans certaines listes, dans les gélules de médicaments et de compléments, dans les mousses au chocolat et desserts aériens, dans les marshmallows et guimauves, dans les yaourts brassés de certaines marques, et même dans des jus de fruits clarifiés ou des vins (pour la filtration). Le réflexe : lire jusqu’au bout de la liste, la gélatine y figure toujours quand elle est présente — la loi européenne l’impose.',
+      'Comment savoir si une gélatine est bovine ou porcine ? En France, l’étiquette n’a pas l’obligation de préciser l’espèce. Trois moyens fiables : la mention explicite « gélatine bovine » ou « gélatine de poisson », un logo de certification halal, ou un message au fabricant (la plupart répondent en quelques jours). Sans l’un des trois, la prudence domine : la gélatine porcine reste la moins chère et donc la plus répandue dans l’industrie européenne.',
+      'Alternatives sans souci : pectine de fruits (E440), agar-agar (E406), carraghénanes (E407), gomme de guar (E412) — tous végétaux. Et de plus en plus de marques proposent des gammes « gélatine halal » certifiées, y compris pour les gélules de compléments alimentaires.',
     ],
     category: 'Additifs',
-    related: ['e441-gelatine-halal', 'haribo-halal', 'medicaments-gelules-halal'],
+    related: ['e441-gelatine-halal', 'haribo-halal', 'marshmallow-halal', 'collagene-halal', 'medicaments-gelules-halal'],
   },
   {
     slug: 'fromage-presure-halal',
@@ -140,10 +142,12 @@ export const QUESTIONS: QA[] = [
     answer: [
       'Mauvaise nouvelle : les Haribo classiques vendus en grande surface en France (Dragibus, Fraises Tagada, ours d’or…) contiennent de la gélatine de porc. Ils ne sont donc pas halal.',
       'Bonne nouvelle : Haribo possède une usine en Turquie qui produit des gammes 100 % halal, à base de gélatine bovine certifiée. On les trouve dans les épiceries orientales et certains sites spécialisés, avec le logo halal sur le paquet.',
-      'Le réflexe : vérifier le paquet. « Fabriqué en Turquie » + logo halal = OK. Sinon, regardez la liste d’ingrédients : « gélatine » sans précision en France signifie presque toujours gélatine de porc. Il existe aussi de nombreuses marques alternatives 100 % halal en magasin oriental.',
+      'L’exception que presque personne ne connaît : tous les Haribo ne contiennent PAS de gélatine. Les Dragibus, par exemple, tiennent leur texture de l’amidon et des gommes — leur composition publiée en France n’affiche pas de gélatine. Même chose pour certaines réglisses. Autrement dit, le réflexe « Haribo = interdit » fait renoncer à des bonbons qui ne posaient pas ce problème : c’est bien l’étiquette, produit par produit, qui décide.',
+      'Le réflexe complet, dans l’ordre : 1) cherche le mot « gélatine » dans la liste d’ingrédients — en France, sans précision, c’est presque toujours du porc ; 2) si le paquet indique « fabriqué en Turquie » avec un logo de certification, c’est bon ; 3) regarde aussi les colorants (le E120 vient d’un insecte) et l’enrobage brillant (E904, sécrétion d’insecte, discuté — contrairement au E903 et au E414 qui sont végétaux).',
+      'Et si tu veux le goût sans l’enquête : les épiceries orientales et les rayons halal proposent désormais des dizaines de marques de bonbons entièrement certifiés, gélatine bovine rituelle ou pectine de fruits. Le choix est bien plus large qu’il y a dix ans.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'mms-halal', 'kinder-halal'],
+    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal'],
   },
   {
     slug: 'mms-halal',
@@ -472,10 +476,12 @@ export const QUESTIONS: QA[] = [
     answer: [
       'La composition du Nutella vendu en France est courte : sucre, huile de palme, noisettes, cacao, lait écrémé en poudre, lécithines (soja ou tournesol), vanilline. Aucune gélatine, aucun alcool, aucun ingrédient carné.',
       'Ferrero ne certifie pas le Nutella halal en Europe — comme pour les Kinder, c’est donc une question de niveau d’exigence : la grande majorité des consommateurs musulmans le consomment sur la base de sa composition, les plus stricts préfèrent une pâte à tartiner certifiée.',
-      'À noter : dans plusieurs pays musulmans (Turquie, Maroc, Golfe), le Nutella produit localement porte une certification halal officielle. Même recette, tampon en plus.',
+      'Les deux points que les gens vérifient toujours, et la réponse à chacun. La lécithine (E322) : elle est de soja ou de tournesol, donc végétale — aucun problème. La vanilline : c’est un arôme de synthèse, pas de l’extrait de vanille alcoolisé ; là encore, rien à signaler. Quant à la rumeur d’alcool dans le Nutella, elle ne repose sur rien : Ferrero l’a démentie publiquement à plusieurs reprises, et aucun alcool ne figure dans la liste d’ingrédients — s’il y en avait, la loi européenne imposerait de l’indiquer.',
+      'À noter : dans plusieurs pays musulmans (Turquie, Maroc, Golfe), le Nutella produit localement porte une certification halal officielle. Même recette, tampon en plus — on le trouve en épicerie orientale en France, pour ceux qui veulent la garantie écrite.',
+      'Attention en revanche aux cousins de la marque : certains chocolats Ferrero de fêtes contiennent bel et bien de l’alcool (les Mon Chéri, par exemple, à la liqueur de cerise). Une composition rassurante sur un produit ne dit jamais rien du produit voisin : c’est toujours l’étiquette du paquet que tu tiens qui tranche.',
     ],
     category: 'Produits',
-    related: ['kinder-halal', 'lecithine-e322-halal', 'mms-halal'],
+    related: ['kinder-halal', 'lecithine-e322-halal', 'ferrero-rocher-halal', 'chocolat-liqueur-halal', 'mms-halal'],
   },
   {
     slug: 'mcdo-halal',
@@ -484,12 +490,15 @@ export const QUESTIONS: QA[] = [
     short:
       'En France, la viande servie chez McDonald’s n’est pas halal. Dans les pays musulmans en revanche, McDo est certifié halal.',
     answer: [
-      'La position de McDonald’s France est claire et publique : aucune viande halal dans ses restaurants. Burgers au bœuf comme au poulet proviennent de filières standard — ils ne sont donc pas halal.',
-      'Ce qui reste possible en France pour beaucoup : le Filet-O-Fish (poisson) et les frites (huile végétale), selon votre niveau d’exigence sur les cuissons partagées et les sauces. Les plus stricts s’abstiennent complètement.',
-      'En voyage, la situation change du tout au tout : au Maroc, en Turquie, aux Émirats, en Malaisie… McDonald’s est intégralement certifié halal. Le Big Mac de Marrakech est halal, celui de Paris ne l’est pas.',
+      'La position de McDonald’s France est claire et publique : aucune viande halal dans ses restaurants. Burgers au bœuf comme au poulet proviennent de filières standard — ils ne sont donc pas halal. Cette réponse n’a pas changé depuis les années 2000, malgré les rumeurs qui reviennent régulièrement.',
+      'D’où vient la confusion ? De deux choses. D’abord parce que McDonald’s EST halal dans de nombreux pays (voir plus bas), et que des vidéos tournées à l’étranger circulent sans préciser le pays. Ensuite parce qu’au début des années 2000, une poignée de restaurants français ont testé une offre halal — l’expérience a été arrêtée. Aujourd’hui, aucun McDonald’s de France ne sert de viande halal, quelle que soit la ville ou le quartier.',
+      'Ce qui reste possible en France pour beaucoup : le Filet-O-Fish (poisson), les frites (huile végétale en France), les salades sans viande, les desserts et boissons. Deux réserves à connaître avant de te décider : les frites sont cuites dans des friteuses dédiées mais dans une cuisine où l’on manipule du porc (bacon) ; et le Filet-O-Fish est cuit dans sa propre friteuse, mais assemblé sur les mêmes plans de travail. Ceux qui suivent l’avis le plus large consomment ces produits, les plus prudents s’abstiennent complètement du lieu.',
+      'PAYS PAR PAYS — c’est là que tout change. Certifié halal intégralement : Maroc, Algérie, Tunisie, Égypte, Turquie, Émirats arabes unis, Arabie saoudite, Qatar, Koweït, Jordanie, Liban, Malaisie, Indonésie, Brunei, Pakistan. Le logo de certification est affiché en vitrine ou sur le set de plateau. NON halal : France, Belgique, Suisse, Espagne, Italie, Allemagne, Portugal, Pays-Bas. Situation mixte : au Royaume-Uni, McDonald’s n’est PAS halal (contrairement à une rumeur tenace) ; en Afrique du Sud et à Singapour, une partie du réseau l’est. Le réflexe voyage : ne jamais supposer d’un pays à l’autre — on cherche le logo ou on demande.',
+      'Et les autres enseignes en France ? KFC, Burger King, Quick, Subway et Domino’s ne servent pas non plus de viande halal en France. Les seules chaînes halal du pays sont O’Tacos et les enseignes de restauration rapide indépendantes. Si tu cherches un équivalent burger halal, les enseignes locales certifiées se sont multipliées dans toutes les grandes villes — et la certification y est généralement affichée en caisse.',
+      'À retenir en une phrase : en France, non ; au Maghreb, en Turquie et dans le Golfe, oui ; au Royaume-Uni, non. Et en cas de doute dans un pays inconnu, demande le certificat plutôt que de te fier à l’ambiance du quartier.',
     ],
     category: 'Produits',
-    related: ['kfc-halal', 'poisson-fruits-de-mer-halal', 'restaurant-halal-paris'],
+    related: ['kfc-halal', 'burger-king-halal', 'quick-halal', 'subway-halal', 'o-tacos-halal', 'restaurant-halal-paris'],
   },
   {
     slug: 'kfc-halal',
@@ -500,10 +509,12 @@ export const QUESTIONS: QA[] = [
     answer: [
       'KFC France ne propose pas de poulet halal : la marque s’approvisionne en filière standard et l’indique dans sa FAQ officielle. Les rumeurs de « KFC halal » en France concernent des enseignes concurrentes qui imitent le concept, pas KFC lui-même.',
       'Au Royaume-Uni, une centaine de restaurants KFC sont officiellement halal (liste publiée par la marque) — c’est de là que vient la confusion. Et dans les pays musulmans (Maroc, Égypte, Golfe, Asie du Sud-Est), KFC est intégralement halal.',
-      'La bonne nouvelle pour les amateurs de poulet frit en France : les alternatives halal ne manquent pas — c’est même l’un des segments les plus dynamiques de la restauration halal française. La carte VoyagesHalal vous en géolocalise près de chez vous.',
+      'Le cas britannique en détail, puisqu’il alimente toutes les rumeurs : KFC UK publie la liste de ses restaurants halal (environ 130 sur plus de 900), concentrés dans les villes à forte population musulmane. Ces restaurants affichent la certification en vitrine et ne servent ni bacon ni produits porcins. Les autres KFC du Royaume-Uni ne sont pas halal. Une adresse trouvée sur internet ne suffit donc pas : on vérifie la liste officielle ou l’affichage sur place.',
+      'Et le reste du menu en France ? Les frites, les potatoes et les desserts ne contiennent pas de viande, mais toute la cuisine tourne autour du poulet non rituel et des huiles partagées. Ceux qui suivent l’avis large y prennent un accompagnement, les plus prudents évitent le lieu entièrement — la question n’est plus l’ingrédient mais l’environnement.',
+      'La bonne nouvelle pour les amateurs de poulet frit en France : les alternatives halal ne manquent pas — c’est même l’un des segments les plus dynamiques de la restauration halal française, avec des enseignes qui affichent leur certification en caisse. La carte VoyagesHalal t’en géolocalise près de chez toi.',
     ],
     category: 'Produits',
-    related: ['mcdo-halal', 'restaurant-halal-paris', 'viande-supermarche-halal'],
+    related: ['mcdo-halal', 'burger-king-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'viande-supermarche-halal'],
   },
   {
     slug: 'chewing-gum-halal',
