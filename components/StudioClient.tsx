@@ -143,11 +143,13 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
         <div className="studio-progression" style={{ width: `${progression}%` }} />
 
         {etape === 'accroche' && (
-          <div key="a" className="studio-bloc studio-apparait">
-            <p className="studio-sur">{accroche}</p>
-            <h2 className="studio-titre">
-              <Mots texte={sujet(fiche.question)} depart={260} />
-            </h2>
+          <div key="a" className="studio-bloc studio-ouverture">
+            {/* Les 2 premières secondes décident de tout : l'accroche est déjà
+                là à la première image, elle frappe, et un éclat doré balaie
+                l'écran. Aucun fondu, aucune attente. */}
+            <div className="studio-eclair" aria-hidden />
+            <h2 className="studio-hook">{accroche}</h2>
+            <p className="studio-sujet">{sujet(fiche.question)}</p>
           </div>
         )}
 
