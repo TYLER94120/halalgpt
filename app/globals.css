@@ -1035,3 +1035,43 @@ a {
 .studio-url {
   text-shadow: 0 0 26px rgba(201, 168, 76, 0.55);
 }
+
+/* Révélation mot par mot — le regard suit, l'attention tient */
+.studio-mot {
+  display: inline-block;
+  opacity: 0;
+  animation: studio-mot 380ms cubic-bezier(0.2, 1.3, 0.4, 1) both;
+}
+
+@keyframes studio-mot {
+  from { opacity: 0; transform: translateY(26px) scale(0.94); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+/* Éclat doré au moment du verdict */
+.studio-verdict.studio-tampon::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 26px;
+  border: 3px solid var(--or);
+  opacity: 0;
+  animation: studio-eclat 900ms ease-out 240ms both;
+}
+
+.studio-verdict { position: relative; }
+
+@keyframes studio-eclat {
+  0% { opacity: 0.9; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.22); }
+}
+
+/* Battement du fond au rythme du duff */
+.studio-zoom .studio-halo {
+  animation: studio-respire 15s ease-in-out both, studio-battement 2s ease-in-out infinite;
+}
+
+@keyframes studio-battement {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}

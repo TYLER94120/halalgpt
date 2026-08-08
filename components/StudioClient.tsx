@@ -21,6 +21,23 @@ interface Fiche {
 const NOMS = ['accroche', 'suspense', 'verdict', 'explication', 'signature'] as const;
 const DUREES_PAR_DEFAUT = [3000, 3000, 4000, 3500, 1500];
 
+/** Découpe un titre en mots animés un par un : le regard suit, l'attention tient. */
+function Mots({ texte, depart = 0 }: { texte: string; depart?: number }) {
+  return (
+    <>
+      {texte.split(' ').map((mot, i) => (
+        <span
+          key={`${mot}-${i}`}
+          className="studio-mot"
+          style={{ animationDelay: `${depart + i * 110}ms` }}
+        >
+          {mot}{' '}
+        </span>
+      ))}
+    </>
+  );
+}
+
 /** « Le E120 (carmin) est-il halal ? » → « Le E120 (carmin) » */
 function sujet(question: string): string {
   return question
@@ -125,13 +142,17 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
         {etape === 'accroche' && (
           <div key="a" className="studio-bloc studio-apparait">
             <p className="studio-sur">Tu en consommes peut-être chaque semaine…</p>
-            <h2 className="studio-titre">{sujet(fiche.question)}</h2>
+            <h2 className="studio-titre">
+              <Mots texte={sujet(fiche.question)} depart={260} />
+            </h2>
           </div>
         )}
 
         {etape === 'suspense' && (
           <div key="s" className="studio-bloc studio-apparait">
-            <h2 className="studio-titre">{fiche.question}</h2>
+            <h2 className="studio-titre">
+              <Mots texte={fiche.question} />
+            </h2>
             <div className="studio-points">
               <span />
               <span />
@@ -149,7 +170,9 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
 
         {etape === 'explication' && (
           <div key="e" className="studio-bloc studio-apparait">
-            <p className="studio-explication">{fiche.short}</p>
+            <p className="studio-explication">
+              <Mots texte={fiche.short} />
+            </p>
           </div>
         )}
 
