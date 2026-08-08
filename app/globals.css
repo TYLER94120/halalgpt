@@ -975,3 +975,63 @@ a {
   letter-spacing: 0.12em;
   color: rgba(253, 250, 243, 0.45);
 }
+
+/* ─── Studio : effets visuels ── */
+
+.studio-zoom .studio-motif,
+.studio-zoom .studio-halo {
+  animation: studio-respire 15s ease-in-out both;
+}
+
+@keyframes studio-respire {
+  from { transform: scale(1); }
+  to { transform: scale(1.14); }
+}
+
+/* Motif géométrique islamique, très discret, en rotation lente */
+.studio-motif {
+  position: absolute;
+  inset: -20%;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a84c' stroke-width='1.6'%3E%3Cpath d='M60 8 L112 60 L60 112 L8 60 Z'/%3E%3Cpath d='M23 23 L97 23 L97 97 L23 97 Z'/%3E%3Ccircle cx='60' cy='60' r='30'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  animation: studio-tourne 90s linear infinite;
+}
+
+@keyframes studio-tourne {
+  to { transform: rotate(360deg); }
+}
+
+/* Halo doré derrière le texte : donne du relief au fond */
+.studio-halo {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  width: 130%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -30%);
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.16) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.studio-bloc { position: relative; z-index: 2; }
+
+/* Le verdict tombe comme un tampon */
+.studio-tampon {
+  animation: studio-tampon 520ms cubic-bezier(0.2, 1.4, 0.4, 1) both;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes studio-tampon {
+  0% { opacity: 0; transform: scale(1.5) rotate(-4deg); }
+  70% { opacity: 1; transform: scale(0.96) rotate(0.6deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+.studio-titre {
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+}
+
+.studio-url {
+  text-shadow: 0 0 26px rgba(201, 168, 76, 0.55);
+}

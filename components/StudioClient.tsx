@@ -3,10 +3,12 @@
 import { useEffect, useMemo, useState } from 'react';
 
 // ─── Studio vidéo HalalGPT ────────────────────────────────────────────────────
-// Une fiche → une séquence verticale animée de 15 secondes, prête à être
-// capturée avec l'enregistreur d'écran du téléphone.
-// Déroulé : accroche (0-3s) · suspense (3-6s) · verdict (6-10s) ·
-// explication (10-13s) · adresse du site (13-15s).
+// Une fiche → une séquence verticale animée, prête à être capturée avec
+// l'enregistreur d'écran du téléphone (ou filmée automatiquement côté serveur).
+//
+// Déroulé : accroche · suspense · verdict · explication · signature.
+// Les durées sont réglables par l'adresse (?t=3000,3000,4000,3500,1500) afin de
+// coller exactement à une narration enregistrée. Le sujet aussi (?slug=...).
 
 interface Fiche {
   slug: string;
@@ -16,15 +18,8 @@ interface Fiche {
   category: string;
 }
 
-const ETAPES = [
-  { debut: 0, fin: 3000, nom: 'accroche' },
-  { debut: 3000, fin: 6000, nom: 'suspense' },
-  { debut: 6000, fin: 10000, nom: 'verdict' },
-  { debut: 10000, fin: 13500, nom: 'explication' },
-  { debut: 13500, fin: 15000, nom: 'signature' },
-] as const;
-
-const DUREE = 15000;
+const NOMS = ['accroche', 'suspense', 'verdict', 'explication', 'signature'] as const;
+const DUREES_PAR_DEFAUT = [3000, 3000, 4000, 3500, 1500];
 
 /** « Le E120 (carmin) est-il halal ? » → « Le E120 (carmin) » */
 function sujet(question: string): string {
@@ -36,9 +31,32 @@ function sujet(question: string): string {
 
 export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
   const [slug, setSlug] = useState(fiches[0]?.slug ?? '');
+  const [durees, setDurees] = useState<number[]>(DUREES_PAR_DEFAUT);
   const [enLecture, setEnLecture] = useState(false);
   const [temps, setTemps] = useState(0);
 
+  // Réglages transmis par l'adresse (utilisés par la production automatisée).
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const demande = params.get('slug');
+    if (demande && fiches.some((f) => f.slug === demande)) setSlug(demande);
+    const t = params.get('t');
+    if (t) {
+      const valeurs = t.split(',').map(Number).filter((n) => Number.isFinite(n) && n > 0);
+      if (valeurs.length === NOMS.length) setDurees(valeurs);
+    }
+  }, [fiches]);
+
+  const etapes = useMemo(() => {
+    let curseur = 0;
+    return NOMS.map((nom, i) => {
+      const debut = curseur;
+      curseur += durees[i];
+      return { nom, debut, fin: curseur };
+    });
+  }, [durees]);
+
+  const total = etapes[etapes.length - 1]?.fin ?? 15000;
   const fiche = useMemo(() => fiches.find((f) => f.slug === slug) ?? fiches[0], [fiches, slug]);
 
   useEffect(() => {
@@ -46,24 +64,24 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
     const depart = Date.now();
     const timer = setInterval(() => {
       const ecoule = Date.now() - depart;
-      if (ecoule >= DUREE) {
-        setTemps(DUREE);
+      if (ecoule >= total) {
+        setTemps(total);
         setEnLecture(false);
         clearInterval(timer);
       } else {
         setTemps(ecoule);
       }
-    }, 50);
+    }, 40);
     return () => clearInterval(timer);
-  }, [enLecture]);
+  }, [enLecture, total]);
 
   const lancer = () => {
     setTemps(0);
     setEnLecture(true);
   };
 
-  const etape = ETAPES.find((e) => temps >= e.debut && temps < e.fin)?.nom ?? 'accroche';
-  const progression = Math.min(100, (temps / DUREE) * 100);
+  const etape = etapes.find((e) => temps >= e.debut && temps < e.fin)?.nom ?? 'accroche';
+  const progression = Math.min(100, (temps / total) * 100);
 
   if (!fiche) return null;
 
@@ -72,7 +90,7 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
       <div className="studio-reglages">
         <h1>🎬 Studio vidéo</h1>
         <p className="studio-aide">
-          Choisis une fiche, lance la séquence, et enregistre ton écran (15 secondes).
+          Choisis une fiche, lance la séquence, et enregistre ton écran.
           Sur iPhone : Centre de contrôle → Enregistrement. Sur Android : Enregistreur d’écran.
         </p>
         <label className="studio-label" htmlFor="fiche">
@@ -95,22 +113,24 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
           ))}
         </select>
         <button type="button" className="studio-lancer" onClick={lancer} disabled={enLecture}>
-          {enLecture ? '● Enregistrement en cours…' : '▶ Lancer la séquence (15 s)'}
+          {enLecture ? '● Séquence en cours…' : '▶ Lancer la séquence'}
         </button>
       </div>
 
-      <div className="studio-scene">
+      <div className={`studio-scene ${enLecture ? 'studio-zoom' : ''}`}>
+        <div className="studio-motif" aria-hidden />
+        <div className="studio-halo" aria-hidden />
         <div className="studio-progression" style={{ width: `${progression}%` }} />
 
         {etape === 'accroche' && (
-          <div className="studio-bloc studio-apparait">
-            <p className="studio-sur">Tu en manges peut-être toutes les semaines…</p>
+          <div key="a" className="studio-bloc studio-apparait">
+            <p className="studio-sur">Tu en consommes peut-être chaque semaine…</p>
             <h2 className="studio-titre">{sujet(fiche.question)}</h2>
           </div>
         )}
 
         {etape === 'suspense' && (
-          <div className="studio-bloc studio-apparait">
+          <div key="s" className="studio-bloc studio-apparait">
             <h2 className="studio-titre">{fiche.question}</h2>
             <div className="studio-points">
               <span />
@@ -121,20 +141,20 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
         )}
 
         {etape === 'verdict' && (
-          <div className="studio-bloc studio-apparait">
+          <div key="v" className="studio-bloc studio-apparait">
             <p className="studio-sur">La réponse</p>
-            <div className="studio-verdict">{fiche.verdict}</div>
+            <div className="studio-verdict studio-tampon">{fiche.verdict}</div>
           </div>
         )}
 
         {etape === 'explication' && (
-          <div className="studio-bloc studio-apparait">
+          <div key="e" className="studio-bloc studio-apparait">
             <p className="studio-explication">{fiche.short}</p>
           </div>
         )}
 
         {etape === 'signature' && (
-          <div className="studio-bloc studio-apparait studio-signature">
+          <div key="g" className="studio-bloc studio-apparait studio-signature">
             <div className="studio-logo">
               🌙 Halal<span>GPT</span>
             </div>
