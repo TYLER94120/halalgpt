@@ -31,7 +31,7 @@ function Mots({ texte, depart = 0 }: { texte: string; depart?: number }) {
           className="studio-mot"
           style={{ animationDelay: `${depart + i * 110}ms` }}
         >
-          {mot}{' '}
+          {mot}
         </span>
       ))}
     </>
