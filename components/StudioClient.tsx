@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 
 // ─── Studio vidéo HalalGPT ────────────────────────────────────────────────────
 // Une fiche → une séquence verticale animée, prête à être capturée avec
@@ -18,21 +18,37 @@ interface Fiche {
   category: string;
 }
 
-const NOMS = ['accroche', 'suspense', 'verdict', 'explication', 'signature'] as const;
-const DUREES_PAR_DEFAUT = [3000, 3000, 4000, 3500, 1500];
+const NOMS = ['accroche', 'question', 'verdict', 'detail', 'detail2', 'signature'] as const;
+// Minutage cale sur une pulsation de 550 ms (le duff) : 5-4-6-5-5-3 temps.
+const TEMPS = 550;
+const DUREES_PAR_DEFAUT = [5, 5, 6, 5, 5, 3].map((t) => t * TEMPS);
+
+/** Coupe le resume en deux ecrans courts : un ecran fixe trop longtemps perd le regard. */
+function deuxTemps(texte: string): [string, string] {
+  const phrases = texte.split(/(?<=[.!?])\s+/);
+  if (phrases.length >= 2) {
+    const moitie = Math.ceil(phrases.length / 2);
+    return [phrases.slice(0, moitie).join(' '), phrases.slice(moitie).join(' ')];
+  }
+  const mots = texte.split(' ');
+  const coupe = Math.ceil(mots.length / 2);
+  return [mots.slice(0, coupe).join(' '), mots.slice(coupe).join(' ')];
+}
 
 /** Découpe un titre en mots animés un par un : le regard suit, l'attention tient. */
 function Mots({ texte, depart = 0 }: { texte: string; depart?: number }) {
   return (
     <>
       {texte.split(' ').map((mot, i) => (
-        <span
-          key={`${mot}-${i}`}
-          className="studio-mot"
-          style={{ animationDelay: `${depart + i * 110}ms` }}
-        >
-          {mot}
-        </span>
+        <Fragment key={`${mot}-${i}`}>
+          {/* L'espace se place ENTRE les blocs : c'est lui qui autorise le
+              retour à la ligne. Sans lui, une suite d'inline-block ne peut pas
+              se couper et le texte déborde de l'écran. */}
+          {i > 0 && ' '}
+          <span className="studio-mot" style={{ animationDelay: `${depart + i * 55}ms` }}>
+            {mot}
+          </span>
+        </Fragment>
       ))}
     </>
   );
@@ -137,7 +153,7 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
         </button>
       </div>
 
-      <div className={`studio-scene ${enLecture ? 'studio-zoom' : ''}`}>
+      <div className={`studio-scene ${enLecture ? 'studio-zoom studio-pulse' : ''}`}>
         <div className="studio-motif" aria-hidden />
         <div className="studio-halo" aria-hidden />
         <div className="studio-progression" style={{ width: `${progression}%` }} />
@@ -153,7 +169,7 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
           </div>
         )}
 
-        {etape === 'suspense' && (
+        {etape === 'question' && (
           <div key="s" className="studio-bloc studio-apparait">
             <h2 className="studio-titre">
               <Mots texte={fiche.question} />
@@ -173,10 +189,18 @@ export default function StudioClient({ fiches }: { fiches: Fiche[] }) {
           </div>
         )}
 
-        {etape === 'explication' && (
-          <div key="e" className="studio-bloc studio-apparait">
+        {etape === 'detail' && (
+          <div key="e1" className="studio-bloc studio-apparait">
             <p className="studio-explication">
-              <Mots texte={fiche.short} />
+              <Mots texte={deuxTemps(fiche.short)[0]} />
+            </p>
+          </div>
+        )}
+
+        {etape === 'detail2' && (
+          <div key="e2" className="studio-bloc studio-apparait">
+            <p className="studio-explication">
+              <Mots texte={deuxTemps(fiche.short)[1]} />
             </p>
           </div>
         )}
