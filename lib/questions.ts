@@ -352,6 +352,62 @@ export const QUESTIONS: QA[] = [
 
   // ─── PRATIQUE ───────────────────────────────────────────────────────────────
   {
+    slug: 'priere-voiture',
+    question: 'Peut-on prier dans la voiture ?',
+    verdict: '⚠️ Surérogatoire oui — obligatoire seulement si l’on ne peut pas s’arrêter',
+    short:
+      'La prière surérogatoire se fait en voiture, sur le modèle du Prophète ﷺ qui priait sur sa monture. La prière obligatoire demande de s’arrêter : elle se fait debout et orientée, sauf empêchement réel.',
+    answer: [
+      'La distinction que font les savants est simple, et elle règle presque tous les cas : la prière SURÉROGATOIRE (nafl) se fait sans difficulté en voiture, y compris en roulant et sans se soucier de la direction. C’est rapporté de façon établie : le Prophète ﷺ priait les prières surérogatoires sur sa monture, dans la direction où elle allait. La voiture d’aujourd’hui joue le rôle de la monture d’hier, et l’analogie est admise par la grande majorité.',
+      'La prière OBLIGATOIRE, elle, demande trois choses que la voiture en marche ne permet pas : se tenir debout, s’orienter vers la qibla, et se prosterner au sol. La règle retenue par la majorité est donc de s’arrêter — une aire d’autoroute, une station-service, un parking. Et pour le voyageur, il existe une facilité qui évite bien des angoisses : le regroupement des prières (Dhuhr avec Asr, Maghrib avec Isha), qui permet de n’avoir à s’arrêter que deux fois sur une longue route.',
+      'Restent les cas d’empêchement réel, et ils sont pris au sérieux : impossibilité de s’arrêter en sécurité (autoroute sans aire avant la fin du temps, tempête de neige, danger), passager d’un car ou d’un train qui ne s’arrête pas, ou état de santé qui interdit de descendre. Dans ces situations, les savants admettent de prier assis, en s’orientant vers la qibla au moment du takbir si c’est possible, et en inclinant la tête pour l’inclinaison et la prosternation — la prosternation étant plus basse que l’inclinaison. Une prière imparfaite dans son temps vaut mieux qu’une prière manquée : ne conduis jamais en priant, et pour ta situation précise, demande à un savant ou à l’imam de ta mosquée.',
+    ],
+    category: 'Prière',
+    related: ['priere-avion', 'horaires-priere-voyage', 'priere-travail'],
+  },
+  {
+    slug: 'retard-fajr-reveil',
+    question: 'Je me suis réveillé après l’heure du Fajr : que faire ?',
+    verdict: '✅ Tu la pries dès le réveil — pas de péché si c’est le sommeil',
+    short:
+      'Le hadith est explicite : celui qui dort ou oublie une prière la fait quand il s’en souvient, et il n’y a pas d’autre expiation que celle-là. Le péché vient de la négligence, pas du sommeil.',
+    answer: [
+      'C’est l’une des rares questions où la réponse est nette et rassurante. Le Prophète ﷺ a dit : « Celui qui oublie une prière ou dort au point de la manquer, qu’il la prie dès qu’il s’en souvient ; il n’y a pas d’autre expiation que cela » (rapporté par Boukhari et Mouslim). Tu te réveilles, tu fais tes ablutions, et tu pries le Fajr — même s’il est huit heures, même s’il est midi. La prière est valide et complète.',
+      'Deux précisions qui reviennent souvent. D’abord, on prie IMMÉDIATEMENT au réveil : l’interdiction habituelle de prier au moment du lever du soleil ne concerne pas les prières de rattrapage, c’est la position de la majorité. Ensuite, on la prie telle qu’elle est — deux unités pour le Fajr, à voix haute ou basse selon l’usage, sans rien y ajouter en compensation. Beaucoup de savants recommandent aussi de faire les deux unités surérogatoires du Fajr avant, comme on l’aurait fait à l’heure.',
+      'Là où la responsabilité existe, c’est en amont. Le sommeil n’est pas un péché ; la négligence en est un. Se coucher tard en sachant qu’on ne se lèvera pas, ne mettre aucun réveil, l’éteindre et se rendormir sciemment : c’est cela que les savants distinguent du sommeil profond de quelqu’un qui a pris ses précautions. Les remèdes sont concrets et connus : dormir plus tôt, poser le téléphone loin du lit pour devoir se lever, demander à quelqu’un d’appeler, et pour les périodes difficiles, un second réveil décalé de dix minutes. Si le retard devient une habitude qui pèse, parles-en à un imam plutôt que de laisser la culpabilité s’installer.',
+    ],
+    category: 'Prière',
+    related: ['rattraper-prieres-ratees', 'priere-travail', 'priere-istikhara'],
+  },
+  {
+    slug: 'tayammum-sans-eau',
+    question: 'Comment faire ses ablutions sans eau (tayammum) ?',
+    verdict: '✅ Permis quand l’eau manque ou nuirait',
+    short:
+      'Le tayammum remplace les ablutions — et même la grande ablution — quand il n’y a pas d’eau ou qu’on ne peut pas l’utiliser. On frappe une surface propre de la terre, puis on essuie le visage et les mains.',
+    answer: [
+      'La permission vient directement du Coran : « Si vous ne trouvez pas d’eau, recourez à une terre pure et passez-en sur vos visages et vos mains » (Coran 5:6, et dans un sens proche 4:43). Les situations visées sont plus larges qu’on ne le croit : absence d’eau, mais aussi eau en quantité juste suffisante pour boire, maladie ou blessure qu’elle aggraverait, froid extrême sans moyen de se réchauffer, ou impossibilité d’y accéder. Le tayammum remplace alors les petites ablutions, et il remplace aussi la grande ablution.',
+      'La méthode retenue par la majorité tient en quatre gestes : l’intention, une frappe des deux paumes sur une surface propre de la terre, l’essuyage du visage, puis l’essuyage des mains. Sur deux points, les écoles divergent réellement, et il faut le dire plutôt que de trancher : l’étendue de l’essuyage des mains — jusqu’aux poignets pour la majorité, jusqu’aux coudes chez les hanafites et les malikites — et le nombre de frappes, une seule pour beaucoup, deux pour d’autres. Suis l’usage de ton école ou de ta mosquée ; les deux pratiques sont défendues par des savants.',
+      'Quelques points pratiques. La surface : terre, sable, pierre, mur non peint, poussière déposée — la condition d’une poussière visible fait elle-même l’objet d’avis différents. Le tayammum s’annule par ce qui annule les ablutions, et surtout dès que l’eau redevient disponible et utilisable. Enfin, ce n’est pas une solution de confort : quelqu’un qui a de l’eau à quelques pas ne s’en dispense pas. En cas de blessure ou de plâtre, une autre voie existe — l’essuyage sur le pansement — et c’est à un savant qu’il faut poser la question de ta situation exacte.',
+    ],
+    category: 'Pratique',
+    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'priere-avion'],
+  },
+  {
+    slug: 'serrer-la-main-islam',
+    question: 'Serrer la main à une personne du sexe opposé, est-ce permis ?',
+    verdict: '⚠️ Majorité : non entre non-mahram — avis minoritaires en cas de contrainte',
+    short:
+      'Entre hommes, ou entre femmes, la poignée de main est une belle pratique. Entre un homme et une femme qui ne sont pas proches parents, la majorité des savants s’y opposent — et il existe des façons courtoises de décliner.',
+    answer: [
+      'Commençons par ce qui ne fait pas débat : entre deux hommes, ou entre deux femmes, se serrer la main est recommandé et fait partie des belles manières du salut en islam. La question ne se pose qu’entre un homme et une femme qui ne sont pas mahram — c’est-à-dire hors des liens de parenté proche qui rendent le mariage impossible (parents, enfants, frères et sœurs, grands-parents, oncles et tantes, et par alliance).',
+      'La position de la majorité des savants est de s’en abstenir. Ils s’appuient notamment sur ce que rapporte Aïcha à propos du serment d’allégeance des femmes : la main du Prophète ﷺ n’a jamais touché celle d’une femme qui ne lui était pas permise, il recevait leur engagement par la parole (Boukhari, Mouslim). Une position minoritaire, défendue par certains savants contemporains, admet la poignée de main lorsqu’un refus entraînerait un préjudice sérieux, ou en l’absence de tout désir — par exemple avec une personne très âgée. Ce sont des avis existants, pas une permission générale, et nous ne tranchons pas ici : pour ta situation, la bonne adresse est un savant ou l’imam de ta mosquée.',
+      'Reste le plus utile au quotidien, en France : comment décliner sans blesser. Ce qui fonctionne le mieux tient en trois secondes — devancer le geste plutôt que le refuser : sourire franchement, poser la main sur le cœur en inclinant légèrement la tête, et dire bonjour avec chaleur. Une phrase simple suffit si l’on demande : « je ne serre pas la main, c’est par respect, sans aucune froideur ». Dans un cadre professionnel, faire ce geste dès l’entrée dans la pièce et pour tout le monde évite qu’il soit perçu comme dirigé contre quelqu’un. Ce qui heurte n’est presque jamais le refus lui-même : c’est la main laissée en suspens.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['psy-therapie-islam', 'anniversaire-halal', 'souhaiter-noel-halal'],
+  },
+  {
     slug: 'ramadan-voyage-jeune',
     question: 'Peut-on ne pas jeûner en voyage pendant le Ramadan ?',
     verdict: '🌙 Oui, avec rattrapage',
@@ -363,7 +419,7 @@ export const QUESTIONS: QA[] = [
       'Conseils pratiques si vous jeûnez en voyage : suivez les horaires du lieu où vous vous trouvez (pas ceux de départ), gardez dattes et eau dans le sac pour un iftar en déplacement, et anticipez les vols longs — en avion, on rompt le jeûne quand on voit le soleil se coucher depuis l’avion.',
     ],
     category: 'Pratique',
-    related: ['horaires-priere-voyage', 'repas-halal-avion'],
+    related: ['horaires-priere-voyage', 'repas-halal-avion', 'tayammum-sans-eau'],
   },
   {
     slug: 'horaires-priere-voyage',
@@ -377,7 +433,7 @@ export const QUESTIONS: QA[] = [
       'Pensez aussi aux salles de prière : la plupart des grands aéroports (Istanbul, Dubaï, Kuala Lumpur, mais aussi Roissy) en ont une, souvent indiquée « Prayer room ». Un tapis de poche pliable dans le sac règle tous les autres cas.',
     ],
     category: 'Pratique',
-    related: ['ramadan-voyage-jeune', 'pays-voyage-halal'],
+    related: ['ramadan-voyage-jeune', 'pays-voyage-halal', 'tayammum-sans-eau'],
   },
 
   // ─── ADDITIFS (suite) ───────────────────────────────────────────────────────
@@ -2344,7 +2400,7 @@ export const QUESTIONS: QA[] = [
       'En pratique, la ligne de partage passe souvent par le contenu : un dîner familial sobre trouve beaucoup de défenseurs ; ce qui accompagne parfois les fêtes (mixité débridée, alcool, dépenses folles) est problématique pour tout le monde. Comme souvent : renseigne-toi, choisis ta position en conscience, et respecte celle du cousin qui a choisi l’autre.',
     ],
     category: 'Vie quotidienne',
-    related: ['souhaiter-noel-halal', 'musique-halal', 'halal-definition'],
+    related: ['souhaiter-noel-halal', 'musique-halal', 'halal-definition', 'serrer-la-main-islam'],
   },
   {
     slug: 'souhaiter-noel-halal',
@@ -2358,7 +2414,7 @@ export const QUESTIONS: QA[] = [
       'En pratique pour beaucoup de familles franco-musulmanes (mariages mixtes, grands-parents non musulmans), la question est très concrète : maintenir le lien familial est une obligation religieuse, lui. Réponse sereine possible : participer au repas familial sans les rites religieux, formules chaleureuses neutres (« bonnes fêtes », « profite bien de ta famille ») ou vœux directs selon l’avis qu’on suit — les deux positions ont leurs savants.',
     ],
     category: 'Vie quotidienne',
-    related: ['anniversaire-halal', 'musique-halal', 'chien-islam'],
+    related: ['anniversaire-halal', 'musique-halal', 'chien-islam', 'serrer-la-main-islam'],
   },
   {
     slug: 'cigarette-halal',
@@ -2456,7 +2512,7 @@ export const QUESTIONS: QA[] = [
       'Conseils de terrain : la discrétion et la fiabilité professionnelle sont tes meilleurs alliés (celui qui fait bien son travail obtient facilement cinq minutes de tranquillité) ; un mot simple au manager ou aux RH débloque souvent une salle ; et beaucoup de collègues prient déjà quelque part dans ton bâtiment — demande. Des millions de musulmans français prient au travail chaque jour sans drame : c’est une logistique, pas un conflit.',
     ],
     category: 'Prière',
-    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes'],
+    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes', 'priere-voiture', 'retard-fajr-reveil'],
   },
   {
     slug: 'rattraper-prieres-ratees',
@@ -2470,7 +2526,7 @@ export const QUESTIONS: QA[] = [
       'Ce que les deux avis partagent : l’essentiel est le retour immédiat et définitif à la prière — aujourd’hui, pas au prochain Ramadan — et la sincérité du repentir. Estime ta dette sans obsession maladive (une évaluation raisonnable suffit), choisis ta méthode avec un imam qui te connaît, et souviens-toi que la porte du repentir efface ce que la comptabilité n’atteindra jamais.',
     ],
     category: 'Prière',
-    related: ['priere-travail', 'priere-vendredi-obligatoire', 'horaires-priere-voyage'],
+    related: ['priere-travail', 'priere-vendredi-obligatoire', 'horaires-priere-voyage', 'priere-voiture', 'retard-fajr-reveil'],
   },
   {
     slug: 'priere-vendredi-obligatoire',

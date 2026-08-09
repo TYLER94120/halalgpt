@@ -3,9 +3,15 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import ShareBar from '@/components/ShareBar';
+import Surprise from '@/components/Surprise';
 import { CATEGORY_SLUGS, getQuestion, QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
+import { surpriseDuJour } from '@/lib/surprises';
 import dates from '@/lib/dates-fiches.json';
+
+// Les fiches sont figees a la construction : sans cela, la decouverte
+// resterait bloquee sur le jour de la mise en ligne. Une heure suffit.
+export const revalidate = 3600;
 
 interface Props {
   params: { slug: string };
@@ -59,6 +65,8 @@ export default function QuestionPage({ params }: Props) {
     .filter((q): q is NonNullable<typeof q> => Boolean(q));
 
   const date = DATES[qa.slug];
+  const jour = surpriseDuJour();
+  const decouverte = getQuestion(jour.slug);
 
   // Deux blocs de donnees structurees, deux roles distincts :
   //   · FAQPage decrit la reponse — c'est lui qui peut valoir un resultat
@@ -164,6 +172,24 @@ export default function QuestionPage({ params }: Props) {
           </p>
         )}
       </div>
+
+      {/* La decouverte du jour, ici aussi. Elle ne vivait que sur l'accueil —
+          or personne n'arrive par l'accueil : on arrive de Google, sur une
+          fiche, on lit sa reponse, et on repart. C'est ici que se joue la
+          seule question qui compte pour ce produit : est-ce qu'il en lit une
+          deuxieme ? */}
+      {decouverte && decouverte.slug !== qa.slug && (
+        <section className="decouverte decouverte-fiche">
+          <p className="decouverte-sur">La découverte du jour</p>
+          <p className="decouverte-fait">{jour.fait}</p>
+          <div className="decouverte-bas">
+            <Link href={`/q/${decouverte.slug}`} className="decouverte-lien">
+              {decouverte.verdict} — voir pourquoi →
+            </Link>
+            <Surprise exclure={qa.slug} />
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="related">

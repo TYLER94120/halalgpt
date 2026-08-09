@@ -1485,3 +1485,10 @@ a {
     width: 100%;
   }
 }
+
+/* Sur une fiche, la découverte arrive après la réponse et avant les questions
+   liées : on ne détourne jamais quelqu'un de la réponse qu'il est venu
+   chercher — on lui en propose une autre une fois qu'il l'a lue. */
+.decouverte-fiche {
+  margin: 34px 0 8px;
+}
