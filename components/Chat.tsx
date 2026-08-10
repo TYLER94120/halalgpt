@@ -90,6 +90,9 @@ export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  // « en train de s'écrire » : distinct de « en attente ». L'un montre les
+  // points de suspension, l'autre laisse le texte se dérouler.
+  const [streaming, setStreaming] = useState(false);
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [pendingImage, setPendingImage] = useState<string | null>(null);
   const [recording, setRecording] = useState(false);
@@ -122,12 +125,16 @@ export default function Chat() {
     setSavedThread(loadThread());
   }, []);
 
-  // On enregistre le fil à chaque échange terminé. La page d'accueil reste
+  // On enregistre le fil à chaque échange TERMINÉ. La page d'accueil reste
   // volontairement vierge au chargement (zéro friction) : la conversation
   // précédente se reprend d'un geste, elle ne s'impose jamais.
+  //
+  // Le garde-fou `streaming` compte : pendant que la réponse s'écrit, l'état
+  // change des dizaines de fois par seconde. Sans lui, on sérialiserait et on
+  // réécrirait tout le fil à chaque mot — sur un téléphone modeste, ça se voit.
   useEffect(() => {
-    if (messages.length > 0) saveThread(messages);
-  }, [messages]);
+    if (messages.length > 0 && !streaming) saveThread(messages);
+  }, [messages, streaming]);
 
   const resumeThread = () => {
     setMessages(savedThread);
@@ -253,14 +260,51 @@ export default function Chat() {
           })),
         }),
       });
-      const data = (await res.json()) as { reply?: string };
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: data.reply ?? "Désolé, je n'ai pas pu répondre. Réessaie dans un instant 🙏",
-        },
-      ]);
+      // La réponse arrive en flux : on affiche les mots au fur et à mesure au
+      // lieu d'attendre la fin. La bulle apparaît dès le premier morceau reçu,
+      // et l'attente ne se sent plus.
+      if (!res.body) {
+        // Navigateur sans lecture de flux : on retombe sur le texte entier.
+        const texte = await res.text();
+        setMessages((prev) => [...prev, { role: 'assistant', content: texte }]);
+        return;
+      }
+
+      const lecteur = res.body.getReader();
+      const decodeur = new TextDecoder();
+      let recu = '';
+      let bulleOuverte = false;
+
+      for (;;) {
+        const { done, value } = await lecteur.read();
+        if (done) break;
+        recu += decodeur.decode(value, { stream: true });
+        if (!bulleOuverte) {
+          // Premier morceau : on ferme l'indicateur d'attente et on ouvre la
+          // bulle. Les deux ne doivent jamais coexister.
+          bulleOuverte = true;
+          setLoading(false);
+          setStreaming(true);
+          setMessages((prev) => [...prev, { role: 'assistant', content: recu }]);
+        } else {
+          setMessages((prev) => {
+            const copie = [...prev];
+            copie[copie.length - 1] = { role: 'assistant', content: recu };
+            return copie;
+          });
+        }
+      }
+      recu += decodeur.decode();
+
+      if (!bulleOuverte) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: recu || "Désolé, je n'ai pas pu répondre. Réessaie dans un instant 🙏",
+          },
+        ]);
+      }
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -271,6 +315,7 @@ export default function Chat() {
       ]);
     } finally {
       setLoading(false);
+      setStreaming(false);
     }
   };
 

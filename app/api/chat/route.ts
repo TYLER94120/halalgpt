@@ -24,6 +24,38 @@ export const maxDuration = 60;
 //
 // Redis est optionnel : sans variables d'environnement, les étages 2-3 cache
 // sont simplement sautés (l'étage 1 fonctionne toujours).
+//
+// ─── La réponse part en flux ──────────────────────────────────────────────────
+//
+// Avant, on attendait la réponse ENTIÈRE avant d'afficher quoi que ce soit :
+// plusieurs secondes d'écran figé, le pire moment du produit. Désormais les
+// mots arrivent au fur et à mesure — la première ligne s'affiche presque tout
+// de suite, et l'attente ne se sent plus.
+//
+// Les trois étages renvoient tous un flux de texte brut, même la fiche locale
+// et le cache qui sont pourtant instantanés : le client n'a ainsi qu'UN SEUL
+// chemin de lecture, sans branchement selon la provenance.
+
+const EN_TETES_FLUX = {
+  'Content-Type': 'text/plain; charset=utf-8',
+  'Cache-Control': 'no-store',
+  // Sans cela, un proxy peut retenir les morceaux et tout livrer d'un coup :
+  // le flux serait techniquement correct et parfaitement inutile.
+  'X-Accel-Buffering': 'no',
+};
+
+/** Renvoie un texte déjà connu sous forme de flux, en un seul morceau. */
+function fluxImmediat(texte: string): Response {
+  return new Response(
+    new ReadableStream({
+      start(controleur) {
+        controleur.enqueue(new TextEncoder().encode(texte));
+        controleur.close();
+      },
+    }),
+    { headers: EN_TETES_FLUX }
+  );
+}
 
 const SYSTEM_PROMPT = `Tu es HalalGPT, l'IA musulmane. Ton identité : tu réponds à TOUTE question — religion, nourriture, produits, voyage, Ramadan, vie quotidienne, santé, science, société — en tenant toujours compte de l'islam dans ta réponse. L'utilisateur te choisit précisément parce que tes réponses respectent et intègrent sa religion, contrairement aux IA généralistes.
 
@@ -222,7 +254,7 @@ export async function POST(request: Request) {
   // Verrou finance : intercepté avant la fiche locale, le cache ET l'IA.
   if (isFinanceQuestion(lastQuestion)) {
     if (isFirstQuestion) await logQuestion(lastQuestion);
-    return NextResponse.json({ reply: FINANCE_REPLY, source: 'bloque' });
+    return fluxImmediat(FINANCE_REPLY);
   }
 
   if (isFirstQuestion && lastQuestion.trim()) {
@@ -233,14 +265,14 @@ export async function POST(request: Request) {
   if (isFirstQuestion && !hasImage) {
     // Étage 1 — fiche locale en correspondance forte : zéro API
     const fiche = strongLocalMatch(lastQuestion);
-    if (fiche) return NextResponse.json({ reply: fiche, source: 'fiche' });
+    if (fiche) return fluxImmediat(fiche);
 
     // Étage 2 — cache Redis : zéro API
     const redis = getRedis();
     if (redis) {
       try {
         const cached = await redis.get<string>(cacheKey(lastQuestion));
-        if (cached) return NextResponse.json({ reply: cached, source: 'cache' });
+        if (cached) return fluxImmediat(cached);
       } catch {
         /* cache indisponible → on continue vers l'IA */
       }
@@ -249,14 +281,18 @@ export async function POST(request: Request) {
 
   // Étage 3 — l'IA
   if (!process.env.ANTHROPIC_API_KEY) {
-    return NextResponse.json({ reply: localFallback(lastQuestion) });
+    return fluxImmediat(localFallback(lastQuestion));
   }
+
+  const REFUS =
+    "Désolé, je ne peux pas répondre à cette demande. Pose-moi plutôt une question halal ! 🌙";
 
   try {
     const anthropic = new Anthropic();
-    const response = await anthropic.beta.messages.create({
+    const flux = await anthropic.beta.messages.create({
       model: 'claude-opus-5',
       max_tokens: 4096,
+      stream: true,
       // Effort bas : réponses de chat courtes, latence maîtrisée sur mobile.
       output_config: { effort: 'low' },
       // Fallback serveur : si les classificateurs déclinent, l'API relance
@@ -292,31 +328,57 @@ export async function POST(request: Request) {
       }),
     });
 
-    if (response.stop_reason === 'refusal') {
-      return NextResponse.json({
-        reply: "Désolé, je ne peux pas répondre à cette demande. Pose-moi plutôt une question halal ! 🌙",
-      });
-    }
+    const encodeur = new TextEncoder();
+    let complet = '';
+    let refus = false;
 
-    const reply = response.content
-      .map((block) => (block.type === 'text' ? block.text : ''))
-      .join('')
-      .trim();
-
-    if (reply && isFirstQuestion && !hasImage) {
-      const redis = getRedis();
-      if (redis) {
+    const corps = new ReadableStream<Uint8Array>({
+      async start(controleur) {
         try {
-          await redis.set(cacheKey(lastQuestion), reply, { ex: 60 * 60 * 24 * 30 });
-        } catch {
-          /* cache indisponible → tant pis, la réponse part quand même */
+          for await (const evenement of flux) {
+            if (
+              evenement.type === 'content_block_delta' &&
+              evenement.delta.type === 'text_delta'
+            ) {
+              complet += evenement.delta.text;
+              controleur.enqueue(encodeur.encode(evenement.delta.text));
+            } else if (
+              evenement.type === 'message_delta' &&
+              evenement.delta.stop_reason === 'refusal'
+            ) {
+              refus = true;
+            }
+          }
+        } catch (erreur) {
+          // Coupure en cours de route. Si des mots sont déjà partis, on les
+          // garde plutôt que d'effacer l'écran du lecteur ; s'il n'y a rien,
+          // on sert la réponse de secours.
+          console.error('HalalGPT /api/chat (flux):', erreur);
         }
-      }
-    }
 
-    return NextResponse.json({ reply: reply || localFallback(lastQuestion) });
+        if (!complet) {
+          controleur.enqueue(encodeur.encode(refus ? REFUS : localFallback(lastQuestion)));
+        }
+        controleur.close();
+
+        // Le cache s'écrit APRÈS la fermeture du flux : le lecteur a déjà tout
+        // reçu, Redis ne doit jamais retarder l'affichage.
+        if (complet && !refus && isFirstQuestion && !hasImage) {
+          const redis = getRedis();
+          if (redis) {
+            try {
+              await redis.set(cacheKey(lastQuestion), complet.trim(), { ex: 60 * 60 * 24 * 30 });
+            } catch {
+              /* cache indisponible → tant pis, la réponse est déjà partie */
+            }
+          }
+        }
+      },
+    });
+
+    return new Response(corps, { headers: EN_TETES_FLUX });
   } catch (error) {
     console.error('HalalGPT /api/chat:', error);
-    return NextResponse.json({ reply: localFallback(lastQuestion) });
+    return fluxImmediat(localFallback(lastQuestion));
   }
 }
