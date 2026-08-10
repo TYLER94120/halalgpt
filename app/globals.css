@@ -1808,3 +1808,43 @@ a {
 }
 .card:last-child { border-bottom: none; }
 .card:hover { background: rgba(27, 67, 50, 0.35); }
+
+/* ─── « On me demande aussi » ──────────────────────────────────────────────────
+   Les deux ou trois questions proposées sous une réponse.
+
+   Elles sont posées APRÈS la réponse et jamais avant : on ne détourne pas
+   quelqu'un de ce qu'il est venu chercher. Et elles sont volontairement plus
+   discrètes que la réponse — un lecteur qui n'a pas fini de lire ne doit pas
+   avoir l'œil tiré vers la question suivante. */
+.apres-reponse {
+  margin: 18px 0 4px;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.apres-titre {
+  margin: 0 0 2px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.apres-question {
+  display: block;
+  width: 100%;
+  text-align: left;
+  min-height: 44px;
+  padding: 11px 15px;
+  border-radius: 12px;
+  border: 1px solid var(--or-doux);
+  background: transparent;
+  color: var(--creme);
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.35;
+  cursor: pointer;
+}
+.apres-question::after { content: ' →'; opacity: 0.5; }
+.apres-question:hover { background: rgba(27, 67, 50, 0.4); border-color: var(--or); }

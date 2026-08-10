@@ -100,6 +100,12 @@ export default function Chat() {
   const [recording, setRecording] = useState(false);
   const [speechOK, setSpeechOK] = useState(false);
   const [savedThread, setSavedThread] = useState<Message[]>([]);
+  // « Et après ? » : les 2-3 questions proposées sous la dernière réponse.
+  const [apres, setApres] = useState<{ slug: string; question: string }[]>([]);
+  // Ce qui a déjà été proposé dans ce fil : on ne repropose jamais deux fois
+  // la même chose. Sans ça, une conversation de trois échanges finirait par
+  // tourner en rond sur les mêmes trois fiches.
+  const dejaProposeRef = useRef<string[]>([]);
   const endRef = useRef<HTMLDivElement>(null);
   const lastAssistantRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -197,6 +203,39 @@ export default function Chat() {
     if (messages.length > 0 && !streaming) saveThread(messages);
   }, [messages, streaming]);
 
+  // ── Les questions d'après ──
+  //
+  // On les demande quand la réponse est FINIE, jamais pendant : elles
+  // apparaîtraient sous un texte encore en train de s'écrire, et le lecteur
+  // choisirait sa question suivante avant d'avoir lu celle-ci.
+  useEffect(() => {
+    const dernier = messages[messages.length - 1];
+    if (streaming || loading || dernier?.role !== 'assistant') {
+      if (streaming || loading) setApres([]);
+      return;
+    }
+    // La question posée, pas la réponse : c'est elle qui dit le sujet.
+    const question = [...messages].reverse().find((m) => m.role === 'user')?.content;
+    if (!question) return;
+
+    const controleur = new AbortController();
+    void (async () => {
+      try {
+        const res = await fetch(
+          `/api/apres?q=${encodeURIComponent(question)}&vues=${encodeURIComponent(dejaProposeRef.current.join(','))}`,
+          { signal: controleur.signal },
+        );
+        const data = (await res.json()) as { propositions?: { slug: string; question: string }[] };
+        const p = data.propositions ?? [];
+        dejaProposeRef.current = [...dejaProposeRef.current, ...p.map((x) => x.slug)].slice(-40);
+        setApres(p);
+      } catch {
+        /* pas de propositions : la réponse se suffit à elle-même */
+      }
+    })();
+    return () => controleur.abort();
+  }, [messages, streaming, loading]);
+
   const resumeThread = () => {
     poserLeFil(savedThread);
     setSavedThread([]);
@@ -213,6 +252,8 @@ export default function Chat() {
   };
 
   const newConversation = () => {
+    setApres([]);
+    dejaProposeRef.current = [];
     poserLeFil([]);
     setSavedThread([]);
     setInput('');
@@ -481,6 +522,27 @@ export default function Chat() {
             <span />
             <span />
             <span />
+          </div>
+        )}
+        {/* « Et après ? » — les 2-3 questions autour de celle qu'on vient de
+            poser. Elles ne viennent pas de l'IA : ce sont de vraies fiches du
+            site, choisies parmi les questions liées écrites à la main. On ne
+            propose donc jamais une question dont la réponse serait mauvaise —
+            et c'est justement au moment où le lecteur nous fait le plus
+            confiance qu'il ne faut pas le décevoir. */}
+        {apres.length > 0 && (
+          <div className="apres-reponse">
+            <p className="apres-titre">On me demande aussi</p>
+            {apres.map((p) => (
+              <button
+                key={p.slug}
+                type="button"
+                className="apres-question"
+                onClick={() => send(p.question)}
+              >
+                {p.question}
+              </button>
+            ))}
           </div>
         )}
         <div ref={endRef} />
