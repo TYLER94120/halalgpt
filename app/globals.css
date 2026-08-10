@@ -1492,3 +1492,60 @@ a {
 .decouverte-fiche {
   margin: 34px 0 8px;
 }
+
+/* ─── La recherche des fiches ───────────────────────────────────────────────
+   Près de deux cents fiches : les pastilles ne suffisent plus. Le champ passe
+   avant elles parce que c'est le geste le plus direct — on tape trois lettres
+   plutôt que de chercher la bonne catégorie. */
+
+.recherche {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.recherche-champ {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 18px;
+  font: inherit;
+  font-size: 1.05rem; /* jamais moins de 16px : en dessous, iOS zoome tout seul */
+  color: inherit;
+  background: rgba(27, 67, 50, 0.22);
+  border: 1px solid var(--or-doux);
+  border-radius: 14px;
+}
+
+.recherche-champ::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+.recherche-champ:focus {
+  outline: none;
+  border-color: var(--or);
+}
+
+.recherche-effacer {
+  flex: 0 0 auto;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: 1px solid var(--or-doux);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.recherche-effacer:active {
+  border-color: var(--or);
+}
+
+.recherche-compte {
+  margin: 0 0 16px;
+  font-size: 0.92rem;
+  opacity: 0.7;
+}

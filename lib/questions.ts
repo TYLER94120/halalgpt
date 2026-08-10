@@ -275,7 +275,7 @@ export const QUESTIONS: QA[] = [
       'Pour les cas non urgents et les compléments : demandez à votre pharmacien une alternative en comprimé, ou des gélules végétales (HPMC, pullulan) de plus en plus courantes. Certains laboratoires précisent « gélatine de poisson » ou « gélule d’origine végétale » sur la boîte.',
     ],
     category: 'Vie quotidienne',
-    related: ['gelatine-halal', 'e441-gelatine-halal'],
+    related: ['gelatine-halal', 'e441-gelatine-halal', 'greffe-cheveux-halal', 'travailler-restaurant-alcool', 'jeux-video-halal'],
   },
 
   // ─── VOYAGE ─────────────────────────────────────────────────────────────────
@@ -351,6 +351,62 @@ export const QUESTIONS: QA[] = [
   },
 
   // ─── PRATIQUE ───────────────────────────────────────────────────────────────
+  {
+    slug: 'greffe-cheveux-halal',
+    question: 'La greffe de cheveux est-elle halal ?',
+    verdict: '✅ Largement permise pour traiter une calvitie — ce sont tes propres cheveux',
+    short:
+      'La majorité des savants contemporains la permettent quand il s’agit de réparer une perte : ce sont tes propres cheveux qu’on redéplace, pas ceux d’un autre. C’est cette distinction qui change tout.',
+    answer: [
+      'La question se joue sur un seul point : s’agit-il de « modifier la création d’Allah », ce qui est blâmé, ou de SOIGNER un défaut, ce qui est permis ? La majorité des savants contemporains et plusieurs académies de jurisprudence retiennent la seconde lecture quand la greffe répond à une calvitie, une alopécie, une brûlure ou un accident : on rétablit un état d’origine, on n’ajoute pas un ornement. Se soigner est encouragé en islam — « Serviteurs d’Allah, soignez-vous », rapporté dans les recueils de sunna.',
+      'Le détail technique qui règle presque tout : une greffe moderne est une AUTOGREFFE. On prélève tes cheveux à l’arrière de ton crâne pour les replanter devant. Rien ne vient d’une autre personne. C’est ce qui la distingue du hadith bien connu sur le fait de joindre des cheveux (« Allah a maudit celle qui ajoute des cheveux et celle qui demande qu’on lui en ajoute », Boukhari et Mouslim) : ce texte vise l’ajout de cheveux d’AUTRUI, et donc les extensions, pas le déplacement des siens.',
+      'Deux réserves à connaître. D’abord, une minorité de savants reste réticente quand l’intention est purement esthétique, sans perte réelle à réparer — l’intention compte, et la frontière entre soigner et embellir n’est pas toujours nette. Ensuite, un point pratique que personne n’explique : pendant la cicatrisation, les croûtes et le pansement peuvent empêcher l’eau d’atteindre le cuir chevelu lors des ablutions et de la grande ablution. Les savants prévoient ce cas — on essuie sur le pansement quand le laver nuirait à la guérison. Demande à ton chirurgien la durée exacte, et à un savant la règle qui s’applique à ta situation.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution'],
+  },
+  {
+    slug: 'travailler-restaurant-alcool',
+    question: 'Peut-on travailler dans un restaurant qui sert de l’alcool ?',
+    verdict: '⚠️ Servir ou vendre : évité par la majorité — les autres postes se discutent',
+    short:
+      'Le hadith vise dix personnes autour du vin, dont celui qui le sert, le vend et le porte. Un poste qui n’y touche pas — cuisine, ménage, caisse sans alcool — est jugé différemment par beaucoup de savants.',
+    answer: [
+      'Le texte que citent tous les savants sur cette question énumère dix personnes maudites à propos du vin : celui qui le presse, celui pour qui on le presse, celui qui le boit, celui qui le transporte, celui à qui on le transporte, celui qui le sert, celui qui le vend, celui qui en consomme le prix, celui qui l’achète et celui pour qui on l’achète (rapporté par Tirmidhi et Ibn Maja). Servir un verre, encaisser une bouteille, la porter en salle : ces gestes-là sont visés directement, et la majorité des savants demandent de les éviter.',
+      'Beaucoup distinguent en revanche les postes qui ne touchent pas à l’alcool : la cuisine, la plonge, le ménage, la livraison de plats. Le raisonnement est que la malédiction porte sur les actes énumérés, pas sur le fait de se trouver dans un lieu où d’autres les accomplissent. D’autres savants restent plus stricts et déconseillent l’ensemble, au titre de ce qui rend possible l’interdit. Les deux positions existent, et nous ne tranchons pas ici.',
+      'En pratique, en France, voici ce qui se fait et qui fonctionne. Beaucoup demandent à leur employeur d’être affectés à un poste sans contact avec l’alcool — cuisine, salle sans bar, service du midi — et cela s’obtient plus souvent qu’on ne le croit, surtout dans un établissement où d’autres postes existent. Quand c’est le seul revenu et qu’aucune alternative n’est disponible, les savants parlent de nécessité : rester le temps de chercher activement autre chose, sans s’y installer. Ce n’est pas une permission définitive, c’est un délai. Pour ta situation exacte — ton contrat, tes charges, ce que tu peux négocier — parles-en à un imam plutôt que de rester seul avec la question.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['cigarette-halal', 'serrer-la-main-islam', 'halal-definition'],
+  },
+  {
+    slug: 'priere-assise-malade',
+    question: 'Peut-on prier assis quand on est malade ?',
+    verdict: '✅ Oui — et la prière compte entièrement',
+    short:
+      'Debout si tu peux, assis sinon, allongé sur le côté si tu ne peux pas t’asseoir. L’ordre vient d’un hadith, il ne se discute pas, et la prière n’est amputée de rien.',
+    answer: [
+      'La règle tient dans une phrase que le Prophète ﷺ a dite à Imran ibn Husayn, qui souffrait d’hémorroïdes : « Prie debout ; si tu ne peux pas, alors assis ; si tu ne peux pas, alors sur le côté » (Boukhari). Trois degrés, dans cet ordre, et on ne descend d’un cran que lorsque le précédent devient impossible ou pénible au point de nuire.',
+      'Comment faire, concrètement. Assis, tu accomplis les mêmes unités, sans en retirer une seule : tu inclines le buste pour l’inclinaison, et tu descends plus bas pour la prosternation — la prosternation doit toujours être plus basse que l’inclinaison, c’est le seul repère à retenir. Si le sol est hors de portée, un simple geste de la tête suffit, et il n’est pas nécessaire de faire monter un coussin jusqu’au front : la plupart des savants considèrent que cela ne remplace rien et n’est pas demandé. Sur une chaise, dans une mosquée, c’est la même chose — et c’est une pratique répandue et acceptée.',
+      'Trois choses qui rassurent, parce qu’elles reviennent toujours. Ta prière n’est pas de moindre valeur : celui qui est empêché reçoit la récompense de ce qu’il faisait quand il était valide, selon un hadith rapporté par Boukhari. Tu n’as rien à rattraper une fois guéri. Et tu es seul juge de ta capacité : la religion ne demande pas de se faire mal, elle demande de faire ce qu’on peut. Si l’état s’installe ou si tu hésites entre deux degrés, l’imam de ta mosquée saura te répondre en deux minutes.',
+    ],
+    category: 'Prière',
+    related: ['priere-voiture', 'rattraper-prieres-ratees', 'tayammum-sans-eau'],
+  },
+  {
+    slug: 'jeux-video-halal',
+    question: 'Les jeux vidéo sont-ils halal ?',
+    verdict: '⚠️ Permis en soi — c’est le contenu et le temps qui posent question',
+    short:
+      'Jouer n’est pas interdit en soi : le divertissement licite l’est. Ce qui change le verdict, c’est ce que le jeu contient et la place qu’il prend — les prières manquées d’abord.',
+    answer: [
+      'Le principe de départ est celui de toutes les choses de la vie courante : ce qui n’est pas interdit reste permis. Se divertir n’est pas blâmé en islam, et les savants contemporains considèrent très majoritairement que jouer, en soi, entre dans le licite. La question n’est donc jamais « le jeu vidéo est-il halal », mais « qu’est-ce qu’il y a dedans, et combien de place lui laisses-tu ».',
+      'Ce qui fait basculer un jeu du côté du blâmable, selon ce que retiennent les savants : les images dénudées ou les scènes indécentes ; les contenus qui tournent la religion en dérision ou glorifient l’adoration d’autre chose qu’Allah ; les coffres et récompenses payants tirés au sort, que beaucoup rangent du côté des jeux de hasard puisqu’on paie sans savoir ce qu’on reçoit ; et la musique, sur laquelle la divergence entre savants est réelle et ancienne — beaucoup de jeux permettent d’ailleurs de la couper dans les réglages.',
+      'Mais le vrai sujet, celui qui revient dans presque toutes les réponses des savants, n’est aucun de ceux-là : c’est le TEMPS. Un jeu qui fait manquer la prière, qui vide les nuits, qui prend la place des études, de la famille ou du sommeil, devient un problème même s’il ne contient rien d’interdit. Les repères pratiques que donnent les imams sont simples et tiennent en trois points : la prière passe avant, toujours, et on s’arrête quand l’heure arrive ; on fixe une durée avant de commencer plutôt qu’après ; et si l’on n’arrive plus à s’arrêter, ce n’est plus un loisir, c’est une dépendance — et cela se traite, sans honte, comme n’importe quelle autre.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['musique-halal', 'psy-therapie-islam', 'cigarette-halal'],
+  },
   {
     slug: 'priere-voiture',
     question: 'Peut-on prier dans la voiture ?',
@@ -2428,7 +2484,7 @@ export const QUESTIONS: QA[] = [
       'Si tu fumes : personne ne te juge ici — la dépendance est une réalité médicale. Mais sache que l’arrêt est considéré comme une obligation de préservation de soi par ces avis, que le Ramadan est une rampe de lancement éprouvée, et que les substituts nicotiniques remboursés existent en France. Chaque cigarette non fumée compte.',
     ],
     category: 'Vie quotidienne',
-    related: ['chicha-halal', 'puff-vape-halal', 'fumer-ramadan'],
+    related: ['chicha-halal', 'puff-vape-halal', 'fumer-ramadan', 'greffe-cheveux-halal', 'travailler-restaurant-alcool', 'jeux-video-halal'],
   },
   {
     slug: 'chicha-halal',
@@ -2512,7 +2568,7 @@ export const QUESTIONS: QA[] = [
       'Conseils de terrain : la discrétion et la fiabilité professionnelle sont tes meilleurs alliés (celui qui fait bien son travail obtient facilement cinq minutes de tranquillité) ; un mot simple au manager ou aux RH débloque souvent une salle ; et beaucoup de collègues prient déjà quelque part dans ton bâtiment — demande. Des millions de musulmans français prient au travail chaque jour sans drame : c’est une logistique, pas un conflit.',
     ],
     category: 'Prière',
-    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes', 'priere-voiture', 'retard-fajr-reveil'],
+    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade'],
   },
   {
     slug: 'rattraper-prieres-ratees',
@@ -2526,7 +2582,7 @@ export const QUESTIONS: QA[] = [
       'Ce que les deux avis partagent : l’essentiel est le retour immédiat et définitif à la prière — aujourd’hui, pas au prochain Ramadan — et la sincérité du repentir. Estime ta dette sans obsession maladive (une évaluation raisonnable suffit), choisis ta méthode avec un imam qui te connaît, et souviens-toi que la porte du repentir efface ce que la comptabilité n’atteindra jamais.',
     ],
     category: 'Prière',
-    related: ['priere-travail', 'priere-vendredi-obligatoire', 'horaires-priere-voyage', 'priere-voiture', 'retard-fajr-reveil'],
+    related: ['priere-travail', 'priere-vendredi-obligatoire', 'horaires-priere-voyage', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade'],
   },
   {
     slug: 'priere-vendredi-obligatoire',
