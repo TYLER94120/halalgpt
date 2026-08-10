@@ -45,10 +45,19 @@ export default function ModeConduite() {
   const [souci, setSouci] = useState('');
   const [micOK, setMicOK] = useState<boolean | null>(null);
   const [voixOK, setVoixOK] = useState<boolean | null>(null);
-  // Clavier de secours : la voix qui PARLE marche presque partout, la dictée
-  // non. Sans ce repli, un téléphone qui ne sait pas écouter rendait tout
-  // l'écran inutile, alors que la moitié utile fonctionnait.
-  const [clavier, setClavier] = useState(false);
+  // Le clavier est TOUJOURS là, et ce n'est plus un repli honteux.
+  //
+  // Il était affiché seulement quand la détection disait « ce navigateur ne
+  // sait pas dicter ». Mesure du 10 aout, dans un vrai navigateur : l'objet
+  // `webkitSpeechRecognition` EXISTE et la dictée échoue quand même. C'est
+  // exactement ce qui arrive à Mohamed sur iPhone — l'objet est présent, et on
+  // reçoit « aborted ».
+  //
+  // Autrement dit, la détection est un instrument, et cet instrument ment. On
+  // ne peut donc pas lui confier le choix d'afficher ou non la seule chose qui
+  // marche partout. Le clavier ne coûte rien, il est petit, il est sous le
+  // bouton — et le jour où la dictée lâche, il n'y a rien à découvrir.
+  const [clavier, setClavier] = useState(true);
   const [saisie, setSaisie] = useState('');
   // Mains libres : quand il a fini de répondre, il réécoute tout seul. C'est
   // le modèle demandé par Mohamed — « comme Claude ou ChatGPT : lorsqu'on
@@ -81,11 +90,10 @@ export default function ModeConduite() {
   // ── Ce que ce téléphone sait faire, mesuré et pas supposé ──────────────────
   useEffect(() => {
     const w = window as unknown as Record<string, unknown>;
-    const sait = Boolean(w.SpeechRecognition || w.webkitSpeechRecognition);
-    setMicOK(sait);
-    // On n'attend pas que Mohamed appuie pour découvrir que ça ne marche pas :
-    // si le navigateur ne sait pas écouter, le clavier est là tout de suite.
-    if (!sait) setClavier(true);
+    // Cette détection dit seulement si l'objet EXISTE. Elle ne dit pas si la
+    // dictée marchera : sur iOS et dans certains navigateurs, l'objet est là et
+    // échoue au démarrage. On s'en sert pour expliquer, jamais pour décider.
+    setMicOK(Boolean(w.SpeechRecognition || w.webkitSpeechRecognition));
     setVoixOK(typeof window.speechSynthesis !== 'undefined');
 
     const choisir = () => {
@@ -435,7 +443,7 @@ export default function ModeConduite() {
             type="text"
             value={saisie}
             onChange={(e) => setSaisie(e.target.value)}
-            placeholder="Écris ta question, je la lirai à voix haute"
+            placeholder="…ou écris ta question, je la lirai à voix haute"
             aria-label="Écris ta question"
           />
           <button type="submit">Envoyer</button>
