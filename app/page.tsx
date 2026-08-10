@@ -51,6 +51,17 @@ export default function HomePage() {
         🚗 En voiture ? Pose ta question à la voix
       </Link>
 
+      {/* ── Ici finit la page d'accueil ──
+          Mohamed : « la page d'accueil et la page suivante s'entremelent, il
+          faut que la page d'accueil soit clean ».
+          Il avait raison et la cause etait visible sur la capture : le chat,
+          la decouverte du jour et les huit questions etaient TOUS rendus avec
+          la meme carte verte bordee. Trois choses de nature differente, un
+          seul habillage — l'oeil ne voyait qu'une pile d'objets identiques et
+          ne pouvait pas savoir ou l'accueil s'arretait.
+          Ce qui suit est donc une ZONE, separee par un trait et de l'espace.
+          Au-dessus : poser sa question. En dessous : explorer. */}
+      <div className="apres">
       {/* La decouverte du jour. Elle est posee APRES le chat, jamais avant :
           la page d'accueil doit rester vide au premier regard, c'est la regle
           de Mohamed et elle ne bouge pas. Ce qui ramene quelqu'un sur une IA
@@ -95,6 +106,7 @@ export default function HomePage() {
           desencombrais d'un cote en dupliquant de l'autre. La bande est
           supprimee, et les liens du pied — qui n'etaient pas balises, donc
           dont on n'aurait jamais rien su — le sont maintenant. */}
+      </div>
     </>
   );
 }

@@ -1756,3 +1756,37 @@ a {
 }
 .famille-bande a { color: var(--or); text-decoration: none; }
 .famille-bande a:hover { text-decoration: underline; }
+
+
+/* ─── La frontiere de l'accueil ───────────────────────────────────────────────
+   Au-dessus : l'accueil — un titre, un champ, on pose sa question.
+   En dessous : on explore.
+   Sans cette frontiere, les trois blocs se suivaient dans le meme habillage et
+   la page n'avait pas de fin : c'est ce que Mohamed appelait « entremele ». */
+.apres {
+  margin-top: 72px;
+  padding-top: 8px;
+  border-top: 1px solid var(--or-doux);
+}
+.apres > .section:first-of-type,
+.apres > .decouverte { margin-top: 32px; }
+
+/* Les questions populaires deviennent une LISTE, pas une pile de cartes.
+   Huit cartes bordees juste sous le chat — lui aussi carte bordee — donnaient
+   huit fois le meme signal visuel. Un filet entre deux lignes suffit a separer,
+   et la page respire au lieu de s'empiler. */
+.cards {
+  display: block;
+  border: 1px solid var(--or-doux);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.card {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--or-doux);
+  background: transparent;
+  padding: 14px 16px;
+}
+.card:last-child { border-bottom: none; }
+.card:hover { background: rgba(27, 67, 50, 0.35); }
