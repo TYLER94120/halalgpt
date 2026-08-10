@@ -102,7 +102,7 @@ a {
 
 .hero {
   text-align: center;
-  padding: 18px 0 14px;
+  padding: 8px 0 18px;
 }
 
 .hero h1 {
@@ -1763,8 +1763,26 @@ a {
    En dessous : on explore.
    Sans cette frontiere, les trois blocs se suivaient dans le meme habillage et
    la page n'avait pas de fin : c'est ce que Mohamed appelait « entremele ». */
+/* La zone d'accueil prend la hauteur du premier ecran et se centre dedans.
+   C'est ce qui fait que le trait tombe EN BAS de l'ecran et pas au milieu :
+   plus rien de la zone suivante n'apparait a moitie. Un bloc coupe en deux
+   par le bas de l'ecran est exactement ce qui donnait l'impression que deux
+   pages s'entremelaient.
+   `min-height` et non `height` : si le contenu grandit (clavier ouvert, gros
+   caracteres), la zone s'etire au lieu de rogner. */
+.accueil-zone {
+  min-height: calc(100dvh - 108px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Le contenu se pose un peu au-dessus du centre exact. Centre pile, il
+     laissait un grand trou entre l'en-tete et le titre : l'oeil lit ca comme
+     une page qui n'a pas fini de charger, pas comme de l'air. */
+  padding-bottom: 96px;
+}
+
 .apres {
-  margin-top: 72px;
+  margin-top: 0;
   padding-top: 8px;
   border-top: 1px solid var(--or-doux);
 }

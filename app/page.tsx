@@ -31,14 +31,27 @@ export default function HomePage() {
 
   return (
     <>
+      {/* L'accueil occupe le premier ecran, et RIEN d'autre n'y apparait.
+          Capture de Mohamed a 14h52 : entre le lien « En voiture ? » et le
+          trait il restait un grand vide, puis la decouverte du jour etait
+          coupee en deux par le bas de l'ecran. La page ne s'arretait toujours
+          pas — elle debordait, et un bloc a moitie visible est precisement ce
+          qui donne l'impression que deux pages s'entremelent.
+          Cette zone se centre sur la hauteur disponible : le trait tombe donc
+          au bas de l'ecran, jamais au milieu. */}
+      <div className="accueil-zone">
+      {/* Un titre, une ligne, le champ. Rien de plus.
+          Avant : un titre sur trois lignes, puis un sous-titre sur deux, avant
+          meme d'atteindre le champ de saisie. L'accueil parlait beaucoup avant
+          de laisser parler — et la deuxieme phrase du titre (« des reponses qui
+          respectent ta religion ») disait deja ce que le sous-titre repetait.
+          Le mot-cle « IA musulmane » reste dans le h1, donc rien n'est perdu
+          pour Google. */}
       <section className="hero">
         <h1>
-          Ton IA <span className="accent">musulmane</span>.<br />
-          Des réponses qui respectent ta religion.
+          Ton IA <span className="accent">musulmane</span>.
         </h1>
-        <p className="hero-sub">
-          Pose n’importe quelle question : la réponse tient toujours compte de l’islam.
-        </p>
+        <p className="hero-sub">Pose ta question. La réponse tient compte de l’islam.</p>
       </section>
 
       <Chat />
@@ -50,6 +63,7 @@ export default function HomePage() {
       <Link href="/conduite" className="lien-conduite">
         🚗 En voiture ? Pose ta question à la voix
       </Link>
+      </div>
 
       {/* ── Ici finit la page d'accueil ──
           Mohamed : « la page d'accueil et la page suivante s'entremelent, il
