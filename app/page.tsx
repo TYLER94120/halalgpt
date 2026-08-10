@@ -84,41 +84,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
-        <h2>
-          Comment ça <span className="accent">marche</span> ?
-        </h2>
-        <div className="steps">
-          <div className="step">
-            <div className="step-emoji">💬</div>
-            <h3>1. Pose ta question</h3>
-            <p>
-              Écris, dicte 🎤 ou envoie la photo 📷 d’une étiquette. E120, Haribo, prières,
-              Ramadan, quotidien… tout, vraiment tout.
-            </p>
-          </div>
-          <div className="step">
-            <div className="step-emoji">⚡️</div>
-            <h3>2. Réponse instantanée</h3>
-            <p>Un verdict clair, l’explication essentielle, et les divergences quand il y en a.</p>
-          </div>
-          <div className="step">
-            <div className="step-emoji">🗺</div>
-            <h3>3. Passe à l’action</h3>
-            <p>
-              Restos, mosquées et hôtels halal sur{' '}
-              <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
-                VoyagesHalal.fr
-              </a>{' '}
-              — et en magasin, scanne le code-barres avec{' '}
-              <a href="https://halalcheck.fr" target="_blank" rel="noopener">
-                HalalCheck.fr
-              </a>{' '}
-              ✓. La même famille.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Le bloc « Comment ca marche » a ete retire de l'accueil le 10 aout.
+          Il expliquait en trois etapes illustrees comment poser une question,
+          alors que le champ de saisie est en haut de la page et se passe de
+          mode d'emploi : environ 600 px pour n'apprendre rien a personne.
+
+          J'avais d'abord garde ses deux liens vers la famille dans une bande
+          ici. La capture de la page entiere a montre l'erreur : le pied de
+          page portait DEJA ces deux liens, trois centimetres plus bas. Je
+          desencombrais d'un cote en dupliquant de l'autre. La bande est
+          supprimee, et les liens du pied — qui n'etaient pas balises, donc
+          dont on n'aurait jamais rien su — le sont maintenant. */}
     </>
   );
 }

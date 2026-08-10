@@ -348,21 +348,34 @@ a {
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
+  gap: 8px;
 }
 
+/* Compactes, et sur UNE ligne quand la place le permet.
+   Mesure du 10 aout : l'accueil faisait 2948 px de haut sur un telephone,
+   soit presque quatre ecrans, et huit cartes empilees en occupaient 1700 a
+   elles seules. Le probleme n'etait pas leur nombre — chacune est un lien
+   utile vers une fiche, et les retirer aurait coute du referencement pour
+   gagner du vide. Le probleme etait leur TAILLE.
+   Le verdict passe donc a cote de la question au lieu d'etre au-dessus, et
+   chaque carte tient en une ligne : meme information, meme nombre de liens,
+   trois fois moins de hauteur. */
 .card {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 18px;
-  border-radius: 16px;
-  background: rgba(27, 67, 50, 0.35);
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(27, 67, 50, 0.28);
   border: 1px solid var(--or-doux);
   color: var(--creme);
   text-decoration: none;
-  min-height: 56px;
+  min-height: 0;
 }
+.card .card-verdict { flex: 0 0 auto; font-size: 12px; opacity: 0.8; }
+.card .card-question { flex: 1 1 200px; font-size: 15px; }
 
 .card:hover {
   border-color: var(--or);
@@ -1717,3 +1730,22 @@ a {
   background: #c9a84c;
   color: #08130c;
 }
+
+
+/* La bande « famille » remplace le bloc « Comment ça marche » sur l'accueil.
+   Ce bloc expliquait en trois étapes illustrées comment poser une question —
+   alors que le champ de saisie est juste au-dessus et se passe de mode
+   d'emploi. Il coûtait environ 600 px pour ne rien apprendre à personne.
+   Ce qu'il contenait de VRAIMENT utile, c'étaient les deux liens vers les
+   autres sites de la famille : ils sont gardés, balisés, sur une seule ligne. */
+.famille-bande {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 14px 20px 4px;
+  font-size: 14px;
+  opacity: 0.75;
+}
+.famille-bande a { color: var(--or); text-decoration: none; }
+.famille-bande a:hover { text-decoration: underline; }

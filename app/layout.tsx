@@ -72,12 +72,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </p>
           <p className="footer-note">
             La famille HalalGPT :{' '}
-            <a href="https://www.voyageshalal.fr" target="_blank" rel="noopener">
+            <a
+              href="https://www.voyageshalal.fr?utm_source=halalgpt&utm_medium=passerelle&utm_campaign=pied-famille"
+              target="_blank"
+              rel="noopener"
+            >
               VoyagesHalal.fr 🗺
             </a>{' '}
             — le guide du voyage halal
             <span aria-hidden> · </span>
-            <a href="https://halalcheck.fr" target="_blank" rel="noopener">
+            <a
+              href="https://halalcheck.fr?utm_source=halalgpt&utm_medium=passerelle&utm_campaign=pied-famille"
+              target="_blank"
+              rel="noopener"
+            >
               HalalCheck.fr ✓
             </a>{' '}
             — scanne tes courses, verdict halal immédiat
