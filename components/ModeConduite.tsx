@@ -45,21 +45,41 @@ export default function ModeConduite() {
   const [souci, setSouci] = useState('');
   const [micOK, setMicOK] = useState<boolean | null>(null);
   const [voixOK, setVoixOK] = useState<boolean | null>(null);
+  // Clavier de secours : la voix qui PARLE marche presque partout, la dictée
+  // non. Sans ce repli, un téléphone qui ne sait pas écouter rendait tout
+  // l'écran inutile, alors que la moitié utile fonctionnait.
+  const [clavier, setClavier] = useState(false);
+  const [saisie, setSaisie] = useState('');
+  // Mains libres : quand il a fini de répondre, il réécoute tout seul. C'est
+  // le modèle demandé par Mohamed — « comme Claude ou ChatGPT : lorsqu'on
+  // parle, il répond directement ». Sans ça, c'est un talkie-walkie.
+  const [mainsLibres, setMainsLibres] = useState(true);
 
   const recRef = useRef<ReconnaissanceLike | null>(null);
   const voixRef = useRef<SpeechSynthesisVoice | null>(null);
   const veilleRef = useRef<{ release: () => Promise<void> } | null>(null);
   const etatRef = useRef<Etat>('pret');
+  const appuiRef = useRef<() => void>(() => {});
+  const mainsLibresRef = useRef(true);
+  const souciRef = useRef('');
 
   const majEtat = (e: Etat) => {
     etatRef.current = e;
     setEtat(e);
   };
 
+  useEffect(() => {
+    mainsLibresRef.current = mainsLibres;
+  }, [mainsLibres]);
+
   // ── Ce que ce téléphone sait faire, mesuré et pas supposé ──────────────────
   useEffect(() => {
     const w = window as unknown as Record<string, unknown>;
-    setMicOK(Boolean(w.SpeechRecognition || w.webkitSpeechRecognition));
+    const sait = Boolean(w.SpeechRecognition || w.webkitSpeechRecognition);
+    setMicOK(sait);
+    // On n'attend pas que Mohamed appuie pour découvrir que ça ne marche pas :
+    // si le navigateur ne sait pas écouter, le clavier est là tout de suite.
+    if (!sait) setClavier(true);
     setVoixOK(typeof window.speechSynthesis !== 'undefined');
 
     const choisir = () => {
@@ -182,8 +202,17 @@ export default function ModeConduite() {
         const attendreLaFin = () => {
           if (window.speechSynthesis?.speaking || window.speechSynthesis?.pending) {
             window.setTimeout(attendreLaFin, 400);
-          } else {
-            majEtat('pret');
+            return;
+          }
+          majEtat('pret');
+          // Mains libres : il réécoute de lui-même. La pause d'une seconde
+          // n'est pas cosmétique — sans elle, le micro s'ouvre pendant que le
+          // haut-parleur finit de vibrer et la reconnaissance s'annule aussi
+          // sec. C'est exactement le bug qu'on vient de corriger.
+          if (mainsLibresRef.current && !souciRef.current) {
+            window.setTimeout(() => {
+              if (etatRef.current === 'pret') appuiRef.current();
+            }, 1000);
           }
         };
         attendreLaFin();
@@ -192,8 +221,13 @@ export default function ModeConduite() {
     [dire],
   );
 
+  const dire_souci = (m: string) => {
+    souciRef.current = m;
+    setSouci(m);
+  };
+
   const appui = useCallback(() => {
-    setSouci('');
+    dire_souci('');
 
     if (etatRef.current === 'parle' || etatRef.current === 'reflechit') {
       taire();
@@ -205,12 +239,24 @@ export default function ModeConduite() {
       return;
     }
 
-    // Déverrouillage iOS : la synthèse vocale n'a le droit de parler que si
-    // elle a été réveillée pendant un geste de l'utilisateur. On la réveille
-    // ici, sur l'appui, avec un souffle vide — sinon la réponse arriverait
-    // muette, et seulement sur iPhone.
+    // ── Déverrouillage de la voix, SANS empêcher le micro de démarrer ──
+    //
+    // Bug signalé par Mohamed : « le dictaphone ne fonctionne pas ». La cause
+    // était ici, dans mon propre code. iOS n'autorise la synthèse vocale que
+    // si elle a été réveillée pendant un geste de l'utilisateur, alors je la
+    // réveillais avec un souffle — puis je démarrais le micro dans la foulée.
+    // Le téléphone se retrouvait à PARLER ET ÉCOUTER en même temps, et la
+    // reconnaissance s'annulait aussitôt, sans erreur visible.
+    //
+    // La correction : le souffle est muet (volume zéro) ET on le coupe net
+    // avant d'ouvrir le micro. Le déverrouillage iOS reste acquis — il suffit
+    // que speak() ait été appelé pendant le geste — mais plus rien ne sort du
+    // haut-parleur quand la reconnaissance démarre.
     try {
-      window.speechSynthesis?.speak(new SpeechSynthesisUtterance(' '));
+      const souffle = new SpeechSynthesisUtterance(' ');
+      souffle.volume = 0;
+      window.speechSynthesis?.speak(souffle);
+      window.speechSynthesis?.cancel();
     } catch {
       /* pas de synthèse : on le dira plus bas */
     }
@@ -221,7 +267,10 @@ export default function ModeConduite() {
     };
     const Ctor = w.SpeechRecognition ?? w.webkitSpeechRecognition;
     if (!Ctor) {
-      setSouci('Ce navigateur ne sait pas écouter. Essaie avec Chrome.');
+      dire_souci(
+        'Ce navigateur ne sait pas écouter. Essaie avec Chrome — ou écris ta question, je la lirai à voix haute.',
+      );
+      setClavier(true);
       return;
     }
 
@@ -237,12 +286,21 @@ export default function ModeConduite() {
       setQuestion(t);
     };
     rec.onerror = (e) => {
+      const code = e?.error ?? 'inconnu';
       majEtat('pret');
-      setSouci(
-        e?.error === 'not-allowed'
-          ? 'Le micro est bloqué. Autorise-le dans les réglages du navigateur.'
-          : 'Je n’ai pas entendu. Réessaie.',
-      );
+      // On DIT lequel : « ça ne marche pas » ne se répare pas, « not-allowed »
+      // se répare. Mohamed n'a pas de console pour me le lire.
+      if (code === 'not-allowed' || code === 'service-not-allowed') {
+        dire_souci('Le micro est bloqué. Autorise-le dans les réglages du navigateur, puis réessaie.');
+        setClavier(true);
+      } else if (code === 'no-speech') {
+        dire_souci('Je n’ai rien entendu. Réappuie et parle un peu plus fort.');
+      } else if (code === 'network') {
+        dire_souci('La dictée a besoin d’Internet et la connexion a lâché.');
+      } else {
+        dire_souci(`La dictée s’est arrêtée (${code}). Tu peux écrire ta question à la place.`);
+        setClavier(true);
+      }
     };
     rec.onend = () => {
       if (dernier.trim()) void demander(dernier.trim());
@@ -256,9 +314,14 @@ export default function ModeConduite() {
       rec.start();
     } catch {
       majEtat('pret');
-      setSouci('Le micro n’a pas démarré. Réessaie.');
+      dire_souci('Le micro n’a pas démarré. Réessaie, ou écris ta question.');
+      setClavier(true);
     }
   }, [demander, taire]);
+
+  useEffect(() => {
+    appuiRef.current = appui;
+  }, [appui]);
 
   useEffect(() => () => {
     recRef.current?.abort?.();
@@ -290,7 +353,39 @@ export default function ModeConduite() {
         <span className="conduite-libelle">{LIBELLE[etat]}</span>
       </button>
 
+      <label className="conduite-bascule">
+        <input
+          type="checkbox"
+          checked={mainsLibres}
+          onChange={(e) => setMainsLibres(e.target.checked)}
+        />
+        <span>Mains libres — il réécoute tout seul après avoir répondu</span>
+      </label>
+
       {souci ? <p className="conduite-souci">{souci}</p> : null}
+
+      {clavier ? (
+        <form
+          className="conduite-clavier"
+          onSubmit={(e) => {
+            e.preventDefault();
+            const t = saisie.trim();
+            if (!t) return;
+            setSaisie('');
+            setQuestion(t);
+            void demander(t);
+          }}
+        >
+          <input
+            type="text"
+            value={saisie}
+            onChange={(e) => setSaisie(e.target.value)}
+            placeholder="Écris ta question, je la lirai à voix haute"
+            aria-label="Écris ta question"
+          />
+          <button type="submit">Envoyer</button>
+        </form>
+      ) : null}
 
       <div className="conduite-echange">
         {question ? <p className="conduite-question">« {question} »</p> : null}
@@ -300,7 +395,7 @@ export default function ModeConduite() {
       {incapable ? (
         <p className="conduite-souci">
           {micOK === false
-            ? 'Ce navigateur ne sait pas écouter. Sur iPhone, ouvre halalgpt.fr dans Chrome ; sur Android, Chrome fonctionne.'
+            ? 'Ce navigateur ne sait pas écouter. Sur iPhone, ouvre halalgpt.fr dans Chrome ; sur Android, Chrome fonctionne. En attendant, écris ta question ci-dessus : la réponse sera lue à voix haute.'
             : 'Ce navigateur ne sait pas parler à voix haute.'}
         </p>
       ) : null}

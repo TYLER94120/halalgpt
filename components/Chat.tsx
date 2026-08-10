@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-interface Message {
-  role: 'user' | 'assistant';
-  content: string;
-  image?: string; // dataURL JPEG (photo de l'utilisateur)
-}
+import {
+  demander,
+  ecouter,
+  etatCourant,
+  poserLeFil,
+  type Message,
+} from '@/lib/conversation';
 
 const SUGGESTIONS = [
   '🔍 Le E120 est-il halal ?',
@@ -102,27 +104,86 @@ export default function Chat() {
   const lastAssistantRef = useRef<HTMLDivElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const recognitionRef = useRef<{ stop: () => void } | null>(null);
+  // Passe à vrai dès que le lecteur fait défiler lui-même : on ne lui reprend
+  // plus la vue tant qu'un nouveau message n'est pas apparu.
+  const lecteurAuVolantRef = useRef(false);
 
   const hasConversation = messages.length > 0;
 
-  // ── Défilement intelligent ──
-  // Réponse de l'IA → on montre le DÉBUT de la réponse (pas la fin !).
-  // Message utilisateur / « en train d'écrire » → on suit le bas.
+  // ── Défilement ──
+  //
+  // Le bug signalé par Mohamed : « pendant qu'il écrivait, ça me remontait
+  // tout le temps ; j'essayais de descendre pour lire et ça remontait
+  // automatiquement ».
+  //
+  // La cause était ici. Cet effet dépendait de `messages`, dont le CONTENU
+  // change à chaque mot reçu — donc il replaçait la vue au début de la
+  // réponse des dizaines de fois par seconde, en écrasant chaque geste de
+  // lecture. L'intention était bonne (montrer le début de la réponse, pas la
+  // fin), l'exécution la rendait insupportable.
+  //
+  // Deux corrections :
+  //   1. on ne se replace qu'au moment où un message APPARAÎT — d'où la
+  //      dépendance sur le nombre de messages et non sur leur contenu. Une
+  //      fois placé au début de la réponse, le texte pousse vers le bas tout
+  //      seul : il n'y a plus rien à faire ;
+  //   2. dès que le lecteur fait défiler lui-même, on ne touche plus à rien.
+  //      Reprendre la main sur quelqu'un qui lit est la pire chose à faire.
+  const nombreDeMessages = messages.length;
+  const roleDuDernier = messages[nombreDeMessages - 1]?.role;
+
   useEffect(() => {
-    if (!hasConversation) return;
-    const last = messages[messages.length - 1];
-    if (!loading && last?.role === 'assistant') {
+    const surDefilement = () => {
+      lecteurAuVolantRef.current = true;
+    };
+    window.addEventListener('wheel', surDefilement, { passive: true });
+    window.addEventListener('touchmove', surDefilement, { passive: true });
+    return () => {
+      window.removeEventListener('wheel', surDefilement);
+      window.removeEventListener('touchmove', surDefilement);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!nombreDeMessages) return;
+    // Le garde-fou : si le lecteur a fait défiler lui-même depuis sa dernière
+    // question, on ne lui reprend PAS la vue. Il est remis à zéro dans send(),
+    // c'est-à-dire quand il agit — poser une question, c'est vouloir suivre la
+    // réponse ; faire défiler pendant qu'elle s'écrit, c'est vouloir lire.
+    if (lecteurAuVolantRef.current) return;
+    if (roleDuDernier === 'assistant') {
       lastAssistantRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
       endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-  }, [messages, loading, hasConversation]);
+  }, [nombreDeMessages, roleDuDernier]);
 
   // Le micro n'est proposé que si le navigateur sait dicter (Chrome, Safari…).
   useEffect(() => {
     const w = window as unknown as Record<string, unknown>;
     setSpeechOK(Boolean(w.SpeechRecognition || w.webkitSpeechRecognition));
     setSavedThread(loadThread());
+  }, []);
+
+  // ── On se rebranche sur une réponse déjà en route ──
+  //
+  // Le composant n'est plus le propriétaire de la réponse, seulement son
+  // spectateur. Quand Mohamed ouvre une fiche puis revient, le Chat est
+  // démonté puis remonté — mais la requête, elle, n'a jamais été interrompue :
+  // elle vit dans lib/conversation.ts. On récupère donc ici où elle en est,
+  // et on continue de la suivre.
+  useEffect(() => {
+    const courant = etatCourant();
+    if (courant.messages.length) {
+      setMessages(courant.messages);
+      setLoading(courant.attente);
+      setStreaming(courant.ecrit);
+    }
+    return ecouter((e) => {
+      setMessages(e.messages);
+      setLoading(e.attente);
+      setStreaming(e.ecrit);
+    });
   }, []);
 
   // On enregistre le fil à chaque échange TERMINÉ. La page d'accueil reste
@@ -137,12 +198,22 @@ export default function Chat() {
   }, [messages, streaming]);
 
   const resumeThread = () => {
-    setMessages(savedThread);
+    poserLeFil(savedThread);
     setSavedThread([]);
+    // Le cas que le magasin ne peut PAS rattraper : Mohamed a rechargé la page
+    // (ou fermé l'onglet) pendant que la réponse arrivait. Aucun code côté
+    // navigateur ne survit à ça — la requête est morte avec la page.
+    //
+    // Ce qu'on retrouve alors, c'est un fil qui se termine par une question
+    // sans réponse. On la relance, une fois, au moment où il demande à
+    // reprendre : c'est exactement ce qu'il attendait quand il a écrit « la
+    // réponse n'a pas continué à tourner ».
+    const dernier = savedThread[savedThread.length - 1];
+    if (dernier?.role === 'user') void demander(savedThread);
   };
 
   const newConversation = () => {
-    setMessages([]);
+    poserLeFil([]);
     setSavedThread([]);
     setInput('');
     setPendingImage(null);
@@ -239,84 +310,22 @@ export default function Chat() {
 
     if (recording) recognitionRef.current?.stop();
 
-    const next: Message[] = [...messages, { role: 'user', content: text, ...(image ? { image } : {}) }];
-    setMessages(next);
+    // Il pose une question : il veut suivre la réponse. On reprend donc la
+    // main sur le défilement, une fois, ici — et nulle part ailleurs.
+    lecteurAuVolantRef.current = false;
+
+    const next: Message[] = [
+      ...messages,
+      { role: 'user', content: text, ...(image ? { image } : {}) },
+    ];
     setInput('');
     setSuggestions([]);
     setPendingImage(null);
-    setLoading(true);
 
-    try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        // Économie : seule la photo du DERNIER message part vers l'IA,
-        // les photos des anciens messages restent affichées mais ne repartent pas.
-        body: JSON.stringify({
-          messages: next.map((m, i) => ({
-            role: m.role,
-            content: m.content,
-            ...(m.image && i === next.length - 1 ? { image: m.image } : {}),
-          })),
-        }),
-      });
-      // La réponse arrive en flux : on affiche les mots au fur et à mesure au
-      // lieu d'attendre la fin. La bulle apparaît dès le premier morceau reçu,
-      // et l'attente ne se sent plus.
-      if (!res.body) {
-        // Navigateur sans lecture de flux : on retombe sur le texte entier.
-        const texte = await res.text();
-        setMessages((prev) => [...prev, { role: 'assistant', content: texte }]);
-        return;
-      }
-
-      const lecteur = res.body.getReader();
-      const decodeur = new TextDecoder();
-      let recu = '';
-      let bulleOuverte = false;
-
-      for (;;) {
-        const { done, value } = await lecteur.read();
-        if (done) break;
-        recu += decodeur.decode(value, { stream: true });
-        if (!bulleOuverte) {
-          // Premier morceau : on ferme l'indicateur d'attente et on ouvre la
-          // bulle. Les deux ne doivent jamais coexister.
-          bulleOuverte = true;
-          setLoading(false);
-          setStreaming(true);
-          setMessages((prev) => [...prev, { role: 'assistant', content: recu }]);
-        } else {
-          setMessages((prev) => {
-            const copie = [...prev];
-            copie[copie.length - 1] = { role: 'assistant', content: recu };
-            return copie;
-          });
-        }
-      }
-      recu += decodeur.decode();
-
-      if (!bulleOuverte) {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: 'assistant',
-            content: recu || "Désolé, je n'ai pas pu répondre. Réessaie dans un instant 🙏",
-          },
-        ]);
-      }
-    } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: 'Oups, petit souci de connexion 📡 Réessaie dans un instant.',
-        },
-      ]);
-    } finally {
-      setLoading(false);
-      setStreaming(false);
-    }
+    // La demande part du magasin, PAS d'ici : c'est ce qui lui permet de
+    // survivre à l'ouverture d'une fiche. Le composant se contente d'écouter,
+    // et l'abonnement mis en place plus haut met l'écran à jour.
+    await demander(next);
   };
 
   const composer = (

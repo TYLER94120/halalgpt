@@ -1673,3 +1673,40 @@ a {
   line-height: 1.5;
 }
 .lien-conduite:hover { background: rgba(201, 168, 76, 0.16); }
+
+/* Mains libres, et clavier de secours quand la dictée n'est pas disponible.
+   La voix qui PARLE marche presque partout, la dictée non : sans ce repli, un
+   téléphone qui ne sait pas écouter rendait tout l'écran inutile alors que la
+   moitié utile fonctionnait. */
+.conduite-bascule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  opacity: 0.85;
+  padding: 10px 4px;
+  cursor: pointer;
+}
+.conduite-bascule input { width: 22px; height: 22px; accent-color: #c9a84c; }
+
+.conduite-clavier { display: flex; gap: 10px; }
+.conduite-clavier input {
+  flex: 1;
+  min-height: 54px;
+  padding: 0 16px;
+  font-size: 17px;
+  border-radius: 14px;
+  border: 1px solid rgba(244, 239, 226, 0.25);
+  background: rgba(244, 239, 226, 0.08);
+  color: #f4efe2;
+}
+.conduite-clavier button {
+  min-height: 54px;
+  padding: 0 20px;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  border-radius: 14px;
+  background: #c9a84c;
+  color: #08130c;
+}
