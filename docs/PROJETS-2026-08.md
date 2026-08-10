@@ -2,15 +2,42 @@
 
 Décidés par Mohamed le 10 août 2026. Il achète les trois domaines le soir même.
 
-⚠️ **Avertissement, et il compte.** Les sources ci-dessous sont données **de
-mémoire par l'agent responsable, sans avoir pu les vérifier** : la sortie réseau
-de l'atelier est fermée. Ce ne sont pas des mesures, ce sont des souvenirs.
-C'est exactement ce que la compétence `mesurer-avant-daffirmer` demande de
-signaler plutôt que de laisser croire.
+## ✅ Les sources sont vérifiées — 7 sur 7 répondent
 
-**Conséquence : le premier robot de chaque projet vérifie la source, et rien
-n'est construit avant.** Si elle ne répond pas, ou si le format a changé, le
-projet s'arrête avant d'avoir coûté quoi que ce soit.
+**Mesuré le 10 août 2026 à 10 h 25 UTC**, par un robot GitHub (`outils/verifier-sources.py`
+dans le dépôt `voyageshalal-app`, en attendant que les dépôts des projets existent).
+
+| Projet | Jouable | Sources vertes |
+|---|---|---|
+| Jours fériés / ponts | ✅ oui | 3 / 3 |
+| Carburants | ✅ oui | 2 / 2 |
+| Fin de support | ✅ oui | 2 / 2 |
+
+> *Ce que ce paragraphe disait il y a une heure :* « Les sources ci-dessous sont
+> données **de mémoire par l'agent responsable, sans avoir pu les vérifier** :
+> la sortie réseau de l'atelier est fermée. Ce ne sont pas des mesures, ce sont
+> des souvenirs. »
+>
+> Je laisse l'avertissement visible plutôt que de le réécrire en douce. Il était
+> juste au moment où je l'ai écrit, et le robot lui a donné tort sur les sept
+> adresses. **C'est le bon sens de la vérification : elle pouvait me contredire,
+> et j'aurais publié le démenti aussi vite.**
+
+Le robot ne s'est pas contenté d'un code 200 — une page d'erreur ou une page de
+maintenance rendent 200 avec du HTML. Il parse et relève la forme reçue. Ce que
+ça a appris **en plus** du oui/non :
+
+- `calendrier.api.gouv.fr` rend **285 jours fériés, jusqu'en 2031**. On peut
+  donc calculer les ponts sur plusieurs années, pas seulement l'année en cours.
+- `endoflife.date/api/windows.json` porte exactement les champs attendus :
+  `cycle, releaseLabel, releaseDate, eol, latest, link, lts, support`. C'est la
+  **forme** qui est validée, pas seulement la disponibilité.
+- L'ancienne adresse `roulez-eco` répond encore : archive zip de 954 ko,
+  signature `PK`. Les deux sources carburants sont valides, pas seulement la
+  moderne.
+
+Le constat complet et daté : `docs/usine/VERIFICATION-SOURCES.md`, régénéré
+chaque jour à 5 h. Une source qui meurt se verra le lendemain.
 
 ---
 
