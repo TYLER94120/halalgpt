@@ -1,4 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
+
+import CompteurPasserelle from '@/components/CompteurPasserelle';
 import type { Metadata } from 'next';
 import { DM_Sans, Playfair_Display } from 'next/font/google';
 import Link from 'next/link';
@@ -82,6 +84,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </p>
         </footer>
         <Analytics />
+        {/* Vercel Analytics mesure deja les arrivees, mais seul Mohamed peut ouvrir
+            ce tableau de bord. Ce compteur-la ecrit dans Redis, et /api/mine
+            l'affiche : n'importe quel agent peut donc repondre seul a « est-ce
+            que cette passerelle amene quelqu'un ? ». */}
+        <CompteurPasserelle />
       </body>
     </html>
   );

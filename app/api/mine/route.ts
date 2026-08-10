@@ -71,12 +71,23 @@ export async function GET(request: Request) {
     });
   }
 
-  const [fr, en, totalFr, totalEn] = await Promise.all([
+  const [fr, en, totalFr, totalEn, passerelles, detail] = await Promise.all([
     redis.zrange<(string | number)[]>('halalgpt:questions', 0, 49, { rev: true, withScores: true }),
     redis.zrange<(string | number)[]>('halalgpt:en:questions', 0, 49, { rev: true, withScores: true }),
     redis.zcard('halalgpt:questions'),
     redis.zcard('halalgpt:en:questions'),
+    // Les passerelles : combien de visiteurs arrivent depuis un autre site de
+    // la famille. C'est la seule facon pour un agent de repondre seul a « est-ce
+    // que mon lien amene quelqu'un ? » — le tableau de bord Vercel, lui, n'est
+    // ouvrable que par Mohamed.
+    redis.zrange<(string | number)[]>('halalgpt:passerelles', 0, 19, { rev: true, withScores: true }),
+    redis.zrange<(string | number)[]>('halalgpt:passerelles:detail', 0, 29, { rev: true, withScores: true }),
   ]);
+  // zrange withScores rend [membre, score, membre, score…] : les scores sont
+  // aux rangs impairs.
+  const totalPasserelles = passerelles
+    .filter((_, i) => i % 2 === 1)
+    .reduce((n: number, v) => n + Number(v), 0);
 
   const html = `<!doctype html>
 <html lang="fr">
@@ -106,6 +117,8 @@ export async function GET(request: Request) {
   <p class="sub">${totalFr} question(s) distincte(s) en français · ${totalEn} en anglais — top 50 par fréquence.</p>
   ${section('🇫🇷 Questions françaises (halalgpt.fr)', rows(fr))}
   ${section('🇬🇧 Questions anglaises (gohalaltravel.com)', rows(en))}
+  ${section(`🔗 Passerelles — ${totalPasserelles} arrivée(s) depuis un autre site de la famille`, rows(passerelles))}
+  ${section('🔗 Le détail (source · campagne · page d’arrivée)', rows(detail))}
   <div class="tip">💡 Copiez les questions les plus posées et envoyez-les à Claude : « crée les pages pour ces questions » — elles deviendront des pages SEO et des réponses instantanées gratuites.</div>
 </div>
 </body>
