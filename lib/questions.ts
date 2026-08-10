@@ -22,6 +22,14 @@ export type Category =
 export interface QA {
   slug: string;
   question: string;
+  /**
+   * Titre court pour Google, UNIQUEMENT quand `question` depasse 60
+   * caracteres et se ferait couper en plein milieu par les resultats de
+   * recherche. Ecrit a la main : une coupe automatique produirait exactement
+   * le titre bacle qu'on cherche a eviter. La page, elle, continue
+   * d'afficher `question` en entier — ce champ ne sert qu'a la balise <title>.
+   */
+  titreSeo?: string;
   verdict: string;
   short: string;
   answer: string[];
@@ -494,6 +502,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'serrer-la-main-islam',
     question: 'Serrer la main à une personne du sexe opposé, est-ce permis ?',
+    titreSeo: 'Serrer la main au sexe opposé : est-ce permis ?',
     verdict: '⚠️ Majorité : non entre non-mahram — avis minoritaires en cas de contrainte',
     short:
       'Entre hommes, ou entre femmes, la poignée de main est une belle pratique. Entre un homme et une femme qui ne sont pas proches parents, la majorité des savants s’y opposent — et il existe des façons courtoises de décliner.',
@@ -1434,6 +1443,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'oubli-manger-ramadan',
     question: 'J’ai mangé par oubli pendant le Ramadan : mon jeûne est-il cassé ?',
+    titreSeo: 'Oubli pendant le Ramadan : le jeûne est-il cassé ?',
     verdict: '✅ Le jeûne reste valide',
     short:
       'Manger ou boire par pur oubli n’annule pas le jeûne : on s’arrête dès qu’on s’en rend compte et on continue sa journée normalement.',
@@ -1476,6 +1486,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'gouttes-yeux-ramadan',
     question: 'Les gouttes dans les yeux ou le nez annulent-elles le jeûne ?',
+    titreSeo: 'Gouttes yeux et nez : le jeûne est-il annulé ?',
     verdict: '⚠️ Yeux : non — nez : prudence',
     short:
       'Les gouttes oculaires n’annulent pas le jeûne pour la majorité. Pour le nez, éviter d’avaler ce qui descend dans la gorge.',
@@ -1757,6 +1768,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'difference-halal-casher',
     question: 'Quelle différence entre halal et casher ? Peut-on manger casher ?',
+    titreSeo: 'Quelle différence entre halal et casher ?',
     verdict: '⚠️ Proches mais différents — avis divergents',
     short:
       'Halal et casher partagent l’abattage rituel et l’interdit du porc, mais diffèrent (vin casher permis, séparation lait-viande…). Manger casher fait débat chez les savants.',
@@ -2250,6 +2262,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'lardons-halal',
     question: 'Par quoi remplacer les lardons ? Des lardons halal existent-ils ?',
+    titreSeo: 'Lardons halal : par quoi les remplacer ?',
     verdict: '❌ Lardons de porc interdits — alternatives efficaces',
     short:
       'Les lardons classiques sont du porc : interdits. Alternatives : lardons de dinde/bœuf halal (rayon halal), ou fumés végétaux — la carbonara halal existe.',
@@ -2503,6 +2516,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'souhaiter-noel-halal',
     question: 'Peut-on souhaiter « Joyeux Noël » à ses proches non musulmans ?',
+    titreSeo: 'Peut-on souhaiter « Joyeux Noël » en islam ?',
     verdict: '⚠️ Avis divergents — courtoisie vs précaution',
     short:
       'Célébrer Noël soi-même : non pour la quasi-totalité des savants. Le souhaiter à des proches non musulmans : interdit pour certains, permis par courtoisie pour d’autres (avis contemporain répandu).',
@@ -2629,6 +2643,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'priere-vendredi-obligatoire',
     question: 'La prière du vendredi est-elle obligatoire ? Et si je travaille ?',
+    titreSeo: 'La prière du vendredi est-elle obligatoire ?',
     verdict: '✅ Obligatoire pour les hommes — exemptions réelles',
     short:
       'La jumu‘a est obligatoire pour l’homme pubère résident (Coran 62:9) ; femmes, voyageurs et malades en sont dispensés. Le travail exige d’essayer de s’organiser — l’impossibilité réelle est une excuse.',

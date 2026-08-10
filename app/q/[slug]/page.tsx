@@ -6,6 +6,7 @@ import ShareBar from '@/components/ShareBar';
 import Surprise from '@/components/Surprise';
 import { CATEGORY_SLUGS, getQuestion, QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
+import { titreDeFiche } from '@/lib/titre-seo';
 import { surpriseDuJour } from '@/lib/surprises';
 import dates from '@/lib/dates-fiches.json';
 
@@ -44,8 +45,13 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const qa = getQuestion(params.slug);
   if (!qa) return {};
+  // `absolute` court-circuite le gabarit « %s — HalalGPT » du layout : c'est
+  // titreDeFiche qui decide si la marque tient dans les 60 caracteres que
+  // Google affiche, ou s'il vaut mieux la sacrifier pour montrer la question
+  // en entier. Laisser le gabarit faire coupait 22 fiches sur 189.
+  const { titre } = titreDeFiche(qa);
   return {
-    title: qa.question,
+    title: { absolute: titre },
     description: qa.short,
     alternates: { canonical: `${SITE_URL}/q/${qa.slug}` },
     openGraph: {
