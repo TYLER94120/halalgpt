@@ -772,10 +772,17 @@ a {
 
 /* ─── Mémoire de conversation ── */
 
-/* « Reprendre » reste repérable sans hurler : un contour doré suffit. En
-   aplat plein, c'était l'élément le plus lourd de la page d'accueil, pour une
-   action que la plupart des visiteurs ne feront jamais. */
+/* « Reprendre » a SA ligne, et ne partage plus celle des exemples.
+   Ce ne sont pas des objets de même nature : les exemples montrent ce qu'on
+   PEUT demander, celui-ci agit sur la conversation du visiteur. Mis côte à
+   côte, le plus gros écrasait les autres et jetait la première suggestion
+   toute seule au bout de la ligne.
+   `width: 100%` dans un conteneur en `flex-wrap` force le retour à la ligne
+   des suivantes : c'est ce qui les rend à nouveau alignées deux par deux. */
 .chip-reprendre {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 2px;
   background: transparent;
   color: var(--or);
   border-color: var(--or);

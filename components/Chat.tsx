@@ -419,6 +419,12 @@ export default function Chat() {
           </div>
         ) : (
           <div className="chat-suggestions">
+            {/* « Reprendre » sort de la rangée des exemples, et c'est un vrai
+                choix, pas de la cosmétique : ce ne sont pas des objets de même
+                nature. Les exemples montrent ce qu'on PEUT demander ; celui-ci
+                agit sur la conversation de Mohamed. Côte à côte, le plus gros
+                écrasait les autres et jetait « E120 » toute seule au bout de la
+                ligne — la capture du 10 août le montrait sans discussion. */}
             {savedThread.length > 0 && (
               <button type="button" className="chip chip-reprendre" onClick={resumeThread}>
                 ↩︎ Reprendre ma conversation
