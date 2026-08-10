@@ -443,8 +443,15 @@ a {
   font-weight: 800;
 }
 
+/* `block` + `fit-content` et non `inline-block` : un element en ligne traine
+   derriere lui l'espace reserve aux jambages (le bas du « g », du « p »), et
+   cet espace fantome collait la ligne de date sous la pastille. C'est LUI que
+   la marge negative de `.article-date` essayait de rattraper — en creant le
+   chevauchement qu'on corrige ici. */
 .verdict-badge {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
   margin-top: 16px;
   padding: 12px 20px;
   border-radius: 999px;
@@ -1417,8 +1424,13 @@ a {
 /* La date de mise à jour : sur un sujet où l'on engage sa responsabilité, elle
    compte autant pour le lecteur que pour Google. Discrète, jamais mise en
    avant — elle rassure, elle ne se vante pas. */
+/* Marge POSITIVE. Elle valait -6px pour compenser l'espace fantome de la
+   pastille en ligne : resultat, la date remontait DANS la pastille — mesure du
+   10 aout : 6 px de chevauchement sur les 189 fiches, pas seulement sur celle
+   que Mohamed a vue. On a supprime la cause, on peut donc supprimer le
+   rattrapage. */
 .article-date {
-  margin: -6px 0 20px;
+  margin: 10px 0 20px;
   font-size: 0.88rem;
   opacity: 0.62;
 }
