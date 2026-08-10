@@ -37,9 +37,7 @@ export default function HomePage() {
           Des réponses qui respectent ta religion.
         </h1>
         <p className="hero-sub">
-          Nourriture, produits, Ramadan, voyage, vie de tous les jours… Pose n’importe quelle
-          question : HalalGPT répond toujours en tenant compte de l’islam. Par la voix 🎤, par
-          photo 📷 ou par écrit.
+          Pose n’importe quelle question : la réponse tient toujours compte de l’islam.
         </p>
       </section>
 
@@ -50,8 +48,7 @@ export default function HomePage() {
           ignore l'existence. Il est volontairement discret — c'est un usage
           minoritaire, il ne doit pas encombrer l'accueil de tous les autres. */}
       <Link href="/conduite" className="lien-conduite">
-        🚗 <strong>En voiture ?</strong> Pose ta question à la voix et écoute la
-        réponse, sans toucher l’écran.
+        🚗 En voiture ? Pose ta question à la voix
       </Link>
 
       {/* La decouverte du jour. Elle est posee APRES le chat, jamais avant :

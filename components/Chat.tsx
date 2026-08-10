@@ -10,12 +10,12 @@ import {
   type Message,
 } from '@/lib/conversation';
 
-const SUGGESTIONS = [
-  '🔍 Le E120 est-il halal ?',
-  '🕌 Comment rattraper mes prières ?',
-  '🍬 Les Haribo sont-ils halal ?',
-  '✈️ Repas halal en avion ?',
-];
+// Trois, pas quatre, et courtes. Sur un téléphone, chaque suggestion longue
+// prend une ligne entière : quatre d'entre elles remplissaient l'écran sous le
+// champ de saisie et donnaient l'impression d'un formulaire. Mohamed :
+// « on a perdu le côté épuré, on a tout entassé ». Elles sont là pour montrer
+// ce qu'on PEUT demander, pas pour proposer un menu.
+const SUGGESTIONS = ['E120', 'Haribo', 'Rattraper mes prières'];
 
 interface Suggestion {
   slug: string;

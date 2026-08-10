@@ -252,23 +252,29 @@ a {
 
 .chat-suggestions {
   display: flex;
-  gap: 10px;
-  padding: 0 20px 16px;
+  gap: 8px;
+  padding: 0 20px 14px;
   flex-wrap: wrap;
 }
 
+/* Compactes, pour tenir à plusieurs par ligne. En 56 px de haut et 16 px de
+   texte, chaque suggestion occupait une ligne entière sur un téléphone : le
+   champ de saisie se retrouvait noyé sous une pile de gros boutons. Une
+   suggestion est un exemple, pas une action principale — elle ne doit jamais
+   peser plus lourd que la question qu'on vient écrire. */
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 56px;
-  padding: 12px 18px;
+  gap: 6px;
+  min-height: 38px;
+  padding: 8px 14px;
   border-radius: 999px;
-  background: var(--foret);
-  border: 1px solid var(--or);
+  background: transparent;
+  border: 1px solid var(--or-doux, rgba(201, 168, 76, 0.4));
   color: var(--creme);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
   cursor: pointer;
   font-family: inherit;
 }
@@ -753,11 +759,15 @@ a {
 
 /* ─── Mémoire de conversation ── */
 
+/* « Reprendre » reste repérable sans hurler : un contour doré suffit. En
+   aplat plein, c'était l'élément le plus lourd de la page d'accueil, pour une
+   action que la plupart des visiteurs ne feront jamais. */
 .chip-reprendre {
-  background: var(--or);
-  color: var(--nuit);
+  background: transparent;
+  color: var(--or);
   border-color: var(--or);
   font-weight: 700;
+  opacity: 1;
 }
 
 .chat-topbar {
@@ -1661,18 +1671,15 @@ a {
    dont on ignore l'existence. */
 .lien-conduite {
   display: block;
-  margin: 18px auto 0;
+  margin: 14px auto 0;
   max-width: 680px;
-  padding: 14px 18px;
-  border-radius: 16px;
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  background: rgba(201, 168, 76, 0.08);
+  padding: 8px 20px;
   color: inherit;
+  opacity: 0.6;
   text-decoration: none;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: 14px;
 }
-.lien-conduite:hover { background: rgba(201, 168, 76, 0.16); }
+.lien-conduite:hover { opacity: 1; }
 
 /* Mains libres, et clavier de secours quand la dictée n'est pas disponible.
    La voix qui PARLE marche presque partout, la dictée non : sans ce repli, un

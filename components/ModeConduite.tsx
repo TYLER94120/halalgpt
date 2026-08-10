@@ -54,12 +54,18 @@ export default function ModeConduite() {
   // le modèle demandé par Mohamed — « comme Claude ou ChatGPT : lorsqu'on
   // parle, il répond directement ». Sans ça, c'est un talkie-walkie.
   const [mainsLibres, setMainsLibres] = useState(true);
+  // iOS seulement : il faut un appui dedie pour autoriser la voix, AVANT
+  // d'ouvrir le micro. Voir le commentaire dans `appui`.
+  const [aDebloquer, setADebloquer] = useState(false);
 
   const recRef = useRef<ReconnaissanceLike | null>(null);
   const voixRef = useRef<SpeechSynthesisVoice | null>(null);
   const veilleRef = useRef<{ release: () => Promise<void> } | null>(null);
   const etatRef = useRef<Etat>('pret');
   const appuiRef = useRef<() => void>(() => {});
+  // La synthese a-t-elle deja reussi a parler une fois ?
+  const voixDebloqueeRef = useRef(false);
+  const reessayeRef = useRef(false);
   const mainsLibresRef = useRef(true);
   const souciRef = useRef('');
 
@@ -88,6 +94,24 @@ export default function ModeConduite() {
         dispo.find((v) => v.lang?.toLowerCase().startsWith('fr')) ?? dispo[0] ?? null;
     };
     choisir();
+
+    // On tente de débloquer la voix tout de suite. Sur Android ça marche sans
+    // geste, et l'appui supplémentaire n'apparaîtra jamais. Sur iOS ça échoue
+    // en silence — c'est ce silence qui nous dit qu'il faudra un appui dédié.
+    try {
+      const essai = new SpeechSynthesisUtterance(' ');
+      essai.volume = 0;
+      essai.onstart = () => {
+        voixDebloqueeRef.current = true;
+      };
+      window.speechSynthesis?.speak(essai);
+      window.setTimeout(() => {
+        if (!voixDebloqueeRef.current) setADebloquer(true);
+      }, 600);
+    } catch {
+      setADebloquer(true);
+    }
+
     // La liste des voix arrive souvent APRÈS le premier appel : sans cet
     // écouteur, on parlerait avec une voix anglaise sur la première question.
     window.speechSynthesis?.addEventListener?.('voiceschanged', choisir);
@@ -239,26 +263,43 @@ export default function ModeConduite() {
       return;
     }
 
-    // ── Déverrouillage de la voix, SANS empêcher le micro de démarrer ──
+    // ── Pourquoi le micro ne touche plus du tout à la synthèse vocale ──
     //
-    // Bug signalé par Mohamed : « le dictaphone ne fonctionne pas ». La cause
-    // était ici, dans mon propre code. iOS n'autorise la synthèse vocale que
-    // si elle a été réveillée pendant un geste de l'utilisateur, alors je la
-    // réveillais avec un souffle — puis je démarrais le micro dans la foulée.
-    // Le téléphone se retrouvait à PARLER ET ÉCOUTER en même temps, et la
-    // reconnaissance s'annulait aussitôt, sans erreur visible.
+    // Capture d'écran de Mohamed, iPhone, Safari : « La dictée s'est arrêtée
+    // (aborted) ». C'était encore mon code.
     //
-    // La correction : le souffle est muet (volume zéro) ET on le coupe net
-    // avant d'ouvrir le micro. Le déverrouillage iOS reste acquis — il suffit
-    // que speak() ait été appelé pendant le geste — mais plus rien ne sort du
-    // haut-parleur quand la reconnaissance démarre.
-    try {
-      const souffle = new SpeechSynthesisUtterance(' ');
-      souffle.volume = 0;
-      window.speechSynthesis?.speak(souffle);
-      window.speechSynthesis?.cancel();
-    } catch {
-      /* pas de synthèse : on le dira plus bas */
+    // Sur iOS, faire parler la synthèse — MÊME À VOLUME ZÉRO — prend le
+    // contrôle de la session audio du téléphone. `cancel()` la rend, mais pas
+    // assez vite : la reconnaissance démarrait pendant que la synthèse tenait
+    // encore le micro, et iOS l'annulait sur-le-champ, avec « aborted ».
+    //
+    // Ma première correction (souffle muet + cancel) traitait le symptôme —
+    // le son — alors que le problème était le PARTAGE DU MICRO. Les deux ne
+    // peuvent pas se produire l'un après l'autre dans le même geste.
+    //
+    // Donc : le déblocage de la voix est un appui SÉPARÉ, une seule fois par
+    // visite, et seulement là où c'est nécessaire (sur Android il a lieu au
+    // chargement et cet appui n'apparaît jamais). Ensuite, plus jamais un mot
+    // de synthèse sur le chemin du micro.
+    if (!voixDebloqueeRef.current) {
+      try {
+        const souffle = new SpeechSynthesisUtterance(' ');
+        souffle.volume = 0;
+        souffle.onstart = () => {
+          voixDebloqueeRef.current = true;
+        };
+        souffle.onend = () => {
+          voixDebloqueeRef.current = true;
+          setADebloquer(false);
+        };
+        window.speechSynthesis?.speak(souffle);
+      } catch {
+        /* pas de synthèse du tout : on continue quand même vers le micro */
+        voixDebloqueeRef.current = true;
+      }
+      setADebloquer(false);
+      dire_souci('Voix activée ✓ — appuie maintenant et parle.');
+      return;
     }
 
     const w = window as unknown as {
@@ -297,14 +338,26 @@ export default function ModeConduite() {
         dire_souci('Je n’ai rien entendu. Réappuie et parle un peu plus fort.');
       } else if (code === 'network') {
         dire_souci('La dictée a besoin d’Internet et la connexion a lâché.');
+      } else if (code === 'aborted' && !reessayeRef.current) {
+        // « aborted » est souvent passager. On retente UNE fois, une seconde
+        // plus tard, avant de conclure — mais une seule, sinon on boucle.
+        reessayeRef.current = true;
+        dire_souci('');
+        window.setTimeout(() => {
+          if (etatRef.current === 'pret') appuiRef.current();
+        }, 1000);
       } else {
         dire_souci(`La dictée s’est arrêtée (${code}). Tu peux écrire ta question à la place.`);
         setClavier(true);
       }
     };
     rec.onend = () => {
-      if (dernier.trim()) void demander(dernier.trim());
-      else majEtat('pret');
+      if (dernier.trim()) {
+        reessayeRef.current = false; // ça a marché : le prochain raté aura droit à son essai
+        void demander(dernier.trim());
+      } else {
+        majEtat('pret');
+      }
     };
     recRef.current = rec;
     setQuestion('');
@@ -350,7 +403,9 @@ export default function ModeConduite() {
         <span className="conduite-pictogramme" aria-hidden="true">
           {etat === 'ecoute' ? '🎙️' : etat === 'reflechit' ? '…' : etat === 'parle' ? '⏸' : '🎤'}
         </span>
-        <span className="conduite-libelle">{LIBELLE[etat]}</span>
+        <span className="conduite-libelle">
+          {aDebloquer && etat === 'pret' ? 'Appuie pour activer la voix' : LIBELLE[etat]}
+        </span>
       </button>
 
       <label className="conduite-bascule">
