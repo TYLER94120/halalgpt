@@ -1,0 +1,50 @@
+# Le premier robot d'un projet : il ne construit rien, il verifie que la source
+# repond. Rien d'autre n'est bati avant que ce fichier soit vert.
+#
+# Raison d'etre : l'agent qui a propose les sources ne pouvait pas les verifier
+# — la sortie reseau de son atelier est fermee. Batir un site entier avant de
+# savoir si la donnee arrive serait l'erreur exacte que la competence
+# `mesurer-avant-daffirmer` decrit. Ce robot, lui, a le reseau.
+
+name: Verifier la source
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Interroger la source et ecrire le constat
+        env:
+          # A renseigner par projet : une adresse par ligne.
+          SOURCES: ${{ vars.SOURCES }}
+        run: |
+          mkdir -p donnees
+          echo '{"verifie_le":"'"$(date -u +%F)"'","sources":[' > donnees/verification-source.json
+          premier=1
+          for url in $SOURCES; do
+            [ $premier -eq 1 ] || echo ',' >> donnees/verification-source.json
+            premier=0
+            code=$(curl -s -o /tmp/corps -w '%{http_code}' --max-time 30 "$url" || echo 000)
+            taille=$(wc -c < /tmp/corps 2>/dev/null || echo 0)
+            # On garde un echantillon : un code 200 ne dit pas que le format
+            # est celui qu'on attend.
+            echantillon=$(head -c 300 /tmp/corps 2>/dev/null | tr -d '\000' | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo '""')
+            printf '{"url":"%s","code":%s,"octets":%s,"echantillon":%s}' "$url" "$code" "$taille" "$echantillon" >> donnees/verification-source.json
+            echo "  $url -> $code, $taille octets"
+          done
+          echo ']}' >> donnees/verification-source.json
+          cat donnees/verification-source.json
+
+      - name: Deposer le constat dans le depot
+        run: |
+          git config user.name  "robot-verification"
+          git config user.email "noreply@github.com"
+          git add donnees/verification-source.json
+          git diff --staged --quiet || git commit -m "Verification de la source: constat du $(date -u +%F)"
+          git push
