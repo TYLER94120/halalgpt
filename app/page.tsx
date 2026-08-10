@@ -45,6 +45,15 @@ export default function HomePage() {
 
       <Chat />
 
+      {/* Le mode conduite est propose ICI, juste sous le chat, et pas dans un
+          menu : personne ne va chercher dans un menu une fonction dont il
+          ignore l'existence. Il est volontairement discret — c'est un usage
+          minoritaire, il ne doit pas encombrer l'accueil de tous les autres. */}
+      <Link href="/conduite" className="lien-conduite">
+        🚗 <strong>En voiture ?</strong> Pose ta question à la voix et écoute la
+        réponse, sans toucher l’écran.
+      </Link>
+
       {/* La decouverte du jour. Elle est posee APRES le chat, jamais avant :
           la page d'accueil doit rester vide au premier regard, c'est la regle
           de Mohamed et elle ne bouge pas. Ce qui ramene quelqu'un sur une IA

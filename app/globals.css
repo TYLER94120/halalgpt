@@ -1549,3 +1549,127 @@ a {
   font-size: 0.92rem;
   opacity: 0.7;
 }
+
+/* ─── Mode conduite ───────────────────────────────────────────────────────────
+   Au volant on ne lit pas, on ne vise pas, on ne fait pas défiler. Le bouton
+   occupe la moitié de l'écran : on l'atteint sans regarder. Tout le reste est
+   secondaire, et rien d'autre n'est cliquable. */
+
+.conduite {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: #08130c;
+  color: #f4efe2;
+}
+
+.conduite-tete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.conduite-retour {
+  color: #f4efe2;
+  opacity: 0.75;
+  text-decoration: none;
+  /* Cible large : c'est le SEUL autre élément cliquable de l'écran. */
+  padding: 12px 14px;
+  margin: -12px -14px;
+}
+.conduite-titre { opacity: 0.6; letter-spacing: 0.04em; }
+
+.conduite-bouton {
+  flex: 1 1 auto;
+  min-height: 48vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  color: #08130c;
+  background: linear-gradient(150deg, #e9d49f 0%, #c9a84c 55%, #b8963c 100%);
+  box-shadow: 0 14px 40px rgba(201, 168, 76, 0.3);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 120ms ease, background 200ms ease;
+}
+.conduite-bouton:active { transform: scale(0.985); }
+.conduite-pictogramme { font-size: clamp(56px, 16vw, 96px); line-height: 1; }
+.conduite-libelle {
+  font-size: clamp(24px, 6.5vw, 34px);
+  font-weight: 800;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* Chaque état a sa couleur : on reconnaît où on en est du coin de l'œil,
+   sans lire le libellé. */
+.conduite-ecoute {
+  background: linear-gradient(150deg, #6fd08c 0%, #3e9b4f 100%);
+  color: #04210c;
+  animation: conduite-pulse 1.4s ease-in-out infinite;
+}
+.conduite-reflechit {
+  background: linear-gradient(150deg, #cdd3cf 0%, #93a29a 100%);
+  color: #08130c;
+}
+.conduite-parle {
+  background: linear-gradient(150deg, #f0b877 0%, #e08e3c 100%);
+  color: #2a1503;
+}
+
+@keyframes conduite-pulse {
+  0%, 100% { box-shadow: 0 14px 40px rgba(62, 155, 79, 0.32); }
+  50%      { box-shadow: 0 20px 62px rgba(62, 155, 79, 0.62); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .conduite-ecoute { animation: none; }
+}
+
+.conduite-echange { flex: 0 1 auto; overflow-y: auto; max-height: 26vh; }
+.conduite-question {
+  font-size: 20px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+.conduite-reponse {
+  font-size: 22px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+.conduite-souci {
+  font-size: 18px;
+  color: #f0b877;
+  background: rgba(240, 184, 119, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.conduite-prudence {
+  font-size: 14px;
+  opacity: 0.62;
+  line-height: 1.5;
+}
+
+/* Entrée vers le mode conduite depuis l'accueil : discrète, mais visible.
+   Dans un menu, personne ne la trouverait — on ne cherche pas une fonction
+   dont on ignore l'existence. */
+.lien-conduite {
+  display: block;
+  margin: 18px auto 0;
+  max-width: 680px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.08);
+  color: inherit;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.lien-conduite:hover { background: rgba(201, 168, 76, 0.16); }
