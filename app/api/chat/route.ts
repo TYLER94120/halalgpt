@@ -202,15 +202,79 @@ const FINANCE_PATTERN = new RegExp(
       'leasing', 'loa', 'lld', 'pret immobilier', 'pret bancaire', 'pret a interet',
       'pari sportif', 'paris sportifs', 'parier', 'bookmaker', 'winamax', 'betclic', 'unibet',
       'loto', 'loterie', 'casino', 'poker', 'jackpot', 'jeux d.argent', 'jeu d.argent',
+      // Jeux de hasard nommés autrement : sans eux, la question passait au
+      // travers du verrou et partait à l'IA. Jamais « pari » ni « paris »
+      // seuls ici non plus — ce serait la ville.
+      'tombola', 'grattage', 'jeux de hasard', 'jeu de hasard', 'machine a sous', 'machines a sous',
     ].join('|') +
     ')\\b'
 );
 
-const FINANCE_REPLY = `🔒 La finance (crédit, placements, crypto, assurances, jeux d'argent…) est un domaine que HalalGPT ne traite volontairement pas : les enjeux sont trop importants pour une réponse automatique, et chaque situation est particulière.
+// ─── Ce qui fait consensus passe, le reste est arrêté ─────────────────────────
+//
+// Décision de Mohamed, le 10 août : on peut traiter les sujets sur lesquels les
+// savants sont UNANIMES, et eux seuls. Trois le sont — les jeux de hasard et le
+// principe du riba — et ils tiennent à un verset explicite, sans divergence
+// entre écoles.
+//
+// Tout le reste est arrêté, et pour une raison précise : un crédit immobilier,
+// une assurance, un placement, ce n'est pas une règle générale, c'est UNE
+// SITUATION. Les savants qualifiés eux-mêmes y divergent. Répondre à la place de
+// quelqu'un sur un engagement de vingt ans, c'est exactement le risque que le
+// site refuse de prendre.
+//
+// La règle tient en une phrase : LE PRINCIPE OUI, LE CAS PERSONNEL JAMAIS.
+//
+// Ces sujets ne passent pas par l'IA : ils sont servis depuis la fiche écrite,
+// contrôlée mot à mot. Une IA à qui l'on ouvre la porte du principe répondra
+// aussi à « et mon crédit à moi ? » — c'est justement ce qu'on ne veut pas.
 
-👉 Pour ces questions, rapproche-toi d'un savant qualifié ou d'un organisme spécialisé en finance islamique.
+const CONSENSUS: { motif: RegExp; slug: string }[] = [
+  {
+    // Jamais « pari » ni « paris » seuls : « restaurant halal paris » parle de
+    // la ville. On exige un mot qui lève l'ambiguïté.
+    motif: /\bparis? sportifs?\b|\bparier\b|\bparie\b|\bbookmaker\b|\bwinamax\b|\bbetclic\b|\bunibet\b|\bbetting\b/,
+    slug: 'paris-sportifs-halal',
+  },
+  {
+    motif: /\b(loto|loterie|tombola|gratter|grattage|casino|poker|jackpot|machine a sous|jeux d.argent|jeu d.argent|jeux de hasard|jeu de hasard)\b/,
+    slug: 'loto-jeux-hasard-halal',
+  },
+  {
+    // Le PRINCIPE seulement : « pourquoi », « c'est quoi », « est-ce interdit ».
+    // « mon credit », « ma banque », « mon assurance » ne passent pas ici.
+    motif: /\briba\b|\busure\b|\b(interet|interets)\b/,
+    slug: 'riba-interet-islam',
+  },
+];
 
-Je reste à ton service pour tout le reste : additifs, produits, restaurants, voyage, Ramadan 🌙`;
+/** La question porte-t-elle sur un sujet unanime ? Renvoie la fiche, ou null. */
+function ficheConsensus(question: string): string | null {
+  const q = normalize(question);
+  // Un cas personnel ferme la porte, même si le mot « riba » apparaît :
+  // « le riba de mon prêt immobilier » reste une situation, pas un principe.
+  const casPersonnel =
+    /\b(credit|credits|emprunt|emprunter|pret|prets|hypotheque|hypothecaire|banque|bancaire|assurance|livret|epargne|placement|placements|investir|investissement|bourse|trading|crypto|bitcoin|leasing|loa|lld)\b/;
+  if (casPersonnel.test(q)) return null;
+  for (const c of CONSENSUS) {
+    if (c.motif.test(q)) {
+      const fiche = QUESTIONS.find((qa) => qa.slug === c.slug);
+      if (fiche) return formatFiche(fiche);
+    }
+  }
+  return null;
+}
+
+const FINANCE_REPLY = `🔒 Je ne me prononce pas sur une situation financière personnelle — crédit, banque, assurance, placements, crypto. Les savants qualifiés eux-mêmes divergent sur ces questions, et un engagement de plusieurs années ne se décide pas d'après une réponse automatique.
+
+👉 Pour ta situation, adresse-toi à un savant ou à un organisme spécialisé en finance islamique.
+
+📖 En revanche, je peux t'expliquer ce qui fait l'unanimité des savants :
+• Pourquoi l'intérêt (riba) est interdit → ${SITE_URL}/q/riba-interet-islam
+• Les paris sportifs → ${SITE_URL}/q/paris-sportifs-halal
+• Le loto et les jeux de hasard → ${SITE_URL}/q/loto-jeux-hasard-halal
+
+Et je reste à ton service pour tout le reste : additifs, produits, restaurants, voyage, Ramadan 🌙`;
 
 function isFinanceQuestion(question: string): boolean {
   return FINANCE_PATTERN.test(normalize(question));
@@ -252,9 +316,12 @@ export async function POST(request: Request) {
   const isFirstQuestion = incoming.filter((m) => m.role === 'user').length === 1;
 
   // Verrou finance : intercepté avant la fiche locale, le cache ET l'IA.
+  // Les trois sujets unanimes sont servis depuis leur fiche écrite ; tout le
+  // reste reçoit le refus, qui n'est plus un mur mais un renvoi vers elles.
   if (isFinanceQuestion(lastQuestion)) {
     if (isFirstQuestion) await logQuestion(lastQuestion);
-    return fluxImmediat(FINANCE_REPLY);
+    const unanime = ficheConsensus(lastQuestion);
+    return fluxImmediat(unanime ?? FINANCE_REPLY);
   }
 
   if (isFirstQuestion && lastQuestion.trim()) {

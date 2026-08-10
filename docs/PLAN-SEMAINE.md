@@ -100,3 +100,21 @@ presenter les avis repandus avec leurs divergences et orienter vers un savant.
 Aucun mecanisme d'addiction ne s'appuie sur la culpabilite religieuse. Maximum
 2 a 3 contenus par jour et par domaine. **On n'ouvre plus aucun nouveau
 domaine.**
+
+---
+
+## Defauts connus, a traiter la nuit TECHNIQUE (vendredi)
+
+**« voyage halal paris » repond Istanbul.** Repere le 10 aout en testant le
+verrou finance. Cause : il n'existe pas de fiche voyage sur Paris, et le
+resume de la fiche Istanbul mentionne Paris (temps de vol). L'etage 1 compte
+les mots trouves dans `question + slug + short` : un mot present par hasard
+dans un resume pese autant qu'un mot du titre, et Istanbul l'emporte avec
+trois mots contre deux.
+
+Les autres villes repondent juste (Dubai, Londres, Tokyo verifies) : le defaut
+ne se declenche que lorsque la ville demandee n'a pas sa fiche.
+
+Ne pas corriger a la va-vite : ponderer le slug ou exiger un ecart avec le
+second ne suffit pas, les deux fiches restent a egalite. Il faut reprendre le
+calcul de score serieusement, avec des cas de test ecrits d'abord.

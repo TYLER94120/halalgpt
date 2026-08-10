@@ -352,6 +352,48 @@ export const QUESTIONS: QA[] = [
 
   // ─── PRATIQUE ───────────────────────────────────────────────────────────────
   {
+    slug: 'paris-sportifs-halal',
+    question: 'Les paris sportifs sont-ils halal ?',
+    verdict: '❌ Interdits — consensus des savants',
+    short:
+      'Le Coran range le jeu de hasard parmi les souillures dont il faut s’écarter (5:90). Le pari sportif en est l’exemple type, et aucune école ne diverge sur ce point.',
+    answer: [
+      'Le verset est explicite : « Ô vous qui avez cru ! Le vin, le jeu de hasard, les pierres dressées et les flèches divinatoires ne sont qu’une souillure, œuvre du Diable. Écartez-vous en, afin que vous réussissiez » (Coran 5:90). Le mot employé, maysir, désigne tout jeu où l’on engage un bien dans l’espoir d’un gain que le hasard décide. Le pari sportif en est l’illustration la plus directe : tu mises, l’issue ne dépend pas de toi, et ce que tu gagnes est exactement ce qu’un autre a perdu.',
+      'C’est l’un des rares sujets où il n’y a rien à nuancer : les quatre écoles se rejoignent, et aucune divergence sérieuse n’existe. Le critère qui permet de trancher soi-même, dans n’importe quelle situation, tient en une question : est-ce que je risque de PERDRE quelque chose si je me trompe ? Si oui, c’est un pari. Un pronostic entre amis sans aucune mise, une ligue fantaisie gratuite, un concours où l’on ne paie rien : il n’y a alors rien d’engagé, et la plupart des savants n’y voient pas de maysir. Dès qu’un billet s’achète ou qu’une somme se dépose, on bascule.',
+      'Un mot sur ce que personne ne dit assez. Le pari sportif est conçu pour créer une dépendance : notifications, cotes en direct, bonus de bienvenue, remboursement du premier pari. Beaucoup de gens qui posent cette question ne cherchent pas vraiment une règle, ils cherchent une sortie. Si c’est ton cas, sache que ça se traite comme n’importe quelle autre dépendance, sans honte : on peut demander à s’auto-interdire auprès des opérateurs, en parler à un médecin, et un psychologue n’a rien de contraire à la religion. En parler à quelqu’un est un acte de courage, pas de faiblesse.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['loto-jeux-hasard-halal', 'cigarette-halal', 'psy-therapie-islam'],
+  },
+  {
+    slug: 'loto-jeux-hasard-halal',
+    question: 'Le loto et les jeux à gratter sont-ils halal ?',
+    verdict: '❌ Interdits — consensus des savants',
+    short:
+      'Même verset, même règle que pour les paris : dès qu’on paie dans l’espoir d’un gain décidé par le hasard, c’est du maysir. Loto, grattage, casino, machines à sous.',
+    answer: [
+      'Le loto, les jeux à gratter, le casino, les machines à sous et les tombolas payantes tombent tous sous le même verset que les paris sportifs : « Le vin, le jeu de hasard… écartez-vous en » (Coran 5:90). Le raisonnement des savants est toujours le même, et il est simple : on remet une somme, on ne reçoit rien de certain en échange, et le hasard seul décide. L’argent gagné vient de ceux qui ont perdu — c’est ce déplacement de richesse sans contrepartie réelle que le texte vise.',
+      'La frontière est plus nette qu’on ne le croit, et elle tient à une seule question : ai-je payé pour participer ? Un tirage au sort réellement gratuit, un jeu-concours sans obligation d’achat, une loterie offerte par un employeur : rien n’est engagé, donc rien n’est perdu, et la plupart des savants n’y voient pas de jeu de hasard. À l’inverse, un billet acheté reste un billet acheté, même quand les bénéfices vont à une bonne cause : la plupart des savants considèrent que la destination des fonds ne change pas la nature du jeu.',
+      'Et si l’on a déjà gagné ? La question revient souvent, et la réponse que retiennent la plupart des savants est de ne pas garder cet argent : on s’en défait, en le donnant sans en attendre de récompense, plutôt que d’en tirer profit. Sur le détail — à qui, comment, que faire si la somme a déjà été dépensée — les avis se nuancent, et c’est exactement le genre de situation personnelle où il faut poser la question à un savant plutôt que de se fier à une page web. Ce que cette fiche donne, c’est la règle générale, pas le règlement de ton cas.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['paris-sportifs-halal', 'anniversaire-halal', 'halal-definition'],
+  },
+  {
+    slug: 'riba-interet-islam',
+    question: 'Pourquoi l’intérêt (riba) est-il interdit en islam ?',
+    verdict: '📖 Interdit — le principe fait consensus',
+    short:
+      'Le Coran distingue le commerce, licite, de l’intérêt, illicite (2:275). Le principe ne fait débat chez aucune école. Ce qui divise, ce sont les cas concrets — et cette fiche ne les traite pas.',
+    answer: [
+      'Le verset pose la distinction en une phrase : « Allah a rendu licite le commerce et illicite l’intérêt » (Coran 2:275). Les versets qui suivent emploient les termes les plus sévères du Coran en matière de transaction. Un hadith rapporté par Mouslim va dans le même sens et vise toute la chaîne : celui qui consomme l’intérêt, celui qui le verse, celui qui rédige l’acte et les deux témoins — « ils sont tous égaux ». Sur le principe, il n’existe aucune divergence entre les écoles : c’est l’un des points les plus fermement établis de la jurisprudence.',
+      'La raison que donnent les savants éclaire la règle. En islam, un gain doit venir d’un travail, d’un service rendu, ou d’un risque réellement partagé. L’intérêt fait naître de l’argent à partir de l’argent, sans effort ni risque : celui qui prête est certain de recevoir davantage, quoi qu’il arrive à celui qui emprunte, y compris si ce dernier se ruine. C’est pour cela que le commerce est encouragé — on achète, on stocke, on revend, on peut perdre — alors que l’intérêt est refusé. Les juristes en distinguent classiquement deux formes : l’excédent dans l’échange de biens de même nature, et l’augmentation exigée en contrepartie d’un délai.',
+      'Et maintenant la limite de cette page, qui compte autant que le reste. **Cette fiche explique un principe. Elle ne se prononce sur aucune situation particulière** — ni sur un crédit immobilier, ni sur un compte bancaire, ni sur une assurance, ni sur un placement. Ces questions-là divisent réellement les savants, y compris parmi les plus qualifiés : plusieurs conseils européens ont autorisé certains montages sous conditions pour les musulmans vivant en Occident, d’autres autorités les refusent. Un engagement sur vingt ans ne se décide pas d’après une page web. Pour ta situation, adresse-toi à un savant ou à un organisme spécialisé : c’est le seul conseil honnête que nous puissions te donner.',
+    ],
+    category: 'Pratique',
+    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france'],
+  },
+  {
     slug: 'greffe-cheveux-halal',
     question: 'La greffe de cheveux est-elle halal ?',
     verdict: '✅ Largement permise pour traiter une calvitie — ce sont tes propres cheveux',
@@ -475,7 +517,7 @@ export const QUESTIONS: QA[] = [
       'Conseils pratiques si vous jeûnez en voyage : suivez les horaires du lieu où vous vous trouvez (pas ceux de départ), gardez dattes et eau dans le sac pour un iftar en déplacement, et anticipez les vols longs — en avion, on rompt le jeûne quand on voit le soleil se coucher depuis l’avion.',
     ],
     category: 'Pratique',
-    related: ['horaires-priere-voyage', 'repas-halal-avion', 'tayammum-sans-eau'],
+    related: ['horaires-priere-voyage', 'repas-halal-avion', 'tayammum-sans-eau', 'riba-interet-islam'],
   },
   {
     slug: 'horaires-priere-voyage',
@@ -2540,7 +2582,7 @@ export const QUESTIONS: QA[] = [
       'Entre les deux existent des zones grises (le « douteux », shubuhât) que le hadith recommande d’éviter pour préserver sa religion — c’est exactement le terrain des additifs et produits qu’on décortique sur ce site. Et un dernier étage souvent oublié : tayyib — bon, sain, pur. L’idéal coranique est « halal et tayyib » : licite ET bon. Un soda ultra-sucré peut être halal sans être tayyib ; viser les deux est la vraie gourmandise du croyant.',
     ],
     category: 'Pratique',
-    related: ['difference-halal-casher', 'certifications-halal-france', 'abattage-etourdissement-halal'],
+    related: ['difference-halal-casher', 'certifications-halal-france', 'abattage-etourdissement-halal', 'riba-interet-islam'],
   },
   {
     slug: 'certifications-halal-france',
