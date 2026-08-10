@@ -94,7 +94,16 @@ quatre sites, parcours utilisateur inter-sites.
 
 ## La ligne, rappelee
 
-Zero finance, nulle part. Jamais inventer une certification, une composition,
+**Finance — la regle a change le 10 aout, decision de Mohamed. LE PRINCIPE OUI,
+LE CAS PERSONNEL JAMAIS.** On peut traiter ce sur quoi les savants sont
+unanimes : les jeux de hasard et le principe du riba, qui tiennent a un verset
+explicite. On ne traite JAMAIS une situation — credit immobilier, banque,
+assurance, placement, crypto, bourse, leasing : les savants qualifies y
+divergent reellement, et un engagement de plusieurs annees ne se decide pas
+d'apres une page web. Ce qui protege Mohamed n'est pas l'auteur du texte, c'est
+la nature du sujet.
+
+Jamais inventer une certification, une composition,
 une salle de priere, une reference de hadith. Jamais de fatwa personnelle :
 presenter les avis repandus avec leurs divergences et orienter vers un savant.
 Aucun mecanisme d'addiction ne s'appuie sur la culpabilite religieuse. Maximum
