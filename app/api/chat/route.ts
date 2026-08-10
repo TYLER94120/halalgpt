@@ -4,6 +4,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
+import { MOTS_VIDES } from '@/lib/mots-vides.js';
 import { QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
 
@@ -99,19 +100,10 @@ function getRedis(): Redis | null {
 
 // ─── Normalisation & matching ─────────────────────────────────────────────────
 
-const GENERIC_WORDS = new Set([
-  'halal', 'haram', 'manger', 'mange', 'plat', 'plats', 'question', 'peut',
-  'peux', 'suis', 'veux', 'voudrais', 'aimerais', 'jaimerais', 'jaimerai',
-  'aime', 'quel', 'quelle', 'quels', 'quelles', 'comment', 'pourquoi',
-  'avec', 'sans', 'pour', 'dans', 'bien', 'bonne', 'salam', 'bonjour',
-  'salut', 'merci', 'estce', 'cest', 'quoi', 'trouver', 'trouve', 'faire',
-  // Mots d'interrogation et de remplissage : ils ne designent aucune fiche.
-  // « combien » faisait tomber « combien font douze fois sept » sur la fiche
-  // du montant de la zakat.
-  'combien', 'quand', 'lequel', 'laquelle', 'doit', 'faut', 'fait', 'sont',
-  'etre', 'avoir', 'plus', 'moins', 'tout', 'tous', 'toute', 'toutes',
-  'chose', 'choses', 'vraiment', 'possible', 'autre', 'autres',
-]);
+// La liste vit dans lib/mots-vides.js, importee AUSSI par scripts/test-repli.mjs.
+// Elle etait en double : le test mesurait sa propre copie, donc il pouvait
+// passer pendant que le site echouait. C'est arrive.
+const GENERIC_WORDS = MOTS_VIDES;
 
 function normalize(text: string): string {
   return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');

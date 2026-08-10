@@ -16,7 +16,8 @@ import { readFileSync } from 'node:fs';
 
 const src = readFileSync(new URL('../lib/questions.ts', import.meta.url), 'utf8');
 
-const GENERIC = new Set(['halal','haram','manger','mange','plat','plats','question','peut','peux','suis','veux','voudrais','aimerais','jaimerais','jaimerai','aime','quel','quelle','quels','quelles','comment','pourquoi','avec','sans','pour','dans','bien','bonne','salam','bonjour','salut','merci','estce','cest','quoi','trouver','trouve','faire','combien','quand','lequel','laquelle','doit','faut','fait','sont','etre','avoir','plus','moins','tout','tous','toute','toutes','chose','choses','vraiment','possible','autre','autres']);
+// La MEME liste que le site, pas une copie. Voir lib/mots-vides.js.
+import { MOTS_VIDES as GENERIC } from '../lib/mots-vides.js';
 const norm = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 const motsUtiles = (q) => norm(q).split(/[^a-z0-9]+/).filter((w) => w.length > 3 && !GENERIC.has(w));
 
@@ -106,7 +107,8 @@ function replus(question) {
 // `attendu` : le slug espere, ou null pour « on prefere avouer qu'on ne sait pas »
 const CAS = [
   { q: 'voyage halal paris',                 attendu: null,   note: 'aucune fiche voyage sur Paris : mieux vaut le dire' },
-  { q: 'ou manger halal a paris',            attendu: null,   note: 'egalite parfaite entre restaurant-halal-paris et paris-sportifs-halal : avec le seul mot « paris » la question EST ambigue, avouer est juste' },
+  { q: 'ou manger halal a paris',            attendu: 'restaurant-halal-paris', note: 'manger + paris designe UNE fiche, meme si chacun des deux mots seul est ambigu' },
+  { q: 'manger un plat cuisine avec du vin',  attendu: 'cuisine-alcool-halal', note: 'meme raison : plat + cuisine + vin se rejoignent sur une seule fiche' },
   { q: 'restaurant halal lyon',              attendu: 'restaurant-halal-lyon' },
   { q: 'puis je prier assis quand je suis malade', attendu: 'priere-assise-malade' },
   { q: 'la greffe de cheveux est halal',     attendu: 'greffe-cheveux-halal' },
