@@ -114,16 +114,41 @@ domaine.**
 
 ## Defauts connus, a traiter la nuit TECHNIQUE (vendredi)
 
-**« voyage halal paris » repond Istanbul.** Repere le 10 aout en testant le
-verrou finance. Cause : il n'existe pas de fiche voyage sur Paris, et le
-resume de la fiche Istanbul mentionne Paris (temps de vol). L'etage 1 compte
-les mots trouves dans `question + slug + short` : un mot present par hasard
-dans un resume pese autant qu'un mot du titre, et Istanbul l'emporte avec
-trois mots contre deux.
+*(rien en attente — voir ci-dessous)*
 
-Les autres villes repondent juste (Dubai, Londres, Tokyo verifies) : le defaut
-ne se declenche que lorsque la ville demandee n'a pas sa fiche.
+---
 
-Ne pas corriger a la va-vite : ponderer le slug ou exiger un ecart avec le
-second ne suffit pas, les deux fiches restent a egalite. Il faut reprendre le
-calcul de score serieusement, avec des cas de test ecrits d'abord.
+## Defauts corriges
+
+**« voyage halal paris » repondait Istanbul — corrige le 10 aout, et le
+diagnostic de la veille etait faux.**
+
+Note d'abord comme un defaut du calcul de correspondance de l'etage 1. La
+mesure a montre autre chose : cet etage, avec son seuil de trois mots, ne
+matchait rien du tout. La reponse venait de `localFallback`, qui se contentait
+d'UN SEUL mot commun.
+
+Ce repli ne sert que lorsque l'IA est injoignable — donc jamais en production
+normale, et c'est pour cela que le defaut n'etait visible qu'en local, sans cle
+API. Mais il sert le jour ou l'API tombe, et ce jour-la l'utilisateur recevait
+une reponse fausse avec assurance, sans savoir que c'etait un pis-aller.
+
+Trois corrections, avec `scripts/test-repli.mjs` ecrit AVANT (14 cas, 14 verts) :
+
+1. **On compare des mots, plus des bouts de mots.** « sept » trouvait
+   « septembre », « assis » trouvait « assistance » — une question
+   d'arithmetique tombait sur la fiche du montant de la zakat. Un prefixe reste
+   admis a partir de cinq lettres, pour que « priere » retrouve « prieres ».
+2. **Chaque mot pese selon sa rarete.** « voyage » est dans une vingtaine de
+   fiches, « nutella » dans deux : les compter pareil etait toute l'erreur.
+3. **Une separation est exigee** plutot qu'un seuil absolu : soit deux mots
+   designent la meme fiche, soit elle devance nettement la suivante. Sinon on
+   avoue. « voyage halal paris » echoue aux deux — une dizaine de fiches de
+   voyage a egalite derriere — et c'est exactement le cas qu'on voulait
+   attraper.
+
+Et surtout : **le repli ne se fait plus passer pour une vraie reponse.** Il
+s'annonce (« je n'arrive pas a joindre mon IA en ce moment »). Un repli a le
+droit d'etre approximatif, il n'a pas le droit d'etre confiant — c'est la lecon
+de la competence `repondre-en-conditions-degradees` ecrite par l'agent
+HalalCheck, appliquee ici.
