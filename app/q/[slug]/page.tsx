@@ -7,7 +7,7 @@ import Surprise from '@/components/Surprise';
 import { CATEGORY_SLUGS, getQuestion, QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
 import { titreDeFiche } from '@/lib/titre-seo';
-import { surpriseDuJour } from '@/lib/surprises';
+import { faitDe, surpriseDuJour } from '@/lib/surprises';
 import dates from '@/lib/dates-fiches.json';
 
 // Les fiches sont figees a la construction : sans cela, la decouverte
@@ -153,7 +153,15 @@ export default function QuestionPage({ params }: Props) {
         ))}
       </div>
 
-      <ShareBar question={qa.question} verdict={qa.verdict} url={`${SITE_URL}/q/${qa.slug}`} />
+      {/* Le fait passe devant la question dans le message envoye : « Ce
+          colorant rouge est fait avec un insecte. » se raconte, « Le E120
+          est-il halal ? » ne se raconte pas. */}
+      <ShareBar
+        question={qa.question}
+        verdict={qa.verdict}
+        url={`${SITE_URL}/q/${qa.slug}`}
+        fait={faitDe(qa.slug)}
+      />
 
       <div className="cta-box">
         <p>Une autre question halal ? L’IA te répond en quelques secondes 👇</p>

@@ -1,7 +1,9 @@
 import Link from 'next/link';
 
 import Chat from '@/components/Chat';
+import PartagerLeFait from '@/components/PartagerLeFait';
 import Surprise from '@/components/Surprise';
+import { SITE_URL } from '@/lib/config';
 import { QUESTIONS, getQuestion } from '@/lib/questions';
 import { surpriseDuJour } from '@/lib/surprises';
 
@@ -101,7 +103,16 @@ export default function HomePage() {
             <Link href={`/q/${decouverte.slug}`} className="decouverte-lien">
               {decouverte.verdict} — voir pourquoi →
             </Link>
-            <Surprise exclure={decouverte.slug} />
+            {/* Le fait s'envoie d'ici, sans ouvrir la fiche : l'envie de
+                raconter dure trois secondes, et deux gestes suffisent a la
+                perdre. C'est la seule boucle de croissance gratuite du site. */}
+            <div className="decouverte-actions">
+              <PartagerLeFait
+                fait={jour.fait}
+                url={`${SITE_URL}/q/${decouverte.slug}`}
+              />
+              <Surprise exclure={decouverte.slug} />
+            </div>
           </div>
         </section>
       )}

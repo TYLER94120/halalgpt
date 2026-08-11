@@ -55,3 +55,14 @@ export function surpriseDuJour(date = new Date()): Surprise {
   const jour = Math.floor((Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()) - debut) / 86400000);
   return SURPRISES[jour % SURPRISES.length];
 }
+
+// Le fait attache a une fiche, s'il y en a un.
+//
+// Pourquoi cette fonction existe : le fait etait affiche sur l'accueil, et
+// nulle part ailleurs. Quand quelqu'un partageait la fiche, le message qui
+// partait ne contenait que la question — « Le E120 est-il halal ? ». C'est une
+// question, pas une raison d'ouvrir. Le fait, lui, en est une : « Ce colorant
+// rouge est fait avec un insecte. » On ne peut pas ne pas cliquer.
+export function faitDe(slug: string): string | undefined {
+  return SURPRISES.find((s) => s.slug === slug)?.fait;
+}

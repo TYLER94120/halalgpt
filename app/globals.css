@@ -1860,3 +1860,39 @@ a {
 }
 .apres-question::after { content: ' →'; opacity: 0.5; }
 .apres-question:hover { background: rgba(27, 67, 50, 0.4); border-color: var(--or); }
+
+/* Les deux actions de la decouverte restent groupees a droite : le lien
+   « voir pourquoi » d'un cote, les deux boutons de l'autre. Sans ce
+   groupement, `justify-content: space-between` ecartait les trois elements
+   sur toute la largeur et l'oeil ne voyait plus quoi va avec quoi. */
+.decouverte-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 420px) {
+  .decouverte-actions {
+    width: 100%;
+  }
+
+  /* `flex: 1 1 auto` et NON `1 1 0`.
+
+     Avec `1 1 0` les deux boutons prenaient exactement la moitie chacun — et
+     « Surprends-moi », plus long que « Envoyer », debordait de sa pastille.
+     La capture le montrait ; le test ne le voyait pas : il comparait les
+     BOITES, qui ne se croisaient pas, pendant que le TEXTE sortait de la
+     sienne. Il regarde maintenant `scrollWidth` aussi.
+
+     `auto` part de la largeur du texte. Mesure faite : il reste 308 px dans
+     la carte, et les deux boutons en demandent un peu plus a eux deux. Ils
+     s'empilent donc, chacun pleine largeur. Ce n'est pas ce que je visais —
+     ca allonge la carte d'une cinquantaine de pixels — mais un texte coupe
+     est un defaut, une carte un peu plus haute n'en est pas un. Et la
+     decouverte est sous le trait, pas dans le premier ecran. */
+  .decouverte-actions > * {
+    flex: 1 1 auto;
+    padding: 0 14px;
+  }
+}

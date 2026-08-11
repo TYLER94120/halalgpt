@@ -9,19 +9,29 @@ export default function ShareBar({
   question,
   verdict,
   url,
+  fait,
 }: {
   question: string;
   verdict: string;
   url: string;
+  fait?: string;
 }) {
   const [copied, setCopied] = useState(false);
 
-  const text = `${question}\n${verdict}\n\n${url}\n\n🌙 HalalGPT — l’IA musulmane`;
+  // L'accroche est le FAIT quand la fiche en a un, la question sinon.
+  //
+  // « Le E120 est-il halal ? » est une question : celui qui la reçoit sait
+  // déjà s'il se la pose, et la plupart ne se la posent pas. « Ce colorant
+  // rouge est fait avec un insecte. » n'est pas une question, c'est une chose
+  // qu'on veut raconter — et c'est la seule boucle de croissance gratuite du
+  // site. Le fait ne remplace jamais le verdict, il le précède.
+  const accroche = fait ?? question;
+  const text = `${accroche}\n${verdict}\n\n${url}\n\n🌙 HalalGPT — l’IA musulmane`;
 
   const nativeShare = async () => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: 'HalalGPT', text: `${question}\n${verdict}`, url });
+        await navigator.share({ title: 'HalalGPT', text: `${accroche}\n${verdict}`, url });
         return;
       } catch {
         /* partage annulé : rien à faire */
