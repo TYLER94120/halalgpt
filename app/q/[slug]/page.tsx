@@ -7,6 +7,7 @@ import Surprise from '@/components/Surprise';
 import { CATEGORY_SLUGS, getQuestion, QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
 import { titreDeFiche } from '@/lib/titre-seo';
+import { descriptionDeFiche } from '@/lib/description-seo';
 import { faitDe, surpriseDuJour } from '@/lib/surprises';
 import dates from '@/lib/dates-fiches.json';
 
@@ -50,13 +51,18 @@ export function generateMetadata({ params }: Props): Metadata {
   // Google affiche, ou s'il vaut mieux la sacrifier pour montrer la question
   // en entier. Laisser le gabarit faire coupait 22 fiches sur 189.
   const { titre } = titreDeFiche(qa);
+  // Meme raison pour la description : `short` est ecrit pour etre lu SUR la
+  // page et sert aussi de resume dans le chat. Sur 193 fiches, 51 depassaient
+  // les 160 caracteres que Google affiche, et il les coupait au milieu d'un
+  // mot. On choisit la coupe plutot que de la subir.
+  const description = descriptionDeFiche(qa);
   return {
     title: { absolute: titre },
-    description: qa.short,
+    description,
     alternates: { canonical: `${SITE_URL}/q/${qa.slug}` },
     openGraph: {
       title: qa.question,
-      description: qa.short,
+      description,
       url: `${SITE_URL}/q/${qa.slug}`,
     },
   };
