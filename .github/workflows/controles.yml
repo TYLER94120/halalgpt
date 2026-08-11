@@ -1,0 +1,71 @@
+# Les controles qui tournent tout seuls, a chaque envoi de code.
+#
+# Pourquoi ce fichier existe : le 11 aout 2026, halalgpt.fr avait SIX series de
+# tests et AUCUN moyen de les lancer autrement qu'a la main. Un test que
+# personne ne lance ne protege rien — il rassure, ce qui est pire que rien.
+#
+# Et le site n'est pas surveille la nuit : une vague automatique ajoute deux a
+# cinq fiches chaque nuit vers 3 h. Une fiche ajoutee avec un titre de 68
+# caracteres, un lien `related` vers une fiche inexistante, ou aucun lien
+# entrant, passerait jusqu'au matin sans que rien ne le dise.
+#
+# Ce que ces controles attrapent, tout seuls :
+#   · un titre que Google couperait
+#   · une description qui depasse ou qui se coupe au milieu d'un mot
+#   · une fiche vers laquelle plus rien ne pointe (Google ne la visiterait plus)
+#   · un lien `related` qui pointe vers une fiche qui n'existe pas
+#   · une reponse de repli qui se ferait passer pour une vraie reponse
+#   · une voix de synthese qui reciterait le Coran
+#
+# CE QU'ILS N'ATTRAPENT PAS, et il faut le savoir :
+# les tests qui demandent un vrai navigateur (partage, navigation,
+# chevauchement, mode conduite) ou un serveur en marche (etage 1, sitemap) ne
+# tournent pas ici. Ils se lancent a la main, avec une construction locale. Un
+# controle automatique qui ne dit pas ce qu'il ne regarde pas est exactement le
+# genre d'instrument qui rassure a tort.
+#
+# Aucune installation : les six series n'utilisent que Node et le depot. Pas de
+# `npm ci`, donc rien qui puisse casser pour une raison etrangere au site.
+
+name: Controles
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  controles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      # Node 22 : c'est lui qui sait lire les fichiers TypeScript directement,
+      # ce dont les tests ont besoin pour importer lib/questions.ts sans etape
+      # de compilation.
+      - name: Preparer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Les 60 caracteres du titre
+        run: node scripts/test-titres.mjs
+
+      - name: La description que Google affiche
+        run: node scripts/test-descriptions.mjs
+
+      - name: Aucune fiche n'est une impasse
+        run: node scripts/test-liens-internes.mjs
+
+      - name: Le repli ne se fait pas passer pour une reponse
+        run: node scripts/test-repli.mjs
+
+      - name: Les questions proposees restent dans le sujet
+        run: node scripts/test-apres.mjs
+
+      # En dernier, et volontairement : c'est la regle qui ne se negocie pas.
+      # Aucune voix de synthese ne recite le Coran.
+      - name: Aucune voix de synthese ne recite le Coran
+        run: node scripts/test-voix.mjs
