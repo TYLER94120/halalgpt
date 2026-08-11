@@ -59,6 +59,13 @@ jobs:
       - name: Aucune fiche n'est une impasse
         run: node scripts/test-liens-internes.mjs
 
+      # Decision de Mohamed, 12 aout : « Oui pour diminuer pourcentage
+      # nourriture ». Le catalogue etait a 107 fiches nourriture sur 193.
+      # Une consigne ecrite dans un document se perd en trois nuits ; la
+      # vague automatique ajoute des fiches sans personne pour relire.
+      - name: Le site devient moins alimentaire
+        run: node scripts/test-nourriture.mjs
+
       - name: Le repli ne se fait pas passer pour une reponse
         run: node scripts/test-repli.mjs
 

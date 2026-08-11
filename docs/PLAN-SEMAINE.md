@@ -34,6 +34,33 @@ Point de mesure : **25 aout**. Base a battre pour l'empire : 7 803 vues et
 
 ---
 
+## DECISION DE MOHAMED — 12 aout : plus aucune fiche nourriture
+
+> « Oui pour diminuer pourcentage nourriture »
+
+Question posee le 11 aout au soir, reponse le 12. **C'est une decision de
+Mohamed, pas une preference d'agent : elle ne se contourne pas.**
+
+Etat au jour de la decision :
+
+  107 fiches nourriture (Produits 46, Additifs 32, Alimentation 29)
+   86 fiches de vie generale
+      soit 55,4 %
+
+Objectif annonce : **48 %**. On n'y arrive pas en retirant des fiches — on n'en
+retire aucune — mais en ecrivant ailleurs. Il reste **30 fiches NON
+alimentaires** a ecrire, soit environ dix nuits a trois par nuit.
+
+**Ce que la vague de nuit peut ecrire desormais :** priere, vie quotidienne,
+famille, travail, sante, voyage, Ramadan, pratique.
+**Ce qu'elle ne peut plus ecrire :** Produits, Additifs, Alimentation.
+
+`scripts/test-nourriture.mjs` fait echouer les controles a la 108e fiche
+nourriture, en nommant la faute. Ce n'est pas un test qu'on desactive : si
+Mohamed change d'avis, il le dit, on monte le plafond et on ecrit pourquoi.
+
+---
+
 ## Le constat qui commande tout
 
 Les trois compteurs mesures cette semaine, cote a cote :
