@@ -415,7 +415,7 @@ export const QUESTIONS: QA[] = [
       'Deux réserves à connaître. D’abord, une minorité de savants reste réticente quand l’intention est purement esthétique, sans perte réelle à réparer — l’intention compte, et la frontière entre soigner et embellir n’est pas toujours nette. Ensuite, un point pratique que personne n’explique : pendant la cicatrisation, les croûtes et le pansement peuvent empêcher l’eau d’atteindre le cuir chevelu lors des ablutions et de la grande ablution. Les savants prévoient ce cas — on essuie sur le pansement quand le laver nuirait à la guérison. Demande à ton chirurgien la durée exacte, et à un savant la règle qui s’applique à ta situation.',
     ],
     category: 'Vie quotidienne',
-    related: ['piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution'],
+    related: ['don-organes-islam', 'piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution'],
   },
   {
     slug: 'travailler-restaurant-alcool',
@@ -2452,7 +2452,7 @@ export const QUESTIONS: QA[] = [
       'Pour ceux qui se sont fait tatouer avant de pratiquer ou de se convertir : le repentir suffit — un tatouage existant n’est pas un péché qui se renouvelle chaque jour, et l’ablution comme la prière restent parfaitement valides avec (l’encre est sous la peau, l’eau atteint bien la surface). Le retrait au laser n’est pas une obligation, surtout s’il est coûteux ou risqué : c’est l’avis répandu des savants contemporains.',
     ],
     category: 'Vie quotidienne',
-    related: ['piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal'],
+    related: ['photos-selfies-islam', 'piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal'],
   },
   {
     slug: 'piercing-halal',
@@ -2508,7 +2508,7 @@ export const QUESTIONS: QA[] = [
       'Ce qui fait consensus des deux côtés : paroles vulgaires ou contraires à la foi, ambiances de débauche et musique qui fait manquer les prières posent problème quel que soit l’avis ; et le Coran récité reste au-dessus de tout ce que l’oreille peut recevoir. Pour ta pratique personnelle : renseigne-toi honnêtement des deux positions et suis celle qui correspond à ta démarche — sans juger l’autre camp.',
     ],
     category: 'Vie quotidienne',
-    related: ['anniversaire-halal', 'souhaiter-noel-halal', 'halal-definition'],
+    related: ['photos-selfies-islam', 'anniversaire-halal', 'souhaiter-noel-halal', 'halal-definition'],
   },
   {
     slug: 'anniversaire-halal',
@@ -2593,7 +2593,7 @@ export const QUESTIONS: QA[] = [
       'Et un point non négociable dans tous les avis : la maltraitance des animaux est interdite. Le hadith de la femme punie pour avoir enfermé un chat sans le nourrir, et celui de l’homme pardonné pour avoir abreuvé un chien assoiffé (Boukhari), fixent le cadre : celui qui croise un chien errant a le droit — et le mérite — de le nourrir. Ne pas en posséder n’a jamais autorisé à en mépriser un.',
     ],
     category: 'Vie quotidienne',
-    related: ['halal-definition', 'gibier-chasse-halal', 'souhaiter-noel-halal'],
+    related: ['chat-maison-islam', 'halal-definition', 'gibier-chasse-halal', 'souhaiter-noel-halal'],
   },
   {
     slug: 'halal-definition',
@@ -2707,7 +2707,7 @@ export const QUESTIONS: QA[] = [
       'Côté pratique en France : se présenter à une mosquée permet d’obtenir un certificat de conversion — inutile pour la validité devant Allah, mais demandé pour certaines démarches (mariage religieux, visa pour l’Omra ou le Hajj). Beaucoup de mosquées proposent aussi un accompagnement pour les nouveaux convertis. Un conseil que répètent tous ceux qui sont passés par là : trouve une communauté bienveillante et une personne de confiance à qui poser tes questions — la solitude est le vrai obstacle des premiers mois, pas la difficulté de la religion.',
     ],
     category: 'Pratique',
-    related: ['ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition'],
+    related: ['prenom-musulman-obligatoire', 'ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition'],
   },
   {
     slug: 'ghusl-grande-ablution',
@@ -2735,7 +2735,7 @@ export const QUESTIONS: QA[] = [
       'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
     ],
     category: 'Vie quotidienne',
-    related: ['mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition'],
+    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition'],
   },
   {
     slug: 'mauvais-oeil-protection',
