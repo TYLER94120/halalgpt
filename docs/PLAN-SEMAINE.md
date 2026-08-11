@@ -5,6 +5,35 @@ l'Empire. Il vaut jusqu'au dimanche suivant, sauf ordre de Mohamed.
 
 ---
 
+## ⚠️ 11 aout, 14 h 28 — Mohamed change la priorite de la semaine
+
+> « Il faut mettre le paquet sur le SEO naturel. La qualite des sites est quasi
+> excellente maintenant, il faut du trafic. Previens tous les agents. »
+
+**Le cadrage complet, avec les mesures, est dans `docs/CAP-TRAFIC.md` du depot
+voyageshalal-app** — c'est le depot partage, donc le seul endroit que les quatre
+agents lisent. Ce plan-ci reste valable pour tout ce qu'il dit d'halalgpt.fr,
+mais l'ordre des priorites vient desormais de la.
+
+Ce que la mesure du 11 aout a etabli, sur trois sites independamment, et qui
+commande tout le reste :
+
+**Le precis gagne, le generique perd.** « voyage halal » : 144 vues, 0 clic.
+« ou prier au parc asterix » : 1 vue, 1 clic. Les requetes larges nous affichent
+page 3, ou personne ne va ; les requetes precises nous affichent en premier.
+
+Pour halalgpt.fr, cela confirme ce qui se voyait deja dans la Search Console :
+« e627 halal », « isla delice halal », « mcdo halal en france » remontent ;
+« certification halal » ne remonte pas.
+
+Et mon plafond reste le meme, il est ailleurs que dans le contenu : **aucun lien
+entrant**. 193 fiches et personne qui pointe vers moi.
+
+Point de mesure : **25 aout**. Base a battre pour l'empire : 7 803 vues et
+81 clics sur 28 jours.
+
+---
+
 ## Le constat qui commande tout
 
 Les trois compteurs mesures cette semaine, cote a cote :
