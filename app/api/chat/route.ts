@@ -169,27 +169,53 @@ function strongLocalMatch(question: string): string | null {
     if (hit) return formatFiche(hit);
   }
 
-  // Même correction ici : on compare des mots entiers. Le seuil de trois reste
-  // volontairement strict — cet étage sert à éviter un appel à l'IA quand la
-  // fiche est évidente, jamais à répondre approximativement.
-  const words = significantWords(question);
-  let best: (typeof QUESTIONS)[number] | null = null;
-  let bestScore = 0;
-  for (const c of INDEX) {
-    const score = words.reduce(
-      (n, w) => (contient(c.fort, w) || contient(c.faible, w) ? n + 1 : n),
-      0
-    );
-    if (score > bestScore) {
-      bestScore = score;
-      best = c.qa;
-    }
-  }
-  return best && bestScore >= 3 ? formatFiche(best) : null;
+  // Cet étage servait la fiche dès que TROIS mots de la question se trouvaient
+  // dans une fiche. Mesuré le 11 août sur les vraies requêtes de la Search
+  // Console : 4 sur 17 en profitaient. « le tatouage est il permis », « les
+  // bonbons haribo sont ils halal », « la musique est elle haram » attendaient
+  // l'IA — alors qu'une fiche écrite à la main répond exactement à la question.
+  //
+  // Une question courte et précise n'a qu'UN mot qui compte, et c'est le plus
+  // rare. Compter les mots ne pouvait donc pas marcher : c'est la même erreur
+  // que le repli faisait avant d'être corrigé le 10 août.
+  //
+  // On réutilise donc la règle du repli — poids par rareté, et une SÉPARATION
+  // exigée plutôt qu'un seuil absolu — mais avec une barre plus haute, parce
+  // que cet étage-ci saute l'IA ET ne s'annonce pas. Le repli, lui, prévient
+  // qu'il est un repli ; se tromper ici coûte donc plus cher.
+  const { best, motsForts, meilleur, second } = meilleureFiche(question);
+
+  const evident =
+    best !== null &&
+    motsForts >= 1 &&
+    meilleur >= 2 &&
+    // Deux mots forts : il suffit de devancer nettement la suivante.
+    // Un seul : il doit devancer DEUX FOIS la suivante. Le repli, qui prévient
+    // qu'il est un repli, se contente de 1,5 ; ici on ne prévient pas, donc on
+    // demande plus.
+    //
+    // 2,5 au premier essai : « le tatouage est il permis » était refusé, alors
+    // que la fiche « tatouage » est la bonne à l'évidence. Le mot « permis »,
+    // banal, remonte la fiche suivante et écrase la séparation. 2 laisse passer
+    // ce cas et refuse toujours « voyage halal paris » — le défaut historique.
+    (motsForts >= 2 ? meilleur >= second * 1.5 : meilleur >= second * 2);
+
+  return evident && best ? formatFiche(best) : null;
 }
 
 /** Repli (pas de clé API / erreur) : matching souple, ou réponse honnête. */
-function localFallback(question: string): string {
+/**
+ * Cherche la fiche qui repond le mieux, et rend de quoi juger si on peut s'y
+ * fier : le nombre de mots tombes dans le titre, le score du premier, celui du
+ * second.
+ *
+ * Une seule mesure pour deux etages. L'etage 1 et le repli posaient la meme
+ * question a des calculs differents — l'un comptait les mots, l'autre les
+ * pesait — et l'un des deux se trompait forcement. C'etait l'etage 1.
+ * Le JUGEMENT, lui, reste propre a chaque etage : le repli s'annonce, l'etage 1
+ * non, donc l'etage 1 exige davantage.
+ */
+function meilleureFiche(question: string) {
   const mots = significantWords(question);
   let best: (typeof QUESTIONS)[number] | null = null;
   let motsForts = 0;
@@ -218,6 +244,12 @@ function localFallback(question: string): string {
       second = score;
     }
   }
+
+  return { best, motsForts, meilleur, second };
+}
+
+function localFallback(question: string): string {
+  const { best, motsForts, meilleur, second } = meilleureFiche(question);
 
   // Un mot au moins doit tomber dans le titre ou le slug. Ensuite, plutot qu'un
   // seuil absolu — toujours trop haut pour un mot et trop bas pour un autre —
