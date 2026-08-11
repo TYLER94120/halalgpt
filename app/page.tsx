@@ -10,15 +10,26 @@ import { surpriseDuJour } from '@/lib/surprises';
 // cela, elle serait figee sur le jour de la mise en ligne.
 export const revalidate = 3600;
 
+// L'accueil doit refleter ce que le site EST, pas ce par quoi il a commence.
+//
+// Mohamed, 11 aout : « le site est encore trop oriente nourriture ». Il avait
+// raison, et ca se voyait ici plus qu'ailleurs : les huit questions mises en
+// avant etaient 3 additifs/produits, 1 restaurant, 3 voyages, 1 avion —
+// AUCUNE priere, AUCUNE vie quotidienne. Quelqu'un qui arrivait sans nous
+// connaitre repartait en pensant qu'on repond sur les etiquettes.
+//
+// Deux par famille desormais : nourriture, priere et pratique, vie
+// quotidienne, voyage. Le catalogue reste a 55 % nourriture — c'est un fait —
+// mais la vitrine annonce l'IA musulmane generaliste qu'on construit.
 const POPULAR_SLUGS = [
   'e120-halal',
   'haribo-halal',
-  'gelatine-halal',
+  'rattraper-prieres-ratees',
+  'se-convertir-islam',
+  'musique-halal',
+  'tatouage-halal',
   'restaurant-halal-paris',
   'voyage-halal-istanbul',
-  'mcdo-halal',
-  'voyage-halal-dubai',
-  'repas-halal-avion',
 ];
 
 export default function HomePage() {

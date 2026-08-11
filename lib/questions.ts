@@ -2740,6 +2740,65 @@ export const QUESTIONS: QA[] = [
     category: 'Vie quotidienne',
     related: ['psy-therapie-islam', 'priere-istikhara', 'halal-definition'],
   },
+  {
+    slug: 'don-organes-islam',
+    question: 'Le don d’organes est-il permis en islam ?',
+    verdict: '⚠️ Majorité contemporaine : oui, sous conditions',
+    short:
+      'Les grands conseils de jurisprudence contemporains l’autorisent sous conditions strictes : consentement, aucune vente, et un bénéfice réel pour le receveur. Une minorité de savants s’y oppose au nom de l’inviolabilité du corps.',
+    answer: [
+      'Le débat ne porte pas sur l’intention — sauver une vie est un principe central de l’islam — mais sur le corps humain, que les textes déclarent inviolable, y compris après la mort. C’est de cette tension que viennent les deux positions, et aucune des deux ne prend l’autre à la légère.',
+      'La position majoritaire chez les conseils de jurisprudence contemporains autorise le don, à des conditions qui reviennent partout : le donneur (ou sa famille pour un défunt) doit avoir consenti ; l’organe ne se vend jamais, et le commerce d’organes est unanimement condamné ; le prélèvement ne doit pas tuer ni mutiler gravement un donneur vivant ; et le bénéfice attendu pour le receveur doit être réel. Le raisonnement invoqué est celui de la nécessité : préserver une vie humaine l’emporte sur l’atteinte faite au corps.',
+      'La position minoritaire refuse le principe même : le corps appartient à Allah, pas à la personne, qui n’aurait donc pas le droit d’en disposer. Ce n’est pas une position marginale ou mal argumentée — elle est tenue par des savants respectés, et quelqu’un qui la suit ne fait rien de fautif.',
+      'En France, le don est présumé par défaut : sans refus inscrit au registre national, on est considéré comme donneur. C’est le point pratique qui surprend le plus de familles musulmanes au pire moment. Quelle que soit ta position, la décision se prend à froid, s’inscrit, et surtout se DIT à tes proches — ce sont eux qu’on interrogera. Et parce que la divergence est réelle et la question grave, c’est typiquement le sujet où il faut en parler avec un savant qui connaît ta situation, pas trancher depuis une page web.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition'],
+  },
+  {
+    slug: 'photos-selfies-islam',
+    question: 'Les photos et les selfies sont-ils interdits ?',
+    verdict: '⚠️ Avis divergents — la majorité contemporaine distingue la photo',
+    short:
+      'Les textes qui visent les images concernent la représentation d’êtres animés. La majorité des savants contemporains considère que la photographie n’est pas de même nature et l’autorise ; une minorité maintient l’interdit hors nécessité.',
+    answer: [
+      'Les textes classiques visent la fabrication d’images d’êtres animés — statues, peintures — et la raison donnée est presque toujours la même : le risque d’idolâtrie, et l’imitation de l’acte de création. C’est ce raisonnement, et non le mot « image » pris isolément, qui commande la réponse moderne.',
+      'La majorité des savants contemporains en tire que la photographie est autre chose : elle capture ce qui existe déjà au lieu de le façonner. Ils l’autorisent donc, avec des réserves qui portent sur le CONTENU et non sur le procédé : pas d’image indécente, pas de photo qu’on vénère ou qu’on accroche comme un culte, et pas de vanité — ce dernier point revient souvent à propos des selfies, non parce que l’appareil serait fautif, mais parce que l’ostentation, elle, est bien un sujet en islam.',
+      'La position minoritaire maintient l’interdit et n’admet la photo que par nécessité : papiers d’identité, permis, démarches administratives. Elle est tenue par des savants sérieux, et beaucoup de familles la suivent en évitant d’afficher des portraits chez elles.',
+      'Ce qui fait consensus, en revanche, et qui est souvent le vrai sujet : la photo d’autrui ne s’expose pas sans son accord. Publier le visage de quelqu’un — surtout une femme, surtout un enfant — sans qu’il l’ait voulu touche à son droit, et là aucune école ne diverge.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['tatouage-halal', 'musique-halal', 'mauvais-oeil-protection'],
+  },
+  {
+    slug: 'chat-maison-islam',
+    question: 'Peut-on avoir un chat à la maison en islam ?',
+    verdict: '✅ Oui — accord large des savants',
+    short:
+      'Le chat est l’animal domestique le mieux accepté en islam. Un hadith bien connu le déclare non impur « parce qu’il fait partie de ceux qui tournent autour de vous » : il peut vivre dans la maison, et son eau ne rend pas impur.',
+    answer: [
+      'La réponse est l’une des plus claires de tout ce site, et elle surprend souvent : non seulement le chat est permis à la maison, mais il bénéficie d’un statut à part. Un hadith bien connu, rapporté par Abou Qatada, raconte qu’il a laissé un chat boire dans son récipient avant de s’en servir, et a expliqué que le Prophète avait dit du chat qu’il n’est pas impur, « il fait partie de ceux qui tournent autour de vous » — autrement dit, il vit parmi les gens.',
+      'Conséquence pratique que beaucoup ignorent : l’eau dans laquelle un chat a bu reste utilisable, y compris pour les ablutions selon l’avis majoritaire. Un poil de chat sur un vêtement n’empêche pas la prière. C’est exactement l’inverse de ce que beaucoup de familles croient, souvent par confusion avec les règles qui concernent le chien.',
+      'Ce qui est demandé en revanche tient en un mot : le soin. Les textes sont sévères sur la maltraitance animale, et le récit le plus cité à ce sujet parle précisément d’une femme punie pour avoir enfermé une chatte jusqu’à ce qu’elle meure de faim. Nourrir, soigner, ne pas abandonner : la permission vient avec une responsabilité, et c’est là que porte la vigilance des savants, pas sur la présence de l’animal.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['chien-islam', 'halal-definition', 'ablutions-chaussettes'],
+  },
+  {
+    slug: 'prenom-musulman-obligatoire',
+    question: 'Faut-il un prénom musulman quand on se convertit ?',
+    verdict: '✅ Non — ce n’est pas une obligation',
+    short:
+      'Aucun texte n’oblige un nouveau musulman à changer de prénom. Le seul cas où les savants recommandent un changement est un prénom dont le SENS contredit la foi ou porte une signification désagréable.',
+    answer: [
+      'C’est l’une des premières inquiétudes des convertis, et la réponse est rassurante : rien n’oblige à changer de prénom. Des compagnons du Prophète ont gardé le leur après leur conversion, et le point n’a jamais été posé comme une condition de la validité de l’islam de quelqu’un.',
+      'Le seul cas où un changement est recommandé concerne le SENS du prénom : celui qui signifie la servitude à autre qu’Allah, ou qui porte un sens ouvertement désagréable. Il est rapporté que le Prophète a changé certains prénoms de ce type, en les remplaçant par un sens meilleur. La quasi-totalité des prénoms français courants ne tombe dans aucune de ces catégories.',
+      'Un point que les savants rappellent souvent, et qui va dans l’autre sens : le lien de filiation ne se coupe pas. On garde le nom de son père, même non musulman — les textes sont explicites sur le fait de ne pas s’attribuer une autre ascendance. Ajouter un prénom d’usage entre proches est possible et pratiqué ; effacer sa famille, non.',
+      'Le conseil pratique le plus utile, en France : un changement d’état civil est une démarche longue et rarement nécessaire. Beaucoup de convertis gardent leur prénom officiel et se font appeler autrement dans la communauté, sans que personne y trouve à redire. Si le sens de ton prénom te pose question, c’est une conversation à avoir avec un savant ou l’imam de ta mosquée — il connaîtra le cas.',
+    ],
+    category: 'Pratique',
+    related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition'],
+  },
 ];
 
 export function getQuestion(slug: string): QA | undefined {
