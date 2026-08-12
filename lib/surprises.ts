@@ -15,6 +15,11 @@ export interface Surprise {
 }
 
 export const SURPRISES: Surprise[] = [
+  // Celle-ci est la plus inconfortable du lot, et c'est pour ca qu'elle est en
+  // tete : un site qui EST une IA explique pourquoi il ne faut pas lui demander
+  // de fatwa. On ne peut pas ne pas ouvrir.
+  { slug: 'ia-halal', fait: 'Cette IA te déconseille de lui demander une fatwa.' },
+  { slug: 'sport-combat-halal', fait: 'La lutte est encouragée par la sunna ?' },
   { slug: 'taurine-halal', fait: 'La taurine vient du taureau ?' },
   { slug: 'dragibus-halal', fait: 'Les Dragibus contiennent de la gélatine ?' },
   { slug: 'e120-halal', fait: 'Ce colorant rouge est fait avec un insecte.' },
