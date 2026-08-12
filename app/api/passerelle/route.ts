@@ -1,6 +1,8 @@
 import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
+import { enregistrer, sante, type BaseCompteur } from '@/lib/passerelle';
+
 export const runtime = 'edge';
 
 // ─── Le compteur de passerelles ───────────────────────────────────────────────
@@ -18,30 +20,31 @@ export const runtime = 'edge';
 // identifiant, ni horodatage individuel. Uniquement des compteurs — combien de
 // fois telle passerelle a amene quelqu'un, quel jour. C'est tout ce dont la
 // question a besoin.
+//
+// ─── 12 aout 2026 : ce compteur mentait quand il tombait en panne ────────────
+//
+// Deux defauts trouves en verifiant mon propre instrument, avant qu'ils ne
+// coutent la mesure du 25 aout :
+//
+// 1. La reponse disait `compte: true` MEME quand l'ecriture dans la base avait
+//    echoue. Le `catch` avalait l'erreur — pour ne jamais casser une visite,
+//    ce qui est juste — puis on repondait « compte » quand meme. Une base mal
+//    configuree sur Vercel aurait donc renvoye « tout va bien » a chaque
+//    visite, sans rien enregistrer. Le 25 aout, j'aurais lu zero et conclu
+//    « les passerelles n'amenent personne », alors que la verite aurait ete
+//    « le compteur n'a jamais marche ».
+//
+// 2. `compte: false` voulait dire deux choses opposees : « ta source m'est
+//    inconnue » et « je n'ai aucune base ».
+//
+// La logique vit desormais dans lib/passerelle.ts, ou elle se teste avec une
+// fausse base — sans envoyer de fausse arrivee dans la mesure qu'on verifie.
+// Cette route ne fait plus que brancher Redis dessus.
 
-const SOURCES_CONNUES = new Set([
-  'halalcheck',
-  'voyageshalal',
-  'gohalaltravel',
-  'islampasapas',
-  'apprentissage',
-  'youtube',
-  'whatsapp',
-]);
-
-function getRedis(): Redis | null {
+function getRedis(): BaseCompteur | null {
   const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
   const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
-  return url && token ? new Redis({ url, token }) : null;
-}
-
-/** « E471 » ou « fiche-produit » → garde une etiquette courte et propre. */
-function propre(valeur: unknown, max = 40): string {
-  if (typeof valeur !== 'string') return '';
-  return valeur
-    .toLowerCase()
-    .replace(/[^a-z0-9_-]/g, '')
-    .slice(0, max);
+  return url && token ? (new Redis({ url, token }) as unknown as BaseCompteur) : null;
 }
 
 export async function POST(request: Request) {
@@ -51,34 +54,16 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
-
-  const source = propre(corps.source, 24);
-  // Une source inconnue n'est pas comptee : sans cela, n'importe qui pourrait
-  // gonfler le compteur en forgeant une adresse, et la mesure ne vaudrait plus
-  // rien. C'est la mesure qu'on protege, pas le serveur.
-  if (!source || !SOURCES_CONNUES.has(source)) {
-    return NextResponse.json({ ok: true, compte: false });
-  }
-
-  const campagne = propre(corps.campagne, 40) || 'sans-campagne';
-  const page = propre(typeof corps.page === 'string' ? corps.page.replace(/\//g, '_') : '', 60);
   const jour = new Date().toISOString().slice(0, 10);
+  return NextResponse.json(await enregistrer(getRedis(), corps, jour));
+}
 
-  const redis = getRedis();
-  if (!redis) return NextResponse.json({ ok: true, compte: false });
-
-  try {
-    await Promise.all([
-      redis.zincrby('halalgpt:passerelles', 1, source),
-      redis.zincrby('halalgpt:passerelles:detail', 1, `${source} · ${campagne} · ${page || '_'}`),
-      redis.zincrby(`halalgpt:passerelles:jour:${jour}`, 1, source),
-      // Les journaux quotidiens s'effacent seuls au bout de 90 jours : on garde
-      // la tendance, pas un historique qui grossit indefiniment.
-      redis.expire(`halalgpt:passerelles:jour:${jour}`, 60 * 60 * 24 * 90),
-    ]);
-  } catch {
-    /* Redis indisponible : on ne casse jamais la visite pour un compteur. */
-  }
-
-  return NextResponse.json({ ok: true, compte: true });
+/**
+ * « Es-tu vivant ? » — lecture seule, aucune ecriture.
+ *
+ * N'importe quel agent peut ouvrir https://halalgpt.fr/api/passerelle pour
+ * savoir si la mesure fonctionne, sans y ajouter une fausse arrivee.
+ */
+export async function GET() {
+  return NextResponse.json(await sante(getRedis()));
 }

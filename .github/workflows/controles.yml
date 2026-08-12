@@ -75,6 +75,15 @@ jobs:
       - name: Le site devient moins alimentaire
         run: node scripts/test-nourriture.mjs
 
+      # Ajoute le 12 aout. Le compteur de passerelles est la SEULE mesure de
+      # l'empire qu'un agent peut lire seul, et c'est elle qu'on relira le
+      # 25 aout. Elle repondait « compte » meme quand l'ecriture avait echoue :
+      # une base mal configuree aurait rendu zero le 25 aout, et on aurait
+      # conclu « les passerelles n'amenent personne » au lieu de « le compteur
+      # n'a jamais marche ».
+      - name: Le compteur de passerelles n'invente pas ses succes
+        run: node scripts/test-passerelle.mjs
+
       - name: Le repli ne se fait pas passer pour une reponse
         run: node scripts/test-repli.mjs
 
