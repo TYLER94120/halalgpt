@@ -14,15 +14,16 @@
 #   · une description qui depasse ou qui se coupe au milieu d'un mot
 #   · une fiche vers laquelle plus rien ne pointe (Google ne la visiterait plus)
 #   · un lien `related` qui pointe vers une fiche qui n'existe pas
+#   · une recherche interne qui ne trouve plus ce que le site sait
 #   · une reponse de repli qui se ferait passer pour une vraie reponse
 #   · une voix de synthese qui reciterait le Coran
 #
 # CE QU'ILS N'ATTRAPENT PAS, et il faut le savoir :
 # les tests qui demandent un vrai navigateur (partage, navigation,
-# chevauchement, mode conduite) ou un serveur en marche (etage 1, sitemap) ne
-# tournent pas ici. Ils se lancent a la main, avec une construction locale. Un
-# controle automatique qui ne dit pas ce qu'il ne regarde pas est exactement le
-# genre d'instrument qui rassure a tort.
+# chevauchement, mode conduite, recherche cote page) ou un serveur en marche
+# (etage 1, sitemap) ne tournent pas ici. Ils se lancent a la main, avec une
+# construction locale. Un controle automatique qui ne dit pas ce qu'il ne
+# regarde pas est exactement le genre d'instrument qui rassure a tort.
 #
 # Aucune installation : les six series n'utilisent que Node et le depot. Pas de
 # `npm ci`, donc rien qui puisse casser pour une raison etrangere au site.
@@ -58,6 +59,14 @@ jobs:
 
       - name: Aucune fiche n'est une impasse
         run: node scripts/test-liens-internes.mjs
+
+      # Ajoute le 12 aout : la recherche interne ne lisait que les titres, et
+      # renvoyait « aucune fiche ne correspond » sur 17 saisies courantes dont
+      # 13 avaient leur reponse dans le site. Ce test tient les deux bouts —
+      # elle trouve les mots enfouis, et elle refuse toujours ce qui n'existe
+      # pas. Sans le second, une recherche qui renvoie tout passerait.
+      - name: La recherche trouve ce que le site sait
+        run: node scripts/test-recherche.mjs
 
       # Decision de Mohamed, 12 aout : « Oui pour diminuer pourcentage
       # nourriture ». Le catalogue etait a 107 fiches nourriture sur 193.

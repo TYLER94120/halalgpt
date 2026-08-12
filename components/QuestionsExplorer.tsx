@@ -1,7 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+
+import {
+  chercher,
+  construireIndex,
+  type CorpsParSlug,
+  type FicheCherchable,
+} from '@/lib/recherche';
 
 // Explorateur des fiches : une recherche instantanée, puis une barre de thèmes
 // collante. Un tap ou trois lettres, zéro rechargement, zéro long défilement.
@@ -11,16 +18,20 @@ import { useMemo, useState } from 'react';
 // Pourquoi une recherche : avec près de deux cents fiches, les pastilles ne
 // suffisent plus. Quelqu'un qui veut savoir s'il peut prier assis ne va pas
 // parcourir la catégorie Prière — il tape « assis ». Sans champ, il repart.
-
-/** « prière » → « priere ». Sans cela, personne ne trouve rien : on tape sans
- *  accents sur un téléphone, et la moitié des fiches en portent. */
-function aplati(texte: string): string {
-  return texte
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[’']/g, ' ')
-    .toLowerCase();
-}
+//
+// ── 12 août 2026 : la recherche regarde enfin DANS les réponses ──────────
+//
+// Elle ne lisait que le titre, le verdict et la catégorie. Sur 41 saisies
+// qu'une vraie personne taperait, 17 ne ramenaient rien, et pour 13 d'entre
+// elles le site avait pourtant la réponse : « cochenille » (6 fiches en
+// parlent), « émulsifiant » (10), « hôtel » (5), « règles » (6)…
+//
+// Le corps des réponses pèse 120 ko. On ne l'inflige pas aux neuf visiteurs
+// sur dix qui ne cherchent rien : il se télécharge au premier caractère tapé.
+// Tant qu'il n'est pas là, on cherche dans les titres — c'est-à-dire
+// exactement le comportement d'avant. Si le téléchargement échoue, on y reste,
+// sans message d'erreur : une recherche moins complète vaut mieux qu'une
+// recherche cassée.
 
 export interface ExplorerCategory {
   name: string;
@@ -29,12 +40,7 @@ export interface ExplorerCategory {
   count: number;
 }
 
-export interface ExplorerItem {
-  slug: string;
-  question: string;
-  verdict: string;
-  category: string;
-}
+export type ExplorerItem = FicheCherchable;
 
 interface Props {
   categories: ExplorerCategory[];
@@ -44,21 +50,31 @@ interface Props {
 export default function QuestionsExplorer({ categories, items }: Props) {
   const [active, setActive] = useState('Toutes');
   const [recherche, setRecherche] = useState('');
+  const [corps, setCorps] = useState<CorpsParSlug | null>(null);
+  const demande = useRef(false);
 
-  // L'index est calculé une fois, pas à chaque frappe : sur un téléphone
-  // modeste, refaire deux cents normalisations Unicode par lettre se sent.
-  const index = useMemo(
-    () => items.map((q) => ({ q, texte: aplati(`${q.question} ${q.verdict} ${q.category}`) })),
-    [items]
-  );
+  // Le corps des réponses, une seule fois, dès qu'on sait que la personne
+  // cherche pour de bon. `demande` empêche une deuxième requête si le premier
+  // téléchargement échoue ou traîne — on ne martèle pas le réseau.
+  useEffect(() => {
+    if (!recherche || demande.current) return;
+    demande.current = true;
+    fetch('/api/recherche')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (d && d.corps) setCorps(d.corps);
+      })
+      .catch(() => {
+        // Silence volontaire : la recherche par titre continue de marcher.
+      });
+  }, [recherche]);
 
-  const mots = aplati(recherche).split(/\s+/).filter(Boolean);
-  const trouves = useMemo(() => {
-    if (!mots.length) return null;
-    // Tous les mots doivent être présents : « priere assis » ne doit pas
-    // ramener toutes les fiches Prière.
-    return index.filter(({ texte }) => mots.every((m) => texte.includes(m))).map(({ q }) => q);
-  }, [index, mots.join(' ')]); // eslint-disable-line react-hooks/exhaustive-deps
+  // L'index est recalculé quand le corps arrive, pas à chaque frappe : sur un
+  // téléphone modeste, refaire deux cents normalisations Unicode par lettre se
+  // sent.
+  const index = useMemo(() => construireIndex(items, corps ?? {}), [items, corps]);
+
+  const trouves = useMemo(() => chercher(index, recherche), [index, recherche]);
 
   const cards = (list: ExplorerItem[]) => (
     <div className="cards">
@@ -71,33 +87,44 @@ export default function QuestionsExplorer({ categories, items }: Props) {
     </div>
   );
 
+  const champ = (avecEffacer: boolean) => (
+    <div className="recherche">
+      <input
+        type="search"
+        className="recherche-champ"
+        placeholder="Cherche une question…"
+        value={recherche}
+        onChange={(e) => setRecherche(e.target.value)}
+        aria-label="Chercher parmi les questions"
+        autoComplete="off"
+      />
+      {avecEffacer && (
+        <button type="button" className="recherche-effacer" onClick={() => setRecherche('')}>
+          Effacer
+        </button>
+      )}
+    </div>
+  );
+
   // Une recherche en cours prend le pas sur les pastilles : deux filtres
   // simultanés donnent des listes vides qu'on ne s'explique pas.
   if (trouves) {
     return (
       <>
-        <div className="recherche">
-          <input
-            type="search"
-            className="recherche-champ"
-            placeholder="Cherche une question…"
-            value={recherche}
-            onChange={(e) => setRecherche(e.target.value)}
-            aria-label="Chercher parmi les questions"
-            autoComplete="off"
-          />
-          <button type="button" className="recherche-effacer" onClick={() => setRecherche('')}>
-            Effacer
-          </button>
-        </div>
+        {champ(true)}
 
-        <p className="recherche-compte">
+        <p className="recherche-compte" aria-live="polite">
           {trouves.length === 0
             ? 'Aucune fiche ne correspond.'
-            : `${trouves.length} question${trouves.length > 1 ? 's' : ''} trouvée${trouves.length > 1 ? 's' : ''}`}
+            : `${trouves.length} question${trouves.length > 1 ? 's' : ''} trouvée${trouves.length > 1 ? 's' : ''}` +
+              // On ne promet « les plus proches d'abord » que quand il y a
+              // vraiment un classement à annoncer.
+              (trouves.length > 3 ? ' — les plus proches d’abord' : '')}
         </p>
 
-        {trouves.length > 0 && <section className="hub-category">{cards(trouves)}</section>}
+        {trouves.length > 0 && (
+          <section className="hub-category">{cards(trouves.map((t) => t.fiche))}</section>
+        )}
 
         {/* Une recherche vide n'est pas un cul-de-sac : c'est exactement le
             moment où l'IA sert à quelque chose. */}
@@ -117,17 +144,7 @@ export default function QuestionsExplorer({ categories, items }: Props) {
 
   return (
     <>
-      <div className="recherche">
-        <input
-          type="search"
-          className="recherche-champ"
-          placeholder="Cherche une question…"
-          value={recherche}
-          onChange={(e) => setRecherche(e.target.value)}
-          aria-label="Chercher parmi les questions"
-          autoComplete="off"
-        />
-      </div>
+      {champ(false)}
 
       <nav className="filter-bar" aria-label="Filtrer par thème">
         <button

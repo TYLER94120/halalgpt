@@ -1564,7 +1564,20 @@ a {
   opacity: 0.5;
 }
 
-.recherche-champ:focus {
+/* Le champ est le seul endroit de la page où l'on tape : quand le clavier
+   arrive dessus, ça doit se voir sans hésitation. La bordure passait de
+   `--or-doux` (25 % d'opacité) à `--or` — une nuance qu'on ne remarque pas au
+   clavier. L'anneau, lui, se voit de loin, et il reste à l'extérieur du champ
+   pour ne déplacer aucune lettre. */
+.recherche-champ:focus-visible {
+  outline: 3px solid var(--or);
+  outline-offset: 2px;
+  border-color: var(--or);
+}
+
+/* Au doigt sur un téléphone, l'anneau n'apprend rien — on sait où l'on vient
+   de toucher. On garde seulement la bordure, comme avant. */
+.recherche-champ:focus:not(:focus-visible) {
   outline: none;
   border-color: var(--or);
 }
