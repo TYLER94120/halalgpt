@@ -429,7 +429,7 @@ export const QUESTIONS: QA[] = [
       'En pratique, en France, voici ce qui se fait et qui fonctionne. Beaucoup demandent à leur employeur d’être affectés à un poste sans contact avec l’alcool — cuisine, salle sans bar, service du midi — et cela s’obtient plus souvent qu’on ne le croit, surtout dans un établissement où d’autres postes existent. Quand c’est le seul revenu et qu’aucune alternative n’est disponible, les savants parlent de nécessité : rester le temps de chercher activement autre chose, sans s’y installer. Ce n’est pas une permission définitive, c’est un délai. Pour ta situation exacte — ton contrat, tes charges, ce que tu peux négocier — parles-en à un imam plutôt que de rester seul avec la question.',
     ],
     category: 'Vie quotidienne',
-    related: ['cigarette-halal', 'serrer-la-main-islam', 'halal-definition'],
+    related: ['caissier-scanner-alcool', 'cigarette-halal', 'serrer-la-main-islam', 'halal-definition'],
   },
   {
     slug: 'priere-assise-malade',
@@ -457,7 +457,7 @@ export const QUESTIONS: QA[] = [
       'Mais le vrai sujet, celui qui revient dans presque toutes les réponses des savants, n’est aucun de ceux-là : c’est le TEMPS. Un jeu qui fait manquer la prière, qui vide les nuits, qui prend la place des études, de la famille ou du sommeil, devient un problème même s’il ne contient rien d’interdit. Les repères pratiques que donnent les imams sont simples et tiennent en trois points : la prière passe avant, toujours, et on s’arrête quand l’heure arrive ; on fixe une durée avant de commencer plutôt qu’après ; et si l’on n’arrive plus à s’arrêter, ce n’est plus un loisir, c’est une dépendance — et cela se traite, sans honte, comme n’importe quelle autre.',
     ],
     category: 'Vie quotidienne',
-    related: ['musique-halal', 'psy-therapie-islam', 'cigarette-halal'],
+    related: ['reseaux-sociaux-islam', 'musique-halal', 'psy-therapie-islam', 'cigarette-halal'],
   },
   {
     slug: 'priere-voiture',
@@ -1562,7 +1562,7 @@ export const QUESTIONS: QA[] = [
       'Baisse l’intensité de 20 à 30 % les premiers jours, dors suffisamment et charge l’hydratation entre iftar et suhur. Les sportifs de haut niveau avec compétitions ont des cas particuliers : les avis autorisant de reporter le jeûne existent mais se discutent avec un savant, pas dans un vestiaire.',
     ],
     category: 'Ramadan',
-    related: ['se-doucher-ramadan', 'dattes-rompre-jeune', 'whey-proteine-halal'],
+    related: ['sport-combat-halal', 'se-doucher-ramadan', 'dattes-rompre-jeune', 'whey-proteine-halal'],
   },
   {
     slug: 'femme-enceinte-ramadan',
@@ -2607,7 +2607,7 @@ export const QUESTIONS: QA[] = [
       'Entre les deux existent des zones grises (le « douteux », shubuhât) que le hadith recommande d’éviter pour préserver sa religion — c’est exactement le terrain des additifs et produits qu’on décortique sur ce site. Et un dernier étage souvent oublié : tayyib — bon, sain, pur. L’idéal coranique est « halal et tayyib » : licite ET bon. Un soda ultra-sucré peut être halal sans être tayyib ; viser les deux est la vraie gourmandise du croyant.',
     ],
     category: 'Pratique',
-    related: ['difference-halal-casher', 'certifications-halal-france', 'abattage-etourdissement-halal', 'riba-interet-islam'],
+    related: ['ia-halal', 'difference-halal-casher', 'certifications-halal-france', 'abattage-etourdissement-halal', 'riba-interet-islam'],
   },
   {
     slug: 'certifications-halal-france',
@@ -2779,7 +2779,7 @@ export const QUESTIONS: QA[] = [
       'Ce qui fait consensus, en revanche, et qui est souvent le vrai sujet : la photo d’autrui ne s’expose pas sans son accord. Publier le visage de quelqu’un — surtout une femme, surtout un enfant — sans qu’il l’ait voulu touche à son droit, et là aucune école ne diverge.',
     ],
     category: 'Vie quotidienne',
-    related: ['tatouage-halal', 'musique-halal', 'mauvais-oeil-protection'],
+    related: ['reseaux-sociaux-islam', 'tatouage-halal', 'musique-halal', 'mauvais-oeil-protection'],
   },
   {
     slug: 'chat-maison-islam',
@@ -2809,6 +2809,71 @@ export const QUESTIONS: QA[] = [
     ],
     category: 'Pratique',
     related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition'],
+  },
+  {
+    slug: 'reseaux-sociaux-islam',
+    question: 'Les réseaux sociaux sont-ils haram ?',
+    verdict: '⚠️ L’outil est neutre — c’est l’usage qui décide',
+    short:
+      'Aucun texte ne vise un outil qui n’existait pas. Les savants jugent ce qu’on en fait : la médisance, le regard, l’ostentation et le temps volé sont les quatre points qui reviennent.',
+    answer: [
+      'Poser la question ainsi — « est-ce haram ? » — mène à une impasse, et c’est pour cela que les réponses qu’on trouve se contredisent. Un réseau social n’est ni licite ni illicite en soi, pas plus qu’un téléphone ou une voiture. Les savants contemporains raisonnent donc sur l’usage, et ils reviennent tous aux mêmes quatre points.',
+      'La médisance, d’abord, et c’est de loin le plus grave. Parler d’un absent en mal est nommément condamné dans le Coran, avec une image très dure. Or un fil de commentaires est une machine à cela : on juge, on se moque, on relaie sans vérifier. Beaucoup de savants disent que c’est le vrai danger de ces outils, bien avant les images.',
+      'Le regard ensuite. Ce qui défile n’est pas choisi par toi, et détourner le regard de ce qui ne te concerne pas est un principe qui ne dépend d’aucune technologie. Puis l’ostentation : montrer sa pratique religieuse, son aumône, son voyage à La Mecque. Là encore le sujet n’est pas la plateforme, c’est l’intention — mais elle rend cette tentation permanente.',
+      'Le quatrième point est le plus discret et le plus mesurable : le temps. Une prière repoussée parce qu’on faisait défiler l’écran, c’est un cas concret que beaucoup vivent sans y penser. Un savant t’en parlera avant de te parler du reste.',
+      'Ce qui fait consensus, en revanche : ces outils servent aussi. Apprendre, retrouver sa famille, faire connaître un savoir utile. Personne ne demande de tout supprimer. La question honnête n’est pas « est-ce permis » mais « qu’est-ce que j’en fais, et combien de temps ». Et pour un cas personnel — un métier lié aux réseaux, un contenu qui pose problème — c’est une conversation à avoir avec un savant qui connaît ta situation.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['photos-selfies-islam', 'musique-halal', 'jeux-video-halal'],
+  },
+  {
+    slug: 'sport-combat-halal',
+    question: 'Les sports de combat sont-ils permis en islam ?',
+    verdict: '⚠️ Oui — sauf frapper le visage',
+    short:
+      'La lutte et la force physique sont encouragées par la sunna. La limite reconnue par les savants est claire : on ne frappe pas le visage, ce qui déplace la question vers la boxe et le MMA.',
+    answer: [
+      'Le point de départ surprend souvent : le sport de combat n’est pas suspect en islam, il est valorisé. La lutte est rapportée dans la sunna, et la force physique du croyant est présentée comme une qualité. Judo, lutte, karaté, escrime, tir à l’arc, équitation : rien n’y fait débat, et plusieurs de ces disciplines sont même citées comme recommandées.',
+      'La limite que les savants retiennent est précise et facile à vérifier : **on ne frappe pas le visage**. Les textes l’interdisent explicitement, et c’est ce point — pas la violence en général — qui commande la réponse moderne. Il déplace immédiatement la question vers la boxe et le MMA, dont le visage est une cible centrale.',
+      'De là, deux positions. La majorité des savants contemporains considèrent que la boxe et le MMA de compétition posent problème : coups au visage assumés, mise en danger volontaire, et l’objectif de mettre l’adversaire hors d’état. Une position plus souple distingue l’entraînement — techniques, sac, sparring léger, protections, sans viser le visage — de la compétition, et n’interdit que la seconde.',
+      'Deux points pratiques que les entraîneurs musulmans rappellent souvent. La tenue : la zone à couvrir va du nombril au genou, ce qui exclut certains shorts de compétition. Et le respect de l’adversaire : humilier, provoquer, jouer la mise en scène de haine qui accompagne beaucoup de combats est un sujet en soi, distinct des coups.',
+      'Si tu pratiques en club et que la compétition se pose, c’est typiquement le cas où la réponse dépend de ta discipline et de tes règles précises. Un savant qui connaît le sport te sera plus utile qu’une règle générale.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['jeux-video-halal', 'tatouage-halal', 'sport-ramadan'],
+  },
+  {
+    slug: 'caissier-scanner-alcool',
+    question: 'Peut-on être caissier et scanner de l’alcool ?',
+    verdict: '⚠️ Avis divergents — beaucoup tolèrent par nécessité',
+    short:
+      'Le hadith des dix personnes autour du vin vise celui qui le vend, le sert et le porte. Savoir si le caissier en fait partie divise les savants contemporains.',
+    answer: [
+      'La question est posée tous les jours en France, et elle mérite mieux qu’une réponse tranchée dans un sens ou dans l’autre. Le texte de référence est le hadith qui maudit dix personnes autour du vin : celui qui le presse, le fait presser, le boit, le porte, celui à qui on le porte, celui qui le sert, le vend, en tire profit, l’achète et pour qui on l’achète. La liste est longue, et c’est précisément ce qui rend la question sérieuse.',
+      'La position la plus répandue chez les savants contemporains consultés en Europe distingue le VENDEUR du salarié qui encaisse. Le caissier ne choisit pas ce que le magasin propose, ne conseille pas le produit, ne touche pas de commission dessus ; il fait passer un article devant un lecteur, parmi des milliers d’autres. Beaucoup considèrent donc que ce n’est pas la vente visée par le texte, surtout quand l’alcool représente une part marginale du travail.',
+      'La position plus stricte refuse cette distinction : le geste reste un maillon de la chaîne, et une nécessité de revenu ne transforme pas un interdit en permis. Elle est tenue par des savants sérieux, et quelqu’un qui la suit et refuse ce poste ne fait rien d’excessif.',
+      'Ce que les deux positions disent ensemble, et qui est le conseil vraiment utile : cherche d’abord la sortie par le haut. Demander une caisse ou un rayon sans alcool, un poste en réserve, un autre magasin — c’est souvent possible et rarement tenté. Et si le poste est ton seul revenu, personne ne te demande de démissionner sans autre emploi : les savants qui autorisent le font au titre du besoin, ce qui suppose de continuer à chercher.',
+      'La règle qui vaut dans les deux cas : plus l’alcool est central dans le métier — caviste, barman, rayon dédié — moins la tolérance s’applique. Et parce que cela touche à ton revenu et à ta famille, c’est exactement le genre de situation où il faut en parler à un savant qui connaît ton cas, pas trancher depuis une page web.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['travailler-restaurant-alcool', 'vinaigre-halal', 'halal-definition'],
+  },
+  {
+    slug: 'ia-halal',
+    question: 'Peut-on poser une question religieuse à une intelligence artificielle ?',
+    titreSeo: 'Peut-on poser une question religieuse à une IA ?',
+    verdict: '⚠️ Pour comprendre oui — pour trancher non',
+    short:
+      'Une IA n’a pas de savoir religieux : elle répète ce qu’elle a lu, sans distinguer un hadith solide d’un faible, et sans rien connaître de ta situation. Utile pour comprendre, jamais pour décider.',
+    answer: [
+      'C’est une question neuve, et elle mérite une réponse honnête — y compris de la part d’un site qui est lui-même une IA. Une intelligence artificielle ne sait rien. Elle a lu énormément de textes et elle produit la suite la plus probable. Cela ressemble à du savoir, et ce n’en est pas.',
+      'Trois limites en découlent, et elles sont sérieuses. Elle ne distingue pas un hadith authentique d’un hadith faible ou inventé : les deux circulent sur internet, elle a lu les deux. Elle ne connaît rien de ta situation — ton école, ton pays, ton contexte familial, ce que ton imam t’a déjà dit. Et elle ne sait pas quand elle se trompe : elle répond avec la même assurance dans les deux cas, ce qui est peut-être le point le plus dangereux.',
+      'À quoi elle sert vraiment, alors ? À comprendre un sujet avant d’en parler. À trouver le vocabulaire — savoir que ce qu’on cherche s’appelle « tayammum » ou « istikhara » change tout. À préparer sa question pour qu’elle soit précise quand on ira voir quelqu’un. À vérifier une composition, un code additif, un horaire. Ce sont de vrais services, et ils ne demandent aucune autorité religieuse.',
+      'Ce qu’elle ne remplace pas : une fatwa. Une fatwa engage celui qui la donne, tient compte de la personne, et suppose une science. Aucune IA ne peut faire cela, et aucune n’en porte la responsabilité devant Allah. Le principe est ancien et n’a pas changé : on demande aux gens du rappel si l’on ne sait pas — à des gens, pas à un outil.',
+      'La règle simple à retenir : **une IA t’aide à savoir quoi demander, pas à savoir quoi faire.** Sur ce site comme ailleurs, une réponse qui te dit ce qui est majoritaire et où sont les divergences fait son travail ; celle qui trancherait ton cas personnel dépasserait le sien. Pour ta situation, va voir un savant ou l’imam de ta mosquée.',
+    ],
+    category: 'Pratique',
+    related: ['priere-istikhara', 'halal-definition', 'certifications-halal-france'],
   },
 ];
 
