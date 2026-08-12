@@ -1634,7 +1634,16 @@ a {
   padding: 12px 14px;
   margin: -12px -14px;
 }
-.conduite-titre { opacity: 0.6; letter-spacing: 0.04em; }
+/* C'est un <h1> depuis le 12 août — la page n'annonçait son sujet à personne.
+   On lui retire les tailles et marges par défaut du navigateur : au volant, ce
+   libellé doit rester le petit texte discret d'en haut, pas un gros titre qui
+   volerait la place du bouton. */
+.conduite-titre {
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+  font: inherit;
+  margin: 0;
+}
 
 .conduite-bouton {
   flex: 1 1 auto;

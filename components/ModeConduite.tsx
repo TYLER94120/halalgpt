@@ -395,12 +395,22 @@ export default function ModeConduite() {
 
   const incapable = micOK === false || voixOK === false;
 
+  // `div` et non `main` : la mise en page du site fournit déjà un <main> et un
+  // <header>. Deux <main> dans une page, c'est une erreur HTML, et un lecteur
+  // d'écran ne sait plus lequel porte le contenu principal. Mesuré le 12 août :
+  // cette page en avait deux de chaque, la seule du site.
   return (
-    <main className="conduite">
-      <header className="conduite-tete">
+    <div className="conduite">
+      <div className="conduite-tete">
         <Link href="/" className="conduite-retour">← Quitter</Link>
-        <span className="conduite-titre">Mode conduite</span>
-      </header>
+        {/* Un vrai h1 : c'est le titre de la page, et c'était le SEUL écran du
+            site à n'en porter aucun — le robot de ronde et la sonde
+            d'accessibilité l'ont trouvé chacun de son côté. Une page qui
+            n'annonce pas son sujet ne le dit ni à Google ni à quelqu'un qui
+            navigue à la voix. L'apparence ne bouge pas : `.conduite-titre`
+            reprend la taille du texte autour. */}
+        <h1 className="conduite-titre">Mode conduite</h1>
+      </div>
 
       <button
         type="button"
@@ -468,6 +478,6 @@ export default function ModeConduite() {
         le téléphone. Si tu dois regarder l’écran, arrête-toi. Une réponse peut
         attendre, pas la route.
       </p>
-    </main>
+    </div>
   );
 }
