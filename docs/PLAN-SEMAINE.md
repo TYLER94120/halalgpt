@@ -189,6 +189,53 @@ domaine.**
 
 ## Defauts corriges
 
+**La passerelle des codes additifs tombait dans le vide sur 36 liens publics
+sur 56 — corrige le 13 aout.**
+
+Trouve en auditant mon propre site a la demande de Mohamed. L'hygiene technique
+ne montrait rien : 0 titre coupe sur 214 pages, 0 orpheline, 0 page sans
+canonique, donnees structurees sur les 202 fiches. Le defaut etait ailleurs.
+
+`halalcheck.fr/additifs.html` publie **56 liens** vers `halalgpt.fr/e/<CODE>`.
+Mesure faite un code a la fois, sur la construction de production : **20**
+arrivaient sur une fiche, **36 tombaient sur `/categorie/additifs`**. Et les 36
+sont exactement ceux que le moteur du scanner classe « douteux — origine
+animale possible » : esters d'acides gras, stearates, phosphate d'os,
+L-cystine. Quelqu'un lisait « E472e » sur un paquet, voyait *douteux*, appuyait
+pour comprendre, et recevait une liste qui ne parlait pas de son code.
+
+Le defaut ne pouvait etre vu par aucun controle existant : le scanner testait
+son moteur, mes fiches testaient mes fiches, et **le fil entre les deux n'etait
+teste par personne**. Les deux moities etaient vertes.
+
+Correctif : `/e/<CODE>` sans fiche ne redirige plus, il rend une page qui dit
+« pas encore de fiche », **sans inventer de verdict** — la charte interdit
+d'emprunter celui d'un additif voisin — et propose les fiches d'additifs les
+plus proches par leur numero, presentees comme voisines et non comme la
+reponse. La page est en `noindex` : l'indexer reviendrait a fabriquer des
+centaines de pages minces, exactement ce que l'audit reproche par ailleurs.
+Verifie apres coup : 20 redirections vers une fiche, 36 pages honnetes,
+**0 dans le vide**.
+
+La logique est sortie de la route vers `lib/ecodes.ts`, en fonctions pures.
+Raison : tant qu'elle vivait dans `app/e/[code]/route.ts`, elle ne se testait
+qu'avec un serveur en marche, donc jamais dans le controle automatique.
+`scripts/test-ecodes.mjs` tourne desormais avec Node seul, et il est branche
+dans `controles.yml`. Verifie qu'il peut virer au rouge en remettant
+volontairement le bug d'origine.
+
+Deux notes qui valent plus que le correctif :
+
+1. **Mon propre comptage a menti deux fois** avant de donner le bon chiffre.
+   D'abord « 8 series de tests en echec » — c'etait l'atelier, pas le site.
+   Ensuite « 55 passerelles cassees sur 55 » — mon test de prefixe echouait sur
+   une redirection absolue. Et l'expression `E[0-9]{3}` ne voyait ni E1000 ni
+   E1105 : la liste du moteur etait sous-comptee a 55 au lieu de 56.
+2. **J'ai ecrit un commentaire affirmant que le tsconfig acceptait les imports
+   en `.ts`.** Il ne les accepte pas, la construction l'a refuse. Une
+   affirmation non verifiee, dans un commentaire, sur mon propre depot, deux
+   heures apres avoir signe un audit qui reproche exactement cela.
+
 **L'accueil n'avait pas de balise canonique — corrige le 13 aout.**
 
 Trouve en verifiant une affirmation de ce document, pas en cherchant un bug.

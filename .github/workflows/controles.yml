@@ -90,6 +90,19 @@ jobs:
       - name: Les questions proposees restent dans le sujet
         run: node scripts/test-apres.mjs
 
+      # Ajoute le 13 aout, apres l'audit du matin. Sur les 56 liens /e/<CODE>
+      # publies par halalcheck.fr/additifs.html, 36 tombaient sur la liste
+      # /categorie/additifs — et ces 36 sont exactement les codes que le
+      # scanner classe « douteux ». Le moteur du voisin etait teste, mes fiches
+      # etaient testees, le FIL ENTRE LES DEUX ne l'etait par personne : deux
+      # moities vertes, un pont rompu.
+      #
+      # Il tourne sans serveur ni navigateur, volontairement : c'est ce qui
+      # manquait aux sept series qui ne tournent jamais ici. La logique de la
+      # passerelle a ete sortie de la route dans `lib/ecodes.ts` pour cela.
+      - name: La passerelle des codes additifs repond, ou dit qu'elle ne sait pas
+        run: node scripts/test-ecodes.mjs
+
       # En dernier, et volontairement : c'est la regle qui ne se negocie pas.
       # Aucune voix de synthese ne recite le Coran.
       - name: Aucune voix de synthese ne recite le Coran
