@@ -109,7 +109,7 @@ export const QUESTIONS: QA[] = [
       'Alternatives sans souci : pectine de fruits (E440), agar-agar (E406), carraghénanes (E407), gomme de guar (E412) — tous végétaux. Et de plus en plus de marques proposent des gammes « gélatine halal » certifiées, y compris pour les gélules de compléments alimentaires.',
     ],
     category: 'Additifs',
-    related: ['e441-gelatine-halal', 'haribo-halal', 'marshmallow-halal', 'collagene-halal', 'medicaments-gelules-halal', 'e250-nitrite-halal'],
+    related: ['e441-gelatine-halal', 'haribo-halal', 'marshmallow-halal', 'collagene-halal', 'medicaments-gelules-halal', 'e250-nitrite-halal', 'gelatine-poisson-halal'],
   },
   {
     slug: 'fromage-presure-halal',
@@ -123,7 +123,7 @@ export const QUESTIONS: QA[] = [
       'Les plus prudents préfèrent les fromages à présure microbienne — c’est le cas de la majorité des fromages industriels (vérifiez la mention « coagulant microbien ») — ou les fromages certifiés halal, de plus en plus courants. Les deux démarches sont respectables.',
     ],
     category: 'Additifs',
-    related: ['vinaigre-halal', 'e471-halal', 'e1105-lysozyme-halal'],
+    related: ['vinaigre-halal', 'e471-halal', 'e1105-lysozyme-halal', 'yaourt-halal'],
   },
   {
     slug: 'vinaigre-halal',
@@ -137,7 +137,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : vinaigre de vin, balsamique, de cidre… sont consommés sans problème par l’immense majorité. Rien à voir avec le vin lui-même ou les sauces « au vin », qui restent interdits.',
     ],
     category: 'Additifs',
-    related: ['cuisine-alcool-halal', 'fromage-presure-halal'],
+    related: ['cuisine-alcool-halal', 'fromage-presure-halal', 'moutarde-halal'],
   },
 
   // ─── PRODUITS ───────────────────────────────────────────────────────────────
@@ -155,7 +155,7 @@ export const QUESTIONS: QA[] = [
       'Et si tu veux le goût sans l’enquête : les épiceries orientales et les rayons halal proposent désormais des dizaines de marques de bonbons entièrement certifiés, gélatine bovine rituelle ou pectine de fruits. Le choix est bien plus large qu’il y a dix ans.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal', 'milka-halal'],
+    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal', 'milka-halal', 'chewing-gum-halal'],
   },
   {
     slug: 'mms-halal',
@@ -197,7 +197,7 @@ export const QUESTIONS: QA[] = [
       'Le Coca-Cola est d’ailleurs officiellement certifié halal dans plusieurs pays musulmans (Arabie saoudite, Émirats, Malaisie…) où il est produit localement. La grande majorité des savants et des consommateurs le considèrent donc permis.',
     ],
     category: 'Produits',
-    related: ['red-bull-halal', 'levure-biere-halal', 'mentos-halal', 'lu-prince-halal', 'danette-halal', 'starbucks-halal'],
+    related: ['red-bull-halal', 'levure-biere-halal', 'mentos-halal', 'lu-prince-halal', 'danette-halal', 'starbucks-halal', 'e150d-halal'],
   },
   {
     slug: 'red-bull-halal',
@@ -612,9 +612,10 @@ export const QUESTIONS: QA[] = [
       'Le E920, ou L-cystéine, est un agent de traitement de la farine : il rend la pâte plus souple. On le trouve dans certains pains industriels, burgers, viennoiseries et biscottes.',
       'Le problème est sa source : la L-cystéine peut être produite par fermentation ou synthèse (halal), mais elle est aussi historiquement extraite de plumes de canard — un animal non abattu rituellement — ce qui fait débat parmi les savants. L’extraction à partir de cheveux humains est interdite en Europe pour l’alimentaire.',
       'En pratique : les boulangeries artisanales n’en utilisent presque jamais (la baguette de votre boulanger n’est pas concernée). Pour le pain industriel, privilégiez les références certifiées ou sans E920 dans la liste d’ingrédients.',
+      'La divergence entre savants mérite d’être nommée précisément, car elle ne porte pas sur les faits mais sur un principe. Ceux qui autorisent le E920, même d’origine animale, s’appuient sur l’istihâla : la substance a subi une transformation chimique complète et n’est plus la plume dont elle est issue — le raisonnement exact que l’on applique au vinaigre. Ceux qui l’écartent estiment que la transformation ne suffit pas lorsque l’origine est un animal non abattu rituellement. Aucun des deux camps n’invente : ils appliquent deux lectures anciennes d’une même règle. Point pratique par ailleurs : sur une étiquette, le E920 se présente souvent sous sa fonction — « agent de traitement de la farine » — suivie de son nom ou de son numéro ; c’est la même substance, il faut simplement savoir la reconnaître sous cette formulation. Les pains de boulangerie artisanale en sont pratiquement exempts : ce sont les buns de burger, les biscottes et les viennoiseries industrielles qui en concentrent l’usage.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e904-halal', 'gelatine-halal'],
+    related: ['e471-halal', 'e904-halal', 'gelatine-halal', 'moutarde-halal', 'e481-halal'],
   },
   {
     slug: 'e904-halal',
@@ -691,9 +692,10 @@ export const QUESTIONS: QA[] = [
       'La base des chewing-gums modernes est une gomme synthétique — pas de problème halal. Les points à surveiller sont ailleurs : la glycérine (E422) utilisée comme humectant, dont l’origine peut être animale, et la gélatine, présente dans certains dragéifiés et bonbons gélifiés à mâcher.',
       'Les grandes marques vendues en France (menthe classique) sont majoritairement sans gélatine — vérifiez simplement la liste d’ingrédients : si « gélatine » n’apparaît pas, il reste la question de la glycérine, généralement végétale aujourd’hui.',
       'Réflexe simple : liste d’ingrédients courte sans gélatine = généralement OK ; en cas de doute sur un produit consommé quotidiennement, un message à la marque ou un chewing-gum certifié règle la question.',
+      'Trois précisions font le tour de la question. La glycérine E422 d’abord : en Europe, elle est aujourd’hui très majoritairement d’origine végétale, tirée du colza ou de la palme, pour une raison prosaïque de coût et d’approvisionnement — le doute théorique subsiste, mais il s’est beaucoup réduit. La couleur ensuite : les chewing-gums roses ou rouges peuvent contenir du carmin E120, tiré d’insectes, au même titre que les bonbons. La base enfin, et c’est là qu’il faut être honnête : la « gomme base » est un secret de fabrication, désignée d’un seul mot sur l’étiquette, et elle peut inclure des cires et des émulsifiants non détaillés. Aucune lecture d’étiquette ne donne donc une certitude absolue sur ce point précis. Pour un produit mâché tous les jours, deux réponses seulement sont fermes : une certification, ou un message au service consommateurs de la marque.',
     ],
     category: 'Produits',
-    related: ['e422-glycerine-halal', 'gelatine-halal', 'haribo-halal'],
+    related: ['e422-glycerine-halal', 'gelatine-halal', 'haribo-halal', 'e120-halal'],
   },
   {
     slug: 'glace-halal',
@@ -749,9 +751,10 @@ export const QUESTIONS: QA[] = [
       'La moutarde de Dijon classique est fabriquée avec des graines de moutarde, du vinaigre, de l’eau et du sel. Le vinaigre étant halal pour la majorité des savants, la moutarde classique l’est aussi.',
       'Le piège : certaines recettes — notamment des moutardes « à l’ancienne » premium ou des spécialités régionales — remplacent une partie du vinaigre par du vin blanc, clairement mentionné dans les ingrédients. Celles-ci sont à éviter.',
       'Réflexe : deux secondes sur la liste d’ingrédients. « Vinaigre » = OK, « vin blanc » = on repose. La moutarde des grandes marques en version classique est dans le premier cas.',
+      'La phrase « le vinaigre est halal » mérite d’être dépliée, car c’est elle qui règle la question pour la moutarde comme pour beaucoup d’autres produits. Le vinaigre est du vin — ou de l’alcool — qui s’est transformé : l’éthanol est devenu acide acétique, et il ne reste rien de l’effet enivrant. Les savants appellent cela l’istihâla, la transformation de la nature même d’une substance, et le Prophète ﷺ a dit du vinaigre : « Quel bon condiment que le vinaigre » (Mouslim). La divergence porte sur un point précis : le vinaigre obtenu spontanément fait l’unanimité, tandis que le vin délibérément transformé en vinaigre est permis par l’école hanafite et discuté par d’autres. Bonne nouvelle pour l’étiquette française : « vinaigre d’alcool » et « vinaigre blanc » ne désignent pas une boisson alcoolisée, mais le vinaigre ordinaire des moutardes et des cornichons.',
     ],
     category: 'Alimentation',
-    related: ['vinaigre-halal', 'cuisine-alcool-halal', 'bouillon-cube-halal'],
+    related: ['vinaigre-halal', 'cuisine-alcool-halal', 'bouillon-cube-halal', 'e920-halal'],
   },
   {
     slug: 'bouillon-cube-halal',
@@ -983,7 +986,7 @@ export const QUESTIONS: QA[] = [
       'C’est l’un des colorants les plus « propres » du marché — quand un produit l’utilise à la place du E120 (cochenille), c’est bon signe pour le consommateur musulman.',
     ],
     category: 'Additifs',
-    related: ['e120-halal', 'e133-halal', 'e150d-halal'],
+    related: ['e120-halal', 'e133-halal', 'e150d-halal', 'e160a-carotene-halal'],
   },
   {
     slug: 'e133-halal',
@@ -1009,9 +1012,10 @@ export const QUESTIONS: QA[] = [
       'Le E150d, ou caramel au sulfite d’ammonium, est le colorant brun des colas et de nombreuses sauces. Il est produit en chauffant des sucres d’origine végétale en présence de composés sulfités et ammoniacaux.',
       'Tout le procédé est minéral et végétal : pas d’ingrédient animal, pas d’alcool. Le E150d est halal — c’est notamment lui qui colore le Coca-Cola, certifié halal dans de nombreux pays.',
       'Même conclusion pour ses cousins E150a, E150b et E150c : les quatre caramels colorants sont considérés halal.',
+      'Une distinction utile pour la suite : le E150d fait partie du petit groupe d’additifs sur lesquels la réponse ne change jamais — ni selon la marque, ni selon le pays, ni selon l’année. Une fois que tu le sais, tu peux cesser de le vérifier. C’est exactement le contraire du E471 ou de la glycérine E422, dont l’origine dépend du fabricant et qui demandent un coup d’œil à chaque produit. Deux confusions à éviter au passage : un colorant halal ne rend pas halal ce qui l’entoure — c’est le produit entier qu’on regarde —, et la mention « caramel » sur une étiquette désigne parfois du sucre caramélisé en cuisine, pas l’additif E150.',
     ],
     category: 'Additifs',
-    related: ['coca-cola-halal', 'e100-halal', 'e330-halal'],
+    related: ['coca-cola-halal', 'e100-halal', 'e330-halal', 'e471-halal', 'e422-glycerine-halal'],
   },
   {
     slug: 'e250-nitrite-halal',
@@ -1165,9 +1169,10 @@ export const QUESTIONS: QA[] = [
       'Un yaourt, c’est du lait et des ferments lactiques : halal sans aucune discussion. Yaourts nature, brassés, à la grecque « nature »… aucun souci.',
       'La vigilance commence avec les desserts lactés : mousses, liégeois, certains yaourts « onctueux » ou allégés peuvent contenir de la gélatine comme texturant — elle apparaît clairement dans la liste d’ingrédients. Les crèmes dessert utilisent plus souvent amidons et carraghénanes (halal).',
       'Réflexe : le mot « gélatine » sur l’étiquette tranche la question en deux secondes. Et pour les enfants, plusieurs marques proposent des gammes certifiées halal en grande surface.',
+      'Un second réflexe, moins connu que la gélatine et pourtant plus fréquent : la couleur des yaourts aux fruits rouges. Fraise, framboise, cerise et fruits des bois sont parfois teintés au carmin — écrit « E120 » ou « cochenille » —, un colorant tiré d’insectes que la plupart des organismes de certification écartent. Il figure dans la liste d’ingrédients, comme la gélatine. Les yaourts nature, les brassés simples et le skyr n’ont ni l’un ni l’autre : ce sont les versions aromatisées et les desserts colorés qui demandent le coup d’œil. Et une confusion à lever, car elle revient souvent : les ferments lactiques n’ont rien à voir avec la présure des fromages — un yaourt n’en contient pas.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal'],
+    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal', 'e120-halal'],
   },
   {
     slug: 'quick-halal',
@@ -1237,9 +1242,10 @@ export const QUESTIONS: QA[] = [
       'La gélatine de poisson est extraite des peaux et arêtes de poissons. Le poisson étant halal sans abattage rituel, sa gélatine l’est aussi — c’est l’avis unanime, toutes écoles confondues (y compris hanafite, le poisson étant licite pour tous).',
       'On la retrouve dans les marshmallows halal, certains bonbons certifiés et des compléments alimentaires. Sur l’étiquette, cherchez « gélatine de poisson » explicitement : la mention « gélatine » seule désigne presque toujours du porc ou du bœuf.',
       'C’est l’une des trois grandes alternatives halal à la gélatine classique, avec la pectine (E440) et le carraghénane (E407) — de quoi ne plus jamais se priver de chamallows.',
+      'Un usage qu’on oublie et qui pèse plus lourd que les bonbons : les gélules de médicaments et de compléments. Leur enveloppe est très majoritairement en gélatine, et son origine n’est presque jamais indiquée sur la boîte. Des gélules de gélatine de poisson existent, ainsi que des gélules végétales à base de cellulose (HPMC) — un pharmacien peut consulter la composition exacte et proposer une équivalence. À savoir cependant, et les savants sont largement d’accord sur ce point : la nécessité médicale change la règle, et personne ne demande d’interrompre un traitement faute d’alternative. Une vigilance d’étiquette pour finir : « gélatine marine » désigne bien du poisson, mais un produit peut mélanger plusieurs gélatines — sur un aliment consommé tous les jours, la certification reste la seule réponse ferme.',
     ],
     category: 'Alimentation',
-    related: ['gelatine-halal', 'poisson-fruits-de-mer-halal', 'e440-pectine-halal'],
+    related: ['gelatine-halal', 'poisson-fruits-de-mer-halal', 'e440-pectine-halal', 'medicaments-gelules-halal'],
   },
 
   // ─── VOYAGE — VILLES FRANÇAISES (vague 3) ───────────────────────────────────
@@ -1830,9 +1836,10 @@ export const QUESTIONS: QA[] = [
       'Le E160a désigne les carotènes, les pigments orange des carottes, extraits de végétaux (carotte, huile de palme, algues) ou produits par synthèse. Dans tous ces cas : halal, sans discussion.',
       'Le seul cas d’école théorique : certains additifs liposolubles peuvent être enrobés dans un support de gélatine pour les stabiliser en poudre. C’est rare pour le E160a alimentaire et jamais indiqué sur l’étiquette — la quasi-totalité des avis n’en tiennent pas rigueur et le considèrent licite tel quel.',
       'On le trouve dans les margarines, jus, glaces, fromages et gâteaux pour donner la teinte orangée. C’est l’un des colorants les plus sûrs, côté halal comme côté santé — c’est littéralement de la provitamine A.',
+      'La question du support, évoquée plus haut, vaut d’être comprise une fois pour toutes : elle revient sur toute une famille d’additifs. Un pigment ou une vitamine liposoluble ne se mélange pas à un produit aqueux ; l’industrie l’enrobe donc dans un support — le plus souvent de l’amidon, une gomme ou une huile, parfois de la gélatine. Cela concerne le E160a, mais aussi la lutéine E161b et les vitamines A, D et E ajoutées aux jus et aux laits. Ce support n’est pas déclaré sur l’étiquette, et c’est précisément pour cela que la grande majorité des avis ne le retiennent pas : on ne peut pas demander à un consommateur de répondre d’une information qu’aucune étiquette ne lui donne. Deux voisins à ne pas confondre : le E160c est le paprika et le E161b la lutéine — ni l’un ni l’autre ne pose de question d’origine animale.',
     ],
     category: 'Additifs',
-    related: ['e102-tartrazine-halal', 'e100-halal', 'e120-halal'],
+    related: ['e102-tartrazine-halal', 'e100-halal', 'e120-halal', 'gelatine-halal'],
   },
   {
     slug: 'e270-acide-lactique-halal',
@@ -1916,7 +1923,7 @@ export const QUESTIONS: QA[] = [
       'Solution simple : plusieurs marques de pain de mie vendues en grande surface française sont certifiées halal, et les enseignes répondent sur l’origine de leurs additifs. Ou le pain du boulanger, qui n’a besoin ni de E481 ni de conservateur.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e472-halal', 'e570-halal'],
+    related: ['e471-halal', 'e472-halal', 'e570-halal', 'e920-halal'],
   },
   {
     slug: 'e570-halal',
