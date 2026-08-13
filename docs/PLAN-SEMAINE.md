@@ -77,9 +77,22 @@ Trois choses en decoulent, et elles ne sont pas negociables cette semaine :
    il ne convertit pas : 6 600 vues pour 7 abonnes.
 2. **Une seule page porte VoyagesHalal** — Disneyland fait 22 clics sur 24.
    Toute l'energie SEO doit aller la, pas sur de nouvelles pages.
-3. **HalalGPT n'a aucun lien entrant.** C'est ce qui le tient a la position 22,
-   pas son contenu. Le seul remede rapide et propre est la passerelle depuis
-   VoyagesHalal, qui a deja la confiance de Google.
+3. ~~**HalalGPT n'a aucun lien entrant.**~~ **PERIME — mesure du 13 aout.** La
+   passerelle depuis VoyagesHalal existe et fonctionne : pied de page (donc sur
+   TOUTES les pages du site), bouton flottant, bloc de l'accueil, encart du
+   billet Disneyland, plus deux redirections. Aucun `nofollow` nulle part, et le
+   lien du pied de page est rendu cote serveur — Google le voit.
+
+   Ce qui restait casse, en revanche, c'est ce que ces liens trouvaient a
+   l'arrivee : l'accueil etait la seule page indexable **sans balise
+   canonique**, alors que la passerelle le vise depuis trois endroits avec
+   trois campagnes UTM differentes. Google recevait quatre adresses pour une
+   seule page, et la confiance apportee se repartissait entre elles au lieu de
+   s'additionner. Corrige le 13 aout, voir « Defauts corriges ».
+
+   **Ne pas repartir construire une passerelle : elle est la.** La question
+   ouverte n'est plus son existence mais son rendement, et il se mesure dans
+   Search Console sur le parametre `utm_medium=passerelle`.
 
 ---
 
@@ -175,6 +188,31 @@ domaine.**
 ---
 
 ## Defauts corriges
+
+**L'accueil n'avait pas de balise canonique — corrige le 13 aout.**
+
+Trouve en verifiant une affirmation de ce document, pas en cherchant un bug.
+Le plan disait « HalalGPT n'a aucun lien entrant, le seul remede est la
+passerelle » ; la mesure a montre que la passerelle etait deja construite et
+suivie. En regardant ce qu'elle trouvait a l'arrivee, le vrai defaut est
+apparu.
+
+Sur les neuf routes du site : six declaraient leur canonique, deux sont
+volontairement hors de Google (`labo-son`, `studio`), et la neuvieme etait
+l'accueil — la seule page vers laquelle pointent des liens exterieurs. La
+passerelle la vise depuis trois endroits, chacun avec ses parametres de
+campagne : Google recevait quatre adresses pour une seule page.
+
+`scripts/test-canoniques.mjs` verifie desormais que toute page indexable
+declare la sienne. Verifie apres coup dans le HTML produit :
+`<link rel="canonical" href="https://halalgpt.fr"/>`.
+
+Une note sur ce test, parce qu'elle vaut plus que le correctif : sa premiere
+version interdisait aussi de cumuler « noindex » et canonique, et elle a
+aussitot accuse `mentions-legales` et `confidentialite`. Ces deux pages
+declarent `index: false, follow: true` avec une canonique — un choix sain,
+et une regle que j'avais inventee. L'assertion a ete retiree. Un test qui
+invente sa regle fabrique du travail au lieu d'en eviter.
 
 **« voyage halal paris » repondait Istanbul — corrige le 10 aout, et le
 diagnostic de la veille etait faux.**

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import Chat from '@/components/Chat';
@@ -6,6 +7,28 @@ import Surprise from '@/components/Surprise';
 import { SITE_URL } from '@/lib/config';
 import { QUESTIONS, getQuestion } from '@/lib/questions';
 import { surpriseDuJour } from '@/lib/surprises';
+
+// L'accueil est la SEULE page du site vers laquelle pointent des liens
+// exterieurs, et elle etait la seule page indexable sans balise canonique.
+//
+// Mesure du 13 aout : la passerelle depuis voyageshalal.fr vise l'accueil
+// depuis trois endroits — le pied de page (present sur toutes les pages), le
+// bouton flottant, le bloc de l'accueil — et chacun ajoute ses parametres de
+// campagne. Google recevait donc quatre adresses pour une seule page :
+//
+//   halalgpt.fr/
+//   halalgpt.fr/?utm_source=voyageshalal&utm_medium=passerelle&utm_campaign=pied-de-page
+//   halalgpt.fr/?utm_source=voyageshalal&utm_medium=passerelle&utm_campaign=bouton-flottant
+//   halalgpt.fr/?utm_source=voyageshalal&utm_medium=passerelle&utm_campaign=board-accueil
+//
+// Sans canonique, rien ne dit que ces quatre adresses sont la meme page : la
+// confiance apportee par les liens se repartit entre elles au lieu de
+// s'additionner. Les six autres pages indexables declaraient deja la leur ;
+// celle qui recoit les liens ne l'avait pas. `scripts/test-canoniques.mjs`
+// verifie desormais que toute page indexable en possede une.
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
 // La decouverte change de quantieme en quantieme. La page reste servie en
 // statique — donc instantanee — et se refabrique toutes les heures : sans
