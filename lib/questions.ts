@@ -387,7 +387,7 @@ export const QUESTIONS: QA[] = [
       'Et si l’on a déjà gagné ? La question revient souvent, et la réponse que retiennent la plupart des savants est de ne pas garder cet argent : on s’en défait, en le donnant sans en attendre de récompense, plutôt que d’en tirer profit. Sur le détail — à qui, comment, que faire si la somme a déjà été dépensée — les avis se nuancent, et c’est exactement le genre de situation personnelle où il faut poser la question à un savant plutôt que de se fier à une page web. Ce que cette fiche donne, c’est la règle générale, pas le règlement de ton cas.',
     ],
     category: 'Vie quotidienne',
-    related: ['paris-sportifs-halal', 'anniversaire-halal', 'halal-definition'],
+    related: ['paris-sportifs-halal', 'anniversaire-halal', 'halal-definition', 'echecs-islam'],
   },
   {
     slug: 'riba-interet-islam',
@@ -415,7 +415,7 @@ export const QUESTIONS: QA[] = [
       'Deux réserves à connaître. D’abord, une minorité de savants reste réticente quand l’intention est purement esthétique, sans perte réelle à réparer — l’intention compte, et la frontière entre soigner et embellir n’est pas toujours nette. Ensuite, un point pratique que personne n’explique : pendant la cicatrisation, les croûtes et le pansement peuvent empêcher l’eau d’atteindre le cuir chevelu lors des ablutions et de la grande ablution. Les savants prévoient ce cas — on essuie sur le pansement quand le laver nuirait à la guérison. Demande à ton chirurgien la durée exacte, et à un savant la règle qui s’applique à ta situation.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution'],
+    related: ['don-organes-islam', 'piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution', 'chirurgie-esthetique-halal'],
   },
   {
     slug: 'travailler-restaurant-alcool',
@@ -457,7 +457,7 @@ export const QUESTIONS: QA[] = [
       'Mais le vrai sujet, celui qui revient dans presque toutes les réponses des savants, n’est aucun de ceux-là : c’est le TEMPS. Un jeu qui fait manquer la prière, qui vide les nuits, qui prend la place des études, de la famille ou du sommeil, devient un problème même s’il ne contient rien d’interdit. Les repères pratiques que donnent les imams sont simples et tiennent en trois points : la prière passe avant, toujours, et on s’arrête quand l’heure arrive ; on fixe une durée avant de commencer plutôt qu’après ; et si l’on n’arrive plus à s’arrêter, ce n’est plus un loisir, c’est une dépendance — et cela se traite, sans honte, comme n’importe quelle autre.',
     ],
     category: 'Vie quotidienne',
-    related: ['reseaux-sociaux-islam', 'musique-halal', 'psy-therapie-islam', 'cigarette-halal'],
+    related: ['reseaux-sociaux-islam', 'musique-halal', 'psy-therapie-islam', 'cigarette-halal', 'echecs-islam'],
   },
   {
     slug: 'priere-voiture',
@@ -542,7 +542,7 @@ export const QUESTIONS: QA[] = [
       'Pensez aussi aux salles de prière : la plupart des grands aéroports (Istanbul, Dubaï, Kuala Lumpur, mais aussi Roissy) en ont une, souvent indiquée « Prayer room ». Un tapis de poche pliable dans le sac règle tous les autres cas.',
     ],
     category: 'Pratique',
-    related: ['ramadan-voyage-jeune', 'pays-voyage-halal', 'tayammum-sans-eau'],
+    related: ['ramadan-voyage-jeune', 'pays-voyage-halal', 'tayammum-sans-eau', 'qibla-direction-priere'],
   },
 
   // ─── ADDITIFS (suite) ───────────────────────────────────────────────────────
@@ -809,7 +809,7 @@ export const QUESTIONS: QA[] = [
       'Troisième voie, souvent la plus simple : utiliser les facilités du voyageur et regrouper (dhuhr+asr, maghrib+isha) avant le décollage ou après l’atterrissage, quand le créneau horaire de la prière le permet. Les applications de prière donnent les horaires en vol ; en pratique, on suit l’horaire du lieu survolé — et pour la rupture du jeûne, le coucher du soleil vu depuis l’avion.',
     ],
     category: 'Pratique',
-    related: ['horaires-priere-voyage', 'invocation-voyage', 'repas-halal-avion'],
+    related: ['horaires-priere-voyage', 'invocation-voyage', 'repas-halal-avion', 'qibla-direction-priere'],
   },
 
   // ─── VOYAGE — VILLES FRANÇAISES (suite) ─────────────────────────────────────
@@ -2452,7 +2452,7 @@ export const QUESTIONS: QA[] = [
       'Pour ceux qui se sont fait tatouer avant de pratiquer ou de se convertir : le repentir suffit — un tatouage existant n’est pas un péché qui se renouvelle chaque jour, et l’ablution comme la prière restent parfaitement valides avec (l’encre est sous la peau, l’eau atteint bien la surface). Le retrait au laser n’est pas une obligation, surtout s’il est coûteux ou risqué : c’est l’avis répandu des savants contemporains.',
     ],
     category: 'Vie quotidienne',
-    related: ['photos-selfies-islam', 'piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal'],
+    related: ['photos-selfies-islam', 'piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal', 'chirurgie-esthetique-halal'],
   },
   {
     slug: 'piercing-halal',
@@ -2635,7 +2635,7 @@ export const QUESTIONS: QA[] = [
       'Conseils de terrain : la discrétion et la fiabilité professionnelle sont tes meilleurs alliés (celui qui fait bien son travail obtient facilement cinq minutes de tranquillité) ; un mot simple au manager ou aux RH débloque souvent une salle ; et beaucoup de collègues prient déjà quelque part dans ton bâtiment — demande. Des millions de musulmans français prient au travail chaque jour sans drame : c’est une logistique, pas un conflit.',
     ],
     category: 'Prière',
-    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade'],
+    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade', 'regrouper-deux-prieres'],
   },
   {
     slug: 'rattraper-prieres-ratees',
@@ -2649,7 +2649,7 @@ export const QUESTIONS: QA[] = [
       'Ce que les deux avis partagent : l’essentiel est le retour immédiat et définitif à la prière — aujourd’hui, pas au prochain Ramadan — et la sincérité du repentir. Estime ta dette sans obsession maladive (une évaluation raisonnable suffit), choisis ta méthode avec un imam qui te connaît, et souviens-toi que la porte du repentir efface ce que la comptabilité n’atteindra jamais.',
     ],
     category: 'Prière',
-    related: ['priere-travail', 'priere-vendredi-obligatoire', 'horaires-priere-voyage', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade'],
+    related: ['priere-travail', 'priere-vendredi-obligatoire', 'horaires-priere-voyage', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade', 'regrouper-deux-prieres'],
   },
   {
     slug: 'priere-vendredi-obligatoire',
@@ -2735,7 +2735,7 @@ export const QUESTIONS: QA[] = [
       'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition'],
+    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam'],
   },
   {
     slug: 'mauvais-oeil-protection',
@@ -2764,7 +2764,7 @@ export const QUESTIONS: QA[] = [
       'En France, le don est présumé par défaut : sans refus inscrit au registre national, on est considéré comme donneur. C’est le point pratique qui surprend le plus de familles musulmanes au pire moment. Quelle que soit ta position, la décision se prend à froid, s’inscrit, et surtout se DIT à tes proches — ce sont eux qu’on interrogera. Et parce que la divergence est réelle et la question grave, c’est typiquement le sujet où il faut en parler avec un savant qui connaît ta situation, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition'],
+    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam'],
   },
   {
     slug: 'photos-selfies-islam',
@@ -2874,6 +2874,76 @@ export const QUESTIONS: QA[] = [
     ],
     category: 'Pratique',
     related: ['priere-istikhara', 'halal-definition', 'certifications-halal-france'],
+  },
+  {
+    slug: 'chirurgie-esthetique-halal',
+    question: 'La chirurgie esthétique est-elle halal ?',
+    verdict: '⚠️ Réparer, oui — embellir, non',
+    short:
+      'La ligne de partage n’est pas le bistouri, c’est le but. Réparer un dommage réel est traité comme un soin et largement permis ; modifier un corps sain pour l’embellir est écarté par la majorité des savants.',
+    answer: [
+      'La chirurgie qui répare est traitée comme un soin, et les savants contemporains l’autorisent largement : reconstruction après un accident, une brûlure ou un cancer, correction d’une malformation de naissance comme une fente labiale, réparation d’une cloison nasale qui empêche de respirer, chirurgie de la main après un traumatisme. Le principe est celui du hadith connu : « Ô serviteurs d’Allah, soignez-vous, car Allah n’a pas fait descendre de maladie sans faire descendre son remède » (Tirmidhi, Abou Dawoud). Ici, on ne change pas une création : on remet en état ce qui a été abîmé.',
+      'La chirurgie purement esthétique sur un corps sain est, elle, écartée par la majorité. Deux textes fondent cette position. Le Coran rapporte le serment de Satan : « … et je leur commanderai de changer la création d’Allah » (sourate 4, verset 119). Et un hadith rapporté par Boukhari et Mouslim maudit celles qui se tatouent, s’épilent les sourcils ou se liment les dents pour la beauté, « changeant ainsi la création d’Allah ». C’est cette dernière formule qui sert de critère aux savants : l’intention d’embellir en modifiant durablement un corps qui n’a rien.',
+      'Entre les deux, une zone grise que personne ne tranche à ta place : une oreille très décollée, un nez qui provoque des moqueries quotidiennes, une cicatrice visible qui rend la vie sociale difficile. Plusieurs savants contemporains y voient une souffrance réelle à lever, et non une simple coquetterie ; d’autres maintiennent l’interdit. Si tu es dans ce cas, deux démarches valent mieux qu’une décision solitaire : expose ta situation précise à un savant de confiance, et ne néglige pas l’accompagnement psychologique, qui règle parfois ce que le bistouri ne réglerait pas. À noter enfin : le maquillage, la coiffure, les soins non permanents ne relèvent pas de ce débat.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['greffe-cheveux-halal', 'tatouage-halal', 'piercing-halal', 'psy-therapie-islam'],
+  },
+  {
+    slug: 'echecs-islam',
+    question: 'Les échecs sont-ils permis en islam ?',
+    verdict: '⚠️ Avis divergents — trois conditions reviennent partout',
+    short:
+      'Aucun hadith authentique ne nomme les échecs : le texte souvent cité vise le backgammon. Les écoles divergent, mais quand elles autorisent, c’est toujours aux mêmes trois conditions.',
+    answer: [
+      'D’abord une mise au point honnête, parce qu’elle change tout le débat : le hadith que l’on cite le plus souvent contre les échecs ne parle pas des échecs. Il concerne le nard — le backgammon, un jeu de dés : « Celui qui joue au nardashîr, c’est comme s’il trempait sa main dans la chair et le sang du porc » (Mouslim). Les échecs ne sont nommés dans aucun hadith authentique. Les propos rapportés à leur sujet remontent surtout à des compagnons et à des savants postérieurs, et leur chaîne de transmission est discutée.',
+      'De là, une vraie divergence entre les écoles. Une partie des savants les a interdits ou fortement déconseillés, par analogie avec le nard et pour une raison très concrète : à l’époque comme aujourd’hui, ces jeux s’accompagnaient de paris et faisaient manquer la prière. L’école chaféite est la plus souple : elle les tolère lorsqu’ils sont libres de tout pari, tout en les qualifiant de déconseillés. Les savants contemporains qui les autorisent s’appuient sur le fait que les échecs sont un jeu de pure réflexion, sans hasard, sans dés — la différence de nature exacte avec le nard.',
+      'En pratique, tous ceux qui autorisent posent les trois mêmes conditions, et elles sont éclairantes : aucun argent misé, sans quoi ce n’est plus un jeu mais un pari ; aucune prière manquée ni retardée ; aucun propos blessant ni rancune entre joueurs. Ajoute une quatrième règle de bon sens, valable pour n’importe quel loisir : si le jeu prend tes nuits et ton travail, le problème n’est plus sa nature, c’est sa place dans ta vie. Pour une décision ferme adaptée à ta situation, réfère-toi à un savant de confiance.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['jeux-video-halal', 'loto-jeux-hasard-halal', 'paris-sportifs-halal', 'musique-halal'],
+  },
+  {
+    slug: 'adoption-islam',
+    question: 'Peut-on adopter un enfant en islam ?',
+    verdict: '⚠️ Recueillir, oui — effacer la filiation, non',
+    short:
+      'Recueillir et élever un enfant sans famille est l’un des actes les plus loués en islam. Ce qui est écarté, c’est de supprimer sa filiation d’origine pour la remplacer par la tienne.',
+    answer: [
+      'La réponse tient dans une distinction que le Coran pose explicitement. L’adoption qui efface l’ascendance — l’enfant devient juridiquement le fils ou la fille d’un autre, son père d’origine disparaît de son état civil — a été abolie : « Il n’a pas fait de vos enfants adoptifs vos propres enfants […] Appelez-les du nom de leur père : c’est plus équitable auprès d’Allah » (sourate 33, versets 4 et 5). La raison n’est pas un manque de générosité, au contraire : il s’agit de ne jamais couper un enfant de son histoire, de son nom et de ses liens de sang.',
+      'Recueillir un enfant, en revanche, est parmi les actes les plus loués. Le Prophète ﷺ a dit : « Moi et celui qui prend en charge un orphelin serons ainsi au Paradis », en joignant l’index et le majeur (Boukhari). C’est ce qu’on appelle la kafala : tu accueilles l’enfant, tu l’élèves, tu le nourris, tu l’aimes, tu réponds de lui — et il garde son nom et sa filiation. Concrètement, tout ce qui fait un parent au quotidien t’appartient ; seule l’identité d’origine de l’enfant reste la sienne.',
+      'Deux questions concrètes reviennent toujours. La première est juridique : en France, l’adoption plénière et la kafala ne sont pas la même procédure et n’ont pas les mêmes effets. C’est un dossier à monter avec un professionnel du droit de la famille, et la transmission du patrimoine se prépare avec un notaire — n’improvise pas sur ce terrain. La seconde touche la vie de famille : un enfant recueilli ne devient pas automatiquement mahram en grandissant. La solution classique, quand l’enfant est accueilli tout petit, est l’allaitement (radâ‘a), qui crée un lien de lait reconnu ; sinon, les familles appliquent les règles habituelles à l’adolescence. Là encore, expose ton cas précis à un savant : les situations sont trop différentes pour une règle unique.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition'],
+  },
+  {
+    slug: 'qibla-direction-priere',
+    question: 'Comment trouver la direction de la qibla ?',
+    verdict: '✅ On fait de son mieux — l’effort suffit',
+    short:
+      'Depuis la France, la qibla se situe globalement vers le sud-est. Et si tu ne peux pas la déterminer, ta prière reste valable : l’islam demande l’effort sincère, pas la précision au degré près.',
+    answer: [
+      'La qibla est la direction de la Kaaba, à La Mecque. Depuis la France métropolitaine, elle se situe globalement vers le sud-est, en tirant vers l’est selon la ville où tu te trouves — ce n’est donc pas plein sud, contrairement à ce qu’on suppose souvent. Pour la trouver : une application de boussole qibla, la mosquée la plus proche, ou l’autocollant au plafond dans beaucoup de chambres d’hôtel des pays musulmans. Sans téléphone, le soleil suffit à s’orienter grossièrement : il se lève à l’est et se couche à l’ouest.',
+      'Vient ensuite le point que beaucoup ignorent, et qui soulage : l’islam demande l’effort, pas l’exactitude. « À Allah appartiennent l’Orient et l’Occident. Où que vous vous tourniez, la Face d’Allah est là » (sourate 2, verset 115). Et selon un récit rapporté par Tirmidhi, des compagnons ayant prié par une nuit couverte se sont aperçus au matin qu’ils s’étaient trompés de direction : il ne leur a pas été demandé de recommencer. Si tu as cherché honnêtement et que tu t’es trompé, ta prière est valable.',
+      'En pratique, trois cas reviennent. Tu découvres ton erreur pendant la prière : tu pivotes vers la bonne direction et tu continues, sans tout reprendre. Tu la découvres après : tu ne recommences pas. Tu es dans un train, un avion ou une voiture et l’orientation change en permanence : tu te tournes vers la qibla au début si c’est possible, et tu poursuis sans t’en préoccuper — la fiche sur la prière en avion détaille ce cas. La règle qui gouverne tout : une prière accomplie dans une direction approximative vaut infiniment mieux qu’une prière repoussée jusqu’à l’oubli.',
+    ],
+    category: 'Prière',
+    related: ['priere-avion', 'horaires-priere-voyage', 'priere-travail', 'priere-voiture'],
+  },
+  {
+    slug: 'regrouper-deux-prieres',
+    question: 'Peut-on regrouper deux prières ?',
+    verdict: '⚠️ En voyage, oui — en résidence, avis divergents',
+    short:
+      'Le regroupement ne concerne que Dohr avec Asr, et Maghrib avec Icha. Il fait consensus en voyage chez la majorité ; en résidence, les écoles divergent selon la difficulté réelle.',
+    answer: [
+      'Deux précisions d’abord, car elles écartent la moitié des malentendus. Seules deux paires peuvent être regroupées : Dohr avec Asr, et Maghrib avec Icha. Le Fajr ne se regroupe jamais avec quoi que ce soit, et on ne regroupe pas Asr avec Maghrib. Le regroupement fait par ailleurs l’objet d’un accord unanime dans un cas précis : à Arafat et à Mouzdalifa, pendant le pèlerinage.',
+      'En voyage, la majorité des savants l’autorisent. L’école hanafite fait exception : elle réserve le regroupement au pèlerinage et recommande sinon le jam‘ dit « de forme » — accomplir la première prière à la fin de son créneau et la suivante au début du sien, ce qui les rapproche sans sortir des horaires. C’est d’ailleurs une solution élégante que beaucoup adoptent en France sans savoir qu’elle porte un nom.',
+      'En résidence, le débat est réel. Il s’appuie sur un hadith rapporté par Mouslim, où Ibn ‘Abbâs indique que le Prophète ﷺ a regroupé à Médine « sans peur et sans voyage ». Les savants l’interprètent différemment : la pluie, la maladie, ou plus largement le fait d’épargner une gêne sérieuse à la communauté — l’école hanbalite étant la plus large sur ce point. Ce que cela ne signifie pas : que l’on peut regrouper par simple commodité. Avant d’en arriver là, regarde si prier sur ton lieu de travail est réellement impossible ; c’est faisable bien plus souvent qu’on ne le croit, et notre fiche sur la prière au travail donne des solutions concrètes. Pour une contrainte précise — horaires postés, bloc opératoire, chantier —, expose-la à un savant plutôt que de trancher seul.',
+    ],
+    category: 'Prière',
+    related: ['priere-travail', 'horaires-priere-voyage', 'priere-avion', 'rattraper-prieres-ratees'],
   },
 ];
 
