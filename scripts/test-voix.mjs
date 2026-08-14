@@ -18,6 +18,7 @@ import {
   nettoyerPourLaVoix,
   morceaux,
   aDireMaintenant,
+  meilleureVoix,
 } from '../lib/voix.js';
 
 let passes = 0;
@@ -121,6 +122,52 @@ verifier(
   aDireMaintenant('bonjour comment vas tu', 0).morceaux.length === 0 &&
     aDireMaintenant('bonjour comment vas tu', 0, true).morceaux.length === 1,
 );
+
+
+// ─── Le choix de la voix ─────────────────────────────────────────────────────
+//
+// Jusqu'au 14 août, on prenait la PREMIÈRE voix française de la liste — sur
+// beaucoup d'appareils, la plus robotique. Ces cas reproduisent de vraies
+// listes de plateformes ; si quelqu'un « simplifie » le classement, ils
+// casseront avant le téléphone de Mohamed.
+
+const android = [
+  { name: 'English United States', lang: 'en-US', localService: true, voiceURI: 'en' },
+  { name: 'French France eSpeak', lang: 'fr-FR', localService: true, voiceURI: 'espeak-fr' },
+  { name: 'Google français', lang: 'fr-FR', localService: false, voiceURI: 'google-fr' },
+];
+verifier(
+  'Android : « Google français » bat la voix eSpeak, même placée après',
+  meilleureVoix(android)?.voiceURI === 'google-fr',
+);
+
+const iphone = [
+  { name: 'Thomas', lang: 'fr-FR', localService: true, voiceURI: 'thomas' },
+  { name: 'Audrey (Enhanced)', lang: 'fr-FR', localService: true, voiceURI: 'audrey-e' },
+  { name: 'Amélie', lang: 'fr-CA', localService: true, voiceURI: 'amelie' },
+];
+verifier(
+  'iPhone : la voix « Enhanced » bat la voix standard',
+  meilleureVoix(iphone)?.voiceURI === 'audrey-e',
+);
+
+verifier(
+  'le choix mémorisé de la personne gagne sur la note',
+  meilleureVoix(iphone, 'thomas')?.voiceURI === 'thomas',
+);
+verifier(
+  'un choix mémorisé qui n’existe plus (voix désinstallée) rend la meilleure',
+  meilleureVoix(iphone, 'voix-disparue')?.voiceURI === 'audrey-e',
+);
+verifier(
+  'fr_CA avec tiret bas est bien reconnu comme du français',
+  meilleureVoix([{ name: 'X', lang: 'fr_CA', voiceURI: 'x' }])?.voiceURI === 'x',
+);
+verifier(
+  'aucune voix française : on rend la première plutôt que le silence',
+  meilleureVoix([{ name: 'English', lang: 'en-US', voiceURI: 'en' }])?.voiceURI === 'en',
+);
+verifier('aucune voix du tout : null, sans exploser', meilleureVoix([]) === null);
 
 // ─── Résultat ────────────────────────────────────────────────────────────────
 

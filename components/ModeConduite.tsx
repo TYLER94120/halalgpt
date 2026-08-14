@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
-import { aDireMaintenant, NOTE_ARABE } from '@/lib/voix.js';
+import { aDireMaintenant, meilleureVoix, NOTE_ARABE } from '@/lib/voix.js';
 
 // Le mode conduite : poser une question à la voix, entendre la réponse.
 //
@@ -66,6 +66,12 @@ export default function ModeConduite() {
   // iOS seulement : il faut un appui dedie pour autoriser la voix, AVANT
   // d'ouvrir le micro. Voir le commentaire dans `appui`.
   const [aDebloquer, setADebloquer] = useState(false);
+  // Les voix francophones de CET appareil, pour laisser la personne choisir la
+  // sienne. « auto » = la mieux notée par lib/voix.js. Le choix est gardé sur
+  // l'appareil : chaque téléphone a des voix différentes, un choix global ne
+  // voudrait rien dire.
+  const [voixDispo, setVoixDispo] = useState<SpeechSynthesisVoice[]>([]);
+  const [voixChoisie, setVoixChoisie] = useState('auto');
 
   const recRef = useRef<ReconnaissanceLike | null>(null);
   const voixRef = useRef<SpeechSynthesisVoice | null>(null);
@@ -77,8 +83,19 @@ export default function ModeConduite() {
   const reessayeRef = useRef(false);
   const mainsLibresRef = useRef(true);
   const souciRef = useRef('');
+  // La conversation, tour par tour. Sans elle, chaque question partait SEULE
+  // au modèle : impossible de dire « et pour la femme ? » après une réponse —
+  // exactement ce qui séparait ce mode d'une vraie discussion.
+  const historiqueRef = useRef<{ role: 'user' | 'assistant'; content: string }[]>([]);
+  // Pour COUPER la réponse en cours : arrêter la voix ne suffit pas, le flux
+  // réseau continuait d'arriver et chaque phrase reçue relançait la synthèse —
+  // y compris après avoir quitté la page.
+  const controleurRef = useRef<AbortController | null>(null);
+  const vivantRef = useRef(true);
+  const interrompuRef = useRef(false);
 
   const majEtat = (e: Etat) => {
+    if (!vivantRef.current) return; // la page est quittée : plus rien à afficher
     etatRef.current = e;
     setEtat(e);
   };
@@ -98,8 +115,17 @@ export default function ModeConduite() {
 
     const choisir = () => {
       const dispo = window.speechSynthesis?.getVoices?.() ?? [];
-      voixRef.current =
-        dispo.find((v) => v.lang?.toLowerCase().startsWith('fr')) ?? dispo[0] ?? null;
+      setVoixDispo(
+        dispo.filter((v) => v.lang?.toLowerCase().replace('_', '-').startsWith('fr')),
+      );
+      let sauvee: string | null = null;
+      try {
+        sauvee = window.localStorage.getItem('conduite:voix');
+      } catch {
+        /* stockage indisponible : le classement automatique décidera */
+      }
+      if (sauvee && sauvee !== 'auto') setVoixChoisie(sauvee);
+      voixRef.current = meilleureVoix(dispo, sauvee === 'auto' ? undefined : sauvee ?? undefined);
     };
     choisir();
 
@@ -177,8 +203,20 @@ export default function ModeConduite() {
     async (texte: string) => {
       majEtat('reflechit');
       setReponse('');
+      interrompuRef.current = false;
       let lu = 0;
       let prevenuArabe = false;
+      let recu = '';
+
+      // Le tour part AVEC les tours précédents : c'est ce qui permet le
+      // « et pour la femme ? » d'une vraie conversation. Huit tours suffisent
+      // au suivi sans gonfler chaque requête.
+      historiqueRef.current.push({ role: 'user', content: texte });
+      const messages = historiqueRef.current.slice(-8);
+
+      controleurRef.current?.abort();
+      const controleur = new AbortController();
+      controleurRef.current = controleur;
 
       const parlerCeQuiEstPret = (recu: string, fini: boolean) => {
         const { morceaux, lu: nouveau, arabeRetire } = aDireMaintenant(recu, lu, fini);
@@ -197,22 +235,22 @@ export default function ModeConduite() {
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messages: [{ role: 'user', content: texte }] }),
+          body: JSON.stringify({ messages }),
+          signal: controleur.signal,
         });
 
         if (!res.body) {
-          const t = await res.text();
-          setReponse(t);
-          parlerCeQuiEstPret(t, true);
+          recu = await res.text();
+          setReponse(recu);
+          parlerCeQuiEstPret(recu, true);
           return;
         }
 
         const lecteur = res.body.getReader();
         const decodeur = new TextDecoder();
-        let recu = '';
         for (;;) {
           const { done, value } = await lecteur.read();
-          if (done) break;
+          if (done || !vivantRef.current) break;
           recu += decodeur.decode(value, { stream: true });
           setReponse(recu);
           // On parle dès qu'une phrase est terminée, sans attendre la fin :
@@ -223,15 +261,25 @@ export default function ModeConduite() {
         recu += decodeur.decode();
         setReponse(recu);
         parlerCeQuiEstPret(recu, true);
-      } catch {
-        const secours = 'Je n’arrive pas à me connecter. Réessaie dans un instant.';
-        setReponse(secours);
-        dire(secours);
+      } catch (e) {
+        // Une coupure VOULUE — bouton d'arrêt, page quittée — n'est pas une
+        // panne : annoncer « je n'arrive pas à me connecter » serait un
+        // mensonge, et la voix repartirait après qu'on a demandé le silence.
+        if ((e as Error)?.name !== 'AbortError' && vivantRef.current) {
+          const secours = 'Je n’arrive pas à me connecter. Réessaie dans un instant.';
+          setReponse(secours);
+          dire(secours);
+        }
       } finally {
+        // Ce qui a été réellement dit entre dans la mémoire de conversation —
+        // même une réponse interrompue : c'est là où la discussion s'est
+        // arrêtée pour la personne.
+        if (recu.trim()) historiqueRef.current.push({ role: 'assistant', content: recu });
         // La voix continue après la fin du flux : on ne repasse en « prêt »
         // que lorsqu'elle s'est vraiment tue, sinon le bouton dirait « appuie
         // et parle » pendant que la réponse est encore en train d'être lue.
         const attendreLaFin = () => {
+          if (!vivantRef.current) return; // la page est quittée : plus de boucle
           if (window.speechSynthesis?.speaking || window.speechSynthesis?.pending) {
             window.setTimeout(attendreLaFin, 400);
             return;
@@ -240,10 +288,16 @@ export default function ModeConduite() {
           // Mains libres : il réécoute de lui-même. La pause d'une seconde
           // n'est pas cosmétique — sans elle, le micro s'ouvre pendant que le
           // haut-parleur finit de vibrer et la reconnaissance s'annule aussi
-          // sec. C'est exactement le bug qu'on vient de corriger.
-          if (mainsLibresRef.current && !souciRef.current) {
+          // sec. Et JAMAIS après un arrêt demandé : quelqu'un qui a appuyé sur
+          // stop ne veut pas voir le micro se rouvrir tout seul.
+          if (
+            mainsLibresRef.current &&
+            !souciRef.current &&
+            !interrompuRef.current &&
+            document.visibilityState === 'visible'
+          ) {
             window.setTimeout(() => {
-              if (etatRef.current === 'pret') appuiRef.current();
+              if (vivantRef.current && etatRef.current === 'pret') appuiRef.current();
             }, 1000);
           }
         };
@@ -262,6 +316,10 @@ export default function ModeConduite() {
     dire_souci('');
 
     if (etatRef.current === 'parle' || etatRef.current === 'reflechit') {
+      // Couper, c'est couper les TROIS canaux : la voix, le flux réseau qui la
+      // réalimentait phrase par phrase, et le réécouteur mains libres.
+      interrompuRef.current = true;
+      controleurRef.current?.abort();
       taire();
       majEtat('pret');
       return;
@@ -352,7 +410,8 @@ export default function ModeConduite() {
         reessayeRef.current = true;
         dire_souci('');
         window.setTimeout(() => {
-          if (etatRef.current === 'pret') appuiRef.current();
+          if (vivantRef.current && document.visibilityState === 'visible' && etatRef.current === 'pret')
+            appuiRef.current();
         }, 1000);
       } else {
         dire_souci(`La dictée s’est arrêtée (${code}). Tu peux écrire ta question à la place.`);
@@ -384,13 +443,43 @@ export default function ModeConduite() {
     appuiRef.current = appui;
   }, [appui]);
 
-  useEffect(() => () => {
-    recRef.current?.abort?.();
-    try {
-      window.speechSynthesis?.cancel();
-    } catch {
-      /* rien à annuler */
-    }
+  // ── Quitter la page, c'est se taire — tout de suite et en entier ──────────
+  //
+  // Constat de Mohamed, 14 août : on quitte la page et la voix continue. Le
+  // démontage appelait bien `cancel()`, mais UNE fois — pendant que la boucle
+  // de lecture du flux, elle, continuait d'arriver et relançait la synthèse à
+  // chaque phrase. Couper la voix sans couper ce qui la nourrit ne coupe rien.
+  //
+  // Trois portes de sortie, les trois couvertes :
+  //  · démontage (navigation interne),
+  //  · `pagehide` (fermeture d'onglet, navigation dure, mise en cache),
+  //  · page cachée (changement d'application) — le verrou d'écran maintient
+  //    l'écran allumé en voiture, donc « caché » signifie réellement qu'on est
+  //    parti ailleurs, pas que l'écran s'est éteint tout seul.
+  useEffect(() => {
+    vivantRef.current = true;
+    const couperTout = () => {
+      interrompuRef.current = true;
+      controleurRef.current?.abort();
+      recRef.current?.abort?.();
+      try {
+        window.speechSynthesis?.cancel();
+      } catch {
+        /* rien à annuler */
+      }
+    };
+    const surPageHide = () => couperTout();
+    const surVisibilite = () => {
+      if (document.visibilityState === 'hidden') couperTout();
+    };
+    window.addEventListener('pagehide', surPageHide);
+    document.addEventListener('visibilitychange', surVisibilite);
+    return () => {
+      vivantRef.current = false;
+      couperTout();
+      window.removeEventListener('pagehide', surPageHide);
+      document.removeEventListener('visibilitychange', surVisibilite);
+    };
   }, []);
 
   const incapable = micOK === false || voixOK === false;
@@ -434,6 +523,40 @@ export default function ModeConduite() {
         />
         <span>Mains libres — il réécoute tout seul après avoir répondu</span>
       </label>
+
+      {voixDispo.length > 1 ? (
+        <label className="conduite-voix">
+          <span>Voix</span>
+          <select
+            value={voixChoisie}
+            onChange={(e) => {
+              const uri = e.target.value;
+              setVoixChoisie(uri);
+              try {
+                window.localStorage.setItem('conduite:voix', uri);
+              } catch {
+                /* pas de stockage : le choix vaudra pour cette visite */
+              }
+              const dispo = window.speechSynthesis?.getVoices?.() ?? [];
+              voixRef.current = meilleureVoix(dispo, uri === 'auto' ? undefined : uri);
+              // Une phrase d'essai tout de suite : choisir une voix sans
+              // l'entendre, c'est choisir à l'aveugle. Jamais pendant qu'il
+              // parle déjà — on n'interrompt pas une réponse pour un essai.
+              if (etatRef.current === 'pret' && voixDebloqueeRef.current) {
+                dire('Je parlerai avec cette voix.');
+              }
+            }}
+            aria-label="Choisir la voix"
+          >
+            <option value="auto">Automatique — la plus naturelle</option>
+            {voixDispo.map((v) => (
+              <option key={v.voiceURI} value={v.voiceURI}>
+                {v.name}
+              </option>
+            ))}
+          </select>
+        </label>
+      ) : null}
 
       {souci ? <p className="conduite-souci">{souci}</p> : null}
 

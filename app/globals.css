@@ -1750,6 +1750,27 @@ a {
 }
 .conduite-bascule input { width: 22px; height: 22px; accent-color: #c9a84c; }
 
+/* Le choix de la voix : même gabarit que la bascule, cible tactile large —
+   c'est un réglage de voiture, il se manipule au doigt, moteur coupé. */
+.conduite-voix {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  opacity: 0.85;
+  padding: 4px 4px 10px;
+}
+.conduite-voix select {
+  flex: 1;
+  min-height: 48px;
+  padding: 0 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+}
+
 .conduite-clavier { display: flex; gap: 10px; }
 .conduite-clavier input {
   flex: 1;
