@@ -93,6 +93,16 @@ export default function ModeConduite() {
   const controleurRef = useRef<AbortController | null>(null);
   const vivantRef = useRef(true);
   const interrompuRef = useRef(false);
+  // ── La voix serveur ──
+  // Verdict de Mohamed au volant : la voix du navigateur est une loterie
+  // d'appareil — basse, accent faux. Quand /api/voix a une cle, chaque phrase
+  // part au serveur et revient en audio ; sinon (503, panne, lenteur) on
+  // retombe sur la voix du navigateur, phrase par phrase. Un seul lecteur
+  // audio, reutilise : c'est lui qu'on debloque au premier appui sur iOS.
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const fileVoixRef = useRef<string[]>([]);
+  const lecteurOccupeRef = useRef(false);
+  const serveurVoixRef = useRef<boolean | null>(null); // null = on ne sait pas encore
 
   const majEtat = (e: Etat) => {
     if (!vivantRef.current) return; // la page est quittée : plus rien à afficher
@@ -181,6 +191,16 @@ export default function ModeConduite() {
   }, []);
 
   const taire = useCallback(() => {
+    fileVoixRef.current = [];
+    const audio = audioRef.current;
+    if (audio) {
+      try {
+        audio.pause();
+        audio.currentTime = 0;
+      } catch {
+        /* lecteur déjà arrêté */
+      }
+    }
     try {
       window.speechSynthesis?.cancel();
     } catch {
@@ -188,7 +208,7 @@ export default function ModeConduite() {
     }
   }, []);
 
-  const dire = useCallback((texte: string) => {
+  const direNavigateur = useCallback((texte: string) => {
     if (!texte.trim() || typeof window.speechSynthesis === 'undefined') return;
     const u = new SpeechSynthesisUtterance(texte);
     u.lang = 'fr-FR';
@@ -198,6 +218,68 @@ export default function ModeConduite() {
     u.rate = 0.95;
     window.speechSynthesis.speak(u);
   }, []);
+
+  /** Une phrase au serveur ; false = à dire avec la voix du navigateur. */
+  const jouerServeur = useCallback(async (texte: string): Promise<boolean> => {
+    if (serveurVoixRef.current === false) return false;
+    try {
+      const r = await fetch('/api/voix', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ texte }),
+        signal: AbortSignal.timeout(15_000),
+      });
+      if (!r.ok) {
+        // 503 = pas de clé : inutile de retenter à chaque phrase de la visite.
+        if (r.status === 503) serveurVoixRef.current = false;
+        return false;
+      }
+      const blob = await r.blob();
+      const audio = audioRef.current ?? new Audio();
+      audioRef.current = audio;
+      const adresse = URL.createObjectURL(blob);
+      audio.src = adresse;
+      try {
+        await audio.play();
+      } catch {
+        URL.revokeObjectURL(adresse);
+        return false; // lecteur non débloqué (iOS) : le navigateur parlera
+      }
+      serveurVoixRef.current = true;
+      await new Promise<void>((fin) => {
+        audio.onended = () => fin();
+        audio.onerror = () => fin();
+      });
+      URL.revokeObjectURL(adresse);
+      return true;
+    } catch {
+      return false;
+    }
+  }, []);
+
+  const direLaFile = useCallback(async () => {
+    if (lecteurOccupeRef.current) return;
+    lecteurOccupeRef.current = true;
+    try {
+      while (fileVoixRef.current.length && vivantRef.current && !interrompuRef.current) {
+        const phrase = fileVoixRef.current.shift();
+        if (!phrase) continue;
+        const parle = await jouerServeur(phrase);
+        if (!parle) direNavigateur(phrase); // la synthèse du navigateur garde l'ordre : elle a sa propre file
+      }
+    } finally {
+      lecteurOccupeRef.current = false;
+    }
+  }, [jouerServeur, direNavigateur]);
+
+  const dire = useCallback(
+    (texte: string) => {
+      if (!texte.trim()) return;
+      fileVoixRef.current.push(texte);
+      void direLaFile();
+    },
+    [direLaFile],
+  );
 
   const demander = useCallback(
     async (texte: string) => {
@@ -280,7 +362,10 @@ export default function ModeConduite() {
         // et parle » pendant que la réponse est encore en train d'être lue.
         const attendreLaFin = () => {
           if (!vivantRef.current) return; // la page est quittée : plus de boucle
-          if (window.speechSynthesis?.speaking || window.speechSynthesis?.pending) {
+          const navigateurParle =
+            window.speechSynthesis?.speaking || window.speechSynthesis?.pending;
+          const serveurParle = lecteurOccupeRef.current || fileVoixRef.current.length > 0;
+          if (navigateurParle || serveurParle) {
             window.setTimeout(attendreLaFin, 400);
             return;
           }
@@ -348,6 +433,20 @@ export default function ModeConduite() {
     // chargement et cet appui n'apparaît jamais). Ensuite, plus jamais un mot
     // de synthèse sur le chemin du micro.
     if (!voixDebloqueeRef.current) {
+      // Le meme appui debloque le LECTEUR AUDIO : sur iOS, un element <audio>
+      // ne joue qu'apres un premier play() dans un geste. Un wav muet d'un
+      // echantillon suffit — sans lui, la voix serveur serait rejetee au
+      // premier play() et on retomberait sur la voix du navigateur sans
+      // comprendre pourquoi.
+      try {
+        const audio = audioRef.current ?? new Audio();
+        audioRef.current = audio;
+        audio.src =
+          'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+        void audio.play().catch(() => {});
+      } catch {
+        /* pas de lecteur : la voix du navigateur prendra le relais */
+      }
       try {
         const souffle = new SpeechSynthesisUtterance(' ');
         souffle.volume = 0;
@@ -462,6 +561,16 @@ export default function ModeConduite() {
       interrompuRef.current = true;
       controleurRef.current?.abort();
       recRef.current?.abort?.();
+      fileVoixRef.current = [];
+      const audio = audioRef.current;
+      if (audio) {
+        try {
+          audio.pause();
+          audio.currentTime = 0;
+        } catch {
+          /* lecteur déjà arrêté */
+        }
+      }
       try {
         window.speechSynthesis?.cancel();
       } catch {

@@ -164,8 +164,11 @@ verifier(
   meilleureVoix([{ name: 'X', lang: 'fr_CA', voiceURI: 'x' }])?.voiceURI === 'x',
 );
 verifier(
-  'aucune voix française : on rend la première plutôt que le silence',
-  meilleureVoix([{ name: 'English', lang: 'en-US', voiceURI: 'en' }])?.voiceURI === 'en',
+  // Constat de Mohamed au volant : « accent australien ». Forcer une voix
+  // anglaise gagne sur lang=fr-FR ; ne rien forcer laisse le moteur prendre
+  // sa française par défaut. Aucun des deux n'est le silence.
+  'aucune voix française : on ne force RIEN, le moteur choisira via lang',
+  meilleureVoix([{ name: 'English', lang: 'en-US', voiceURI: 'en' }]) === null,
 );
 verifier('aucune voix du tout : null, sans exploser', meilleureVoix([]) === null);
 
