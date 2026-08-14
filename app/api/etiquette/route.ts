@@ -2,6 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
+import { avecDelai, sansAttendre, DELAI_MODELE, DELAI_REDIS } from '@/lib/delai';
 import { QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
 
@@ -59,8 +60,13 @@ async function quotaDepasse(request: Request): Promise<boolean> {
   const heure = Math.floor(Date.now() / 3_600_000);
   try {
     const cle = `halalgpt:etiquette:${ip}:${heure}`;
-    const appels = await redis.incr(cle);
-    if (appels === 1) await redis.expire(cle, 3600);
+    // `catch` couvrait la panne, pas la LENTEUR : un Redis qui repond en
+    // vingt secondes ne leve rien, il fait attendre — et il faisait attendre
+    // AVANT que la photo parte a l'analyse. Un quota manque ne coute rien,
+    // une analyse manquee coute la reponse entiere : on abandonne le quota.
+    const appels = await avecDelai(redis.incr(cle), DELAI_REDIS, -1);
+    if (appels === -1) return false;
+    if (appels === 1) sansAttendre(redis.expire(cle, 3600));
     return appels > QUOTA_PAR_HEURE;
   } catch {
     return false; // Redis indisponible : on ne bloque pas le service
@@ -106,7 +112,10 @@ export async function POST(request: Request) {
   }
 
   try {
-    const anthropic = new Anthropic();
+    // Sous maxDuration = 60 : c'est NOUS qui repondons quand le modele
+    // traine, pas la plateforme qui tue la fonction. HalalCheck recoit alors
+    // un JSON qu'il sait lire au lieu d'une page d'erreur qu'il ne sait pas.
+    const anthropic = new Anthropic({ timeout: DELAI_MODELE, maxRetries: 1 });
     const mediaType = image.slice(5, image.indexOf(';')) as 'image/jpeg' | 'image/png' | 'image/webp';
     const response = await anthropic.beta.messages.create({
       model: 'claude-opus-5',

@@ -1,4 +1,5 @@
 import { Redis } from '@upstash/redis';
+import { avecDelai, DELAI_REDIS } from '@/lib/delai';
 
 export const runtime = 'nodejs';
 
@@ -71,7 +72,14 @@ export async function GET(request: Request) {
     });
   }
 
-  const [fr, en, totalFr, totalEn, passerelles, detail] = await Promise.all([
+  // La mine est une page de lecture : six requetes Redis en parallele, et
+  // personne d'autre que Mohamed devant l'ecran. Un `Promise.all` nu attendait
+  // sans limite — si Redis traine, la page ne s'affiche jamais et rien ne dit
+  // pourquoi. On borne l'ensemble et on l'AVOUE plutot que de rendre des
+  // listes vides qui passeraient pour « la mine est vide ».
+  const VIDE: [unknown[], unknown[], number, number, unknown[], unknown[]] =
+    [[], [], -1, -1, [], []];
+  const lecture = await avecDelai(Promise.all([
     redis.zrange<(string | number)[]>('halalgpt:questions', 0, 49, { rev: true, withScores: true }),
     redis.zrange<(string | number)[]>('halalgpt:en:questions', 0, 49, { rev: true, withScores: true }),
     redis.zcard('halalgpt:questions'),
@@ -82,7 +90,14 @@ export async function GET(request: Request) {
     // ouvrable que par Mohamed.
     redis.zrange<(string | number)[]>('halalgpt:passerelles', 0, 19, { rev: true, withScores: true }),
     redis.zrange<(string | number)[]>('halalgpt:passerelles:detail', 0, 29, { rev: true, withScores: true }),
-  ]);
+  ]), DELAI_REDIS * 4, VIDE);
+
+  // -1 est la marque du delai depasse : « je n'ai pas pu lire », qui n'est pas
+  // « il n'y a rien ». Confondre les deux ferait conclure a un agent que ses
+  // passerelles n'amenent personne, alors que c'est la mesure qui a manque.
+  const mineMuette = (lecture[2] as number) === -1;
+  const [fr, en, totalFr, totalEn, passerelles, detail] =
+    lecture as [(string | number)[], (string | number)[], number, number, (string | number)[], (string | number)[]];
   // zrange withScores rend [membre, score, membre, score…] : les scores sont
   // aux rangs impairs.
   const totalPasserelles = passerelles
@@ -114,6 +129,12 @@ export async function GET(request: Request) {
 <body>
 <div class="wrap">
   <h1>💎 La Mine <span class="or">HalalGPT</span></h1>
+  ${mineMuette ? `<p style="background:#5a1d1d;border-left:4px solid #c9a84c;padding:12px 16px;margin:0 0 20px;border-radius:6px">
+    ⚠️ <strong>Cette page ne dit rien aujourd'hui.</strong> Redis n'a pas répondu
+    dans le temps imparti : les listes ci-dessous sont vides parce que la lecture
+    a échoué, <strong>pas</strong> parce qu'il n'y a rien. Ne conclus rien de ces
+    chiffres — surtout pas que les passerelles n'amènent personne.
+  </p>` : ''}
   <p class="sub">${totalFr} question(s) distincte(s) en français · ${totalEn} en anglais — top 50 par fréquence.</p>
   ${section('🇫🇷 Questions françaises (halalgpt.fr)', rows(fr))}
   ${section('🇬🇧 Questions anglaises (gohalaltravel.com)', rows(en))}

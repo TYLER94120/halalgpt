@@ -1,12 +1,14 @@
 import crypto from 'node:crypto';
 
 import Anthropic from '@anthropic-ai/sdk';
+
 import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
 import { MOTS_VIDES } from '@/lib/mots-vides.js';
 import { QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
+import { avecDelai, sansAttendre, DELAI_REDIS } from '@/lib/delai';
 
 export const runtime = 'nodejs';
 export const maxDuration = 60;
@@ -286,7 +288,8 @@ async function logQuestion(question: string): Promise<void> {
   if (!redis) return;
   try {
     // La mine d'or : classement des questions réellement posées
-    await redis.zincrby('halalgpt:questions', 1, normalize(question).trim().slice(0, 140));
+    // Compteur de la mine : personne n'attend son resultat.
+    sansAttendre(redis.zincrby('halalgpt:questions', 1, normalize(question).trim().slice(0, 140)));
   } catch {
     /* la télémétrie ne doit jamais casser une réponse */
   }
@@ -449,7 +452,10 @@ export async function POST(request: Request) {
     const redis = getRedis();
     if (redis) {
       try {
-        const cached = await redis.get<string>(cacheKey(lastQuestion));
+        // Un cache lent est pire que pas de cache : on repartirait pour un
+        // appel au modele APRES l'avoir attendu. Passe le delai, on considere
+        // que c'est un manque et on interroge le modele tout de suite.
+        const cached = await avecDelai(redis.get<string>(cacheKey(lastQuestion)), DELAI_REDIS, null);
         if (cached) return fluxImmediat(cached);
       } catch {
         /* cache indisponible → on continue vers l'IA */
@@ -466,6 +472,17 @@ export async function POST(request: Request) {
     "Désolé, je ne peux pas répondre à cette demande. Pose-moi plutôt une question halal ! 🌙";
 
   try {
+    // VOLONTAIREMENT SANS DELAI MAXIMUM, et ce n'est pas un oubli : ne le
+    // « corrige » pas sans lire ceci.
+    //
+    // Les autres appels du site en ont un parce qu'ils font attendre devant un
+    // ecran vide. Celui-ci DIFFUSE : la personne voit les mots arriver un par
+    // un, donc elle voit que ca avance. Couper a 45 s tronquerait une reponse
+    // longue en train de s'ecrire correctement — on remplacerait une attente
+    // visible par une reponse mutilee, ce qui est pire.
+    //
+    // La regle : on coupe quand il y a un repli a servir, on accompagne quand
+    // il n'y en a pas. Ici le flux EST l'accompagnement.
     const anthropic = new Anthropic();
     const flux = await anthropic.beta.messages.create({
       model: 'claude-opus-5',
@@ -545,7 +562,9 @@ export async function POST(request: Request) {
           const redis = getRedis();
           if (redis) {
             try {
-              await redis.set(cacheKey(lastQuestion), complet.trim(), { ex: 60 * 60 * 24 * 30 });
+              // La reponse est deja partie au lecteur : on n'attend pas
+              // l'ecriture du cache pour fermer le flux.
+              sansAttendre(redis.set(cacheKey(lastQuestion), complet.trim(), { ex: 60 * 60 * 24 * 30 }));
             } catch {
               /* cache indisponible → tant pis, la réponse est déjà partie */
             }

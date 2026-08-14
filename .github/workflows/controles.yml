@@ -103,6 +103,20 @@ jobs:
       - name: La passerelle des codes additifs repond, ou dit qu'elle ne sait pas
         run: node scripts/test-ecodes.mjs
 
+      # Ajoute le 14 aout. L'inventaire des attentes du site a rendu ZERO delai
+      # maximum : ni dans les six appels du navigateur, ni dans les cinq routes
+      # qui appellent Redis ou le modele. Le plus grave n'etait pas l'absence
+      # mais le commentaire qui la couvrait — « Redis indisponible : on ne
+      # bloque pas le service » — alors qu'un `catch` couvre la panne et pas la
+      # LENTEUR. Un Redis a vingt secondes ne leve rien, il fait attendre, et il
+      # faisait attendre AVANT que la photo d'etiquette parte a l'analyse.
+      #
+      # Ce controle tient surtout la seconde moitie : qu'aucun appel Redis ne
+      # puisse echapper au garde-fou demain. Avoir ecrit la fonction ne prouve
+      # rien — un seul appel oublie annule toute la protection.
+      - name: Aucune attente du serveur n'est sans limite
+        run: node scripts/test-delais.mjs
+
       # En dernier, et volontairement : c'est la regle qui ne se negocie pas.
       # Aucune voix de synthese ne recite le Coran.
       - name: Aucune voix de synthese ne recite le Coran
