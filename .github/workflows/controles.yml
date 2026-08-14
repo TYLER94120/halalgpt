@@ -117,6 +117,14 @@ jobs:
       - name: Aucune attente du serveur n'est sans limite
         run: node scripts/test-delais.mjs
 
+      # Ajoute le 14 aout, avec la porte IA de la famille (/api/assistant).
+      # Elle depense l'argent de Mohamed a chaque appel : la liste des
+      # origines est FERMEE, et l'assistant n'a le droit d'affirmer un fait
+      # local que depuis le contexte fourni par le site appelant — c'est la
+      # mecanique qui rend ne-jamais-inventer applicable a une IA.
+      - name: La porte IA est fermee aux etrangers
+        run: node scripts/test-assistant.mjs
+
       # En dernier, et volontairement : c'est la regle qui ne se negocie pas.
       # Aucune voix de synthese ne recite le Coran.
       - name: Aucune voix de synthese ne recite le Coran
