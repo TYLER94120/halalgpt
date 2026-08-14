@@ -812,7 +812,7 @@ export const QUESTIONS: QA[] = [
       'Troisième voie, souvent la plus simple : utiliser les facilités du voyageur et regrouper (dhuhr+asr, maghrib+isha) avant le décollage ou après l’atterrissage, quand le créneau horaire de la prière le permet. Les applications de prière donnent les horaires en vol ; en pratique, on suit l’horaire du lieu survolé — et pour la rupture du jeûne, le coucher du soleil vu depuis l’avion.',
     ],
     category: 'Pratique',
-    related: ['horaires-priere-voyage', 'invocation-voyage', 'repas-halal-avion', 'qibla-direction-priere'],
+    related: ['horaires-priere-voyage', 'invocation-voyage', 'repas-halal-avion', 'qibla-direction-priere', 'nombre-rakat-priere'],
   },
 
   // ─── VOYAGE — VILLES FRANÇAISES (suite) ─────────────────────────────────────
@@ -1582,7 +1582,7 @@ export const QUESTIONS: QA[] = [
       'Si la grossesse se passe bien et que le médecin ne voit pas d’obstacle, beaucoup de femmes jeûnent normalement. Le bon réflexe : en parler à la fois au médecin (suivi, hydratation) et rester à l’écoute de son corps — au moindre signal sérieux, on rompt sans culpabiliser.',
     ],
     category: 'Ramadan',
-    related: ['medicament-ramadan', 'ramadan-voyage-jeune', 'vomir-ramadan'],
+    related: ['medicament-ramadan', 'ramadan-voyage-jeune', 'vomir-ramadan', 'priere-femme-regles'],
   },
   {
     slug: 'se-doucher-ramadan',
@@ -2459,7 +2459,7 @@ export const QUESTIONS: QA[] = [
       'Pour ceux qui se sont fait tatouer avant de pratiquer ou de se convertir : le repentir suffit — un tatouage existant n’est pas un péché qui se renouvelle chaque jour, et l’ablution comme la prière restent parfaitement valides avec (l’encre est sous la peau, l’eau atteint bien la surface). Le retrait au laser n’est pas une obligation, surtout s’il est coûteux ou risqué : c’est l’avis répandu des savants contemporains.',
     ],
     category: 'Vie quotidienne',
-    related: ['photos-selfies-islam', 'piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal', 'chirurgie-esthetique-halal'],
+    related: ['photos-selfies-islam', 'piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'porter-or-homme-islam'],
   },
   {
     slug: 'piercing-halal',
@@ -2473,7 +2473,7 @@ export const QUESTIONS: QA[] = [
       'Comme souvent, la question cache la vraie grille de lecture : parure admise et discrète d’un côté, transformation corporelle suivie de modes de l’autre. Pour un piercing déjà posé, le retrait laisse au pire une trace minime — la situation se corrige facilement, contrairement au tatouage.',
     ],
     category: 'Vie quotidienne',
-    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal'],
+    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal', 'porter-or-homme-islam'],
   },
   {
     slug: 'vernis-ongles-priere',
@@ -2728,7 +2728,7 @@ export const QUESTIONS: QA[] = [
       'La forme complète, celle de la sunna : intention, laver les mains, laver les parties intimes, faire des ablutions complètes comme pour la prière, verser l’eau trois fois sur la tête en frottant le cuir chevelu, puis laver tout le corps en commençant par le côté droit. Deux précisions utiles : les femmes n’ont pas l’obligation de défaire leurs tresses pour le ghusl d’impureté majeure si l’eau atteint la racine (hadith d’Oumm Salama) ; et vernis, faux ongles ou extensions imperméables doivent être retirés, puisqu’ils empêchent l’eau d’atteindre la peau. Sans eau ou en cas de maladie, le tayammum (ablution sèche) prend le relais.',
     ],
     category: 'Prière',
-    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere'],
+    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles'],
   },
   {
     slug: 'psy-therapie-islam',
@@ -2950,7 +2950,78 @@ export const QUESTIONS: QA[] = [
       'En résidence, le débat est réel. Il s’appuie sur un hadith rapporté par Mouslim, où Ibn ‘Abbâs indique que le Prophète ﷺ a regroupé à Médine « sans peur et sans voyage ». Les savants l’interprètent différemment : la pluie, la maladie, ou plus largement le fait d’épargner une gêne sérieuse à la communauté — l’école hanbalite étant la plus large sur ce point. Ce que cela ne signifie pas : que l’on peut regrouper par simple commodité. Avant d’en arriver là, regarde si prier sur ton lieu de travail est réellement impossible ; c’est faisable bien plus souvent qu’on ne le croit, et notre fiche sur la prière au travail donne des solutions concrètes. Pour une contrainte précise — horaires postés, bloc opératoire, chantier —, expose-la à un savant plutôt que de trancher seul.',
     ],
     category: 'Prière',
-    related: ['priere-travail', 'horaires-priere-voyage', 'priere-avion', 'rattraper-prieres-ratees'],
+    related: ['priere-travail', 'horaires-priere-voyage', 'priere-avion', 'rattraper-prieres-ratees', 'nombre-rakat-priere'],
+  },
+  // ─── VIE GÉNÉRALE — vague du 14 août 2026 ──────────────────────────────────
+  {
+    slug: 'wudu-annule-quoi',
+    question: 'Qu’est-ce qui annule les ablutions ?',
+    verdict: '✅ Une liste courte fait l’unanimité — le reste diverge',
+    short:
+      'Ce qui sort du corps par les deux voies, le sommeil profond et la perte de connaissance annulent les ablutions chez tous. Le reste dépend de l’école suivie.',
+    answer: [
+      'Trois choses annulent les ablutions chez toutes les écoles, sans discussion : ce qui sort du corps par les deux voies naturelles (urine, selles, gaz), le sommeil profond — celui où l’on perd conscience de son environnement —, et la perte de connaissance quelle qu’en soit la cause (évanouissement, anesthésie, ivresse). Si tu ne retiens que cette liste, tu couvres la très grande majorité des situations de la journée.',
+        'Viennent ensuite les points où les écoles divergent, et il est utile de savoir qu’il s’agit de divergences anciennes et respectées, pas d’un flou moderne. Toucher une personne de l’autre sexe : annule chez les chaféites, n’annule pas chez les hanafites sauf accompagné de désir, position intermédiaire chez les malikites. Toucher son sexe à même la peau : annule chez la majorité, n’annule pas chez les hanafites. Le sang qui coule abondamment d’une plaie et le vomissement : annulent chez les hanafites, pas chez les chaféites. Et le fait de manger de la viande de chameau est retenu comme annulant par les hanbalites, sur la base d’un hadith explicite.',
+        'Deux remarques pratiques qui évitent des angoisses inutiles. D’abord, le doute n’annule rien : si tu as fait tes ablutions et que tu n’es pas certain de les avoir rompues, elles tiennent — la certitude ne se défait pas par un soupçon, et c’est une règle sur laquelle tout le monde s’accorde. Ensuite, un simple somme assis, la tête qui tombe un instant, n’est pas le sommeil profond dont parlent les textes. Pour les cas particuliers — incontinence, sondes, soins médicaux répétés —, il existe des facilités précises : demande à un savant ou à l’imam de ta mosquée, qui tiendra compte de ta situation exacte.',
+    ],
+    category: 'Prière',
+    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'tayammum-sans-eau', 'vernis-ongles-priere', 'priere-travail'],
+  },
+  {
+    slug: 'priere-femme-regles',
+    question: 'Peut-on prier pendant les règles ?',
+    verdict: '❌ Non — et les prières manquées ne se rattrapent pas',
+    short:
+      'Pendant les règles, la prière et le jeûne sont suspendus : c’est une dispense, pas une faute. Les jeûnes se rattrapent, les prières non — et le rappel de Dieu reste ouvert.',
+    answer: [
+      'C’est l’un des rares sujets où les quatre écoles disent exactement la même chose : pendant les menstrues, la prière rituelle et le jeûne sont suspendus. Il ne s’agit pas d’une punition ni d’une impureté de la personne — c’est une dispense accordée, et la femme qui ne prie pas durant ces jours obéit, elle ne désobéit pas. Beaucoup de femmes vivent cette période avec un sentiment de culpabilité ou d’éloignement : ce sentiment est compréhensible, mais il ne correspond pas à ce que disent les textes.',
+      'La règle du rattrapage est asymétrique, et c’est la question la plus posée. Les jours de jeûne manqués pendant le Ramadan se rattrapent après, avant le Ramadan suivant. Les prières manquées, elles, ne se rattrapent pas — jamais, et il n’y a pas de divergence là-dessus. La raison avancée par les savants est pratique : le jeûne revient une fois l’an, la prière cinq fois par jour, et imposer le rattrapage serait une charge que la révélation n’a pas voulue.',
+      'Ce qui reste ouvert est plus large qu’on ne le croit, et c’est ce qu’il faut retenir : le dhikr, les invocations, l’écoute du Coran, l’apprentissage, la demande de pardon, le fait d’assister à un cours religieux — rien de tout cela n’est suspendu. Sur la lecture du Coran en le touchant, les avis divergent : la majorité l’écarte, une partie des malikites et des avis contemporains l’autorisent notamment pour l’étudiante et l’enseignante. Sur les saignements irréguliers, prolongés ou liés à une contraception, la question change de nature et relève d’un cas particulier : demande à une savante ou à un savant de confiance plutôt que de trancher seule.',
+    ],
+    category: 'Prière',
+    related: ['ghusl-grande-ablution', 'rattraper-prieres-ratees', 'femme-enceinte-ramadan', 'priere-assise-malade', 'wudu-annule-quoi'],
+  },
+  {
+    slug: 'nombre-rakat-priere',
+    question: 'Combien de rakat pour chaque prière ?',
+    verdict: '✅ 2, 4, 4, 3, 4 — et la moitié en voyage',
+    short:
+      'Fajr 2, Dhuhr 4, Asr 4, Maghrib 3, Isha 4 : c’est l’obligatoire, sans divergence. En voyage, les prières de 4 se réduisent à 2.',
+    answer: [
+      'Le nombre d’unités obligatoires ne fait l’objet d’aucune divergence entre les écoles : Fajr 2, Dhuhr 4, Asr 4, Maghrib 3, Isha 4. Soit dix-sept unités par jour. C’est la première chose à mémoriser, et la seule qui soit strictement obligatoire — tout le reste est surérogatoire, c’est-à-dire recommandé mais non exigé.',
+      'Autour de ces prières viennent les unités surérogatoires régulières, que la tradition appelle les sunan rawâtib : couramment 2 avant Fajr, 4 avant et 2 après Dhuhr, 2 après Maghrib, 2 après Isha. Le décompte exact varie légèrement selon les écoles et selon les rapports retenus — ce n’est pas un désaccord grave, et personne n’est en faute s’il en fait moins. Les deux unités avant Fajr sont celles que la tradition met le plus en avant.',
+      'En voyage, les prières de quatre unités se réduisent à deux : Dhuhr, Asr et Isha deviennent 2, tandis que Fajr reste à 2 et Maghrib à 3 — celles-là ne se réduisent jamais. Cette réduction est une facilité largement retenue, et beaucoup de savants la considèrent même comme préférable en voyage plutôt que facultative. Elle se combine souvent avec le regroupement de deux prières, ce qui simplifie beaucoup les longues journées de route ou d’avion. Sur la distance et la durée à partir desquelles on est considéré voyageur, les écoles divergent : demande à l’imam de ta mosquée pour ton cas.',
+    ],
+    category: 'Prière',
+    related: ['regrouper-deux-prieres', 'horaires-priere-voyage', 'priere-avion', 'rattraper-prieres-ratees', 'priere-vendredi-obligatoire'],
+  },
+  {
+    slug: 'teinture-cheveux-islam',
+    question: 'Peut-on se teindre les cheveux en islam ?',
+    verdict: '✅ Oui — sauf le noir pur, largement déconseillé',
+    short:
+      'Se teindre les cheveux est permis et le henné est même encouragé. Le noir pur pour masquer l’âge est écarté par la majorité. Reste la question des ablutions.',
+    answer: [
+      'Le principe est la permission, et il est même positif : la teinture des cheveux et de la barbe est rapportée comme une pratique encouragée, notamment avec le henné, dont la couleur va du roux au brun. Il n’y a pas de débat sur ce point, ni pour les femmes ni pour les hommes.',
+      'La réserve porte sur une couleur précise : le noir pur, appliqué pour dissimuler les cheveux blancs et paraître plus jeune. La majorité des savants l’écartent, en s’appuyant sur des textes qui recommandent de changer la couleur des cheveux blancs « en évitant le noir ». Une minorité l’autorise, et certains distinguent le cas de la femme mariée qui se pare pour son époux. Les couleurs autres que le noir — châtain, roux, brun, et les nuances modernes — ne posent pas ce problème.',
+      'Reste une question que beaucoup oublient et qui est la plus concrète : la teinture empêche-t-elle l’eau d’atteindre le cheveu lors des ablutions ? La réponse dépend du produit. Le henné et les colorations qui pénètrent le cheveu en le teignant laissent passer l’eau : les ablutions sont valides. En revanche, tout produit qui forme une pellicule imperméable en surface doit être retiré avant les ablutions et le ghusl — c’est le même raisonnement que pour le vernis à ongles. En cas de doute sur un produit précis, lis sa composition, et pour ta situation, demande à un savant.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal'],
+  },
+  {
+    slug: 'porter-or-homme-islam',
+    question: 'Un homme peut-il porter de l’or ?',
+    verdict: '❌ Non pour l’or et la soie — permis pour les femmes',
+    short:
+      'L’or et la soie pure sont écartés pour les hommes par les quatre écoles, et permis aux femmes. L’argent reste permis aux hommes, dont la bague.',
+    answer: [
+      'La règle est ancienne, unanime entre les quatre écoles, et elle vise uniquement les hommes : l’or et la soie pure leur sont interdits à porter, alors qu’ils sont expressément permis aux femmes. C’est l’un des rares cas où une règle vestimentaire distingue aussi nettement, et les savants y voient une éducation à la sobriété masculine plutôt qu’une dévalorisation de l’ornement.',
+      'Ce qui reste permis aux hommes est large : l’argent, et notamment la bague en argent, dont le port est une pratique rapportée du Prophète ﷺ. En pratique, c’est la réponse la plus utile pour l’alliance de mariage — argent, acier, titane, platine, tungstène : aucun de ces métaux n’est visé par l’interdiction, seul l’or l’est. Sur le platine et l’or blanc, attention à ne pas confondre : l’or blanc est de l’or, il tombe donc sous la règle ; le platine n’en est pas.',
+      'Deux zones de discussion demeurent, et il est honnête de les nommer. La montre dorée : si le boîtier est réellement en or, la règle s’applique ; s’il s’agit d’un placage ou d’un autre métal doré, une grande partie des savants contemporains ne l’écartent pas, tout en conseillant la retenue. Et l’usage médical — dent en or, prothèse, fil chirurgical — est admis par les savants au titre de la nécessité, sans discussion sérieuse. Pour un objet précis dont tu ne connais pas la composition, renseigne-toi sur le métal réel, puis demande à un savant si le doute persiste.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['tatouage-halal', 'piercing-halal', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam'],
   },
 ];
 
