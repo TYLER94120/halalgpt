@@ -51,7 +51,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : par précaution, la grande majorité des consommateurs musulmans l’évitent. Cherchez les alternatives colorées avec du E162 (betterave) ou du E163 (anthocyanes), parfaitement halal.',
     ],
     category: 'Additifs',
-    related: ['e441-gelatine-halal', 'e471-halal', 'gelatine-halal', 'e250-nitrite-halal', 'e466-halal', 'e476-halal'],
+    related: ['e441-gelatine-halal', 'e471-halal', 'gelatine-halal', 'e250-nitrite-halal', 'e466-halal', 'e476-halal', 'e133-halal', 'e570-halal'],
   },
   {
     slug: 'e441-gelatine-halal',
@@ -65,7 +65,7 @@ export const QUESTIONS: QA[] = [
       'Certains savants considèrent que la transformation chimique (istihala) purifie la gélatine, mais la majorité des organismes contemporains exigent une source halal. En pratique : privilégiez les produits certifiés halal ou les gélifiants végétaux (pectine E440, agar-agar E406).',
     ],
     category: 'Additifs',
-    related: ['gelatine-halal', 'e120-halal', 'haribo-halal'],
+    related: ['gelatine-halal', 'e120-halal', 'haribo-halal', 'e133-halal'],
   },
   {
     slug: 'e471-halal',
@@ -79,7 +79,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : si l’emballage indique « origine végétale » ou porte un logo halal, pas de souci. Sinon, contactez la marque ou choisissez un produit certifié. Beaucoup de marques répondent en 24h sur leurs réseaux sociaux.',
     ],
     category: 'Additifs',
-    related: ['e422-glycerine-halal', 'e441-gelatine-halal', 'e120-halal', 'e466-halal', 'e476-halal', 'e1105-lysozyme-halal'],
+    related: ['e422-glycerine-halal', 'e441-gelatine-halal', 'e120-halal', 'e466-halal', 'e476-halal', 'e1105-lysozyme-halal', 'e412-gomme-guar-halal', 'e570-halal'],
   },
   {
     slug: 'e422-glycerine-halal',
@@ -93,7 +93,7 @@ export const QUESTIONS: QA[] = [
       'La bonne nouvelle : la majorité de la glycérine utilisée en Europe est aujourd’hui végétale (colza, palme). En cas de doute sur un produit consommé régulièrement, un message à la marque suffit souvent à obtenir l’origine exacte.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e441-gelatine-halal'],
+    related: ['e471-halal', 'e441-gelatine-halal', 'e412-gomme-guar-halal', 'e903-cire-carnauba-halal', 'e466-halal', 'e472-halal', 'e920-halal'],
   },
   {
     slug: 'gelatine-halal',
@@ -155,7 +155,7 @@ export const QUESTIONS: QA[] = [
       'Et si tu veux le goût sans l’enquête : les épiceries orientales et les rayons halal proposent désormais des dizaines de marques de bonbons entièrement certifiés, gélatine bovine rituelle ou pectine de fruits. Le choix est bien plus large qu’il y a dix ans.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal', 'milka-halal', 'chewing-gum-halal'],
+    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal', 'milka-halal', 'chewing-gum-halal', 'snickers-mars-twix-halal'],
   },
   {
     slug: 'mms-halal',
@@ -169,7 +169,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : beaucoup de consommateurs musulmans les consomment sur la base de la composition affichée ; les plus prudents préfèrent des chocolats certifiés halal, nombreux en magasin oriental. Vérifiez toujours la liste d’ingrédients de l’édition que vous avez en main.',
     ],
     category: 'Produits',
-    related: ['kinder-halal', 'haribo-halal', 'e120-halal'],
+    related: ['kinder-halal', 'haribo-halal', 'e120-halal', 'chewing-gum-halal', 'ferrero-rocher-halal'],
   },
   {
     slug: 'kinder-halal',
@@ -183,7 +183,7 @@ export const QUESTIONS: QA[] = [
       'À noter : dans certains pays musulmans, les mêmes produits Ferrero sont vendus avec certification halal locale. Si vous voyagez au Maroc, en Turquie ou aux Émirats, vous trouverez des Kinder certifiés. Vérifiez la composition exacte du produit local, elle peut varier d’un pays à l’autre.',
     ],
     category: 'Produits',
-    related: ['mms-halal', 'haribo-halal', 'gelatine-halal', 'milka-halal', 'mentos-halal', 'lu-prince-halal'],
+    related: ['mms-halal', 'haribo-halal', 'gelatine-halal', 'milka-halal', 'mentos-halal', 'lu-prince-halal', 'chewing-gum-halal'],
   },
   {
     slug: 'coca-cola-halal',
@@ -197,7 +197,7 @@ export const QUESTIONS: QA[] = [
       'Le Coca-Cola est d’ailleurs officiellement certifié halal dans plusieurs pays musulmans (Arabie saoudite, Émirats, Malaisie…) où il est produit localement. La grande majorité des savants et des consommateurs le considèrent donc permis.',
     ],
     category: 'Produits',
-    related: ['red-bull-halal', 'levure-biere-halal', 'mentos-halal', 'lu-prince-halal', 'danette-halal', 'starbucks-halal', 'e150d-halal'],
+    related: ['red-bull-halal', 'levure-biere-halal', 'mentos-halal', 'lu-prince-halal', 'danette-halal', 'starbucks-halal', 'e150d-halal', 'monster-halal'],
   },
   {
     slug: 'red-bull-halal',
@@ -211,7 +211,7 @@ export const QUESTIONS: QA[] = [
       'Restent les considérations de santé : les boissons énergisantes sont déconseillées aux enfants et en grande quantité — mais c’est une question de santé, pas de licéité. Verdict : généralement considéré halal.',
     ],
     category: 'Produits',
-    related: ['coca-cola-halal', 'levure-biere-halal'],
+    related: ['coca-cola-halal', 'levure-biere-halal', 'pringles-halal', 'monster-halal', 'taurine-halal', 'babybel-halal'],
   },
   {
     slug: 'levure-biere-halal',
@@ -225,7 +225,7 @@ export const QUESTIONS: QA[] = [
       'Seule nuance : certaines levures de bière « issues de brasserie » sont récupérées après le brassage. Même dans ce cas, elles sont lavées et séchées, et l’avis dominant reste la licéité. Les plus scrupuleux choisiront une levure « de culture pure », précisée sur l’étiquette.',
     ],
     category: 'Produits',
-    related: ['vinaigre-halal', 'coca-cola-halal'],
+    related: ['vinaigre-halal', 'coca-cola-halal', 'vitamine-d3-halal', 'fanta-halal'],
   },
 
   // ─── ALIMENTATION ───────────────────────────────────────────────────────────
@@ -241,7 +241,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : privilégiez les boucheries halal et les rayons certifiés (AVS, ARGML, Achahada… les organismes n’ont pas tous le même niveau d’exigence — renseignez-vous). Pour le poisson, aucune certification n’est nécessaire.',
     ],
     category: 'Alimentation',
-    related: ['poisson-fruits-de-mer-halal', 'restaurant-halal-paris', 'cuisine-alcool-halal', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal'],
+    related: ['poisson-fruits-de-mer-halal', 'restaurant-halal-paris', 'cuisine-alcool-halal', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal', 'gelatine-poisson-halal', 'kebab-halal'],
   },
   {
     slug: 'poisson-fruits-de-mer-halal',
@@ -255,7 +255,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : si vous suivez l’école hanafite, évitez crevettes et fruits de mer ; sinon, ils sont permis pour la majorité. Le thon, saumon, cabillaud, sardine… ne posent aucun problème pour personne.',
     ],
     category: 'Alimentation',
-    related: ['viande-supermarche-halal', 'restaurant-halal-paris', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal'],
+    related: ['viande-supermarche-halal', 'restaurant-halal-paris', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal', 'gelatine-poisson-halal', 'cheval-halal', 'crevette-halal'],
   },
   {
     slug: 'cuisine-alcool-halal',
@@ -269,7 +269,7 @@ export const QUESTIONS: QA[] = [
       'À distinguer des traces techniques involontaires (supports d’arômes industriels, fermentation naturelle des jus de fruits…), considérées comme négligeables par la plupart des organismes de certification. Au restaurant, demandez toujours si la sauce contient du vin — c’est courant dans la cuisine française et italienne.',
     ],
     category: 'Alimentation',
-    related: ['vinaigre-halal', 'viande-supermarche-halal', 'restaurant-halal-paris'],
+    related: ['vinaigre-halal', 'viande-supermarche-halal', 'restaurant-halal-paris', 'grenouille-halal', 'biere-sans-alcool-halal', 'arome-vanille-halal', 'kombucha-halal'],
   },
   {
     slug: 'medicaments-gelules-halal',
@@ -285,7 +285,7 @@ export const QUESTIONS: QA[] = [
       'Une distinction utile pour finir, parce qu’elle change la réponse : la nécessité couvre le médicament prescrit, pas le complément de confort. Une gélule de vitamines, de magnésium ou de collagène n’est pas un traitement vital — là, chercher une version végétale ou un comprimé a du sens, et l’alternative existe presque toujours en pharmacie. Pour un traitement, on prend ; pour un complément, on choisit.',
     ],
     category: 'Vie quotidienne',
-    related: ['gelatine-halal', 'e441-gelatine-halal', 'greffe-cheveux-halal', 'travailler-restaurant-alcool', 'jeux-video-halal'],
+    related: ['gelatine-halal', 'e441-gelatine-halal', 'greffe-cheveux-halal', 'travailler-restaurant-alcool', 'jeux-video-halal', 'chat-maison-islam', 'mentos-halal', 'chien-islam'],
   },
 
   // ─── VOYAGE ─────────────────────────────────────────────────────────────────
@@ -315,7 +315,7 @@ export const QUESTIONS: QA[] = [
       'Comme partout : vérifiez le certificat halal affiché et sa date, surtout pour la viande. Les adresses vérifiées de la région lyonnaise arrivent sur la carte VoyagesHalal.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-paris', 'restaurant-halal-marseille'],
+    related: ['restaurant-halal-paris', 'restaurant-halal-marseille', 'restaurant-halal-strasbourg', 'restaurant-halal-nice', 'restaurant-halal-nantes', 'restaurant-halal-montpellier', 'restaurant-halal-toulouse'],
   },
   {
     slug: 'restaurant-halal-marseille',
@@ -373,7 +373,7 @@ export const QUESTIONS: QA[] = [
       'Un mot sur ce que personne ne dit assez. Le pari sportif est conçu pour créer une dépendance : notifications, cotes en direct, bonus de bienvenue, remboursement du premier pari. Beaucoup de gens qui posent cette question ne cherchent pas vraiment une règle, ils cherchent une sortie. Si c’est ton cas, sache que ça se traite comme n’importe quelle autre dépendance, sans honte : on peut demander à s’auto-interdire auprès des opérateurs, en parler à un médecin, et un psychologue n’a rien de contraire à la religion. En parler à quelqu’un est un acte de courage, pas de faiblesse.',
     ],
     category: 'Vie quotidienne',
-    related: ['loto-jeux-hasard-halal', 'cigarette-halal', 'psy-therapie-islam'],
+    related: ['loto-jeux-hasard-halal', 'cigarette-halal', 'psy-therapie-islam', 'riba-interet-islam', 'mauvais-oeil-protection'],
   },
   {
     slug: 'loto-jeux-hasard-halal',
@@ -401,7 +401,7 @@ export const QUESTIONS: QA[] = [
       'Et maintenant la limite de cette page, qui compte autant que le reste. **Cette fiche explique un principe. Elle ne se prononce sur aucune situation particulière** — ni sur un crédit immobilier, ni sur un compte bancaire, ni sur une assurance, ni sur un placement. Ces questions-là divisent réellement les savants, y compris parmi les plus qualifiés : plusieurs conseils européens ont autorisé certains montages sous conditions pour les musulmans vivant en Occident, d’autres autorités les refusent. Un engagement sur vingt ans ne se décide pas d’après une page web. Pour ta situation, adresse-toi à un savant ou à un organisme spécialisé : c’est le seul conseil honnête que nous puissions te donner.',
     ],
     category: 'Pratique',
-    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france'],
+    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage'],
   },
   {
     slug: 'greffe-cheveux-halal',
@@ -415,7 +415,7 @@ export const QUESTIONS: QA[] = [
       'Deux réserves à connaître. D’abord, une minorité de savants reste réticente quand l’intention est purement esthétique, sans perte réelle à réparer — l’intention compte, et la frontière entre soigner et embellir n’est pas toujours nette. Ensuite, un point pratique que personne n’explique : pendant la cicatrisation, les croûtes et le pansement peuvent empêcher l’eau d’atteindre le cuir chevelu lors des ablutions et de la grande ablution. Les savants prévoient ce cas — on essuie sur le pansement quand le laver nuirait à la guérison. Demande à ton chirurgien la durée exacte, et à un savant la règle qui s’applique à ta situation.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution', 'chirurgie-esthetique-halal'],
+    related: ['don-organes-islam', 'piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'chicha-halal', 'puff-vape-halal'],
   },
   {
     slug: 'travailler-restaurant-alcool',
@@ -429,7 +429,7 @@ export const QUESTIONS: QA[] = [
       'En pratique, en France, voici ce qui se fait et qui fonctionne. Beaucoup demandent à leur employeur d’être affectés à un poste sans contact avec l’alcool — cuisine, salle sans bar, service du midi — et cela s’obtient plus souvent qu’on ne le croit, surtout dans un établissement où d’autres postes existent. Quand c’est le seul revenu et qu’aucune alternative n’est disponible, les savants parlent de nécessité : rester le temps de chercher activement autre chose, sans s’y installer. Ce n’est pas une permission définitive, c’est un délai. Pour ta situation exacte — ton contrat, tes charges, ce que tu peux négocier — parles-en à un imam plutôt que de rester seul avec la question.',
     ],
     category: 'Vie quotidienne',
-    related: ['caissier-scanner-alcool', 'cigarette-halal', 'serrer-la-main-islam', 'halal-definition'],
+    related: ['caissier-scanner-alcool', 'cigarette-halal', 'serrer-la-main-islam', 'halal-definition', 'chat-maison-islam', 'prenom-musulman-obligatoire', 'paris-sportifs-halal'],
   },
   {
     slug: 'priere-assise-malade',
@@ -443,7 +443,7 @@ export const QUESTIONS: QA[] = [
       'Trois choses qui rassurent, parce qu’elles reviennent toujours. Ta prière n’est pas de moindre valeur : celui qui est empêché reçoit la récompense de ce qu’il faisait quand il était valide, selon un hadith rapporté par Boukhari. Tu n’as rien à rattraper une fois guéri. Et tu es seul juge de ta capacité : la religion ne demande pas de se faire mal, elle demande de faire ce qu’on peut. Si l’état s’installe ou si tu hésites entre deux degrés, l’imam de ta mosquée saura te répondre en deux minutes.',
     ],
     category: 'Prière',
-    related: ['priere-voiture', 'rattraper-prieres-ratees', 'tayammum-sans-eau'],
+    related: ['priere-voiture', 'rattraper-prieres-ratees', 'tayammum-sans-eau', 'zakat-al-fitr-montant', 'qibla-direction-priere', 'priere-vendredi-obligatoire', 'priere-istikhara'],
   },
   {
     slug: 'jeux-video-halal',
@@ -457,7 +457,7 @@ export const QUESTIONS: QA[] = [
       'Mais le vrai sujet, celui qui revient dans presque toutes les réponses des savants, n’est aucun de ceux-là : c’est le TEMPS. Un jeu qui fait manquer la prière, qui vide les nuits, qui prend la place des études, de la famille ou du sommeil, devient un problème même s’il ne contient rien d’interdit. Les repères pratiques que donnent les imams sont simples et tiennent en trois points : la prière passe avant, toujours, et on s’arrête quand l’heure arrive ; on fixe une durée avant de commencer plutôt qu’après ; et si l’on n’arrive plus à s’arrêter, ce n’est plus un loisir, c’est une dépendance — et cela se traite, sans honte, comme n’importe quelle autre.',
     ],
     category: 'Vie quotidienne',
-    related: ['reseaux-sociaux-islam', 'musique-halal', 'psy-therapie-islam', 'cigarette-halal', 'echecs-islam'],
+    related: ['reseaux-sociaux-islam', 'musique-halal', 'psy-therapie-islam', 'cigarette-halal', 'echecs-islam', 'loto-jeux-hasard-halal'],
   },
   {
     slug: 'priere-voiture',
@@ -471,7 +471,7 @@ export const QUESTIONS: QA[] = [
       'Restent les cas d’empêchement réel, et ils sont pris au sérieux : impossibilité de s’arrêter en sécurité (autoroute sans aire avant la fin du temps, tempête de neige, danger), passager d’un car ou d’un train qui ne s’arrête pas, ou état de santé qui interdit de descendre. Dans ces situations, les savants admettent de prier assis, en s’orientant vers la qibla au moment du takbir si c’est possible, et en inclinant la tête pour l’inclinaison et la prosternation — la prosternation étant plus basse que l’inclinaison. Une prière imparfaite dans son temps vaut mieux qu’une prière manquée : ne conduis jamais en priant, et pour ta situation précise, demande à un savant ou à l’imam de ta mosquée.',
     ],
     category: 'Prière',
-    related: ['priere-avion', 'horaires-priere-voyage', 'priere-travail'],
+    related: ['priere-avion', 'horaires-priere-voyage', 'priere-travail', 'retard-fajr-reveil', 'qibla-direction-priere', 'priere-femme-regles', 'nombre-rakat-priere', 'priere-assise-malade'],
   },
   {
     slug: 'retard-fajr-reveil',
@@ -485,7 +485,7 @@ export const QUESTIONS: QA[] = [
       'Là où la responsabilité existe, c’est en amont. Le sommeil n’est pas un péché ; la négligence en est un. Se coucher tard en sachant qu’on ne se lèvera pas, ne mettre aucun réveil, l’éteindre et se rendormir sciemment : c’est cela que les savants distinguent du sommeil profond de quelqu’un qui a pris ses précautions. Les remèdes sont concrets et connus : dormir plus tôt, poser le téléphone loin du lit pour devoir se lever, demander à quelqu’un d’appeler, et pour les périodes difficiles, un second réveil décalé de dix minutes. Si le retard devient une habitude qui pèse, parles-en à un imam plutôt que de laisser la culpabilité s’installer.',
     ],
     category: 'Prière',
-    related: ['rattraper-prieres-ratees', 'priere-travail', 'priere-istikhara'],
+    related: ['rattraper-prieres-ratees', 'priere-travail', 'priere-istikhara', 'nombre-rakat-priere'],
   },
   {
     slug: 'tayammum-sans-eau',
@@ -499,7 +499,7 @@ export const QUESTIONS: QA[] = [
       'Quelques points pratiques. La surface : terre, sable, pierre, mur non peint, poussière déposée — la condition d’une poussière visible fait elle-même l’objet d’avis différents. Le tayammum s’annule par ce qui annule les ablutions, et surtout dès que l’eau redevient disponible et utilisable. Enfin, ce n’est pas une solution de confort : quelqu’un qui a de l’eau à quelques pas ne s’en dispense pas. En cas de blessure ou de plâtre, une autre voie existe — l’essuyage sur le pansement — et c’est à un savant qu’il faut poser la question de ta situation exacte.',
     ],
     category: 'Pratique',
-    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'priere-avion'],
+    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'priere-avion', 'se-convertir-islam'],
   },
   {
     slug: 'serrer-la-main-islam',
@@ -514,7 +514,7 @@ export const QUESTIONS: QA[] = [
       'Reste le plus utile au quotidien, en France : comment décliner sans blesser. Ce qui fonctionne le mieux tient en trois secondes — devancer le geste plutôt que le refuser : sourire franchement, poser la main sur le cœur en inclinant légèrement la tête, et dire bonjour avec chaleur. Une phrase simple suffit si l’on demande : « je ne serre pas la main, c’est par respect, sans aucune froideur ». Dans un cadre professionnel, faire ce geste dès l’entrée dans la pièce et pour tout le monde évite qu’il soit perçu comme dirigé contre quelqu’un. Ce qui heurte n’est presque jamais le refus lui-même : c’est la main laissée en suspens.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'anniversaire-halal', 'souhaiter-noel-halal'],
+    related: ['psy-therapie-islam', 'anniversaire-halal', 'souhaiter-noel-halal', 'sport-combat-halal', 'mauvais-oeil-protection', 'porter-or-homme-islam'],
   },
   {
     slug: 'ramadan-voyage-jeune',
@@ -528,7 +528,7 @@ export const QUESTIONS: QA[] = [
       'Conseils pratiques si vous jeûnez en voyage : suivez les horaires du lieu où vous vous trouvez (pas ceux de départ), gardez dattes et eau dans le sac pour un iftar en déplacement, et anticipez les vols longs — en avion, on rompt le jeûne quand on voit le soleil se coucher depuis l’avion.',
     ],
     category: 'Pratique',
-    related: ['horaires-priere-voyage', 'repas-halal-avion', 'tayammum-sans-eau', 'riba-interet-islam'],
+    related: ['horaires-priere-voyage', 'repas-halal-avion', 'tayammum-sans-eau', 'riba-interet-islam', 'invocation-voyage'],
   },
   {
     slug: 'horaires-priere-voyage',
@@ -542,7 +542,7 @@ export const QUESTIONS: QA[] = [
       'Pensez aussi aux salles de prière : la plupart des grands aéroports (Istanbul, Dubaï, Kuala Lumpur, mais aussi Roissy) en ont une, souvent indiquée « Prayer room ». Un tapis de poche pliable dans le sac règle tous les autres cas.',
     ],
     category: 'Pratique',
-    related: ['ramadan-voyage-jeune', 'pays-voyage-halal', 'tayammum-sans-eau', 'qibla-direction-priere'],
+    related: ['ramadan-voyage-jeune', 'pays-voyage-halal', 'tayammum-sans-eau', 'qibla-direction-priere', 'se-convertir-islam', 'regrouper-deux-prieres'],
   },
 
   // ─── ADDITIFS (suite) ───────────────────────────────────────────────────────
@@ -558,7 +558,7 @@ export const QUESTIONS: QA[] = [
       'On trouve le E330 dans les sodas, confitures, conserves et bonbons comme régulateur d’acidité. Côté halal comme côté santé aux doses alimentaires, il ne pose pas de problème.',
     ],
     category: 'Additifs',
-    related: ['e621-glutamate-halal', 'lecithine-e322-halal', 'e120-halal'],
+    related: ['e621-glutamate-halal', 'lecithine-e322-halal', 'e120-halal', 'e270-acide-lactique-halal', 'e570-halal', 'e150d-halal', 'e160a-carotene-halal', 'e415-xanthane-halal'],
   },
   {
     slug: 'e621-glutamate-halal',
@@ -572,7 +572,7 @@ export const QUESTIONS: QA[] = [
       'Attention en revanche à ses voisins : le E621 est souvent accompagné des E631 et E627, qui eux peuvent être d’origine animale. C’est le trio classique des snacks aromatisés — vérifiez plutôt ces deux-là.',
     ],
     category: 'Additifs',
-    related: ['e631-e627-halal', 'chips-halal', 'e330-halal'],
+    related: ['e631-e627-halal', 'chips-halal', 'e330-halal', 'e270-acide-lactique-halal'],
   },
   {
     slug: 'lecithine-e322-halal',
@@ -586,7 +586,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : « lécithine de soja » ou « lécithine de tournesol » sur l’étiquette = aucun souci. C’est l’un des additifs les plus tranquilles qui soient.',
     ],
     category: 'Additifs',
-    related: ['e330-halal', 'e471-halal', 'nutella-halal'],
+    related: ['e330-halal', 'e471-halal', 'nutella-halal', 'e476-halal'],
   },
   {
     slug: 'e631-e627-halal',
@@ -600,7 +600,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : sur un produit certifié halal, aucun souci. Sans certification, c’est le cas typique où contacter la marque (ou choisir des chips nature) est le plus simple. Les nouilles instantanées coréennes et japonaises non certifiées sont les plus concernées.',
     ],
     category: 'Additifs',
-    related: ['e621-glutamate-halal', 'chips-halal', 'e471-halal'],
+    related: ['e621-glutamate-halal', 'chips-halal', 'e471-halal', 'surimi-halal'],
   },
   {
     slug: 'e920-halal',
@@ -615,7 +615,7 @@ export const QUESTIONS: QA[] = [
       'La divergence entre savants mérite d’être nommée précisément, car elle ne porte pas sur les faits mais sur un principe. Ceux qui autorisent le E920, même d’origine animale, s’appuient sur l’istihâla : la substance a subi une transformation chimique complète et n’est plus la plume dont elle est issue — le raisonnement exact que l’on applique au vinaigre. Ceux qui l’écartent estiment que la transformation ne suffit pas lorsque l’origine est un animal non abattu rituellement. Aucun des deux camps n’invente : ils appliquent deux lectures anciennes d’une même règle. Point pratique par ailleurs : sur une étiquette, le E920 se présente souvent sous sa fonction — « agent de traitement de la farine » — suivie de son nom ou de son numéro ; c’est la même substance, il faut simplement savoir la reconnaître sous cette formulation. Les pains de boulangerie artisanale en sont pratiquement exempts : ce sont les buns de burger, les biscottes et les viennoiseries industrielles qui en concentrent l’usage.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e904-halal', 'gelatine-halal', 'moutarde-halal', 'e481-halal'],
+    related: ['e471-halal', 'e904-halal', 'gelatine-halal', 'moutarde-halal', 'e481-halal', 'e1105-lysozyme-halal', 'lecithine-e322-halal'],
   },
   {
     slug: 'e904-halal',
@@ -629,7 +629,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : c’est un additif « zone grise » assumée. Si vous suivez un avis strict, évitez-le ; sinon, la position tolérante est répandue et argumentée. Les produits certifiés halal tranchent la question pour vous.',
     ],
     category: 'Additifs',
-    related: ['e120-halal', 'e920-halal', 'gelatine-halal'],
+    related: ['e120-halal', 'e920-halal', 'gelatine-halal', 'e903-cire-carnauba-halal', 'e414-gomme-arabique-halal'],
   },
 
   // ─── PRODUITS (suite) ───────────────────────────────────────────────────────
@@ -647,7 +647,7 @@ export const QUESTIONS: QA[] = [
       'Attention en revanche aux cousins de la marque : certains chocolats Ferrero de fêtes contiennent bel et bien de l’alcool (les Mon Chéri, par exemple, à la liqueur de cerise). Une composition rassurante sur un produit ne dit jamais rien du produit voisin : c’est toujours l’étiquette du paquet que tu tiens qui tranche.',
     ],
     category: 'Produits',
-    related: ['kinder-halal', 'lecithine-e322-halal', 'ferrero-rocher-halal', 'chocolat-liqueur-halal', 'mms-halal'],
+    related: ['kinder-halal', 'lecithine-e322-halal', 'ferrero-rocher-halal', 'chocolat-liqueur-halal', 'mms-halal', 'oreo-halal', 'pepsi-halal', 'fanta-halal'],
   },
   {
     slug: 'mcdo-halal',
@@ -664,7 +664,7 @@ export const QUESTIONS: QA[] = [
       'À retenir en une phrase : en France, non ; au Maghreb, en Turquie et dans le Golfe, oui ; au Royaume-Uni, non. Et en cas de doute dans un pays inconnu, demande le certificat plutôt que de te fier à l’ambiance du quartier.',
     ],
     category: 'Produits',
-    related: ['kfc-halal', 'burger-king-halal', 'quick-halal', 'subway-halal', 'o-tacos-halal', 'restaurant-halal-paris'],
+    related: ['kfc-halal', 'burger-king-halal', 'quick-halal', 'subway-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'dominos-pizza-halal', 'yaourt-halal'],
   },
   {
     slug: 'kfc-halal',
@@ -695,7 +695,7 @@ export const QUESTIONS: QA[] = [
       'Trois précisions font le tour de la question. La glycérine E422 d’abord : en Europe, elle est aujourd’hui très majoritairement d’origine végétale, tirée du colza ou de la palme, pour une raison prosaïque de coût et d’approvisionnement — le doute théorique subsiste, mais il s’est beaucoup réduit. La couleur ensuite : les chewing-gums roses ou rouges peuvent contenir du carmin E120, tiré d’insectes, au même titre que les bonbons. La base enfin, et c’est là qu’il faut être honnête : la « gomme base » est un secret de fabrication, désignée d’un seul mot sur l’étiquette, et elle peut inclure des cires et des émulsifiants non détaillés. Aucune lecture d’étiquette ne donne donc une certitude absolue sur ce point précis. Pour un produit mâché tous les jours, deux réponses seulement sont fermes : une certification, ou un message au service consommateurs de la marque.',
     ],
     category: 'Produits',
-    related: ['e422-glycerine-halal', 'gelatine-halal', 'haribo-halal', 'e120-halal'],
+    related: ['e422-glycerine-halal', 'gelatine-halal', 'haribo-halal', 'e120-halal', 'glace-halal'],
   },
   {
     slug: 'glace-halal',
@@ -709,7 +709,7 @@ export const QUESTIONS: QA[] = [
       'Chez le glacier artisanal, demandez simplement : les parfums alcoolisés sont toujours signalés, et beaucoup d’artisans travaillent sans gélatine. Il existe aussi des marques de glaces certifiées halal en magasin oriental.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'e471-halal', 'cuisine-alcool-halal'],
+    related: ['gelatine-halal', 'e471-halal', 'cuisine-alcool-halal', 'oreo-halal', 'pringles-halal', 'snickers-mars-twix-halal', 'doritos-halal', 'lindt-halal'],
   },
   {
     slug: 'chips-halal',
@@ -723,7 +723,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe pratique : nature, vinaigre ou paprika « sans arôme animal » = tranquille ; saveurs fromagères ou carnées sans certification = vérifiez la liste ou passez votre chemin. Les rayons orientaux regorgent de chips aromatisées certifiées halal.',
     ],
     category: 'Produits',
-    related: ['e631-e627-halal', 'e621-glutamate-halal', 'fromage-presure-halal'],
+    related: ['e631-e627-halal', 'e621-glutamate-halal', 'fromage-presure-halal', 'pringles-halal', 'doritos-halal'],
   },
 
   // ─── ALIMENTATION (suite) ───────────────────────────────────────────────────
@@ -739,7 +739,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : si vous voulez éviter le débat, cherchez une sauce soja certifiée halal (épiceries asiatiques et orientales en proposent) ou les versions « hydrolysées » sans fermentation. Au restaurant japonais, c’est le même arbitrage que pour le mirin — posez la question.',
     ],
     category: 'Alimentation',
-    related: ['vinaigre-halal', 'cuisine-alcool-halal', 'voyage-halal-tokyo'],
+    related: ['vinaigre-halal', 'cuisine-alcool-halal', 'voyage-halal-tokyo', 'arome-vanille-halal', 'kombucha-halal', 'sushi-halal'],
   },
   {
     slug: 'moutarde-halal',
@@ -768,7 +768,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe : cherchez le logo halal sur l’emballage — c’est l’un des produits où la certification est la plus répandue. Pour les bouillons de légumes sans certification, vérifiez « graisse végétale » dans la liste.',
     ],
     category: 'Alimentation',
-    related: ['viande-supermarche-halal', 'moutarde-halal', 'e621-glutamate-halal'],
+    related: ['viande-supermarche-halal', 'moutarde-halal', 'e621-glutamate-halal', 'cordon-bleu-halal', 'lardons-halal'],
   },
 
   // ─── PRATIQUE (suite) ───────────────────────────────────────────────────────
@@ -784,7 +784,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : les deux positions se côtoient sereinement. Si vous préférez la précaution, les huiles parfumées sans alcool ne manquent pas ; sinon, l’avis permissif est solidement argumenté et largement suivi. La prière avec un vêtement parfumé à l’alcool est valide pour la majorité.',
     ],
     category: 'Vie quotidienne',
-    related: ['vinaigre-halal', 'medicaments-gelules-halal', 'cuisine-alcool-halal'],
+    related: ['vinaigre-halal', 'medicaments-gelules-halal', 'cuisine-alcool-halal', 'sport-combat-halal', 'caissier-scanner-alcool', 'travailler-restaurant-alcool', 'photos-selfies-islam'],
   },
   {
     slug: 'invocation-voyage',
@@ -828,7 +828,7 @@ export const QUESTIONS: QA[] = [
       'Spécialité à tester en version halal : les friteries du Nord — plusieurs adressent désormais une carte 100 % halal. Comme toujours, vérifiez le certificat pour la viande, et retrouvez les adresses vérifiées de la métropole lilloise sur la carte VoyagesHalal.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-paris', 'restaurant-halal-strasbourg', 'restaurant-halal-toulouse'],
+    related: ['restaurant-halal-paris', 'restaurant-halal-strasbourg', 'restaurant-halal-toulouse', 'restaurant-halal-nice', 'restaurant-halal-bordeaux', 'restaurant-halal-nantes'],
   },
   {
     slug: 'restaurant-halal-toulouse',
@@ -842,7 +842,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe habituel s’applique : certificat affiché pour la viande, affluence locale comme meilleur indice de qualité. Les adresses vérifiées de la ville rose rejoignent progressivement la carte VoyagesHalal.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-marseille', 'restaurant-halal-lyon', 'restaurant-halal-lille'],
+    related: ['restaurant-halal-marseille', 'restaurant-halal-lyon', 'restaurant-halal-lille', 'restaurant-halal-bordeaux'],
   },
   {
     slug: 'restaurant-halal-strasbourg',
@@ -856,7 +856,7 @@ export const QUESTIONS: QA[] = [
       'Et pour goûter à l’Alsace en version halal : plusieurs restaurants proposent désormais tarte flambée et spécialités locales revisitées halal. Vérifiez les certificats comme partout — la Grande Mosquée de Strasbourg, plus grande de France, mérite aussi la visite.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-lille', 'restaurant-halal-lyon', 'restaurant-halal-paris'],
+    related: ['restaurant-halal-lille', 'restaurant-halal-lyon', 'restaurant-halal-paris', 'restaurant-halal-nice', 'restaurant-halal-montpellier'],
   },
 
   // ─── DESTINATIONS INTERNATIONALES ───────────────────────────────────────────
@@ -872,7 +872,7 @@ export const QUESTIONS: QA[] = [
       'Conseils pratiques : traversez le Bosphore en ferry public (le plus beau « restaurant avec vue » de la ville coûte le prix d’un ticket), prévoyez les prières dans les grandes mosquées ouvertes aux visiteurs, et changez vos euros en ville plutôt qu’à l’aéroport. HalalScore VoyagesHalal : ✦ 8.9.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-dubai', 'voyage-halal-marrakech', 'repas-halal-avion', 'voyage-halal-singapour', 'voyage-halal-maldives', 'voyage-halal-new-york'],
+    related: ['voyage-halal-dubai', 'voyage-halal-marrakech', 'repas-halal-avion', 'voyage-halal-singapour', 'voyage-halal-maldives', 'voyage-halal-new-york', 'voyage-halal-le-caire', 'voyage-halal-amsterdam'],
   },
   {
     slug: 'voyage-halal-dubai',
@@ -886,7 +886,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : visitez la mosquée de Jumeirah (ouverte aux visiteurs avec visite guidée), prévoyez l’hiver (novembre-mars) pour un climat parfait, et le vendredi matin les horaires s’adaptent à la prière. HalalScore VoyagesHalal : ✦ 9.0.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-doha', 'voyage-halal-istanbul', 'repas-halal-avion', 'voyage-halal-le-caire', 'voyage-halal-barcelone', 'voyage-halal-sarajevo'],
+    related: ['voyage-halal-doha', 'voyage-halal-istanbul', 'repas-halal-avion', 'voyage-halal-le-caire', 'voyage-halal-barcelone', 'voyage-halal-sarajevo', 'voyage-halal-marrakech', 'voyage-halal-bali'],
   },
   {
     slug: 'voyage-halal-kuala-lumpur',
@@ -900,7 +900,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : KL est aussi la porte d’entrée idéale vers Langkawi et les îles ; la saison sèche va de mai à juillet ; et le taux de change rend la gastronomie incroyablement accessible. HalalScore VoyagesHalal : ✦ 9.1.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-bali', 'voyage-halal-doha', 'pays-voyage-halal', 'voyage-halal-le-caire', 'voyage-halal-barcelone', 'voyage-halal-sarajevo'],
+    related: ['voyage-halal-bali', 'voyage-halal-doha', 'pays-voyage-halal', 'voyage-halal-le-caire', 'voyage-halal-barcelone', 'voyage-halal-sarajevo', 'voyage-halal-bangkok', 'voyage-halal-singapour'],
   },
   {
     slug: 'voyage-halal-marrakech',
@@ -914,7 +914,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : négociez tout au souk (avec le sourire), préférez octobre-avril pour la chaleur, et pour un séjour au calme choisissez un riad dans la médina — la plupart sont tenus par des familles et servent une cuisine maison mémorable. HalalScore VoyagesHalal : ✦ 8.7.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-istanbul', 'voyage-halal-dubai', 'ramadan-voyage-jeune'],
+    related: ['voyage-halal-istanbul', 'voyage-halal-dubai', 'ramadan-voyage-jeune', 'voyage-halal-amsterdam', 'voyage-halal-sarajevo', 'voyage-halal-doha'],
   },
   {
     slug: 'voyage-halal-londres',
@@ -928,7 +928,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : l’Eurostar met Londres à 2h15 de Paris, les grandes mosquées (East London Mosque, Regent’s Park) accueillent chaleureusement les visiteurs, et les musées nationaux gratuits en font un city-trip familial idéal. HalalScore VoyagesHalal : ✦ 8.0.',
     ],
     category: 'Destinations',
-    related: ['restaurant-halal-paris', 'voyage-halal-istanbul', 'repas-halal-avion', 'voyage-halal-singapour', 'voyage-halal-maldives', 'voyage-halal-new-york'],
+    related: ['restaurant-halal-paris', 'voyage-halal-istanbul', 'repas-halal-avion', 'voyage-halal-singapour', 'voyage-halal-maldives', 'voyage-halal-new-york', 'voyage-halal-bangkok', 'voyage-halal-sarajevo'],
   },
   {
     slug: 'voyage-halal-tokyo',
@@ -942,7 +942,7 @@ export const QUESTIONS: QA[] = [
       'À ne pas manquer : la mosquée Tokyo Camii à Yoyogi, joyau ottoman et plus grande mosquée du Japon, le quartier d’Asakusa, et un passage par les konbinis pour les snacks à composition simple. HalalScore VoyagesHalal : ✦ 7.0 — l’aventure en vaut largement la peine.',
     ],
     category: 'Destinations',
-    related: ['sauce-soja-halal', 'voyage-halal-kuala-lumpur', 'poisson-fruits-de-mer-halal'],
+    related: ['sauce-soja-halal', 'voyage-halal-kuala-lumpur', 'poisson-fruits-de-mer-halal', 'voyage-halal-singapour'],
   },
   {
     slug: 'voyage-halal-bali',
@@ -956,7 +956,7 @@ export const QUESTIONS: QA[] = [
       'Côté pratique : des mosquées existent dans toutes les zones touristiques (celle de Kuta est très accessible), les plages et rizières de Tegallalang se moquent de votre régime alimentaire, et un chauffeur-guide musulman — très courant — résout toutes les questions d’un coup. HalalScore VoyagesHalal : ✦ 7.2.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-tokyo', 'pays-voyage-halal'],
+    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-tokyo', 'pays-voyage-halal', 'voyage-halal-bangkok', 'voyage-halal-barcelone', 'voyage-halal-maldives'],
   },
   {
     slug: 'voyage-halal-doha',
@@ -986,7 +986,7 @@ export const QUESTIONS: QA[] = [
       'C’est l’un des colorants les plus « propres » du marché — quand un produit l’utilise à la place du E120 (cochenille), c’est bon signe pour le consommateur musulman.',
     ],
     category: 'Additifs',
-    related: ['e120-halal', 'e133-halal', 'e150d-halal', 'e160a-carotene-halal'],
+    related: ['e120-halal', 'e133-halal', 'e150d-halal', 'e160a-carotene-halal', 'e250-nitrite-halal', 'e102-tartrazine-halal'],
   },
   {
     slug: 'e133-halal',
@@ -1000,7 +1000,7 @@ export const QUESTIONS: QA[] = [
       'Il figure d’ailleurs couramment dans des confiseries certifiées halal — la couleur bleue de vos bonbons halal préférés, c’est probablement lui.',
     ],
     category: 'Additifs',
-    related: ['e100-halal', 'e120-halal', 'haribo-halal'],
+    related: ['e100-halal', 'e120-halal', 'haribo-halal', 'e150d-halal', 'e102-tartrazine-halal'],
   },
   {
     slug: 'e150d-halal',
@@ -1043,7 +1043,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe utile : un « flan » ou une panna cotta industrielle au E407 plutôt qu’à la gélatine est un produit tranquille pour le consommateur musulman.',
     ],
     category: 'Additifs',
-    related: ['gelatine-halal', 'e440-pectine-halal', 'e415-xanthane-halal'],
+    related: ['gelatine-halal', 'e440-pectine-halal', 'e415-xanthane-halal', 'e160a-carotene-halal'],
   },
   {
     slug: 'e415-xanthane-halal',
@@ -1057,7 +1057,7 @@ export const QUESTIONS: QA[] = [
       'Même famille tranquille : la gomme guar (E412, graine végétale) et la gomme arabique (E414, sève d’acacia) — toutes halal. Les « gommes » alimentaires sont globalement un rayon sans piège.',
     ],
     category: 'Additifs',
-    related: ['e407-carraghenane-halal', 'e440-pectine-halal', 'e330-halal'],
+    related: ['e407-carraghenane-halal', 'e440-pectine-halal', 'e330-halal', 'e270-acide-lactique-halal'],
   },
   {
     slug: 'e440-pectine-halal',
@@ -1071,7 +1071,7 @@ export const QUESTIONS: QA[] = [
       'Astuce courses : les bonbons végans utilisent par définition pectine, amidon ou agar-agar plutôt que la gélatine — le rayon végan est un allié inattendu du consommateur halal (vérifiez juste l’absence d’arômes alcoolisés).',
     ],
     category: 'Additifs',
-    related: ['gelatine-halal', 'haribo-halal', 'e407-carraghenane-halal'],
+    related: ['gelatine-halal', 'haribo-halal', 'e407-carraghenane-halal', 'e1105-lysozyme-halal'],
   },
   {
     slug: 'e466-halal',
@@ -1085,7 +1085,7 @@ export const QUESTIONS: QA[] = [
       'La famille des celluloses (E460 à E469) est logée à la même enseigne : toutes d’origine végétale, toutes halal. Un rayon de plus où vous pouvez lire l’étiquette sereinement.',
     ],
     category: 'Additifs',
-    related: ['e415-xanthane-halal', 'e471-halal', 'e330-halal'],
+    related: ['e415-xanthane-halal', 'e471-halal', 'e330-halal', 'e412-gomme-guar-halal', 'e903-cire-carnauba-halal', 'e414-gomme-arabique-halal', 'e472-halal', 'e476-halal'],
   },
 
   // ─── PRODUITS (vague 3 — les marques stars de Google) ───────────────────────
@@ -1101,7 +1101,7 @@ export const QUESTIONS: QA[] = [
       'En voyage, vous trouverez des Oreo certifiés halal dans les pays musulmans (production locale ou importée certifiée). Même biscuit, tampon en plus.',
     ],
     category: 'Produits',
-    related: ['nutella-halal', 'kinder-halal', 'mms-halal'],
+    related: ['nutella-halal', 'kinder-halal', 'mms-halal', 'ice-tea-halal', 'cereales-halal', 'e481-halal'],
   },
   {
     slug: 'pringles-halal',
@@ -1143,7 +1143,7 @@ export const QUESTIONS: QA[] = [
       'Le vrai sujet est sanitaire : très forte teneur en caféine et en sucre, déconseillé aux jeunes — une question de santé, pas de licéité. À consommer avec la même modération que n’importe quel énergisant.',
     ],
     category: 'Produits',
-    related: ['red-bull-halal', 'coca-cola-halal', 'e330-halal'],
+    related: ['red-bull-halal', 'coca-cola-halal', 'e330-halal', 'pepsi-halal', 'taurine-halal', 'o-tacos-halal'],
   },
   {
     slug: 'doritos-halal',
@@ -1172,7 +1172,7 @@ export const QUESTIONS: QA[] = [
       'Un second réflexe, moins connu que la gélatine et pourtant plus fréquent : la couleur des yaourts aux fruits rouges. Fraise, framboise, cerise et fruits des bois sont parfois teintés au carmin — écrit « E120 » ou « cochenille » —, un colorant tiré d’insectes que la plupart des organismes de certification écartent. Il figure dans la liste d’ingrédients, comme la gélatine. Les yaourts nature, les brassés simples et le skyr n’ont ni l’un ni l’autre : ce sont les versions aromatisées et les desserts colorés qui demandent le coup d’œil. Et une confusion à lever, car elle revient souvent : les ferments lactiques n’ont rien à voir avec la présure des fromages — un yaourt n’en contient pas.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal', 'e120-halal'],
+    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal', 'e120-halal', 'doritos-halal'],
   },
   {
     slug: 'quick-halal',
@@ -1230,7 +1230,7 @@ export const QUESTIONS: QA[] = [
       'Alternatives sans débat : gousse de vanille entière, poudre de vanille, ou extraits « sans alcool » à base de glycérine végétale, disponibles en magasin bio et oriental. Pour la pâtisserie maison, la gousse reste la reine.',
     ],
     category: 'Alimentation',
-    related: ['cuisine-alcool-halal', 'vinaigre-halal', 'glace-halal'],
+    related: ['cuisine-alcool-halal', 'vinaigre-halal', 'glace-halal', 'sauce-soja-halal'],
   },
   {
     slug: 'gelatine-poisson-halal',
@@ -1261,7 +1261,7 @@ export const QUESTIONS: QA[] = [
       'En été, beaucoup de plages privées et restaurants touristiques servent de l’alcool — la nourriture reste à vérifier au cas par cas comme partout. Certificats pour la viande, affluence locale comme boussole, et la carte VoyagesHalal pour les adresses vérifiées de la Côte d’Azur.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-marseille', 'restaurant-halal-montpellier', 'restaurant-halal-lyon'],
+    related: ['restaurant-halal-marseille', 'restaurant-halal-montpellier', 'restaurant-halal-lyon', 'restaurant-halal-strasbourg', 'restaurant-halal-bordeaux', 'restaurant-halal-lille'],
   },
   {
     slug: 'restaurant-halal-bordeaux',
@@ -1289,7 +1289,7 @@ export const QUESTIONS: QA[] = [
       'Conseil local : la scène évolue vite, vérifiez les avis récents et le certificat affiché. Et pour un dessert local sans question à se poser, le gâteau nantais traditionnel contient du rhum — préférez les versions « sans alcool » que proposent certaines pâtisseries, ou passez au berlingot !',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-bordeaux', 'restaurant-halal-lille', 'restaurant-halal-paris'],
+    related: ['restaurant-halal-bordeaux', 'restaurant-halal-lille', 'restaurant-halal-paris', 'restaurant-halal-montpellier'],
   },
   {
     slug: 'restaurant-halal-montpellier',
@@ -1303,7 +1303,7 @@ export const QUESTIONS: QA[] = [
       'À vingt minutes, Sète et ses poissons grillés offrent l’escapade parfaite (le poisson est halal partout !). Certificats et affluence locale comme toujours — les adresses vérifiées de l’Hérault arrivent sur la carte VoyagesHalal.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-marseille', 'restaurant-halal-nice', 'restaurant-halal-toulouse'],
+    related: ['restaurant-halal-marseille', 'restaurant-halal-nice', 'restaurant-halal-toulouse', 'restaurant-halal-strasbourg', 'restaurant-halal-nantes'],
   },
 
   // ─── DESTINATIONS (vague 2) ─────────────────────────────────────────────────
@@ -1319,7 +1319,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : négociez tout (taxis compris — ou utilisez les applications VTC), prévoyez les pyramides de Gizeh tôt le matin, et gardez de la monnaie pour les pourboires (bakchich), institution locale. HalalScore VoyagesHalal : ✦ 8.6.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-istanbul', 'voyage-halal-marrakech', 'voyage-halal-doha'],
+    related: ['voyage-halal-istanbul', 'voyage-halal-marrakech', 'voyage-halal-doha', 'voyage-halal-barcelone', 'voyage-halal-new-york'],
   },
   {
     slug: 'voyage-halal-amsterdam',
@@ -1333,7 +1333,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : la ville se visite à vélo comme un local, le Rijksmuseum et les canaux se moquent de votre régime, et le Thalys met Amsterdam à 3h20 de Paris. Les mosquées (dont la grande mosquée Fatih dans le centre) accueillent facilement les voyageurs. HalalScore VoyagesHalal : ✦ 7.8.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-londres', 'restaurant-halal-paris', 'repas-halal-avion'],
+    related: ['voyage-halal-londres', 'restaurant-halal-paris', 'repas-halal-avion', 'voyage-halal-marrakech'],
   },
   {
     slug: 'voyage-halal-barcelone',
@@ -1347,7 +1347,7 @@ export const QUESTIONS: QA[] = [
       'La Sagrada Família, le parc Güell et la plage de la Barceloneta font le reste. Bonus : la mosquée Tariq bin Ziyad et plusieurs salles de prière au centre. HalalScore VoyagesHalal : ✦ 7.3 — très faisable en connaissant ses quartiers.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-amsterdam', 'voyage-halal-londres', 'poisson-fruits-de-mer-halal'],
+    related: ['voyage-halal-amsterdam', 'voyage-halal-londres', 'poisson-fruits-de-mer-halal', 'voyage-halal-le-caire', 'voyage-halal-new-york'],
   },
   {
     slug: 'voyage-halal-bangkok',
@@ -1361,7 +1361,7 @@ export const QUESTIONS: QA[] = [
       'Le sud du pays (Krabi, Phuket côté communautés locales, Koh Lanta) est largement musulman : mosquées sur les îles, warungs halal, ambiance familiale. Conseils : temples et palais se visitent épaules couvertes, et le ramadan y est très suivi dans le sud. HalalScore VoyagesHalal : ✦ 6.8 — dépaysement maximal, préparation minimale requise.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-bali', 'voyage-halal-tokyo'],
+    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-bali', 'voyage-halal-tokyo', 'voyage-halal-maldives', 'voyage-halal-londres'],
   },
   {
     slug: 'voyage-halal-sarajevo',
@@ -1389,7 +1389,7 @@ export const QUESTIONS: QA[] = [
       'Conseils : Gardens by the Bay et Marina Bay le soir, Sentosa en famille, et l’aéroport de Changi (souvent élu meilleur du monde, salles de prière comprises) mérite d’arriver en avance. Budget à prévoir : Singapour est chère — mais les hawkers halal restent très abordables. HalalScore VoyagesHalal : ✦ 8.5.',
     ],
     category: 'Destinations',
-    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-bangkok', 'voyage-halal-dubai'],
+    related: ['voyage-halal-kuala-lumpur', 'voyage-halal-bangkok', 'voyage-halal-dubai', 'voyage-halal-tokyo'],
   },
   {
     slug: 'voyage-halal-maldives',
@@ -1434,7 +1434,7 @@ export const QUESTIONS: QA[] = [
       'Deux cas très concrets, en France. Le bain de bouche : la plupart contiennent de l’alcool et s’avalent par réflexe — garde-le pour le soir. Le rendez-vous chez le dentiste : détartrage, soin, anesthésie locale n’annulent pas le jeûne selon la majorité des savants (l’anesthésie ne nourrit pas), à condition de recracher l’eau et le sang. Et si le soin est lourd et que tu te sens partir, romps sans culpabiliser : une journée se rattrape.',
     ],
     category: 'Ramadan',
-    related: ['avaler-salive-ramadan', 'gouttes-yeux-ramadan', 'se-doucher-ramadan', 'piqure-ramadan'],
+    related: ['avaler-salive-ramadan', 'gouttes-yeux-ramadan', 'se-doucher-ramadan', 'piqure-ramadan', 'prise-de-sang-ramadan', 'maquillage-ramadan', 'oubli-manger-ramadan', 'dattes-rompre-jeune'],
   },
   {
     slug: 'avaler-salive-ramadan',
@@ -1450,7 +1450,7 @@ export const QUESTIONS: QA[] = [
       'Un dernier mot, parce que c’est souvent le vrai sujet : cette question est l’une des plus posées de tout le Ramadan, et presque toujours par des gens qui jeûnent très bien. Si tu te surprends à compter tes déglutitions ou à refaire une journée par doute, ce n’est plus de la précaution, c’est le waswas — le doute obsessionnel. Les savants sont constants là-dessus : on ne le nourrit pas, on ne recommence pas sa journée pour lui, on continue.',
     ],
     category: 'Ramadan',
-    related: ['brosser-dents-ramadan', 'oubli-manger-ramadan', 'vomir-ramadan'],
+    related: ['brosser-dents-ramadan', 'oubli-manger-ramadan', 'vomir-ramadan', 'prise-de-sang-ramadan', 'gouttes-yeux-ramadan', 'se-doucher-ramadan', 'dattes-rompre-jeune'],
   },
   {
     slug: 'oubli-manger-ramadan',
@@ -1467,7 +1467,7 @@ export const QUESTIONS: QA[] = [
       'Et quand c’est quelqu’un d’autre qu’on voit manger par oubli ? La position la plus répandue est de le prévenir, parce qu’on l’aide ainsi à terminer sa journée ; certains savants dispensent d’avertir une personne âgée ou affaiblie à qui ce repas fait du bien. Dans tous les cas, on ne lui reproche rien : son jeûne est valide, et c’est même l’un des rares moments où l’islam met un mot d’Allah sur l’erreur — « c’est Lui qui l’a nourri ».',
     ],
     category: 'Ramadan',
-    related: ['avaler-salive-ramadan', 'vomir-ramadan', 'ramadan-voyage-jeune'],
+    related: ['avaler-salive-ramadan', 'vomir-ramadan', 'ramadan-voyage-jeune', 'maquillage-ramadan', 'se-doucher-ramadan', 'sport-ramadan'],
   },
   {
     slug: 'piqure-ramadan',
@@ -1481,7 +1481,7 @@ export const QUESTIONS: QA[] = [
       'Par précaution, certains préfèrent programmer les injections non urgentes après la rupture du jeûne. Mais ne repousse jamais un soin nécessaire pour le jeûne : la religion facilite, elle ne met pas la santé en danger.',
     ],
     category: 'Ramadan',
-    related: ['prise-de-sang-ramadan', 'medicament-ramadan', 'gouttes-yeux-ramadan'],
+    related: ['prise-de-sang-ramadan', 'medicament-ramadan', 'gouttes-yeux-ramadan', 'avaler-salive-ramadan'],
   },
   {
     slug: 'prise-de-sang-ramadan',
@@ -1496,7 +1496,7 @@ export const QUESTIONS: QA[] = [
       'Deux précisions que les laboratoires français rencontrent tous les jours. La glycémie au doigt d’un diabétique — une goutte de sang — ne pose aucun problème et ne doit surtout pas être sautée pendant le Ramadan, c’est précisément le mois où elle est la plus utile. Et le malaise après un prélèvement : si tu tournes de l’œil, on te fera boire, et c’est très bien ainsi — une journée de jeûne se rattrape, pas une chute. Préviens simplement le préleveur que tu jeûnes : ils y sont habitués et t’allongeront d’office.',
     ],
     category: 'Ramadan',
-    related: ['piqure-ramadan', 'medicament-ramadan', 'vomir-ramadan'],
+    related: ['piqure-ramadan', 'medicament-ramadan', 'vomir-ramadan', 'gouttes-yeux-ramadan', 'fumer-ramadan'],
   },
   {
     slug: 'gouttes-yeux-ramadan',
@@ -1525,7 +1525,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe pratique : avant Ramadan, vois ton médecin (beaucoup connaissent bien la question) pour adapter les horaires de prise sur suhur et iftar quand c’est médicalement possible. Ne modifie jamais un traitement seul.',
     ],
     category: 'Ramadan',
-    related: ['piqure-ramadan', 'medicaments-gelules-halal', 'femme-enceinte-ramadan'],
+    related: ['piqure-ramadan', 'medicaments-gelules-halal', 'femme-enceinte-ramadan', 'maquillage-ramadan', 'oubli-manger-ramadan'],
   },
   {
     slug: 'vomir-ramadan',
@@ -1554,7 +1554,7 @@ export const QUESTIONS: QA[] = [
       'Beaucoup de fumeurs témoignent que le Ramadan est le meilleur moment pour arrêter : tu tiens déjà 15 heures par jour sans fumer. Côté religion, la majorité des savants contemporains considèrent la cigarette interdite ou fortement détestée toute l’année, à cause de sa nocivité prouvée. Double raison d’en profiter pour décrocher.',
     ],
     category: 'Ramadan',
-    related: ['cigarette-halal', 'chicha-halal', 'puff-vape-halal'],
+    related: ['cigarette-halal', 'chicha-halal', 'puff-vape-halal', 'prise-de-sang-ramadan'],
   },
   {
     slug: 'sport-ramadan',
@@ -1568,7 +1568,7 @@ export const QUESTIONS: QA[] = [
       'Baisse l’intensité de 20 à 30 % les premiers jours, dors suffisamment et charge l’hydratation entre iftar et suhur. Les sportifs de haut niveau avec compétitions ont des cas particuliers : les avis autorisant de reporter le jeûne existent mais se discutent avec un savant, pas dans un vestiaire.',
     ],
     category: 'Ramadan',
-    related: ['sport-combat-halal', 'se-doucher-ramadan', 'dattes-rompre-jeune', 'whey-proteine-halal'],
+    related: ['sport-combat-halal', 'se-doucher-ramadan', 'dattes-rompre-jeune', 'whey-proteine-halal', 'zakat-al-fitr-montant'],
   },
   {
     slug: 'femme-enceinte-ramadan',
@@ -1654,7 +1654,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : c’est un cas d’école de divergence légitime — si ta famille suit la tradition malikite, les escargots cuits sont permis ; si tu suis l’avis hanafite, tu t’abstiens. Attention en revanche à la recette française classique : le beurre persillé peut contenir du vin blanc dans certaines préparations — à vérifier.',
     ],
     category: 'Alimentation',
-    related: ['grenouille-halal', 'crevette-halal', 'poisson-fruits-de-mer-halal'],
+    related: ['grenouille-halal', 'crevette-halal', 'poisson-fruits-de-mer-halal', 'homard-crabe-halal', 'moutarde-halal'],
   },
   {
     slug: 'grenouille-halal',
@@ -1668,7 +1668,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : ce grand classique des cartes de brasserie française est à laisser de côté pour la plupart des musulmans. Si le sujet est la découverte culinaire, les fruits de mer offrent un terrain bien plus consensuel — surtout dans la lecture malikite et chaféite.',
     ],
     category: 'Alimentation',
-    related: ['escargots-halal', 'poisson-fruits-de-mer-halal', 'calamar-poulpe-halal'],
+    related: ['escargots-halal', 'poisson-fruits-de-mer-halal', 'calamar-poulpe-halal', 'biere-sans-alcool-halal', 'cereales-halal', 'rouge-levres-carmin-halal'],
   },
   {
     slug: 'cheval-halal',
@@ -1682,7 +1682,7 @@ export const QUESTIONS: QA[] = [
       'Deux conditions pratiques si tu en consommes : l’abattage rituel reste obligatoire (un steak de cheval de boucherie chevaline classique française n’est pas halal pour autant !), et la traçabilité doit être sérieuse. Les boucheries halal proposant du cheval existent mais sont rares.',
     ],
     category: 'Alimentation',
-    related: ['lapin-halal', 'gibier-chasse-halal', 'viande-supermarche-halal'],
+    related: ['lapin-halal', 'gibier-chasse-halal', 'viande-supermarche-halal', 'escargots-halal', 'homard-crabe-halal', 'foie-gras-halal', 'difference-halal-casher'],
   },
   {
     slug: 'lapin-halal',
@@ -1710,7 +1710,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : crevettes, gambas et bouquets sont consommés sans problème par l’écrasante majorité des musulmans. Vigilance ailleurs : dans les plats préparés, la sauce peut contenir alcool ou arômes douteux — la crevette nature, elle, est claire.',
     ],
     category: 'Alimentation',
-    related: ['homard-crabe-halal', 'calamar-poulpe-halal', 'poisson-fruits-de-mer-halal'],
+    related: ['homard-crabe-halal', 'calamar-poulpe-halal', 'poisson-fruits-de-mer-halal', 'grenouille-halal', 'biere-sans-alcool-halal', 'surimi-halal'],
   },
   {
     slug: 'homard-crabe-halal',
@@ -1724,7 +1724,7 @@ export const QUESTIONS: QA[] = [
       'Point pratique des restaurants : le homard est parfois flambé au cognac ou nappé de sauces au vin — le crustacé est licite, la sauce peut ne pas l’être. Au restaurant, demande la préparation nature ou vérifie la carte.',
     ],
     category: 'Alimentation',
-    related: ['crevette-halal', 'calamar-poulpe-halal', 'poisson-fruits-de-mer-halal'],
+    related: ['crevette-halal', 'calamar-poulpe-halal', 'poisson-fruits-de-mer-halal', 'escargots-halal'],
   },
   {
     slug: 'calamar-poulpe-halal',
@@ -1738,7 +1738,7 @@ export const QUESTIONS: QA[] = [
       'Vigilance récurrente des fritures : certains restaurants font frire calamars et produits panés dans la même huile que des produits non halal, et certaines panures industrielles contiennent des additifs à vérifier. Le calamar lui-même, en revanche, ne pose pas d’autre question que celle de l’école suivie.',
     ],
     category: 'Alimentation',
-    related: ['crevette-halal', 'homard-crabe-halal', 'surimi-halal'],
+    related: ['crevette-halal', 'homard-crabe-halal', 'surimi-halal', 'escargots-halal'],
   },
   {
     slug: 'surimi-halal',
@@ -1752,7 +1752,7 @@ export const QUESTIONS: QA[] = [
       'Bonne nouvelle : plusieurs marques de surimi vendues en France sont certifiées halal ou affichent des recettes sans alcool ni ingrédient animal terrestre. Si le paquet mentionne juste poisson, amidon, blanc d’œuf, huile, sel, sucre et arômes sans alcool : pas de souci pour la plupart des avis.',
     ],
     category: 'Alimentation',
-    related: ['poisson-fruits-de-mer-halal', 'calamar-poulpe-halal', 'e120-halal'],
+    related: ['poisson-fruits-de-mer-halal', 'calamar-poulpe-halal', 'e120-halal', 'sushi-halal', 'e631-e627-halal'],
   },
   {
     slug: 'foie-gras-halal',
@@ -1766,7 +1766,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : si tu veux en consommer, cherche la double garantie — certification halal sérieuse ET élevage le moins brutal possible (des producteurs travaillent en gavage doux ou alternatives). Et si le débat éthique te met mal à l’aise, s’abstenir est un choix que beaucoup de savants saluent.',
     ],
     category: 'Alimentation',
-    related: ['gibier-chasse-halal', 'viande-supermarche-halal', 'abattage-etourdissement-halal'],
+    related: ['gibier-chasse-halal', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'difference-halal-casher'],
   },
   {
     slug: 'gibier-chasse-halal',
@@ -1780,7 +1780,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : le gibier acheté chez un boucher classique ou reçu d’un voisin chasseur non musulman ne remplit généralement pas les conditions. Si tu chasses toi-même (permis en règle) ou connais un chasseur musulman pratiquant les règles : le chevreuil et le faisan halal existent bel et bien.',
     ],
     category: 'Alimentation',
-    related: ['cheval-halal', 'lapin-halal', 'abattage-etourdissement-halal'],
+    related: ['cheval-halal', 'lapin-halal', 'abattage-etourdissement-halal', 'levure-chimique-halal'],
   },
   {
     slug: 'difference-halal-casher',
@@ -1795,7 +1795,7 @@ export const QUESTIONS: QA[] = [
       'En pratique en France : le halal est largement disponible, donc la question se pose surtout en voyage (Amérique latine, certaines villes sans boucherie halal mais avec communauté juive). L’avis médian répandu : en situation de besoin, la viande casher est une option acceptée par de nombreux savants — le vin casher, lui, reste de l’alcool : interdit.',
     ],
     category: 'Alimentation',
-    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'halal-definition'],
+    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'halal-definition', 'grenouille-halal', 'riba-interet-islam', 'cheval-halal', 'lapin-halal', 'foie-gras-halal'],
   },
   {
     slug: 'abattage-etourdissement-halal',
@@ -1809,7 +1809,7 @@ export const QUESTIONS: QA[] = [
       'Conséquence pratique : « certifié halal » n’a pas le même sens selon le logo. Si le sujet t’importe, apprends les positions des certificateurs présents sur tes produits (chaque organisme publie la sienne) et choisis en connaissance de cause — c’est exactement ce qu’on détaille dans notre page sur les certifications.',
     ],
     category: 'Alimentation',
-    related: ['certifications-halal-france', 'viande-supermarche-halal', 'difference-halal-casher'],
+    related: ['certifications-halal-france', 'viande-supermarche-halal', 'difference-halal-casher', 'levure-chimique-halal', 'lapin-halal'],
   },
   // ─── ADDITIFS (2e vague) ────────────────────────────────────────────────────
   {
@@ -1824,7 +1824,7 @@ export const QUESTIONS: QA[] = [
       'On la trouve dans des sodas, sirops, bonbons, chips aromatisées et confiseries bas de gamme. Si tu veux l’éviter pour des raisons de santé, les alternatives naturelles jaunes sont la curcumine (E100) et le carotène (E160a) — halal également.',
     ],
     category: 'Additifs',
-    related: ['e100-halal', 'e160a-carotene-halal', 'e120-halal'],
+    related: ['e100-halal', 'e160a-carotene-halal', 'e120-halal', 'e133-halal'],
   },
   {
     slug: 'e160a-carotene-halal',
@@ -1909,7 +1909,7 @@ export const QUESTIONS: QA[] = [
       'Si une tablette t’inquiète, le vrai point à vérifier n’est généralement pas le E476 mais les arômes (alcool dans certains chocolats fourrés) et la lécithine (E322, quasi toujours de soja ou tournesol : halal). Le chocolat noir simple — cacao, sucre, lécithine, arôme vanille — est licite dans l’immense majorité des cas.',
     ],
     category: 'Additifs',
-    related: ['lecithine-e322-halal', 'e471-halal', 'chocolat-liqueur-halal'],
+    related: ['lecithine-e322-halal', 'e471-halal', 'chocolat-liqueur-halal', 'e466-halal'],
   },
   {
     slug: 'e481-halal',
@@ -1923,7 +1923,7 @@ export const QUESTIONS: QA[] = [
       'Solution simple : plusieurs marques de pain de mie vendues en grande surface française sont certifiées halal, et les enseignes répondent sur l’origine de leurs additifs. Ou le pain du boulanger, qui n’a besoin ni de E481 ni de conservateur.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e472-halal', 'e570-halal', 'e920-halal'],
+    related: ['e471-halal', 'e472-halal', 'e570-halal', 'e920-halal', 'e250-nitrite-halal'],
   },
   {
     slug: 'e570-halal',
@@ -1980,7 +1980,7 @@ export const QUESTIONS: QA[] = [
       'À savoir : les KitKat produits en Malaisie, à Dubaï ou en Turquie sont certifiés halal (le logo figure sur l’emballage) — on les trouve dans certaines épiceries orientales. Même produit, traçabilité vérifiée en plus.',
     ],
     category: 'Produits',
-    related: ['nutella-halal', 'kinder-halal', 'snickers-mars-twix-halal'],
+    related: ['nutella-halal', 'kinder-halal', 'snickers-mars-twix-halal', 'dominos-pizza-halal', 'ferrero-rocher-halal', 'mentos-halal', 'kiri-halal', 'subway-halal'],
   },
   {
     slug: 'ferrero-rocher-halal',
@@ -2008,7 +2008,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe Milka : lire chaque étiquette, référence par référence — « gélatine » y figure obligatoirement quand elle est présente. Et si tu veux du chocolat garanti, des marques certifiées halal existent en épicerie orientale et même en grande surface.',
     ],
     category: 'Produits',
-    related: ['kinder-halal', 'kitkat-halal', 'marshmallow-halal'],
+    related: ['kinder-halal', 'kitkat-halal', 'marshmallow-halal', 'lindt-halal', 'quick-halal', 'danette-halal', 'starbucks-halal', 'creatine-halal'],
   },
   {
     slug: 'lindt-halal',
@@ -2022,7 +2022,7 @@ export const QUESTIONS: QA[] = [
       'Cas particulier des Lindor : les recettes varient selon les parfums — certains contiennent des arômes à vérifier. Règle Lindt : jamais d’achat de boîte cadeau sans retourner la boîte.',
     ],
     category: 'Produits',
-    related: ['chocolat-liqueur-halal', 'kitkat-halal', 'ferrero-rocher-halal'],
+    related: ['chocolat-liqueur-halal', 'kitkat-halal', 'ferrero-rocher-halal', 'milka-halal', 'lu-prince-halal', 'starbucks-halal'],
   },
   {
     slug: 'mentos-halal',
@@ -2036,7 +2036,7 @@ export const QUESTIONS: QA[] = [
       'Pour les chewing-gums Mentos, s’ajoute la question habituelle de la base gomme et des arômes — même situation que les autres chewing-gums industriels. Trente secondes d’étiquette règlent chaque cas.',
     ],
     category: 'Produits',
-    related: ['chewing-gum-halal', 'dragibus-halal', 'e904-halal'],
+    related: ['chewing-gum-halal', 'dragibus-halal', 'e904-halal', 'oreo-halal', 'snickers-mars-twix-halal', 'lindt-halal', 'bouillon-cube-halal', 'yaourt-halal'],
   },
   {
     slug: 'dragibus-halal',
@@ -2050,7 +2050,7 @@ export const QUESTIONS: QA[] = [
       'Pas de certification halal sur les Dragibus français : c’est étiquette et conviction personnelle. Alternative zéro doute : Haribo produit en Turquie des gammes 100 % halal certifiées (gélatine bovine rituelle), vendues en épicerie orientale — le goût de l’enfance sans l’arrière-pensée.',
     ],
     category: 'Produits',
-    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal'],
+    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal', 'collagene-halal'],
   },
   {
     slug: 'marshmallow-halal',
@@ -2064,7 +2064,7 @@ export const QUESTIONS: QA[] = [
       'Vigilance aussi sur les produits qui en cachent : chocolats à la guimauve, biscuits type « têtes au chocolat », céréales avec marshmallows, barbe à papa industrielle… La gélatine se glisse partout où ça mousse et rebondit — l’étiquette la mentionne toujours.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'haribo-halal', 'dragibus-halal', 'starbucks-halal'],
+    related: ['gelatine-halal', 'haribo-halal', 'dragibus-halal', 'starbucks-halal', 'knacki-halal'],
   },
   {
     slug: 'lu-prince-halal',
@@ -2078,7 +2078,7 @@ export const QUESTIONS: QA[] = [
       'Si tu préfères le zéro question : plusieurs marques de biscuits certifiés halal (dont des équivalents « fourrés chocolat » très convaincants) occupent désormais les rayons halal des grandes surfaces et les épiceries orientales.',
     ],
     category: 'Produits',
-    related: ['oreo-halal', 'kitkat-halal', 'cereales-halal'],
+    related: ['oreo-halal', 'kitkat-halal', 'cereales-halal', 'dragibus-halal'],
   },
   {
     slug: 'danette-halal',
@@ -2092,7 +2092,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe rayon frais : sur tout dessert lacté, chercher le mot « gélatine » dans la liste d’ingrédients (mention obligatoire). Sans elle : a priori consommable pour la plupart des avis. Avec elle et sans certification : à reposer.',
     ],
     category: 'Produits',
-    related: ['yaourt-halal', 'e407-carraghenane-halal', 'glace-halal'],
+    related: ['yaourt-halal', 'e407-carraghenane-halal', 'glace-halal', 'milka-halal', 'creatine-halal'],
   },
   {
     slug: 'vache-qui-rit-halal',
@@ -2120,7 +2120,7 @@ export const QUESTIONS: QA[] = [
       'À noter pour les goûters d’enfants : la plupart des fromages fondus concurrents sont dans le même cas exactement. La vraie ligne de partage n’est pas la marque mais la présence ou non d’une certification sur la boîte.',
     ],
     category: 'Produits',
-    related: ['vache-qui-rit-halal', 'fromage-presure-halal', 'babybel-halal'],
+    related: ['vache-qui-rit-halal', 'fromage-presure-halal', 'babybel-halal', 'subway-halal', 'burger-king-halal', 'kitkat-halal'],
   },
   {
     slug: 'babybel-halal',
@@ -2190,7 +2190,7 @@ export const QUESTIONS: QA[] = [
       'Aucun Starbucks français n’est certifié halal en tant que tel ; dans les pays du Golfe et en Asie du Sud-Est, les enseignes le sont. Pour ton latte quotidien en France : pas de souci particulier selon la quasi-totalité des avis.',
     ],
     category: 'Produits',
-    related: ['mcdo-halal', 'glace-halal', 'arome-vanille-halal'],
+    related: ['mcdo-halal', 'glace-halal', 'arome-vanille-halal', 'taurine-halal', 'danette-halal'],
   },
   {
     slug: 'fanta-halal',
@@ -2204,7 +2204,7 @@ export const QUESTIONS: QA[] = [
       'Dans de nombreux pays musulmans, le Fanta produit localement est certifié halal, ce qui confirme l’analyse. Vigilance uniquement sur les éditions exotiques étrangères : certains parfums peuvent contenir des colorants comme le E120 (cochenille) selon les pays — l’étiquette tranche.',
     ],
     category: 'Produits',
-    related: ['coca-cola-halal', 'pepsi-halal', 'ice-tea-halal'],
+    related: ['coca-cola-halal', 'pepsi-halal', 'ice-tea-halal', 'levure-biere-halal'],
   },
   {
     slug: 'pepsi-halal',
@@ -2218,7 +2218,7 @@ export const QUESTIONS: QA[] = [
       'Reste l’éternel débat des traces de solvants dans les arômes, identique pour tous les sodas — considéré comme sans effet sur la licéité par l’avis très largement dominant. Bref : le Pepsi se juge sur le sucre qu’il contient, pas sur un interdit religieux.',
     ],
     category: 'Produits',
-    related: ['coca-cola-halal', 'fanta-halal', 'red-bull-halal'],
+    related: ['coca-cola-halal', 'fanta-halal', 'red-bull-halal', 'monster-halal', 'ice-tea-halal'],
   },
   {
     slug: 'ice-tea-halal',
@@ -2232,7 +2232,7 @@ export const QUESTIONS: QA[] = [
       'Astuce du rayon : certaines boissons « détox » ou kombucha voisines dans le frigo du magasin contiennent, elles, de l’alcool résiduel de fermentation — un sujet réel qu’on traite sur notre page kombucha. L’ice tea classique, lui, est une simple infusion sucrée : tranquille.',
     ],
     category: 'Produits',
-    related: ['kombucha-halal', 'fanta-halal', 'coca-cola-halal'],
+    related: ['kombucha-halal', 'fanta-halal', 'coca-cola-halal', 'pepsi-halal'],
   },
   {
     slug: 'isla-delice-halal',
@@ -2246,7 +2246,7 @@ export const QUESTIONS: QA[] = [
       'Le conseil qui reste valable même ici : jette un œil au logo de certification sur le paquet si le niveau d’exigence du certificateur t’importe (positions différentes sur l’étourdissement, les contrôles…). Mais dans le paysage français, une marque entièrement halal avec certification affichée est exactement ce qu’on recommande de chercher.',
     ],
     category: 'Produits',
-    related: ['knacki-halal', 'lardons-halal', 'certifications-halal-france'],
+    related: ['knacki-halal', 'lardons-halal', 'certifications-halal-france', 'dominos-pizza-halal', 'quick-halal', 'lu-prince-halal', 'kiri-halal', 'babybel-halal'],
   },
   // ─── PRODUITS DU QUOTIDIEN & COMPLÉMENTS ────────────────────────────────────
   {
@@ -2261,7 +2261,7 @@ export const QUESTIONS: QA[] = [
       'La solution est à deux mètres dans le rayon halal : plusieurs marques spécialisées (Isla Délice et d’autres) font des knacks de volaille certifiées au goût très proche, pensées exactement pour ça — hot-dogs et coquillettes-knacks compris. Le réflexe : chercher le logo de certification, pas la couleur du paquet.',
     ],
     category: 'Produits',
-    related: ['isla-delice-halal', 'lardons-halal', 'cordon-bleu-halal'],
+    related: ['isla-delice-halal', 'lardons-halal', 'cordon-bleu-halal', 'vache-qui-rit-halal'],
   },
   {
     slug: 'cordon-bleu-halal',
@@ -2275,7 +2275,7 @@ export const QUESTIONS: QA[] = [
       'Version maison pour les motivés : escalope halal, jambon de volaille halal, fromage (vérifier la présure ou prendre un certifié), chapelure. Dix minutes, meilleur que l’industriel, et zéro question.',
     ],
     category: 'Alimentation',
-    related: ['knacki-halal', 'isla-delice-halal', 'viande-supermarche-halal'],
+    related: ['knacki-halal', 'isla-delice-halal', 'viande-supermarche-halal', 'bouillon-cube-halal', 'lardons-halal'],
   },
   {
     slug: 'lardons-halal',
@@ -2290,7 +2290,7 @@ export const QUESTIONS: QA[] = [
       'Piste végétale en bonus : tofu fumé ou champignons poêlés au paprika fumé — le « goût lardon » vient surtout du fumage et du sel. La cuisine française se halalise très bien : c’est une question d’ingrédients, pas de recettes.',
     ],
     category: 'Alimentation',
-    related: ['isla-delice-halal', 'knacki-halal', 'fromage-presure-halal'],
+    related: ['isla-delice-halal', 'knacki-halal', 'fromage-presure-halal', 'cordon-bleu-halal'],
   },
   {
     slug: 'kebab-halal',
@@ -2332,7 +2332,7 @@ export const QUESTIONS: QA[] = [
       'Si c’est le côté pétillant-fermenté qui te plaît : le kéfir de fruits maison à fermentation courte, les sodas au gingembre non fermentés ou l’eau pétillante aromatisée cochent la case sans le doute. Le kombucha « santé » n’a de toute façon rien de magique que ces alternatives n’aient pas.',
     ],
     category: 'Alimentation',
-    related: ['biere-sans-alcool-halal', 'vinaigre-halal', 'ice-tea-halal'],
+    related: ['biere-sans-alcool-halal', 'vinaigre-halal', 'ice-tea-halal', 'sauce-soja-halal'],
   },
   {
     slug: 'cereales-halal',
@@ -2388,7 +2388,7 @@ export const QUESTIONS: QA[] = [
       'Et la garantie existe : le marché des whey certifiées halal a explosé — grandes marques de nutrition sportive comprises, logo sur le pot. À vérifier aussi sur l’étiquette : les arômes gourmands (rarement problématiques) et l’absence de créamer à gélatine dans les mélanges. Pour les gélules et autres compléments, même réflexe certification.',
     ],
     category: 'Produits',
-    related: ['creatine-halal', 'fromage-presure-halal', 'medicaments-gelules-halal'],
+    related: ['creatine-halal', 'fromage-presure-halal', 'medicaments-gelules-halal', 'vitamine-d3-halal'],
   },
   {
     slug: 'creatine-halal',
@@ -2459,7 +2459,7 @@ export const QUESTIONS: QA[] = [
       'Pour ceux qui se sont fait tatouer avant de pratiquer ou de se convertir : le repentir suffit — un tatouage existant n’est pas un péché qui se renouvelle chaque jour, et l’ablution comme la prière restent parfaitement valides avec (l’encre est sous la peau, l’eau atteint bien la surface). Le retrait au laser n’est pas une obligation, surtout s’il est coûteux ou risqué : c’est l’avis répandu des savants contemporains.',
     ],
     category: 'Vie quotidienne',
-    related: ['photos-selfies-islam', 'piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'porter-or-homme-islam'],
+    related: ['photos-selfies-islam', 'piercing-halal', 'vernis-ongles-priere', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'porter-or-homme-islam', 'sport-combat-halal', 'teinture-cheveux-islam'],
   },
   {
     slug: 'piercing-halal',
@@ -2473,7 +2473,7 @@ export const QUESTIONS: QA[] = [
       'Comme souvent, la question cache la vraie grille de lecture : parure admise et discrète d’un côté, transformation corporelle suivie de modes de l’autre. Pour un piercing déjà posé, le retrait laisse au pire une trace minime — la situation se corrige facilement, contrairement au tatouage.',
     ],
     category: 'Vie quotidienne',
-    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal', 'porter-or-homme-islam'],
+    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal', 'porter-or-homme-islam', 'serrer-la-main-islam'],
   },
   {
     slug: 'vernis-ongles-priere',
@@ -2487,7 +2487,7 @@ export const QUESTIONS: QA[] = [
       'Précision utile : ceci concerne le vernis posé au moment de faire l’ablution. Un vernis posé sur une ablution valide n’annule rien — tu peux prier avec jusqu’à ce que l’ablution soit rompue. D’où la stratégie « pose le vendredi soir, retire avant fajr » que beaucoup ont adoptée.',
     ],
     category: 'Prière',
-    related: ['tatouage-halal', 'rouge-levres-carmin-halal', 'ablutions-chaussettes'],
+    related: ['tatouage-halal', 'rouge-levres-carmin-halal', 'ablutions-chaussettes', 'wudu-annule-quoi', 'retard-fajr-reveil', 'priere-femme-regles'],
   },
   {
     slug: 'rouge-levres-carmin-halal',
@@ -2544,7 +2544,7 @@ export const QUESTIONS: QA[] = [
       'En pratique pour beaucoup de familles franco-musulmanes (mariages mixtes, grands-parents non musulmans), la question est très concrète : maintenir le lien familial est une obligation religieuse, lui. Réponse sereine possible : participer au repas familial sans les rites religieux, formules chaleureuses neutres (« bonnes fêtes », « profite bien de ta famille ») ou vœux directs selon l’avis qu’on suit — les deux positions ont leurs savants.',
     ],
     category: 'Vie quotidienne',
-    related: ['anniversaire-halal', 'musique-halal', 'chien-islam', 'serrer-la-main-islam'],
+    related: ['anniversaire-halal', 'musique-halal', 'chien-islam', 'serrer-la-main-islam', 'loto-jeux-hasard-halal'],
   },
   {
     slug: 'cigarette-halal',
@@ -2728,7 +2728,7 @@ export const QUESTIONS: QA[] = [
       'La forme complète, celle de la sunna : intention, laver les mains, laver les parties intimes, faire des ablutions complètes comme pour la prière, verser l’eau trois fois sur la tête en frottant le cuir chevelu, puis laver tout le corps en commençant par le côté droit. Deux précisions utiles : les femmes n’ont pas l’obligation de défaire leurs tresses pour le ghusl d’impureté majeure si l’eau atteint la racine (hadith d’Oumm Salama) ; et vernis, faux ongles ou extensions imperméables doivent être retirés, puisqu’ils empêchent l’eau d’atteindre la peau. Sans eau ou en cas de maladie, le tayammum (ablution sèche) prend le relais.',
     ],
     category: 'Prière',
-    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles'],
+    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles', 'wudu-annule-quoi'],
   },
   {
     slug: 'psy-therapie-islam',
@@ -2771,7 +2771,7 @@ export const QUESTIONS: QA[] = [
       'En France, le don est présumé par défaut : sans refus inscrit au registre national, on est considéré comme donneur. C’est le point pratique qui surprend le plus de familles musulmanes au pire moment. Quelle que soit ta position, la décision se prend à froid, s’inscrit, et surtout se DIT à tes proches — ce sont eux qu’on interrogera. Et parce que la divergence est réelle et la question grave, c’est typiquement le sujet où il faut en parler avec un savant qui connaît ta situation, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam'],
+    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam'],
   },
   {
     slug: 'photos-selfies-islam',
@@ -2786,7 +2786,7 @@ export const QUESTIONS: QA[] = [
       'Ce qui fait consensus, en revanche, et qui est souvent le vrai sujet : la photo d’autrui ne s’expose pas sans son accord. Publier le visage de quelqu’un — surtout une femme, surtout un enfant — sans qu’il l’ait voulu touche à son droit, et là aucune école ne diverge.',
     ],
     category: 'Vie quotidienne',
-    related: ['reseaux-sociaux-islam', 'tatouage-halal', 'musique-halal', 'mauvais-oeil-protection'],
+    related: ['reseaux-sociaux-islam', 'tatouage-halal', 'musique-halal', 'mauvais-oeil-protection', 'chien-islam'],
   },
   {
     slug: 'chat-maison-islam',
@@ -2800,7 +2800,7 @@ export const QUESTIONS: QA[] = [
       'Ce qui est demandé en revanche tient en un mot : le soin. Les textes sont sévères sur la maltraitance animale, et le récit le plus cité à ce sujet parle précisément d’une femme punie pour avoir enfermé une chatte jusqu’à ce qu’elle meure de faim. Nourrir, soigner, ne pas abandonner : la permission vient avec une responsabilité, et c’est là que porte la vigilance des savants, pas sur la présence de l’animal.',
     ],
     category: 'Vie quotidienne',
-    related: ['chien-islam', 'halal-definition', 'ablutions-chaussettes'],
+    related: ['chien-islam', 'halal-definition', 'ablutions-chaussettes', 'caissier-scanner-alcool'],
   },
   {
     slug: 'prenom-musulman-obligatoire',
@@ -2831,7 +2831,7 @@ export const QUESTIONS: QA[] = [
       'Ce qui fait consensus, en revanche : ces outils servent aussi. Apprendre, retrouver sa famille, faire connaître un savoir utile. Personne ne demande de tout supprimer. La question honnête n’est pas « est-ce permis » mais « qu’est-ce que j’en fais, et combien de temps ». Et pour un cas personnel — un métier lié aux réseaux, un contenu qui pose problème — c’est une conversation à avoir avec un savant qui connaît ta situation.',
     ],
     category: 'Vie quotidienne',
-    related: ['photos-selfies-islam', 'musique-halal', 'jeux-video-halal'],
+    related: ['photos-selfies-islam', 'musique-halal', 'jeux-video-halal', 'caissier-scanner-alcool', 'prenom-musulman-obligatoire', 'echecs-islam'],
   },
   {
     slug: 'sport-combat-halal',
@@ -2863,7 +2863,7 @@ export const QUESTIONS: QA[] = [
       'La règle qui vaut dans les deux cas : plus l’alcool est central dans le métier — caviste, barman, rayon dédié — moins la tolérance s’applique. Et parce que cela touche à ton revenu et à ta famille, c’est exactement le genre de situation où il faut en parler à un savant qui connaît ton cas, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['travailler-restaurant-alcool', 'vinaigre-halal', 'halal-definition'],
+    related: ['travailler-restaurant-alcool', 'vinaigre-halal', 'halal-definition', 'chat-maison-islam', 'reseaux-sociaux-islam'],
   },
   {
     slug: 'ia-halal',
@@ -2894,7 +2894,7 @@ export const QUESTIONS: QA[] = [
       'Entre les deux, une zone grise que personne ne tranche à ta place : une oreille très décollée, un nez qui provoque des moqueries quotidiennes, une cicatrice visible qui rend la vie sociale difficile. Plusieurs savants contemporains y voient une souffrance réelle à lever, et non une simple coquetterie ; d’autres maintiennent l’interdit. Si tu es dans ce cas, deux démarches valent mieux qu’une décision solitaire : expose ta situation précise à un savant de confiance, et ne néglige pas l’accompagnement psychologique, qui règle parfois ce que le bistouri ne réglerait pas. À noter enfin : le maquillage, la coiffure, les soins non permanents ne relèvent pas de ce débat.',
     ],
     category: 'Vie quotidienne',
-    related: ['greffe-cheveux-halal', 'tatouage-halal', 'piercing-halal', 'psy-therapie-islam'],
+    related: ['greffe-cheveux-halal', 'tatouage-halal', 'piercing-halal', 'psy-therapie-islam', 'teinture-cheveux-islam', 'adoption-islam', 'don-organes-islam'],
   },
   {
     slug: 'echecs-islam',
@@ -2908,7 +2908,7 @@ export const QUESTIONS: QA[] = [
       'En pratique, tous ceux qui autorisent posent les trois mêmes conditions, et elles sont éclairantes : aucun argent misé, sans quoi ce n’est plus un jeu mais un pari ; aucune prière manquée ni retardée ; aucun propos blessant ni rancune entre joueurs. Ajoute une quatrième règle de bon sens, valable pour n’importe quel loisir : si le jeu prend tes nuits et ton travail, le problème n’est plus sa nature, c’est sa place dans ta vie. Pour une décision ferme adaptée à ta situation, réfère-toi à un savant de confiance.',
     ],
     category: 'Vie quotidienne',
-    related: ['jeux-video-halal', 'loto-jeux-hasard-halal', 'paris-sportifs-halal', 'musique-halal'],
+    related: ['jeux-video-halal', 'loto-jeux-hasard-halal', 'paris-sportifs-halal', 'musique-halal', 'kebab-halal', 'reseaux-sociaux-islam', 'porter-or-homme-islam'],
   },
   {
     slug: 'adoption-islam',
@@ -2950,7 +2950,7 @@ export const QUESTIONS: QA[] = [
       'En résidence, le débat est réel. Il s’appuie sur un hadith rapporté par Mouslim, où Ibn ‘Abbâs indique que le Prophète ﷺ a regroupé à Médine « sans peur et sans voyage ». Les savants l’interprètent différemment : la pluie, la maladie, ou plus largement le fait d’épargner une gêne sérieuse à la communauté — l’école hanbalite étant la plus large sur ce point. Ce que cela ne signifie pas : que l’on peut regrouper par simple commodité. Avant d’en arriver là, regarde si prier sur ton lieu de travail est réellement impossible ; c’est faisable bien plus souvent qu’on ne le croit, et notre fiche sur la prière au travail donne des solutions concrètes. Pour une contrainte précise — horaires postés, bloc opératoire, chantier —, expose-la à un savant plutôt que de trancher seul.',
     ],
     category: 'Prière',
-    related: ['priere-travail', 'horaires-priere-voyage', 'priere-avion', 'rattraper-prieres-ratees', 'nombre-rakat-priere'],
+    related: ['priere-travail', 'horaires-priere-voyage', 'priere-avion', 'rattraper-prieres-ratees', 'nombre-rakat-priere', 'wudu-annule-quoi'],
   },
   // ─── VIE GÉNÉRALE — vague du 14 août 2026 ──────────────────────────────────
   {
@@ -3007,7 +3007,7 @@ export const QUESTIONS: QA[] = [
       'Reste une question que beaucoup oublient et qui est la plus concrète : la teinture empêche-t-elle l’eau d’atteindre le cheveu lors des ablutions ? La réponse dépend du produit. Le henné et les colorations qui pénètrent le cheveu en le teignant laissent passer l’eau : les ablutions sont valides. En revanche, tout produit qui forme une pellicule imperméable en surface doit être retiré avant les ablutions et le ghusl — c’est le même raisonnement que pour le vernis à ongles. En cas de doute sur un produit précis, lis sa composition, et pour ta situation, demande à un savant.',
     ],
     category: 'Vie quotidienne',
-    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal'],
+    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal', 'adoption-islam'],
   },
   {
     slug: 'porter-or-homme-islam',

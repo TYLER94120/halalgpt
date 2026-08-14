@@ -69,6 +69,53 @@ console.log(
   `\n   ${seules.length} fiches n'ont qu'un seul lien entrant (a surveiller, pas un defaut).`,
 );
 
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LE PLANCHER DE LIENS ENTRANTS — ajoute le 14 aout 2026.
+//
+// Search Console ce jour-la : 52 pages dans l'index, 147 non. Et le motif de
+// 135 d'entre elles est « Detectee, actuellement non indexee » — Google connait
+// l'adresse et n'est JAMAIS venu la lire. Seulement 6 sont en « exploree, non
+// indexee », c'est-a-dire reellement refusees.
+//
+// Google ne rejette pas notre contenu : il ne vient pas le chercher. Et le seul
+// levier d'exploration entierement dans nos mains est le maillage : une page
+// vers laquelle une seule autre pointe ressemble a une page sans importance.
+//
+// Mesure du meme jour : 101 fiches sur 207 avaient 2 liens entrants ou moins.
+// Apres densification, la mediane est passee de 2 a 4.
+//
+// Ce controle empeche la vague de nuit de reconstituer le trou : une fiche
+// ajoutee sans liens entrants ne sert a rien, elle allonge une file d'attente
+// que Google ne traite deja pas.
+const PLANCHER_ENTRANTS = 3;
+
+// Trois fiches n'ont pas assez de voisines naturelles pour atteindre le
+// plancher. On les nomme plutot que d'abaisser la regle pour tout le monde, et
+// plutot que de leur fabriquer un lien depuis une fiche etrangere — un maillage
+// artificiel dessert le lecteur et Google le traite comme du bruit.
+const SANS_VOISINES = new Set(['ia-halal', 'zakat-al-fitr-montant', 'vitamine-d3-halal']);
+
+{
+  const entrants = new Map(QUESTIONS.map((q) => [q.slug, 0]));
+  for (const q of QUESTIONS) for (const r of q.related) entrants.set(r, (entrants.get(r) ?? 0) + 1);
+
+  const sousLePlancher = [...entrants.entries()]
+    .filter(([slug, n]) => n < PLANCHER_ENTRANTS && !SANS_VOISINES.has(slug));
+
+  if (sousLePlancher.length) {
+    echecs += 1;
+    console.log(`✗ ${sousLePlancher.length} fiche(s) sous ${PLANCHER_ENTRANTS} liens entrants — Google n'ira pas les lire`);
+    for (const [slug, n] of sousLePlancher.slice(0, 12)) console.log(`      ${n} lien(s) : ${slug}`);
+    console.log('      Lancer : node scripts/densifier-maillage.mjs --ecrire');
+  } else {
+    console.log(`✓ toutes les fiches ont au moins ${PLANCHER_ENTRANTS} liens entrants (${SANS_VOISINES.size} exceptions nommees)`);
+  }
+
+  const valeurs = [...entrants.values()].sort((a, b) => a - b);
+  console.log(`\n   mediane : ${valeurs[Math.floor(valeurs.length / 2)]} liens entrants par fiche.`);
+}
+
 console.log(
   echecs === 0
     ? '\n✓ Aucune fiche n’est une impasse : Google peut toutes les atteindre.'
