@@ -145,7 +145,11 @@ export async function POST(request: Request) {
     const anthropic = new Anthropic();
     const flux = await anthropic.messages.create({
       model: MODELE,
-      max_tokens: 600,
+      // 900 et non 600 depuis le 15 août : le sur mesure demande deux à
+      // quatre phrases PAR LIEU, sur trois lieux, plus ce qui les distingue.
+      // À 600, la réponse se coupait au milieu du troisième — et une phrase
+      // tronquée sur une adresse est pire qu'une phrase absente.
+      max_tokens: 900,
       stream: true,
       system: construireSysteme(site),
       messages: [

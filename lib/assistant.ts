@@ -49,9 +49,34 @@ export function estUnSiteConnu(site: unknown): site is SiteFamille {
 }
 
 // Chaque caractère de contexte part dans la requête et coûte. Au-delà, c'est
-// que le site appelant a envoyé sa base entière au lieu des 3 à 6 résultats
-// pertinents — on refuse plutôt que de payer l'erreur.
-export const CONTEXTE_MAX = 5_000;
+// que le site appelant a envoyé sa base entière au lieu de ses quelques
+// résultats pertinents — on refuse plutôt que de payer l'erreur.
+//
+// ⚠️ 15 août, 3 h 30 — LE FIL ENTRE LES DEUX MOITIÉS. Cette limite était à
+// 5 000, et elle allait casser le chantier n° 1 de l'empire, en silence.
+//
+// VoyagesHalal a livré le sur mesure cette nuit : son relais envoie jusqu'à
+// 12 lignes de 1 400 caractères — les AVIS et les ATTRIBUTS des trois
+// lieux, c'est-à-dire la matière même de ce que l'IA doit écrire (« la
+// vraie valeur ajoutée », ordre de Mohamed du 15 août). Soit 16 800
+// caractères au maximum, contre 5 000 acceptés ici : la porte aurait
+// répondu 413, le relais aurait lu « porte muette », et le widget aurait
+// affiché ses adresses SANS UNE SEULE PHRASE. Le sur mesure sans sa prose
+// n'est qu'une liste plus courte.
+//
+// Personne ne l'aurait vu avant l'allumage de la clé Google : son côté est
+// testé, le mien est testé, le FIL ENTRE LES DEUX ne l'était par personne.
+// Même défaut que la passerelle des e-codes le 13 août — deux moitiés
+// vertes, un pont rompu.
+//
+// 20 000 laisse de la marge au-dessus de 16 800 sans ouvrir la porte à une
+// base entière. Le coût suit : environ 4 500 jetons d'entrée par appel sur
+// le modèle rapide, tenus par le quota horaire et le plafond du jour.
+export const CONTEXTE_MAX = 20_000;
+// Un total généreux ne doit pas autoriser UNE ligne démesurée : même borne
+// que celle du relais de VoyagesHalal, tenue des deux côtés du fil.
+export const LIGNE_MAX = 1_500;
+export const LIGNES_MAX = 12;
 export const QUESTION_MAX = 600;
 
 // ─── Ce que l'assistant a le droit de dire ───────────────────────────────────
@@ -72,9 +97,46 @@ Règles absolues, sans exception :
 - Jamais de conseil financier. Jamais de récitation du Coran.
 - Si la question sort du sujet du site, ramène gentiment vers ce que le site sait faire.`;
 
+// ─── Le sur mesure : ce qui sépare une phrase utile d'un remplissage ─────────
+//
+// Ordre de Mohamed, 15 août, § 3 : « INTERDIT ABSOLU : répéter ce qui est
+// déjà affiché. Si l'IA écrit "à 4 minutes, noté 4,6", elle ne sert à rien —
+// c'est écrit juste au-dessus. » Le widget montre déjà la note, la distance,
+// le prix et les horaires. La valeur de l'assistant est ailleurs : dans ce
+// que les avis racontent et que les chiffres taisent.
+//
+// Cette consigne vit ICI et pas seulement dans le widget : c'est la porte
+// qui rédige, donc c'est la porte qui doit connaître la règle.
+
+const SUR_MESURE = `TA VALEUR AJOUTÉE — lis bien, c'est ce qui distingue une phrase utile d'un remplissage :
+- Ne répète JAMAIS ce que la fiche affiche déjà (note, distance, prix, horaires). Le visiteur les a sous les yeux : les redire ne sert à rien.
+- Apporte ce que les chiffres ne disent pas, et uniquement depuis le contexte : le plat que les avis citent, l'ambiance (calme, bruyant, petite salle), le piège qui évite un déplacement raté (« bondé le midi d'après les avis », « salle minuscule, beaucoup prennent à emporter »), le service (rapide, à emporter, familles).
+- Dis ce qui DISTINGUE les lieux entre eux : « le premier si tu veux manger vite, le deuxième si tu veux t'asseoir ». Sans cela, trois fiches ne sont qu'une liste plus courte.
+- Relie à SA demande : s'il a dit qu'il sortait de la salle de sport ou qu'il était en famille, ta phrase doit s'en souvenir.
+- Parle en TEMPS, pas en mètres : « à six minutes à pied » parle, « 1,4 km » ne dit rien à quelqu'un qui a faim.
+- Quand une information vient des avis, dis-le : « d'après les avis ». Quand elle manque, dis qu'elle manque — rassurer à tort est pire que se taire.
+- Deux à quatre phrases par lieu. Concret, jamais du remplissage.
+- Ne recommande JAMAIS un endroit qui sert de l'alcool, et ne minimise jamais : pas de « prends juste le plat ». Tu signales, tu n'arbitres pas.
+- Sur une allergie : tu ne garantis rien, jamais. Tu invites à la signaler à l'établissement.`;
+
+const SUR_MESURE_EN = `YOUR ADDED VALUE — this is what separates a useful sentence from filler:
+- NEVER repeat what the card already shows (rating, distance, price, hours). The visitor can see them.
+- Add what numbers don't say, strictly from the context: the dish reviews mention, the atmosphere, the pitfall that avoids a wasted trip, the service (quick, takeaway, families).
+- Say what SETS THE PLACES APART: "the first one if you want to eat fast, the second if you want to sit down."
+- Tie it to THEIR request (gym, family, budget) when they told you.
+- Speak in TIME, not metres: "six minutes on foot", never "1.4 km".
+- When something comes from reviews, say "according to reviews". When information is missing, say so — false reassurance is worse than silence.
+- Two to four sentences per place. Concrete, never filler.
+- NEVER recommend a place serving alcohol, and never downplay it. You flag, you don't rule.
+- On allergies: never guarantee anything. Invite them to tell the venue.`;
+
 const PAR_SITE: Record<SiteFamille, string> = {
-  voyageshalal: `Le visiteur est sur voyageshalal.fr, le guide du voyage halal (restaurants, salles de prière, hôtels, guides de villes). Le contexte contient des adresses issues de la base du site — communautaires ou vérifiées, leur statut est indiqué. Termine quand c'est utile par la page du site à ouvrir.`,
-  gohalaltravel: `The visitor is on gohalaltravel.com, the halal travel guide. ANSWER IN ENGLISH. The context contains places from the site's own database — community-shared or verified, status included. Point to the site page to open when useful.`,
+  voyageshalal: `Le visiteur est sur voyageshalal.fr, le guide du voyage halal (restaurants, salles de prière, hôtels, guides de villes). Le contexte contient les lieux que le site a trouvés pour lui — vérifiés par la communauté ou signalés sur Google Maps, leur statut est indiqué, avec leurs avis et leurs attributs.
+
+${SUR_MESURE}`,
+  gohalaltravel: `The visitor is on gohalaltravel.com, the halal travel guide. ANSWER IN ENGLISH. The context contains the places the site found for them — community-verified or flagged on Google Maps, status included, with reviews and attributes.
+
+${SUR_MESURE_EN}`,
   halalcheck: `Le visiteur est sur halalcheck.fr, le scanner de produits halal. Le contexte contient des données de fiches produit (ingrédients, verdicts du moteur). Tu expliques un verdict ou un ingrédient ; pour scanner, renvoie vers le scanner.`,
   islampasapas: `Le visiteur est sur islampasapas.fr, la plateforme d'apprentissage de l'islam pour débutants. Tu es un tuteur patient : explique simplement, propose la leçon du site qui correspond (dans le contexte), et rappelle qu'un savant reste la référence pour les cas personnels.`,
 };
@@ -94,8 +156,10 @@ export function blocContexte(contexte: unknown): string {
   }
   const lignes = contexte
     .filter((c): c is string => typeof c === 'string' && c.trim().length > 0)
-    .slice(0, 12)
-    .map((c) => `- ${c.trim()}`);
+    .slice(0, LIGNES_MAX)
+    // Une ligne bornée ici comme chez l'appelant : le total généreux ne doit
+    // pas laisser passer un pavé unique.
+    .map((c) => `- ${c.trim().slice(0, LIGNE_MAX)}`);
   if (!lignes.length) return 'CONTEXTE : (vide — aucun fait local ne peut être affirmé)';
   return `CONTEXTE (fourni par le site, seule source autorisée pour les faits locaux) :\n${lignes.join('\n')}`;
 }
