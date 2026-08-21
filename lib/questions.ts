@@ -664,7 +664,37 @@ export const QUESTIONS: QA[] = [
       'À retenir en une phrase : en France, non ; au Maghreb, en Turquie et dans le Golfe, oui ; au Royaume-Uni, non. Et en cas de doute dans un pays inconnu, demande le certificat plutôt que de te fier à l’ambiance du quartier.',
     ],
     category: 'Produits',
-    related: ['kfc-halal', 'burger-king-halal', 'quick-halal', 'subway-halal', 'o-tacos-halal', 'restaurant-halal-paris'],
+    related: ['kfc-halal', 'burger-king-halal', 'quick-halal', 'subway-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'popeyes-halal'],
+  },
+  {
+    slug: 'popeyes-halal',
+    question: 'Popeyes est-il halal en France ?',
+    verdict: '✅ Poulet certifié annoncé en juin 2025 — du porc reste à la carte',
+    short:
+      'Popeyes France a annoncé en juin 2025 la certification halal de toute sa gamme poulet. Mais certaines recettes contiennent encore du bacon de porc.',
+    answer: [
+      'Popeyes a pris le chemin inverse de KFC. Avant 2025, seule une poignée de restaurants français proposaient du poulet halal — Créteil, Lille, Mulhouse, Troyes, Limoges et quelques autres. Puis, en juin 2025, la chaîne a annoncé la certification halal de l’ensemble de sa gamme poulet dans tous ses restaurants en France, huile de friture comprise.',
+      'Le piège est ailleurs, et il est important : **une enseigne certifiée ne veut pas dire une carte entièrement licite.** La certification annoncée porte sur le poulet. Or certaines recettes de la carte contiennent du bacon de porc. Autrement dit, la bonne question n’est plus « est-ce que Popeyes est halal », mais « est-ce que ce sandwich-là contient du bacon ».',
+      'La distinction entre une annonce et un certificat mérite aussi d’être posée. Une communication d’enseigne est un acte commercial ; un certificat est un document, avec le nom d’un organisme et une date de validité. Les deux existent ici, mais c’est le second qui engage quelqu’un. Il s’affiche en restaurant — et un restaurant sérieux le montre sans difficulté.',
+      'À comparer avec KFC, qui occupe le même créneau et donne la réponse opposée en France : poulet de filière standard, pas de certification. Cette différence entre deux enseignes voisines explique une bonne partie des rumeurs qui circulent sur l’une comme sur l’autre.',
+    ],
+    category: 'Produits',
+    related: ['kfc-halal', 'burger-king-halal', 'buffalo-grill-halal', 'pizza-hut-halal', 'certifications-halal-france'],
+  },
+  {
+    slug: 'pizza-hut-halal',
+    question: 'Pizza Hut est-il halal ?',
+    verdict: '⚠️ Des viandes certifiées dans certains restaurants — jamais la cuisine',
+    short:
+      'Pizza Hut a proposé des viandes certifiées halal dans un nombre limité de restaurants, signalées sur la carte. La chaîne ne certifie pas ses cuisines.',
+    answer: [
+      'Le cas Pizza Hut introduit une distinction que presque personne ne fait, et qui décide pourtant de tout : **un ingrédient peut être certifié sans que la cuisine le soit.** Dans un nombre limité de restaurants, la chaîne a proposé des viandes certifiées — merguez de bœuf, escalope de poulet, pepperoni de bœuf, jambon de dinde — repérables directement sur la carte. Cette certification porte sur l’approvisionnement de ces viandes-là.',
+      'Elle ne porte pas sur ce qui se passe ensuite : le même four, le même plan de travail, les mêmes ustensiles, et sur la pizza voisine un pepperoni de porc. Pizza Hut n’a jamais revendiqué de certification de ses points de vente, et c’est une position honnête de leur part — mais elle signifie que la réponse n’est ni oui ni non. Elle est : certifié jusqu’où ?',
+      'Deux éléments restent par ailleurs explicitement en dehors : le pepperoni de porc, qui demeure à la carte, et certaines sauces susceptibles de contenir de l’alcool.',
+      'En pratique, cela dépend du restaurant et cela peut changer. Sur place, deux questions valent mieux qu’une : quelles viandes sont certifiées, et par quel organisme — puis comment elles sont manipulées. Ceux qui suivent un avis strict écartent une cuisine où l’on manipule du porc ; d’autres s’en tiennent à l’ingrédient certifié. Les deux positions existent, et ce n’est pas ce site qui tranchera un choix personnel.',
+    ],
+    category: 'Produits',
+    related: ['dominos-pizza-halal', 'popeyes-halal', 'kfc-halal', 'certifications-halal-france', 'restaurant-halal-paris'],
   },
   {
     slug: 'kfc-halal',
@@ -680,7 +710,7 @@ export const QUESTIONS: QA[] = [
       'La bonne nouvelle pour les amateurs de poulet frit en France : les alternatives halal ne manquent pas — c’est même l’un des segments les plus dynamiques de la restauration halal française, avec des enseignes qui affichent leur certification en caisse. La carte VoyagesHalal t’en géolocalise près de chez toi.',
     ],
     category: 'Produits',
-    related: ['mcdo-halal', 'burger-king-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'viande-supermarche-halal', 'danette-halal', 'buffalo-grill-halal'],
+    related: ['mcdo-halal', 'burger-king-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'viande-supermarche-halal', 'danette-halal', 'buffalo-grill-halal', 'popeyes-halal'],
   },
   {
     slug: 'chewing-gum-halal',
@@ -2262,7 +2292,7 @@ export const QUESTIONS: QA[] = [
       'Une seconde question, distincte, se pose ensuite et n’a rien à voir avec la viande : celle de manger dans une salle où l’alcool est servi. Certains l’écartent par principe, d’autres distinguent ce qu’il y a dans leur assiette de ce qu’il y a sur la table voisine. Les deux positions existent, et ce n’est pas ce site qui tranchera un choix personnel.',
     ],
     category: 'Produits',
-    related: ['certifications-halal-france', 'kfc-halal', 'burger-king-halal', 'viande-supermarche-halal', 'abattage-etourdissement-halal'],
+    related: ['certifications-halal-france', 'kfc-halal', 'burger-king-halal', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'popeyes-halal', 'pizza-hut-halal'],
   },
   {
     slug: 'mentos-halal',
@@ -2402,7 +2432,7 @@ export const QUESTIONS: QA[] = [
       'L’alternative simple en France : le pays regorge de pizzerias halal indépendantes — souvent excellentes — et certaines chaînes locales 100 % halal se développent dans les grandes villes. Le comparatif se gagne rarement sur la pizza industrielle.',
     ],
     category: 'Produits',
-    related: ['subway-halal', 'kebab-halal', 'kfc-halal'],
+    related: ['subway-halal', 'kebab-halal', 'kfc-halal', 'pizza-hut-halal'],
   },
   {
     slug: 'o-tacos-halal',
@@ -2868,7 +2898,7 @@ export const QUESTIONS: QA[] = [
       'Réflexes pratiques : mémorise les deux ou trois logos qui correspondent à ton niveau d’exigence et cherche-les sur les emballages ; méfie-toi du « halal » écrit sans aucun logo (auto-déclaration sans contrôle) ; et sache que les sites des certificateurs listent leurs entreprises contrôlées — vérifiable en deux minutes de téléphone au rayon boucherie.',
     ],
     category: 'Pratique',
-    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal'],
+    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal', 'popeyes-halal'],
   },
   {
     slug: 'priere-travail',
