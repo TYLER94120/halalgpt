@@ -5,6 +5,7 @@ import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
 import { MOTS_VIDES } from '@/lib/mots-vides.js';
+import { sansEmphase } from '@/lib/emphase';
 import { QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
 
@@ -155,7 +156,11 @@ function rarete(mot: string): number {
 }
 
 function formatFiche(qa: (typeof QUESTIONS)[number]): string {
-  return `${qa.verdict}\n\n${qa.short}\n\n${qa.answer[0]}\n\n👉 Réponse complète : ${SITE_URL}/q/${qa.slug}`;
+  // Texte pur : le mode conduite peut etre lu a voix haute, et « asterisque
+  // asterisque » n'est pas une reponse.
+  return sansEmphase(
+    `${qa.verdict}\n\n${qa.short}\n\n${qa.answer[0]}\n\n👉 Réponse complète : ${SITE_URL}/q/${qa.slug}`,
+  );
 }
 
 /** Étage 1 : correspondance FORTE uniquement (E-code exact, ou ≥ 3 mots précis). */

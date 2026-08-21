@@ -6,6 +6,7 @@ import ShareBar from '@/components/ShareBar';
 import Surprise from '@/components/Surprise';
 import { CATEGORY_SLUGS, getQuestion, QUESTIONS } from '@/lib/questions';
 import { SITE_URL } from '@/lib/config';
+import { enMorceaux, sansEmphase } from '@/lib/emphase';
 import { titreDeFiche } from '@/lib/titre-seo';
 import { descriptionDeFiche } from '@/lib/description-seo';
 import { faitDe, surpriseDuJour } from '@/lib/surprises';
@@ -98,7 +99,9 @@ export default function QuestionPage({ params }: Props) {
         name: qa.question,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${qa.short} ${qa.answer.join(' ')}`,
+          // Sans `sansEmphase`, les marqueurs de gras partaient tels quels
+          // dans les donnees structurees — donc chez Google.
+          text: sansEmphase(`${qa.short} ${qa.answer.join(' ')}`),
         },
       },
     ],
@@ -155,7 +158,11 @@ export default function QuestionPage({ params }: Props) {
 
       <div className="article-body">
         {qa.answer.map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
+          <p key={i}>
+            {enMorceaux(paragraph).map((m, j) =>
+              m.gras ? <strong key={j}>{m.texte}</strong> : <span key={j}>{m.texte}</span>,
+            )}
+          </p>
         ))}
       </div>
 
