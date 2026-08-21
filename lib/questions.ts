@@ -51,7 +51,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : par précaution, la grande majorité des consommateurs musulmans l’évitent. Cherchez les alternatives colorées avec du E162 (betterave) ou du E163 (anthocyanes), parfaitement halal.',
     ],
     category: 'Additifs',
-    related: ['e441-gelatine-halal', 'e471-halal', 'gelatine-halal', 'e250-nitrite-halal', 'e466-halal', 'e476-halal'],
+    related: ['e441-gelatine-halal', 'e471-halal', 'gelatine-halal', 'e250-nitrite-halal', 'e466-halal', 'e476-halal', 'e163-anthocyanes-halal'],
   },
   {
     slug: 'e441-gelatine-halal',
@@ -137,7 +137,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : vinaigre de vin, balsamique, de cidre… sont consommés sans problème par l’immense majorité. Rien à voir avec le vin lui-même ou les sauces « au vin », qui restent interdits.',
     ],
     category: 'Additifs',
-    related: ['cuisine-alcool-halal', 'fromage-presure-halal', 'moutarde-halal'],
+    related: ['cuisine-alcool-halal', 'fromage-presure-halal', 'moutarde-halal', 'e334-acide-tartrique-halal'],
   },
 
   // ─── PRODUITS ───────────────────────────────────────────────────────────────
@@ -600,7 +600,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : sur un produit certifié halal, aucun souci. Sans certification, c’est le cas typique où contacter la marque (ou choisir des chips nature) est le plus simple. Les nouilles instantanées coréennes et japonaises non certifiées sont les plus concernées.',
     ],
     category: 'Additifs',
-    related: ['e621-glutamate-halal', 'chips-halal', 'e471-halal'],
+    related: ['e621-glutamate-halal', 'chips-halal', 'e471-halal', 'e640-glycine-halal'],
   },
   {
     slug: 'e920-halal',
@@ -1015,7 +1015,7 @@ export const QUESTIONS: QA[] = [
       'Une distinction utile pour la suite : le E150d fait partie du petit groupe d’additifs sur lesquels la réponse ne change jamais — ni selon la marque, ni selon le pays, ni selon l’année. Une fois que tu le sais, tu peux cesser de le vérifier. C’est exactement le contraire du E471 ou de la glycérine E422, dont l’origine dépend du fabricant et qui demandent un coup d’œil à chaque produit. Deux confusions à éviter au passage : un colorant halal ne rend pas halal ce qui l’entoure — c’est le produit entier qu’on regarde —, et la mention « caramel » sur une étiquette désigne parfois du sucre caramélisé en cuisine, pas l’additif E150.',
     ],
     category: 'Additifs',
-    related: ['coca-cola-halal', 'e100-halal', 'e330-halal', 'e471-halal', 'e422-glycerine-halal'],
+    related: ['coca-cola-halal', 'e100-halal', 'e330-halal', 'e471-halal', 'e422-glycerine-halal', 'e153-charbon-vegetal-halal'],
   },
   {
     slug: 'e250-nitrite-halal',
@@ -1216,7 +1216,7 @@ export const QUESTIONS: QA[] = [
       'Petite précision sur la crème de tartre (E336) : elle est récupérée sur les cuves de vinification, mais c’est un cristal minéral purifié sans caractère enivrant — considéré halal par les organismes de certification, à l’image du vinaigre.',
     ],
     category: 'Alimentation',
-    related: ['levure-biere-halal', 'vinaigre-halal', 'e330-halal'],
+    related: ['levure-biere-halal', 'vinaigre-halal', 'e330-halal', 'e334-acide-tartrique-halal'],
   },
   {
     slug: 'arome-vanille-halal',
@@ -1230,7 +1230,7 @@ export const QUESTIONS: QA[] = [
       'Alternatives sans débat : gousse de vanille entière, poudre de vanille, ou extraits « sans alcool » à base de glycérine végétale, disponibles en magasin bio et oriental. Pour la pâtisserie maison, la gousse reste la reine.',
     ],
     category: 'Alimentation',
-    related: ['cuisine-alcool-halal', 'vinaigre-halal', 'glace-halal'],
+    related: ['cuisine-alcool-halal', 'vinaigre-halal', 'glace-halal', 'e1510-ethanol-halal'],
   },
   {
     slug: 'gelatine-poisson-halal',
@@ -1909,7 +1909,7 @@ export const QUESTIONS: QA[] = [
       'Si une tablette t’inquiète, le vrai point à vérifier n’est généralement pas le E476 mais les arômes (alcool dans certains chocolats fourrés) et la lécithine (E322, quasi toujours de soja ou tournesol : halal). Le chocolat noir simple — cacao, sucre, lécithine, arôme vanille — est licite dans l’immense majorité des cas.',
     ],
     category: 'Additifs',
-    related: ['lecithine-e322-halal', 'e471-halal', 'chocolat-liqueur-halal'],
+    related: ['lecithine-e322-halal', 'e471-halal', 'chocolat-liqueur-halal', 'e475-halal'],
   },
   {
     slug: 'e481-halal',
@@ -1986,6 +1986,81 @@ export const QUESTIONS: QA[] = [
     related: ['e903-cire-carnauba-halal', 'e904-halal', 'haribo-halal'],
   },
   {
+    slug: 'e153-charbon-vegetal-halal',
+    question: 'Le E153 (charbon végétal) est-il halal ?',
+    verdict: '✅ Végétal par définition en Europe',
+    short:
+      'En Europe, le E153 est obtenu par carbonisation de matière végétale — bois, coques de coco, tourbe. Le charbon d’os, lui, porte un autre numéro et n’est pas autorisé ici.',
+    answer: [
+      'Le E153, ou charbon végétal médicinal, est le colorant noir des croûtes de fromage, de certains pains à burger, de glaces et de bonbons noirs. C’est aussi le charbon actif vendu en gélules pour la digestion.',
+      'Son nom inquiète, et la crainte est légitime : il existe bien un charbon d’origine animale, obtenu en calcinant des os. Mais ce n’est pas celui-ci. La réglementation européenne définit le E153 comme issu de la carbonisation de matière végétale — bois, résidus de cellulose, tourbe, coques de noix de coco. Le noir animal, lui, relève d’un autre numéro et n’est pas autorisé comme colorant alimentaire dans l’Union.',
+      'Là où le charbon d’os existe vraiment, c’est ailleurs, et personne n’en parle : dans le raffinage du sucre de canne, où certaines raffineries l’utilisent comme filtre décolorant. Il ne figure sur aucune étiquette, parce que c’est un auxiliaire technologique et non un ingrédient. La bonne nouvelle pour la France : le sucre y est très majoritairement extrait de la betterave, dont le procédé ne fait pas appel à ce filtre.',
+      'En pratique : le E153 sur une étiquette européenne ne pose pas de problème. Si le doute porte sur le sucre d’un produit importé, c’est au fabricant qu’il faut poser la question — en lui demandant non pas ses additifs, mais son procédé de raffinage.',
+    ],
+    category: 'Additifs',
+    related: ['e150d-halal', 'e120-halal', 'e903-cire-carnauba-halal'],
+  },
+  {
+    slug: 'e334-acide-tartrique-halal',
+    question: 'Le E334 (acide tartrique) est-il halal ?',
+    verdict: '✅ Accepté par les organismes malgré une origine surprenante',
+    short:
+      'Le E334 est récupéré sur les cuves de vinification. C’est un cristal minéral purifié, sans alcool, que la plupart des organismes de certification acceptent — comme le vinaigre.',
+    answer: [
+      'Le E334 est l’acide tartrique, un acidifiant présent naturellement dans le raisin. On le trouve dans les bonbons acidulés, les confitures, les boissons, et sous la forme de son sel de potassium — la crème de tartre, E336 — dans la levure chimique.',
+      'Son origine industrielle mérite d’être dite franchement, parce qu’elle surprend : il est extrait du tartre, le dépôt cristallin qui se forme sur les cuves à vin. C’est un sous-produit de la vinification. Pas de l’alcool transformé : un cristal qui se dépose à côté, et que l’on récupère, lave et purifie.',
+      'Le produit fini ne contient pas d’éthanol et n’a aucun caractère enivrant. C’est pourquoi la plupart des organismes de certification l’acceptent, en s’appuyant sur le même raisonnement que pour le vinaigre : l’istihâla, la transformation complète qui fait qu’une substance n’est plus ce dont elle vient. Une minorité préfère l’éviter par précaution, non pas sur les faits, mais parce que la filière remonte au vin.',
+      'Point pratique : l’acide tartrique peut aussi être produit par synthèse, et certains fabricants le précisent. Sur une étiquette, rien ne distingue les deux voies. Si l’avis strict est celui que vous suivez, la certification halal du produit fini est la seule réponse ; sinon, la position majoritaire est ancienne et argumentée.',
+    ],
+    category: 'Additifs',
+    related: ['levure-chimique-halal', 'vinaigre-halal', 'e163-anthocyanes-halal', 'e330-halal'],
+  },
+  {
+    slug: 'e1510-ethanol-halal',
+    question: 'Le E1510 (éthanol) est-il halal ?',
+    verdict: '⚠️ C’est de l’alcool — les avis divergent sur la trace résiduelle',
+    short:
+      'Le E1510 est l’éthanol employé comme solvant pour extraire et porter les arômes. Il n’apparaît presque jamais sous ce numéro : il se cache dans la mention « arômes ».',
+    answer: [
+      'Le E1510 est l’alcool éthylique. Il n’est pas là pour être bu : il sert de solvant, c’est-à-dire de véhicule pour extraire les molécules d’arôme d’une gousse de vanille ou d’une plante, puis pour les transporter dans le produit fini. L’extrait de vanille en est l’exemple le plus courant.',
+      'Ce qui rend la question difficile à vérifier : ce numéro ne figure quasiment jamais sur les étiquettes. Les supports d’arômes n’ont pas à être détaillés ligne par ligne, et le mot « arômes » suffit légalement à les couvrir. On ne le cherche donc pas dans la liste des additifs : on le déduit de la présence d’un arôme extrait.',
+      'Sur le fond, les avis se séparent sur un point précis. Ce qui est interdit par consensus, c’est le khamr — la boisson enivrante. Une trace d’éthanol technique, qui ne vient pas d’une boisson et qui ne peut enivrer personne aux quantités présentes, n’est pas la même chose : c’est l’argument de la majorité des organismes contemporains, dont plusieurs retiennent un seuil résiduel — souvent 0,1 % — en-deçà duquel ils certifient. Un avis plus strict écarte tout éthanol ajouté, quelle que soit la quantité.',
+      'En pratique : c’est l’une des rares questions où lire l’étiquette ne suffit pas. La certification halal du produit tranche, parce que l’organisme, lui, a accès à la composition des arômes. À défaut, les produits qui affichent « arôme naturel de vanille » sans extrait alcoolique, ou une vanille en poudre, contournent la question.',
+    ],
+    category: 'Additifs',
+    related: ['arome-vanille-halal', 'cuisine-alcool-halal', 'vinaigre-halal', 'parfum-alcool-halal'],
+  },
+  {
+    slug: 'e640-glycine-halal',
+    question: 'Le E640 (glycine) est-il halal ?',
+    verdict: '⚠️ Presque toujours synthétique, mais ce n’est pas écrit',
+    short:
+      'La glycine industrielle est fabriquée par synthèse chimique dans l’immense majorité des cas. Elle peut aussi venir de l’hydrolyse du collagène animal.',
+    answer: [
+      'Le E640 est la glycine, le plus simple des acides aminés. Elle sert d’exhausteur et de modificateur de goût — elle adoucit l’amertume — et on la rencontre surtout dans les compléments alimentaires, certaines boissons et quelques préparations industrielles. Elle est rare sur les étiquettes européennes.',
+      'Deux voies de fabrication existent. La première, de loin dominante dans l’industrie, est une synthèse chimique à partir de matières premières minérales : elle ne fait intervenir aucun animal. La seconde consiste à hydrolyser du collagène, donc de la matière animale — la même origine que la gélatine.',
+      'Ce qui reste inconnu au consommateur, c’est laquelle des deux a servi. Le numéro E désigne une molécule et une fonction, jamais un procédé. La glycine synthétique et la glycine issue de collagène sont chimiquement identiques et portent le même numéro.',
+      'En pratique : la probabilité penche fortement du côté synthétique, mais une probabilité n’est pas une garantie. Pour un complément alimentaire pris quotidiennement, cela vaut la peine d’écrire au fabricant et de demander le procédé par écrit : c’est la seule réponse qui engage quelqu’un.',
+    ],
+    category: 'Additifs',
+    related: ['e621-glutamate-halal', 'e631-e627-halal', 'e441-gelatine-halal', 'collagene-halal'],
+  },
+  {
+    slug: 'e163-anthocyanes-halal',
+    question: 'Le E163 (anthocyanes) est-il halal ?',
+    verdict: '⚠️ Souvent tiré du marc de raisin — même question que le E334',
+    short:
+      'Les anthocyanes sont les pigments rouges et violets des fruits. Le plus courant est extrait de la peau du raisin, sous-produit de la vinification, parfois à l’éthanol.',
+    answer: [
+      'Le E163 désigne les anthocyanes, la famille de pigments qui donne leur rouge, leur violet et leur bleu aux fruits et aux légumes. C’est ce qui colore les yaourts aux fruits rouges, les bonbons, les glaces et certaines boissons — une alternative végétale au carmin de cochenille (E120).',
+      'Les sources autorisées sont végétales : chou rouge, cassis, sureau, et surtout peau de raisin. Cette dernière est de loin la plus employée pour une raison économique simple : le marc de raisin est le résidu de la vinification, disponible en quantité et à bas coût. L’origine du pigment remonte donc, comme pour l’acide tartrique, à la filière du vin.',
+      'Un second point mérite d’être nommé : l’extraction. La réglementation autorise plusieurs solvants, dont l’eau acidifiée, le dioxyde de carbone, le méthanol et l’éthanol. Quand c’est l’éthanol, la question rejoint celle du E1510 — celle de la trace résiduelle, sur laquelle les avis divergent.',
+      'La position des organismes de certification suit ici la même logique que pour le vinaigre et le tartre : le pigment fini ne contient pas d’alcool et n’enivre pas, et la plupart l’acceptent. Ceux qui écartent tout ce qui remonte au vin l’évitent aussi. Sur l’étiquette, rien ne dit quel fruit ni quel solvant : seule la certification, ou une question écrite au fabricant, le dit.',
+    ],
+    category: 'Additifs',
+    related: ['e334-acide-tartrique-halal', 'e120-halal', 'e1510-ethanol-halal', 'vinaigre-halal'],
+  },
+  {
     slug: 'e570-halal',
     question: 'Le E570 (acide stéarique) est-il halal ?',
     verdict: '⚠️ Ça dépend de l’origine',
@@ -2011,7 +2086,7 @@ export const QUESTIONS: QA[] = [
       'Sur une étiquette de bonbons, la combinaison « E903 + E414 + colorants végétaux » est un bon signal ; « E904 + E120 + gélatine » est le trio à questionner. Trois secondes de lecture qui changent tout.',
     ],
     category: 'Additifs',
-    related: ['e904-halal', 'e414-gomme-arabique-halal', 'e120-halal'],
+    related: ['e904-halal', 'e414-gomme-arabique-halal', 'e120-halal', 'e901-cire-abeille-halal'],
   },
   {
     slug: 'e1105-lysozyme-halal',
