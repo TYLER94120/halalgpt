@@ -1926,6 +1926,66 @@ export const QUESTIONS: QA[] = [
     related: ['e471-halal', 'e472-halal', 'e570-halal', 'e920-halal'],
   },
   {
+    slug: 'e542-phosphate-os-halal',
+    question: 'Le E542 (phosphate d’os) est-il halal ?',
+    verdict: '⚠️ D’origine animale — à éviter sans certification',
+    short:
+      'Le E542 est un phosphate de calcium obtenu à partir d’os d’animaux. Son origine est animale par définition, et l’espèce n’est jamais précisée sur l’étiquette.',
+    answer: [
+      'Le E542 est un phosphate de calcium fabriqué à partir d’os d’animaux dégraissés puis calcinés. Il sert d’anti-agglomérant et de support minéral. Contrairement à la plupart des additifs dont l’origine est incertaine, ici le nom dit la chose : l’origine est animale, ce n’est pas une hypothèse.',
+      'Ce qui reste inconnu, en revanche, c’est l’espèce et le mode d’abattage. L’étiquette ne les mentionne jamais. Les os utilisés sont généralement bovins, mais rien ne l’indique au consommateur, et rien ne garantit un abattage rituel.',
+      'C’est pourquoi les organismes de certification halal classent le E542 parmi les additifs à éviter en l’absence de certification explicite du produit fini. Le raisonnement est le même que pour la gélatine (E441) : un dérivé d’animal dont on ignore la provenance ne peut pas être présumé licite.',
+      'On le rencontre peu dans l’alimentation courante en Europe — surtout dans certains compléments alimentaires, poudres et préparations minérales. Si tu le vois sur une étiquette, la seule réponse fiable vient du fabricant : demande-lui l’origine, par écrit.',
+    ],
+    category: 'Additifs',
+    related: ['e441-gelatine-halal', 'e471-halal', 'e470-sels-acides-gras-halal'],
+  },
+  {
+    slug: 'e470-sels-acides-gras-halal',
+    question: 'Le E470 est-il halal ?',
+    verdict: '⚠️ Ça dépend de l’origine des acides gras',
+    short:
+      'Le E470 est un sel d’acides gras qui peuvent être végétaux (palme, coco) ou animaux (suif). L’étiquette ne le précise pas.',
+    answer: [
+      'Le E470 désigne les sels d’acides gras : E470a pour les sels de sodium, potassium et calcium, E470b pour ceux de magnésium. Ils servent d’anti-agglomérant et d’émulsifiant, notamment dans les poudres, les soupes instantanées et certaines confiseries.',
+      'Le point qui décide de tout est l’origine des acides gras. Ils proviennent de graisses qui peuvent être végétales — huile de palme, coprah — ou animales, y compris de suif. Le numéro E est le même dans les deux cas : il désigne une fonction, pas une provenance.',
+      'En Europe, la filière utilise majoritairement des graisses végétales, pour des raisons de coût et de logistique. Mais « majoritairement » n’est pas « toujours », et aucun élément de l’étiquette ne permet de trancher pour un produit donné.',
+      'Deux voies fiables : choisir un produit portant une certification halal, qui aura fait auditer la chaîne d’approvisionnement, ou écrire au fabricant. Beaucoup répondent, et la réponse écrite vaut mieux que toutes les déductions.',
+    ],
+    category: 'Additifs',
+    related: ['e471-halal', 'e472-halal', 'e542-phosphate-os-halal'],
+  },
+  {
+    slug: 'e475-halal',
+    question: 'Le E475 est-il halal ?',
+    verdict: '⚠️ Ça dépend de l’origine des acides gras',
+    short:
+      'Le E475 (esters polyglycériques d’acides gras) combine du glycérol et des acides gras dont l’origine peut être végétale ou animale.',
+    answer: [
+      'Le E475 est un émulsifiant obtenu en combinant du glycérol et des acides gras. On le trouve surtout dans les gâteaux industriels, les pâtisseries emballées et certaines crèmes : il donne du moelleux et empêche la pâte de retomber.',
+      'Comme pour le E471 ou le E472, la question halal ne porte pas sur la molécule mais sur sa matière première. Le glycérol et les acides gras peuvent venir de végétaux comme de graisses animales. Rien dans le numéro E ne distingue les deux.',
+      'La pratique industrielle européenne penche vers le végétal, mais ce n’est pas une garantie. Certains fabricants précisent « d’origine végétale » sur l’emballage : quand c’est écrit, c’est une information fiable, car cette mention engage le fabricant.',
+      'En l’absence de mention, la certification halal du produit fini reste la seule réponse sûre. À défaut, une question écrite au service consommateurs témoigne davantage qu’une supposition.',
+    ],
+    category: 'Additifs',
+    related: ['e471-halal', 'e472-halal', 'e476-halal'],
+  },
+  {
+    slug: 'e901-cire-abeille-halal',
+    question: 'La cire d’abeille (E901) est-elle halal ?',
+    verdict: '✅ Produit de l’abeille — licite selon la majorité des savants',
+    short:
+      'Le E901 est la cire produite par les abeilles. Les produits de l’abeille sont considérés licites par la grande majorité des savants, comme le miel.',
+    answer: [
+      'Le E901 est la cire sécrétée par les abeilles ouvrières pour bâtir leurs rayons. Dans l’alimentation, elle sert d’agent d’enrobage : elle donne leur brillant aux bonbons, aux dragées et à certains fruits, et protège les compléments alimentaires de l’humidité.',
+      'Son origine ne pose aucune incertitude : elle vient de l’abeille, jamais d’un animal terrestre abattu. La question n’est donc pas celle de l’abattage, mais celle du statut des produits de l’abeille.',
+      'Sur ce point, la grande majorité des savants les considèrent licites, en s’appuyant sur le statut du miel, dont le Coran parle explicitement comme d’un bienfait. Les organismes de certification acceptent le E901 dans les produits qu’ils auditent. Ce n’est pas un verdict que ce site prononce : c’est l’avis rapporté le plus répandu.',
+      'Un point de vigilance demeure : la cire d’abeille est parfois associée, dans un même enrobage, à de la gomme laque (E904), qui est une sécrétion d’insecte différente et fait l’objet de discussions distinctes. Si les deux figurent sur l’étiquette, la question se déplace sur la seconde.',
+    ],
+    category: 'Additifs',
+    related: ['e903-cire-carnauba-halal', 'e904-halal', 'haribo-halal'],
+  },
+  {
     slug: 'e570-halal',
     question: 'Le E570 (acide stéarique) est-il halal ?',
     verdict: '⚠️ Ça dépend de l’origine',
