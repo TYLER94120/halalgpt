@@ -123,7 +123,7 @@ export const QUESTIONS: QA[] = [
       'Les plus prudents préfèrent les fromages à présure microbienne — c’est le cas de la majorité des fromages industriels (vérifiez la mention « coagulant microbien ») — ou les fromages certifiés halal, de plus en plus courants. Les deux démarches sont respectables.',
     ],
     category: 'Additifs',
-    related: ['vinaigre-halal', 'e471-halal', 'e1105-lysozyme-halal', 'yaourt-halal'],
+    related: ['vinaigre-halal', 'e471-halal', 'e1105-lysozyme-halal', 'yaourt-halal', 'philadelphia-halal'],
   },
   {
     slug: 'vinaigre-halal',
@@ -155,7 +155,7 @@ export const QUESTIONS: QA[] = [
       'Et si tu veux le goût sans l’enquête : les épiceries orientales et les rayons halal proposent désormais des dizaines de marques de bonbons entièrement certifiés, gélatine bovine rituelle ou pectine de fruits. Le choix est bien plus large qu’il y a dix ans.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal', 'milka-halal', 'chewing-gum-halal'],
+    related: ['gelatine-halal', 'dragibus-halal', 'marshmallow-halal', 'e120-halal', 'e904-halal', 'milka-halal', 'chewing-gum-halal', 'skittles-halal'],
   },
   {
     slug: 'mms-halal',
@@ -629,7 +629,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : c’est un additif « zone grise » assumée. Si vous suivez un avis strict, évitez-le ; sinon, la position tolérante est répandue et argumentée. Les produits certifiés halal tranchent la question pour vous.',
     ],
     category: 'Additifs',
-    related: ['e120-halal', 'e920-halal', 'gelatine-halal'],
+    related: ['e120-halal', 'e920-halal', 'gelatine-halal', 'glace-extreme-halal'],
   },
 
   // ─── PRODUITS (suite) ───────────────────────────────────────────────────────
@@ -680,7 +680,7 @@ export const QUESTIONS: QA[] = [
       'La bonne nouvelle pour les amateurs de poulet frit en France : les alternatives halal ne manquent pas — c’est même l’un des segments les plus dynamiques de la restauration halal française, avec des enseignes qui affichent leur certification en caisse. La carte VoyagesHalal t’en géolocalise près de chez toi.',
     ],
     category: 'Produits',
-    related: ['mcdo-halal', 'burger-king-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'viande-supermarche-halal', 'danette-halal'],
+    related: ['mcdo-halal', 'burger-king-halal', 'o-tacos-halal', 'restaurant-halal-paris', 'viande-supermarche-halal', 'danette-halal', 'buffalo-grill-halal'],
   },
   {
     slug: 'chewing-gum-halal',
@@ -709,7 +709,7 @@ export const QUESTIONS: QA[] = [
       'Chez le glacier artisanal, demandez simplement : les parfums alcoolisés sont toujours signalés, et beaucoup d’artisans travaillent sans gélatine. Il existe aussi des marques de glaces certifiées halal en magasin oriental.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'e471-halal', 'cuisine-alcool-halal'],
+    related: ['gelatine-halal', 'e471-halal', 'cuisine-alcool-halal', 'glace-extreme-halal', 'magnum-halal', 'haagen-dazs-halal'],
   },
   {
     slug: 'chips-halal',
@@ -1172,7 +1172,7 @@ export const QUESTIONS: QA[] = [
       'Un second réflexe, moins connu que la gélatine et pourtant plus fréquent : la couleur des yaourts aux fruits rouges. Fraise, framboise, cerise et fruits des bois sont parfois teintés au carmin — écrit « E120 » ou « cochenille » —, un colorant tiré d’insectes que la plupart des organismes de certification écartent. Il figure dans la liste d’ingrédients, comme la gélatine. Les yaourts nature, les brassés simples et le skyr n’ont ni l’un ni l’autre : ce sont les versions aromatisées et les desserts colorés qui demandent le coup d’œil. Et une confusion à lever, car elle revient souvent : les ferments lactiques n’ont rien à voir avec la présure des fromages — un yaourt n’en contient pas.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal', 'e120-halal'],
+    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal', 'e120-halal', 'actimel-halal'],
   },
   {
     slug: 'quick-halal',
@@ -1990,7 +1990,7 @@ export const QUESTIONS: QA[] = [
     question: 'Le E153 (charbon végétal) est-il halal ?',
     verdict: '✅ Végétal par définition en Europe',
     short:
-      'En Europe, le E153 est obtenu par carbonisation de matière végétale — bois, coques de coco, tourbe. Le charbon d’os, lui, porte un autre numéro et n’est pas autorisé ici.',
+      'En Europe, le E153 vient de la carbonisation de matière végétale : bois, coco, tourbe. Le charbon d’os porte un autre numéro et n’est pas autorisé ici.',
     answer: [
       'Le E153, ou charbon végétal médicinal, est le colorant noir des croûtes de fromage, de certains pains à burger, de glaces et de bonbons noirs. C’est aussi le charbon actif vendu en gélules pour la digestion.',
       'Son nom inquiète, et la crainte est légitime : il existe bien un charbon d’origine animale, obtenu en calcinant des os. Mais ce n’est pas celui-ci. La réglementation européenne définit le E153 comme issu de la carbonisation de matière végétale — bois, résidus de cellulose, tourbe, coques de noix de coco. Le noir animal, lui, relève d’un autre numéro et n’est pas autorisé comme colorant alimentaire dans l’Union.',
@@ -2005,7 +2005,7 @@ export const QUESTIONS: QA[] = [
     question: 'Le E334 (acide tartrique) est-il halal ?',
     verdict: '✅ Accepté par les organismes malgré une origine surprenante',
     short:
-      'Le E334 est récupéré sur les cuves de vinification. C’est un cristal minéral purifié, sans alcool, que la plupart des organismes de certification acceptent — comme le vinaigre.',
+      'Le E334 est récupéré sur les cuves de vinification : un cristal minéral purifié, sans alcool, que la plupart des organismes acceptent, comme le vinaigre.',
     answer: [
       'Le E334 est l’acide tartrique, un acidifiant présent naturellement dans le raisin. On le trouve dans les bonbons acidulés, les confitures, les boissons, et sous la forme de son sel de potassium — la crème de tartre, E336 — dans la levure chimique.',
       'Son origine industrielle mérite d’être dite franchement, parce qu’elle surprend : il est extrait du tartre, le dépôt cristallin qui se forme sur les cuves à vin. C’est un sous-produit de la vinification. Pas de l’alcool transformé : un cristal qui se dépose à côté, et que l’on récupère, lave et purifie.',
@@ -2020,7 +2020,7 @@ export const QUESTIONS: QA[] = [
     question: 'Le E1510 (éthanol) est-il halal ?',
     verdict: '⚠️ C’est de l’alcool — les avis divergent sur la trace résiduelle',
     short:
-      'Le E1510 est l’éthanol employé comme solvant pour extraire et porter les arômes. Il n’apparaît presque jamais sous ce numéro : il se cache dans la mention « arômes ».',
+      'Le E1510 est l’éthanol employé comme solvant d’arômes. Il n’apparaît presque jamais sous ce numéro : il se cache dans la mention « arômes ».',
     answer: [
       'Le E1510 est l’alcool éthylique. Il n’est pas là pour être bu : il sert de solvant, c’est-à-dire de véhicule pour extraire les molécules d’arôme d’une gousse de vanille ou d’une plante, puis pour les transporter dans le produit fini. L’extrait de vanille en est l’exemple le plus courant.',
       'Ce qui rend la question difficile à vérifier : ce numéro ne figure quasiment jamais sur les étiquettes. Les supports d’arômes n’ont pas à être détaillés ligne par ligne, et le mot « arômes » suffit légalement à les couvrir. On ne le cherche donc pas dans la liste des additifs : on le déduit de la présence d’un arôme extrait.',
@@ -2050,7 +2050,7 @@ export const QUESTIONS: QA[] = [
     question: 'Le E163 (anthocyanes) est-il halal ?',
     verdict: '⚠️ Souvent tiré du marc de raisin — même question que le E334',
     short:
-      'Les anthocyanes sont les pigments rouges et violets des fruits. Le plus courant est extrait de la peau du raisin, sous-produit de la vinification, parfois à l’éthanol.',
+      'Les anthocyanes sont les pigments rouges et violets des fruits. Le plus courant vient de la peau du raisin, sous-produit du vin, parfois extrait à l’éthanol.',
     answer: [
       'Le E163 désigne les anthocyanes, la famille de pigments qui donne leur rouge, leur violet et leur bleu aux fruits et aux légumes. C’est ce qui colore les yaourts aux fruits rouges, les bonbons, les glaces et certaines boissons — une alternative végétale au carmin de cochenille (E120).',
       'Les sources autorisées sont végétales : chou rouge, cassis, sureau, et surtout peau de raisin. Cette dernière est de loin la plus employée pour une raison économique simple : le marc de raisin est le résidu de la vinification, disponible en quantité et à bas coût. L’origine du pigment remonte donc, comme pour l’acide tartrique, à la filière du vin.',
@@ -2160,6 +2160,111 @@ export const QUESTIONS: QA[] = [
     related: ['chocolat-liqueur-halal', 'kitkat-halal', 'ferrero-rocher-halal'],
   },
   {
+    slug: 'skittles-halal',
+    question: 'Les Skittles sont-ils halal ?',
+    verdict: '⚠️ Sans gélatine depuis 2009 — sauf une gamme',
+    short:
+      'La composition publiée des Skittles Fruits ne fait plus apparaître de gélatine depuis 2009. Une variante, les Squishy Cloudz, en contient.',
+    answer: [
+      'Le réflexe, devant un sachet de dragées colorées, est de chercher la gélatine — celle qui fait des Haribo classiques un produit à écarter. Pour les Skittles, la réponse a changé : le fabricant l’a retirée de la recette en 2009, et la liste d’ingrédients publiée en France ne la mentionne plus.',
+      'Ce qu’on y lit à la place : sucre, sirop de glucose, graisse de palme, acidifiants, dextrine, maltodextrine, arômes, amidon modifié, une série de colorants (E162 betterave, E163 anthocyanes, E170 carbonate de calcium, E160a caroténoïdes, E100 curcumine, E132, E133) et un agent d’enrobage à la cire de carnauba. Deux choses valent d’être notées : le carnauba (E903) est végétal, et surtout le carmin de cochenille (E120) — le piège classique des bonbons rouges — ne figure pas dans cette liste.',
+      'L’exception est réelle et porte un nom : les Skittles Squishy Cloudz, à texture guimauve, contiennent de la gélatine. Et la recette peut différer d’un pays à l’autre : un sachet rapporté d’ailleurs n’est pas le sachet français.',
+      'Ce qui reste ouvert, comme pour tout produit non certifié : l’origine des arômes, qui peuvent être portés par un solvant alcoolique, et celle du E163, le plus souvent tiré du marc de raisin. Deux questions que l’étiquette ne tranche pas et que seul le fabricant peut trancher.',
+    ],
+    category: 'Produits',
+    related: ['haribo-halal', 'dragibus-halal', 'e903-cire-carnauba-halal', 'e163-anthocyanes-halal', 'e120-halal'],
+  },
+  {
+    slug: 'glace-extreme-halal',
+    question: 'La glace Extrême est-elle halal ?',
+    verdict: '⚠️ Pas de gélatine — mais du shellac sur certains parfums',
+    short:
+      'Les cônes Extrême ne contiennent pas de gélatine : les gélifiants sont végétaux. En revanche, certains parfums portent un enrobage au shellac (E904).',
+    answer: [
+      'Première inquiétude évacuée : les compositions publiées des cônes Extrême ne font apparaître aucune gélatine. Ce qui tient la texture, ce sont des gélifiants végétaux — farine de graines de caroube, gomme guar, pectines. Sur ce point précis, il n’y a pas de piège.',
+      'Le vrai point est ailleurs, et il change d’un parfum à l’autre. La liste du cône café mentionne des « agents d’enrobage : shellac, gomme arabique ». La gomme arabique (E414) est végétale et ne pose rien. Le shellac, c’est le E904 : une résine sécrétée par un insecte, que beaucoup de savants tolèrent — on récolte une sécrétion, on ne broie pas l’animal — et que d’autres évitent par précaution.',
+      'Second point, commun à presque toute la crème glacée industrielle : les mono- et diglycérides d’acides gras, c’est-à-dire le E471, présents notamment sur la version chocolat. Leur origine, végétale ou animale, n’est jamais précisée sur l’étiquette.',
+      'La conclusion pratique est inhabituelle et mérite d’être dite clairement : « Extrême » n’a pas une réponse, il en a plusieurs. C’est le parfum qu’il faut regarder, pas la marque — et la ligne à chercher est celle des agents d’enrobage.',
+    ],
+    category: 'Produits',
+    related: ['glace-halal', 'e904-halal', 'e471-halal', 'e414-gomme-arabique-halal', 'magnum-halal'],
+  },
+  {
+    slug: 'magnum-halal',
+    question: 'Les glaces Magnum sont-elles halal ?',
+    verdict: '⚠️ Pas de gélatine — tout se joue sur les émulsifiants',
+    short:
+      'La composition publiée du Magnum Classic affiche des émulsifiants E471 et E476, dont l’origine n’est pas précisée. Aucune gélatine.',
+    answer: [
+      'La liste du Magnum Classic se lit sans mauvaise surprise du côté de la gélatine : lait écrémé réhydraté, sucre, beurre de cacao, eau, huile de coco, pâte de cacao, sirops de glucose, poudre de lait entier, lactose et protéines de lait, beurre concentré — et des émulsifiants.',
+      'Ce sont eux qui portent toute la question : lécithine de soja (végétale, sans réserve), E476 et E471. Le E476 est d’origine végétale selon les organismes. Le E471, en revanche, est le cas d’école de l’additif dont le numéro ne dit pas la provenance : il peut venir de graisses végétales comme animales, et rien sur l’emballage ne permet de trancher.',
+      'Un cas dans la gamme échappe entièrement au problème : les références portant la mention vegan. Cette mention engage le fabricant sur l’absence de tout ingrédient d’origine animale — l’émulsifiant compris. C’est le seul endroit du rayon où la question ne se pose plus.',
+      'Pour le reste, la gamme est vaste et les recettes diffèrent d’une référence à l’autre. La ligne à lire n’est ni le nom ni la promesse du paquet : c’est celle qui commence par « émulsifiants ».',
+    ],
+    category: 'Produits',
+    related: ['glace-halal', 'e471-halal', 'e476-halal', 'lecithine-e322-halal', 'glace-extreme-halal'],
+  },
+  {
+    slug: 'haagen-dazs-halal',
+    question: 'Les glaces Häagen-Dazs sont-elles halal ?',
+    verdict: '⚠️ Certains parfums contiennent du rhum, écrit sur l’étiquette',
+    short:
+      'Le parfum Rhum Raisin contient du rhum comme ingrédient, pas comme trace. D’autres créations en boutique aussi. Les parfums classiques, non.',
+    answer: [
+      'La marque met en avant une base courte — crème, lait, sucre, œufs — et sur les parfums classiques, la liste d’ingrédients est effectivement brève. Ce n’est pas là que se situe la difficulté.',
+      'Elle est sur des parfums précis, et elle est écrite noir sur blanc. La composition publiée du Rhum Raisin mentionne du rhum, ainsi que des raisins au rhum. En boutique, des créations inspirées des cocktails — mojito, piña colada — sont annoncées avec du rhum ou une sauce au rhum. Ce ne sont pas des traces : c’est un ingrédient, versé dans la recette.',
+      'La distinction compte, parce qu’elle sépare deux débats que l’on confond souvent. Une trace d’éthanol employée comme solvant d’arôme divise les savants, et cette divergence est réelle. Une boisson alcoolisée ajoutée à une préparation, elle, ne divise personne : elle est écartée.',
+      'En pratique : les parfums classiques ne posent pas cette question, et le nom du parfum suffit presque toujours à repérer ceux qui la posent. En boutique, où l’étiquette n’est pas sous les yeux, la question se pose au vendeur — parfum par parfum, pas pour l’enseigne entière.',
+    ],
+    category: 'Produits',
+    related: ['glace-halal', 'cuisine-alcool-halal', 'e1510-ethanol-halal', 'glace-extreme-halal'],
+  },
+  {
+    slug: 'philadelphia-halal',
+    question: 'Le Philadelphia est-il halal ?',
+    verdict: '✅ Aucune présure dans la composition publiée',
+    short:
+      'Le Philadelphia n’est pas un fromage à présure : il est coagulé par acidification. Sa liste d’ingrédients ne fait apparaître aucun coagulant animal.',
+    answer: [
+      'La question qui se pose sur un fromage est presque toujours celle de la présure — l’enzyme tirée de la caillette du veau, qui fait cailler le lait, et dont l’origine peut être animale ou microbienne. Le Philadelphia relève d’un autre procédé, et c’est pour cela que la réponse y est plus nette qu’ailleurs.',
+      'La composition publiée de la référence nature se lit ainsi : lait, crème, préparation de protéines de lait, perméat de lactosérum concentré, sel, stabilisant (farine de graines de caroube), acidifiant (acide citrique). Aucune présure n’y figure — ce fromage frais est pris par acidification et par des ferments, pas par une enzyme animale.',
+      'Deux réserves honnêtes. La gamme est large — allégé, aux herbes, à cuisiner — et chaque référence a sa propre liste : ce qui est décrit ici vaut pour celle qu’on a lue. Et lorsqu’une présure figure sur un autre fromage, l’étiquette française ne dit pas si elle est animale ou microbienne, ce qui laisse la question ouverte partout ailleurs.',
+      'Pour le cas général des fromages, la fiche présure explique quoi chercher et à qui le demander. Ici, l’ingrédient qui inquiète est simplement absent de la liste.',
+    ],
+    category: 'Produits',
+    related: ['fromage-presure-halal', 'kiri-halal', 'vache-qui-rit-halal', 'babybel-halal'],
+  },
+  {
+    slug: 'actimel-halal',
+    question: 'L’Actimel est-il halal ?',
+    verdict: '✅ Pas de gélatine — la seule question est la vitamine D',
+    short:
+      'La composition de l’Actimel ne fait apparaître ni gélatine ni ingrédient d’origine animale douteuse. Certaines références ajoutent de la vitamine D3.',
+    answer: [
+      'L’inquiétude porte souvent sur les ferments, à cause du mot. Elle n’a pas lieu d’être : les ferments lactiques sont des bactéries — Lactobacillus, Streptococcus thermophilus — cultivées sur milieu laitier. Rien d’animal au sens qui nous occupe, et aucune parenté avec la levure de bière ou l’alcool.',
+      'La liste publiée se lit : lait écrémé, lait écrémé en poudre, sucre, crème, beurre, épaississant (amidon), ferments lactiques, et selon les références des arômes, des minéraux (fer, zinc) et des vitamines B6 et D3. Ce qui compte ici est autant ce qu’on y lit que ce qu’on n’y lit pas : pas de gélatine — l’épaississant est de l’amidon, pas un gélifiant animal.',
+      'Reste un seul point, et il est discret : la vitamine D3 ajoutée sur certaines références. Industriellement, elle est le plus souvent tirée de la lanoline, la graisse de laine récoltée à la tonte de moutons vivants. Pas d’abattage, pas de chair : la grande majorité des avis la considèrent licite, et les organismes de certification la valident couramment. Les versions de lichen existent, sans débat du tout.',
+      'Autrement dit, la réponse tient à un détail que personne ne regarde : la ligne des vitamines, et non celle des ferments.',
+    ],
+    category: 'Produits',
+    related: ['yaourt-halal', 'vitamine-d3-halal', 'danette-halal', 'levure-biere-halal'],
+  },
+  {
+    slug: 'buffalo-grill-halal',
+    question: 'Buffalo Grill est-il halal ?',
+    verdict: '⚠️ Aucune certification nationale — quelques franchises font exception',
+    short:
+      'La chaîne n’affiche aucune certification halal et sert de l’alcool. Des franchises isolées proposent du halal : cela se vérifie restaurant par restaurant.',
+    answer: [
+      'Au niveau de l’enseigne, la réponse est claire : aucune certification halal n’est affichée, ni sur le site de la chaîne ni dans les restaurants, et la communication de la marque renvoie à un approvisionnement en abattage conventionnel. Du vin est par ailleurs servi en salle. Rien n’indique un projet de généralisation.',
+      'Mais Buffalo Grill est un réseau de franchisés, et un franchisé peut s’approvisionner autrement pour répondre à sa clientèle locale. Des cas existent — un restaurant de la région d’Avignon a intégré de la viande halal à sa carte, certificat à l’appui. Ce sont des initiatives isolées, jamais une politique d’enseigne.',
+      'La conséquence est inconfortable mais elle est la vérité : « Buffalo Grill halal ou pas » n’a pas de réponse unique. Elle dépend de l’établissement, et elle peut changer. Ce qui se vérifie, c’est le certificat affiché dans ce restaurant-là, avec le nom de l’organisme et sa date. Un « oui, c’est halal » prononcé au comptoir n’est pas un certificat.',
+      'Une seconde question, distincte, se pose ensuite et n’a rien à voir avec la viande : celle de manger dans une salle où l’alcool est servi. Certains l’écartent par principe, d’autres distinguent ce qu’il y a dans leur assiette de ce qu’il y a sur la table voisine. Les deux positions existent, et ce n’est pas ce site qui tranchera un choix personnel.',
+    ],
+    category: 'Produits',
+    related: ['certifications-halal-france', 'kfc-halal', 'burger-king-halal', 'viande-supermarche-halal', 'abattage-etourdissement-halal'],
+  },
+  {
     slug: 'mentos-halal',
     question: 'Les Mentos sont-ils halal ?',
     verdict: '⚠️ Ça dépend des gammes et des pays',
@@ -2171,7 +2276,7 @@ export const QUESTIONS: QA[] = [
       'Pour les chewing-gums Mentos, s’ajoute la question habituelle de la base gomme et des arômes — même situation que les autres chewing-gums industriels. Trente secondes d’étiquette règlent chaque cas.',
     ],
     category: 'Produits',
-    related: ['chewing-gum-halal', 'dragibus-halal', 'e904-halal'],
+    related: ['chewing-gum-halal', 'dragibus-halal', 'e904-halal', 'skittles-halal'],
   },
   {
     slug: 'dragibus-halal',
@@ -2565,7 +2670,7 @@ export const QUESTIONS: QA[] = [
       'Pour la tranquillité totale : la D3 végétale extraite du lichen existe (souvent étiquetée « vegan D3 ») et des D3 certifiées halal aussi. Vérifie l’enveloppe (gélatine vs capsule végétale) et le support huileux. Vu le déficit en vitamine D des habitants du nord de l’Europe, c’est un complément que ton médecin validera volontiers — halal compris.',
     ],
     category: 'Produits',
-    related: ['medicaments-gelules-halal', 'cereales-halal', 'collagene-halal'],
+    related: ['medicaments-gelules-halal', 'cereales-halal', 'collagene-halal', 'actimel-halal'],
   },
   {
     slug: 'taurine-halal',
