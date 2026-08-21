@@ -216,7 +216,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'levure-biere-halal',
     question: 'La levure de bière est-elle halal ?',
-    verdict: '✅ Halal',
+    verdict: '✅ Halal selon les organismes de certification',
     short:
       'La levure de bière est un micro-organisme non enivrant. Malgré son nom, elle est considérée halal par la quasi-totalité des avis.',
     answer: [
@@ -562,7 +562,7 @@ export const QUESTIONS: QA[] = [
   },
   {
     slug: 'e621-glutamate-halal',
-    question: 'Le E621 (glutamate) est-il halal ?',
+    question: 'Le glutamate monosodique (E621) est-il halal ?',
     verdict: '✅ Généralement halal',
     short:
       'Le glutamate monosodique (E621) est produit par fermentation végétale. Il est généralement considéré halal.',
@@ -1900,7 +1900,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'e476-halal',
     question: 'Le E476 (dans le chocolat) est-il halal ?',
-    verdict: '✅ Halal (végétal)',
+    verdict: '✅ Origine végétale — halal selon les organismes',
     short:
       'Le E476 (polyricinoléate de polyglycérol), l’émulsifiant des tablettes de chocolat, est fabriqué à partir d’huile de ricin et de soja : végétal, halal.',
     answer: [
