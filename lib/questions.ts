@@ -407,11 +407,11 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'greffe-cheveux-halal',
     question: 'La greffe de cheveux est-elle halal ?',
-    verdict: '✅ Largement permise pour traiter une calvitie — ce sont tes propres cheveux',
+    verdict: '✅ Permise pour une calvitie selon la majorité des savants contemporains',
     short:
       'La majorité des savants contemporains la permettent quand il s’agit de réparer une perte : ce sont tes propres cheveux qu’on redéplace, pas ceux d’un autre. C’est cette distinction qui change tout.',
     answer: [
-      'La question se joue sur un seul point : s’agit-il de « modifier la création d’Allah », ce qui est blâmé, ou de SOIGNER un défaut, ce qui est permis ? La majorité des savants contemporains et plusieurs académies de jurisprudence retiennent la seconde lecture quand la greffe répond à une calvitie, une alopécie, une brûlure ou un accident : on rétablit un état d’origine, on n’ajoute pas un ornement. Se soigner est encouragé en islam — « Serviteurs d’Allah, soignez-vous », rapporté dans les recueils de sunna.',
+      'La question se joue sur un seul point : s’agit-il de « modifier la création d’Allah », ce qui est blâmé, ou de SOIGNER un défaut, ce qui est permis ? La majorité des savants contemporains et plusieurs académies de jurisprudence retiennent la seconde lecture quand la greffe répond à une calvitie, une alopécie, une brûlure ou un accident : on rétablit un état d’origine, on n’ajoute pas un ornement. Se soigner est encouragé en islam — « Serviteurs d’Allah, soignez-vous » (Tirmidhi, Abou Dawoud).',
       'Le détail technique qui règle presque tout : une greffe moderne est une AUTOGREFFE. On prélève tes cheveux à l’arrière de ton crâne pour les replanter devant. Rien ne vient d’une autre personne. C’est ce qui la distingue du hadith bien connu sur le fait de joindre des cheveux (« Allah a maudit celle qui ajoute des cheveux et celle qui demande qu’on lui en ajoute », Boukhari et Mouslim) : ce texte vise l’ajout de cheveux d’AUTRUI, et donc les extensions, pas le déplacement des siens.',
       'Deux réserves à connaître. D’abord, une minorité de savants reste réticente quand l’intention est purement esthétique, sans perte réelle à réparer — l’intention compte, et la frontière entre soigner et embellir n’est pas toujours nette. Ensuite, un point pratique que personne n’explique : pendant la cicatrisation, les croûtes et le pansement peuvent empêcher l’eau d’atteindre le cuir chevelu lors des ablutions et de la grande ablution. Les savants prévoient ce cas — on essuie sur le pansement quand le laver nuirait à la guérison. Demande à ton chirurgien la durée exacte, et à un savant la règle qui s’applique à ta situation.',
     ],
@@ -435,7 +435,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'priere-assise-malade',
     question: 'Peut-on prier assis quand on est malade ?',
-    verdict: '✅ Oui — et la prière compte entièrement',
+    verdict: '✅ Oui, et elle compte entièrement — le hadith est explicite (Boukhari)',
     short:
       'Debout si tu peux, assis sinon, allongé sur le côté si tu ne peux pas t’asseoir. L’ordre vient d’un hadith, il ne se discute pas, et la prière n’est amputée de rien.',
     answer: [
@@ -477,7 +477,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'retard-fajr-reveil',
     question: 'Je me suis réveillé après l’heure du Fajr : que faire ?',
-    verdict: '✅ Tu la pries dès le réveil — pas de péché si c’est le sommeil',
+    verdict: '✅ Tu la pries dès le réveil — c’est la position de la majorité',
     short:
       'Le hadith est explicite : celui qui dort ou oublie une prière la fait quand il s’en souvient, et il n’y a pas d’autre expiation que celle-là. Le péché vient de la négligence, pas du sommeil.',
     answer: [
@@ -491,7 +491,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'tayammum-sans-eau',
     question: 'Comment faire ses ablutions sans eau (tayammum) ?',
-    verdict: '✅ Permis quand l’eau manque ou nuirait',
+    verdict: '✅ Permis quand l’eau manque — la méthode varie selon les écoles',
     short:
       'Le tayammum remplace les ablutions — et même la grande ablution — quand il n’y a pas d’eau ou qu’on ne peut pas l’utiliser. On frappe une surface propre de la terre, puis on essuie le visage et les mains.',
     answer: [
@@ -1462,7 +1462,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'brosser-dents-ramadan',
     question: 'Peut-on se brosser les dents pendant le Ramadan ?',
-    verdict: '✅ Permis (avec précaution)',
+    verdict: '✅ Permis — certains savants conseillent toutefois la précaution',
     short:
       'Se brosser les dents n’annule pas le jeûne, à condition de ne pas avaler d’eau ni de dentifrice. Le siwak est même recommandé.',
     answer: [
@@ -1478,7 +1478,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'avaler-salive-ramadan',
     question: 'Avaler sa salive annule-t-il le jeûne ?',
-    verdict: '✅ N’annule pas le jeûne',
+    verdict: '✅ N’annule pas le jeûne — les savants sont unanimes',
     short:
       'Avaler sa propre salive n’annule pas le jeûne — c’est l’avis unanime des savants. Impossible et non demandé de s’en empêcher.',
     answer: [
@@ -1495,7 +1495,7 @@ export const QUESTIONS: QA[] = [
     slug: 'oubli-manger-ramadan',
     question: 'J’ai mangé par oubli pendant le Ramadan : mon jeûne est-il cassé ?',
     titreSeo: 'Oubli pendant le Ramadan : le jeûne est-il cassé ?',
-    verdict: '✅ Le jeûne reste valide',
+    verdict: '✅ Le jeûne reste valide selon la grande majorité des savants',
     short:
       'Manger ou boire par pur oubli n’annule pas le jeûne : on s’arrête dès qu’on s’en rend compte et on continue sa journée normalement.',
     answer: [
@@ -1546,7 +1546,7 @@ export const QUESTIONS: QA[] = [
       'Les gouttes oculaires n’annulent pas le jeûne pour la majorité. Pour le nez, éviter d’avaler ce qui descend dans la gorge.',
     answer: [
       'Les gouttes dans les yeux n’annulent pas le jeûne selon la majorité des savants contemporains : l’œil n’est pas une voie d’alimentation. Même si un léger goût arrive en gorge, l’avis dominant reste la validité du jeûne.',
-      'Pour les gouttes nasales et les sprays, c’est plus sensible : le nez communique directement avec la gorge. L’avis répandu : permis en cas de besoin, en inclinant la tête et en recrachant ce qui descend. Le Prophète ﷺ a d’ailleurs recommandé de ne pas exagérer l’aspiration d’eau par le nez pendant les ablutions en état de jeûne.',
+      'Pour les gouttes nasales et les sprays, c’est plus sensible : le nez communique directement avec la gorge. L’avis répandu : permis en cas de besoin, en inclinant la tête et en recrachant ce qui descend. Il est rapporté du Prophète ﷺ qu’il recommandait de ne pas exagérer l’aspiration d’eau par le nez pendant les ablutions en état de jeûne.',
       'Les inhalateurs pour l’asthme sont permis pendant le jeûne selon la plupart des conseils de fiqh contemporains (ce n’est ni nourriture ni boisson, et la santé prime). En cas de traitement régulier, demande à ton médecin si une prise matin/soir est possible.',
     ],
     category: 'Ramadan',
@@ -1584,7 +1584,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'fumer-ramadan',
     question: 'Fumer annule-t-il le jeûne ?',
-    verdict: '❌ Oui, la cigarette casse le jeûne',
+    verdict: '❌ Oui — c’est l’avis quasi unanime des savants',
     short:
       'Fumer rompt le jeûne : la fumée est inhalée volontairement et atteint le corps. Cela vaut aussi pour la chicha et la vape.',
     answer: [
@@ -1598,7 +1598,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'sport-ramadan',
     question: 'Peut-on faire du sport pendant le Ramadan ?',
-    verdict: '✅ Permis (au bon moment)',
+    verdict: '✅ Permis au bon moment — les cas particuliers avec un savant',
     short:
       'Le sport est permis en jeûnant. Le bon créneau : une séance légère avant l’iftar ou un entraînement normal après la rupture.',
     answer: [
@@ -1626,7 +1626,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'se-doucher-ramadan',
     question: 'Peut-on se doucher ou se baigner pendant le jeûne ?',
-    verdict: '✅ Permis',
+    verdict: '✅ Permis — une goutte involontaire n’annule rien pour la majorité',
     short:
       'Douche, bain, piscine : permis pendant le jeûne. La seule règle est de ne pas avaler d’eau volontairement.',
     answer: [
@@ -1640,7 +1640,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'maquillage-ramadan',
     question: 'Peut-on se maquiller pendant le Ramadan ?',
-    verdict: '✅ N’annule pas le jeûne',
+    verdict: '✅ N’annule pas le jeûne — les savants sont très largement d’accord',
     short:
       'Le maquillage n’annule pas le jeûne : rien n’est ingéré. Attention seulement au rouge à lèvres qui peut passer en bouche.',
     answer: [
@@ -1669,7 +1669,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'zakat-al-fitr-montant',
     question: 'Zakat al-Fitr : combien donner et quand ?',
-    verdict: '✅ Obligatoire avant la prière de l’Aïd',
+    verdict: '✅ Obligatoire avant la prière de l’Aïd — montant annoncé par les mosquées',
     short:
       'La zakat al-Fitr est due pour chaque membre du foyer, à verser avant la prière de l’Aïd. En France, le montant en argent est fixé chaque année (ordre de grandeur : 5 à 9 € par personne).',
     answer: [
@@ -2844,7 +2844,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'chicha-halal',
     question: 'La chicha est-elle haram ?',
-    verdict: '❌ Même statut que la cigarette (voire pire)',
+    verdict: '❌ Même statut que la cigarette selon les savants contemporains',
     short:
       'La chicha suit le même raisonnement que la cigarette — sa fumée est même plus volumineuse. Son image « conviviale » ne change rien à l’analyse des savants.',
     answer: [
@@ -2943,7 +2943,7 @@ export const QUESTIONS: QA[] = [
     slug: 'priere-vendredi-obligatoire',
     question: 'La prière du vendredi est-elle obligatoire ? Et si je travaille ?',
     titreSeo: 'La prière du vendredi est-elle obligatoire ?',
-    verdict: '✅ Obligatoire pour les hommes — exemptions réelles',
+    verdict: '✅ Obligatoire pour les hommes — l’ordre coranique est explicite (62:9)',
     short:
       'La jumu‘a est obligatoire pour l’homme pubère résident (Coran 62:9) ; femmes, voyageurs et malades en sont dispensés. Le travail exige d’essayer de s’organiser — l’impossibilité réelle est une excuse.',
     answer: [
@@ -3014,7 +3014,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'psy-therapie-islam',
     question: 'Consulter un psychologue est-il halal ?',
-    verdict: '✅ Permis et encouragé',
+    verdict: '✅ Permis et encouragé — les savants contemporains sont d’accord',
     short:
       'Se soigner est encouragé en islam, la santé mentale comprise. Consulter un psychologue est permis — la seule vigilance porte sur des conseils contraires à la religion.',
     answer: [
@@ -3086,7 +3086,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'prenom-musulman-obligatoire',
     question: 'Faut-il un prénom musulman quand on se convertit ?',
-    verdict: '✅ Non — ce n’est pas une obligation',
+    verdict: '✅ Non — cela n’a jamais été posé comme une condition',
     short:
       'Aucun texte n’oblige un nouveau musulman à changer de prénom. Le seul cas où les savants recommandent un changement est un prénom dont le SENS contredit la foi ou porte une signification désagréable.',
     answer: [
@@ -3210,7 +3210,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'qibla-direction-priere',
     question: 'Comment trouver la direction de la qibla ?',
-    verdict: '✅ On fait de son mieux — l’effort suffit',
+    verdict: '✅ On fait de son mieux — le Coran lui-même le dit (2:115)',
     short:
       'Depuis la France, la qibla se situe globalement vers le sud-est. Et si tu ne peux pas la déterminer, ta prière reste valable : l’islam demande l’effort sincère, pas la précision au degré près.',
     answer: [
