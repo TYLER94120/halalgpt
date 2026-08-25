@@ -230,6 +230,21 @@ export const QUESTIONS: QA[] = [
 
   // ─── ALIMENTATION ───────────────────────────────────────────────────────────
   {
+    slug: 'sans-porc-halal',
+    question: 'Un produit « sans porc » est-il halal ?',
+    verdict: '⚠️ Non — c’est une mention sur un ingrédient, pas sur l’abattage',
+    short:
+      '« Sans porc » dit une seule chose : il n’y a pas de porc dedans. Rien sur la façon dont l’animal a été abattu — et aucune loi n’oblige l’étiquette à le dire.',
+    answer: [
+      'C’est la confusion la plus répandue du rayon, et elle se comprend : on cherche du halal, on lit « sans porc », on prend. Sauf que ces deux mots répondent à une question, et à une seule — y a-t-il du porc dans ce produit. C’est une mention commerciale sur un ingrédient. Ce n’est pas une certification religieuse, et elle n’en a jamais eu la prétention.',
+      'Ce qu’elle ne dit pas est précisément ce qui décide. Le jambon de dinde, le blanc de volaille ou le bœuf que contient le produit viennent d’un animal abattu d’une certaine façon — et sur ce point, l’étiquette est muette. Ce n’est pas un oubli du fabricant : **aucune réglementation française ou européenne n’oblige à indiquer le mode d’abattage.** Le règlement européen de 2011 sur l’information du consommateur a été vidé de cette exigence, et la mention reste facultative. Par défaut, une charcuterie de volaille « sans porc » provient donc d’un abattage conventionnel.',
+      'Trois autres choses passent à travers cette mention, et elles reviennent souvent. La gélatine, qui peut être bovine sans abattage rituel. Les additifs d’origine animale — E471, E120, E441 — dont le numéro ne dit pas la provenance. Et les arômes portés par un solvant alcoolique. Un produit peut être parfaitement « sans porc » et contenir les trois.',
+      'Le réflexe qui change tout tient en une phrase : **cherche un logo, pas une formule.** Une certification porte le nom d’un organisme et engage quelqu’un ; « sans porc » n’engage personne sur la question religieuse. Pour la viande, la traçabilité halal en France s’appuie sur la norme AFNOR V46-003, et les organismes qui la suivent l’affichent. Si le paquet ne porte qu’une phrase et aucun logo, tu sais ce que tu ignores — et c’est déjà une information.',
+    ],
+    category: 'Alimentation',
+    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal'],
+  },
+  {
     slug: 'viande-supermarche-halal',
     question: 'La viande de supermarché (non certifiée) est-elle halal ?',
     verdict: '❌ Non, sauf rayon certifié',
@@ -241,7 +256,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : privilégiez les boucheries halal et les rayons certifiés (AVS, ARGML, Achahada… les organismes n’ont pas tous le même niveau d’exigence — renseignez-vous). Pour le poisson, aucune certification n’est nécessaire.',
     ],
     category: 'Alimentation',
-    related: ['poisson-fruits-de-mer-halal', 'restaurant-halal-paris', 'cuisine-alcool-halal', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal'],
+    related: ['poisson-fruits-de-mer-halal', 'restaurant-halal-paris', 'cuisine-alcool-halal', 'levure-chimique-halal', 'foie-gras-halal', 'sushi-halal', 'sans-porc-halal'],
   },
   {
     slug: 'poisson-fruits-de-mer-halal',
@@ -2571,7 +2586,7 @@ export const QUESTIONS: QA[] = [
       'Piste végétale en bonus : tofu fumé ou champignons poêlés au paprika fumé — le « goût lardon » vient surtout du fumage et du sel. La cuisine française se halalise très bien : c’est une question d’ingrédients, pas de recettes.',
     ],
     category: 'Alimentation',
-    related: ['isla-delice-halal', 'knacki-halal', 'fromage-presure-halal'],
+    related: ['isla-delice-halal', 'knacki-halal', 'fromage-presure-halal', 'sans-porc-halal'],
   },
   {
     slug: 'kebab-halal',
@@ -2909,7 +2924,7 @@ export const QUESTIONS: QA[] = [
       'Réflexes pratiques : mémorise les deux ou trois logos qui correspondent à ton niveau d’exigence et cherche-les sur les emballages ; méfie-toi du « halal » écrit sans aucun logo (auto-déclaration sans contrôle) ; et sache que les sites des certificateurs listent leurs entreprises contrôlées — vérifiable en deux minutes de téléphone au rayon boucherie.',
     ],
     category: 'Pratique',
-    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal', 'popeyes-halal'],
+    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal', 'popeyes-halal', 'sans-porc-halal'],
   },
   {
     slug: 'priere-travail',
