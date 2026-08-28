@@ -230,6 +230,21 @@ export const QUESTIONS: QA[] = [
 
   // ─── ALIMENTATION ───────────────────────────────────────────────────────────
   {
+    slug: 'traces-de-porc-halal',
+    question: '« Traces de porc » : le produit est-il halal ?',
+    verdict: '⚠️ Mention facultative et sans seuil — elle dit très peu',
+    short:
+      'Aucune loi n’oblige à écrire « peut contenir des traces », et aucun seuil ne déclenche cette mention. Sa présence prouve peu, son absence ne prouve rien.',
+    answer: [
+      'Commençons par ce que cette phrase est vraiment : un avertissement destiné aux personnes allergiques, sur un risque de contact accidentel en usine — un même tapis, une même ligne, un même atelier. Ce n’est pas une ligne d’ingrédients. Si du porc était réellement un ingrédient du produit, il figurerait dans la liste : **ça, c’est obligatoire, et c’est précis.**',
+      'Vient ensuite le point que presque personne ne connaît, et il coupe dans les deux sens. **La mention « peut contenir des traces de » est facultative, et aucun seuil chiffré ne la déclenche**, ni en France ni en Europe. Un fabricant peut l’écrire dès qu’un risque théorique existe, même minime, par pure prudence juridique. Un autre peut ne rien écrire alors qu’un risque réel demeure. Autrement dit : sa présence prouve peu de chose, et son absence ne prouve rien du tout.',
+      'Sur le fond religieux, la distinction que retiennent les savants ne porte pas sur le mot mais sur la nature de la chose : un ingrédient ajouté volontairement n’est pas une trace accidentelle et indétectable. C’est le même raisonnement que ce site applique déjà aux traces de solvant alcoolique dans les arômes — la position largement retenue ne considère pas qu’une trace imperceptible et non voulue rende l’aliment illicite. Un avis plus prudent écarte tout ce qui nomme le porc, quelle qu’en soit la quantité. Les deux existent, et ce n’est pas ce site qui tranchera un choix personnel.',
+      'En pratique, le réflexe utile : **lis la liste des ingrédients, pas la ligne des traces.** L’une est obligatoire et engage le fabricant sur ce qu’il a mis dedans ; l’autre est un avertissement d’usine que rien n’encadre. Pour un produit consommé tous les jours, une certification répond aux deux questions à la fois — elle audite la ligne de production autant que la recette.',
+    ],
+    category: 'Alimentation',
+    related: ['sans-porc-halal', 'certifications-halal-france', 'arome-vanille-halal', 'gelatine-halal', 'chips-halal'],
+  },
+  {
     slug: 'sans-porc-halal',
     question: 'Un produit « sans porc » est-il halal ?',
     verdict: '⚠️ Non — c’est une mention sur un ingrédient, pas sur l’abattage',
@@ -242,7 +257,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe qui change tout tient en une phrase : **cherche un logo, pas une formule.** Une certification porte le nom d’un organisme et engage quelqu’un ; « sans porc » n’engage personne sur la question religieuse. Pour la viande, la traçabilité halal en France s’appuie sur la norme AFNOR V46-003, et les organismes qui la suivent l’affichent. Si le paquet ne porte qu’une phrase et aucun logo, tu sais ce que tu ignores — et c’est déjà une information.',
     ],
     category: 'Alimentation',
-    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal'],
+    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal', 'traces-de-porc-halal'],
   },
   {
     slug: 'viande-supermarche-halal',
@@ -773,7 +788,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe pratique : nature, vinaigre ou paprika « sans arôme animal » = tranquille ; saveurs fromagères ou carnées sans certification = vérifiez la liste ou passez votre chemin. Les rayons orientaux regorgent de chips aromatisées certifiées halal.',
     ],
     category: 'Produits',
-    related: ['e631-e627-halal', 'e621-glutamate-halal', 'fromage-presure-halal'],
+    related: ['e631-e627-halal', 'e621-glutamate-halal', 'fromage-presure-halal', 'traces-de-porc-halal'],
   },
 
   // ─── ALIMENTATION (suite) ───────────────────────────────────────────────────
@@ -2924,7 +2939,7 @@ export const QUESTIONS: QA[] = [
       'Réflexes pratiques : mémorise les deux ou trois logos qui correspondent à ton niveau d’exigence et cherche-les sur les emballages ; méfie-toi du « halal » écrit sans aucun logo (auto-déclaration sans contrôle) ; et sache que les sites des certificateurs listent leurs entreprises contrôlées — vérifiable en deux minutes de téléphone au rayon boucherie.',
     ],
     category: 'Pratique',
-    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal', 'popeyes-halal', 'sans-porc-halal'],
+    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal', 'popeyes-halal', 'sans-porc-halal', 'traces-de-porc-halal'],
   },
   {
     slug: 'priere-travail',
