@@ -65,7 +65,7 @@ export const QUESTIONS: QA[] = [
       'Certains savants considèrent que la transformation chimique (istihala) purifie la gélatine, mais la majorité des organismes contemporains exigent une source halal. En pratique : privilégiez les produits certifiés halal ou les gélifiants végétaux (pectine E440, agar-agar E406).',
     ],
     category: 'Additifs',
-    related: ['gelatine-halal', 'e120-halal', 'haribo-halal', 'e133-halal'],
+    related: ['gelatine-halal', 'e120-halal', 'haribo-halal', 'e133-halal', 'e640-glycine-halal'],
   },
   {
     slug: 'e471-halal',
@@ -93,7 +93,7 @@ export const QUESTIONS: QA[] = [
       'La bonne nouvelle : la majorité de la glycérine utilisée en Europe est aujourd’hui végétale (colza, palme). En cas de doute sur un produit consommé régulièrement, un message à la marque suffit souvent à obtenir l’origine exacte.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e441-gelatine-halal', 'e412-gomme-guar-halal', 'e903-cire-carnauba-halal', 'e466-halal', 'e472-halal', 'e920-halal'],
+    related: ['e471-halal', 'e441-gelatine-halal', 'e412-gomme-guar-halal', 'e903-cire-carnauba-halal', 'e466-halal', 'e472-halal', 'e920-halal', 'e475-halal'],
   },
   {
     slug: 'gelatine-halal',
@@ -109,7 +109,7 @@ export const QUESTIONS: QA[] = [
       'Alternatives sans souci : pectine de fruits (E440), agar-agar (E406), carraghénanes (E407), gomme de guar (E412) — tous végétaux. Et de plus en plus de marques proposent des gammes « gélatine halal » certifiées, y compris pour les gélules de compléments alimentaires.',
     ],
     category: 'Additifs',
-    related: ['e441-gelatine-halal', 'haribo-halal', 'marshmallow-halal', 'collagene-halal', 'medicaments-gelules-halal', 'e250-nitrite-halal', 'gelatine-poisson-halal'],
+    related: ['e441-gelatine-halal', 'haribo-halal', 'marshmallow-halal', 'collagene-halal', 'medicaments-gelules-halal', 'e250-nitrite-halal', 'gelatine-poisson-halal', 'e153-charbon-vegetal-halal'],
   },
   {
     slug: 'fromage-presure-halal',
@@ -123,7 +123,7 @@ export const QUESTIONS: QA[] = [
       'Les plus prudents préfèrent les fromages à présure microbienne — c’est le cas de la majorité des fromages industriels (vérifiez la mention « coagulant microbien ») — ou les fromages certifiés halal, de plus en plus courants. Les deux démarches sont respectables.',
     ],
     category: 'Additifs',
-    related: ['vinaigre-halal', 'e471-halal', 'e1105-lysozyme-halal', 'yaourt-halal'],
+    related: ['vinaigre-halal', 'e471-halal', 'e1105-lysozyme-halal', 'yaourt-halal', 'e901-cire-abeille-halal', 'e640-glycine-halal', 'e542-phosphate-os-halal'],
   },
   {
     slug: 'vinaigre-halal',
@@ -137,7 +137,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : vinaigre de vin, balsamique, de cidre… sont consommés sans problème par l’immense majorité. Rien à voir avec le vin lui-même ou les sauces « au vin », qui restent interdits.',
     ],
     category: 'Additifs',
-    related: ['cuisine-alcool-halal', 'fromage-presure-halal', 'moutarde-halal'],
+    related: ['cuisine-alcool-halal', 'fromage-presure-halal', 'moutarde-halal', 'e901-cire-abeille-halal', 'e640-glycine-halal', 'e334-acide-tartrique-halal'],
   },
 
   // ─── PRODUITS ───────────────────────────────────────────────────────────────
@@ -211,7 +211,7 @@ export const QUESTIONS: QA[] = [
       'Restent les considérations de santé : les boissons énergisantes sont déconseillées aux enfants et en grande quantité — mais c’est une question de santé, pas de licéité. Verdict : généralement considéré halal.',
     ],
     category: 'Produits',
-    related: ['coca-cola-halal', 'levure-biere-halal', 'pringles-halal', 'monster-halal', 'taurine-halal', 'babybel-halal'],
+    related: ['coca-cola-halal', 'levure-biere-halal', 'pringles-halal', 'monster-halal', 'taurine-halal', 'babybel-halal', 'actimel-halal', 'buffalo-grill-halal'],
   },
   {
     slug: 'levure-biere-halal',
@@ -406,7 +406,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'greffe-cheveux-halal',
     question: 'La greffe de cheveux est-elle halal ?',
-    verdict: '✅ Largement permise pour traiter une calvitie — ce sont tes propres cheveux',
+    verdict: '✅ Permise pour une calvitie selon la majorité des savants contemporains',
     short:
       'La majorité des savants contemporains la permettent quand il s’agit de réparer une perte : ce sont tes propres cheveux qu’on redéplace, pas ceux d’un autre. C’est cette distinction qui change tout.',
     answer: [
@@ -429,12 +429,12 @@ export const QUESTIONS: QA[] = [
       'En pratique, en France, voici ce qui se fait et qui fonctionne. Beaucoup demandent à leur employeur d’être affectés à un poste sans contact avec l’alcool — cuisine, salle sans bar, service du midi — et cela s’obtient plus souvent qu’on ne le croit, surtout dans un établissement où d’autres postes existent. Quand c’est le seul revenu et qu’aucune alternative n’est disponible, les savants parlent de nécessité : rester le temps de chercher activement autre chose, sans s’y installer. Ce n’est pas une permission définitive, c’est un délai. Pour ta situation exacte — ton contrat, tes charges, ce que tu peux négocier — parles-en à un imam plutôt que de rester seul avec la question.',
     ],
     category: 'Vie quotidienne',
-    related: ['caissier-scanner-alcool', 'cigarette-halal', 'serrer-la-main-islam', 'halal-definition', 'chat-maison-islam', 'prenom-musulman-obligatoire', 'paris-sportifs-halal'],
+    related: ['caissier-scanner-alcool', 'cigarette-halal', 'serrer-la-main-islam', 'halal-definition', 'chat-maison-islam', 'prenom-musulman-obligatoire', 'paris-sportifs-halal', 'buffalo-grill-halal'],
   },
   {
     slug: 'priere-assise-malade',
     question: 'Peut-on prier assis quand on est malade ?',
-    verdict: '✅ Oui — et la prière compte entièrement',
+    verdict: '✅ Oui, et elle compte entièrement — le hadith est explicite (Boukhari)',
     short:
       'Debout si tu peux, assis sinon, allongé sur le côté si tu ne peux pas t’asseoir. L’ordre vient d’un hadith, il ne se discute pas, et la prière n’est amputée de rien.',
     answer: [
@@ -476,7 +476,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'retard-fajr-reveil',
     question: 'Je me suis réveillé après l’heure du Fajr : que faire ?',
-    verdict: '✅ Tu la pries dès le réveil — pas de péché si c’est le sommeil',
+    verdict: '✅ Tu la pries dès le réveil — c’est la position de la majorité',
     short:
       'Le hadith est explicite : celui qui dort ou oublie une prière la fait quand il s’en souvient, et il n’y a pas d’autre expiation que celle-là. Le péché vient de la négligence, pas du sommeil.',
     answer: [
@@ -490,7 +490,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'tayammum-sans-eau',
     question: 'Comment faire ses ablutions sans eau (tayammum) ?',
-    verdict: '✅ Permis quand l’eau manque ou nuirait',
+    verdict: '✅ Permis quand l’eau manque — la méthode varie selon les écoles',
     short:
       'Le tayammum remplace les ablutions — et même la grande ablution — quand il n’y a pas d’eau ou qu’on ne peut pas l’utiliser. On frappe une surface propre de la terre, puis on essuie le visage et les mains.',
     answer: [
@@ -572,7 +572,7 @@ export const QUESTIONS: QA[] = [
       'Attention en revanche à ses voisins : le E621 est souvent accompagné des E631 et E627, qui eux peuvent être d’origine animale. C’est le trio classique des snacks aromatisés — vérifiez plutôt ces deux-là.',
     ],
     category: 'Additifs',
-    related: ['e631-e627-halal', 'chips-halal', 'e330-halal', 'e270-acide-lactique-halal'],
+    related: ['e631-e627-halal', 'chips-halal', 'e330-halal', 'e270-acide-lactique-halal', 'e153-charbon-vegetal-halal'],
   },
   {
     slug: 'lecithine-e322-halal',
@@ -586,7 +586,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : « lécithine de soja » ou « lécithine de tournesol » sur l’étiquette = aucun souci. C’est l’un des additifs les plus tranquilles qui soient.',
     ],
     category: 'Additifs',
-    related: ['e330-halal', 'e471-halal', 'nutella-halal', 'e476-halal'],
+    related: ['e330-halal', 'e471-halal', 'nutella-halal', 'e476-halal', 'e153-charbon-vegetal-halal', 'e640-glycine-halal', 'e1510-ethanol-halal'],
   },
   {
     slug: 'e631-e627-halal',
@@ -615,7 +615,7 @@ export const QUESTIONS: QA[] = [
       'La divergence entre savants mérite d’être nommée précisément, car elle ne porte pas sur les faits mais sur un principe. Ceux qui autorisent le E920, même d’origine animale, s’appuient sur l’istihâla : la substance a subi une transformation chimique complète et n’est plus la plume dont elle est issue — le raisonnement exact que l’on applique au vinaigre. Ceux qui l’écartent estiment que la transformation ne suffit pas lorsque l’origine est un animal non abattu rituellement. Aucun des deux camps n’invente : ils appliquent deux lectures anciennes d’une même règle. Point pratique par ailleurs : sur une étiquette, le E920 se présente souvent sous sa fonction — « agent de traitement de la farine » — suivie de son nom ou de son numéro ; c’est la même substance, il faut simplement savoir la reconnaître sous cette formulation. Les pains de boulangerie artisanale en sont pratiquement exempts : ce sont les buns de burger, les biscottes et les viennoiseries industrielles qui en concentrent l’usage.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e904-halal', 'gelatine-halal', 'moutarde-halal', 'e481-halal', 'e1105-lysozyme-halal', 'lecithine-e322-halal'],
+    related: ['e471-halal', 'e904-halal', 'gelatine-halal', 'moutarde-halal', 'e481-halal', 'e1105-lysozyme-halal', 'lecithine-e322-halal', 'e475-halal'],
   },
   {
     slug: 'e904-halal',
@@ -695,7 +695,7 @@ export const QUESTIONS: QA[] = [
       'Trois précisions font le tour de la question. La glycérine E422 d’abord : en Europe, elle est aujourd’hui très majoritairement d’origine végétale, tirée du colza ou de la palme, pour une raison prosaïque de coût et d’approvisionnement — le doute théorique subsiste, mais il s’est beaucoup réduit. La couleur ensuite : les chewing-gums roses ou rouges peuvent contenir du carmin E120, tiré d’insectes, au même titre que les bonbons. La base enfin, et c’est là qu’il faut être honnête : la « gomme base » est un secret de fabrication, désignée d’un seul mot sur l’étiquette, et elle peut inclure des cires et des émulsifiants non détaillés. Aucune lecture d’étiquette ne donne donc une certitude absolue sur ce point précis. Pour un produit mâché tous les jours, deux réponses seulement sont fermes : une certification, ou un message au service consommateurs de la marque.',
     ],
     category: 'Produits',
-    related: ['e422-glycerine-halal', 'gelatine-halal', 'haribo-halal', 'e120-halal', 'glace-halal'],
+    related: ['e422-glycerine-halal', 'gelatine-halal', 'haribo-halal', 'e120-halal', 'glace-halal', 'actimel-halal', 'glace-extreme-halal'],
   },
   {
     slug: 'glace-halal',
@@ -768,7 +768,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe : cherchez le logo halal sur l’emballage — c’est l’un des produits où la certification est la plus répandue. Pour les bouillons de légumes sans certification, vérifiez « graisse végétale » dans la liste.',
     ],
     category: 'Alimentation',
-    related: ['viande-supermarche-halal', 'moutarde-halal', 'e621-glutamate-halal', 'cordon-bleu-halal', 'lardons-halal'],
+    related: ['viande-supermarche-halal', 'moutarde-halal', 'e621-glutamate-halal', 'cordon-bleu-halal', 'lardons-halal', 'traces-de-porc-halal'],
   },
 
   // ─── PRATIQUE (suite) ───────────────────────────────────────────────────────
@@ -1029,7 +1029,7 @@ export const QUESTIONS: QA[] = [
       'À retenir : voir E250 sur une charcuterie halal certifiée n’enlève rien à sa licéité. Si vous souhaitez l’éviter, c’est un choix santé, comme pour tout consommateur.',
     ],
     category: 'Additifs',
-    related: ['viande-supermarche-halal', 'e330-halal', 'bouillon-cube-halal'],
+    related: ['viande-supermarche-halal', 'e330-halal', 'bouillon-cube-halal', 'e334-acide-tartrique-halal'],
   },
   {
     slug: 'e407-carraghenane-halal',
@@ -1043,7 +1043,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe utile : un « flan » ou une panna cotta industrielle au E407 plutôt qu’à la gélatine est un produit tranquille pour le consommateur musulman.',
     ],
     category: 'Additifs',
-    related: ['gelatine-halal', 'e440-pectine-halal', 'e415-xanthane-halal', 'e160a-carotene-halal'],
+    related: ['gelatine-halal', 'e440-pectine-halal', 'e415-xanthane-halal', 'e160a-carotene-halal', 'e163-anthocyanes-halal'],
   },
   {
     slug: 'e415-xanthane-halal',
@@ -1101,7 +1101,7 @@ export const QUESTIONS: QA[] = [
       'En voyage, vous trouverez des Oreo certifiés halal dans les pays musulmans (production locale ou importée certifiée). Même biscuit, tampon en plus.',
     ],
     category: 'Produits',
-    related: ['nutella-halal', 'kinder-halal', 'mms-halal', 'ice-tea-halal', 'cereales-halal', 'e481-halal'],
+    related: ['nutella-halal', 'kinder-halal', 'mms-halal', 'ice-tea-halal', 'cereales-halal', 'e481-halal', 'philadelphia-halal'],
   },
   {
     slug: 'pringles-halal',
@@ -1115,7 +1115,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe : Original = tranquille pour la plupart ; parfums aromatisés = liste d’ingrédients, et dans le doute les marques de chips certifiées halal des épiceries orientales imitent tous ces goûts.',
     ],
     category: 'Produits',
-    related: ['chips-halal', 'e631-e627-halal', 'doritos-halal'],
+    related: ['chips-halal', 'e631-e627-halal', 'doritos-halal', 'haagen-dazs-halal'],
   },
   {
     slug: 'snickers-mars-twix-halal',
@@ -1143,7 +1143,7 @@ export const QUESTIONS: QA[] = [
       'Le vrai sujet est sanitaire : très forte teneur en caféine et en sucre, déconseillé aux jeunes — une question de santé, pas de licéité. À consommer avec la même modération que n’importe quel énergisant.',
     ],
     category: 'Produits',
-    related: ['red-bull-halal', 'coca-cola-halal', 'e330-halal', 'pepsi-halal', 'taurine-halal', 'o-tacos-halal'],
+    related: ['red-bull-halal', 'coca-cola-halal', 'e330-halal', 'pepsi-halal', 'taurine-halal', 'o-tacos-halal', 'haagen-dazs-halal'],
   },
   {
     slug: 'doritos-halal',
@@ -1172,7 +1172,7 @@ export const QUESTIONS: QA[] = [
       'Un second réflexe, moins connu que la gélatine et pourtant plus fréquent : la couleur des yaourts aux fruits rouges. Fraise, framboise, cerise et fruits des bois sont parfois teintés au carmin — écrit « E120 » ou « cochenille » —, un colorant tiré d’insectes que la plupart des organismes de certification écartent. Il figure dans la liste d’ingrédients, comme la gélatine. Les yaourts nature, les brassés simples et le skyr n’ont ni l’un ni l’autre : ce sont les versions aromatisées et les desserts colorés qui demandent le coup d’œil. Et une confusion à lever, car elle revient souvent : les ferments lactiques n’ont rien à voir avec la présure des fromages — un yaourt n’en contient pas.',
     ],
     category: 'Produits',
-    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal', 'e120-halal', 'doritos-halal'],
+    related: ['gelatine-halal', 'e407-carraghenane-halal', 'fromage-presure-halal', 'e120-halal', 'doritos-halal', 'glace-extreme-halal'],
   },
   {
     slug: 'quick-halal',
@@ -1216,7 +1216,7 @@ export const QUESTIONS: QA[] = [
       'Petite précision sur la crème de tartre (E336) : elle est récupérée sur les cuves de vinification, mais c’est un cristal minéral purifié sans caractère enivrant — considéré halal par les organismes de certification, à l’image du vinaigre.',
     ],
     category: 'Alimentation',
-    related: ['levure-biere-halal', 'vinaigre-halal', 'e330-halal'],
+    related: ['levure-biere-halal', 'vinaigre-halal', 'e330-halal', 'sans-porc-halal', 'traces-de-porc-halal'],
   },
   {
     slug: 'arome-vanille-halal',
@@ -1423,7 +1423,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'brosser-dents-ramadan',
     question: 'Peut-on se brosser les dents pendant le Ramadan ?',
-    verdict: '✅ Permis (avec précaution)',
+    verdict: '✅ Permis — certains savants conseillent toutefois la précaution',
     short:
       'Se brosser les dents n’annule pas le jeûne, à condition de ne pas avaler d’eau ni de dentifrice. Le siwak est même recommandé.',
     answer: [
@@ -1439,7 +1439,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'avaler-salive-ramadan',
     question: 'Avaler sa salive annule-t-il le jeûne ?',
-    verdict: '✅ N’annule pas le jeûne',
+    verdict: '✅ N’annule pas le jeûne — les savants sont unanimes',
     short:
       'Avaler sa propre salive n’annule pas le jeûne — c’est l’avis unanime des savants. Impossible et non demandé de s’en empêcher.',
     answer: [
@@ -1456,7 +1456,7 @@ export const QUESTIONS: QA[] = [
     slug: 'oubli-manger-ramadan',
     question: 'J’ai mangé par oubli pendant le Ramadan : mon jeûne est-il cassé ?',
     titreSeo: 'Oubli pendant le Ramadan : le jeûne est-il cassé ?',
-    verdict: '✅ Le jeûne reste valide',
+    verdict: '✅ Le jeûne reste valide selon la grande majorité des savants',
     short:
       'Manger ou boire par pur oubli n’annule pas le jeûne : on s’arrête dès qu’on s’en rend compte et on continue sa journée normalement.',
     answer: [
@@ -1545,7 +1545,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'fumer-ramadan',
     question: 'Fumer annule-t-il le jeûne ?',
-    verdict: '❌ Oui, la cigarette casse le jeûne',
+    verdict: '❌ Oui — c’est l’avis quasi unanime des savants',
     short:
       'Fumer rompt le jeûne : la fumée est inhalée volontairement et atteint le corps. Cela vaut aussi pour la chicha et la vape.',
     answer: [
@@ -1559,7 +1559,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'sport-ramadan',
     question: 'Peut-on faire du sport pendant le Ramadan ?',
-    verdict: '✅ Permis (au bon moment)',
+    verdict: '✅ Permis au bon moment — les cas particuliers avec un savant',
     short:
       'Le sport est permis en jeûnant. Le bon créneau : une séance légère avant l’iftar ou un entraînement normal après la rupture.',
     answer: [
@@ -1587,7 +1587,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'se-doucher-ramadan',
     question: 'Peut-on se doucher ou se baigner pendant le jeûne ?',
-    verdict: '✅ Permis',
+    verdict: '✅ Permis — une goutte involontaire n’annule rien pour la majorité',
     short:
       'Douche, bain, piscine : permis pendant le jeûne. La seule règle est de ne pas avaler d’eau volontairement.',
     answer: [
@@ -1601,7 +1601,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'maquillage-ramadan',
     question: 'Peut-on se maquiller pendant le Ramadan ?',
-    verdict: '✅ N’annule pas le jeûne',
+    verdict: '✅ N’annule pas le jeûne — les savants sont très largement d’accord',
     short:
       'Le maquillage n’annule pas le jeûne : rien n’est ingéré. Attention seulement au rouge à lèvres qui peut passer en bouche.',
     answer: [
@@ -1630,7 +1630,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'zakat-al-fitr-montant',
     question: 'Zakat al-Fitr : combien donner et quand ?',
-    verdict: '✅ Obligatoire avant la prière de l’Aïd',
+    verdict: '✅ Obligatoire avant la prière de l’Aïd — montant annoncé par les mosquées',
     short:
       'La zakat al-Fitr est due pour chaque membre du foyer, à verser avant la prière de l’Aïd. En France, le montant en argent est fixé chaque année (ordre de grandeur : 5 à 9 € par personne).',
     answer: [
@@ -1696,7 +1696,7 @@ export const QUESTIONS: QA[] = [
       'Où en trouver : certaines boucheries halal en proposent sur commande, et des élevages français font de l’abattage rituel de lapin. Un classique du couscous et des plats de grand-mère parfaitement licite — à condition de soigner la source.',
     ],
     category: 'Alimentation',
-    related: ['cheval-halal', 'gibier-chasse-halal', 'viande-supermarche-halal'],
+    related: ['cheval-halal', 'gibier-chasse-halal', 'viande-supermarche-halal', 'sans-porc-halal'],
   },
   {
     slug: 'crevette-halal',
@@ -1710,7 +1710,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : crevettes, gambas et bouquets sont consommés sans problème par l’écrasante majorité des musulmans. Vigilance ailleurs : dans les plats préparés, la sauce peut contenir alcool ou arômes douteux — la crevette nature, elle, est claire.',
     ],
     category: 'Alimentation',
-    related: ['homard-crabe-halal', 'calamar-poulpe-halal', 'poisson-fruits-de-mer-halal', 'grenouille-halal', 'biere-sans-alcool-halal', 'surimi-halal'],
+    related: ['homard-crabe-halal', 'calamar-poulpe-halal', 'poisson-fruits-de-mer-halal', 'grenouille-halal', 'biere-sans-alcool-halal', 'surimi-halal', 'e901-cire-abeille-halal'],
   },
   {
     slug: 'homard-crabe-halal',
@@ -1839,7 +1839,7 @@ export const QUESTIONS: QA[] = [
       'La question du support, évoquée plus haut, vaut d’être comprise une fois pour toutes : elle revient sur toute une famille d’additifs. Un pigment ou une vitamine liposoluble ne se mélange pas à un produit aqueux ; l’industrie l’enrobe donc dans un support — le plus souvent de l’amidon, une gomme ou une huile, parfois de la gélatine. Cela concerne le E160a, mais aussi la lutéine E161b et les vitamines A, D et E ajoutées aux jus et aux laits. Ce support n’est pas déclaré sur l’étiquette, et c’est précisément pour cela que la grande majorité des avis ne le retiennent pas : on ne peut pas demander à un consommateur de répondre d’une information qu’aucune étiquette ne lui donne. Deux voisins à ne pas confondre : le E160c est le paprika et le E161b la lutéine — ni l’un ni l’autre ne pose de question d’origine animale.',
     ],
     category: 'Additifs',
-    related: ['e102-tartrazine-halal', 'e100-halal', 'e120-halal', 'gelatine-halal'],
+    related: ['e102-tartrazine-halal', 'e100-halal', 'e120-halal', 'gelatine-halal', 'e470-sels-acides-gras-halal'],
   },
   {
     slug: 'e270-acide-lactique-halal',
@@ -1853,7 +1853,7 @@ export const QUESTIONS: QA[] = [
       'On trouve le E270 partout : sauces, olives, boissons, bonbons acidulés, charcuteries (où c’est la charcuterie qu’il faut questionner, pas l’additif !). Ses cousins E325, E326 et E327 (lactates) suivent la même logique : halal.',
     ],
     category: 'Additifs',
-    related: ['e330-halal', 'e102-tartrazine-halal', 'e472-halal'],
+    related: ['e330-halal', 'e102-tartrazine-halal', 'e472-halal', 'e334-acide-tartrique-halal', 'sans-porc-halal', 'traces-de-porc-halal'],
   },
   {
     slug: 'e412-gomme-guar-halal',
@@ -1895,7 +1895,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe : produits certifiés halal, mention explicite « émulsifiant d’origine végétale », ou message à la marque (la plupart répondent). Et pour le pain, la boulangerie artisanale classique — farine, eau, levure, sel — contourne élégamment tout le problème.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e481-halal', 'e422-glycerine-halal'],
+    related: ['e471-halal', 'e481-halal', 'e422-glycerine-halal', 'e475-halal', 'e542-phosphate-os-halal', 'e470-sels-acides-gras-halal', 'e1510-ethanol-halal'],
   },
   {
     slug: 'e476-halal',
@@ -1923,7 +1923,307 @@ export const QUESTIONS: QA[] = [
       'Solution simple : plusieurs marques de pain de mie vendues en grande surface française sont certifiées halal, et les enseignes répondent sur l’origine de leurs additifs. Ou le pain du boulanger, qui n’a besoin ni de E481 ni de conservateur.',
     ],
     category: 'Additifs',
-    related: ['e471-halal', 'e472-halal', 'e570-halal', 'e920-halal', 'e250-nitrite-halal'],
+    related: ['e471-halal', 'e472-halal', 'e570-halal', 'e920-halal', 'e250-nitrite-halal', 'e153-charbon-vegetal-halal'],
+  },
+  {
+    slug: 'e542-phosphate-os-halal',
+    question: 'Le E542 (phosphate d’os) est-il halal ?',
+    verdict: '⚠️ D’origine animale — à éviter sans certification',
+    short:
+      'Le E542 est un phosphate de calcium obtenu à partir d’os d’animaux. Son origine est animale par définition, et l’espèce n’est jamais précisée sur l’étiquette.',
+    answer: [
+      'Le E542 est un phosphate de calcium fabriqué à partir d’os d’animaux dégraissés puis calcinés. Il sert d’anti-agglomérant et de support minéral. Contrairement à la plupart des additifs dont l’origine est incertaine, ici le nom dit la chose : l’origine est animale, ce n’est pas une hypothèse.',
+      'Ce qui reste inconnu, en revanche, c’est l’espèce et le mode d’abattage. L’étiquette ne les mentionne jamais. Les os utilisés sont généralement bovins, mais rien ne l’indique au consommateur, et rien ne garantit un abattage rituel.',
+      'C’est pourquoi les organismes de certification halal classent le E542 parmi les additifs à éviter en l’absence de certification explicite du produit fini. Le raisonnement est le même que pour la gélatine (E441) : un dérivé d’animal dont on ignore la provenance ne peut pas être présumé licite.',
+      'On le rencontre peu dans l’alimentation courante en Europe — surtout dans certains compléments alimentaires, poudres et préparations minérales. Si tu le vois sur une étiquette, la seule réponse fiable vient du fabricant : demande-lui l’origine, par écrit.',
+    ],
+    category: 'Additifs',
+    related: ['e441-gelatine-halal', 'e471-halal', 'e470-sels-acides-gras-halal'],
+  },
+  {
+    slug: 'e470-sels-acides-gras-halal',
+    question: 'Le E470 est-il halal ?',
+    verdict: '⚠️ Ça dépend de l’origine des acides gras',
+    short:
+      'Le E470 est un sel d’acides gras qui peuvent être végétaux (palme, coco) ou animaux (suif). L’étiquette ne le précise pas.',
+    answer: [
+      'Le E470 désigne les sels d’acides gras : E470a pour les sels de sodium, potassium et calcium, E470b pour ceux de magnésium. Ils servent d’anti-agglomérant et d’émulsifiant, notamment dans les poudres, les soupes instantanées et certaines confiseries.',
+      'Le point qui décide de tout est l’origine des acides gras. Ils proviennent de graisses qui peuvent être végétales — huile de palme, coprah — ou animales, y compris de suif. Le numéro E est le même dans les deux cas : il désigne une fonction, pas une provenance.',
+      'En Europe, la filière utilise majoritairement des graisses végétales, pour des raisons de coût et de logistique. Mais « majoritairement » n’est pas « toujours », et aucun élément de l’étiquette ne permet de trancher pour un produit donné.',
+      'Deux voies fiables : choisir un produit portant une certification halal, qui aura fait auditer la chaîne d’approvisionnement, ou écrire au fabricant. Beaucoup répondent, et la réponse écrite vaut mieux que toutes les déductions.',
+    ],
+    category: 'Additifs',
+    related: ['e471-halal', 'e472-halal', 'e542-phosphate-os-halal', 'e475-halal'],
+  },
+  {
+    slug: 'e475-halal',
+    question: 'Le E475 est-il halal ?',
+    verdict: '⚠️ Ça dépend de l’origine des acides gras',
+    short:
+      'Le E475 (esters polyglycériques d’acides gras) combine du glycérol et des acides gras dont l’origine peut être végétale ou animale.',
+    answer: [
+      'Le E475 est un émulsifiant obtenu en combinant du glycérol et des acides gras. On le trouve surtout dans les gâteaux industriels, les pâtisseries emballées et certaines crèmes : il donne du moelleux et empêche la pâte de retomber.',
+      'Comme pour le E471 ou le E472, la question halal ne porte pas sur la molécule mais sur sa matière première. Le glycérol et les acides gras peuvent venir de végétaux comme de graisses animales. Rien dans le numéro E ne distingue les deux.',
+      'La pratique industrielle européenne penche vers le végétal, mais ce n’est pas une garantie. Certains fabricants précisent « d’origine végétale » sur l’emballage : quand c’est écrit, c’est une information fiable, car cette mention engage le fabricant.',
+      'En l’absence de mention, la certification halal du produit fini reste la seule réponse sûre. À défaut, une question écrite au service consommateurs témoigne davantage qu’une supposition.',
+    ],
+    category: 'Additifs',
+    related: ['e471-halal', 'e472-halal', 'e476-halal', 'e542-phosphate-os-halal', 'e470-sels-acides-gras-halal'],
+  },
+  {
+    slug: 'e901-cire-abeille-halal',
+    question: 'La cire d’abeille (E901) est-elle halal ?',
+    verdict: '✅ Produit de l’abeille — licite selon la majorité des savants',
+    short:
+      'Le E901 est la cire produite par les abeilles. Les produits de l’abeille sont considérés licites par la grande majorité des savants, comme le miel.',
+    answer: [
+      'Le E901 est la cire sécrétée par les abeilles ouvrières pour bâtir leurs rayons. Dans l’alimentation, elle sert d’agent d’enrobage : elle donne leur brillant aux bonbons, aux dragées et à certains fruits, et protège les compléments alimentaires de l’humidité.',
+      'Son origine ne pose aucune incertitude : elle vient de l’abeille, jamais d’un animal terrestre abattu. La question n’est donc pas celle de l’abattage, mais celle du statut des produits de l’abeille.',
+      'Sur ce point, la grande majorité des savants les considèrent licites, en s’appuyant sur le statut du miel, dont le Coran parle explicitement comme d’un bienfait. Les organismes de certification acceptent le E901 dans les produits qu’ils auditent. Ce n’est pas un verdict que ce site prononce : c’est l’avis rapporté le plus répandu.',
+      'Un point de vigilance demeure : la cire d’abeille est parfois associée, dans un même enrobage, à de la gomme laque (E904), qui est une sécrétion d’insecte différente et fait l’objet de discussions distinctes. Si les deux figurent sur l’étiquette, la question se déplace sur la seconde.',
+    ],
+    category: 'Additifs',
+    related: ['e903-cire-carnauba-halal', 'e904-halal', 'haribo-halal'],
+  },
+  {
+    slug: 'e153-charbon-vegetal-halal',
+    question: 'Le E153 (charbon végétal) est-il halal ?',
+    verdict: '✅ Végétal par définition en Europe',
+    short:
+      'En Europe, le E153 vient de la carbonisation de matière végétale : bois, coco, tourbe. Le charbon d’os porte un autre numéro et n’est pas autorisé ici.',
+    answer: [
+      'Le E153, ou charbon végétal médicinal, est le colorant noir des croûtes de fromage, de certains pains à burger, de glaces et de bonbons noirs. C’est aussi le charbon actif vendu en gélules pour la digestion.',
+      'Son nom inquiète, et la crainte est légitime : il existe bien un charbon d’origine animale, obtenu en calcinant des os. Mais ce n’est pas celui-ci. La réglementation européenne définit le E153 comme issu de la carbonisation de matière végétale — bois, résidus de cellulose, tourbe, coques de noix de coco. Le noir animal, lui, relève d’un autre numéro et n’est pas autorisé comme colorant alimentaire dans l’Union.',
+      'Là où le charbon d’os existe vraiment, c’est ailleurs, et personne n’en parle : dans le raffinage du sucre de canne, où certaines raffineries l’utilisent comme filtre décolorant. Il ne figure sur aucune étiquette, parce que c’est un auxiliaire technologique et non un ingrédient. La bonne nouvelle pour la France : le sucre y est très majoritairement extrait de la betterave, dont le procédé ne fait pas appel à ce filtre.',
+      'En pratique : le E153 sur une étiquette européenne ne pose pas de problème. Si le doute porte sur le sucre d’un produit importé, c’est au fabricant qu’il faut poser la question — en lui demandant non pas ses additifs, mais son procédé de raffinage.',
+    ],
+    category: 'Additifs',
+    related: ['e150d-halal', 'e120-halal', 'e903-cire-carnauba-halal'],
+  },
+  {
+    slug: 'e334-acide-tartrique-halal',
+    question: 'Le E334 (acide tartrique) est-il halal ?',
+    verdict: '✅ Accepté par les organismes malgré une origine surprenante',
+    short:
+      'Le E334 est récupéré sur les cuves de vinification : un cristal minéral purifié, sans alcool, que la plupart des organismes acceptent, comme le vinaigre.',
+    answer: [
+      'Le E334 est l’acide tartrique, un acidifiant présent naturellement dans le raisin. On le trouve dans les bonbons acidulés, les confitures, les boissons, et sous la forme de son sel de potassium — la crème de tartre, E336 — dans la levure chimique.',
+      'Son origine industrielle mérite d’être dite franchement, parce qu’elle surprend : il est extrait du tartre, le dépôt cristallin qui se forme sur les cuves à vin. C’est un sous-produit de la vinification. Pas de l’alcool transformé : un cristal qui se dépose à côté, et que l’on récupère, lave et purifie.',
+      'Le produit fini ne contient pas d’éthanol et n’a aucun caractère enivrant. C’est pourquoi la plupart des organismes de certification l’acceptent, en s’appuyant sur le même raisonnement que pour le vinaigre : l’istihâla, la transformation complète qui fait qu’une substance n’est plus ce dont elle vient. Une minorité préfère l’éviter par précaution, non pas sur les faits, mais parce que la filière remonte au vin.',
+      'Point pratique : l’acide tartrique peut aussi être produit par synthèse, et certains fabricants le précisent. Sur une étiquette, rien ne distingue les deux voies. Si l’avis strict est celui que vous suivez, la certification halal du produit fini est la seule réponse ; sinon, la position majoritaire est ancienne et argumentée.',
+    ],
+    category: 'Additifs',
+    related: ['levure-chimique-halal', 'vinaigre-halal', 'e163-anthocyanes-halal', 'e330-halal'],
+  },
+  {
+    slug: 'e1510-ethanol-halal',
+    question: 'Le E1510 (éthanol) est-il halal ?',
+    verdict: '⚠️ C’est de l’alcool — les avis divergent sur la trace résiduelle',
+    short:
+      'Le E1510 est l’éthanol employé comme solvant d’arômes. Il n’apparaît presque jamais sous ce numéro : il se cache dans la mention « arômes ».',
+    answer: [
+      'Le E1510 est l’alcool éthylique. Il n’est pas là pour être bu : il sert de solvant, c’est-à-dire de véhicule pour extraire les molécules d’arôme d’une gousse de vanille ou d’une plante, puis pour les transporter dans le produit fini. L’extrait de vanille en est l’exemple le plus courant.',
+      'Ce qui rend la question difficile à vérifier : ce numéro ne figure quasiment jamais sur les étiquettes. Les supports d’arômes n’ont pas à être détaillés ligne par ligne, et le mot « arômes » suffit légalement à les couvrir. On ne le cherche donc pas dans la liste des additifs : on le déduit de la présence d’un arôme extrait.',
+      'Sur le fond, les avis se séparent sur un point précis. Ce qui est interdit par consensus, c’est le khamr — la boisson enivrante. Une trace d’éthanol technique, qui ne vient pas d’une boisson et qui ne peut enivrer personne aux quantités présentes, n’est pas la même chose : c’est l’argument de la majorité des organismes contemporains, dont plusieurs retiennent un seuil résiduel — souvent 0,1 % — en-deçà duquel ils certifient. Un avis plus strict écarte tout éthanol ajouté, quelle que soit la quantité.',
+      'En pratique : c’est l’une des rares questions où lire l’étiquette ne suffit pas. La certification halal du produit tranche, parce que l’organisme, lui, a accès à la composition des arômes. À défaut, les produits qui affichent « arôme naturel de vanille » sans extrait alcoolique, ou une vanille en poudre, contournent la question.',
+    ],
+    category: 'Additifs',
+    related: ['arome-vanille-halal', 'cuisine-alcool-halal', 'vinaigre-halal', 'parfum-alcool-halal', 'e163-anthocyanes-halal'],
+  },
+  {
+    slug: 'e640-glycine-halal',
+    question: 'Le E640 (glycine) est-il halal ?',
+    verdict: '⚠️ Presque toujours synthétique, mais ce n’est pas écrit',
+    short:
+      'La glycine industrielle est fabriquée par synthèse chimique dans l’immense majorité des cas. Elle peut aussi venir de l’hydrolyse du collagène animal.',
+    answer: [
+      'Le E640 est la glycine, le plus simple des acides aminés. Elle sert d’exhausteur et de modificateur de goût — elle adoucit l’amertume — et on la rencontre surtout dans les compléments alimentaires, certaines boissons et quelques préparations industrielles. Elle est rare sur les étiquettes européennes.',
+      'Deux voies de fabrication existent. La première, de loin dominante dans l’industrie, est une synthèse chimique à partir de matières premières minérales : elle ne fait intervenir aucun animal. La seconde consiste à hydrolyser du collagène, donc de la matière animale — la même origine que la gélatine.',
+      'Ce qui reste inconnu au consommateur, c’est laquelle des deux a servi. Le numéro E désigne une molécule et une fonction, jamais un procédé. La glycine synthétique et la glycine issue de collagène sont chimiquement identiques et portent le même numéro.',
+      'En pratique : la probabilité penche fortement du côté synthétique, mais une probabilité n’est pas une garantie. Pour un complément alimentaire pris quotidiennement, cela vaut la peine d’écrire au fabricant et de demander le procédé par écrit : c’est la seule réponse qui engage quelqu’un.',
+    ],
+    category: 'Additifs',
+    related: ['e621-glutamate-halal', 'e631-e627-halal', 'e441-gelatine-halal', 'collagene-halal'],
+  },
+  {
+    slug: 'e163-anthocyanes-halal',
+    question: 'Le E163 (anthocyanes) est-il halal ?',
+    verdict: '⚠️ Souvent tiré du marc de raisin — même question que le E334',
+    short:
+      'Les anthocyanes sont les pigments rouges et violets des fruits. Le plus courant vient de la peau du raisin, sous-produit du vin, parfois extrait à l’éthanol.',
+    answer: [
+      'Le E163 désigne les anthocyanes, la famille de pigments qui donne leur rouge, leur violet et leur bleu aux fruits et aux légumes. C’est ce qui colore les yaourts aux fruits rouges, les bonbons, les glaces et certaines boissons — une alternative végétale au carmin de cochenille (E120).',
+      'Les sources autorisées sont végétales : chou rouge, cassis, sureau, et surtout peau de raisin. Cette dernière est de loin la plus employée pour une raison économique simple : le marc de raisin est le résidu de la vinification, disponible en quantité et à bas coût. L’origine du pigment remonte donc, comme pour l’acide tartrique, à la filière du vin.',
+      'Un second point mérite d’être nommé : l’extraction. La réglementation autorise plusieurs solvants, dont l’eau acidifiée, le dioxyde de carbone, le méthanol et l’éthanol. Quand c’est l’éthanol, la question rejoint celle du E1510 — celle de la trace résiduelle, sur laquelle les avis divergent.',
+      'La position des organismes de certification suit ici la même logique que pour le vinaigre et le tartre : le pigment fini ne contient pas d’alcool et n’enivre pas, et la plupart l’acceptent. Ceux qui écartent tout ce qui remonte au vin l’évitent aussi. Sur l’étiquette, rien ne dit quel fruit ni quel solvant : seule la certification, ou une question écrite au fabricant, le dit.',
+    ],
+    category: 'Additifs',
+    related: ['e334-acide-tartrique-halal', 'e120-halal', 'e1510-ethanol-halal', 'vinaigre-halal'],
+  },
+  {
+    slug: 'skittles-halal',
+    question: 'Les Skittles sont-ils halal ?',
+    verdict: '⚠️ Sans gélatine depuis 2009 — sauf une gamme',
+    short:
+      'La composition publiée des Skittles Fruits ne fait plus apparaître de gélatine depuis 2009. Une variante, les Squishy Cloudz, en contient.',
+    answer: [
+      'Le réflexe, devant un sachet de dragées colorées, est de chercher la gélatine — celle qui fait des Haribo classiques un produit à écarter. Pour les Skittles, la réponse a changé : le fabricant l’a retirée de la recette en 2009, et la liste d’ingrédients publiée en France ne la mentionne plus.',
+      'Ce qu’on y lit à la place : sucre, sirop de glucose, graisse de palme, acidifiants, dextrine, maltodextrine, arômes, amidon modifié, une série de colorants (E162 betterave, E163 anthocyanes, E170 carbonate de calcium, E160a caroténoïdes, E100 curcumine, E132, E133) et un agent d’enrobage à la cire de carnauba. Deux choses valent d’être notées : le carnauba (E903) est végétal, et surtout le carmin de cochenille (E120) — le piège classique des bonbons rouges — ne figure pas dans cette liste.',
+      'L’exception est réelle et porte un nom : les Skittles Squishy Cloudz, à texture guimauve, contiennent de la gélatine. Et la recette peut différer d’un pays à l’autre : un sachet rapporté d’ailleurs n’est pas le sachet français.',
+      'Ce qui reste ouvert, comme pour tout produit non certifié : l’origine des arômes, qui peuvent être portés par un solvant alcoolique, et celle du E163, le plus souvent tiré du marc de raisin. Deux questions que l’étiquette ne tranche pas et que seul le fabricant peut trancher.',
+    ],
+    category: 'Produits',
+    related: ['haribo-halal', 'dragibus-halal', 'e903-cire-carnauba-halal', 'e163-anthocyanes-halal', 'e120-halal', 'mentos-halal', 'philadelphia-halal', 'actimel-halal'],
+  },
+  {
+    slug: 'glace-extreme-halal',
+    question: 'La glace Extrême est-elle halal ?',
+    verdict: '⚠️ Pas de gélatine — mais du shellac sur certains parfums',
+    short:
+      'Les cônes Extrême ne contiennent pas de gélatine : les gélifiants sont végétaux. En revanche, certains parfums portent un enrobage au shellac (E904).',
+    answer: [
+      'Première inquiétude évacuée : les compositions publiées des cônes Extrême ne font apparaître aucune gélatine. Ce qui tient la texture, ce sont des gélifiants végétaux — farine de graines de caroube, gomme guar, pectines. Sur ce point précis, il n’y a pas de piège.',
+      'Le vrai point est ailleurs, et il change d’un parfum à l’autre. La liste du cône café mentionne des « agents d’enrobage : shellac, gomme arabique ». La gomme arabique (E414) est végétale et ne pose rien. Le shellac, c’est le E904 : une résine sécrétée par un insecte, que beaucoup de savants tolèrent — on récolte une sécrétion, on ne broie pas l’animal — et que d’autres évitent par précaution.',
+      'Second point, commun à presque toute la crème glacée industrielle : les mono- et diglycérides d’acides gras, c’est-à-dire le E471, présents notamment sur la version chocolat. Leur origine, végétale ou animale, n’est jamais précisée sur l’étiquette.',
+      'La conclusion pratique est inhabituelle et mérite d’être dite clairement : « Extrême » n’a pas une réponse, il en a plusieurs. C’est le parfum qu’il faut regarder, pas la marque — et la ligne à chercher est celle des agents d’enrobage.',
+    ],
+    category: 'Produits',
+    related: ['glace-halal', 'e904-halal', 'e471-halal', 'e414-gomme-arabique-halal', 'magnum-halal'],
+  },
+  {
+    slug: 'magnum-halal',
+    question: 'Les glaces Magnum sont-elles halal ?',
+    verdict: '⚠️ Pas de gélatine — tout se joue sur les émulsifiants',
+    short:
+      'La composition publiée du Magnum Classic affiche des émulsifiants E471 et E476, dont l’origine n’est pas précisée. Aucune gélatine.',
+    answer: [
+      'La liste du Magnum Classic se lit sans mauvaise surprise du côté de la gélatine : lait écrémé réhydraté, sucre, beurre de cacao, eau, huile de coco, pâte de cacao, sirops de glucose, poudre de lait entier, lactose et protéines de lait, beurre concentré — et des émulsifiants.',
+      'Ce sont eux qui portent toute la question : lécithine de soja (végétale, sans réserve), E476 et E471. Le E476 est d’origine végétale selon les organismes. Le E471, en revanche, est le cas d’école de l’additif dont le numéro ne dit pas la provenance : il peut venir de graisses végétales comme animales, et rien sur l’emballage ne permet de trancher.',
+      'Un cas dans la gamme échappe entièrement au problème : les références portant la mention vegan. Cette mention engage le fabricant sur l’absence de tout ingrédient d’origine animale — l’émulsifiant compris. C’est le seul endroit du rayon où la question ne se pose plus.',
+      'Pour le reste, la gamme est vaste et les recettes diffèrent d’une référence à l’autre. La ligne à lire n’est ni le nom ni la promesse du paquet : c’est celle qui commence par « émulsifiants ».',
+    ],
+    category: 'Produits',
+    related: ['glace-halal', 'e471-halal', 'e476-halal', 'lecithine-e322-halal', 'glace-extreme-halal', 'skittles-halal', 'haagen-dazs-halal', 'actimel-halal'],
+  },
+  {
+    slug: 'haagen-dazs-halal',
+    question: 'Les glaces Häagen-Dazs sont-elles halal ?',
+    verdict: '⚠️ Certains parfums contiennent du rhum, écrit sur l’étiquette',
+    short:
+      'Le parfum Rhum Raisin contient du rhum comme ingrédient, pas comme trace. D’autres créations en boutique aussi. Les parfums classiques, non.',
+    answer: [
+      'La marque met en avant une base courte — crème, lait, sucre, œufs — et sur les parfums classiques, la liste d’ingrédients est effectivement brève. Ce n’est pas là que se situe la difficulté.',
+      'Elle est sur des parfums précis, et elle est écrite noir sur blanc. La composition publiée du Rhum Raisin mentionne du rhum, ainsi que des raisins au rhum. En boutique, des créations inspirées des cocktails — mojito, piña colada — sont annoncées avec du rhum ou une sauce au rhum. Ce ne sont pas des traces : c’est un ingrédient, versé dans la recette.',
+      'La distinction compte, parce qu’elle sépare deux débats que l’on confond souvent. Une trace d’éthanol employée comme solvant d’arôme divise les savants, et cette divergence est réelle. Une boisson alcoolisée ajoutée à une préparation, elle, ne divise personne : elle est écartée.',
+      'En pratique : les parfums classiques ne posent pas cette question, et le nom du parfum suffit presque toujours à repérer ceux qui la posent. En boutique, où l’étiquette n’est pas sous les yeux, la question se pose au vendeur — parfum par parfum, pas pour l’enseigne entière.',
+    ],
+    category: 'Produits',
+    related: ['glace-halal', 'cuisine-alcool-halal', 'e1510-ethanol-halal', 'glace-extreme-halal'],
+  },
+  {
+    slug: 'philadelphia-halal',
+    question: 'Le Philadelphia est-il halal ?',
+    verdict: '✅ Aucune présure dans la composition publiée',
+    short:
+      'Le Philadelphia n’est pas un fromage à présure : il est coagulé par acidification. Sa liste d’ingrédients ne fait apparaître aucun coagulant animal.',
+    answer: [
+      'La question qui se pose sur un fromage est presque toujours celle de la présure — l’enzyme tirée de la caillette du veau, qui fait cailler le lait, et dont l’origine peut être animale ou microbienne. Le Philadelphia relève d’un autre procédé, et c’est pour cela que la réponse y est plus nette qu’ailleurs.',
+      'La composition publiée de la référence nature se lit ainsi : lait, crème, préparation de protéines de lait, perméat de lactosérum concentré, sel, stabilisant (farine de graines de caroube), acidifiant (acide citrique). Aucune présure n’y figure — ce fromage frais est pris par acidification et par des ferments, pas par une enzyme animale.',
+      'Deux réserves honnêtes. La gamme est large — allégé, aux herbes, à cuisiner — et chaque référence a sa propre liste : ce qui est décrit ici vaut pour celle qu’on a lue. Et lorsqu’une présure figure sur un autre fromage, l’étiquette française ne dit pas si elle est animale ou microbienne, ce qui laisse la question ouverte partout ailleurs.',
+      'Pour le cas général des fromages, la fiche présure explique quoi chercher et à qui le demander. Ici, l’ingrédient qui inquiète est simplement absent de la liste.',
+    ],
+    category: 'Produits',
+    related: ['fromage-presure-halal', 'kiri-halal', 'vache-qui-rit-halal', 'babybel-halal'],
+  },
+  {
+    slug: 'actimel-halal',
+    question: 'L’Actimel est-il halal ?',
+    verdict: '✅ Pas de gélatine — la seule question est la vitamine D',
+    short:
+      'La composition de l’Actimel ne fait apparaître ni gélatine ni ingrédient d’origine animale douteuse. Certaines références ajoutent de la vitamine D3.',
+    answer: [
+      'L’inquiétude porte souvent sur les ferments, à cause du mot. Elle n’a pas lieu d’être : les ferments lactiques sont des bactéries — Lactobacillus, Streptococcus thermophilus — cultivées sur milieu laitier. Rien d’animal au sens qui nous occupe, et aucune parenté avec la levure de bière ou l’alcool.',
+      'La liste publiée se lit : lait écrémé, lait écrémé en poudre, sucre, crème, beurre, épaississant (amidon), ferments lactiques, et selon les références des arômes, des minéraux (fer, zinc) et des vitamines B6 et D3. Ce qui compte ici est autant ce qu’on y lit que ce qu’on n’y lit pas : pas de gélatine — l’épaississant est de l’amidon, pas un gélifiant animal.',
+      'Reste un seul point, et il est discret : la vitamine D3 ajoutée sur certaines références. Industriellement, elle est le plus souvent tirée de la lanoline, la graisse de laine récoltée à la tonte de moutons vivants. Pas d’abattage, pas de chair : la grande majorité des avis la considèrent licite, et les organismes de certification la valident couramment. Les versions de lichen existent, sans débat du tout.',
+      'Autrement dit, la réponse tient à un détail que personne ne regarde : la ligne des vitamines, et non celle des ferments.',
+    ],
+    category: 'Produits',
+    related: ['yaourt-halal', 'vitamine-d3-halal', 'danette-halal', 'levure-biere-halal', 'skittles-halal', 'philadelphia-halal', 'magnum-halal'],
+  },
+  {
+    slug: 'buffalo-grill-halal',
+    question: 'Buffalo Grill est-il halal ?',
+    verdict: '⚠️ Aucune certification nationale — quelques franchises font exception',
+    short:
+      'La chaîne n’affiche aucune certification halal et sert de l’alcool. Des franchises isolées proposent du halal : cela se vérifie restaurant par restaurant.',
+    answer: [
+      'Au niveau de l’enseigne, la réponse est claire : aucune certification halal n’est affichée, ni sur le site de la chaîne ni dans les restaurants, et la communication de la marque renvoie à un approvisionnement en abattage conventionnel. Du vin est par ailleurs servi en salle. Rien n’indique un projet de généralisation.',
+      'Mais Buffalo Grill est un réseau de franchisés, et un franchisé peut s’approvisionner autrement pour répondre à sa clientèle locale. Des cas existent — un restaurant de la région d’Avignon a intégré de la viande halal à sa carte, certificat à l’appui. Ce sont des initiatives isolées, jamais une politique d’enseigne.',
+      'La conséquence est inconfortable mais elle est la vérité : « Buffalo Grill halal ou pas » n’a pas de réponse unique. Elle dépend de l’établissement, et elle peut changer. Ce qui se vérifie, c’est le certificat affiché dans ce restaurant-là, avec le nom de l’organisme et sa date. Un « oui, c’est halal » prononcé au comptoir n’est pas un certificat.',
+      'Une seconde question, distincte, se pose ensuite et n’a rien à voir avec la viande : celle de manger dans une salle où l’alcool est servi. Certains l’écartent par principe, d’autres distinguent ce qu’il y a dans leur assiette de ce qu’il y a sur la table voisine. Les deux positions existent, et ce n’est pas ce site qui tranchera un choix personnel.',
+    ],
+    category: 'Produits',
+    related: ['certifications-halal-france', 'kfc-halal', 'burger-king-halal', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'popeyes-halal', 'pizza-hut-halal'],
+  },
+  {
+    slug: 'popeyes-halal',
+    question: 'Popeyes est-il halal en France ?',
+    verdict: '✅ Poulet certifié annoncé en juin 2025 — du porc reste à la carte',
+    short:
+      'Popeyes France a annoncé en juin 2025 la certification halal de toute sa gamme poulet. Mais certaines recettes contiennent encore du bacon de porc.',
+    answer: [
+      'Popeyes a pris le chemin inverse de KFC. Avant 2025, seule une poignée de restaurants français proposaient du poulet halal — Créteil, Lille, Mulhouse, Troyes, Limoges et quelques autres. Puis, en juin 2025, la chaîne a annoncé la certification halal de l’ensemble de sa gamme poulet dans tous ses restaurants en France, huile de friture comprise.',
+      'Le piège est ailleurs, et il est important : **une enseigne certifiée ne veut pas dire une carte entièrement licite.** La certification annoncée porte sur le poulet. Or certaines recettes de la carte contiennent du bacon de porc. Autrement dit, la bonne question n’est plus « est-ce que Popeyes est halal », mais « est-ce que ce sandwich-là contient du bacon ».',
+      'La distinction entre une annonce et un certificat mérite aussi d’être posée. Une communication d’enseigne est un acte commercial ; un certificat est un document, avec le nom d’un organisme et une date de validité. Les deux existent ici, mais c’est le second qui engage quelqu’un. Il s’affiche en restaurant — et un restaurant sérieux le montre sans difficulté.',
+      'À comparer avec KFC, qui occupe le même créneau et donne la réponse opposée en France : poulet de filière standard, pas de certification. Cette différence entre deux enseignes voisines explique une bonne partie des rumeurs qui circulent sur l’une comme sur l’autre.',
+    ],
+    category: 'Produits',
+    related: ['kfc-halal', 'burger-king-halal', 'buffalo-grill-halal', 'pizza-hut-halal', 'certifications-halal-france'],
+  },
+  {
+    slug: 'pizza-hut-halal',
+    question: 'Pizza Hut est-il halal ?',
+    verdict: '⚠️ Des viandes certifiées dans certains restaurants — jamais la cuisine',
+    short:
+      'Pizza Hut a proposé des viandes certifiées halal dans un nombre limité de restaurants, signalées sur la carte. La chaîne ne certifie pas ses cuisines.',
+    answer: [
+      'Le cas Pizza Hut introduit une distinction que presque personne ne fait, et qui décide pourtant de tout : **un ingrédient peut être certifié sans que la cuisine le soit.** Dans un nombre limité de restaurants, la chaîne a proposé des viandes certifiées — merguez de bœuf, escalope de poulet, pepperoni de bœuf, jambon de dinde — repérables directement sur la carte. Cette certification porte sur l’approvisionnement de ces viandes-là.',
+      'Elle ne porte pas sur ce qui se passe ensuite : le même four, le même plan de travail, les mêmes ustensiles, et sur la pizza voisine un pepperoni de porc. Pizza Hut n’a jamais revendiqué de certification de ses points de vente, et c’est une position honnête de leur part — mais elle signifie que la réponse n’est ni oui ni non. Elle est : certifié jusqu’où ?',
+      'Deux éléments restent par ailleurs explicitement en dehors : le pepperoni de porc, qui demeure à la carte, et certaines sauces susceptibles de contenir de l’alcool.',
+      'En pratique, cela dépend du restaurant et cela peut changer. Sur place, deux questions valent mieux qu’une : quelles viandes sont certifiées, et par quel organisme — puis comment elles sont manipulées. Ceux qui suivent un avis strict écartent une cuisine où l’on manipule du porc ; d’autres s’en tiennent à l’ingrédient certifié. Les deux positions existent, et ce n’est pas ce site qui tranchera un choix personnel.',
+    ],
+    category: 'Produits',
+    related: ['dominos-pizza-halal', 'popeyes-halal', 'kfc-halal', 'certifications-halal-france', 'restaurant-halal-paris'],
+  },
+  {
+    slug: 'sans-porc-halal',
+    question: 'Un produit « sans porc » est-il halal ?',
+    verdict: '⚠️ Non — c’est une mention sur un ingrédient, pas sur l’abattage',
+    short:
+      '« Sans porc » dit une seule chose : il n’y a pas de porc dedans. Rien sur la façon dont l’animal a été abattu — et aucune loi n’oblige l’étiquette à le dire.',
+    answer: [
+      'C’est la confusion la plus répandue du rayon, et elle se comprend : on cherche du halal, on lit « sans porc », on prend. Sauf que ces deux mots répondent à une question, et à une seule — y a-t-il du porc dans ce produit. C’est une mention commerciale sur un ingrédient. Ce n’est pas une certification religieuse, et elle n’en a jamais eu la prétention.',
+      'Ce qu’elle ne dit pas est précisément ce qui décide. Le jambon de dinde, le blanc de volaille ou le bœuf que contient le produit viennent d’un animal abattu d’une certaine façon — et sur ce point, l’étiquette est muette. Ce n’est pas un oubli du fabricant : **aucune réglementation française ou européenne n’oblige à indiquer le mode d’abattage.** Le règlement européen de 2011 sur l’information du consommateur a été vidé de cette exigence, et la mention reste facultative. Par défaut, une charcuterie de volaille « sans porc » provient donc d’un abattage conventionnel.',
+      'Trois autres choses passent à travers cette mention, et elles reviennent souvent. La gélatine, qui peut être bovine sans abattage rituel. Les additifs d’origine animale — E471, E120, E441 — dont le numéro ne dit pas la provenance. Et les arômes portés par un solvant alcoolique. Un produit peut être parfaitement « sans porc » et contenir les trois.',
+      'Le réflexe qui change tout tient en une phrase : **cherche un logo, pas une formule.** Une certification porte le nom d’un organisme et engage quelqu’un ; « sans porc » n’engage personne sur la question religieuse. Pour la viande, la traçabilité halal en France s’appuie sur la norme AFNOR V46-003, et les organismes qui la suivent l’affichent. Si le paquet ne porte qu’une phrase et aucun logo, tu sais ce que tu ignores — et c’est déjà une information.',
+    ],
+    category: 'Alimentation',
+    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal', 'traces-de-porc-halal'],
+  },
+  {
+    slug: 'traces-de-porc-halal',
+    question: '« Traces de porc » : le produit est-il halal ?',
+    verdict: '⚠️ Mention facultative et sans seuil — elle dit très peu',
+    short:
+      'Aucune loi n’oblige à écrire « peut contenir des traces », et aucun seuil ne déclenche cette mention. Sa présence prouve peu, son absence ne prouve rien.',
+    answer: [
+      'Commençons par ce que cette phrase est vraiment : un avertissement destiné aux personnes allergiques, sur un risque de contact accidentel en usine — un même tapis, une même ligne, un même atelier. Ce n’est pas une ligne d’ingrédients. Si du porc était réellement un ingrédient du produit, il figurerait dans la liste : **ça, c’est obligatoire, et c’est précis.**',
+      'Vient ensuite le point que presque personne ne connaît, et il coupe dans les deux sens. **La mention « peut contenir des traces de » est facultative, et aucun seuil chiffré ne la déclenche**, ni en France ni en Europe. Un fabricant peut l’écrire dès qu’un risque théorique existe, même minime, par pure prudence juridique. Un autre peut ne rien écrire alors qu’un risque réel demeure. Autrement dit : sa présence prouve peu de chose, et son absence ne prouve rien du tout.',
+      'Sur le fond religieux, la distinction que retiennent les savants ne porte pas sur le mot mais sur la nature de la chose : un ingrédient ajouté volontairement n’est pas une trace accidentelle et indétectable. C’est le même raisonnement que ce site applique déjà aux traces de solvant alcoolique dans les arômes — la position largement retenue ne considère pas qu’une trace imperceptible et non voulue rende l’aliment illicite. Un avis plus prudent écarte tout ce qui nomme le porc, quelle qu’en soit la quantité. Les deux existent, et ce n’est pas ce site qui tranchera un choix personnel.',
+      'En pratique, le réflexe utile : **lis la liste des ingrédients, pas la ligne des traces.** L’une est obligatoire et engage le fabricant sur ce qu’il a mis dedans ; l’autre est un avertissement d’usine que rien n’encadre. Pour un produit consommé tous les jours, une certification répond aux deux questions à la fois — elle audite la ligne de production autant que la recette.',
+    ],
+    category: 'Alimentation',
+    related: ['sans-porc-halal', 'certifications-halal-france', 'arome-vanille-halal', 'gelatine-halal', 'chips-halal'],
   },
   {
     slug: 'e570-halal',
@@ -1994,7 +2294,7 @@ export const QUESTIONS: QA[] = [
       'Attention aux cousins : d’autres pralines et chocolats de fêtes (Mon Chéri de la même maison, par exemple) contiennent, elles, de l’alcool bien réel — la liqueur est même dans le nom. Chaque référence a sa propre étiquette : c’est elle qui tranche.',
     ],
     category: 'Produits',
-    related: ['nutella-halal', 'kinder-halal', 'chocolat-liqueur-halal'],
+    related: ['nutella-halal', 'kinder-halal', 'chocolat-liqueur-halal', 'skittles-halal', 'magnum-halal'],
   },
   {
     slug: 'milka-halal',
@@ -2022,7 +2322,7 @@ export const QUESTIONS: QA[] = [
       'Cas particulier des Lindor : les recettes varient selon les parfums — certains contiennent des arômes à vérifier. Règle Lindt : jamais d’achat de boîte cadeau sans retourner la boîte.',
     ],
     category: 'Produits',
-    related: ['chocolat-liqueur-halal', 'kitkat-halal', 'ferrero-rocher-halal', 'milka-halal', 'lu-prince-halal', 'starbucks-halal'],
+    related: ['chocolat-liqueur-halal', 'kitkat-halal', 'ferrero-rocher-halal', 'milka-halal', 'lu-prince-halal', 'starbucks-halal', 'buffalo-grill-halal', 'popeyes-halal'],
   },
   {
     slug: 'mentos-halal',
@@ -2050,7 +2350,7 @@ export const QUESTIONS: QA[] = [
       'Pas de certification halal sur les Dragibus français : c’est étiquette et conviction personnelle. Alternative zéro doute : Haribo produit en Turquie des gammes 100 % halal certifiées (gélatine bovine rituelle), vendues en épicerie orientale — le goût de l’enfance sans l’arrière-pensée.',
     ],
     category: 'Produits',
-    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal', 'collagene-halal'],
+    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal', 'collagene-halal', 'skittles-halal', 'magnum-halal', 'popeyes-halal'],
   },
   {
     slug: 'marshmallow-halal',
@@ -2120,7 +2420,7 @@ export const QUESTIONS: QA[] = [
       'À noter pour les goûters d’enfants : la plupart des fromages fondus concurrents sont dans le même cas exactement. La vraie ligne de partage n’est pas la marque mais la présence ou non d’une certification sur la boîte.',
     ],
     category: 'Produits',
-    related: ['vache-qui-rit-halal', 'fromage-presure-halal', 'babybel-halal', 'subway-halal', 'burger-king-halal', 'kitkat-halal'],
+    related: ['vache-qui-rit-halal', 'fromage-presure-halal', 'babybel-halal', 'subway-halal', 'burger-king-halal', 'kitkat-halal', 'pizza-hut-halal'],
   },
   {
     slug: 'babybel-halal',
@@ -2134,7 +2434,7 @@ export const QUESTIONS: QA[] = [
       'Vérifie toujours l’emballage de ton pays d’achat (les recettes varient selon les marchés) : la mention « convient aux végétariens » ou « coagulant microbien » est le signal à chercher sur tous les fromages, Babybel ou pas. C’est l’astuce fromage la plus utile qui soit.',
     ],
     category: 'Produits',
-    related: ['fromage-presure-halal', 'vache-qui-rit-halal', 'kiri-halal'],
+    related: ['fromage-presure-halal', 'vache-qui-rit-halal', 'kiri-halal', 'philadelphia-halal'],
   },
   {
     slug: 'subway-halal',
@@ -2148,7 +2448,7 @@ export const QUESTIONS: QA[] = [
       'Ailleurs, le tableau change : au Moyen-Orient tout est halal, et au Royaume-Uni une partie des Subway (souvent en quartiers à forte population musulmane) sert du halal certifié, affiché en vitrine. Le réflexe voyage : chercher l’affichage ou demander — jamais supposer d’un pays à l’autre.',
     ],
     category: 'Produits',
-    related: ['kfc-halal', 'mcdo-halal', 'dominos-pizza-halal'],
+    related: ['kfc-halal', 'mcdo-halal', 'dominos-pizza-halal', 'pizza-hut-halal'],
   },
   {
     slug: 'dominos-pizza-halal',
@@ -2218,7 +2518,7 @@ export const QUESTIONS: QA[] = [
       'Reste l’éternel débat des traces de solvants dans les arômes, identique pour tous les sodas — considéré comme sans effet sur la licéité par l’avis très largement dominant. Bref : le Pepsi se juge sur le sucre qu’il contient, pas sur un interdit religieux.',
     ],
     category: 'Produits',
-    related: ['coca-cola-halal', 'fanta-halal', 'red-bull-halal', 'monster-halal', 'ice-tea-halal'],
+    related: ['coca-cola-halal', 'fanta-halal', 'red-bull-halal', 'monster-halal', 'ice-tea-halal', 'haagen-dazs-halal'],
   },
   {
     slug: 'ice-tea-halal',
@@ -2563,7 +2863,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'chicha-halal',
     question: 'La chicha est-elle haram ?',
-    verdict: '❌ Même statut que la cigarette (voire pire)',
+    verdict: '❌ Même statut que la cigarette selon les savants contemporains',
     short:
       'La chicha suit le même raisonnement que la cigarette — sa fumée est même plus volumineuse. Son image « conviviale » ne change rien à l’analyse des savants.',
     answer: [
@@ -2662,7 +2962,7 @@ export const QUESTIONS: QA[] = [
     slug: 'priere-vendredi-obligatoire',
     question: 'La prière du vendredi est-elle obligatoire ? Et si je travaille ?',
     titreSeo: 'La prière du vendredi est-elle obligatoire ?',
-    verdict: '✅ Obligatoire pour les hommes — exemptions réelles',
+    verdict: '✅ Obligatoire pour les hommes — l’ordre coranique est explicite (62:9)',
     short:
       'La jumu‘a est obligatoire pour l’homme pubère résident (Coran 62:9) ; femmes, voyageurs et malades en sont dispensés. Le travail exige d’essayer de s’organiser — l’impossibilité réelle est une excuse.',
     answer: [
@@ -2733,7 +3033,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'psy-therapie-islam',
     question: 'Consulter un psychologue est-il halal ?',
-    verdict: '✅ Permis et encouragé',
+    verdict: '✅ Permis et encouragé — les savants contemporains sont d’accord',
     short:
       'Se soigner est encouragé en islam, la santé mentale comprise. Consulter un psychologue est permis — la seule vigilance porte sur des conseils contraires à la religion.',
     answer: [
@@ -2805,7 +3105,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'prenom-musulman-obligatoire',
     question: 'Faut-il un prénom musulman quand on se convertit ?',
-    verdict: '✅ Non — ce n’est pas une obligation',
+    verdict: '✅ Non — cela n’a jamais été posé comme une condition',
     short:
       'Aucun texte n’oblige un nouveau musulman à changer de prénom. Le seul cas où les savants recommandent un changement est un prénom dont le SENS contredit la foi ou porte une signification désagréable.',
     answer: [
@@ -2894,7 +3194,7 @@ export const QUESTIONS: QA[] = [
       'Entre les deux, une zone grise que personne ne tranche à ta place : une oreille très décollée, un nez qui provoque des moqueries quotidiennes, une cicatrice visible qui rend la vie sociale difficile. Plusieurs savants contemporains y voient une souffrance réelle à lever, et non une simple coquetterie ; d’autres maintiennent l’interdit. Si tu es dans ce cas, deux démarches valent mieux qu’une décision solitaire : expose ta situation précise à un savant de confiance, et ne néglige pas l’accompagnement psychologique, qui règle parfois ce que le bistouri ne réglerait pas. À noter enfin : le maquillage, la coiffure, les soins non permanents ne relèvent pas de ce débat.',
     ],
     category: 'Vie quotidienne',
-    related: ['greffe-cheveux-halal', 'tatouage-halal', 'piercing-halal', 'psy-therapie-islam', 'teinture-cheveux-islam', 'adoption-islam', 'don-organes-islam'],
+    related: ['greffe-cheveux-halal', 'tatouage-halal', 'piercing-halal', 'psy-therapie-islam', 'teinture-cheveux-islam', 'adoption-islam', 'don-organes-islam', 'e901-cire-abeille-halal'],
   },
   {
     slug: 'echecs-islam',
@@ -2927,7 +3227,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'qibla-direction-priere',
     question: 'Comment trouver la direction de la qibla ?',
-    verdict: '✅ On fait de son mieux — l’effort suffit',
+    verdict: '✅ On fait de son mieux — le Coran lui-même le dit (2:115)',
     short:
       'Depuis la France, la qibla se situe globalement vers le sud-est. Et si tu ne peux pas la déterminer, ta prière reste valable : l’islam demande l’effort sincère, pas la précision au degré près.',
     answer: [
