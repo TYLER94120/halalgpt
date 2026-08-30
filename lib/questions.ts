@@ -169,7 +169,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : beaucoup de consommateurs musulmans les consomment sur la base de la composition affichée ; les plus prudents préfèrent des chocolats certifiés halal, nombreux en magasin oriental. Vérifiez toujours la liste d’ingrédients de l’édition que vous avez en main.',
     ],
     category: 'Produits',
-    related: ['kinder-halal', 'haribo-halal', 'e120-halal'],
+    related: ['kinder-halal', 'haribo-halal', 'e120-halal', 'nutella-halal', 'oreo-halal', 'snickers-mars-twix-halal'],
   },
   {
     slug: 'kinder-halal',
@@ -183,7 +183,7 @@ export const QUESTIONS: QA[] = [
       'À noter : dans certains pays musulmans, les mêmes produits Ferrero sont vendus avec certification halal locale. Si vous voyagez au Maroc, en Turquie ou aux Émirats, vous trouverez des Kinder certifiés. Vérifiez la composition exacte du produit local, elle peut varier d’un pays à l’autre.',
     ],
     category: 'Produits',
-    related: ['mms-halal', 'haribo-halal', 'gelatine-halal', 'milka-halal', 'mentos-halal', 'lu-prince-halal'],
+    related: ['mms-halal', 'haribo-halal', 'gelatine-halal', 'milka-halal', 'mentos-halal', 'lu-prince-halal', 'nutella-halal'],
   },
   {
     slug: 'coca-cola-halal',
@@ -331,7 +331,7 @@ export const QUESTIONS: QA[] = [
       'Le bon réflexe : ne vous fiez pas au simple mot « halal » en vitrine. Vérifiez le certificat affiché (organisme, date de validité) ou demandez-le — un restaurant sérieux le montre sans difficulté. C’est exactement ce que la carte VoyagesHalal vérifie pour vous, adresse par adresse.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-lyon', 'restaurant-halal-marseille', 'viande-supermarche-halal'],
+    related: ['restaurant-halal-lyon', 'restaurant-halal-marseille', 'viande-supermarche-halal', 'restaurant-halal-lille', 'restaurant-halal-strasbourg', 'restaurant-halal-nantes'],
   },
   {
     slug: 'restaurant-halal-lyon',
@@ -345,7 +345,7 @@ export const QUESTIONS: QA[] = [
       'Comme partout : vérifiez le certificat halal affiché et sa date, surtout pour la viande. Les adresses vérifiées de la région lyonnaise arrivent sur la carte VoyagesHalal.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-paris', 'restaurant-halal-marseille'],
+    related: ['restaurant-halal-paris', 'restaurant-halal-marseille', 'restaurant-halal-toulouse', 'restaurant-halal-strasbourg', 'restaurant-halal-nice'],
   },
   {
     slug: 'restaurant-halal-marseille',
@@ -359,7 +359,7 @@ export const QUESTIONS: QA[] = [
       'Conseil : pour la viande, les certificats restent le bon réflexe, même à Marseille. Et si vous visitez : combinez un couscous à Noailles, une balade au Vieux-Port et la Grande Mosquée — la carte VoyagesHalal vous géolocalise tout ça.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-paris', 'restaurant-halal-lyon', 'pays-voyage-halal'],
+    related: ['restaurant-halal-paris', 'restaurant-halal-lyon', 'pays-voyage-halal', 'restaurant-halal-toulouse', 'restaurant-halal-nice', 'restaurant-halal-montpellier'],
   },
   {
     slug: 'repas-halal-avion',
@@ -680,7 +680,7 @@ export const QUESTIONS: QA[] = [
       'Attention en revanche aux cousins de la marque : certains chocolats Ferrero de fêtes contiennent bel et bien de l’alcool (les Mon Chéri, par exemple, à la liqueur de cerise). Une composition rassurante sur un produit ne dit jamais rien du produit voisin : c’est toujours l’étiquette du paquet que tu tiens qui tranche.',
     ],
     category: 'Produits',
-    related: ['kinder-halal', 'lecithine-e322-halal', 'ferrero-rocher-halal', 'chocolat-liqueur-halal', 'mms-halal'],
+    related: ['kinder-halal', 'lecithine-e322-halal', 'ferrero-rocher-halal', 'chocolat-liqueur-halal', 'mms-halal', 'oreo-halal', 'kitkat-halal'],
   },
   {
     slug: 'mcdo-halal',
@@ -895,7 +895,7 @@ export const QUESTIONS: QA[] = [
       'Spécialité à tester en version halal : les friteries du Nord — plusieurs adressent désormais une carte 100 % halal. Comme toujours, vérifiez le certificat pour la viande, et retrouvez les adresses vérifiées de la métropole lilloise sur la carte VoyagesHalal.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-paris', 'restaurant-halal-strasbourg', 'restaurant-halal-toulouse'],
+    related: ['restaurant-halal-paris', 'restaurant-halal-strasbourg', 'restaurant-halal-toulouse', 'restaurant-halal-nantes'],
   },
   {
     slug: 'restaurant-halal-toulouse',
@@ -909,7 +909,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe habituel s’applique : certificat affiché pour la viande, affluence locale comme meilleur indice de qualité. Les adresses vérifiées de la ville rose rejoignent progressivement la carte VoyagesHalal.',
     ],
     category: 'Voyage',
-    related: ['restaurant-halal-marseille', 'restaurant-halal-lyon', 'restaurant-halal-lille'],
+    related: ['restaurant-halal-marseille', 'restaurant-halal-lyon', 'restaurant-halal-lille', 'restaurant-halal-bordeaux', 'restaurant-halal-montpellier'],
   },
   {
     slug: 'restaurant-halal-strasbourg',
@@ -1168,7 +1168,7 @@ export const QUESTIONS: QA[] = [
       'En voyage, vous trouverez des Oreo certifiés halal dans les pays musulmans (production locale ou importée certifiée). Même biscuit, tampon en plus.',
     ],
     category: 'Produits',
-    related: ['nutella-halal', 'kinder-halal', 'mms-halal'],
+    related: ['nutella-halal', 'kinder-halal', 'mms-halal', 'lu-prince-halal'],
   },
   {
     slug: 'pringles-halal',
@@ -1196,7 +1196,7 @@ export const QUESTIONS: QA[] = [
       'Vigilance voyage : les recettes varient selon les continents — certaines confiseries du groupe ont contenu de la gélatine sur d’autres marchés. Lisez l’étiquette locale, ou profitez des versions certifiées vendues dans les pays musulmans.',
     ],
     category: 'Produits',
-    related: ['mms-halal', 'kinder-halal', 'gelatine-halal'],
+    related: ['mms-halal', 'kinder-halal', 'gelatine-halal', 'kitkat-halal'],
   },
   {
     slug: 'monster-halal',
@@ -2186,7 +2186,7 @@ export const QUESTIONS: QA[] = [
       'À savoir : les KitKat produits en Malaisie, à Dubaï ou en Turquie sont certifiés halal (le logo figure sur l’emballage) — on les trouve dans certaines épiceries orientales. Même produit, traçabilité vérifiée en plus.',
     ],
     category: 'Produits',
-    related: ['nutella-halal', 'kinder-halal', 'snickers-mars-twix-halal'],
+    related: ['nutella-halal', 'kinder-halal', 'snickers-mars-twix-halal', 'milka-halal', 'lindt-halal', 'lu-prince-halal'],
   },
   {
     slug: 'ferrero-rocher-halal',
@@ -2200,7 +2200,7 @@ export const QUESTIONS: QA[] = [
       'Attention aux cousins : d’autres pralines et chocolats de fêtes (Mon Chéri de la même maison, par exemple) contiennent, elles, de l’alcool bien réel — la liqueur est même dans le nom. Chaque référence a sa propre étiquette : c’est elle qui tranche.',
     ],
     category: 'Produits',
-    related: ['nutella-halal', 'kinder-halal', 'chocolat-liqueur-halal'],
+    related: ['nutella-halal', 'kinder-halal', 'chocolat-liqueur-halal', 'lindt-halal'],
   },
   {
     slug: 'milka-halal',
@@ -2214,7 +2214,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe Milka : lire chaque étiquette, référence par référence — « gélatine » y figure obligatoirement quand elle est présente. Et si tu veux du chocolat garanti, des marques certifiées halal existent en épicerie orientale et même en grande surface.',
     ],
     category: 'Produits',
-    related: ['kinder-halal', 'kitkat-halal', 'marshmallow-halal'],
+    related: ['kinder-halal', 'kitkat-halal', 'marshmallow-halal', 'haribo-halal'],
   },
   {
     slug: 'lindt-halal',
@@ -2243,7 +2243,7 @@ export const QUESTIONS: QA[] = [
       'Ce qui reste ouvert, comme pour tout produit non certifié : l’origine des arômes, qui peuvent être portés par un solvant alcoolique, et celle du E163, le plus souvent tiré du marc de raisin. Deux questions que l’étiquette ne tranche pas et que seul le fabricant peut trancher.',
     ],
     category: 'Produits',
-    related: ['haribo-halal', 'dragibus-halal', 'e903-cire-carnauba-halal', 'e163-anthocyanes-halal', 'e120-halal'],
+    related: ['haribo-halal', 'dragibus-halal', 'e903-cire-carnauba-halal', 'e163-anthocyanes-halal', 'e120-halal', 'mentos-halal'],
   },
   {
     slug: 'glace-extreme-halal',
@@ -2347,7 +2347,7 @@ export const QUESTIONS: QA[] = [
       'Pour les chewing-gums Mentos, s’ajoute la question habituelle de la base gomme et des arômes — même situation que les autres chewing-gums industriels. Trente secondes d’étiquette règlent chaque cas.',
     ],
     category: 'Produits',
-    related: ['chewing-gum-halal', 'dragibus-halal', 'e904-halal', 'skittles-halal'],
+    related: ['chewing-gum-halal', 'dragibus-halal', 'e904-halal', 'skittles-halal', 'kinder-halal'],
   },
   {
     slug: 'dragibus-halal',
@@ -2361,7 +2361,7 @@ export const QUESTIONS: QA[] = [
       'Pas de certification halal sur les Dragibus français : c’est étiquette et conviction personnelle. Alternative zéro doute : Haribo produit en Turquie des gammes 100 % halal certifiées (gélatine bovine rituelle), vendues en épicerie orientale — le goût de l’enfance sans l’arrière-pensée.',
     ],
     category: 'Produits',
-    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal'],
+    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal', 'skittles-halal', 'mentos-halal'],
   },
   {
     slug: 'marshmallow-halal',
@@ -2389,7 +2389,7 @@ export const QUESTIONS: QA[] = [
       'Si tu préfères le zéro question : plusieurs marques de biscuits certifiés halal (dont des équivalents « fourrés chocolat » très convaincants) occupent désormais les rayons halal des grandes surfaces et les épiceries orientales.',
     ],
     category: 'Produits',
-    related: ['oreo-halal', 'kitkat-halal', 'cereales-halal'],
+    related: ['oreo-halal', 'kitkat-halal', 'cereales-halal', 'kinder-halal'],
   },
   {
     slug: 'danette-halal',
