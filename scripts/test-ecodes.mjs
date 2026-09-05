@@ -80,9 +80,23 @@ verifie('l’affichage remet le E devant', () => {
 });
 
 verifie('un code sans fiche recoit quand meme des voisines', () => {
-  // C'est tout l'objet du correctif : E470a n'a pas de fiche, mais la page
-  // doit avoir de quoi aider plutot que de renvoyer vers une liste.
-  for (const orphelin of ['E470a', 'E475', 'E491', 'E921']) {
+  // C'est tout l'objet du correctif : un code sans fiche ne doit pas renvoyer
+  // le lecteur vers une liste, mais vers ses voisins immediats.
+  //
+  // ATTENTION AVANT DE DEBUGGER. Cette liste se perime toute seule, et c'est
+  // sain : un orphelin cite ici finit par recevoir sa fiche, et le test tombe
+  // alors pour la meilleure des raisons — le trou qu'il surveillait a ete
+  // comble. C'est arrive deux fois le 5 septembre. E475 a eu sa fiche. E470a
+  // aussi, indirectement : la fiche E470 est arrivee, et la regle « les
+  // variantes a lettre retombent sur leur code de base » — verifiee vingt
+  // lignes plus haut — l'y renvoie desormais. Les deux assertions se
+  // contredisaient.
+  //
+  // Donc : quand ce test echoue, lire le nom du code AVANT de soupconner
+  // lib/ecodes.ts. Si le code a maintenant une fiche, le correctif est de le
+  // remplacer ici par un orphelin reel, en gardant un code A LETTRE dans la
+  // liste (E150a aujourd'hui) — c'est le seul qui exerce la regle de repli.
+  for (const orphelin of ['E150a', 'E473', 'E491', 'E921']) {
     assert.equal(chercherParCode(orphelin), undefined, `${orphelin} ne devrait pas avoir de fiche`);
     const v = fichesVoisines(orphelin);
     assert.ok(v.length > 0, `${orphelin} devrait proposer des voisines`);

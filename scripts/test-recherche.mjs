@@ -78,10 +78,22 @@ for (const [saisie, doitContenir] of [
 // Et ces saisies-la ne ramenaient rien avant : on verifie que c'est bien le
 // corps qui les sauve, pas un hasard de titre.
 console.log('\n── C\'est bien le corps qui les sauve ─────────────────────────');
-for (const saisie of ['cochenille', 'emulsifiant', 'hotel', 'anesthesie', 'barbe']) {
+for (const saisie of ['cochenille', 'hotel', 'anesthesie', 'barbe']) {
   const avant = slugs(saisie, INDEX_TITRES).length;
   const apres = slugs(saisie).length;
   dire(avant === 0 && apres > 0, `« ${saisie} » : ${avant} sans le corps → ${apres} avec`);
+}
+
+// « emulsifiant » etait dans la liste ci-dessus jusqu'au jour ou le verdict de
+// magnum-halal a pris le mot — « tout se joue sur les emulsifiants ». Le titre
+// en ramene donc une desormais, et exiger zero reviendrait a interdire d'ecrire
+// ce mot dans un verdict. Ce qu'on garde a la place est ce qui comptait
+// vraiment : sans le corps on tombe sur une fiche par accident de vocabulaire,
+// avec lui on trouve la famille entiere. Un ordre de grandeur separe les deux.
+{
+  const avant = slugs('emulsifiant', INDEX_TITRES).length;
+  const apres = slugs('emulsifiant').length;
+  dire(apres >= avant * 5, `« emulsifiant » : ${avant} sans le corps → ${apres} avec`);
 }
 
 // ── 3. Le sujet passe devant la simple mention ───────────────────────────
