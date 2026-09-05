@@ -443,7 +443,7 @@ export const QUESTIONS: QA[] = [
       'Trois choses qui rassurent, parce qu’elles reviennent toujours. Ta prière n’est pas de moindre valeur : celui qui est empêché reçoit la récompense de ce qu’il faisait quand il était valide, selon un hadith rapporté par Boukhari. Tu n’as rien à rattraper une fois guéri. Et tu es seul juge de ta capacité : la religion ne demande pas de se faire mal, elle demande de faire ce qu’on peut. Si l’état s’installe ou si tu hésites entre deux degrés, l’imam de ta mosquée saura te répondre en deux minutes.',
     ],
     category: 'Prière',
-    related: ['priere-voiture', 'rattraper-prieres-ratees', 'tayammum-sans-eau', 'zakat-al-fitr-montant', 'qibla-direction-priere', 'priere-vendredi-obligatoire', 'priere-istikhara'],
+    related: ['priere-voiture', 'rattraper-prieres-ratees', 'tayammum-sans-eau', 'zakat-al-fitr-montant', 'qibla-direction-priere', 'priere-vendredi-obligatoire', 'priere-istikhara', 'platre-pansement-ablutions'],
   },
   {
     slug: 'jeux-video-halal',
@@ -499,7 +499,7 @@ export const QUESTIONS: QA[] = [
       'Quelques points pratiques. La surface : terre, sable, pierre, mur non peint, poussière déposée — la condition d’une poussière visible fait elle-même l’objet d’avis différents. Le tayammum s’annule par ce qui annule les ablutions, et surtout dès que l’eau redevient disponible et utilisable. Enfin, ce n’est pas une solution de confort : quelqu’un qui a de l’eau à quelques pas ne s’en dispense pas. En cas de blessure ou de plâtre, une autre voie existe — l’essuyage sur le pansement — et c’est à un savant qu’il faut poser la question de ta situation exacte.',
     ],
     category: 'Pratique',
-    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'priere-avion', 'se-convertir-islam'],
+    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'priere-avion', 'se-convertir-islam', 'platre-pansement-ablutions'],
   },
   {
     slug: 'serrer-la-main-islam',
@@ -1071,7 +1071,7 @@ export const QUESTIONS: QA[] = [
       'Astuce courses : les bonbons végans utilisent par définition pectine, amidon ou agar-agar plutôt que la gélatine — le rayon végan est un allié inattendu du consommateur halal (vérifiez juste l’absence d’arômes alcoolisés).',
     ],
     category: 'Additifs',
-    related: ['gelatine-halal', 'haribo-halal', 'e407-carraghenane-halal', 'e1105-lysozyme-halal'],
+    related: ['gelatine-halal', 'haribo-halal', 'e407-carraghenane-halal', 'e1105-lysozyme-halal', 'vegan-halal'],
   },
   {
     slug: 'e466-halal',
@@ -1511,7 +1511,7 @@ export const QUESTIONS: QA[] = [
       'Les inhalateurs pour l’asthme sont permis pendant le jeûne selon la plupart des conseils de fiqh contemporains (ce n’est ni nourriture ni boisson, et la santé prime). En cas de traitement régulier, demande à ton médecin si une prise matin/soir est possible.',
     ],
     category: 'Ramadan',
-    related: ['piqure-ramadan', 'medicament-ramadan', 'brosser-dents-ramadan'],
+    related: ['piqure-ramadan', 'medicament-ramadan', 'brosser-dents-ramadan', 'lentilles-contact-ablutions'],
   },
   {
     slug: 'medicament-ramadan',
@@ -1611,7 +1611,7 @@ export const QUESTIONS: QA[] = [
       'Il reste une inquiétude fréquente, et il faut la remettre à sa place : la composition. Le carmin (E120) de beaucoup de rouges à lèvres, le collagène ou la kératine de certains soins peuvent être d’origine animale. C’est une question de licéité du PRODUIT, valable toute l’année — pas une question de validité du jeûne. Autrement dit : même un rouge à lèvres que tu jugerais douteux ne casserait pas ton jeûne tant que tu ne l’avales pas. Les deux sujets se traitent séparément, et les confondre fait refaire des journées de jeûne pour rien.',
     ],
     category: 'Ramadan',
-    related: ['parfum-alcool-halal', 'rouge-levres-carmin-halal', 'brosser-dents-ramadan', 'e120-halal', 'collagene-halal'],
+    related: ['parfum-alcool-halal', 'rouge-levres-carmin-halal', 'brosser-dents-ramadan', 'e120-halal', 'collagene-halal', 'henne-ablutions-priere'],
   },
   {
     slug: 'dattes-rompre-jeune',
@@ -2196,6 +2196,22 @@ export const QUESTIONS: QA[] = [
     related: ['dominos-pizza-halal', 'popeyes-halal', 'kfc-halal', 'certifications-halal-france', 'restaurant-halal-paris'],
   },
   {
+    slug: 'vegan-halal',
+    question: 'Un produit vegan est-il halal ?',
+    verdict: '⚠️ Répond à toute la question animale, à rien sur l’alcool',
+    short:
+      'La mention vegan écarte la gélatine, le E471 animal et le carmin. Mais elle n’a aucune définition légale, et elle ne dit rien de l’alcool des arômes.',
+    answer: [
+      'C’est le raccourci le plus utile du rayon pour un lecteur musulman, et presque personne ne s’en sert. La grande majorité des doutes qui remplissent ce site portent sur une seule chose : l’origine animale d’un ingrédient — gélatine, E471, carmin de cochenille, présure. Un produit réellement vegan n’en contient aucun, par construction. La mention règle donc toute cette famille de questions d’un coup.',
+      'Reste à savoir ce qu’elle vaut. Et là, la réalité surprend : **le mot « vegan » n’a aucune définition légale**, ni en France ni dans l’Union européenne. Le règlement européen de 2011 sur l’information du consommateur prévoit bien des textes d’application pour l’encadrer — ce travail n’a jamais commencé. C’est donc une allégation volontaire, qui a seulement l’obligation de ne pas induire en erreur ; en France, mentir dessus relève de la pratique commerciale trompeuse, sévèrement punie.',
+      'D’où une distinction qui décide de la confiance à accorder. Un **logo de certification** — le V-Label et ses équivalents — repose sur un cahier des charges audité : c’est une garantie. Le mot « vegan » seul, imprimé par le fabricant, est son engagement propre : juridiquement contraignant, mais vérifié par personne. Les deux ne se valent pas, et rien sur l’emballage ne t’oblige à les distinguer.',
+      'Et voici ce que cette mention ne couvre jamais : **l’alcool**. L’éthanol qui sert de solvant aux arômes n’a rien d’animal — un produit peut être parfaitement vegan et en contenir. Même chose pour l’acide tartrique récupéré sur les cuves à vin, ou les anthocyanes tirées du marc de raisin. Le vegan et l’alcool ne se croisent tout simplement pas.',
+      'C’est l’exact miroir du « sans porc ». Celui-ci te renseigne sur un ingrédient et sur rien d’autre, surtout pas sur l’abattage. Le vegan te renseigne sur toute l’origine animale et sur rien d’autre, surtout pas sur l’alcool. Utilisée pour ce qu’elle fait, c’est la vérification la plus rapide qui existe en rayon quand le doute porte sur un additif dont on ignore la provenance.',
+    ],
+    category: 'Alimentation',
+    related: ['sans-porc-halal', 'traces-de-porc-halal', 'e471-halal', 'gelatine-halal', 'e120-halal', 'e1510-ethanol-halal'],
+  },
+  {
     slug: 'sans-porc-halal',
     question: 'Un produit « sans porc » est-il halal ?',
     verdict: '⚠️ Non — c’est une mention sur un ingrédient, pas sur l’abattage',
@@ -2208,7 +2224,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe qui change tout tient en une phrase : **cherche un logo, pas une formule.** Une certification porte le nom d’un organisme et engage quelqu’un ; « sans porc » n’engage personne sur la question religieuse. Pour la viande, la traçabilité halal en France s’appuie sur la norme AFNOR V46-003, et les organismes qui la suivent l’affichent. Si le paquet ne porte qu’une phrase et aucun logo, tu sais ce que tu ignores — et c’est déjà une information.',
     ],
     category: 'Alimentation',
-    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal', 'traces-de-porc-halal'],
+    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal', 'traces-de-porc-halal', 'vegan-halal'],
   },
   {
     slug: 'traces-de-porc-halal',
@@ -2223,7 +2239,7 @@ export const QUESTIONS: QA[] = [
       'En pratique, le réflexe utile : **lis la liste des ingrédients, pas la ligne des traces.** L’une est obligatoire et engage le fabricant sur ce qu’il a mis dedans ; l’autre est un avertissement d’usine que rien n’encadre. Pour un produit consommé tous les jours, une certification répond aux deux questions à la fois — elle audite la ligne de production autant que la recette.',
     ],
     category: 'Alimentation',
-    related: ['sans-porc-halal', 'certifications-halal-france', 'arome-vanille-halal', 'gelatine-halal', 'chips-halal'],
+    related: ['sans-porc-halal', 'certifications-halal-france', 'arome-vanille-halal', 'gelatine-halal', 'chips-halal', 'vegan-halal'],
   },
   {
     slug: 'e570-halal',
@@ -2730,7 +2746,7 @@ export const QUESTIONS: QA[] = [
       'Pour la tranquillité totale : la D3 végétale extraite du lichen existe (souvent étiquetée « vegan D3 ») et des D3 certifiées halal aussi. Vérifie l’enveloppe (gélatine vs capsule végétale) et le support huileux. Vu le déficit en vitamine D des habitants du nord de l’Europe, c’est un complément que ton médecin validera volontiers — halal compris.',
     ],
     category: 'Produits',
-    related: ['medicaments-gelules-halal', 'cereales-halal', 'collagene-halal'],
+    related: ['medicaments-gelules-halal', 'cereales-halal', 'collagene-halal', 'vegan-halal'],
   },
   {
     slug: 'taurine-halal',
@@ -2787,7 +2803,7 @@ export const QUESTIONS: QA[] = [
       'Précision utile : ceci concerne le vernis posé au moment de faire l’ablution. Un vernis posé sur une ablution valide n’annule rien — tu peux prier avec jusqu’à ce que l’ablution soit rompue. D’où la stratégie « pose le vendredi soir, retire avant fajr » que beaucoup ont adoptée.',
     ],
     category: 'Prière',
-    related: ['tatouage-halal', 'rouge-levres-carmin-halal', 'ablutions-chaussettes', 'wudu-annule-quoi', 'retard-fajr-reveil', 'priere-femme-regles'],
+    related: ['tatouage-halal', 'rouge-levres-carmin-halal', 'ablutions-chaussettes', 'wudu-annule-quoi', 'retard-fajr-reveil', 'priere-femme-regles', 'henne-ablutions-priere', 'lentilles-contact-ablutions'],
   },
   {
     slug: 'rouge-levres-carmin-halal',
@@ -2801,7 +2817,7 @@ export const QUESTIONS: QA[] = [
       'La sortie par le haut est facile : les gammes sans carmin sont nombreuses (colorants minéraux, la mention « vegan » garantit l’absence de cochenille), et les marques de cosmétiques certifiés halal se multiplient. Pour celles qui veulent le rouge parfait sans la question : il existe, littéralement dans le même rayon.',
     ],
     category: 'Vie quotidienne',
-    related: ['e120-halal', 'parfum-alcool-halal', 'maquillage-ramadan'],
+    related: ['e120-halal', 'parfum-alcool-halal', 'maquillage-ramadan', 'vegan-halal'],
   },
   {
     slug: 'musique-halal',
@@ -2985,7 +3001,49 @@ export const QUESTIONS: QA[] = [
       'En pratique : enfile tes chaussettes après une ablution complète le matin, et selon l’avis que tu suis, les renouvellements de la journée se font par essuyage — un vrai changement de vie au bureau, en voyage ou par -5°C. Conditions à retenir : ablution complète à l’enfilage, durée limitée, et tout état d’impureté majeure impose le lavage complet. Les « chaussettes de mash » épaisses vendues pour ça cochent toutes les cases des avis stricts.',
     ],
     category: 'Prière',
-    related: ['vernis-ongles-priere', 'priere-travail', 'horaires-priere-voyage'],
+    related: ['vernis-ongles-priere', 'priere-travail', 'horaires-priere-voyage', 'platre-pansement-ablutions'],
+  },
+  {
+    slug: 'henne-ablutions-priere',
+    question: 'Peut-on prier avec du henné sur les mains ?',
+    verdict: '✅ Oui — le henné ne bloque pas l’eau',
+    short:
+      'Le henné teinte l’ongle et la peau sans former de couche : l’eau atteint la surface, l’ablution reste valide. C’est l’inverse exact du vernis.',
+    answer: [
+      'Tout se joue sur une distinction matérielle, pas religieuse : est-ce que la matière **teinte** ou est-ce qu’elle **recouvre** ? Le henné pénètre la kératine et la peau et n’y dépose aucun film — l’eau du wudu touche l’ongle comme s’il était nu. Le vernis, la pâte, la peinture ou la boue déposent au contraire une pellicule imperméable qui empêche l’eau d’atteindre la surface, et c’est elle qui invalide l’ablution. Sur ce point les avis convergent dans les quatre écoles : la couleur seule n’a jamais fait obstacle.',
+      'Conséquence pratique, et elle est confortable : contrairement au vernis, le henné ne demande aucune stratégie de calendrier. Pas besoin de le poser après le wudu ni de le retirer avant fajr — pour un mariage, un Aïd ou une naissance, on le porte et on prie normalement pendant les jours ou les semaines qu’il tient. C’est précisément ce qui en fait, depuis toujours, l’ornement compatible avec la pratique.',
+      'Une réserve, et elle est sanitaire et non religieuse. Le « henné noir » des tatouages éphémères de plage ou de marché n’est presque jamais du henné seul : on y ajoute de la paraphénylènediamine (PPD) pour noircir la teinte et la faire tenir. Cet ajout est illégal — en France la PPD n’est autorisée que dans les teintures capillaires, sous 6 % — et l’ANSM alerte sur des eczémas allergiques sévères, parfois des cloques et des cicatrices durables, qui apparaissent plusieurs jours après. Une seule exposition peut sensibiliser un enfant à vie. Le henné naturel est brun-orangé ; un henné qui promet du noir intense en une heure doit être refusé, pour la peau et non pour la prière.',
+    ],
+    category: 'Prière',
+    related: ['vernis-ongles-priere', 'teinture-cheveux-islam', 'tatouage-halal', 'wudu-annule-quoi', 'maquillage-ramadan'],
+  },
+  {
+    slug: 'platre-pansement-ablutions',
+    question: 'Comment faire ses ablutions avec un plâtre ?',
+    verdict: '✅ On passe la main mouillée dessus',
+    short:
+      'On lave normalement tout ce qui peut l’être, puis on passe la main mouillée sur le plâtre ou le pansement au lieu de la peau. Retirer le pansement n’est jamais demandé.',
+    answer: [
+      'Le cas porte un nom dans le fiqh — le mash ‘ala al-jabira, l’essuyage sur le pansement — et il existe précisément parce que la religion ne demande pas de rouvrir une plaie pour prier. La marche à suivre se lit en trois temps. Si l’eau ne fait aucun mal à la blessure, on fait ses ablutions normalement, plâtre ou pas. Si l’eau est nuisible, on lave tout le membre autour, puis on passe simplement la main mouillée **sur** le plâtre, le bandage ou l’attelle — le geste remplace le lavage de la peau qu’il couvre. Et si même cela est impossible ou dangereux, le tayammum prend le relais.',
+      'Un point où les avis diffèrent, et il vaut mieux le savoir que le découvrir : l’essuyage sur le pansement suffit-il à lui seul, ou faut-il y ajouter un tayammum par précaution ? Les deux pratiques existent chez des savants reconnus, et les écoles ne tranchent pas de la même façon. Si ta situation dure — un plâtre se porte des semaines — la question se pose à un imam ou à un savant qui connaît ton cas, pas à un site. Ce qui ne fait aucun doute, en revanche, c’est que ta prière n’est pas suspendue en attendant la réponse : on prie avec l’ablution que l’on peut faire.',
+      'Deux repères concrets. Le pansement ne doit pas déborder largement de ce que la blessure exige — on essuie sur ce qui soigne, pas sur un bandage étendu par commodité. Et ne confonds pas ce cas avec l’essuyage sur les chaussettes : celui-ci obéit à des conditions et à une durée précises (24 h, 72 h en voyage), parce qu’il est une facilité choisie. Le plâtre, lui, n’est pas un choix — c’est une contrainte médicale, et la règle suit le besoin.',
+    ],
+    category: 'Prière',
+    related: ['tayammum-sans-eau', 'ablutions-chaussettes', 'priere-assise-malade', 'wudu-annule-quoi', 'ghusl-grande-ablution'],
+  },
+  {
+    slug: 'lentilles-contact-ablutions',
+    question: 'Peut-on faire ses ablutions avec des lentilles ?',
+    verdict: '✅ Oui — rien à retirer',
+    short:
+      'Le wudu demande de laver le visage, pas l’intérieur de l’œil. Les lentilles ne gênent ni l’ablution ni le ghusl, et il n’y a pas de divergence là-dessus.',
+    answer: [
+      'La réponse tient à ce que l’ablution demande exactement. Le wudu impose de laver **le visage** — c’est-à-dire la surface extérieure ; l’intérieur de l’œil n’en fait pas partie, et les savants précisent même qu’il ne faut pas y faire entrer d’eau, parce que c’est nuisible et que rien ne l’exige. Une lentille posée sur la cornée est donc entièrement hors du champ de l’obligation. Le raisonnement vaut à l’identique pour le ghusl, qui demande l’eau sur toute la surface du corps : la surface s’arrête à la paupière. Ni l’ablution mineure ni la majeure ne réclament de retirer quoi que ce soit.',
+      'Cela vaut la peine d’être dit clairement, parce que la crainte vient d’une confusion avec un cas voisin. Les parties « intérieures » qui font débat dans les ablutions sont la bouche et le nez — les rinçages madmada et istinshaq, obligatoires pour certaines écoles, fortement recommandés pour les autres. Les yeux n’ont jamais figuré dans cette discussion. Il n’y a donc pas ici deux avis à peser : c’est une question qui n’a simplement pas de controverse.',
+      'Restent les deux questions que l’on pose souvent en même temps, et qui sont autre chose. Les lentilles de couleur ou purement esthétiques : la majorité des avis les permettent tant qu’elles ne nuisent pas à la santé de l’œil et ne servent pas à tromper — c’est un débat d’ornement, pas de pureté rituelle. Et le jeûne : ce ne sont pas les lentilles qui posent question mais les gouttes que l’on met pour les porter, un sujet à part entière traité ailleurs sur le site. Pour la prière elle-même, tu peux les garder du fajr au ‘icha sans y penser.',
+    ],
+    category: 'Prière',
+    related: ['gouttes-yeux-ramadan', 'wudu-annule-quoi', 'ghusl-grande-ablution', 'vernis-ongles-priere', 'chirurgie-esthetique-halal'],
   },
   // ─── PRIÈRE & VIE GÉNÉRALE (IA musulmane généralisée) ───────────────────────
   {
@@ -3028,7 +3086,7 @@ export const QUESTIONS: QA[] = [
       'La forme complète, celle de la sunna : intention, laver les mains, laver les parties intimes, faire des ablutions complètes comme pour la prière, verser l’eau trois fois sur la tête en frottant le cuir chevelu, puis laver tout le corps en commençant par le côté droit. Deux précisions utiles : les femmes n’ont pas l’obligation de défaire leurs tresses pour le ghusl d’impureté majeure si l’eau atteint la racine (hadith d’Oumm Salama) ; et vernis, faux ongles ou extensions imperméables doivent être retirés, puisqu’ils empêchent l’eau d’atteindre la peau. Sans eau ou en cas de maladie, le tayammum (ablution sèche) prend le relais.',
     ],
     category: 'Prière',
-    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles', 'wudu-annule-quoi'],
+    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles', 'wudu-annule-quoi', 'lentilles-contact-ablutions', 'platre-pansement-ablutions'],
   },
   {
     slug: 'psy-therapie-islam',
@@ -3265,7 +3323,7 @@ export const QUESTIONS: QA[] = [
         'Deux remarques pratiques qui évitent des angoisses inutiles. D’abord, le doute n’annule rien : si tu as fait tes ablutions et que tu n’es pas certain de les avoir rompues, elles tiennent — la certitude ne se défait pas par un soupçon, et c’est une règle sur laquelle tout le monde s’accorde. Ensuite, un simple somme assis, la tête qui tombe un instant, n’est pas le sommeil profond dont parlent les textes. Pour les cas particuliers — incontinence, sondes, soins médicaux répétés —, il existe des facilités précises : demande à un savant ou à l’imam de ta mosquée, qui tiendra compte de ta situation exacte.',
     ],
     category: 'Prière',
-    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'tayammum-sans-eau', 'vernis-ongles-priere', 'priere-travail'],
+    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'tayammum-sans-eau', 'vernis-ongles-priere', 'priere-travail', 'henne-ablutions-priere', 'platre-pansement-ablutions', 'lentilles-contact-ablutions'],
   },
   {
     slug: 'priere-femme-regles',
@@ -3307,7 +3365,7 @@ export const QUESTIONS: QA[] = [
       'Reste une question que beaucoup oublient et qui est la plus concrète : la teinture empêche-t-elle l’eau d’atteindre le cheveu lors des ablutions ? La réponse dépend du produit. Le henné et les colorations qui pénètrent le cheveu en le teignant laissent passer l’eau : les ablutions sont valides. En revanche, tout produit qui forme une pellicule imperméable en surface doit être retiré avant les ablutions et le ghusl — c’est le même raisonnement que pour le vernis à ongles. En cas de doute sur un produit précis, lis sa composition, et pour ta situation, demande à un savant.',
     ],
     category: 'Vie quotidienne',
-    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal', 'adoption-islam'],
+    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal', 'adoption-islam', 'henne-ablutions-priere'],
   },
   {
     slug: 'porter-or-homme-islam',
