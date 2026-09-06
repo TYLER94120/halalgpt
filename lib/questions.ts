@@ -401,7 +401,7 @@ export const QUESTIONS: QA[] = [
       'Et maintenant la limite de cette page, qui compte autant que le reste. **Cette fiche explique un principe. Elle ne se prononce sur aucune situation particulière** — ni sur un crédit immobilier, ni sur un compte bancaire, ni sur une assurance, ni sur un placement. Ces questions-là divisent réellement les savants, y compris parmi les plus qualifiés : plusieurs conseils européens ont autorisé certains montages sous conditions pour les musulmans vivant en Occident, d’autres autorités les refusent. Un engagement sur vingt ans ne se décide pas d’après une page web. Pour ta situation, adresse-toi à un savant ou à un organisme spécialisé : c’est le seul conseil honnête que nous puissions te donner.',
     ],
     category: 'Pratique',
-    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage'],
+    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage', 'enterrement-musulman-france'],
   },
   {
     slug: 'greffe-cheveux-halal',
@@ -3072,7 +3072,23 @@ export const QUESTIONS: QA[] = [
       'Côté pratique en France : se présenter à une mosquée permet d’obtenir un certificat de conversion — inutile pour la validité devant Allah, mais demandé pour certaines démarches (mariage religieux, visa pour l’Omra ou le Hajj). Beaucoup de mosquées proposent aussi un accompagnement pour les nouveaux convertis. Un conseil que répètent tous ceux qui sont passés par là : trouve une communauté bienveillante et une personne de confiance à qui poser tes questions — la solitude est le vrai obstacle des premiers mois, pas la difficulté de la religion.',
     ],
     category: 'Pratique',
-    related: ['prenom-musulman-obligatoire', 'ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition'],
+    related: ['prenom-musulman-obligatoire', 'ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition', 'enterrement-musulman-france'],
+  },
+  {
+    slug: 'enterrement-musulman-france',
+    question: 'Comment enterrer un musulman en France ?',
+    verdict: '✅ Inhumation seule — jamais la crémation',
+    short:
+      'L’islam impose l’inhumation et exclut la crémation. En France s’y ajoutent trois contraintes légales : le cercueil, le délai de six jours et l’accord du maire.',
+    answer: [
+      'Sur le fond religieux, les avis ne divergent pas : le corps est **inhumé**, jamais incinéré, et l’ensemble des écoles recommande de ne pas tarder. Trois actes précèdent la mise en terre — la toilette funéraire, l’enveloppement dans un linceul de tissu blanc sans couture, et la prière funéraire (salat al-janaza), qui se fait debout et sans prosternation. Le défunt est ensuite couché sur le côté droit, le visage vers la qibla. Pour le détail de ces gestes, une mosquée ou un service de pompes funèbres musulmanes accompagne les familles ; ce qui suit concerne ce que le droit français, lui, impose par-dessus.',
+      'Première contrainte, et c’est celle qui surprend le plus : **le cercueil est obligatoire.** L’article L. 2223-2 du code général des collectivités territoriales l’exige pour tout transport de corps et toute inhumation sur le territoire, y compris dans un carré musulman — la mise en terre à même le sol, dans le seul linceul, n’est pas possible en France. L’usage qui s’est installé concilie les deux : le défunt reste enveloppé dans son linceul, et c’est ainsi qu’il est placé dans un cercueil volontairement dépouillé, en bois léger et sans capitonnage.',
+      'Deuxième contrainte, **le délai**. La loi française fixe l’inhumation entre vingt-quatre heures et six jours après le décès. C’est l’inverse de l’habitude, qui veut qu’on enterre vite, et les démarches administratives allongent souvent l’attente. Il n’y a rien à négocier là-dessus : le délai est légal, il s’applique à tout le monde, et la famille n’a pas à s’en sentir en faute.',
+      'Troisième contrainte, **le carré musulman — et c’est le vrai point de blocage.** Le droit français ne connaît pas les divisions confessionnelles dans un cimetière : les parties publiques sont neutres. Mais le maire détient la police des funérailles dans sa commune et peut décider de l’emplacement de chaque sépulture, donc regrouper de fait les défunts d’une même confession ; une directive du 19 février 2008 a demandé aux préfets d’encourager les maires à le faire. Résultat : cela dépend entièrement de la commune, et la couverture est très inégale sur les 35 000 cimetières français. **La seule réponse fiable est un appel à la mairie**, avant d’en avoir besoin.',
+      'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
+    ],
+    category: 'Pratique',
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution'],
   },
   {
     slug: 'ghusl-grande-ablution',
@@ -3100,7 +3116,7 @@ export const QUESTIONS: QA[] = [
       'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam'],
+    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france'],
   },
   {
     slug: 'mauvais-oeil-protection',
@@ -3129,7 +3145,7 @@ export const QUESTIONS: QA[] = [
       'En France, le don est présumé par défaut : sans refus inscrit au registre national, on est considéré comme donneur. C’est le point pratique qui surprend le plus de familles musulmanes au pire moment. Quelle que soit ta position, la décision se prend à froid, s’inscrit, et surtout se DIT à tes proches — ce sont eux qu’on interrogera. Et parce que la divergence est réelle et la question grave, c’est typiquement le sujet où il faut en parler avec un savant qui connaît ta situation, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam'],
+    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam', 'enterrement-musulman-france'],
   },
   {
     slug: 'photos-selfies-islam',
