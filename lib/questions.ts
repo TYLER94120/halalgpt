@@ -373,7 +373,7 @@ export const QUESTIONS: QA[] = [
       'Un mot sur ce que personne ne dit assez. Le pari sportif est conçu pour créer une dépendance : notifications, cotes en direct, bonus de bienvenue, remboursement du premier pari. Beaucoup de gens qui posent cette question ne cherchent pas vraiment une règle, ils cherchent une sortie. Si c’est ton cas, sache que ça se traite comme n’importe quelle autre dépendance, sans honte : on peut demander à s’auto-interdire auprès des opérateurs, en parler à un médecin, et un psychologue n’a rien de contraire à la religion. En parler à quelqu’un est un acte de courage, pas de faiblesse.',
     ],
     category: 'Vie quotidienne',
-    related: ['loto-jeux-hasard-halal', 'cigarette-halal', 'psy-therapie-islam', 'riba-interet-islam', 'mauvais-oeil-protection'],
+    related: ['loto-jeux-hasard-halal', 'cigarette-halal', 'psy-therapie-islam', 'riba-interet-islam', 'mauvais-oeil-protection', 'credit-immobilier-halal'],
   },
   {
     slug: 'loto-jeux-hasard-halal',
@@ -387,7 +387,7 @@ export const QUESTIONS: QA[] = [
       'Et si l’on a déjà gagné ? La question revient souvent, et la réponse que retiennent la plupart des savants est de ne pas garder cet argent : on s’en défait, en le donnant sans en attendre de récompense, plutôt que d’en tirer profit. Sur le détail — à qui, comment, que faire si la somme a déjà été dépensée — les avis se nuancent, et c’est exactement le genre de situation personnelle où il faut poser la question à un savant plutôt que de se fier à une page web. Ce que cette fiche donne, c’est la règle générale, pas le règlement de ton cas.',
     ],
     category: 'Vie quotidienne',
-    related: ['paris-sportifs-halal', 'anniversaire-halal', 'halal-definition', 'echecs-islam'],
+    related: ['paris-sportifs-halal', 'anniversaire-halal', 'halal-definition', 'echecs-islam', 'credit-immobilier-halal'],
   },
   {
     slug: 'riba-interet-islam',
@@ -401,7 +401,24 @@ export const QUESTIONS: QA[] = [
       'Et maintenant la limite de cette page, qui compte autant que le reste. **Cette fiche explique un principe. Elle ne se prononce sur aucune situation particulière** — ni sur un crédit immobilier, ni sur un compte bancaire, ni sur une assurance, ni sur un placement. Ces questions-là divisent réellement les savants, y compris parmi les plus qualifiés : plusieurs conseils européens ont autorisé certains montages sous conditions pour les musulmans vivant en Occident, d’autres autorités les refusent. Un engagement sur vingt ans ne se décide pas d’après une page web. Pour ta situation, adresse-toi à un savant ou à un organisme spécialisé : c’est le seul conseil honnête que nous puissions te donner.',
     ],
     category: 'Pratique',
-    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage', 'enterrement-musulman-france'],
+    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage', 'enterrement-musulman-france', 'credit-immobilier-halal'],
+  },
+  {
+    slug: 'credit-immobilier-halal',
+    question: 'Peut-on acheter sa maison à crédit en islam ?',
+    verdict: '⚠️ Interdit par la majorité — une dérogation débattue',
+    short:
+      'La majorité des savants interdisent le crédit à intérêt. Le Conseil européen des fatwas admet une dérogation pour la résidence principale — avis très contesté.',
+    answer: [
+      'Le point de départ ne fait pas débat : l’intérêt bancaire est du riba, et son interdiction est explicite. Un prêt immobilier classique est un prêt à intérêt — la réponse par défaut est donc non, et ce n’est pas là que se situe la controverse. Elle commence à la question suivante : **que fait un musulman qui vit en France, paie un loyer à fonds perdu, et n’a aucune offre conforme à sa portée ?**',
+      'À cette question, le **Conseil européen des fatwas et de la recherche** a répondu en admettant le recours à un prêt bancaire à intérêt pour l’achat d’un logement, sur le fondement de la règle « la nécessité permet l’interdit » et de l’assimilation du besoin à la nécessité — le besoin étant ce dont la privation met en difficulté, là où la nécessité met la vie en jeu. La dérogation est **encadrée par des conditions cumulatives** : il doit s’agir de la résidence principale, l’acheteur ne doit pas déjà posséder un logement qui le dispenserait d’emprunter, et il ne doit pas disposer des moyens d’acheter autrement.',
+      '**Et il faut dire aussitôt que cet avis est très contesté.** Des positions pour et contre ont été présentées au Conseil lui-même avant qu’il ne tranche, les juristes musulmans contemporains divergent ouvertement, et la réfutation existe en français sous forme de livre entier — *Acheter sa maison à crédit* de Salâh al-Sâwî. D’autres instances de fatwa maintiennent l’interdiction sans dérogation. Ce n’est donc pas une question réglée que l’on vous cacherait : c’est un désaccord réel entre savants, et ce site n’a pas à le trancher pour vous.',
+      'Les montages conformes existent, et il vaut la peine de savoir comment ils fonctionnent. Dans la **murabaha**, l’organisme achète le bien puis vous le revend plus cher, payable en échéances : son gain est dans le prix, pas dans un taux. Dans l’**ijara**, vous louez avec option d’achat. Dans la **musharaka dégressive**, vous êtes copropriétaire de l’organisme et vous rachetez ses parts au fil du temps. La difficulté n’est pas le principe, c’est l’offre : **il n’existe pas en France de banque islamique de plein exercice** pour les particuliers, et toute proposition rencontrée se vérifie au cas par cas — ce site ne recommande aucun établissement.',
+      'Un obstacle a longtemps été fiscal, et il est utile de savoir qu’il est levé. Une murabaha, c’est **deux ventes successives** : le bien est acheté puis revendu, donc les droits de mutation étaient dus deux fois, ce qui rendait le montage bien plus cher qu’un prêt ordinaire. **Quatre instructions fiscales du 24 août 2010** — murabaha, sukuk, ijara, istisna — ont corrigé cela, et la doctrine est aujourd’hui codifiée au Bulletin officiel des finances publiques : le profit du financier est exclu de la base des droits de mutation lors de la revente à l’acquéreur final. L’obstacle restant n’est plus l’impôt, c’est la minceur de l’offre.',
+      'Deux conseils pratiques, et un renvoi. Comparez le **coût total** et non le taux : la marge d’une murabaha, les frais de montage, les honoraires de conseil et les actes notariés successifs d’une musharaka peuvent dépasser un crédit classique, surtout sur longue durée. Et pour la décision elle-même — qui engage un foyer sur vingt ans, sur une question où les savants divergent vraiment — adressez-vous à un savant qui connaît votre situation, et faites relire le montage par un notaire. Ce site décrit les avis ; il ne décide pas à votre place.',
+    ],
+    category: 'Pratique',
+    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal'],
   },
   {
     slug: 'greffe-cheveux-halal',
