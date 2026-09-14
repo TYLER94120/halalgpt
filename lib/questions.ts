@@ -3089,7 +3089,7 @@ export const QUESTIONS: QA[] = [
       'Côté pratique en France : se présenter à une mosquée permet d’obtenir un certificat de conversion — inutile pour la validité devant Allah, mais demandé pour certaines démarches (mariage religieux, visa pour l’Omra ou le Hajj). Beaucoup de mosquées proposent aussi un accompagnement pour les nouveaux convertis. Un conseil que répètent tous ceux qui sont passés par là : trouve une communauté bienveillante et une personne de confiance à qui poser tes questions — la solitude est le vrai obstacle des premiers mois, pas la difficulté de la religion.',
     ],
     category: 'Pratique',
-    related: ['prenom-musulman-obligatoire', 'ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition', 'enterrement-musulman-france'],
+    related: ['prenom-musulman-obligatoire', 'ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition', 'enterrement-musulman-france', 'mariage-religieux-civil-france'],
   },
   {
     slug: 'enterrement-musulman-france',
@@ -3105,7 +3105,23 @@ export const QUESTIONS: QA[] = [
       'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
     ],
     category: 'Pratique',
-    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution'],
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france'],
+  },
+  {
+    slug: 'mariage-religieux-civil-france',
+    question: 'Le mariage religieux seul suffit-il en France ?',
+    verdict: '⚠️ Valide religieusement — inexistant en droit',
+    short:
+      'Un nikah sans mariage civil n’a aucune valeur légale : l’épouse est une concubine aux yeux de la loi, sans succession ni pension de réversion.',
+    answer: [
+      'Il n’y a pas ici de conflit de légitimité, mais deux registres qui ne se parlent pas. Le nikah est valide selon ses propres conditions — offre et acceptation, témoins, dot, et le tuteur selon l’école suivie. Le droit français, lui, ne le voit tout simplement pas : **seul le mariage civil produit des effets juridiques**, et il doit précéder la cérémonie religieuse. Cette règle d’antériorité n’a rien de récent ni de ciblé : elle date de 1810, du code pénal napoléonien, et s’applique à tous les cultes sans distinction.',
+      'Ce que la loi punit, et c’est presque toujours mal comprise : **c’est l’officiant, pas le couple.** L’article 433-21 du code pénal prévoit six mois d’emprisonnement et 7 500 euros d’amende pour le ministre du culte qui célèbre **de manière habituelle** des mariages religieux sans qu’on lui ait justifié l’acte civil. « De manière habituelle » est un délit d’habitude, caractérisé à partir de la seconde fois — une célébration isolée n’est donc pas punissable. Les époux, eux, ne commettent aucune infraction. Ils prennent un risque d’une autre nature.',
+      'Ce risque, le voici, et c’est le cœur de la fiche. Sans acte civil, **l’épouse est juridiquement une concubine.** Pas de régime matrimonial. Aucun droit de succession : si le mari décède, elle ne figure pas dans sa succession légale et peut être écartée au profit des héritiers — sans testament en sa faveur, elle n’hérite de rien. **Aucune pension de réversion.** Et en cas de séparation, le juge aux affaires familiales ne peut prononcer aucune pension au bénéfice de quelqu’un qui n’est pas reconnu comme époux. Il faut le dire sans détour : cette précarité tombe sur celui des deux qui est économiquement le plus faible, et c’est très majoritairement l’épouse.',
+      'Il y a une manière religieuse de lire cela, et elle ne met pas la loi et la foi en concurrence. La dot et l’obligation d’entretien sont des **droits de l’épouse**, pas des formalités. Un acte qui rend ces droits opposables devant un juge ne remplace pas le nikah : il le garantit. C’est d’ailleurs pour cette raison que beaucoup de mosquées en France demandent aujourd’hui l’acte de mariage civil avant d’accepter de célébrer — la démarche protège la mariée autant qu’elle met l’imam en règle.',
+      'L’ordre pratique est simple : la mairie d’abord, le nikah ensuite, le même jour si on veut. Deux situations sortent du cadre de cette fiche et demandent un vrai conseil : un mariage contracté à l’étranger, dont la transcription en France suit ses propres règles, et un nikah déjà célébré sans acte civil — auquel cas la question se pose à un notaire ou à un avocat pour les conséquences patrimoniales, et à un imam pour le reste. Pas à un site.',
+    ],
+    category: 'Pratique',
+    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire'],
   },
   {
     slug: 'ghusl-grande-ablution',
@@ -3206,7 +3222,7 @@ export const QUESTIONS: QA[] = [
       'Le conseil pratique le plus utile, en France : un changement d’état civil est une démarche longue et rarement nécessaire. Beaucoup de convertis gardent leur prénom officiel et se font appeler autrement dans la communauté, sans que personne y trouve à redire. Si le sens de ton prénom te pose question, c’est une conversation à avoir avec un savant ou l’imam de ta mosquée — il connaîtra le cas.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition'],
+    related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition', 'mariage-religieux-civil-france'],
   },
   {
     slug: 'reseaux-sociaux-islam',
@@ -3313,7 +3329,7 @@ export const QUESTIONS: QA[] = [
       'Deux questions concrètes reviennent toujours. La première est juridique : en France, l’adoption plénière et la kafala ne sont pas la même procédure et n’ont pas les mêmes effets. C’est un dossier à monter avec un professionnel du droit de la famille, et la transmission du patrimoine se prépare avec un notaire — n’improvise pas sur ce terrain. La seconde touche la vie de famille : un enfant recueilli ne devient pas automatiquement mahram en grandissant. La solution classique, quand l’enfant est accueilli tout petit, est l’allaitement (radâ‘a), qui crée un lien de lait reconnu ; sinon, les familles appliquent les règles habituelles à l’adolescence. Là encore, expose ton cas précis à un savant : les situations sont trop différentes pour une règle unique.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition'],
+    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition', 'mariage-religieux-civil-france'],
   },
   {
     slug: 'qibla-direction-priere',
