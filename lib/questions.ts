@@ -418,7 +418,7 @@ export const QUESTIONS: QA[] = [
       'Deux conseils pratiques, et un renvoi. Comparez le **coût total** et non le taux : la marge d’une murabaha, les frais de montage, les honoraires de conseil et les actes notariés successifs d’une musharaka peuvent dépasser un crédit classique, surtout sur longue durée. Et pour la décision elle-même — qui engage un foyer sur vingt ans, sur une question où les savants divergent vraiment — adressez-vous à un savant qui connaît votre situation, et faites relire le montage par un notaire. Ce site décrit les avis ; il ne décide pas à votre place.',
     ],
     category: 'Pratique',
-    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal'],
+    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal', 'heritage-succession-france'],
   },
   {
     slug: 'greffe-cheveux-halal',
@@ -3105,7 +3105,7 @@ export const QUESTIONS: QA[] = [
       'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
     ],
     category: 'Pratique',
-    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france'],
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france'],
   },
   {
     slug: 'mariage-religieux-civil-france',
@@ -3121,7 +3121,23 @@ export const QUESTIONS: QA[] = [
       'L’ordre pratique est simple : la mairie d’abord, le nikah ensuite, le même jour si on veut. Deux situations sortent du cadre de cette fiche et demandent un vrai conseil : un mariage contracté à l’étranger, dont la transcription en France suit ses propres règles, et un nikah déjà célébré sans acte civil — auquel cas la question se pose à un notaire ou à un avocat pour les conséquences patrimoniales, et à un imam pour le reste. Pas à un site.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire'],
+    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire', 'heritage-succession-france'],
+  },
+  {
+    slug: 'heritage-succession-france',
+    question: 'Peut-on appliquer l’héritage musulman en France ?',
+    verdict: '⚠️ Deux systèmes qui ne coïncident pas',
+    short:
+      'Le droit français impose une réserve aux enfants, et depuis 2021 elle résiste même à une loi étrangère. Un testament ne dispose que de la quotité disponible.',
+    answer: [
+      'Il faut poser la situation honnêtement avant de chercher des solutions : **ce sont deux systèmes complets, chacun cohérent en lui-même, et ils ne donnent pas le même résultat.** Les parts successorales en islam sont fixées par le texte coranique ; le droit français, lui, organise la transmission autour d’une idée différente, celle d’une part qu’on ne peut retirer à ses enfants. Aucun des deux ne se laisse réduire à l’autre, et ce site n’a ni la compétence ni la légitimité pour arbitrer entre eux. Ce qu’il peut faire, c’est décrire exactement l’état du droit, parce que beaucoup de familles le découvrent au pire moment.',
+      'Ce que le droit français impose s’appelle la **réserve héréditaire** : une fraction du patrimoine revient obligatoirement aux enfants, et aucun testament ne peut la leur enlever. Avec un enfant, la réserve est **la moitié** ; avec deux enfants, **les deux tiers** ; à partir de trois, **les trois quarts**. Ce qui reste — un demi, un tiers, un quart — est la **quotité disponible**, la seule part dont un testament peut réellement disposer. À noter, parce que cela surprend souvent : quand il y a des enfants, le conjoint survivant n’est pas réservataire ; il ne le devient, à hauteur d’un quart, qu’en l’absence de descendants.',
+      'Un changement récent a fermé une porte qui était longtemps restée entrouverte, et il faut le savoir. La **loi du 24 août 2021** a ajouté un alinéa à l’article 913 du code civil, applicable depuis le **1er novembre 2021** : lorsque le défunt ou au moins l’un de ses enfants est ressortissant d’un État de l’Union européenne ou y réside habituellement, et que la loi étrangère applicable ne connaît aucun mécanisme réservataire protecteur des enfants, chaque enfant peut opérer un **prélèvement compensatoire** sur les biens situés en France, à hauteur de ce que la réserve française lui aurait donné. Autrement dit : désigner une loi étrangère ne met plus les biens français à l’abri de la réserve.',
+      'Du côté religieux, deux éléments encadrent ce qu’un testament peut faire, et ils sont utiles à connaître. Les parts des héritiers sont fixées et ne relèvent pas du choix du défunt. Et le legs — la **wasiyya** — obéit classiquement à une limite : **il ne peut excéder le tiers**, et il ne se fait pas au bénéfice d’un héritier qui reçoit déjà une part fixée. Il se trouve que ce tiers et la quotité disponible française se recouvrent partiellement : c’est là, et seulement là, qu’une marge de manœuvre existe. Elle ne réconcilie pas les deux systèmes, elle ouvre un espace — et l’usage qu’on en fait est une question à poser, pas une réponse à lire.',
+      'La conclusion pratique tient en trois points. **De son vivant, on peut préparer ; après le décès, on ne peut plus rien reprendre** — c’est tout le sujet. **Le montage se construit avec un notaire**, parce que la réserve, la quotité disponible, les donations antérieures, l’assurance-vie et les biens situés à l’étranger forment un ensemble où l’improvisation coûte cher. **Et la question religieuse se pose à un savant** qui connaîtra la composition exacte de la famille, puisque les parts en dépendent entièrement. Une fiche ne calcule pas une succession, et celle-ci n’essaie pas.',
+    ],
+    category: 'Pratique',
+    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam'],
   },
   {
     slug: 'ghusl-grande-ablution',
@@ -3178,7 +3194,7 @@ export const QUESTIONS: QA[] = [
       'En France, le don est présumé par défaut : sans refus inscrit au registre national, on est considéré comme donneur. C’est le point pratique qui surprend le plus de familles musulmanes au pire moment. Quelle que soit ta position, la décision se prend à froid, s’inscrit, et surtout se DIT à tes proches — ce sont eux qu’on interrogera. Et parce que la divergence est réelle et la question grave, c’est typiquement le sujet où il faut en parler avec un savant qui connaît ta situation, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam', 'enterrement-musulman-france'],
+    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam', 'enterrement-musulman-france', 'heritage-succession-france'],
   },
   {
     slug: 'photos-selfies-islam',
