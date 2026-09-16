@@ -38,21 +38,18 @@
 
 import { QUESTIONS } from '../lib/questions.ts';
 
+// Les pages dont Search Console montre qu'elles recoivent des impressions au
+// 14 aout : Google y va DEJA. Une fiche liee a l'une d'elles a une chance
+// d'etre exploree ; une fiche isolee attend son tour avec les 135 autres.
+// La liste est partagee avec densifier-maillage.mjs et verifiee au chargement.
+import { VISITEES } from './pages-visitees.mjs';
+
 // Les memes valeurs que `test-nourriture.mjs`, et pour la meme raison. Elles y
 // sont la regle qui fait echouer les controles ; elles sont ici l'explication.
 // Si Mohamed change la decision, les deux fichiers changent ensemble.
 const NOURRITURE = new Set(['Produits', 'Additifs', 'Alimentation']);
 const PLAFOND = 107;      // etat au 12 aout, jour de la decision
 const PART_VISEE = 0.48;
-
-// Les pages dont Search Console montre qu'elles recoivent des impressions au
-// 14 aout : Google y va DEJA. Une fiche liee a l'une d'elles a une chance
-// d'etre exploree ; une fiche isolee attend son tour avec les 135 autres.
-const VISITEES = new Set([
-  'levure-biere-halal', 'mentos-halal', 'priere-voiture', 'medicaments-gelules-halal',
-  'vernis-ongles-priere', 'glace-halal', 'e466-halal', 'e621-halal',
-  'certifications-halal-france', 'mcdo-halal', 'isla-delice-halal',
-]);
 
 // Les domaines de la vie ou un musulman de France se pose des questions. Ce
 // n'est pas une liste de sujets a traiter : c'est une grille pour VOIR ce que

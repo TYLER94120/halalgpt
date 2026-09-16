@@ -39,11 +39,14 @@ import { QUESTIONS } from '../lib/questions.ts';
 
 // Les pages dont Search Console montre qu'elles reçoivent des impressions au
 // 14 août : Google y va déjà. Ce sont nos portes d'entrée.
-const VISITEES = new Set([
-  'levure-biere-halal', 'mentos-halal', 'priere-voiture', 'medicaments-gelules-halal',
-  'vernis-ongles-priere', 'glace-halal', 'e466-halal', 'e621-halal',
-  'certifications-halal-france', 'mcdo-halal', 'isla-delice-halal',
-]);
+//
+// La liste vivait ici ET dans que-ecrire.mjs, recopiée à l'identique — et l'une
+// des deux copies portait `e621-halal`, un slug qui n'existe pas (la fiche du
+// glutamate s'appelle `e621-glutamate-halal`). Une de nos meilleures sources ne
+// recevait donc jamais les dix points de priorité ci-dessous, sans qu'aucun
+// message ne le signale. Elle est désormais en un seul exemplaire, vérifiée au
+// chargement.
+import { VISITEES } from './pages-visitees.mjs';
 
 const PLANCHER = 4;   // liens entrants visés par fiche
 const PLAFOND_SORTANT = 8; // au-delà, la fiche devient une liste et le lecteur décroche
