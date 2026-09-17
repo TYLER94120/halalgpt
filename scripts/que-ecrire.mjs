@@ -113,18 +113,44 @@ for (const [nom, re] of Object.entries(DOMAINES)) {
   if (horsNourriture.length <= 3) trous.push({ nom, n: horsNourriture.length });
 }
 
-// ── 4. Par ou Google entre, si l'on ecrit ────────────────────────────────
+// ── 4. Par ou Google entre, et s'il y reste de la place ──────────────────
 // Une fiche neuve que rien de visite ne relie attend derriere les 135 pages
 // « detectee, actuellement non indexee ». Autant la rattacher.
-const portesNonAlimentaires = QUESTIONS.filter(
-  (q) => VISITEES.has(q.slug) && !NOURRITURE.has(q.category),
+//
+// La place restante est affichee parce qu'elle a failli me faire perdre une
+// nuit. Le 17 septembre, densifier-maillage.mjs annoncait « 0 lien depuis une
+// page que Google visite deja » et j'ai cru a une panne. Mesure faite :
+// HUIT portes sur onze sont au plafond de huit liens sortants. Les trois
+// autres ont douze places libres — mais les fiches qui leur sont vraiment
+// proches ont deja quatre a cinq liens entrants, et celles qui en manquent ne
+// leur ressemblent en rien. Le rapprochement lexical proposait « souhaiter
+// Noel » pour la levure de biere et « Istanbul » pour les certifications.
+//
+// Donc : ce n'est pas une panne, c'est une saturation. Ces douze places ne se
+// remplissent pas honnetement, et un maillage force est traite comme du bruit
+// par Google. Quand le compteur dit zero, verifier ICI avant de chercher un
+// bug ailleurs.
+const PLAFOND_SORTANT = 8; // meme valeur que densifier-maillage.mjs
+const portes = QUESTIONS.filter((q) => VISITEES.has(q.slug));
+const portesNonAlimentaires = portes.filter((q) => !NOURRITURE.has(q.category));
+const placesLibres = portes.reduce(
+  (n, q) => n + Math.max(0, PLAFOND_SORTANT - q.related.length), 0,
 );
+const saturees = portes.filter((q) => q.related.length >= PLAFOND_SORTANT).length;
+
 console.log('\n  🚪 LES PORTES NON ALIMENTAIRES QUE GOOGLE VISITE DEJA :');
 for (const q of portesNonAlimentaires) {
-  console.log(`     ${q.slug.padEnd(24)} [${q.category}]`);
+  const reste = PLAFOND_SORTANT - q.related.length;
+  console.log(
+    `     ${q.slug.padEnd(28)} [${q.category}]` +
+    (reste > 0 ? `  ${reste} place(s)` : '  saturee'),
+  );
 }
-console.log('     Relier la fiche neuve a l\'une d\'elles, quand c\'est honnete');
-console.log('     editorialement — jamais pour faire du volume.');
+console.log(
+  `\n     Sur les ${portes.length} portes, ${saturees} sont saturees et il reste` +
+  `\n     ${placesLibres} place(s) au total. Relier la fiche neuve a l'une d'elles` +
+  '\n     quand c\'est honnete editorialement — jamais pour faire du volume.',
+);
 
 // ── 5. Ce que cet outil ne dit pas ───────────────────────────────────────
 console.log('\n  ⚖️  CE QUI RESTE A TON JUGEMENT, et qu\'aucun compte ne remplace :');
