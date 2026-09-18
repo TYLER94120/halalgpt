@@ -1656,7 +1656,7 @@ export const QUESTIONS: QA[] = [
       'Le timing compte : elle doit être versée avant la prière de l’Aïd (idéalement les derniers jours de Ramadan pour que la distribution arrive à temps). Donnée après la prière, elle ne compte plus que comme une aumône ordinaire. Les mosquées et associations sérieuses s’occupent de la redistribution locale.',
     ],
     category: 'Ramadan',
-    related: ['dattes-rompre-jeune', 'ramadan-voyage-jeune', 'femme-enceinte-ramadan'],
+    related: ['dattes-rompre-jeune', 'ramadan-voyage-jeune', 'femme-enceinte-ramadan', 'conge-aid-travail'],
   },
   // ─── ALIMENTATION (animaux, viandes, concepts) ─────────────────────────────
   {
@@ -2964,6 +2964,21 @@ export const QUESTIONS: QA[] = [
     related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal'],
   },
   {
+    slug: 'conge-aid-travail',
+    question: 'Peut-on prendre un congé pour l’Aïd en France ?',
+    verdict: '⚠️ Aucun droit automatique — refus encadré',
+    short:
+      'Aucun texte ne crée un droit au congé religieux dans le privé. Dans la fonction publique, l’autorisation d’absence existe et n’est pas décomptée des congés.',
+    answer: [
+      'Il y a deux régimes, et la plupart des malentendus viennent de ce qu’on applique à sa situation celui de l’autre. Dans le **secteur privé**, aucun texte ne crée un droit au congé pour motif religieux. Dans la **fonction publique**, un texte existe depuis 1967 et il est plus favorable qu’on ne le croit. Avant de discuter avec un employeur, il faut savoir dans lequel des deux on se trouve.',
+      'Dans le privé, la démarche est donc une demande de congé ordinaire — congé payé, RTT, récupération, ou absence non rémunérée si l’employeur l’accepte. Il peut refuser : c’est son droit. Mais **le motif du refus ne peut jamais être religieux** — ce serait une discrimination. Un refus doit s’appuyer sur le fonctionnement de l’entreprise, et c’est à l’employeur de montrer en quoi l’absence lui porterait préjudice. La nuance est réelle : ce n’est pas « il peut refuser sans raison », c’est « il peut refuser pour une raison d’organisation ».',
+      'Dans la fonction publique — d’État, hospitalière ou territoriale, pour les titulaires comme pour les contractuels — la **circulaire FP n° 901 du 23 septembre 1967**, complétée par celle du **10 février 2012**, prévoit des autorisations d’absence pour les fêtes religieuses qui ne figurent pas au calendrier des jours fériés. Et voici le point que presque personne ne connaît : ces autorisations **ne sont pas assimilables à des congés**, donc **elles ne sont pas décomptées des congés annuels**. Le texte le dit explicitement, « sans qu’il soit question de modifier le régime général des congés ». Elles ne sont pas automatiques pour autant : elles restent subordonnées au bon fonctionnement du service. Les dates retenues pour chaque confession sont publiées chaque année par circulaire.',
+      'Deux réflexes pratiques, qui ne sont pas du droit mais du bon sens. **Demander tôt, et par écrit.** Tôt, parce que le seul motif de refus recevable est la désorganisation du service ou de l’entreprise — et qu’une désorganisation est bien plus facile à invoquer deux jours avant que deux mois avant. Par écrit, parce que c’est ce qui rend visible le motif d’un refus, s’il y en a un. Et anticiper : les dates de l’Aïd suivent le calendrier lunaire et avancent d’environ onze jours chaque année, ce qui les fait tomber un jour de semaine différent à chaque fois.',
+    ],
+    category: 'Pratique',
+    related: ['priere-travail', 'zakat-al-fitr-montant', 'travailler-restaurant-alcool', 'caissier-scanner-alcool'],
+  },
+  {
     slug: 'priere-travail',
     question: 'Comment prier au travail en France ?',
     verdict: '✅ Des solutions existent presque toujours',
@@ -2975,7 +2990,7 @@ export const QUESTIONS: QA[] = [
       'Conseils de terrain : la discrétion et la fiabilité professionnelle sont tes meilleurs alliés (celui qui fait bien son travail obtient facilement cinq minutes de tranquillité) ; un mot simple au manager ou aux RH débloque souvent une salle ; et beaucoup de collègues prient déjà quelque part dans ton bâtiment — demande. Des millions de musulmans français prient au travail chaque jour sans drame : c’est une logistique, pas un conflit.',
     ],
     category: 'Prière',
-    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade', 'regrouper-deux-prieres'],
+    related: ['rattraper-prieres-ratees', 'priere-vendredi-obligatoire', 'ablutions-chaussettes', 'priere-voiture', 'retard-fajr-reveil', 'priere-assise-malade', 'regrouper-deux-prieres', 'conge-aid-travail'],
   },
   {
     slug: 'rattraper-prieres-ratees',
@@ -3286,7 +3301,7 @@ export const QUESTIONS: QA[] = [
       'La règle qui vaut dans les deux cas : plus l’alcool est central dans le métier — caviste, barman, rayon dédié — moins la tolérance s’applique. Et parce que cela touche à ton revenu et à ta famille, c’est exactement le genre de situation où il faut en parler à un savant qui connaît ton cas, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['travailler-restaurant-alcool', 'vinaigre-halal', 'halal-definition', 'chat-maison-islam', 'reseaux-sociaux-islam'],
+    related: ['travailler-restaurant-alcool', 'vinaigre-halal', 'halal-definition', 'chat-maison-islam', 'reseaux-sociaux-islam', 'conge-aid-travail'],
   },
   {
     slug: 'ia-halal',
