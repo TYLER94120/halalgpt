@@ -3502,15 +3502,23 @@ export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
   Ramadan:
     'Jeûne, brossage de dents, piqûres, sport, oublis… Les réponses claires aux questions les plus posées pendant le mois de Ramadan.',
   Prière:
-    'Rattrapage, ablutions, prière au travail, vendredi… Les réponses claires aux questions concrètes de la prière.',
+    'Rattrapage, ablutions, vernis et henné, prière au travail ou en voiture… Les réponses claires aux questions concrètes de la prière.',
   'Vie quotidienne':
     'Musique, tatouage, travail, fêtes, animaux… La vie moderne passée au filtre serein de l’islam, avec les divergences quand il y en a.',
+  // Annoncait « Prière en avion, jeûne en déplacement » — deux fiches qui sont
+  // en réalité dans Pratique. Un lecteur arrivant de Google sur cette promesse
+  // trouvait dix pages de restaurants. Une description de hub doit décrire ce
+  // que le hub CONTIENT, pas le thème dont il porte le nom.
   Voyage:
-    'Prière en avion, repas halal, jeûne en déplacement… Voyager sereinement en tant que musulman.',
+    'Où manger halal à Paris, Lyon, Marseille, Lille… le repas halal en avion, et les pays où voyager sereinement en musulman.',
   Destinations:
     'Dubaï, Istanbul, Londres, Tokyo… Nos guides halal des grandes destinations : restaurants, mosquées, conseils.',
+  // Annoncait « Prière, ablutions, vie quotidienne » — soit les noms de DEUX
+  // autres catégories — puis une phrase qui ne dit rien. La catégorie est
+  // devenue tout autre chose : ce sont les démarches d'un musulman en France,
+  // et six de ses seize fiches parlent de droit français.
   Pratique:
-    'Prière, ablutions, vie quotidienne, certifications… Les questions pratiques que tout le monde se pose.',
+    'Se convertir, se marier, hériter, acheter à crédit, prier en avion… Les démarches de la vie d’un musulman, avec le droit français quand il s’en mêle.',
 };
 
 export function getCategoryBySlug(slug: string): Category | undefined {

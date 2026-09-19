@@ -13,7 +13,7 @@
 //
 // Aucun reseau : on lit le catalogue.
 
-import { QUESTIONS } from '../lib/questions.ts';
+import { QUESTIONS, CATEGORIES, CATEGORY_DESCRIPTIONS } from '../lib/questions.ts';
 import { descriptionDeFiche, LIMITE } from '../lib/description-seo.ts';
 
 let echecs = 0;
@@ -80,7 +80,43 @@ const ampute = QUESTIONS.filter((q) => q.short.length < 80);
 dire(ampute.length === 0, 'le resume affiche sur la page reste entier',
   ampute.map((q) => q.slug).join(', '));
 
-// ── 6. L'etat des lieux ──────────────────────────────────────────────────
+// ── 6. Les descriptions de hub decrivent leur PROPRE categorie ───────────
+// Le 19 septembre, deux hubs sur neuf annoncaient le contenu d'un autre.
+//
+//   Pratique  : « Priere, ablutions, vie quotidienne, certifications… »
+//               Priere et Vie quotidienne sont DEUX AUTRES categories.
+//   Voyage    : « Priere en avion, repas halal, jeune en deplacement… »
+//               La priere en avion et le jeune en voyage sont dans Pratique.
+//               Le hub Voyage, lui, contient dix pages de restaurants.
+//
+// Un lecteur venu de Google sur la promesse « priere en avion » tombait donc
+// sur « Ou manger halal a Nantes ». La cause est mecanique : les categories
+// bougent, les descriptions restent. Personne ne relit une constante.
+//
+// Ce controle n'attrape pas tout — il ne sait pas si une description decrit
+// VRAIMENT le contenu — mais il attrape le cas qui s'est produit, et c'est
+// deja le plus courant : citer nommement une autre categorie.
+const AUTORISES = new Set(['Alimentation']); // « alimentation » est aussi un mot commun
+
+const confusions = [];
+for (const cat of CATEGORIES) {
+  const texte = CATEGORY_DESCRIPTIONS[cat].toLowerCase();
+  for (const autre of CATEGORIES) {
+    if (autre === cat || AUTORISES.has(autre)) continue;
+    if (texte.includes(autre.toLowerCase())) confusions.push(`${cat} cite « ${autre} »`);
+  }
+}
+dire(confusions.length === 0,
+  'aucune description de hub ne cite une autre categorie',
+  confusions.join(' · '));
+
+// Et la meme limite de longueur que les fiches : c'est le meme resultat Google.
+const hubsTropLongs = CATEGORIES.filter((c) => CATEGORY_DESCRIPTIONS[c].length > LIMITE);
+dire(hubsTropLongs.length === 0,
+  `les ${CATEGORIES.length} descriptions de hub tiennent en ${LIMITE} caracteres`,
+  hubsTropLongs.map((c) => `${c} (${CATEGORY_DESCRIPTIONS[c].length})`).join(', '));
+
+// ── 7. L'etat des lieux ──────────────────────────────────────────────────
 const raccourcies = toutes.filter(({ q, d }) => d !== q.short.trim());
 const surPhrase = raccourcies.filter(({ d }) => !d.endsWith('…')).length;
 console.log(
