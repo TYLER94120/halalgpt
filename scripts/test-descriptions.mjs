@@ -13,7 +13,7 @@
 //
 // Aucun reseau : on lit le catalogue.
 
-import { QUESTIONS, CATEGORIES, CATEGORY_DESCRIPTIONS } from '../lib/questions.ts';
+import { QUESTIONS, CATEGORIES, CATEGORY_DESCRIPTIONS, CATEGORY_TITLES } from '../lib/questions.ts';
 import { descriptionDeFiche, LIMITE } from '../lib/description-seo.ts';
 
 let echecs = 0;
@@ -116,7 +116,40 @@ dire(hubsTropLongs.length === 0,
   `les ${CATEGORIES.length} descriptions de hub tiennent en ${LIMITE} caracteres`,
   hubsTropLongs.map((c) => `${c} (${CATEGORY_DESCRIPTIONS[c].length})`).join(', '));
 
-// ── 7. L'etat des lieux ──────────────────────────────────────────────────
+// ── 7. Les titres de hub tiennent dans le resultat, et gardent leur compte ─
+// Meme resultat de recherche que la description juste au-dessus : le titre est
+// la ligne cliquable. Sept hubs sur neuf prennent le gabarit par defaut
+// « Additifs : 41 questions halal » ; deux le remplacent entierement, parce
+// que « Voyage » et « Pratique » ne sont pas les mots que les gens tapent.
+//
+// Un intitule de remplacement peut echouer de deux facons. Il peut depasser
+// les 60 caracteres que Google affiche — c'est le defaut que test-titres.mjs
+// surveille deja sur les fiches, et il n'y avait aucune raison d'exempter les
+// hubs. Et il peut oublier `{n}`, auquel cas le nombre de fiches disparait
+// sans bruit : la page s'affiche, le titre a l'air correct, et le seul signe
+// concret que le hub contient quelque chose s'est evapore.
+const TITRE_MAX = 60;
+// Le suffixe compte. Les fiches y echappent — leur metadata utilise `absolute`
+// pour court-circuiter le gabarit du layout — mais pas les hubs : la page de
+// categorie laisse faire, et Google lit « ... — HalalGPT ». Mesurer l'intitule
+// nu laisserait passer un titre de 60 caracteres qui s'affiche en 71.
+const SUFFIXE = ' — HalalGPT';
+const titreDeHub = (c, n) =>
+  (CATEGORY_TITLES[c] ?? `${c} : {n} questions halal`).replace('{n}', String(n)) + SUFFIXE;
+
+const titresLongs = CATEGORIES
+  .map((c) => ({ c, t: titreDeHub(c, QUESTIONS.filter((q) => q.category === c).length) }))
+  .filter(({ t }) => t.length > TITRE_MAX);
+dire(titresLongs.length === 0,
+  `les ${CATEGORIES.length} titres de hub tiennent en ${TITRE_MAX} caracteres, suffixe compris`,
+  titresLongs.map(({ c, t }) => `${c} (${t.length})`).join(', '));
+
+const sansCompte = Object.entries(CATEGORY_TITLES).filter(([, t]) => !t.includes('{n}'));
+dire(sansCompte.length === 0,
+  'chaque intitule de remplacement garde son {n}',
+  sansCompte.map(([c]) => c).join(', '));
+
+// ── 8. L'etat des lieux ──────────────────────────────────────────────────
 const raccourcies = toutes.filter(({ q, d }) => d !== q.short.trim());
 const surPhrase = raccourcies.filter(({ d }) => !d.endsWith('…')).length;
 console.log(

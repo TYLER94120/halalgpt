@@ -3492,6 +3492,30 @@ export const CATEGORY_SLUGS: Record<Category, string> = {
   Pratique: 'pratique',
 };
 
+// Le titre du hub, quand le nom de la categorie n'est pas ce que les gens
+// tapent. Le gabarit par defaut — « Additifs : 41 questions halal » — marche
+// pour sept categories sur neuf : on cherche bien « additifs halal »,
+// « ramadan », « priere ». Deux ne marchent pas, et ce sont les deux dont les
+// descriptions avaient deja derive :
+//
+//   VOYAGE contient dix pages « Ou manger halal a [ville] ». On cherche
+//          « restaurant halal Paris », jamais « voyage questions halal ».
+//   PRATIQUE n'est le mot de personne. On cherche « mariage religieux
+//          France », « enterrement musulman », « heritage musulman ».
+//
+// On ne renomme PAS la categorie pour autant : le slug est dans l'URL, l'URL
+// est indexee, et casser une adresse sur un site qui peine deja a se faire
+// explorer serait le remede pire que le mal. Seul le <title> change — la
+// ligne cliquable du resultat, precisement ce qui decide du clic.
+//
+// L'intitule remplace le TITRE ENTIER et non le seul nom, sinon on obtient
+// « Musulman en France : les demarches : 16 questions halal » — deux
+// deux-points et un mot de trop. `{n}` recoit le nombre de fiches.
+export const CATEGORY_TITLES: Partial<Record<Category, string>> = {
+  Voyage: 'Restaurants halal en France : {n} guides',
+  Pratique: 'Musulman en France : {n} démarches pratiques',
+};
+
 export const CATEGORY_DESCRIPTIONS: Record<Category, string> = {
   Additifs:
     'E120, E441, E471… Tous les additifs alimentaires passés au crible : origine, avis des savants, alternatives halal.',

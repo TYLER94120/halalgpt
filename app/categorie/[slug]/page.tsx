@@ -6,6 +6,7 @@ import {
   CATEGORIES,
   CATEGORY_DESCRIPTIONS,
   CATEGORY_SLUGS,
+  CATEGORY_TITLES,
   QUESTIONS,
   getCategoryBySlug,
 } from '@/lib/questions';
@@ -22,8 +23,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const category = getCategoryBySlug(params.slug);
   if (!category) return {};
   const count = QUESTIONS.filter((q) => q.category === category).length;
+  // CATEGORY_TITLES ne couvre que les categories dont le NOM n'est pas ce que
+  // les gens tapent ; il remplace alors le titre entier, `{n}` recevant le
+  // nombre de fiches. Partout ailleurs, le gabarit par defaut fait l'affaire.
+  const gabarit = CATEGORY_TITLES[category] ?? `${category} : {n} questions halal`;
   return {
-    title: `${category} : ${count} questions halal`,
+    title: gabarit.replace('{n}', String(count)),
     description: CATEGORY_DESCRIPTIONS[category],
     alternates: { canonical: `${SITE_URL}/categorie/${params.slug}` },
   };
