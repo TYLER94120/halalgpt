@@ -3120,7 +3120,7 @@ export const QUESTIONS: QA[] = [
       'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
     ],
     category: 'Pratique',
-    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france'],
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france'],
   },
   {
     slug: 'mariage-religieux-civil-france',
@@ -3136,7 +3136,23 @@ export const QUESTIONS: QA[] = [
       'L’ordre pratique est simple : la mairie d’abord, le nikah ensuite, le même jour si on veut. Deux situations sortent du cadre de cette fiche et demandent un vrai conseil : un mariage contracté à l’étranger, dont la transcription en France suit ses propres règles, et un nikah déjà célébré sans acte civil — auquel cas la question se pose à un notaire ou à un avocat pour les conséquences patrimoniales, et à un imam pour le reste. Pas à un site.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire', 'heritage-succession-france'],
+    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire', 'heritage-succession-france', 'divorce-religieux-civil-france'],
+  },
+  {
+    slug: 'divorce-religieux-civil-france',
+    question: 'Le divorce religieux suffit-il en France ?',
+    verdict: '⚠️ Seul le divorce civil dissout le mariage',
+    short:
+      'Un talaq prononcé en France ou à l’étranger ne change rien à l’état civil. Et la répudiation étrangère n’est pas reconnue : on reste mariés devant la loi.',
+    answer: [
+      'C’est le piège exactement symétrique de celui du mariage, et il attrape autant de monde. **En France, seul un divorce civil dissout un mariage civil.** Un talaq prononcé à la maison, devant témoins ou à la mosquée ne modifie rien à l’état civil : on reste mariés, avec tout ce que cela emporte — régime matrimonial, droits de succession entre époux, situation fiscale, et l’impossibilité de se remarier tant que le premier mariage figure à l’état civil.',
+      'Le second temps surprend davantage, et il va dans l’autre sens. **Une répudiation prononcée à l’étranger n’est pas reconnue en France.** La Cour de cassation l’a jugé le **17 février 2004** : une décision qui constate la répudiation unilatérale du mari, sans donner d’effet juridique à l’opposition éventuelle de l’épouse et sans laisser à l’autorité compétente d’autre pouvoir que d’aménager les conséquences financières, heurte le principe d’**égalité des époux lors de la dissolution du mariage** — celui de l’article 5 du protocole n° 7 de la Convention européenne des droits de l’homme. Elle est donc contraire à la conception française de l’ordre public international.',
+      'Ce que cela donne concrètement mérite d’être dit dans les deux sens. Une femme répudiée au pays **reste mariée en France** : elle conserve ses droits d’épouse, et personne ne peut lui opposer une dissolution que le droit français ignore. Et l’homme qui croit avoir divorcé **reste marié lui aussi** — un remariage à la mairie lui serait refusé, puisque son état civil le dit toujours marié. Beaucoup découvrent l’un ou l’autre des années plus tard, à l’occasion d’une succession ou d’un projet de remariage.',
+      'Du côté religieux, la dissolution existe sous plusieurs formes — le talaq à l’initiative du mari, le khul‘ à l’initiative de l’épouse moyennant restitution, et la dissolution prononcée par une autorité religieuse. Les modalités et les conditions divergent selon les écoles, et ce site ne tranche pas entre elles. Mais il y a une difficulté pratique qu’il faut connaître : **un juge français ne prononce pas une dissolution religieuse.** Une femme divorcée civilement dont l’ex-mari refuse de la délier religieusement se retrouve libre devant la loi et liée devant sa conscience ; la sortie passe par un imam ou une instance religieuse, pas par le tribunal.',
+      'La conclusion pratique est la même que pour le mariage, à l’envers : **les deux démarches sont distinctes et il faut faire les deux.** La procédure civile — avocat, juge aux affaires familiales — est la seule qui produise des effets juridiques : pension, résidence des enfants, partage des biens. La démarche religieuse se règle auprès d’un imam. N’en faire qu’une laisse à moitié lié, et c’est presque toujours celui ou celle des deux qui a le moins de ressources qui en paie le prix.',
+    ],
+    category: 'Pratique',
+    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal'],
   },
   {
     slug: 'heritage-succession-france',
@@ -3152,7 +3168,7 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique tient en trois points. **De son vivant, on peut préparer ; après le décès, on ne peut plus rien reprendre** — c’est tout le sujet. **Le montage se construit avec un notaire**, parce que la réserve, la quotité disponible, les donations antérieures, l’assurance-vie et les biens situés à l’étranger forment un ensemble où l’improvisation coûte cher. **Et la question religieuse se pose à un savant** qui connaîtra la composition exacte de la famille, puisque les parts en dépendent entièrement. Une fiche ne calcule pas une succession, et celle-ci n’essaie pas.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam'],
+    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam', 'divorce-religieux-civil-france'],
   },
   {
     slug: 'ghusl-grande-ablution',
@@ -3360,7 +3376,7 @@ export const QUESTIONS: QA[] = [
       'Deux questions concrètes reviennent toujours. La première est juridique : en France, l’adoption plénière et la kafala ne sont pas la même procédure et n’ont pas les mêmes effets. C’est un dossier à monter avec un professionnel du droit de la famille, et la transmission du patrimoine se prépare avec un notaire — n’improvise pas sur ce terrain. La seconde touche la vie de famille : un enfant recueilli ne devient pas automatiquement mahram en grandissant. La solution classique, quand l’enfant est accueilli tout petit, est l’allaitement (radâ‘a), qui crée un lien de lait reconnu ; sinon, les familles appliquent les règles habituelles à l’adolescence. Là encore, expose ton cas précis à un savant : les situations sont trop différentes pour une règle unique.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition', 'mariage-religieux-civil-france'],
+    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition', 'mariage-religieux-civil-france', 'divorce-religieux-civil-france'],
   },
   {
     slug: 'qibla-direction-priere',
