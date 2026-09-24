@@ -65,7 +65,7 @@ export const QUESTIONS: QA[] = [
       'Certains savants considèrent que la transformation chimique (istihala) purifie la gélatine, mais la majorité des organismes contemporains exigent une source halal. En pratique : privilégiez les produits certifiés halal ou les gélifiants végétaux (pectine E440, agar-agar E406).',
     ],
     category: 'Additifs',
-    related: ['gelatine-halal', 'e120-halal', 'haribo-halal', 'e133-halal', 'e640-glycine-halal'],
+    related: ['gelatine-halal', 'e120-halal', 'haribo-halal', 'e133-halal', 'e640-glycine-halal', 'vaccin-gelatine-porcine-halal'],
   },
   {
     slug: 'e471-halal',
@@ -3196,7 +3196,7 @@ export const QUESTIONS: QA[] = [
       'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france'],
+    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france', 'vaccin-gelatine-porcine-halal'],
   },
   {
     slug: 'mauvais-oeil-protection',
@@ -3225,7 +3225,22 @@ export const QUESTIONS: QA[] = [
       'En France, le don est présumé par défaut : sans refus inscrit au registre national, on est considéré comme donneur. C’est le point pratique qui surprend le plus de familles musulmanes au pire moment. Quelle que soit ta position, la décision se prend à froid, s’inscrit, et surtout se DIT à tes proches — ce sont eux qu’on interrogera. Et parce que la divergence est réelle et la question grave, c’est typiquement le sujet où il faut en parler avec un savant qui connaît ta situation, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam', 'enterrement-musulman-france', 'heritage-succession-france'],
+    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam', 'enterrement-musulman-france', 'heritage-succession-france', 'vaccin-gelatine-porcine-halal'],
+  },
+  {
+    slug: 'vaccin-gelatine-porcine-halal',
+    question: 'Un vaccin à la gélatine porcine est-il halal ?',
+    verdict: '✅ Permis par la majorité des instances contemporaines',
+    short:
+      'La majorité des instances contemporaines le permettent, au nom de la transformation et de la nécessité. La notice du vaccin dit ce qu’il contient.',
+    answer: [
+      'Commençons par ce qu’on peut vérifier soi-même, parce que la réponse religieuse ne sert à rien si l’on se trompe de prémisse. La gélatine sert de **stabilisant** : elle protège la structure du virus atténué pendant le transport et le stockage. Elle est présente dans **certains** vaccins, pas dans tous. La seule façon fiable de savoir pour un vaccin donné, c’est sa notice — **rubrique 6.1, « Liste des excipients »**. Le pharmacien la fournit, c’est la composition légale, et elle vaut mieux que n’importe quelle liste trouvée en ligne : les formulations changent, les listes recopiées ne suivent pas.',
+      'Sur le fond, la position majoritaire des instances contemporaines est la permission, et elle repose sur deux arguments distincts. Le premier est l’**istihâla**, la transformation : quand une substance interdite est chimiquement transformée au point de devenir autre chose, dont les propriétés diffèrent radicalement de l’origine, l’avis prépondérant considère qu’elle devient pure et son usage licite. Le second est la **nécessité** : se protéger d’une maladie grave prime, d’autant que le vaccin est injecté et non mangé. Le Conseil européen des fatwas, l’Académie islamique du fiqh et le British Fatwa Council ont tous conclu en ce sens — la fatwa de ce dernier sur le vaccin contre la grippe est d’ailleurs publiée sur le site du service de santé britannique.',
+      '**Et cet avis n’est pas unanime**, il faut le dire. Une partie des savants estime que le porc, impur par nature, n’est pas susceptible d’être purifié par l’istihâla — la transformation ne change rien à son statut. D’autres acceptent le principe de l’istihâla mais doutent que la gélatine subisse une transformation assez complète pour y entrer. Quelqu’un qui suit l’un de ces avis n’est donc pas déraisonnable : c’est un désaccord réel entre gens sérieux, et ce site ne tranche pas.',
+      'En pratique, deux choses. Si la question compte pour toi, demande au pharmacien s’il existe un équivalent sans gélatine : il en existe sur le marché international, mais leur disponibilité en France dépend de ce qui y est commercialisé, et cela évolue. Et pour la décision elle-même, quand une maladie sérieuse est en jeu : **c’est d’abord une question médicale.** Le médecin évalue le risque, un savant répond sur la règle. Cette fiche explique un avis majoritaire et ses contestations — elle ne dit à personne de refuser un vaccin.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['medicaments-gelules-halal', 'e441-gelatine-halal', 'gelatine-halal', 'don-organes-islam', 'psy-therapie-islam'],
   },
   {
     slug: 'photos-selfies-islam',
