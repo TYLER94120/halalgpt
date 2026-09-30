@@ -401,7 +401,7 @@ export const QUESTIONS: QA[] = [
       'Et maintenant la limite de cette page, qui compte autant que le reste. **Cette fiche explique un principe. Elle ne se prononce sur aucune situation particulière** — ni sur un crédit immobilier, ni sur un compte bancaire, ni sur une assurance, ni sur un placement. Ces questions-là divisent réellement les savants, y compris parmi les plus qualifiés : plusieurs conseils européens ont autorisé certains montages sous conditions pour les musulmans vivant en Occident, d’autres autorités les refusent. Un engagement sur vingt ans ne se décide pas d’après une page web. Pour ta situation, adresse-toi à un savant ou à un organisme spécialisé : c’est le seul conseil honnête que nous puissions te donner.',
     ],
     category: 'Pratique',
-    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage', 'enterrement-musulman-france', 'credit-immobilier-halal'],
+    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage', 'enterrement-musulman-france', 'credit-immobilier-halal', 'assurance-vie-halal'],
   },
   {
     slug: 'credit-immobilier-halal',
@@ -418,7 +418,7 @@ export const QUESTIONS: QA[] = [
       'Deux conseils pratiques, et un renvoi. Comparez le **coût total** et non le taux : la marge d’une murabaha, les frais de montage, les honoraires de conseil et les actes notariés successifs d’une musharaka peuvent dépasser un crédit classique, surtout sur longue durée. Et pour la décision elle-même — qui engage un foyer sur vingt ans, sur une question où les savants divergent vraiment — adressez-vous à un savant qui connaît votre situation, et faites relire le montage par un notaire. Ce site décrit les avis ; il ne décide pas à votre place.',
     ],
     category: 'Pratique',
-    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal', 'heritage-succession-france'],
+    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal', 'heritage-succession-france', 'assurance-vie-halal'],
   },
   {
     slug: 'greffe-cheveux-halal',
@@ -3168,7 +3168,24 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique tient en trois points. **De son vivant, on peut préparer ; après le décès, on ne peut plus rien reprendre** — c’est tout le sujet. **Le montage se construit avec un notaire**, parce que la réserve, la quotité disponible, les donations antérieures, l’assurance-vie et les biens situés à l’étranger forment un ensemble où l’improvisation coûte cher. **Et la question religieuse se pose à un savant** qui connaîtra la composition exacte de la famille, puisque les parts en dépendent entièrement. Une fiche ne calcule pas une succession, et celle-ci n’essaie pas.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam', 'divorce-religieux-civil-france'],
+    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal'],
+  },
+  {
+    slug: 'assurance-vie-halal',
+    question: 'L’assurance-vie est-elle halal ?',
+    verdict: '⚠️ Hors succession en droit — contestée en religion',
+    short:
+      'Le droit français la place hors succession, donc hors réserve héréditaire. Mais la majorité des savants tiennent l’assurance commerciale pour problématique.',
+    answer: [
+      'Ce sujet mérite une fiche parce que **les deux réponses vont en sens contraire**, et que lire une moitié seulement conduit à une mauvaise décision. Le droit français fait de l’assurance-vie le seul instrument qui permette vraiment de diriger de l’argent hors des règles de la succession. Et c’est précisément cet instrument que la majorité des savants contemporains tiennent pour problématique. Il n’y a pas de bonne surprise à attendre du croisement des deux ; autant le savoir avant.',
+      'Ce que fait le droit, d’abord, et il est très précis. L’**article L. 132-12 du code des assurances** dispose que les sommes versées au bénéficiaire désigné ne font pas partie de la succession du souscripteur. L’**article L. 132-13** ajoute qu’elles échappent au rapport à la succession **et** à la réduction pour atteinte à la réserve héréditaire. Autrement dit : là où un testament ne peut disposer que de la quotité disponible, l’assurance-vie passe à côté de la réserve.',
+      '**Avec une limite, et elle est sérieuse.** Le même article L. 132-13 réserve le cas des **primes manifestement exagérées** au regard des facultés du souscripteur : les héritiers réservataires peuvent alors en demander la réintégration. La Cour de cassation a précisé les critères le **19 décembre 2024** — l’âge, la situation patrimoniale, la situation familiale et l’utilité du contrat, appréciés à la date de chaque versement. Et elle a jugé que l’atteinte à la réserve n’est pas, à elle seule, un critère d’exagération. Le montage n’est donc pas la porte ouverte que certains sites présentent.',
+      'Du côté religieux, la position majoritaire des savants contemporains est la réserve, et elle s’appuie sur trois griefs distincts. Le **gharar**, l’incertitude : le contrat repose sur un événement dont ni la date ni le montant ne sont déterminés. Le **ribâ** : le rendement provient largement d’intérêts. Le **maysir**, la spéculation : mourir tôt rapporte bien plus que les primes versées, vivre longtemps peut rapporter moins. L’assurance-vie est la forme la plus discutée de toutes. L’alternative avancée est le **takaful**, bâti sur la donation mutuelle (tabarru‘) et non sur un contrat d’échange — le gharar étant toléré dans une donation, il ne l’est pas dans un échange.',
+      'Une nuance importante, pour ne pas lire cette fiche de travers : **toutes les assurances ne posent pas la même question.** Celles que la loi rend obligatoires sont traitées à part, et beaucoup considèrent que l’obligation légale lève le reproche pour qui s’y conforme sans excès. « L’assurance » n’est pas une question unique.',
+      'Cette fiche ne recommande **aucun produit et aucun montage**, et c’est volontaire : l’effet juridique et le statut religieux pointent ici dans des directions opposées, ce qui est exactement la situation où un site n’a rien à décider. Le volet patrimonial se traite avec un notaire, la règle avec un savant. Et une « solution héritage » proposée par un site commercial mérite d’être lue avec les deux moitiés en tête.',
+    ],
+    category: 'Pratique',
+    related: ['heritage-succession-france', 'riba-interet-islam', 'credit-immobilier-halal', 'enterrement-musulman-france', 'divorce-religieux-civil-france'],
   },
   {
     slug: 'ghusl-grande-ablution',
