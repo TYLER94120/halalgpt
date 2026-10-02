@@ -3120,7 +3120,23 @@ export const QUESTIONS: QA[] = [
       'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
     ],
     category: 'Pratique',
-    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france'],
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'deuil-idda-veuve'],
+  },
+  {
+    slug: 'deuil-idda-veuve',
+    question: 'Une veuve peut-elle sortir pendant son deuil ?',
+    verdict: '✅ Oui — la ‘idda n’est pas une réclusion',
+    short:
+      'Le délai de viduité est de quatre mois et dix jours. Mais ce n’est pas une réclusion : travailler, faire ses démarches et sortir par nécessité sont permis.',
+    answer: [
+      'Commençons par le malentendu, parce qu’il fait des dégâts réels : beaucoup croient que la ‘idda enferme une veuve chez elle. **La position majoritaire dit le contraire**, et la confusion a des conséquences concrètes en France — les semaines qui suivent un décès sont précisément celles où il y a le plus de choses à faire, et une femme persuadée de ne pas pouvoir sortir se retrouve à ne rien pouvoir régler.',
+      'Ce que la ‘idda est, d’abord. Pour une veuve, le délai de viduité dure **quatre mois et dix jours**. Il s’accompagne d’un deuil (ihdâd) qui demande de la sobriété dans la parure et dans les sorties, et de garder le domicile conjugal comme résidence principale. **Mais ce n’est pas une réclusion.** La majorité des savants distingue nettement les sorties par nécessité — le travail, le médecin, les courses, les démarches — qui sont permises, et les sorties d’agrément, qui sont déconseillées pendant cette période.',
+      'Et voici pourquoi la distinction compte tant ici, car le calendrier français ne laisse pas le choix. La **déclaration de décès** se fait dans les **24 heures ouvrées** à la mairie du lieu du décès — souvent prise en charge par les pompes funèbres, ou par l’hôpital si le décès y a eu lieu. Puis, dans la **première semaine** : les banques, l’employeur ou France Travail, la CPAM, les caisses de retraite de base et complémentaire, la CAF, la mutuelle. Les déclarations qui ouvrent droit à la **pension de réversion** et au capital décès se font dans les **huit jours**.',
+      'Un point d’argent que presque personne ne connaît avant d’y être. Dès que la banque apprend le décès, **les comptes au nom du défunt sont bloqués** et les moyens de paiement doivent être rendus. Un **compte joint, lui, n’est pas bloqué** — sauf si les héritiers en demandent la fermeture — mais le conjoint survivant **ne peut utiliser que la moitié** du solde : le reste appartient à la succession, et les héritiers peuvent en réclamer le paiement. Mieux vaut le savoir avant de dépenser que de devoir rembourser.',
+      'Deux renvois, parce que cette fiche s’arrête où commence le cas particulier. Les règles de la ‘idda varient selon les écoles et selon la situation — une grossesse change le calcul, et le délai d’une femme divorcée n’est pas celui d’une veuve : la situation personnelle se pose à un savant. Le volet patrimonial se traite avec un notaire. Ce que cette fiche veut éviter est précis : que personne ne reste enfermé en croyant que la religion l’exige, pendant que la banque et la caisse de retraite attendent.',
+    ],
+    category: 'Pratique',
+    related: ['enterrement-musulman-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'psy-therapie-islam'],
   },
   {
     slug: 'mariage-religieux-civil-france',
@@ -3152,7 +3168,7 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique est la même que pour le mariage, à l’envers : **les deux démarches sont distinctes et il faut faire les deux.** La procédure civile — avocat, juge aux affaires familiales — est la seule qui produise des effets juridiques : pension, résidence des enfants, partage des biens. La démarche religieuse se règle auprès d’un imam. N’en faire qu’une laisse à moitié lié, et c’est presque toujours celui ou celle des deux qui a le moins de ressources qui en paie le prix.',
     ],
     category: 'Pratique',
-    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal'],
+    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'deuil-idda-veuve'],
   },
   {
     slug: 'heritage-succession-france',
@@ -3168,7 +3184,7 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique tient en trois points. **De son vivant, on peut préparer ; après le décès, on ne peut plus rien reprendre** — c’est tout le sujet. **Le montage se construit avec un notaire**, parce que la réserve, la quotité disponible, les donations antérieures, l’assurance-vie et les biens situés à l’étranger forment un ensemble où l’improvisation coûte cher. **Et la question religieuse se pose à un savant** qui connaîtra la composition exacte de la famille, puisque les parts en dépendent entièrement. Une fiche ne calcule pas une succession, et celle-ci n’essaie pas.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal'],
+    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal', 'deuil-idda-veuve'],
   },
   {
     slug: 'assurance-vie-halal',
@@ -3213,7 +3229,7 @@ export const QUESTIONS: QA[] = [
       'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france', 'vaccin-gelatine-porcine-halal'],
+    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france', 'vaccin-gelatine-porcine-halal', 'deuil-idda-veuve'],
   },
   {
     slug: 'mauvais-oeil-protection',
