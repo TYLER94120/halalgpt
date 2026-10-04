@@ -3136,7 +3136,7 @@ export const QUESTIONS: QA[] = [
       'Deux renvois, parce que cette fiche s’arrête où commence le cas particulier. Les règles de la ‘idda varient selon les écoles et selon la situation — une grossesse change le calcul, et le délai d’une femme divorcée n’est pas celui d’une veuve : la situation personnelle se pose à un savant. Le volet patrimonial se traite avec un notaire. Ce que cette fiche veut éviter est précis : que personne ne reste enfermé en croyant que la religion l’exige, pendant que la banque et la caisse de retraite attendent.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'psy-therapie-islam'],
+    related: ['enterrement-musulman-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'psy-therapie-islam', 'garde-enfants-divorce-france'],
   },
   {
     slug: 'mariage-religieux-civil-france',
@@ -3152,7 +3152,7 @@ export const QUESTIONS: QA[] = [
       'L’ordre pratique est simple : la mairie d’abord, le nikah ensuite, le même jour si on veut. Deux situations sortent du cadre de cette fiche et demandent un vrai conseil : un mariage contracté à l’étranger, dont la transcription en France suit ses propres règles, et un nikah déjà célébré sans acte civil — auquel cas la question se pose à un notaire ou à un avocat pour les conséquences patrimoniales, et à un imam pour le reste. Pas à un site.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire', 'heritage-succession-france', 'divorce-religieux-civil-france'],
+    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire', 'heritage-succession-france', 'divorce-religieux-civil-france', 'garde-enfants-divorce-france'],
   },
   {
     slug: 'divorce-religieux-civil-france',
@@ -3168,7 +3168,23 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique est la même que pour le mariage, à l’envers : **les deux démarches sont distinctes et il faut faire les deux.** La procédure civile — avocat, juge aux affaires familiales — est la seule qui produise des effets juridiques : pension, résidence des enfants, partage des biens. La démarche religieuse se règle auprès d’un imam. N’en faire qu’une laisse à moitié lié, et c’est presque toujours celui ou celle des deux qui a le moins de ressources qui en paie le prix.',
     ],
     category: 'Pratique',
-    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'deuil-idda-veuve'],
+    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'deuil-idda-veuve', 'garde-enfants-divorce-france'],
+  },
+  {
+    slug: 'garde-enfants-divorce-france',
+    question: 'Qui a la garde des enfants après un divorce ?',
+    verdict: '⚠️ En France, seul le juge décide',
+    short:
+      'Les écoles divergent sur l’âge et sur le parent. En France, seul le juge aux affaires familiales décide : un accord à la mosquée n’a aucun effet juridique.',
+    answer: [
+      'La réponse qui a des effets d’abord, parce que c’est celle qu’on découvre trop tard. **En France, seul le juge aux affaires familiales statue** sur la résidence de l’enfant, le droit de visite et d’hébergement et la contribution financière. Un arrangement entre familles, ou conclu devant un imam, **n’a par lui-même aucune force juridique** : le juge peut donner effet à un accord que les parents lui soumettent, mais sans cela il n’engage personne — et le parent qui s’y est fié n’a aucun recours le jour où l’autre change d’avis.',
+      'Ce que le droit français prévoit par défaut surprend souvent. L’**article 373-2 du code civil** dispose que « la séparation des parents est sans incidence sur les règles de dévolution de l’exercice de l’autorité parentale ». Les deux parents la **conservent**, chacun doit maintenir des relations personnelles avec l’enfant et respecter le lien de celui-ci avec l’autre. Le juge n’écarte l’exercice commun que si l’intérêt de l’enfant le commande (article 373-2-1). Autrement dit : « j’ai la garde » ne signifie pas que l’autre parent perd son autorité — une confusion qui empoisonne beaucoup de séparations.',
+      'Du côté religieux, la hadâna. Le point de départ ne fait pas débat : jusqu’à un certain âge, garçon et fille restent à la garde de leur mère. **Les écoles divergent ensuite sur deux questions** — quel est cet âge, et à qui la garde revient après. Chez les chaféites et selon un avis hanbalite, c’est autour de sept ans, puis l’enfant choisit. Chez les hanéfites, le garçon passe au père quand il peut se débrouiller seul, et la fille reste avec sa mère jusqu’à la puberté. Chez les malikites, le garçon jusqu’à la puberté, la fille jusqu’à son mariage. L’écart entre ces positions est réel, et ce site ne tranche pas entre elles.',
+      'Là où les deux systèmes se rencontrent, il faut être net : **ils ne donnent pas la même réponse, et le juge français n’est pas tenu par le fiqh.** Ce qu’un parent peut faire, c’est porter devant le juge les éléments concrets qui comptent pour lui — la scolarité, l’organisation de la famille, la continuité de l’éducation religieuse — mais comme éléments de l’intérêt de l’enfant, qui est le seul critère que le juge applique. Pas comme une règle qu’il devrait appliquer à la place de la loi.',
+      'Deux renvois, et une phrase qui vaut plus que les deux. L’avocat pour la procédure, un savant pour la règle. Et surtout : **le parent qui règle tout à l’amiable sans jamais passer devant le juge est celui qui n’a rien à opposer le jour où ça se passe mal.** C’est presque toujours le même des deux.',
+    ],
+    category: 'Pratique',
+    related: ['divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'adoption-islam', 'heritage-succession-france', 'deuil-idda-veuve'],
   },
   {
     slug: 'heritage-succession-france',
@@ -3424,7 +3440,7 @@ export const QUESTIONS: QA[] = [
       'Deux questions concrètes reviennent toujours. La première est juridique : en France, l’adoption plénière et la kafala ne sont pas la même procédure et n’ont pas les mêmes effets. C’est un dossier à monter avec un professionnel du droit de la famille, et la transmission du patrimoine se prépare avec un notaire — n’improvise pas sur ce terrain. La seconde touche la vie de famille : un enfant recueilli ne devient pas automatiquement mahram en grandissant. La solution classique, quand l’enfant est accueilli tout petit, est l’allaitement (radâ‘a), qui crée un lien de lait reconnu ; sinon, les familles appliquent les règles habituelles à l’adolescence. Là encore, expose ton cas précis à un savant : les situations sont trop différentes pour une règle unique.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition', 'mariage-religieux-civil-france', 'divorce-religieux-civil-france'],
+    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition', 'mariage-religieux-civil-france', 'divorce-religieux-civil-france', 'garde-enfants-divorce-france'],
   },
   {
     slug: 'qibla-direction-priere',
