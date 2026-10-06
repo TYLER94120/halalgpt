@@ -3120,7 +3120,23 @@ export const QUESTIONS: QA[] = [
       'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
     ],
     category: 'Pratique',
-    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'deuil-idda-veuve'],
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'deuil-idda-veuve', 'autopsie-islam-france'],
+  },
+  {
+    slug: 'autopsie-islam-france',
+    question: 'Peut-on refuser une autopsie en islam ?',
+    verdict: '⚠️ La médicale oui, la judiciaire non',
+    short:
+      'Une autopsie médicale peut être refusée, y compris pour motif religieux. Une autopsie judiciaire ne peut pas l’être — mais la famille a des droits précis.',
+    answer: [
+      'Deux choses très différentes portent le même nom, et tout dépend de laquelle il s’agit. L’**autopsie médicale**, demandée à des fins de diagnostic ou de recherche, **peut être refusée** — y compris pour motif religieux. L’**autopsie judiciaire** est requise par le procureur de la République dans le cadre d’une enquête sur les causes de la mort, lorsque celles-ci sont inconnues ou suspectes (article 74 du code de procédure pénale) : **personne ne peut s’y opposer**, et la famille n’a même pas la qualité de partie dans cette enquête. Confondre les deux conduit soit à se battre pour rien, soit à renoncer à un droit qu’on avait.',
+      'La collision avec l’usage religieux est réelle et il ne sert à rien de l’adoucir : la tradition demande d’enterrer sans tarder et de rendre le corps intact, et une autopsie judiciaire retarde et ouvre. Ce que la famille doit savoir, c’est que **cela ne dépend pas d’elle** — l’obligation est légale et elle ne se négocie pas. Ce qui se pose à un savant, c’est ce qui est attendu d’elle dans cette situation ; ce qui se joue ici et maintenant, ce sont ses droits.',
+      'Et ces droits sont précis, depuis la **loi n° 2026-651 du 23 juillet 2026**, codifiée aux articles 230-28 à 230-31 du code de procédure pénale. Le **permis d’inhumer** est délivré dès que la conservation du corps n’est plus nécessaire à la manifestation de la vérité, « dans les meilleurs délais et **au plus tard un mois** après l’autopsie », avec remise du corps aux proches qui ont qualité pour pourvoir aux funérailles. Le conjoint, le concubin, le partenaire de PACS, les ascendants et les descendants doivent être **informés avant** cette délivrance qu’une autopsie a été ordonnée et que des prélèvements biologiques ont été faits. Et **l’accès au corps avant la mise en bière ne peut pas leur être refusé**, sauf raison de santé publique, dans des conditions qui garantissent respect, dignité, décence et humanité.',
+      '**Le point qui compte le plus ici, et qu’il faut demander.** Lorsque des prélèvements portant sur l’intégralité d’un organe ont été réalisés et que leur conservation n’est plus nécessaire à l’enquête, l’autorité judiciaire ordonne leur **restitution aux proches qui en font la demande** — sous réserve des contraintes de santé publique. Personne ne la proposera spontanément. Pour une famille qui tient à ce que le corps soit inhumé entier, c’est une démarche à faire, et elle est prévue par la loi.',
+      'En pratique : le service de pompes funèbres traite avec le parquet et connaît le circuit, c’est lui qu’il faut mettre dans la boucle tôt. Un avocat si le délai dépasse le mois sans explication. Et pour le volet religieux — la toilette funéraire, la manière de procéder avec un corps qui a été ouvert — une mosquée ou un service de pompes funèbres musulmanes, qui rencontrent ces cas. Pas un site.',
+    ],
+    category: 'Pratique',
+    related: ['enterrement-musulman-france', 'don-organes-islam', 'deuil-idda-veuve', 'heritage-succession-france', 'psy-therapie-islam'],
   },
   {
     slug: 'deuil-idda-veuve',
@@ -3136,7 +3152,7 @@ export const QUESTIONS: QA[] = [
       'Deux renvois, parce que cette fiche s’arrête où commence le cas particulier. Les règles de la ‘idda varient selon les écoles et selon la situation — une grossesse change le calcul, et le délai d’une femme divorcée n’est pas celui d’une veuve : la situation personnelle se pose à un savant. Le volet patrimonial se traite avec un notaire. Ce que cette fiche veut éviter est précis : que personne ne reste enfermé en croyant que la religion l’exige, pendant que la banque et la caisse de retraite attendent.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'psy-therapie-islam', 'garde-enfants-divorce-france'],
+    related: ['enterrement-musulman-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'psy-therapie-islam', 'garde-enfants-divorce-france', 'autopsie-islam-france'],
   },
   {
     slug: 'mariage-religieux-civil-france',
@@ -3245,7 +3261,7 @@ export const QUESTIONS: QA[] = [
       'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france', 'vaccin-gelatine-porcine-halal', 'deuil-idda-veuve'],
+    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france', 'vaccin-gelatine-porcine-halal', 'deuil-idda-veuve', 'autopsie-islam-france'],
   },
   {
     slug: 'mauvais-oeil-protection',
@@ -3274,7 +3290,7 @@ export const QUESTIONS: QA[] = [
       'En France, le don est présumé par défaut : sans refus inscrit au registre national, on est considéré comme donneur. C’est le point pratique qui surprend le plus de familles musulmanes au pire moment. Quelle que soit ta position, la décision se prend à froid, s’inscrit, et surtout se DIT à tes proches — ce sont eux qu’on interrogera. Et parce que la divergence est réelle et la question grave, c’est typiquement le sujet où il faut en parler avec un savant qui connaît ta situation, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam', 'enterrement-musulman-france', 'heritage-succession-france', 'vaccin-gelatine-porcine-halal'],
+    related: ['psy-therapie-islam', 'greffe-cheveux-halal', 'halal-definition', 'adoption-islam', 'echecs-islam', 'enterrement-musulman-france', 'heritage-succession-france', 'vaccin-gelatine-porcine-halal', 'autopsie-islam-france'],
   },
   {
     slug: 'vaccin-gelatine-porcine-halal',
