@@ -57,13 +57,16 @@ const PART_VISEE = 0.48;
 // sujet a prendre — il peut etre vide pour de bonnes raisons.
 const DOMAINES = {
   'finance / argent':     /riba|interet|banque|credit|pret|assurance|hypoth|epargne|bourse|action|crypto|zakat|impot|dette|salaire/i,
-  'mort / heritage':      /mort|deces|funerail|enterr|incin|testament|heritage|succession|linceul|janaza|cimetiere|deuil/i,
-  'famille / mariage':    /mariage|nikah|dot|mahr|divorce|talaq|fiancail|epouse|adoption|parents|enfant|allaitement/i,
-  'sante / corps':        /vaccin|fiv|pma|contracep|avortement|don-organe|transfusion|greffe|psy|depression|dentiste|anesthes/i,
+  'mort / heritage':      /mort|deces|funerail|enterr|incin|testament|heritage|succession|linceul|janaza|cimetiere|deuil|autopsie/i,
+  'famille / mariage':    /mariage|nikah|dot|mahr|divorce|talaq|fiancail|epouse|adoption|parents|enfant|allaitement|garde-enfants/i,
+  'sante / corps':        /vaccin|fiv|pma|contracep|avortement|don-organe|transfusion|greffe|psy|depression|dentiste|anesthes|medicament|chirurgie|esthetique/i,
   'travail / droit':      /travail|employeur|conge|patron|contrat|entreprise|associe|caissier|restaurant-alcool/i,
-  'priere / purete':      /priere|wudu|ablution|ghusl|tayammum|qibla|rakat|vernis|henne|lentilles|platre|regles/i,
+  'priere / purete':      /priere|wudu|ablution|ghusl|tayammum|qibla|rakat|vernis|henne|lentilles|platre|regles|fajr/i,
   'ramadan / jeune':      /ramadan|jeune|iftar|suhur|dattes|salive/i,
-  'vie sociale / loisirs':/musique|jeux|echecs|sport|tatouage|piercing|photo|reseaux|anniversaire|noel|chien|chat|cigarette|chicha|puff/i,
+  'vie sociale / loisirs':/musique|jeux|echecs|sport|tatouage|piercing|photo|reseaux|anniversaire|noel|chien|chat|cigarette|chicha|puff|serrer-la-main/i,
+  'apparence / parure':   /teinture|cheveux|levres|carmin|parfum|porter-or|maquillage/i,
+  'voyage / lieux':       /voyage|restaurant-halal|repas-halal-avion|pays-/i,
+  'croyances / identite': /halal-definition|certification|convertir|prenom|ia-halal|mauvais-oeil|casher/i,
 };
 
 const nourriture = QUESTIONS.filter((q) => NOURRITURE.has(q.category));
@@ -103,6 +106,19 @@ for (const [cat, n] of ouvertes) {
 // de l'argent ou de la mort.
 console.log('\n  🔍 COUVERTURE PAR DOMAINE DE VIE — le trou se lit ici :');
 const trous = [];
+// L'angle mort de la grille, affiche AVEC elle et non en bas de page.
+//
+// Le 7 octobre, en verifiant pourquoi autopsie-islam-france n'apparaissait
+// dans aucun domaine, j'ai compte : 44 fiches non alimentaires sur 114 —
+// 39 % — n'entraient dans AUCUN motif. Les 28 fiches de voyage n'avaient
+// simplement pas de domaine, et sept autres n'en avaient pas non plus.
+// Pendant des semaines cette grille m'a donc annonce « tel domaine est le
+// plus mince » en ignorant deux fiches sur cinq. Les terrains choisis
+// n'etaient pas mauvais, mais la confiance n'etait pas meritee.
+//
+// Trois domaines ont ete ajoutes et quelques mots manquants aussi. Et
+// surtout ce compteur : une grille qui ne dit pas ce qu'elle rate se lit
+// comme si elle etait complete.
 for (const [nom, re] of Object.entries(DOMAINES)) {
   const fiches = QUESTIONS.filter((q) => re.test(q.slug));
   const horsNourriture = fiches.filter((q) => !NOURRITURE.has(q.category));
@@ -160,8 +176,37 @@ console.log('     une fiche ». Sur les sujets a consequences — heritage, divo
 console.log('     fiqh technique — on decrit les avis, on nomme les divergences,');
 console.log('     et on renvoie a un savant. On ne tranche jamais.');
 
+const horsGrille = QUESTIONS.filter(
+  (q) => !NOURRITURE.has(q.category) && !Object.values(DOMAINES).some((re) => re.test(q.slug)),
+);
+const nonAlim = QUESTIONS.filter((q) => !NOURRITURE.has(q.category)).length;
+console.log(
+  `\n     Hors grille : ${horsGrille.length} fiche(s) non alimentaire(s) sur ${nonAlim}` +
+  ` (${(horsGrille.length / nonAlim * 100).toFixed(0)} %).`,
+);
+if (horsGrille.length > 0) {
+  console.log('     ' + horsGrille.slice(0, 8).map((q) => q.slug).join(', ')
+    + (horsGrille.length > 8 ? `, … (+${horsGrille.length - 8})` : ''));
+  console.log('     Le tableau ci-dessus ne les compte pas. Ne pas le lire');
+  console.log('     comme une carte complete du catalogue.');
+}
+
 if (trous.length > 0) {
   const noms = trous.map((t) => t.nom).join(', ');
   console.log(`\n  Terrains les plus degarnis ce soir : ${noms}.`);
+} else {
+  // Le silence est une reponse, et il faut qu'elle soit dite. Depuis que la
+  // grille est complete (7 octobre), plus aucun domaine ne tombe sous le
+  // seuil : il n'y a plus de trou criant. Ne pas lire ca comme « rien a
+  // faire » — lire ca comme « le choix ne se fait plus par le compte ».
+  const classe = Object.entries(DOMAINES)
+    .map(([nom, re]) => [nom, QUESTIONS.filter(
+      (q) => re.test(q.slug) && !NOURRITURE.has(q.category)).length])
+    .sort((a, b) => a[1] - b[1]);
+  console.log('\n  AUCUN domaine sous le seuil : il n\'y a plus de trou criant.');
+  console.log(`  Les trois plus legers restent ${classe.slice(0, 3).map(([n, c]) => `${n} (${c})`).join(', ')},`);
+  console.log('  mais le compte ne designe plus de terrain. A ce stade le choix');
+  console.log('  se fait sur « y a-t-il quelque chose a COMPRENDRE », ou bien');
+  console.log('  on ne produit pas — ce qui est une reponse valable.');
 }
 console.log();
