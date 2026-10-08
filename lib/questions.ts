@@ -516,7 +516,7 @@ export const QUESTIONS: QA[] = [
       'Quelques points pratiques. La surface : terre, sable, pierre, mur non peint, poussière déposée — la condition d’une poussière visible fait elle-même l’objet d’avis différents. Le tayammum s’annule par ce qui annule les ablutions, et surtout dès que l’eau redevient disponible et utilisable. Enfin, ce n’est pas une solution de confort : quelqu’un qui a de l’eau à quelques pas ne s’en dispense pas. En cas de blessure ou de plâtre, une autre voie existe — l’essuyage sur le pansement — et c’est à un savant qu’il faut poser la question de ta situation exacte.',
     ],
     category: 'Pratique',
-    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'priere-avion', 'se-convertir-islam', 'platre-pansement-ablutions'],
+    related: ['ablutions-chaussettes', 'ghusl-grande-ablution', 'priere-avion', 'se-convertir-islam', 'platre-pansement-ablutions', 'horaires-priere-voyage'],
   },
   {
     slug: 'serrer-la-main-islam',

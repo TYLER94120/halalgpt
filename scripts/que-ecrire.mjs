@@ -29,6 +29,22 @@
 // esprit : au lieu d'esperer qu'une prose soit relue, on fait dire au depot
 // lui-meme ce qu'il manque — mesure au moment ou l'on va ecrire.
 //
+// UNE LIMITE DE TOUTE MESURE FAITE ICI, et je me suis fait prendre deux fois.
+//
+// Ce fichier et les mesures que j'improvise a cote ne suivent que les tableaux
+// `related`. Or le site a des PAGES DE CATEGORIE : le fil d'Ariane de chaque
+// fiche pointe vers son hub, et le hub liste TOUTES les fiches de sa categorie.
+// Une fiche sans aucun lien `related` entrant n'est donc pas isolee — elle est
+// a deux sauts de n'importe quelle page exploree, par son hub.
+//
+// Le 16 septembre j'ai cru que quatre fiches recentes etaient a trois sauts des
+// portes d'entree et j'allais bricoler des liens. Le 8 octobre j'ai cru que
+// 25 des 31 fiches de voyage etaient coupees du reste du site. Les deux fois,
+// c'etait l'instrument qui ne voyait pas les hubs, pas le site qui etait casse.
+//
+// Avant de conclure qu'une fiche est mal reliee : verifier par quel hub elle
+// est atteignable.
+//
 //     node scripts/que-ecrire.mjs
 //
 // Il ne redige rien et ne decide rien. Il repond a une seule question : sur
