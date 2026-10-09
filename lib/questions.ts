@@ -1194,13 +1194,14 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'quick-halal',
     question: 'Quick est-il halal ?',
-    verdict: '⚠️ Une partie du réseau seulement',
+    verdict: '⚠️ À vérifier restaurant par restaurant',
     short:
-      'Une partie des restaurants Quick est certifiée halal, pas tout le réseau : il faut vérifier votre restaurant sur la liste officielle.',
+      'Quick est la seule grande enseigne de burgers associée à une offre certifiée en France. Mais l’étendue de cette certification a changé : elle se vérifie sur place.',
     answer: [
-      'Quick est un cas unique dans le fast-food français : une partie de ses restaurants est officiellement certifiée halal (viandes certifiées par des organismes reconnus, affichage en restaurant), tandis que le reste du réseau sert de la viande standard.',
-      'Conséquence : « Quick » tout court ne veut rien dire — tout dépend de VOTRE restaurant. La liste des établissements halal est publiée par l’enseigne et le certificat est affiché sur place ; en cas de doute, demandez-le au comptoir, c’est un réflexe normal et bien accueilli.',
-      'C’est l’exception qui confirme la règle française : McDonald’s et Burger King ne proposent aucun restaurant halal en France, Quick si — mais uniquement dans les restaurants listés.',
+      'Quick est la seule grande enseigne de burgers en France associée à une offre halal certifiée — c’est ce qui la distingue de McDonald’s et de Burger King, qui n’en proposent pas dans leurs restaurants français. Mais **l’étendue de cette certification a bougé** depuis le rachat de l’enseigne et la conversion d’une grande partie du réseau en Burger King : le nombre de Quick, et la part d’entre eux qui est certifiée, ne sont plus ce qu’ils étaient il y a quelques années.',
+      'Et c’est là qu’il faut être franc sur ce que vaut l’information qui circule. **Les chiffres trouvables en ligne se contredisent** — sur le nombre de restaurants, sur la proportion certifiée, sur la date du dernier changement. Les pages qui les publient sont le plus souvent des guides commerciaux qui se recopient. Cette fiche ne reprendra donc aucun de ces chiffres : donner un compte qu’on ne peut pas vérifier est pire que de ne pas en donner.',
+      'Ce qui reste vrai et vérifiable, c’est la méthode. **Le certificat est affiché dans le restaurant**, et il porte le nom de l’organisme qui l’a délivré — c’est ce nom qui vous dit quel niveau d’exigence vous achetez, pas le mot « halal » sur une vitrine. Demander à le voir au comptoir est un réflexe normal et bien accueilli. Et le site de l’organisme certificateur liste les établissements qu’il contrôle : c’est la vérification la plus fiable, parce qu’elle vient de celui qui engage sa signature.',
+      'Autrement dit : « Quick est-il halal ? » n’a pas de réponse à l’échelle de l’enseigne, et chercher cette réponse sur un site tiers — celui-ci compris — est le mauvais réflexe. **La bonne question est « ce restaurant-ci est-il certifié, et par qui ? »**, et elle se pose là où vous commandez.',
     ],
     category: 'Produits',
     related: ['mcdo-halal', 'burger-king-halal', 'kfc-halal'],
