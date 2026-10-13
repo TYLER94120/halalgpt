@@ -41,6 +41,10 @@ const EMPIRE = [
   { nom: 'halalcheck.fr', ou: 'GitHub Pages' },
 ];
 
+// Des domaines qui sont en ligne, toujours, et qui ne nous appartiennent pas.
+// Ils ne servent pas a tester l'empire : ils servent a tester CE TEST.
+const TEMOINS = ['google.com', 'cloudflare.com', 'example.com'];
+
 let echecs = 0;
 let alertes = 0;
 
@@ -54,6 +58,53 @@ async function resout(hote) {
   }
 }
 
+// ── LE CONTROLE DE L'INSTRUMENT, avant toute mesure ─────────────────────
+//
+// POURQUOI CE BLOC EXISTE. Du 10 au 13 octobre 2026, ce test a annonce trois
+// nuits de suite : « 5 APEX NE RESOUT PAS. Le site est invisible pour Google. »
+// Cinq domaines, sur DEUX hebergeurs differents — Vercel et GitHub Pages —
+// tombes a la meme seconde. Et la consigne de la ronde dit, pour ce test
+// precisement : « si ce test echoue, tu arretes tout et tu previens Mohamed ».
+//
+// Ce qui aurait ete exactement la faute d'aout, dans l'autre sens : envoyer
+// quelqu'un reparer une zone DNS qui n'avait rien.
+//
+// Parce que la panne n'existait pas. `google.com` et `cloudflare.com` ne
+// resolvaient pas non plus, et le proxy de sortie du conteneur repondait
+// « gateway answered 403 to CONNECT (policy denial) ». La politique reseau de
+// l'environnement avait change : ce conteneur ne resout plus que les hotes de
+// sa liste blanche. L'instrument etait aveugle, pas les sites morts.
+//
+// La lecon tient en une phrase, et elle vaut au-dela du DNS : un echec de
+// TRANSPORT n'est pas une reponse du site. Pas de reponse = « je ne sais pas »,
+// et « je ne sais pas » n'est pas « c'est casse ».
+//
+// D'ou ce controle. Si les temoins ne resolvent pas, le test s'arrete sur le
+// code 2 — ni succes, ni panne : MESURE IMPOSSIBLE. Un chiffre qu'on ne peut
+// pas prendre doit se taire, pas crier au loup.
+const temoinsVivants = [];
+for (const t of TEMOINS) {
+  if (await resout(t)) temoinsVivants.push(t);
+}
+
+if (temoinsVivants.length === 0) {
+  console.error('\n✗ MESURE IMPOSSIBLE — ce n\'est pas une panne des sites.\n');
+  console.error(`  Aucun des temoins ne resout : ${TEMOINS.join(', ')}.`);
+  console.error('  Ces domaines sont en ligne. Si eux ne resolvent pas, c\'est le');
+  console.error('  resolveur de cette machine qui ne sort plus, pas l\'empire qui');
+  console.error('  est tombe.');
+  console.error('\n  NE PAS prevenir Mohamed d\'une panne DNS sur cette base, et NE PAS');
+  console.error('  toucher a une zone DNS. Le 10 octobre ce test a annonce cinq');
+  console.error('  domaines morts sur deux hebergeurs differents : la politique');
+  console.error('  reseau du conteneur avait change, les sites allaient bien.');
+  console.error('\n  Verifier d\'abord :  curl -sS "$HTTPS_PROXY/__agentproxy/status"');
+  console.error('  Un « 403 to CONNECT » y designe un refus de politique.');
+  console.error('\n  L\'etape 0 de la ronde est donc AVEUGLE depuis cette machine :');
+  console.error('  le dire dans le compte rendu, sans conclure sur l\'etat des sites.');
+  process.exit(2);
+}
+
+console.log(`Instrument controle : ${temoinsVivants.length}/${TEMOINS.length} temoin(s) resolvent.`);
 console.log('Resolution des dix adresses de l\'empire.\n');
 
 for (const { nom, ou } of EMPIRE) {
