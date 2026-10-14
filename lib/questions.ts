@@ -1209,13 +1209,14 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'burger-king-halal',
     question: 'Burger King est-il halal en France ?',
-    verdict: '❌ Non en France',
+    verdict: '⚠️ Non selon la marque — vérifier sur place',
     short:
-      'Burger King France ne propose pas de viande halal. Comme ses concurrents, l’enseigne est en revanche halal dans les pays musulmans.',
+      'Burger King France dit ne proposer aucune viande halal. Mais des exceptions circulent sur d’anciens Quick, sans liste vérifiable : le certificat se voit sur place.',
     answer: [
-      'Burger King France s’approvisionne en filière standard : aucun restaurant halal dans l’Hexagone, et la marque le confirme dans sa communication officielle. Les Whopper français ne sont donc pas halal.',
-      'Reste possible selon votre niveau d’exigence : les options sans viande (le Veggie King, les frites) — avec les questions habituelles de cuissons partagées pour les plus stricts.',
-      'À l’étranger, le tableau change : Burger King est intégralement certifié halal dans les pays musulmans (Maroc, Turquie, Golfe, Asie du Sud-Est). Et en France, la scène des smash burgers halal indépendants n’a jamais été aussi riche — la carte VoyagesHalal en géolocalise près de chez vous.',
+      'La position de l’enseigne est claire et c’est elle qu’il faut retenir en premier : **Burger King France s’approvisionne en filière standard et déclare ne proposer aucune viande halal certifiée** dans ses restaurants français. Les Whopper vendus en France ne sont donc pas halal, et c’est la réponse qui vaut pour la très grande majorité du réseau.',
+      '**Mais il y a une nuance que cette fiche affirmait à tort ne pas exister.** Lors du rachat de Quick, une partie des restaurants repris et convertis en Burger King aurait conservé une certification. Combien ? Les sources en ligne donnent **une vingtaine, quarante, ou une cinquantaine** selon la page consultée — ce sont des blogs de restauration qui se recopient, aucun ne publie d’adresses vérifiables, et leurs chiffres contredisent la position officielle de la marque. **Cette fiche ne tranchera donc pas**, et surtout elle ne vous dira pas « aucun » comme elle le faisait : si un restaurant près de vous est concerné, le dire « non » vous aurait coûté quelque chose.',
+      'La seule vérification qui vaille est donc locale, et elle est simple. **Le certificat est affiché dans le restaurant** et porte le nom de l’organisme qui l’a délivré ; à défaut, un appel au restaurant ou une question à l’organisme certificateur tranche en deux minutes. Une liste trouvée sur un site tiers — celui-ci compris — ne vaut rien sur ce sujet, parce que ces conventions se font et se défont sans annonce.',
+      'Reste possible selon votre niveau d’exigence : les options sans viande (le Veggie King, les frites), avec les questions habituelles de cuissons partagées pour les plus stricts. À l’étranger le tableau change : Burger King est intégralement certifié halal dans les pays musulmans (Maroc, Turquie, Golfe, Asie du Sud-Est). Et en France, la scène des smash burgers halal indépendants n’a jamais été aussi riche — la carte VoyagesHalal en géolocalise près de chez vous.',
     ],
     category: 'Produits',
     related: ['quick-halal', 'mcdo-halal', 'kfc-halal'],
