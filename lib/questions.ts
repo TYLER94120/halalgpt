@@ -2488,11 +2488,12 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'dominos-pizza-halal',
     question: 'Domino’s Pizza est-il halal en France ?',
-    verdict: '❌ Non certifié en France',
+    verdict: '⚠️ Aucune certification d’enseigne — vérifier sur place',
     short:
-      'Domino’s France n’est pas halal : pepperoni et viandes standard. Les options végétariennes restent possibles, avec les réserves habituelles.',
+      'Domino’s France ne revendique aucune certification halal. Certains restaurants proposeraient des viandes certifiées — non confirmé : à vérifier sur place.',
     answer: [
-      'Domino’s Pizza France ne propose pas de gamme halal : les garnitures carnées (pepperoni, bœuf, poulet, jambon) relèvent de filières classiques, et l’enseigne ne revendique aucune certification en France. Le pepperoni des recettes phares est une charcuterie à base de porc et/ou bœuf non rituel.',
+      'Domino’s Pizza France **ne revendique aucune certification halal** et ne propose pas de gamme dédiée : les garnitures carnées relèvent de filières classiques, et le pepperoni des recettes phares est une charcuterie à base de porc et/ou de bœuf non rituel. C’est la réponse qui vaut à l’échelle de l’enseigne.',
+      '**Une nuance, donnée pour ce qu’elle vaut.** Plusieurs sites affirment que certaines viandes — poulet rôti, merguez, haché de bœuf — proviendraient de fournisseurs certifiés dans une partie des restaurants, la pratique variant d’une ville à l’autre. **Je n’ai trouvé aucune confirmation de l’enseigne elle-même**, et ces pages sont des guides commerciaux qui se recopient. Cette fiche ne reprend donc pas l’information comme un fait : elle la signale pour que vous sachiez quoi demander, et parce que vous dire « non » tout court serait vous priver d’une vérification qui ne coûte qu’un appel.',
       'Les pizzas végétariennes (marguerite, quatre fromages, légumes) restent envisageables selon ta position sur le fromage (présure) et la cuisson dans le même four que les pizzas carnées — les avis tolèrent généralement la cuisson partagée tant qu’il n’y a pas de contact direct, mais chacun place son curseur.',
       'L’alternative simple en France : le pays regorge de pizzerias halal indépendantes — souvent excellentes — et certaines chaînes locales 100 % halal se développent dans les grandes villes. Le comparatif se gagne rarement sur la pizza industrielle.',
     ],
