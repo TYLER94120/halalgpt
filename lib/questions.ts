@@ -2573,13 +2573,15 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'isla-delice-halal',
     question: 'Isla Délice est-il vraiment halal ?',
-    verdict: '✅ Marque 100 % halal certifiée',
+    verdict: '✅ Gamme halal certifiée — regarde quel certificateur',
     short:
-      'Isla Délice est la marque halal leader en France : toute la gamme est certifiée et contrôlée, le certificateur est indiqué sur l’emballage.',
+      'Marque construite entièrement sur le halal. Mais elle a quitté AVS en 2012 pour l’ARGML, sur la question de l’étourdissement : c’est là que se joue ton choix.',
     answer: [
-      'Isla Délice est l’exemple inverse de la plupart des questions qu’on traite ici : ce n’est pas une marque classique avec un doute halal, c’est une marque construite à 100 % sur le halal — charcuteries de volaille et de bœuf, lardons de dinde, knacks, plats préparés. Toute la gamme est certifiée, avec contrôle de la chaîne, et l’organisme certificateur figure sur chaque emballage.',
-      'C’est ce qui a fait son succès : remplacer terme à terme les produits du quotidien (lardons, chorizo, knacki, jambon) par des versions halal de goût comparable, en grande surface. Pour les recettes familiales françaises — carbonara, raclette, hot-dogs — c’est la solution de facilité.',
-      'Le conseil qui reste valable même ici : jette un œil au logo de certification sur le paquet si le niveau d’exigence du certificateur t’importe (positions différentes sur l’étourdissement, les contrôles…). Mais dans le paysage français, une marque entièrement halal avec certification affichée est exactement ce qu’on recommande de chercher.',
+      'Isla Délice est l’inverse de la plupart des questions traitées ici : ce n’est pas une marque ordinaire avec un doute, c’est une marque **construite entièrement sur le halal** — charcuteries de volaille et de bœuf, lardons de dinde, knacks, plats préparés. L’entreprise déclare que **100 % de ses produits sont certifiés et contrôlés par l’ARGML**, l’association de la Grande Mosquée de Lyon, et le nom du certificateur figure sur l’emballage. Cette fiche rapporte cette déclaration pour ce qu’elle est : celle du fabricant, vérifiable sur le paquet que tu tiens.',
+      '**Et voici le fait que cette fiche passait sous silence, alors que c’est le seul qui décide.** Isla Délice était certifiée par **AVS jusqu’en 2012**. La rupture a eu lieu quand son fournisseur a voulu généraliser l’**étourdissement électrique** avant l’abattage — qu’AVS n’admet pas dans son référentiel. C’est l’ARGML qui certifie depuis. Autrement dit : si ton critère est l’abattage **sans étourdissement**, cette marque n’est pas celle qu’il te faut, et aucune mention « 100 % halal » ne changera cela. Si l’étourdissement ne fait pas obstacle pour toi, la certification et le contrôle de chaîne sont là.',
+      'Ce qui explique son succès reste vrai : remplacer terme à terme les produits du quotidien (lardons, chorizo, knacki, jambon) par des versions halal de goût comparable, en grande surface. Pour les recettes familiales françaises — carbonara, raclette, hot-dogs — c’est la solution de facilité.',
+      'Une précision, parce qu’une rumeur tenace circule : l’accusation selon laquelle la marque aurait vendu du porc est **fausse** et a été démentie. La condamnation pour fraude de l’an 2000 portait sur des teneurs en amidon et en dinde, **pas** sur le caractère halal des produits. Confondre les deux a fait beaucoup de dégâts ; autant le dire ici.',
+      'Le conseil qui vaut partout, et ici plus qu’ailleurs : **le logo sur le paquet est l’information, pas le mot « halal »**. Deux organismes sérieux peuvent avoir des exigences différentes sur l’étourdissement et sur la fréquence des contrôles — c’est le nom du certificateur qui te dit lequel tu achètes. La fiche sur les certifications françaises détaille ces lignes de partage.',
     ],
     category: 'Produits',
     related: ['knacki-halal', 'lardons-halal', 'certifications-halal-france', 'dominos-pizza-halal', 'quick-halal', 'lu-prince-halal', 'kiri-halal', 'babybel-halal'],
