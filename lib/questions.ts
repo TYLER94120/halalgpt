@@ -2474,12 +2474,14 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'subway-halal',
     question: 'Subway est-il halal en France ?',
-    verdict: '❌ Non (pas de halal en France)',
+    verdict: '⚠️ Poulet certifié selon l’enseigne — porc au même comptoir',
     short:
-      'Les Subway français ne proposent pas de viandes halal. Dans d’autres pays (Moyen-Orient, certains restaurants au Royaume-Uni), des enseignes halal existent.',
+      'Subway France déclare tout son poulet certifié halal. Mais l’offre n’est pas 100 % halal : jambon et bacon restent au même comptoir.',
     answer: [
-      'En France, Subway ne propose pas de viandes halal : poulet, dinde, jambon et bœuf des recettes standard proviennent de filières classiques. Contrairement à une rumeur récurrente, aucune certification ne couvre les restaurants français de l’enseigne.',
-      'Ce qui reste possible chez Subway France : les subs végétariens (crudités, fromage — avec la réserve habituelle de la présure — sauces à vérifier) et le thon, si l’on est à l’aise avec la préparation sur le même plan de travail que les viandes — point qui gêne certains.',
+      '**Cette fiche disait le contraire, et elle avait tort.** Subway France indique dans sa foire aux questions que **l’ensemble des morceaux de poulet de la gamme sont certifiés halal**, dans tous ses restaurants de France, de Belgique et du Luxembourg — poulet nature, tikka, teriyaki, Crousti chicken, Chicken Kebab. C’est une déclaration de l’enseigne, rapportée ici comme telle ; elle est récente, et les pages qui affirment encore qu’aucun Subway français ne sert de halal lui sont antérieures.',
+      '**Et la même source dit l’autre moitié, qui compte autant** : les restaurants Subway **ne proposent pas une offre 100 % halal**. Le jambon, le bacon et les autres charcuteries de porc restent à la carte, préparés au même comptoir. L’enseigne **ne nomme pas** l’organisme qui certifie son poulet, et le bœuf varie d’un établissement à l’autre — le modèle Subway laisse beaucoup d’autonomie aux franchises.',
+      'Ce qui se décide donc en entrant, et personne ne peut le décider pour toi : le poulet est annoncé certifié, mais il est manipulé avec les mêmes gants, sur le même plan, à côté du porc. **Pour qui exige l’absence de contact, cela reste non.** Pour qui distingue l’ingrédient du voisinage, le poulet devient une option qui n’existait pas il y a peu. Les deux positions sont tenues par des gens sérieux, et ce site ne tranche pas à ta place — il te donne l’information qui manquait.',
+      'Restent, sans changement : les subs végétariens (crudités, fromage — avec la réserve habituelle de la présure — sauces à vérifier) et le thon, avec la même question du plan de travail partagé.',
       'Ailleurs, le tableau change : au Moyen-Orient tout est halal, et au Royaume-Uni une partie des Subway (souvent en quartiers à forte population musulmane) sert du halal certifié, affiché en vitrine. Le réflexe voyage : chercher l’affichage ou demander — jamais supposer d’un pays à l’autre.',
     ],
     category: 'Produits',
