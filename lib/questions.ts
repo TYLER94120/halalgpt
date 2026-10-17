@@ -401,7 +401,7 @@ export const QUESTIONS: QA[] = [
       'Et maintenant la limite de cette page, qui compte autant que le reste. **Cette fiche explique un principe. Elle ne se prononce sur aucune situation particulière** — ni sur un crédit immobilier, ni sur un compte bancaire, ni sur une assurance, ni sur un placement. Ces questions-là divisent réellement les savants, y compris parmi les plus qualifiés : plusieurs conseils européens ont autorisé certains montages sous conditions pour les musulmans vivant en Occident, d’autres autorités les refusent. Un engagement sur vingt ans ne se décide pas d’après une page web. Pour ta situation, adresse-toi à un savant ou à un organisme spécialisé : c’est le seul conseil honnête que nous puissions te donner.',
     ],
     category: 'Pratique',
-    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'invocation-voyage', 'enterrement-musulman-france', 'credit-immobilier-halal', 'assurance-vie-halal'],
+    related: ['paris-sportifs-halal', 'halal-definition', 'certifications-halal-france', 'livret-a-interets-halal', 'enterrement-musulman-france', 'credit-immobilier-halal', 'assurance-vie-halal', 'assurance-auto-obligatoire-halal'],
   },
   {
     slug: 'credit-immobilier-halal',
@@ -418,7 +418,7 @@ export const QUESTIONS: QA[] = [
       'Deux conseils pratiques, et un renvoi. Comparez le **coût total** et non le taux : la marge d’une murabaha, les frais de montage, les honoraires de conseil et les actes notariés successifs d’une musharaka peuvent dépasser un crédit classique, surtout sur longue durée. Et pour la décision elle-même — qui engage un foyer sur vingt ans, sur une question où les savants divergent vraiment — adressez-vous à un savant qui connaît votre situation, et faites relire le montage par un notaire. Ce site décrit les avis ; il ne décide pas à votre place.',
     ],
     category: 'Pratique',
-    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal', 'heritage-succession-france', 'assurance-vie-halal'],
+    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal', 'heritage-succession-france', 'assurance-vie-halal', 'livret-a-interets-halal', 'assurance-auto-obligatoire-halal'],
   },
   {
     slug: 'greffe-cheveux-halal',
@@ -3240,7 +3240,41 @@ export const QUESTIONS: QA[] = [
       'Cette fiche ne recommande **aucun produit et aucun montage**, et c’est volontaire : l’effet juridique et le statut religieux pointent ici dans des directions opposées, ce qui est exactement la situation où un site n’a rien à décider. Le volet patrimonial se traite avec un notaire, la règle avec un savant. Et une « solution héritage » proposée par un site commercial mérite d’être lue avec les deux moitiés en tête.',
     ],
     category: 'Pratique',
-    related: ['heritage-succession-france', 'riba-interet-islam', 'credit-immobilier-halal', 'enterrement-musulman-france', 'divorce-religieux-civil-france'],
+    related: ['heritage-succession-france', 'riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'enterrement-musulman-france', 'divorce-religieux-civil-france'],
+  },
+  {
+    slug: 'assurance-auto-obligatoire-halal',
+    question: 'L’assurance auto obligatoire est-elle halal ?',
+    verdict: '⚠️ Obligatoire par la loi — admise à ce titre',
+    short:
+      'La loi française l’impose, et plusieurs conseils de fatwa admettent l’assurance commerciale quand elle est obligatoire — dans la limite de ce qu’elle exige.',
+    answer: [
+      'La question n’est pas « l’assurance commerciale est-elle permise » — celle-là est traitée ailleurs sur ce site, et la réponse majoritaire y est sévère. La question est : **qu’est-ce que l’obligation légale change ?** Parce qu’en France, rouler assuré n’est pas un choix de prudence, et le refus n’est pas une option discrète.',
+      'Ce que dit la loi, d’abord, et elle est nette. L’**article L. 211-1 du code des assurances** impose que tout véhicule terrestre à moteur soit couvert, pour circuler, par une assurance garantissant la responsabilité civile — celle des dommages causés aux tiers. Et le manquement n’est pas une contravention : l’**article L. 324-2 du code de la route** en fait un **délit**, puni de **3 750 € d’amende**, constitué même **par négligence** — laisser un véhicule en circulation sans couverture suffit. S’y ajoutent des peines complémentaires possibles : suspension du permis jusqu’à trois ans, annulation, confiscation ou immobilisation du véhicule. Une amende forfaitaire de **500 €** existe pour la procédure simplifiée, et le délit ne retire pas de points.',
+      'Le reproche religieux, ensuite, parce qu’il faut le dire avant la dérogation et non après. L’assurance commerciale à prime fixe est, dans la position majoritaire des savants contemporains, tenue pour problématique au titre du **gharar** (l’incertitude), du **ribâ** et du **maysir** (la spéculation). L’**Académie internationale du fiqh islamique**, réunie en deuxième session à Djeddah en **décembre 1985**, a adopté sur ce point sa **résolution n° 9** : le contrat d’assurance commerciale à prime périodique fixe comporte un gharar majeur qui vicie le contrat, et l’alternative conforme est l’**assurance coopérative** (taʿāwunī), fondée sur la donation et l’entraide — la résolution appelant les États musulmans à créer des organismes d’assurance et de réassurance coopératives.',
+      '**Et c’est l’obligation légale qui ouvre l’exception, pas le confort.** Le **Conseil européen de la fatwa et de la recherche** admet la souscription d’une assurance commerciale pour un véhicule **là où la loi l’impose**, au titre de la nécessité et du besoin, en invitant à s’y limiter. Le raisonnement se comprend dans les deux sens : on ne peut obéir à la loi sans ce contrat, et la couverture protège d’abord **le droit de la victime** à être indemnisée — ce qui est un intérêt que la jurisprudence islamique reconnaît. Ce n’est donc pas une permission générale de s’assurer : c’est une dérogation adossée à une contrainte.',
+      'La conséquence pratique est précise, et c’est là que la plupart des pages s’arrêtent trop tôt. **Ce que la loi française exige, c’est la responsabilité civile** — ce qu’on appelle au guichet « l’assurance au tiers ». Tout ce qui s’ajoute par-dessus — tous risques, vol, bris de glace, garanties du conducteur, assistance — est un **choix commercial, pas une obligation légale**, et le raisonnement de la dérogation ne le couvre pas de lui-même : il invite au contraire à se limiter au nécessaire. La lecture honnête n’est donc pas « l’assurance auto est halal », mais : la part obligatoire a un fondement reconnu, le reste retourne au débat général. Pour cette part-là, demande à un savant.',
+      'Deux remarques pour finir, qui sont des réserves et non des conseils. L’alternative que la résolution de 1985 recommande est coopérative ; **si une offre de type takaful existe pour l’automobile en France, elle se vérifie au cas par cas** — ce site ne recense pas ce marché et ne recommande aucun établissement. Et cette fiche ne te dit pas que ton contrat est en règle devant Dieu : elle te dit qu’une obligation légale est invoquée par des instances nommées comme fondement d’une dérogation, que cette dérogation a une limite, et que ta situation se traite avec un savant. Ce site décrit des avis ; il n’en délivre aucun.',
+    ],
+    category: 'Pratique',
+    related: ['assurance-vie-halal', 'riba-interet-islam', 'credit-immobilier-halal', 'livret-a-interets-halal', 'heritage-succession-france'],
+  },
+  {
+    slug: 'livret-a-interets-halal',
+    question: 'Le Livret A est-il halal, et que faire des intérêts ?',
+    verdict: '⚠️ Son intérêt est du ribâ — à sortir sans en profiter',
+    short:
+      'Un Livret A verse un intérêt, et cet intérêt est du ribâ. L’avis répandu : le sortir de son patrimoine, sans intention d’aumône ni attente de récompense.',
+    answer: [
+      'Commençons par la distinction que toute la suite suppose, parce qu’elle est souvent manquée : **ce n’est pas la banque qui pose la question ici, c’est la rémunération.** Un compte courant ordinaire ne verse pas d’intérêt — c’est un service, et on le paie. Un livret, lui, en verse : c’est sa raison d’être. Le relevé annuel tranche, pas le nom du produit — cherche la ligne des intérêts versés, et tu sauras de quel côté tu es.',
+      'Le statut de cet intérêt n’est pas un cas limite. L’intérêt bancaire est du **ribâ**, et l’interdiction du principe ne divise aucune école — c’est l’un des points les plus fermement établis de la jurisprudence. Les montages complexes se discutent parce qu’il y a une marge commerciale, un risque partagé, un bien acheté puis revendu. Ici, il n’y a rien de tel : il y a du temps rémunéré, et c’est exactement la définition. **L’avis répandu chez les savants contemporains est donc d’éviter ce type de compte quand on le peut.**',
+      'Reste la question qui amène la plupart des gens ici, et qui est la plus mal comprise : **que faire des intérêts déjà reçus ?** L’avis répandu est que cet argent doit **sortir du patrimoine** et ne doit **pas servir à soi**. Et le point qui surprend : **ce n’est pas une aumône.** On s’en défait sans intention de sadaqa et sans en attendre de récompense — c’est une purification, pas un don méritoire. La distinction n’est pas du vocabulaire : celui qui compte cet argent comme son aumône de l’année se trompe deux fois, sur le don et sur le mérite. Les destinataires cités sont des personnes dans le besoin ou des œuvres d’intérêt général ; plusieurs avis écartent de le rendre à la banque, ce qui reviendrait à lui en laisser le bénéfice. Et il n’est pas nécessaire de prélever la somme exacte sur le compte : on peut en donner l’équivalent avec de l’argent dont on dispose.',
+      'Deux limites ferment la porte au calcul malin, et elles sont dans les mêmes avis. **On ne cherche pas à percevoir des intérêts pour avoir le plaisir de les donner** : la permission de se défaire d’un gain illicite n’est pas une permission de le produire. Et la question de savoir si l’on peut imputer sur ces intérêts les **frais que la banque prélève** est discutée, des avis allant dans les deux sens — ce site ne la tranche pas.',
+      'Enfin le cas concret, français, celui qui rend cette page utile plutôt que théorique. **Beaucoup de gens ont un Livret A sans l’avoir choisi** : ouvert par les parents dans l’enfance, ouvert le même jour que le compte, ou gardé par habitude. Il y a donc un solde, des intérêts versés chaque année, et une décision à prendre. Or **ce sont deux décisions séparées, et les confondre fait croire qu’il faut tout donner.** Le **capital** est à toi : il vient de ton travail ou d’un don, et il ne pose pas la question du ribâ. Seuls les **intérêts** la posent. Ce n’est pas ce que disent ces avis que de se dépouiller de son épargne.',
+      'Ce que cette fiche ne fait pas : elle ne te dit pas de fermer ton livret, ni de le garder. S’il y a des années d’intérêts accumulés, un livret au nom d’un enfant, ou une épargne dont tu as besoin, **demande à un savant** — ce sont des situations où le détail change la réponse. Ce site décrit des avis ; il n’en délivre aucun.',
+    ],
+    category: 'Pratique',
+    related: ['riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'assurance-vie-halal', 'zakat-al-fitr-montant'],
   },
   {
     slug: 'ghusl-grande-ablution',
