@@ -531,7 +531,7 @@ export const QUESTIONS: QA[] = [
       'Reste le plus utile au quotidien, en France : comment décliner sans blesser. Ce qui fonctionne le mieux tient en trois secondes — devancer le geste plutôt que le refuser : sourire franchement, poser la main sur le cœur en inclinant légèrement la tête, et dire bonjour avec chaleur. Une phrase simple suffit si l’on demande : « je ne serre pas la main, c’est par respect, sans aucune froideur ». Dans un cadre professionnel, faire ce geste dès l’entrée dans la pièce et pour tout le monde évite qu’il soit perçu comme dirigé contre quelqu’un. Ce qui heurte n’est presque jamais le refus lui-même : c’est la main laissée en suspens.',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'anniversaire-halal', 'souhaiter-noel-halal', 'sport-combat-halal', 'mauvais-oeil-protection', 'porter-or-homme-islam'],
+    related: ['psy-therapie-islam', 'anniversaire-halal', 'souhaiter-noel-halal', 'sport-combat-halal', 'mauvais-oeil-protection', 'porter-or-homme-islam', 'voile-travail-france'],
   },
   {
     slug: 'ramadan-voyage-jeune',
@@ -2983,7 +2983,25 @@ export const QUESTIONS: QA[] = [
       'Deux réflexes pratiques, qui ne sont pas du droit mais du bon sens. **Demander tôt, et par écrit.** Tôt, parce que le seul motif de refus recevable est la désorganisation du service ou de l’entreprise — et qu’une désorganisation est bien plus facile à invoquer deux jours avant que deux mois avant. Par écrit, parce que c’est ce qui rend visible le motif d’un refus, s’il y en a un. Et anticiper : les dates de l’Aïd suivent le calendrier lunaire et avancent d’environ onze jours chaque année, ce qui les fait tomber un jour de semaine différent à chaque fois.',
     ],
     category: 'Pratique',
-    related: ['priere-travail', 'zakat-al-fitr-montant', 'travailler-restaurant-alcool', 'caissier-scanner-alcool'],
+    related: ['priere-travail', 'zakat-al-fitr-montant', 'travailler-restaurant-alcool', 'caissier-scanner-alcool', 'voile-travail-france'],
+  },
+  {
+    slug: 'voile-travail-france',
+    question: 'Le voile est-il autorisé au travail en France ?',
+    verdict: '⚠️ Privé : oui, sauf clause — public : non',
+    short:
+      'Dans le privé, aucune interdiction générale : seule une clause de neutralité justifiée et proportionnée peut restreindre. Dans le public, c’est non.',
+    answer: [
+      'Disons d’abord ce que cette fiche **ne** traite pas, parce que la confusion commence là. Elle ne dit pas ce que la religion demande en matière de tenue : c’est une question qui se pose à un savant, pas à une page web, et ce site ne tranche pas à ta place. Elle traite **ce que la loi française permet et interdit** — une matière vérifiable, à plusieurs étages, et presque toujours racontée de travers. La différence qui gouverne tout n’est pas « voile ou pas » : c’est **privé ou public**.',
+      '**Dans le privé, il n’existe aucune interdiction générale.** Aucune loi n’interdit le voile dans une entreprise privée. Le principe est la liberté, et la restriction est l’exception — ce qui veut dire que c’est à l’employeur de la justifier, pas à la salariée de justifier sa tenue. L’employeur ne peut restreindre qu’au moyen d’une **clause de neutralité inscrite au règlement intérieur**, prévue par l’**article L. 1321-2-1 du code du travail**, introduit par la loi Travail du **8 août 2016**. Le texte pose ses conditions : la restriction doit être **justifiée** par d’autres libertés et droits fondamentaux ou par les nécessités du bon fonctionnement de l’entreprise, et **proportionnée** au but recherché. Et comme elle vit dans le règlement intérieur, elle suit la procédure de celui-ci : consultation des représentants du personnel, dépôt, affichage. **Une clause qui n’existe pas ne s’improvise pas à l’oral.**',
+      'La jurisprudence resserre encore, et c’est décisif en pratique : la **Cour de cassation** en fait une lecture plus étroite que le texte, réservant la clause aux salariés **en contact avec la clientèle**. Avant la loi, l’affaire dite **Baby Loup** (Cour de cassation, assemblée plénière, **25 juin 2014**) exigeait déjà que la règle soit justifiée par la nature de la tâche et proportionnée au but poursuivi.',
+      '**Et voici le point le plus utile, celui que presque personne ne connaît : le souhait du client ne suffit pas.** Dans l’affaire **Bougnaoui** (Cour de justice de l’Union européenne, **14 mars 2017**, C-188/15), une ingénieure d’études d’une société de conseil avait été licenciée après qu’un client avait demandé à ne plus la voir porter le foulard. La Cour juge que l’« exigence professionnelle essentielle et déterminante » renvoie à une exigence **objective**, et qu’elle **ne couvre pas des considérations subjectives** telles que la volonté de l’employeur de tenir compte des souhaits particuliers d’un client. Le même jour, l’arrêt **Achbita** (C-157/15) admet à l’inverse qu’une règle interne de neutralité **générale et indifférenciée** puisse, elle, être justifiée. Les deux ensemble donnent la règle : **une règle écrite, générale et proportionnée, peut-être ; la préférence d’un client, non.**',
+      '**Dans le public, c’est non — et sans nuance selon le poste.** Tout agent public est tenu à la neutralité et exerce ses fonctions dans le respect de la laïcité, obligation inscrite au statut général des fonctionnaires par la **loi du 20 avril 2016** : il s’abstient notamment de manifester ses opinions religieuses. L’**avis Marteaux du Conseil d’État, 3 mai 2000**, en donne la portée exacte : l’interdiction s’applique **quelles que soient les fonctions** exercées — au guichet comme dans un bureau sans public. Deux précisions qui surprennent souvent. Elle vaut pour l’ensemble des services publics, **y compris assurés par un organisme de droit privé** : c’est la mission qui décide, pas le statut de l’employeur. Et un **usager** n’est pas un agent — la neutralité s’impose à qui sert, pas à qui est servi.',
+      'Ce qu’on fait concrètement, avant de conclure quoi que ce soit. **Demander le règlement intérieur** : il est déposé et affiché, et le lire est un droit. S’il ne contient pas de clause de neutralité, une interdiction verbale n’a pas de base légale. Et une différence de traitement fondée sur les convictions religieuses est **interdite** par l’**article L. 1132-1 du code du travail**, qui vise les sanctions, les licenciements et les mesures discriminatoires — ce qui ouvre des recours : le Défenseur des droits, l’inspection du travail, le conseil de prud’hommes, un syndicat.',
+      'Ce site n’est ni un avocat ni un mufti, et les deux manquent ici pour des raisons différentes. Pour un cas réel — surtout s’il y a une sanction ou un licenciement en jeu — **va voir un juriste, un syndicat ou le Défenseur des droits** : le détail d’un règlement intérieur et d’un poste change la réponse. Et pour ce que la religion demande de ta tenue, **demande à un savant**. Cette fiche t’a donné l’étage du droit, parce que c’est celui qu’on peut vérifier.',
+    ],
+    category: 'Pratique',
+    related: ['conge-aid-travail', 'priere-travail', 'travailler-restaurant-alcool', 'priere-vendredi-obligatoire', 'serrer-la-main-islam', 'ia-halal'],
   },
   {
     slug: 'priere-travail',
@@ -3026,7 +3044,7 @@ export const QUESTIONS: QA[] = [
       'À connaître en France : de nombreuses mosquées font deux services successifs le vendredi précisément pour les travailleurs, et la khutba de certaines commence à 12h30 pile pour tenir dans une pause d’une heure. Renseigne-toi sur les horaires exacts des mosquées autour du travail — c’est souvent ça, la solution introuvable.',
     ],
     category: 'Prière',
-    related: ['priere-travail', 'rattraper-prieres-ratees', 'horaires-priere-voyage'],
+    related: ['priere-travail', 'rattraper-prieres-ratees', 'horaires-priere-voyage', 'voile-travail-france'],
   },
   {
     slug: 'ablutions-chaussettes',
