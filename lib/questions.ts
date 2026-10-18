@@ -2968,7 +2968,7 @@ export const QUESTIONS: QA[] = [
       'Réflexes pratiques : mémorise les deux ou trois logos qui correspondent à ton niveau d’exigence et cherche-les sur les emballages ; méfie-toi du « halal » écrit sans aucun logo (auto-déclaration sans contrôle) ; et sache que les sites des certificateurs listent leurs entreprises contrôlées — vérifiable en deux minutes de téléphone au rayon boucherie.',
     ],
     category: 'Pratique',
-    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal'],
+    related: ['abattage-etourdissement-halal', 'viande-supermarche-halal', 'isla-delice-halal', 'ia-halal'],
   },
   {
     slug: 'conge-aid-travail',
@@ -3097,7 +3097,7 @@ export const QUESTIONS: QA[] = [
       'Trois précisions qui règlent 90 % des questions : elle se fait pour toute décision licite (mariage, travail, déménagement, études) — pas pour choisir entre le licite et l’illicite ; le rêve n’est PAS la réponse attendue — la réponse vient par la facilitation ou le blocage des circonstances et par l’apaisement du cœur ; et on peut la répéter plusieurs jours si le cœur reste partagé. Après l’istikhara, tu consultes des gens de confiance (istishâra) et tu décides : la confiance en Allah n’annule pas la réflexion.',
     ],
     category: 'Prière',
-    related: ['rattraper-prieres-ratees', 'priere-travail', 'invocation-voyage'],
+    related: ['rattraper-prieres-ratees', 'priere-travail', 'invocation-voyage', 'ia-halal'],
   },
   {
     slug: 'se-convertir-islam',
