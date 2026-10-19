@@ -2983,7 +2983,7 @@ export const QUESTIONS: QA[] = [
       'Deux réflexes pratiques, qui ne sont pas du droit mais du bon sens. **Demander tôt, et par écrit.** Tôt, parce que le seul motif de refus recevable est la désorganisation du service ou de l’entreprise — et qu’une désorganisation est bien plus facile à invoquer deux jours avant que deux mois avant. Par écrit, parce que c’est ce qui rend visible le motif d’un refus, s’il y en a un. Et anticiper : les dates de l’Aïd suivent le calendrier lunaire et avancent d’environ onze jours chaque année, ce qui les fait tomber un jour de semaine différent à chaque fois.',
     ],
     category: 'Pratique',
-    related: ['priere-travail', 'zakat-al-fitr-montant', 'travailler-restaurant-alcool', 'caissier-scanner-alcool', 'voile-travail-france'],
+    related: ['priere-travail', 'zakat-al-fitr-montant', 'travailler-restaurant-alcool', 'caissier-scanner-alcool', 'voile-travail-france', 'voile-ecole-france'],
   },
   {
     slug: 'voile-travail-france',
@@ -3001,7 +3001,25 @@ export const QUESTIONS: QA[] = [
       'Ce site n’est ni un avocat ni un mufti, et les deux manquent ici pour des raisons différentes. Pour un cas réel — surtout s’il y a une sanction ou un licenciement en jeu — **va voir un juriste, un syndicat ou le Défenseur des droits** : le détail d’un règlement intérieur et d’un poste change la réponse. Et pour ce que la religion demande de ta tenue, **demande à un savant**. Cette fiche t’a donné l’étage du droit, parce que c’est celui qu’on peut vérifier.',
     ],
     category: 'Pratique',
-    related: ['conge-aid-travail', 'priere-travail', 'travailler-restaurant-alcool', 'priere-vendredi-obligatoire', 'serrer-la-main-islam', 'ia-halal'],
+    related: ['conge-aid-travail', 'priere-travail', 'travailler-restaurant-alcool', 'priere-vendredi-obligatoire', 'serrer-la-main-islam', 'ia-halal', 'voile-ecole-france'],
+  },
+  {
+    slug: 'voile-ecole-france',
+    question: 'Le voile est-il autorisé à l’école en France ?',
+    verdict: '⚠️ Interdit aux élèves du public — permis à l’université',
+    short:
+      'Interdit aux élèves des écoles, collèges et lycées publics depuis la loi de 2004. Mais la loi ne vise ni l’université, ni les parents d’élèves.',
+    answer: [
+      'Comme la fiche voisine sur le travail, celle-ci dit l’étage du **droit** — pas ce que la religion demande d’une tenue, qui se pose à un savant et que ce site ne tranche pas. Et elle commence par la distinction qui manque presque toujours : **« l’école » n’est pas un seul lieu en droit.** L’élève du public, l’étudiant à l’université, le personnel, le parent accompagnateur relèvent de quatre régimes différents, et la plupart des discussions sur le sujet les mélangent — ce qui fait croire à des interdictions qui n’existent pas, et à des libertés qui n’existent pas non plus.',
+      '**Les élèves du public : c’est interdit, et le texte est court.** La loi du **15 mars 2004** (loi n° 2004-228), codifiée à l’**article L. 141-5-1 du code de l’éducation**, dispose : « Dans les écoles, les collèges et les lycées publics, le port de signes ou tenues par lesquels les élèves manifestent **ostensiblement** une appartenance religieuse est interdit. » La **circulaire du 18 mai 2004** donne les exemples retenus : le voile islamique, **quel que soit le nom qu’on lui donne**, la kippa, ou une croix de dimension manifestement excessive. Cette précision répond à une question qu’on nous pose souvent : **hijab, foulard, khimar, fichu — le nom ne change rien à l’analyse juridique.** Et la circulaire pose la contrepartie, ignorée dans les deux sens : **les signes discrets, non ostensibles, peuvent être portés librement.** Le mot qui fait le droit, ici, c’est « ostensiblement ».',
+      '**La procédure est un droit, et elle n’est pas une porte de sortie.** Le second alinéa du même article impose que le règlement intérieur rappelle qu’une procédure disciplinaire est **précédée d’un dialogue avec l’élève**. Le Bulletin officiel ajoute aussitôt la limite : ce dialogue **n’est pas une négociation** et ne saurait justifier de dérogation à la loi. Les deux moitiés sont vraies en même temps — une exclusion immédiate sans dialogue n’est pas la procédure prévue, et un dialogue n’ouvre aucune exception.',
+      '**L’abaya, depuis 2023.** Une note de service d’**août 2023** a qualifié les abayas et les qamis de signes ostensibles au sens de ce même article. Le **Conseil d’État** a jugé que cette interdiction — opposable indépendamment du comportement de l’élève — ne dépassait pas la compétence du ministre et ne méconnaissait pas l’article L. 141-5-1. C’est donc du droit en vigueur, et non une consigne officieuse qu’on pourrait discuter au portail.',
+      '**L’université : la loi de 2004 ne s’y applique pas.** C’est la confusion la plus répandue, et elle coûte cher à qui y croit. Ses dispositions ne concernent pas les **usagers** du service public de l’enseignement supérieur : le *Guide de la laïcité à l’université* publié par **France Universités en 2023** l’énonce et en tire la conséquence — le voile, la kippa ou le couvre-chef sikh **ne peuvent pas être proscrits par une réglementation universitaire**. La réserve posée par le ministère : ne porter atteinte ni aux activités d’enseignement et de recherche, ni à l’ordre public. En revanche les **personnels**, enseignants-chercheurs compris, restent tenus à la neutralité (**article L. 141-6 du code de l’éducation**). Et le **voile intégral**, qui couvre le visage, est une autre question entièrement : il est interdit dans l’espace public depuis la loi de **2010**, université comprise.',
+      '**Les parents d’élèves ne sont pas visés par la loi de 2004** — c’est la question des mères qui accompagnent une sortie scolaire, et elle revient sans cesse. Et voici un point que cette fiche **ne tranche pas, parce que nous ne l’avons pas vérifié** : le régime des établissements **privés**, sous contrat ou non. Le texte de 2004 nomme les écoles, collèges et lycées **publics** ; pour un établissement privé, la règle vit dans son propre règlement, et elle se **lit** — elle ne se devine pas. Nous préférons marquer ce vide que le combler.',
+      'Que faire, concrètement. Si une interdiction est opposée à un élève, **demander sur quel fondement** et lire le règlement intérieur de l’établissement, qui est communicable. Et pour un litige réel — conseil de discipline, exclusion — il y a des recours et des gens dont c’est le métier : le **Défenseur des droits**, une association, un avocat. Pour ce que la religion demande de ta tenue, **un savant**. Cette fiche donne le droit parce que c’est la partie qui se vérifie ; le reste ne nous appartient pas.',
+    ],
+    category: 'Pratique',
+    related: ['voile-travail-france', 'conge-aid-travail', 'serrer-la-main-islam', 'ia-halal', 'prenom-musulman-obligatoire'],
   },
   {
     slug: 'priere-travail',
@@ -3408,7 +3426,7 @@ export const QUESTIONS: QA[] = [
       'Le conseil pratique le plus utile, en France : un changement d’état civil est une démarche longue et rarement nécessaire. Beaucoup de convertis gardent leur prénom officiel et se font appeler autrement dans la communauté, sans que personne y trouve à redire. Si le sens de ton prénom te pose question, c’est une conversation à avoir avec un savant ou l’imam de ta mosquée — il connaîtra le cas.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition', 'mariage-religieux-civil-france'],
+    related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition', 'mariage-religieux-civil-france', 'voile-ecole-france'],
   },
   {
     slug: 'reseaux-sociaux-islam',
