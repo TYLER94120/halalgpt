@@ -68,9 +68,78 @@ const MOTS_OUTILS = new Set(
     'autre autres chaque plusieurs certains certaines quelques aucun aucune').split(' '),
 );
 
+/**
+ * Les noms de marque recolles, quand la ponctuation les a coupes.
+ *
+ * MESURE DU 20 OCTOBRE 2026. « M&M’s » devient « m m s » a l'indexation :
+ * trois jetons de moins de trois caracteres, donc trois jetons jetes. La marque
+ * n'etait indexee sous AUCUNE forme, et `mms-halal` etait introuvable par son
+ * nom — la seule facon d'y arriver etait de ne pas le chercher.
+ *
+ * Ce n'est pas un cas isole mais une famille : c'est aussi « cocacola » tape
+ * sans trait d'union, « 7up », « drpepper ». Un lecteur ne reproduit pas la
+ * ponctuation officielle d'une marque, et le format le plus porteur du site est
+ * precisement « [marque] halal ou pas ».
+ *
+ * On ne recolle donc QUE ce qui est coupe par une ponctuation interne autre que
+ * l'apostrophe, et c'est volontaire : l'apostrophe est deja traitee comme un
+ * espace (« l'alcool » se trouve en tapant « alcool »), et la recoller
+ * fabriquerait « lalcool », « dun », « nest » — des jetons que personne ne
+ * cherche, dans un index qui voyage sur le reseau et que `test-recherche`
+ * surveille au kilo-octet.
+ */
+const PONCTUATION_INTERNE = /[a-z0-9][&.+\-/][a-z0-9]/;
+
+/**
+ * Les enclitiques du francais — ce qui suit un trait d'union dans une
+ * inversion : « est-il », « sont-ils », « peut-on », « annule-t-il ».
+ *
+ * PREMIERE VERSION DE `recolle` SANS CETTE LISTE : elle fabriquait « estil »,
+ * « sontils », « peuton », « annuletil » pour 200 des 246 fiches — un index
+ * alourdi de jetons que personne ne tape, et un garde-fou noye dans son propre
+ * bruit, qui « passait » sans plus rien verifier. Le defaut visible etait le
+ * bruit ; le defaut reel etait que la mesure ne mesurait plus.
+ *
+ * Cette liste est grammaticale et CLOSE : les pronoms du francais ne changent
+ * pas. Elle ne vieillit donc pas comme vieillirait une liste de marques.
+ */
+const ENCLITIQUES = new Set(
+  ('il elle ils elles on ce t je tu nous vous moi toi lui leur le la les y en').split(' '),
+);
+
+function recolle(texte: string): string[] {
+  // On travaille sur le texte AVANT `aplati`, apostrophes comprises. Premiere
+  // version de cette fonction : elle lisait la sortie d'`aplati`, ou
+  // « M&M’s » est deja devenu « m&m s » — l'apostrophe ayant ete remplacee par
+  // un espace en amont. Elle ne pouvait donc recoller que « mm », jamais
+  // « mms », et le defaut qu'elle devait reparer survivait a sa reparation.
+  const brut = texte
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase();
+
+  const colles: string[] = [];
+  for (const morceau of brut.split(/[^a-z0-9&.+\-/’']+/)) {
+    // Le declencheur reste une ponctuation interne AUTRE que l'apostrophe —
+    // sans quoi « l'alcool » fabriquerait « lalcool ». Mais une fois declenche,
+    // on recolle tout, apostrophe incluse : « m&m’s » donne « mms », qui est
+    // exactement ce que le lecteur tape.
+    if (!PONCTUATION_INTERNE.test(morceau.replace(/[’']/g, ''))) continue;
+
+    // « est-il » n'est pas une marque. Si un segment apres un trait d'union est
+    // un enclitique, c'est une inversion grammaticale : on ne recolle pas.
+    const segments = morceau.split('-');
+    if (segments.slice(1).some((s) => ENCLITIQUES.has(s.replace(/[^a-z0-9]/g, '')))) continue;
+
+    const mot = morceau.replace(/[^a-z0-9]/g, '');
+    if (mot.length >= 3) colles.push(mot);
+  }
+  return colles;
+}
+
 function motsDistinctifs(texte: string, dejaVus: Set<string>): string[] {
   const gardes: string[] = [];
-  for (const mot of aplati(texte).split(/[^a-z0-9]+/)) {
+  for (const mot of [...aplati(texte).split(/[^a-z0-9]+/), ...recolle(texte)]) {
     if (mot.length < 3 || MOTS_OUTILS.has(mot) || dejaVus.has(mot)) continue;
     dejaVus.add(mot);
     gardes.push(mot);
@@ -130,7 +199,11 @@ export function construireIndex(
 ): EntreeIndex[] {
   return fiches.map((fiche) => ({
     fiche,
-    titre: aplati(fiche.question),
+    // Le titre porte aussi la forme recollee : « M&M’s » doit se trouver en
+    // tapant « mms », et au POIDS DU TITRE, parce que c'en est un — pas au
+    // poids d'une mention dans le developpement. Cela vaut aussi quand le
+    // corps n'est pas arrive : la recherche hors reseau trouve la marque.
+    titre: [aplati(fiche.question), ...recolle(fiche.question)].join(' '),
     etiquette: aplati(`${fiche.verdict} ${fiche.category}`),
     fort: corps[fiche.slug]?.[0] ?? '',
     corps: corps[fiche.slug]?.[1] ?? '',
@@ -142,6 +215,48 @@ export function motsDeLaSaisie(saisie: string): string[] {
   return aplati(saisie)
     .split(/[^a-z0-9]+/)
     .filter(Boolean);
+}
+
+/**
+ * La longueur minimale d'un terme cherchable — la MEME que celle de l'index.
+ *
+ * `motsDistinctifs` n'indexe pas les mots de moins de trois caracteres : seuls,
+ * ils ne distinguent rien. La saisie, elle, les gardait, et c'est cette
+ * asymetrie qui produisait le defaut mesure le 20 octobre 2026. Un terme d'une
+ * lettre n'est jamais absent d'un titre : il etait donc toujours « present », et
+ * il ramenait tout.
+ *
+ *     « m »   -> 243 fiches sur 246, restaurant-halal-lyon en tete
+ *     « a »   -> 246 sur 246
+ *     « m&m » -> 243, la ponctuation en faisant deux termes « m »
+ *
+ * Le dernier cas est le plus parlant : qui cherchait les M&M's recevait le
+ * catalogue entier, presente comme une reponse. **Un resultat faux coute plus
+ * cher qu'une absence de resultat, parce qu'il ne se signale pas.**
+ */
+const LONGUEUR_MIN = 3;
+
+/**
+ * Les termes qu'on peut reellement chercher dans l'index.
+ *
+ * On ecarte terme par terme, et non la saisie entiere : « e120 de » doit
+ * continuer de trouver le carmin. Si rien ne reste, la saisie n'est pas encore
+ * une recherche — « ra », pendant la frappe de « ramadan », n'est pas une
+ * question : c'est un debut de mot.
+ */
+function termesCherchables(saisie: string): string[] {
+  const termes = motsDeLaSaisie(saisie).filter((terme) => terme.length >= LONGUEUR_MIN);
+  if (termes.length > 0) return termes;
+
+  // DERNIER RECOURS, et il a un sens precis : le lecteur a bien tape au moins
+  // trois caracteres, mais la ponctuation les a emiettes. « m&m » donne deux
+  // termes « m », tous deux trop courts — et pourtant la question posee est
+  // claire. On recolle alors ce qu'il a tape, et « m&m » retrouve « mms ».
+  //
+  // Le garde-fou tient quand meme : le seuil s'applique a ce que la PERSONNE a
+  // tape, pas aux miettes. Qui tape « m » n'a toujours rien cherche.
+  const colle = aplati(saisie).replace(/[^a-z0-9]/g, '');
+  return colle.length >= LONGUEUR_MIN ? [colle] : [];
 }
 
 /**
@@ -192,7 +307,7 @@ export interface Resultat {
  * ce qui n'est pas la meme chose qu'un resultat vide.
  */
 export function chercher(index: EntreeIndex[], saisie: string): Resultat[] | null {
-  const termes = motsDeLaSaisie(saisie);
+  const termes = termesCherchables(saisie);
   if (!termes.length) return null;
 
   const trouves: Resultat[] = [];

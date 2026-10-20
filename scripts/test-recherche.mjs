@@ -189,6 +189,147 @@ dire(
   `« ${pire.saisie} » : ${pire.n} sur ${QUESTIONS.length}`,
 );
 
+// ── 5 bis. Trop court pour etre une question ─────────────────────────────
+//
+// MESURE DU 20 OCTOBRE 2026, avant reparation :
+//
+//     « m »   -> 243 fiches sur 246, restaurant-halal-lyon en tete
+//     « a »   -> 246 sur 246
+//     « m&m » -> 243, la ponctuation en faisant deux termes « m »
+//
+// La cause etait une asymetrie : `motsDistinctifs` n'indexe pas les mots de
+// moins de trois caracteres, la saisie les gardait. Un terme d'une lettre n'est
+// jamais absent d'un titre, donc il etait toujours « present », donc il
+// ramenait tout. Quelqu'un qui cherchait les M&M's recevait le catalogue
+// entier PRESENTE COMME UNE REPONSE — et un resultat faux coute plus cher
+// qu'une absence de resultat, parce qu'il ne se signale pas.
+//
+// Ce bloc est volontairement DERIVE DES DONNEES, pas ecrit a la main. Le
+// 5 septembre, deux fixtures codant en dur « ce mot n'existe pas encore » sont
+// devenues fausses parce que le contenu avait avance ; le 19 octobre j'ai
+// renonce pour la meme raison a une liste de synonymes. Ici il n'y a rien a
+// perimer : les saisies courtes sont fabriquees A PARTIR du catalogue, et la
+// regle enoncee ne nomme aucun mot.
+console.log('\n── Trop court pour etre une question ─────────────────────────');
+{
+  const courtes = new Set();
+  for (const q of QUESTIONS) {
+    for (const mot of `${corps[q.slug][0]} ${corps[q.slug][1]}`.split(' ')) {
+      if (!mot) continue;
+      courtes.add(mot.slice(0, 1));
+      if (mot.length >= 2) courtes.add(mot.slice(0, 2));
+    }
+  }
+  const fautives = [...courtes].filter((s) => chercher(INDEX, s) !== null);
+  dire(
+    fautives.length === 0,
+    `les ${courtes.size} saisies de une ou deux lettres du catalogue ne declenchent pas de recherche`,
+    fautives.length
+      ? `${fautives.length} en declenchent encore : ${fautives.slice(0, 6).join(', ')}`
+      : 'elles montrent les categories, ce qui n\'est pas un resultat vide',
+  );
+}
+
+// LA REGLE QUE J'AI D'ABORD ECRITE ETAIT FAUSSE, et c'est elle qui vaut d'etre
+// racontee. J'avais exige qu'aucun debut de mot de trois lettres ne ramene plus
+// de la moitie du catalogue. Le garde a immediatement signale « con » : 220
+// fiches sur 246. J'ai cru a un troisieme defaut de la meme famille.
+//
+// Verification avant correction : pour « con », les cinq fiches dont le TITRE
+// porte le mot sortent en tete — se-convertir-islam, conge-aid-travail — et la
+// longue traine suit. Et « hal » ramene 174 fiches dont 173 par le titre : c'est
+// le sujet du site, pas un defaut.
+//
+// Autrement dit, le parti pris du moteur est de CLASSER, pas d'exclure, et il
+// est ecrit noir sur blanc dans `recherche.ts` : « le titre pese six fois le
+// corps, c'est ce rapport qui fait qu'une recherche large reste lisible ». Mon
+// assertion contredisait la conception et aurait oblige a casser la recherche
+// pendant la frappe — « coch » doit trouver « cochenille ».
+//
+// Ce qui est vrai et qui compte, c'est donc le CLASSEMENT, et c'est ce qu'on
+// verifie ici. Le point 3 l'exige deja pour quatre mots choisis a la main ;
+// cette version-ci le fait pour tous les debuts de mot du site.
+{
+  const prefixes = new Set();
+  for (const q of QUESTIONS) {
+    for (const mot of `${corps[q.slug][0]} ${corps[q.slug][1]}`.split(' ')) {
+      if (mot.length >= 3) prefixes.add(mot.slice(0, 3));
+    }
+  }
+  const desordres = [];
+  for (const s of prefixes) {
+    const r = chercher(INDEX, s) ?? [];
+    const dernierTitre = r.reduce((n, x, i) => (x.score >= 8 ? i : n), -1);
+    const premierCorps = r.findIndex((x) => x.score < 4);
+    if (dernierTitre !== -1 && premierCorps !== -1 && dernierTitre > premierCorps) {
+      desordres.push(`${s} (titre en ${dernierTitre}, corps en ${premierCorps})`);
+    }
+  }
+  dire(
+    desordres.length === 0,
+    `pour les ${prefixes.size} debuts de mot du site, le titre passe avant le corps`,
+    desordres.length ? desordres.slice(0, 5).join(' · ') : 'une recherche large reste lisible',
+  );
+}
+
+// ── 5 ter. Une marque se trouve sans sa ponctuation ──────────────────────
+//
+// MESURE DU 20 OCTOBRE 2026 : « M&M’s » devenait « m m s » a l'indexation —
+// trois jetons de moins de trois caracteres, donc trois jetons jetes. La marque
+// n'etait indexee sous AUCUNE forme, et `mms-halal` etait introuvable par son
+// nom. Meme famille : « cocacola » tape sans trait d'union.
+//
+// Un lecteur ne reproduit pas la ponctuation officielle d'une marque, et le
+// format le plus porteur du site est « [marque] halal ou pas ».
+//
+// Derive des donnees, comme le bloc precedent : les orthographes testees sont
+// extraites des titres eux-memes. Une marque ajoutee demain est couverte sans
+// qu'on touche a ce fichier.
+console.log('\n── Une marque se trouve sans sa ponctuation ──────────────────');
+{
+  const PONCT = /[a-zA-Z0-9][&.+\-/][a-zA-Z0-9]/;
+  const ENCLITIQUES = new Set(
+    ('il elle ils elles on ce t je tu nous vous moi toi lui leur le la les y en').split(' '),
+  );
+  const aTester = [];
+  for (const q of QUESTIONS) {
+    for (const morceau of q.question.split(/[^a-zA-Z0-9&.+\-/’']+/)) {
+      const nu = morceau.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+      if (!PONCT.test(nu.replace(/[’']/g, ''))) continue;
+      // Les inversions du francais — « est-il », « peut-on » — ne sont pas des
+      // noms : elles sont exclues du recollage, donc elles n'ont rien a tester.
+      if (nu.split('-').slice(1).some((s) => ENCLITIQUES.has(s.replace(/[^a-z0-9]/g, '')))) continue;
+      const colle = nu.replace(/[^a-z0-9]/g, '');
+      if (colle.length >= 3) aTester.push({ slug: q.slug, colle, morceau: morceau.trim() });
+    }
+  }
+  const manquants = aTester.filter(({ slug, colle }) => !slugs(colle).includes(slug));
+  dire(
+    manquants.length === 0,
+    `les ${aTester.length} nom(s) a ponctuation interne se trouvent recolles`,
+    manquants.length
+      ? manquants.map((m) => `« ${m.colle} » ne ramene pas ${m.slug}`).join(' · ')
+      : aTester.map((m) => `${m.morceau}→${m.colle}`).join(', '),
+  );
+
+  // LA CONTREPARTIE, et pourquoi elle se mesure dans l'INDEX et non dans les
+  // resultats. Premiere version de ce bloc : « quil » ne doit rien ramener. Il
+  // ramenait `maquillage-ramadan` — parce que « quil » est a l'interieur de
+  // « maquillage », et que la recherche au milieu des mots du titre est voulue
+  // et documentee. Mon attente etait fausse, pas le moteur.
+  //
+  // Ce qu'on veut vraiment dire est plus precis : une contraction a apostrophe
+  // ne doit pas FABRIQUER de jeton. On regarde donc l'index lui-meme.
+  const jetons = new Set();
+  for (const q of QUESTIONS) for (const z of corps[q.slug]) for (const m of z.split(' ')) if (m) jetons.add(m);
+  const fabriques = ['lalcool', 'dun', 'quil', 'nest', 'sil'].filter((m) => jetons.has(m));
+  dire(
+    fabriques.length === 0,
+    'aucune contraction a apostrophe ne fabrique de jeton dans l\'index',
+    fabriques.length ? fabriques.join(', ') : `${jetons.size} jetons distincts`,
+  );
+}
+
 // ── 6. Le poids de l'index, qui voyage sur le reseau ─────────────────────
 console.log('\n── Le poids de ce qu\'on telecharge ───────────────────────────');
 const octets = JSON.stringify({ fiches: QUESTIONS.length, corps }).length;
