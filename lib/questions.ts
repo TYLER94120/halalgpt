@@ -3211,7 +3211,24 @@ export const QUESTIONS: QA[] = [
       'L’ordre pratique est simple : la mairie d’abord, le nikah ensuite, le même jour si on veut. Deux situations sortent du cadre de cette fiche et demandent un vrai conseil : un mariage contracté à l’étranger, dont la transcription en France suit ses propres règles, et un nikah déjà célébré sans acte civil — auquel cas la question se pose à un notaire ou à un avocat pour les conséquences patrimoniales, et à un imam pour le reste. Pas à un site.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'prenom-musulman-obligatoire', 'heritage-succession-france', 'divorce-religieux-civil-france', 'garde-enfants-divorce-france'],
+    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'mahr-dot-mariage-islam', 'prenom-musulman-obligatoire', 'heritage-succession-france', 'divorce-religieux-civil-france', 'garde-enfants-divorce-france'],
+  },
+  {
+    slug: 'mahr-dot-mariage-islam',
+    question: 'La dot (mahr) en islam : à qui et combien ?',
+    verdict: '📖 Un droit de l’épouse, pas un prix pour sa famille',
+    short:
+      'Le mahr est un droit de l’épouse elle-même, pas une somme versée à sa famille. Aucun montant n’est fixé, et l’échéance — immédiate ou différée — change tout.',
+    answer: [
+      'Commençons par la confusion la plus répandue, parce qu’elle fait du tort à des familles entières : **le mahr n’est pas un prix payé au père de la mariée.** Ce n’est ni un achat, ni une compensation versée à une belle-famille. Les juristes musulmans s’accordent à y voir un droit de **l’épouse elle-même**, dont elle dispose comme elle l’entend — elle peut le garder, le placer, le dépenser, ou n’en rien faire. Personne d’autre n’a de titre dessus.',
+      'Sur quoi cette lecture s’appuie, et jusqu’où elle va exactement. Le Coran ordonne, en **4:4**, de remettre aux épouses leur dot ; une traduction courante rend le verset par « Et donnez aux épouses leur dot (mahr), de bonne grâce ». **Et il faut être précis ici** : le verset s’adresse aux maris, il ne dit pas en toutes lettres « la dot lui appartient ». Ce qui l’implique, c’est la suite du même verset — si elles vous en abandonnent quelque chose de bon gré, vous pouvez en disposer. On ne peut remettre volontairement que ce qui est à soi. La conclusion est donc une **lecture**, partagée par les juristes, et non la lettre du texte : la distinction mérite d’être dite plutôt que lissée.',
+      '**Combien ?** Aucun montant n’est fixé, et c’est voulu : le mahr s’accorde entre les époux et se nomme dans le contrat. Les écoles divergent sur l’existence d’un **minimum**, et ce site ne tranche pas ce point — c’est une question à poser à un savant, pas à une page. Ce qui ne divère pas : il doit être **réel**. Un mahr convenu n’est pas un ornement de cérémonie, c’est un engagement, et un engagement dont le montant est fixé pour la forme n’est plus un engagement.',
+      '**Et voici ce qui crée les vrais problèmes, des années plus tard : l’échéance.** Le mahr peut être versé **immédiatement**, au moment du mariage, ou **différé** — dû plus tard, souvent en cas de décès ou de séparation. Les deux formes sont connues et pratiquées. Mais un mahr différé est une **dette**, et une dette dont personne n’a gardé trace est une dette que personne ne peut prouver. C’est là que la question cesse d’être théorique : au moment où elle est réclamée, celui qui devait n’est parfois plus là pour confirmer.',
+      '**Ce que cette fiche ne peut pas te dire, et le dire est plus utile que de l’inventer.** Nous n’avons **pas pu établir** qu’un juge français ordonnerait le paiement d’un mahr. Nous n’avons trouvé aucune décision que nous ayons pu lire nous-mêmes ; ce qui circule sur le sujet est du commentaire de cabinets, pas de la jurisprudence vérifiable, et plusieurs de ces commentaires affirment au contraire que le juge civil ne traite pas cette question. **Donc : ne compte pas là-dessus comme si c’était acquis.** Si tu veux qu’un engagement de mahr ait une force en France, la personne à voir est un **notaire** — c’est lui qui sait ce qui peut être écrit, enregistré et rendu opposable, et c’est vrai quelle que soit la réponse à la question qu’on n’a pas pu trancher.',
+      'Un dernier point, et il relie cette fiche à sa voisine. **Sans mariage civil, l’épouse est juridiquement une concubine** : pas de régime matrimonial, pas de succession, pas de réversion. Un mahr différé posé sur cette situation-là s’appuie donc sur un socle déjà fragile. L’ordre pratique ne change pas : la mairie, puis le nikah. Pour le détail religieux — montant, minimum, différé, renonciation — **demande à un savant** ; pour le rendre opposable, **un notaire**. Ce site décrit ; il ne décide pas, et il ne devine pas.',
+    ],
+    category: 'Pratique',
+    related: ['mariage-religieux-civil-france', 'divorce-religieux-civil-france', 'heritage-succession-france', 'garde-enfants-divorce-france', 'riba-interet-islam'],
   },
   {
     slug: 'divorce-religieux-civil-france',
@@ -3227,7 +3244,7 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique est la même que pour le mariage, à l’envers : **les deux démarches sont distinctes et il faut faire les deux.** La procédure civile — avocat, juge aux affaires familiales — est la seule qui produise des effets juridiques : pension, résidence des enfants, partage des biens. La démarche religieuse se règle auprès d’un imam. N’en faire qu’une laisse à moitié lié, et c’est presque toujours celui ou celle des deux qui a le moins de ressources qui en paie le prix.',
     ],
     category: 'Pratique',
-    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'credit-immobilier-halal', 'deuil-idda-veuve', 'garde-enfants-divorce-france'],
+    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'mahr-dot-mariage-islam', 'deuil-idda-veuve', 'garde-enfants-divorce-france'],
   },
   {
     slug: 'garde-enfants-divorce-france',
@@ -3243,7 +3260,7 @@ export const QUESTIONS: QA[] = [
       'Deux renvois, et une phrase qui vaut plus que les deux. L’avocat pour la procédure, un savant pour la règle. Et surtout : **le parent qui règle tout à l’amiable sans jamais passer devant le juge est celui qui n’a rien à opposer le jour où ça se passe mal.** C’est presque toujours le même des deux.',
     ],
     category: 'Pratique',
-    related: ['divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'adoption-islam', 'heritage-succession-france', 'deuil-idda-veuve'],
+    related: ['divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'adoption-islam', 'heritage-succession-france', 'deuil-idda-veuve', 'mahr-dot-mariage-islam'],
   },
   {
     slug: 'heritage-succession-france',
