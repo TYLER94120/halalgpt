@@ -274,7 +274,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'medicaments-gelules-halal',
     question: 'Les médicaments en gélules (gélatine) sont-ils halal ?',
-    verdict: '⚠️ Permis en cas de nécessité',
+    verdict: '⚠️ Permis par nécessité — la règle de la darura',
     short:
       'Les gélules contiennent souvent de la gélatine animale. La nécessité médicale les rend permises ; des alternatives végétales existent.',
     answer: [
@@ -465,7 +465,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'jeux-video-halal',
     question: 'Les jeux vidéo sont-ils halal ?',
-    verdict: '⚠️ Permis en soi — c’est le contenu et le temps qui posent question',
+    verdict: '⚠️ Licite en soi selon la majorité — le temps décide',
     short:
       'Jouer n’est pas interdit en soi : le divertissement licite l’est. Ce qui change le verdict, c’est ce que le jeu contient et la place qu’il prend — les prières manquées d’abord.',
     answer: [
@@ -479,7 +479,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'priere-voiture',
     question: 'Peut-on prier dans la voiture ?',
-    verdict: '⚠️ Surérogatoire oui — obligatoire seulement si l’on ne peut pas s’arrêter',
+    verdict: '⚠️ La majorité : surérogatoire oui, obligatoire non',
     short:
       'La prière surérogatoire se fait en voiture, sur le modèle du Prophète ﷺ qui priait sur sa monture. La prière obligatoire demande de s’arrêter : elle se fait debout et orientée, sauf empêchement réel.',
     answer: [
@@ -3640,7 +3640,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'porter-or-homme-islam',
     question: 'Un homme peut-il porter de l’or ?',
-    verdict: '❌ Non pour l’or et la soie — permis pour les femmes',
+    verdict: '❌ Or et soie : non pour l’homme selon les 4 écoles',
     short:
       'L’or et la soie pure sont écartés pour les hommes par les quatre écoles, et permis aux femmes. L’argent reste permis aux hommes, dont la bague.',
     answer: [
