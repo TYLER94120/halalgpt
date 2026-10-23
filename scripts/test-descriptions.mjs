@@ -80,6 +80,43 @@ const ampute = QUESTIONS.filter((q) => q.short.length < 80);
 dire(ampute.length === 0, 'le resume affiche sur la page reste entier',
   ampute.map((q) => q.slug).join(', '));
 
+// ── 5 bis. Aucun marqueur de gras hors du corps ──────────────────────────
+//
+// POURQUOI CE GARDE EXISTE. `lib/emphase.ts` transforme `**gras**` en <strong>,
+// mais il ne s'applique qu'a UN seul champ : `answer`, via `enMorceaux` dans
+// `app/q/[slug]/page.tsx`. Les trois autres partent tels quels — `question`
+// dans le <title> et le <h1>, `short` dans la META DESCRIPTION, `verdict` sur
+// sa propre ligne.
+//
+// Autrement dit, deux asterisques egares dans un `short` s'afficheraient
+// LITTERALEMENT dans les resultats de recherche Google. C'est la ligne la plus
+// publique du site, et la seule que beaucoup de gens liront jamais.
+//
+// MESURE DU 23 OCTOBRE 2026 : zero marqueur dans ces trois champs, des deux
+// cotes — `origin/main` comme la branche. L'invariant tient donc deja. Mais
+// RIEN ne le protegeait, alors que la branche compte 265 passages en gras dans
+// les corps contre 2 sur main : plus on en ecrit, plus la probabilite qu'un
+// s'egare monte. Un garde pose AVANT la premiere faute est exactement ce qu'on
+// n'a pas eu pour le DNS en aout.
+//
+// Derive des donnees, rien a perimer : on lit les champs, on ne liste aucun mot.
+{
+  const MARQUEURS = /\*\*|__/;
+  const egares = [];
+  for (const q of QUESTIONS) {
+    for (const champ of ['question', 'short', 'verdict']) {
+      if (MARQUEURS.test(q[champ])) egares.push(`${q.slug} (${champ})`);
+    }
+  }
+  dire(
+    egares.length === 0,
+    `aucun marqueur de gras dans les ${QUESTIONS.length * 3} champs rendus tels quels`,
+    egares.length
+      ? `${egares.length} : ${egares.slice(0, 5).join(', ')} — seul answer passe par enMorceaux`
+      : 'question, short et verdict sont propres',
+  );
+}
+
 // ── 6. Les descriptions de hub decrivent leur PROPRE categorie ───────────
 // Le 19 septembre, deux hubs sur neuf annoncaient le contenu d'un autre.
 //
