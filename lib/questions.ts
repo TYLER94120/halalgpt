@@ -3147,7 +3147,7 @@ export const QUESTIONS: QA[] = [
       'Côté pratique en France : se présenter à une mosquée permet d’obtenir un certificat de conversion — inutile pour la validité devant Allah, mais demandé pour certaines démarches (mariage religieux, visa pour l’Omra ou le Hajj). Beaucoup de mosquées proposent aussi un accompagnement pour les nouveaux convertis. Un conseil que répètent tous ceux qui sont passés par là : trouve une communauté bienveillante et une personne de confiance à qui poser tes questions — la solitude est le vrai obstacle des premiers mois, pas la difficulté de la religion.',
     ],
     category: 'Pratique',
-    related: ['prenom-musulman-obligatoire', 'ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition', 'enterrement-musulman-france', 'mariage-religieux-civil-france'],
+    related: ['prenom-musulman-obligatoire', 'ghusl-grande-ablution', 'rattraper-prieres-ratees', 'halal-definition', 'enterrement-musulman-france', 'mariage-religieux-civil-france', 'circoncision-islam-france'],
   },
   {
     slug: 'enterrement-musulman-france',
@@ -3186,7 +3186,7 @@ export const QUESTIONS: QA[] = [
     question: 'Une veuve peut-elle sortir pendant son deuil ?',
     verdict: '✅ Oui — la ‘idda n’est pas une réclusion',
     short:
-      'Le délai de viduité est de quatre mois et dix jours. Mais ce n’est pas une réclusion : travailler, faire ses démarches et sortir par nécessité sont permis.',
+      'Le délai de viduité est de quatre mois et dix jours. Mais pour la majorité des savants ce n’est pas une réclusion : sortir par nécessité est permis.',
     answer: [
       'Commençons par le malentendu, parce qu’il fait des dégâts réels : beaucoup croient que la ‘idda enferme une veuve chez elle. **La position majoritaire dit le contraire**, et la confusion a des conséquences concrètes en France — les semaines qui suivent un décès sont précisément celles où il y a le plus de choses à faire, et une femme persuadée de ne pas pouvoir sortir se retrouve à ne rien pouvoir régler.',
       'Ce que la ‘idda est, d’abord. Pour une veuve, le délai de viduité dure **quatre mois et dix jours**. Il s’accompagne d’un deuil (ihdâd) qui demande de la sobriété dans la parure et dans les sorties, et de garder le domicile conjugal comme résidence principale. **Mais ce n’est pas une réclusion.** La majorité des savants distingue nettement les sorties par nécessité — le travail, le médecin, les courses, les démarches — qui sont permises, et les sorties d’agrément, qui sont déconseillées pendant cette période.',
@@ -3443,7 +3443,25 @@ export const QUESTIONS: QA[] = [
       'Le conseil pratique le plus utile, en France : un changement d’état civil est une démarche longue et rarement nécessaire. Beaucoup de convertis gardent leur prénom officiel et se font appeler autrement dans la communauté, sans que personne y trouve à redire. Si le sens de ton prénom te pose question, c’est une conversation à avoir avec un savant ou l’imam de ta mosquée — il connaîtra le cas.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition', 'mariage-religieux-civil-france', 'voile-ecole-france'],
+    related: ['se-convertir-islam', 'ghusl-grande-ablution', 'halal-definition', 'mariage-religieux-civil-france', 'voile-ecole-france', 'circoncision-islam-france'],
+  },
+  {
+    slug: 'circoncision-islam-france',
+    question: 'La circoncision est-elle obligatoire en islam ?',
+    verdict: '📖 Deux écoles disent obligatoire, deux disent sunna',
+    short:
+      'Deux écoles la tiennent pour obligatoire, deux pour une sunna fortement recommandée. En France, l’acte rituel n’est pas remboursé — seul l’acte médical l’est.',
+    answer: [
+      'Si tu as entendu deux réponses opposées, les deux personnes avaient raison — elles ne suivaient pas la même école. Les écoles **chaféite** et **hanbalite** tiennent la circoncision des garçons — le **khitan** — pour une **obligation** ; les écoles **hanafite** et **malikite** y voient une **sunna mu’akkada**, une tradition fortement recommandée, certains hanafites tardifs se rapprochant de l’obligation. **Aucune ne dit qu’il ne faut pas la faire.** Le désaccord ne porte donc pas sur l’acte mais sur son poids — et c’est pour cela qu’un parent entend « obligatoire » d’un côté et « sunna » de l’autre sans que personne ne se trompe.',
+      '**L’âge : aucune école n’en fixe un.** Ce qui est rapporté comme point d’accord est seulement qu’elle se fasse **avant la puberté**. Au-delà, les avis divergent jusque sur le septième jour — recommandé chez les chaféites, écarté par les autres écoles. Donc « le septième jour » est un usage de famille ou de pays, pas une règle qui s’imposerait à tous : si on te l’annonce comme une obligation, tu peux demander de quelle école elle vient.',
+      '**Et voici la partie que personne ne dit avant, celle qui coûte cher : le remboursement.** En France, la circoncision **rituelle n’est pas remboursée** : ni par l’Assurance Maladie, ni par une mutuelle — une mutuelle complète la Sécurité sociale, donc là où celle-ci ne prend rien, elle ne prend rien non plus. **Seule une circoncision à indication médicale** — un phimosis, par exemple — est prise en charge, sur le tarif conventionné. C’est donc un acte à prévoir au budget, intégralement.',
+      'Sur le montant, ce site ne donnera pas de chiffre, et c’est volontaire : **les tarifs qui circulent en ligne viennent de comparateurs commerciaux qui se recopient les uns les autres**, et un prix bouge. Demande un **devis écrit** au praticien — c’est la seule donnée qui vaille pour ton cas, et elle est facile à obtenir.',
+      'Deux points pratiques, avant de prendre rendez-vous. **L’accord des deux parents** est demandé, et le praticien **peut refuser** : un acte non thérapeutique n’est pas une obligation de la profession, et un refus n’est ni une hostilité ni une illégalité. Quant au statut juridique exact de l’acte rituel en France, **nous ne l’avons pas établi** — il repose en pratique sur une tolérance plutôt que sur un texte qui le nomme, et nous n’avons trouvé aucun règlement qui tranche. Nous préférons marquer ce vide que le combler.',
+      '**Et une chose que ce site ne laissera pas implicite.** Cette fiche parle des garçons. Toute excision ou coupure des organes génitaux d’une fille est un **crime** en droit français, poursuivi comme une mutilation — et rien sur cette page ne lui offre le moindre couvert religieux. Si quelqu’un, dans ton entourage, invoque la religion pour cela, cette personne est dans l’erreur et hors la loi : ce n’est pas une discussion de famille, cela se dit à un médecin.',
+      'Pour le reste : le **poids** de l’acte selon ton école et ta situation se demande à un savant ; l’**acte** se discute avec un médecin, qui dira aussi ce que l’anesthésie implique selon l’âge. Ce site transmet les avis et le cadre ; il ne décide ni de l’un ni de l’autre.',
+    ],
+    category: 'Pratique',
+    related: ['prenom-musulman-obligatoire', 'se-convertir-islam', 'adoption-islam', 'don-organes-islam', 'medicaments-gelules-halal'],
   },
   {
     slug: 'reseaux-sociaux-islam',
@@ -3550,7 +3568,7 @@ export const QUESTIONS: QA[] = [
       'Deux questions concrètes reviennent toujours. La première est juridique : en France, l’adoption plénière et la kafala ne sont pas la même procédure et n’ont pas les mêmes effets. C’est un dossier à monter avec un professionnel du droit de la famille, et la transmission du patrimoine se prépare avec un notaire — n’improvise pas sur ce terrain. La seconde touche la vie de famille : un enfant recueilli ne devient pas automatiquement mahram en grandissant. La solution classique, quand l’enfant est accueilli tout petit, est l’allaitement (radâ‘a), qui crée un lien de lait reconnu ; sinon, les familles appliquent les règles habituelles à l’adolescence. Là encore, expose ton cas précis à un savant : les situations sont trop différentes pour une règle unique.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition', 'mariage-religieux-civil-france', 'divorce-religieux-civil-france', 'garde-enfants-divorce-france'],
+    related: ['don-organes-islam', 'prenom-musulman-obligatoire', 'psy-therapie-islam', 'halal-definition', 'mariage-religieux-civil-france', 'divorce-religieux-civil-france', 'garde-enfants-divorce-france', 'circoncision-islam-france'],
   },
   {
     slug: 'qibla-direction-priere',
