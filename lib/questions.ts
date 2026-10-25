@@ -1658,7 +1658,7 @@ export const QUESTIONS: QA[] = [
       'Le timing compte : elle doit être versée avant la prière de l’Aïd (idéalement les derniers jours de Ramadan pour que la distribution arrive à temps). Donnée après la prière, elle ne compte plus que comme une aumône ordinaire. Les mosquées et associations sérieuses s’occupent de la redistribution locale.',
     ],
     category: 'Ramadan',
-    related: ['dattes-rompre-jeune', 'ramadan-voyage-jeune', 'femme-enceinte-ramadan', 'conge-aid-travail'],
+    related: ['dattes-rompre-jeune', 'ramadan-voyage-jeune', 'femme-enceinte-ramadan', 'conge-aid-travail', 'allocation-chomage-halal'],
   },
   // ─── ALIMENTATION (animaux, viandes, concepts) ─────────────────────────────
   {
@@ -3310,7 +3310,24 @@ export const QUESTIONS: QA[] = [
       'Deux remarques pour finir, qui sont des réserves et non des conseils. L’alternative que la résolution de 1985 recommande est coopérative ; **si une offre de type takaful existe pour l’automobile en France, elle se vérifie au cas par cas** — ce site ne recense pas ce marché et ne recommande aucun établissement. Et cette fiche ne te dit pas que ton contrat est en règle devant Dieu : elle te dit qu’une obligation légale est invoquée par des instances nommées comme fondement d’une dérogation, que cette dérogation a une limite, et que ta situation se traite avec un savant. Ce site décrit des avis ; il n’en délivre aucun.',
     ],
     category: 'Pratique',
-    related: ['assurance-vie-halal', 'riba-interet-islam', 'credit-immobilier-halal', 'livret-a-interets-halal', 'heritage-succession-france'],
+    related: ['assurance-vie-halal', 'riba-interet-islam', 'credit-immobilier-halal', 'livret-a-interets-halal', 'heritage-succession-france', 'allocation-chomage-halal'],
+  },
+  {
+    slug: 'allocation-chomage-halal',
+    question: 'Les allocations chômage sont-elles halal ?',
+    verdict: '⚠️ Une assurance, pas une aumône — avis divergents',
+    short:
+      'Ce n’est pas de l’argent donné : l’assurance chômage est financée par des cotisations. La licéité divise les savants, mais tous écartent la fraude.',
+    answer: [
+      'Commençons par la prémisse que la plupart des gens ont fausse, parce qu’elle change la question : **ce n’est pas de la charité.** En droit français, l’allocation chômage (l’**ARE**) est une **assurance** — financée par des **cotisations patronales** assises sur les salaires et par la **CSG** prélevée sur les revenus, et versée seulement à qui a travaillé une durée minimale. La ligne du salarié a bien disparu de la fiche de paie le **1er octobre 2018**, remplacée par une hausse de **1,7 point de CSG** — mais le droit est resté **adossé au travail**. À la question « est-ce une aumône ? », il y a donc une réponse factuelle, et c’est non.',
+      '**Ce que cela change, et ce que cela ne change pas.** Cela dissout l’inquiétude de vivre d’un don — une inquiétude réelle, qui arrête des gens. Mais cela ne tranche pas la question juridique, et ce site ne fera pas semblant : **la licéité de ces allocations est un point de divergence entre savants**, et nous n’avons trouvé aucune instance qui la règle de manière citable. C’est donc un désaccord réel, pas une réponse qu’on te cacherait.',
+      '**En revanche, un point fait l’accord de tous les avis consultés, y compris les plus stricts : la fraude est écartée.** Percevoir ce à quoi on a droit est une chose ; l’obtenir par le mensonge en est une autre. Le principe invoqué est le **respect des engagements pris** — y compris envers un État non musulman. Autrement dit, les conditions posées par celui qui verse font partie de ce qu’on a accepté.',
+      'Les pièges concrets, en France, et ils sont précis. **Travailler sans le déclarer** tout en percevant l’allocation : c’est une fraude. **Ne pas signaler un changement de situation** : même chose. Et celui qui surprend le plus — **partir vivre à l’étranger** : lorsque la résidence en France est une condition du versement, continuer à toucher l’allocation de l’extérieur revient à rompre la condition qu’on a acceptée. Cela se vérifie **auprès de France Travail avant de partir**, pas après — c’est l’organisme que tout le monde appelle encore Pôle emploi, renommé en 2024.',
+      '**Et le revers, qui compte autant.** Le droit existe, il est conditionné à avoir travaillé, et il ne se réclame pas tout seul. Celui qui s’en prive par scrupule se prive d’une somme que son travail a financée — et le scrupule porte, on vient de le voir, sur une question que les savants n’ont pas tranchée, non sur un interdit établi. Un doute se nomme ; il ne se transforme pas en interdiction par prudence.',
+      'Pour ta situation — et surtout si tu hésites entre deux avis entendus — **demande à un savant**. Pour tes droits, la durée d’affiliation et les conditions exactes, **France Travail** : ce sont eux qui détiennent la réponse, et elle dépend de ton parcours. Ce site transmet le cadre et nomme la divergence ; il ne tranche ni l’un ni l’autre.',
+    ],
+    category: 'Pratique',
+    related: ['riba-interet-islam', 'livret-a-interets-halal', 'assurance-auto-obligatoire-halal', 'credit-immobilier-halal', 'conge-aid-travail'],
   },
   {
     slug: 'livret-a-interets-halal',
@@ -3327,7 +3344,7 @@ export const QUESTIONS: QA[] = [
       'Ce que cette fiche ne fait pas : elle ne te dit pas de fermer ton livret, ni de le garder. S’il y a des années d’intérêts accumulés, un livret au nom d’un enfant, ou une épargne dont tu as besoin, **demande à un savant** — ce sont des situations où le détail change la réponse. Ce site décrit des avis ; il n’en délivre aucun.',
     ],
     category: 'Pratique',
-    related: ['riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'assurance-vie-halal', 'zakat-al-fitr-montant'],
+    related: ['riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'assurance-vie-halal', 'zakat-al-fitr-montant', 'allocation-chomage-halal'],
   },
   {
     slug: 'ghusl-grande-ablution',
