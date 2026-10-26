@@ -1500,7 +1500,7 @@ export const QUESTIONS: QA[] = [
       'Par précaution, certains préfèrent programmer les injections non urgentes après la rupture du jeûne. Mais ne repousse jamais un soin nécessaire pour le jeûne : la religion facilite, elle ne met pas la santé en danger.',
     ],
     category: 'Ramadan',
-    related: ['prise-de-sang-ramadan', 'medicament-ramadan', 'gouttes-yeux-ramadan', 'avaler-salive-ramadan'],
+    related: ['prise-de-sang-ramadan', 'medicament-ramadan', 'gouttes-yeux-ramadan', 'avaler-salive-ramadan', 'antidepresseurs-halal'],
   },
   {
     slug: 'prise-de-sang-ramadan',
@@ -1544,7 +1544,7 @@ export const QUESTIONS: QA[] = [
       'Réflexe pratique : avant Ramadan, vois ton médecin (beaucoup connaissent bien la question) pour adapter les horaires de prise sur suhur et iftar quand c’est médicalement possible. Ne modifie jamais un traitement seul.',
     ],
     category: 'Ramadan',
-    related: ['piqure-ramadan', 'medicaments-gelules-halal', 'femme-enceinte-ramadan', 'maquillage-ramadan', 'oubli-manger-ramadan'],
+    related: ['piqure-ramadan', 'medicaments-gelules-halal', 'femme-enceinte-ramadan', 'maquillage-ramadan', 'oubli-manger-ramadan', 'antidepresseurs-halal'],
   },
   {
     slug: 'vomir-ramadan',
@@ -3361,6 +3361,24 @@ export const QUESTIONS: QA[] = [
     related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles', 'wudu-annule-quoi', 'lentilles-contact-ablutions', 'platre-pansement-ablutions'],
   },
   {
+    slug: 'antidepresseurs-halal',
+    question: 'Les antidépresseurs sont-ils halal ?',
+    verdict: '✅ Un soin, pas un manque de foi — ne pas l’arrêter seul',
+    short:
+      'Prendre un traitement n’est pas un manque de foi : les savants encouragent de se soigner, l’esprit compris. Et l’arrêter pour jeûner peut être dangereux.',
+    answer: [
+      'Prenons la vraie question d’abord, celle qui arrête des gens : **beaucoup renoncent à un traitement parce qu’on leur a dit que c’était manquer de confiance en Dieu**, ou qu’un croyant solide n’aurait pas besoin de cachets. Ce site répond déjà à cela pour la consultation : les savants contemporains encouragent de se soigner, et le hadith sur lequel ils s’appuient — « soignez-vous, car Allah n’a pas fait descendre de maladie sans faire descendre son remède » — **ne fait aucune exception pour l’esprit**. Et rien dans ce principe ne distingue un comprimé d’une conversation. **Refuser un soin par orgueil spirituel n’est pas de la piété.**',
+      'Ce qui change avec un médicament n’est donc pas religieux, c’est pratique : un traitement a une **dose**, un **horaire**, et un **sevrage**. Et ce qui suit vaut pour toute la famille — antidépresseur, anxiolytique, somnifère, régulateur de l’humeur, neuroleptique : les psychotropes, quel que soit le nom sur la boîte. C’est de là que vient le vrai danger de cette fiche — pas de la règle, mais du calendrier.',
+      '**Le Ramadan, et c’est la partie où l’erreur coûte cher.** La mécanique générale est ailleurs sur le site : un médicament avalé rompt le jeûne, et le malade est exempté. Mais le critère compte ici plus que la mécanique. L’exemption repose sur le **verset 2:184**, et la maladie qui la justifie est, comme le formulent les juristes, celle que le jeûne **aggraverait** ou dont il **retarderait la guérison**. Un traitement psychiatrique est précisément ce cas-là : **l’interrompre ou décaler ses prises de sa propre initiative n’est pas un petit ajustement.**',
+      '**Et un fait vérifié que personne ne dit.** Les carnets de suivi français remis aux patients sous **lithium** rangent **le jeûne parmi les situations qui font monter la lithiémie**, et le déconseillent : la déshydratation concentre le médicament. Une étude prospective menée sur des patients bipolaires en contexte de jeûne musulman observe la même chose — baisse de la filtration rénale, hausse des concentrations — en précisant que la littérature sur le sujet reste **limitée**. Détail utile pour lever un obstacle : **une prise de sang de contrôle ne demande pas d’être à jeun.**',
+      '**Quand en parler : avant le Ramadan, pas pendant.** La réponse appartient à celui qui prescrit — le **psychiatre**, ou le médecin généraliste qui suit le traitement — parce qu’elle dépend de la molécule, de la dose et de la personne — et ce site ne publiera pas une liste de symptômes qu’il n’a pas vérifiée. Trois questions valent la peine d’être posées au médecin : **est-ce que je peux jeûner avec ce traitement ; les horaires peuvent-ils être déplacés ; et à quels signes je dois rompre.** Les trois réponses s’écrivent en cinq minutes de consultation, et elles valent une année de tranquillité.',
+      'Les deux issues que les textes prévoient déjà, pour ne pas croire qu’on est coincé : **rattraper les jours** plus tard (verset 2:185), ou, si l’état dure, la **fidya** — nourrir un pauvre par jour manqué — que la fiche du site sur les médicaments au Ramadan détaille. Les écoles divergent sur le cas de quelqu’un qui redevient capable de jeûner après avoir versé la fidya : la divergence est réelle, et elle se pose à un savant.',
+      '**Rompre le jeûne sur avis médical n’est pas un échec.** L’exemption n’est pas une tolérance accordée à contrecœur, elle est dans le texte. Pour la règle et pour ton cas : un savant. Pour le traitement : le médecin qui l’a prescrit. Et dans tous les cas, la seule phrase de cette page qu’il faut retenir : **on n’arrête pas un traitement psychiatrique tout seul.**',
+    ],
+    category: 'Vie quotidienne',
+    related: ['psy-therapie-islam', 'medicament-ramadan', 'medicaments-gelules-halal', 'piqure-ramadan', 'femme-enceinte-ramadan'],
+  },
+  {
     slug: 'psy-therapie-islam',
     question: 'Consulter un psychologue est-il halal ?',
     verdict: '✅ Permis et encouragé — les savants contemporains sont d’accord',
@@ -3372,7 +3390,7 @@ export const QUESTIONS: QA[] = [
       'La seule vraie vigilance porte sur le contenu des conseils : un thérapeute qui recommanderait des solutions contraires à ta religion doit être écouté avec discernement, comme on le ferait pour n’importe quel conseil. En pratique, beaucoup de musulmans francophones cherchent un praticien qui comprend leur cadre culturel et religieux — cela existe et facilite le suivi — mais un bon professionnel respectueux de tes valeurs fait très bien l’affaire. Et si l’urgence est là (pensées suicidaires), on appelle le 3114, numéro national gratuit : préserver une vie est un principe majeur de l’islam.',
     ],
     category: 'Vie quotidienne',
-    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'adoption-islam', 'enterrement-musulman-france', 'vaccin-gelatine-porcine-halal', 'deuil-idda-veuve', 'autopsie-islam-france'],
+    related: ['don-organes-islam', 'mauvais-oeil-protection', 'medicaments-gelules-halal', 'halal-definition', 'antidepresseurs-halal', 'enterrement-musulman-france', 'vaccin-gelatine-porcine-halal', 'deuil-idda-veuve', 'autopsie-islam-france'],
   },
   {
     slug: 'mauvais-oeil-protection',
