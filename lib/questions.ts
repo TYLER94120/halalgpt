@@ -1515,7 +1515,7 @@ export const QUESTIONS: QA[] = [
       'Deux précisions que les laboratoires français rencontrent tous les jours. La glycémie au doigt d’un diabétique — une goutte de sang — ne pose aucun problème et ne doit surtout pas être sautée pendant le Ramadan, c’est précisément le mois où elle est la plus utile. Et le malaise après un prélèvement : si tu tournes de l’œil, on te fera boire, et c’est très bien ainsi — une journée de jeûne se rattrape, pas une chute. Préviens simplement le préleveur que tu jeûnes : ils y sont habitués et t’allongeront d’office.',
     ],
     category: 'Ramadan',
-    related: ['piqure-ramadan', 'medicament-ramadan', 'vomir-ramadan', 'gouttes-yeux-ramadan', 'fumer-ramadan'],
+    related: ['piqure-ramadan', 'medicament-ramadan', 'vomir-ramadan', 'gouttes-yeux-ramadan', 'fumer-ramadan', 'transfusion-don-sang-islam'],
   },
   {
     slug: 'gouttes-yeux-ramadan',
@@ -3179,7 +3179,7 @@ export const QUESTIONS: QA[] = [
       'En pratique : le service de pompes funèbres traite avec le parquet et connaît le circuit, c’est lui qu’il faut mettre dans la boucle tôt. Un avocat si le délai dépasse le mois sans explication. Et pour le volet religieux — la toilette funéraire, la manière de procéder avec un corps qui a été ouvert — une mosquée ou un service de pompes funèbres musulmanes, qui rencontrent ces cas. Pas un site.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'don-organes-islam', 'deuil-idda-veuve', 'heritage-succession-france', 'psy-therapie-islam'],
+    related: ['enterrement-musulman-france', 'don-organes-islam', 'deuil-idda-veuve', 'heritage-succession-france', 'psy-therapie-islam', 'transfusion-don-sang-islam'],
   },
   {
     slug: 'deuil-idda-veuve',
@@ -3376,7 +3376,7 @@ export const QUESTIONS: QA[] = [
       '**Rompre le jeûne sur avis médical n’est pas un échec.** L’exemption n’est pas une tolérance accordée à contrecœur, elle est dans le texte. Pour la règle et pour ton cas : un savant. Pour le traitement : le médecin qui l’a prescrit. Et dans tous les cas, la seule phrase de cette page qu’il faut retenir : **on n’arrête pas un traitement psychiatrique tout seul.**',
     ],
     category: 'Vie quotidienne',
-    related: ['psy-therapie-islam', 'medicament-ramadan', 'medicaments-gelules-halal', 'piqure-ramadan', 'femme-enceinte-ramadan'],
+    related: ['psy-therapie-islam', 'medicament-ramadan', 'medicaments-gelules-halal', 'piqure-ramadan', 'femme-enceinte-ramadan', 'transfusion-don-sang-islam'],
   },
   {
     slug: 'psy-therapie-islam',
@@ -3405,6 +3405,24 @@ export const QUESTIONS: QA[] = [
     ],
     category: 'Vie quotidienne',
     related: ['psy-therapie-islam', 'priere-istikhara', 'halal-definition'],
+  },
+  {
+    slug: 'transfusion-don-sang-islam',
+    question: 'Transfusion et don du sang : permis en islam ?',
+    verdict: '✅ Oui pour sauver une vie — unanimité rapportée',
+    short:
+      'Le sang hors du corps était tenu pour impur ; c’est la nécessité qui lève la réserve. Pour sauver une vie, l’accord rapporté est unanime.',
+    answer: [
+      'La réponse n’est pas « oui, évidemment », et c’est pour cela que cette page vaut d’être lue : **il y avait une vraie réserve à lever.** Le point de départ classique est double — le sang qui sort du corps est tenu pour **impur**, et il est une **partie du corps humain**, dont les juristes disent qu’elle doit être traitée avec respect. Quelqu’un qui n’a entendu que cette moitié-là peut en conclure qu’il faut refuser. Ce serait une erreur, et elle peut coûter très cher.',
+      'Ce qui lève la réserve est la **nécessité** — la règle de la *darura*, la même qui vaut pour un médicament. Et voici l’état précis de la question : **pour un malade dont la vie est en jeu sans transfusion immédiate, l’accord rapporté entre les savants est unanime.** C’est le cas qui compte à trois heures du matin aux urgences, et il n’y a pas de débat dessus. **Personne ne devrait refuser une transfusion, pour soi ou pour son enfant, en croyant que la religion l’interdit.**',
+      'Le don **sans urgence immédiate** est une question distincte, et honnêtement plus discutée. La majorité contemporaine le tient pour permis sous trois conditions : qu’il soit **volontaire**, **sans préjudice pour le donneur**, et qu’il serve à **sauver une vie**. Mais des savants nommés — le mufti Abdour Rahîm Lâdjpoûri est cité en ce sens — considèrent qu’en l’absence de nécessité le don n’est pas permis. Donc si on t’a répondu non, on ne t’a pas forcément mal renseigné : tu as entendu un avis minoritaire, et tu peux demander.',
+      '**Et voici ce que personne ne dit, alors que c’est vérifiable et que ça règle une condition à l’avance.** La condition qui inquiétait le plus les juristes — **qu’on ne vende pas** son sang — est satisfaite d’office en France, par la loi. L’Établissement français du sang énonce quatre valeurs : **anonymat, non-profit, volontariat, bénévolat**, et le don **ne peut être rémunéré sous aucune forme**. Le fondement est ancien : la **loi du 21 juillet 1952** interdit de faire commerce de son corps, et la **loi Aujaleu**, la même année, interdit tout profit tiré du sang offert. L’EFS a par ailleurs le **monopole de la collecte** des produits sanguins labiles — et ce qui précède vaut pour les trois formes de don qu’il organise : **sang total, plasma, plaquettes**. Le raisonnement ne change pas d’une forme à l’autre. Autrement dit : ce qui était une condition à vérifier est ici un pilier du droit.',
+      '**Pendant le Ramadan, un conseil pratique qui évite la question.** Les collectes ont lieu en journée, et donner son sang en jeûnant invite au malaise — la déshydratation s’ajoutant à la perte de volume. **Donne après la rupture du jeûne** et la question juridique ne se pose pas. Et si tu veux donner en journée tout en jeûnant : **nous n’avons pas établi ce point**, il se pose à un savant. Nous préférons marquer ce vide que le combler.',
+      'Deux limites de cette fiche, pour ne pas la lire de travers. Le **don d’organes** est une autre question, traitée à part sur ce site — un organe ne se renouvelle pas, le sang si, et les conseils de jurisprudence islamique ne les traitent pas de la même manière. Et les **critères d’admission** — âge, poids, délais entre deux dons, contre-indications — appartiennent à l’EFS et pas à nous : ils changent, et un critère périmé enverrait quelqu’un pour rien.',
+      'Pour la règle dans ta situation : **un savant**. Pour savoir si tu peux donner : **l’EFS**. Et la seule phrase de cette page qu’il faut retenir si tu n’en retiens qu’une : **dans une urgence vitale, l’accord rapporté est unanime.**',
+    ],
+    category: 'Vie quotidienne',
+    related: ['don-organes-islam', 'medicaments-gelules-halal', 'antidepresseurs-halal', 'prise-de-sang-ramadan', 'autopsie-islam-france'],
   },
   {
     slug: 'don-organes-islam',
