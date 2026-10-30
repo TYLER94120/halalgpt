@@ -1196,7 +1196,7 @@ export const QUESTIONS: QA[] = [
     question: 'Quick est-il halal ?',
     verdict: '⚠️ À vérifier restaurant par restaurant',
     short:
-      'Quick est la seule grande enseigne de burgers associée à une offre certifiée en France. Mais l’étendue de cette certification a changé : elle se vérifie sur place.',
+      'Quick est l’enseigne de burgers la plus associée au halal certifié en France. Mais l’étendue a bougé depuis le rachat : le certificat se vérifie sur place.',
     answer: [
       'Quick est la grande enseigne de burgers en France la plus associée à une offre halal certifiée — ce qui la distingue de McDonald’s. **Pour Burger King, cette fiche disait « n’en propose pas », et elle contredisait la fiche Burger King de ce site**, qui rapporte qu’une partie des Quick repris et convertis aurait conservé une certification, sans qu’aucune source ne publie d’adresses vérifiables. Deux pages du même site ne peuvent pas dire l’inverse l’une de l’autre : c’est la fiche Burger King qui fait foi, et elle ne tranche pas. Mais **l’étendue de cette certification a bougé** depuis le rachat de l’enseigne et la conversion d’une grande partie du réseau en Burger King : le nombre de Quick, et la part d’entre eux qui est certifiée, ne sont plus ce qu’ils étaient il y a quelques années.',
       'Et c’est là qu’il faut être franc sur ce que vaut l’information qui circule. **Les chiffres trouvables en ligne se contredisent** — sur le nombre de restaurants, sur la proportion certifiée, sur la date du dernier changement. Les pages qui les publient sont le plus souvent des guides commerciaux qui se recopient. Cette fiche ne reprendra donc aucun de ces chiffres : donner un compte qu’on ne peut pas vérifier est pire que de ne pas en donner.',
