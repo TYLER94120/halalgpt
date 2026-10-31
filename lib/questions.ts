@@ -3001,7 +3001,7 @@ export const QUESTIONS: QA[] = [
       'Ce site n’est ni un avocat ni un mufti, et les deux manquent ici pour des raisons différentes. Pour un cas réel — surtout s’il y a une sanction ou un licenciement en jeu — **va voir un juriste, un syndicat ou le Défenseur des droits** : le détail d’un règlement intérieur et d’un poste change la réponse. Et pour ce que la religion demande de ta tenue, **demande à un savant**. Cette fiche t’a donné l’étage du droit, parce que c’est celui qu’on peut vérifier.',
     ],
     category: 'Pratique',
-    related: ['conge-aid-travail', 'priere-travail', 'travailler-restaurant-alcool', 'priere-vendredi-obligatoire', 'serrer-la-main-islam', 'ia-halal', 'voile-ecole-france'],
+    related: ['conge-aid-travail', 'priere-travail', 'travailler-restaurant-alcool', 'priere-vendredi-obligatoire', 'serrer-la-main-islam', 'ia-halal', 'voile-ecole-france', 'barbe-islam'],
   },
   {
     slug: 'voile-ecole-france',
@@ -3695,6 +3695,24 @@ export const QUESTIONS: QA[] = [
     related: ['regrouper-deux-prieres', 'horaires-priere-voyage', 'priere-avion', 'rattraper-prieres-ratees', 'priere-vendredi-obligatoire'],
   },
   {
+    slug: 'barbe-islam',
+    question: 'La barbe est-elle obligatoire en islam ?',
+    verdict: '📖 Majorité : obligatoire — une partie dit sunna',
+    short:
+      'Majorité des savants : obligatoire. Une partie : sunna fortement recommandée. Et en France, un licenciement fondé sur la barbe a été jugé discriminatoire.',
+    answer: [
+      'Commençons par situer la règle, parce que cela explique tout le reste : **le Coran n’en parle pas.** La prescription vient de la **Sunna**, et notamment d’un hadith rapporté par al-Bukhârî qui distingue les croyants des polythéistes en demandant de **tailler la moustache et de laisser pousser la barbe**. Le dire n’est pas la diminuer : c’est la situer. Et cela explique pourquoi les écoles peuvent diverger sur son **poids**, là où elles ne divergent pas sur le porc.',
+      '**L’état de la question.** La majorité des savants des quatre écoles tiennent le fait de laisser pousser la barbe pour **obligatoire** (*wajib*) ; une partie y voit une **sunna mu’akkada**, fortement recommandée, dont l’abandon ne constitue pas un péché. Il y a quasi-convergence sur un point : **la raser entièrement** est tenu pour interdit. Et il y a divergence sur la **taille** — peut-on raccourcir, et au-delà de la longueur d’un poing ?',
+      '**Et une mise en garde honnête sur ce que tu vas lire ailleurs**, parce que c’est la partie utile. Les pages de vulgarisation sont **bien plus tranchées que les textes juridiques eux-mêmes** : plusieurs annoncent un « consensus » que les exposés mieux documentés ne soutiennent pas — ceux-là montrent un éventail, de l’interdit au toléré selon l’école. Une position précise **pour ton école** se demande donc à un savant, pas à une page web. Ce site transmet l’écart ; il ne le referme pas.',
+      '**Et la moitié française, que personne ne relie à cette question : ton employeur ne peut pas, en règle générale, t’imposer de te raser.** Arrêt de la **chambre sociale de la Cour de cassation du 8 juillet 2020** (n° 18-23.743) : un consultant d’une société de sécurité et de défense avait été licencié pour faute grave, l’employeur lui reprochant une barbe taillée de manière à exprimer des messages religieux et politiques avant une mission au Yémen pour des clients américains. La Cour a jugé le licenciement **nul pour discrimination**.',
+      'Deux motifs qui portent bien au-delà de cette affaire. D’abord : **en l’absence de règlement intérieur ou de note de service** posant l’exigence, l’injonction faite au salarié de revenir à « une apparence plus neutre » caractérise une **discrimination directe** fondée sur les convictions religieuses et politiques. Ensuite : **les demandes d’un client** au sujet d’une barbe pouvant être connotée religieusement **ne sauraient, par elles-mêmes**, constituer une exigence professionnelle essentielle et déterminante — c’est exactement le principe de l’arrêt Bougnaoui sur le voile, que ce site détaille ailleurs, étendu à la barbe.',
+      'Ce qu’il reste à l’employeur : une **clause de neutralité** au règlement intérieur peut restreindre, si la restriction est **justifiée** — par la sécurité, l’hygiène ou l’organisation du travail — et **proportionnée**. Dans cette affaire, l’employeur n’a démontré **ni le risque de sécurité précis**, ni quelle taille de barbe aurait été acceptable. La lecture pratique est donc la même que pour le voile : **demander sur quel fondement**, et lire le règlement intérieur, qui est communicable.',
+      'Pour le poids de la règle selon ton école : **un savant**. Si une sanction est en jeu au travail : **un juriste, un syndicat ou le Défenseur des droits** — l’arrêt de 2020 montre qu’un licenciement sur ce motif peut être annulé. Ce site donne l’étage du droit parce que c’est celui qui se vérifie, et il nomme la divergence religieuse plutôt que de choisir dedans.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['teinture-cheveux-islam', 'porter-or-homme-islam', 'voile-travail-france', 'chirurgie-esthetique-halal', 'piercing-halal'],
+  },
+  {
     slug: 'teinture-cheveux-islam',
     question: 'Peut-on se teindre les cheveux en islam ?',
     verdict: '✅ Oui — sauf le noir pur, largement déconseillé',
@@ -3706,7 +3724,7 @@ export const QUESTIONS: QA[] = [
       'Reste une question que beaucoup oublient et qui est la plus concrète : la teinture empêche-t-elle l’eau d’atteindre le cheveu lors des ablutions ? La réponse dépend du produit. Le henné et les colorations qui pénètrent le cheveu en le teignant laissent passer l’eau : les ablutions sont valides. En revanche, tout produit qui forme une pellicule imperméable en surface doit être retiré avant les ablutions et le ghusl — c’est le même raisonnement que pour le vernis à ongles. En cas de doute sur un produit précis, lis sa composition, et pour ta situation, demande à un savant.',
     ],
     category: 'Vie quotidienne',
-    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal', 'adoption-islam', 'henne-ablutions-priere'],
+    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal', 'barbe-islam', 'henne-ablutions-priere'],
   },
   {
     slug: 'porter-or-homme-islam',
@@ -3720,7 +3738,7 @@ export const QUESTIONS: QA[] = [
       'Deux zones de discussion demeurent, et il est honnête de les nommer. La montre dorée : si le boîtier est réellement en or, la règle s’applique ; s’il s’agit d’un placage ou d’un autre métal doré, une grande partie des savants contemporains ne l’écartent pas, tout en conseillant la retenue. Et l’usage médical — dent en or, prothèse, fil chirurgical — est admis par les savants au titre de la nécessité, sans discussion sérieuse. Pour un objet précis dont tu ne connais pas la composition, renseigne-toi sur le métal réel, puis demande à un savant si le doute persiste.',
     ],
     category: 'Vie quotidienne',
-    related: ['tatouage-halal', 'piercing-halal', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam'],
+    related: ['tatouage-halal', 'piercing-halal', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'barbe-islam'],
   },
 ];
 

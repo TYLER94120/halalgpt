@@ -78,10 +78,25 @@ for (const [saisie, doitContenir] of [
 // Et ces saisies-la ne ramenaient rien avant : on verifie que c'est bien le
 // corps qui les sauve, pas un hasard de titre.
 console.log('\n── C\'est bien le corps qui les sauve ─────────────────────────');
-for (const saisie of ['cochenille', 'hotel', 'anesthesie', 'barbe']) {
+for (const saisie of ['cochenille', 'hotel', 'anesthesie']) {
   const avant = slugs(saisie, INDEX_TITRES).length;
   const apres = slugs(saisie).length;
   dire(avant === 0 && apres > 0, `« ${saisie} » : ${avant} sans le corps → ${apres} avec`);
+}
+
+// « barbe » a quitte la liste ci-dessus le 31 octobre 2026, pour la meme raison
+// qu'« emulsifiant » avant lui : `barbe-islam` porte desormais le mot dans son
+// TITRE. Le test exigeait zero resultat sans le corps ; il echouait donc sur une
+// fiche juste. C'est la deuxieme fois que cette liste se perime en encodant
+// « ce mot n'est nulle part dans un titre » — une affirmation qui vieillit des
+// qu'on ecrit la fiche que le mot appelait.
+//
+// On garde donc ce qui comptait : avec le corps, on trouve la FAMILLE, pas une
+// fiche par accident de vocabulaire.
+{
+  const avant = slugs('barbe', INDEX_TITRES).length;
+  const apres = slugs('barbe').length;
+  dire(apres > avant, `« barbe » : ${avant} sans le corps → ${apres} avec`);
 }
 
 // « emulsifiant » etait dans la liste ci-dessus jusqu'au jour ou le verdict de
