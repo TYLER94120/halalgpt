@@ -1174,7 +1174,7 @@ export const QUESTIONS: QA[] = [
       'Comme pour les Pringles : Nature = OK, parfums = à vérifier selon votre exigence, et les épiceries orientales débordent de tortilla chips certifiées halal aux mêmes saveurs.',
     ],
     category: 'Produits',
-    related: ['pringles-halal', 'chips-halal', 'fromage-presure-halal'],
+    related: ['pringles-halal', 'chips-halal', 'fromage-presure-halal', 'e621-glutamate-halal', 'e631-e627-halal'],
   },
   {
     slug: 'yaourt-halal',
@@ -1264,7 +1264,7 @@ export const QUESTIONS: QA[] = [
       'Un usage qu’on oublie et qui pèse plus lourd que les bonbons : les gélules de médicaments et de compléments. Leur enveloppe est très majoritairement en gélatine, et son origine n’est presque jamais indiquée sur la boîte. Des gélules de gélatine de poisson existent, ainsi que des gélules végétales à base de cellulose (HPMC) — un pharmacien peut consulter la composition exacte et proposer une équivalence. À savoir cependant, et les savants sont largement d’accord sur ce point : la nécessité médicale change la règle, et personne ne demande d’interrompre un traitement faute d’alternative. Une vigilance d’étiquette pour finir : « gélatine marine » désigne bien du poisson, mais un produit peut mélanger plusieurs gélatines — sur un aliment consommé tous les jours, la certification reste la seule réponse ferme.',
     ],
     category: 'Alimentation',
-    related: ['gelatine-halal', 'poisson-fruits-de-mer-halal', 'e440-pectine-halal', 'medicaments-gelules-halal'],
+    related: ['gelatine-halal', 'poisson-fruits-de-mer-halal', 'e440-pectine-halal', 'medicaments-gelules-halal', 'e407-carraghenane-halal'],
   },
 
   // ─── VOYAGE — VILLES FRANÇAISES (vague 3) ───────────────────────────────────
@@ -2243,7 +2243,7 @@ export const QUESTIONS: QA[] = [
       'Le réflexe qui change tout tient en une phrase : **cherche un logo, pas une formule.** Une certification porte le nom d’un organisme et engage quelqu’un ; « sans porc » n’engage personne sur la question religieuse. Pour la viande, la traçabilité halal en France s’appuie sur la norme AFNOR V46-003, et les organismes qui la suivent l’affichent. Si le paquet ne porte qu’une phrase et aucun logo, tu sais ce que tu ignores — et c’est déjà une information.',
     ],
     category: 'Alimentation',
-    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal', 'traces-de-porc-halal', 'vegan-halal'],
+    related: ['certifications-halal-france', 'viande-supermarche-halal', 'abattage-etourdissement-halal', 'lardons-halal', 'isla-delice-halal', 'traces-de-porc-halal', 'vegan-halal', 'e441-gelatine-halal'],
   },
   {
     slug: 'traces-de-porc-halal',
@@ -2385,7 +2385,7 @@ export const QUESTIONS: QA[] = [
       'Pas de certification halal sur les Dragibus français : c’est étiquette et conviction personnelle. Alternative zéro doute : Haribo produit en Turquie des gammes 100 % halal certifiées (gélatine bovine rituelle), vendues en épicerie orientale — le goût de l’enfance sans l’arrière-pensée.',
     ],
     category: 'Produits',
-    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal', 'collagene-halal', 'skittles-halal', 'magnum-halal', 'popeyes-halal'],
+    related: ['haribo-halal', 'e120-halal', 'marshmallow-halal', 'collagene-halal', 'skittles-halal', 'magnum-halal', 'popeyes-halal', 'e901-cire-abeille-halal'],
   },
   {
     slug: 'marshmallow-halal',
@@ -2542,7 +2542,7 @@ export const QUESTIONS: QA[] = [
       'Dans de nombreux pays musulmans, le Fanta produit localement est certifié halal, ce qui confirme l’analyse. Vigilance uniquement sur les éditions exotiques étrangères : certains parfums peuvent contenir des colorants comme le E120 (cochenille) selon les pays — l’étiquette tranche.',
     ],
     category: 'Produits',
-    related: ['coca-cola-halal', 'pepsi-halal', 'ice-tea-halal', 'levure-biere-halal'],
+    related: ['coca-cola-halal', 'pepsi-halal', 'ice-tea-halal', 'levure-biere-halal', 'e120-halal'],
   },
   {
     slug: 'pepsi-halal',
