@@ -15,7 +15,7 @@
 // téléchargement des navigateurs à chaque construction Vercel) :
 //   npm i -D playwright   puis on le retire.
 
-import { chromium } from 'playwright';
+import { ouvrirNavigateur } from './navigateur.mjs';
 
 const BASE = process.env.BASE ?? 'http://127.0.0.1:3312';
 
@@ -25,9 +25,7 @@ const dire = (ok, quoi, detail = '') => {
   if (!ok) echecs += 1;
 };
 
-const navigateur = await chromium.launch({
-  executablePath: process.env.CHROMIUM ?? '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
-});
+const navigateur = await ouvrirNavigateur();
 const page = await navigateur.newPage({ viewport: { width: 390, height: 780 } });
 
 try {

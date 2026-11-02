@@ -14,9 +14,10 @@
 //   BASE=http://localhost:3000 node scripts/test-navigation.mjs
 
 // playwright n'est PAS une dépendance du projet : l'installer côté Vercel
-// déclencherait le téléchargement des navigateurs à chaque construction. Pour
-// lancer ce test :  npm i -D playwright  (puis on le retire).
-import { chromium } from 'playwright';
+// déclencherait le téléchargement des navigateurs à chaque construction. Il
+// vit dans l'atelier, et `navigateur.mjs` sait l'y trouver — ou sortir en
+// code 2 (mesure impossible) plutôt qu'en code 1 (défaut du site).
+import { ouvrirNavigateur } from './navigateur.mjs';
 
 const BASE = process.env.BASE ?? 'http://127.0.0.1:3123';
 const REPONSE = 'Le E120 vient de la cochenille, un insecte. La majorité des certificateurs le refusent.';
@@ -27,12 +28,12 @@ const dire = (ok, quoi, detail = '') => {
   if (!ok) echecs += 1;
 };
 
-// Le navigateur pré-installé de l'atelier. La version de playwright installée
-// ici en cherche un autre : sans ce chemin explicite, le test ne démarre pas
-// et on croirait à tort que le site est en cause.
-const navigateur = await chromium.launch({
-  executablePath: process.env.CHROMIUM ?? '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
-});
+// Le navigateur pré-installé de l'atelier. Le chemin était figé ici avec un
+// numéro de version ; le 2 novembre ce numéro et le nom du dossier interne
+// avaient tous deux changé, et les cinq tests navigateur annonçaient un échec
+// alors qu'ils n'avaient rien mesuré. La recherche est désormais dans
+// `navigateur.mjs`, en un seul endroit.
+const navigateur = await ouvrirNavigateur();
 const page = await navigateur.newPage({ viewport: { width: 390, height: 780 } });
 
 // On ralentit la réponse de 2,5 s : c'est ce délai qui rend le bug
