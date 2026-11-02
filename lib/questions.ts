@@ -559,7 +559,7 @@ export const QUESTIONS: QA[] = [
       'Pensez aussi aux salles de prière : la plupart des grands aéroports (Istanbul, Dubaï, Kuala Lumpur, mais aussi Roissy) en ont une, souvent indiquée « Prayer room ». Un tapis de poche pliable dans le sac règle tous les autres cas.',
     ],
     category: 'Pratique',
-    related: ['ramadan-voyage-jeune', 'pays-voyage-halal', 'tayammum-sans-eau', 'qibla-direction-priere', 'se-convertir-islam', 'regrouper-deux-prieres'],
+    related: ['ramadan-voyage-jeune', 'pays-voyage-halal', 'tayammum-sans-eau', 'qibla-direction-priere', 'se-convertir-islam', 'regrouper-deux-prieres', 'invocation-voyage'],
   },
 
   // ─── ADDITIFS (suite) ───────────────────────────────────────────────────────
@@ -1500,7 +1500,7 @@ export const QUESTIONS: QA[] = [
       'Par précaution, certains préfèrent programmer les injections non urgentes après la rupture du jeûne. Mais ne repousse jamais un soin nécessaire pour le jeûne : la religion facilite, elle ne met pas la santé en danger.',
     ],
     category: 'Ramadan',
-    related: ['prise-de-sang-ramadan', 'medicament-ramadan', 'gouttes-yeux-ramadan', 'avaler-salive-ramadan', 'antidepresseurs-halal'],
+    related: ['prise-de-sang-ramadan', 'medicament-ramadan', 'gouttes-yeux-ramadan', 'avaler-salive-ramadan', 'antidepresseurs-halal', 'vaccin-gelatine-porcine-halal'],
   },
   {
     slug: 'prise-de-sang-ramadan',
@@ -3293,7 +3293,7 @@ export const QUESTIONS: QA[] = [
       'Cette fiche ne recommande **aucun produit et aucun montage**, et c’est volontaire : l’effet juridique et le statut religieux pointent ici dans des directions opposées, ce qui est exactement la situation où un site n’a rien à décider. Le volet patrimonial se traite avec un notaire, la règle avec un savant. Et une « solution héritage » proposée par un site commercial mérite d’être lue avec les deux moitiés en tête.',
     ],
     category: 'Pratique',
-    related: ['heritage-succession-france', 'riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'enterrement-musulman-france', 'divorce-religieux-civil-france'],
+    related: ['heritage-succession-france', 'riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'enterrement-musulman-france', 'divorce-religieux-civil-france', 'allocation-chomage-halal'],
   },
   {
     slug: 'assurance-auto-obligatoire-halal',
@@ -3452,7 +3452,7 @@ export const QUESTIONS: QA[] = [
       'En pratique, deux choses. Si la question compte pour toi, demande au pharmacien s’il existe un équivalent sans gélatine : il en existe sur le marché international, mais leur disponibilité en France dépend de ce qui y est commercialisé, et cela évolue. Et pour la décision elle-même, quand une maladie sérieuse est en jeu : **c’est d’abord une question médicale.** Le médecin évalue le risque, un savant répond sur la règle. Cette fiche explique un avis majoritaire et ses contestations — elle ne dit à personne de refuser un vaccin.',
     ],
     category: 'Vie quotidienne',
-    related: ['medicaments-gelules-halal', 'e441-gelatine-halal', 'gelatine-halal', 'don-organes-islam', 'psy-therapie-islam'],
+    related: ['medicaments-gelules-halal', 'e441-gelatine-halal', 'gelatine-halal', 'don-organes-islam', 'psy-therapie-islam', 'transfusion-don-sang-islam'],
   },
   {
     slug: 'photos-selfies-islam',
@@ -3514,7 +3514,7 @@ export const QUESTIONS: QA[] = [
       'Pour le reste : le **poids** de l’acte selon ton école et ta situation se demande à un savant ; l’**acte** se discute avec un médecin, qui dira aussi ce que l’anesthésie implique selon l’âge. Ce site transmet les avis et le cadre ; il ne décide ni de l’un ni de l’autre.',
     ],
     category: 'Pratique',
-    related: ['prenom-musulman-obligatoire', 'se-convertir-islam', 'adoption-islam', 'don-organes-islam', 'medicaments-gelules-halal'],
+    related: ['prenom-musulman-obligatoire', 'se-convertir-islam', 'adoption-islam', 'don-organes-islam', 'medicaments-gelules-halal', 'barbe-islam'],
   },
   {
     slug: 'reseaux-sociaux-islam',
@@ -3710,7 +3710,7 @@ export const QUESTIONS: QA[] = [
       'Pour le poids de la règle selon ton école : **un savant**. Si une sanction est en jeu au travail : **un juriste, un syndicat ou le Défenseur des droits** — l’arrêt de 2020 montre qu’un licenciement sur ce motif peut être annulé. Ce site donne l’étage du droit parce que c’est celui qui se vérifie, et il nomme la divergence religieuse plutôt que de choisir dedans.',
     ],
     category: 'Vie quotidienne',
-    related: ['teinture-cheveux-islam', 'porter-or-homme-islam', 'voile-travail-france', 'chirurgie-esthetique-halal', 'piercing-halal'],
+    related: ['teinture-cheveux-islam', 'porter-or-homme-islam', 'voile-travail-france', 'chirurgie-esthetique-halal', 'piercing-halal', 'circoncision-islam-france'],
   },
   {
     slug: 'teinture-cheveux-islam',
@@ -3738,7 +3738,7 @@ export const QUESTIONS: QA[] = [
       'Deux zones de discussion demeurent, et il est honnête de les nommer. La montre dorée : si le boîtier est réellement en or, la règle s’applique ; s’il s’agit d’un placage ou d’un autre métal doré, une grande partie des savants contemporains ne l’écartent pas, tout en conseillant la retenue. Et l’usage médical — dent en or, prothèse, fil chirurgical — est admis par les savants au titre de la nécessité, sans discussion sérieuse. Pour un objet précis dont tu ne connais pas la composition, renseigne-toi sur le métal réel, puis demande à un savant si le doute persiste.',
     ],
     category: 'Vie quotidienne',
-    related: ['tatouage-halal', 'piercing-halal', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'barbe-islam'],
+    related: ['tatouage-halal', 'piercing-halal', 'parfum-alcool-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'barbe-islam', 'mahr-dot-mariage-islam'],
   },
 ];
 
