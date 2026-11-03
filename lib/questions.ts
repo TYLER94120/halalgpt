@@ -427,7 +427,7 @@ export const QUESTIONS: QA[] = [
     short:
       'La majorité des savants contemporains la permettent quand il s’agit de réparer une perte : ce sont tes propres cheveux qu’on redéplace, pas ceux d’un autre. C’est cette distinction qui change tout.',
     answer: [
-      'La question se joue sur un seul point : s’agit-il de « modifier la création d’Allah », ce qui est blâmé, ou de SOIGNER un défaut, ce qui est permis ? La majorité des savants contemporains et plusieurs académies de jurisprudence retiennent la seconde lecture quand la greffe répond à une calvitie, une alopécie, une brûlure ou un accident : on rétablit un état d’origine, on n’ajoute pas un ornement. Se soigner est encouragé en islam — « Serviteurs d’Allah, soignez-vous », rapporté dans les recueils de sunna.',
+      'La question se joue sur un seul point : s’agit-il de « modifier la création d’Allah », ce qui est blâmé, ou de SOIGNER un défaut, ce qui est permis ? La majorité des savants contemporains et plusieurs académies de jurisprudence retiennent la seconde lecture quand la greffe répond à une calvitie, une alopécie, une brûlure ou un accident : on rétablit un état d’origine, on n’ajoute pas un ornement. Se soigner est encouragé en islam — « Serviteurs d’Allah, soignez-vous », rapporté par Tirmidhi et Abou Dawoud.',
       'Le détail technique qui règle presque tout : une greffe moderne est une AUTOGREFFE. On prélève tes cheveux à l’arrière de ton crâne pour les replanter devant. Rien ne vient d’une autre personne. C’est ce qui la distingue du hadith bien connu sur le fait de joindre des cheveux (« Allah a maudit celle qui ajoute des cheveux et celle qui demande qu’on lui en ajoute », Boukhari et Mouslim) : ce texte vise l’ajout de cheveux d’AUTRUI, et donc les extensions, pas le déplacement des siens.',
       'Deux réserves à connaître. D’abord, une minorité de savants reste réticente quand l’intention est purement esthétique, sans perte réelle à réparer — l’intention compte, et la frontière entre soigner et embellir n’est pas toujours nette. Ensuite, un point pratique que personne n’explique : pendant la cicatrisation, les croûtes et le pansement peuvent empêcher l’eau d’atteindre le cuir chevelu lors des ablutions et de la grande ablution. Les savants prévoient ce cas — on essuie sur le pansement quand le laver nuirait à la guérison. Demande à ton chirurgien la durée exacte, et à un savant la règle qui s’applique à ta situation.',
     ],
@@ -3053,7 +3053,7 @@ export const QUESTIONS: QA[] = [
     slug: 'priere-vendredi-obligatoire',
     question: 'La prière du vendredi est-elle obligatoire ? Et si je travaille ?',
     titreSeo: 'La prière du vendredi est-elle obligatoire ?',
-    verdict: '✅ Obligatoire pour les hommes — l’ordre coranique est explicite (62:9)',
+    verdict: '✅ Obligatoire pour l’homme résident — accord des quatre écoles',
     short:
       'La jumu‘a est obligatoire pour l’homme pubère résident (Coran 62:9) ; femmes, voyageurs et malades en sont dispensés. Le travail exige d’essayer de s’organiser — l’impossibilité réelle est une excuse.',
     answer: [
@@ -3163,7 +3163,24 @@ export const QUESTIONS: QA[] = [
       'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
     ],
     category: 'Pratique',
-    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'deuil-idda-veuve', 'autopsie-islam-france'],
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'deuil-idda-veuve', 'autopsie-islam-france', 'contrat-obseques-halal'],
+  },
+  {
+    slug: 'contrat-obseques-halal',
+    question: 'Un contrat obsèques est-il halal ?',
+    verdict: '⚠️ Aucune loi ne l’impose — la dérogation de l’auto ne joue pas',
+    short:
+      'Capital ou prestations : deux produits très différents sous le même nom. Aucune loi ne l’impose, donc la dérogation admise pour l’assurance auto ne joue pas.',
+    answer: [
+      'Commençons par ce qui se vérifie, parce que la réponse religieuse dépend entièrement de ce qu’on signe. **« Contrat obsèques » désigne deux produits que le droit ne traite pas de la même façon.** Le contrat **en capital** est une assurance : elle verse une somme au bénéficiaire désigné, et s’arrête là. Le contrat **en prestations** associe une assurance et un contrat de prestations funéraires : il finance *et* organise, en nommant les services retenus. Le premier laisse à la famille l’argent et la décision ; le second laisse l’organisation déjà écrite. Ce n’est pas une nuance commerciale : c’est ce qui change la nature du contrat, et donc la question qu’on posera à un savant.',
+      '**Le droit français protège sur un point précis, et peu de gens le savent.** L’**article L. 2223-34-1 du code général des collectivités territoriales** répute **non écrite** toute clause qui prévoit des obsèques à l’avance sans définir le **contenu détaillé et personnalisé** des prestations ; l’**article L. 2223-33-1** va dans le même sens en exigeant une description précise de ce qui est couvert. Conséquence concrète : un contrat « tout compris » vendu sans liste nominative des prestations est attaquable sur ce terrain. Une question écrite au Sénat, en 2018, relevait précisément que des contrats « packagés » proposés par des assurances et des banques ne respectaient pas cette exigence. Avant de signer : demander la liste, poste par poste.',
+      '**Et un point que cette fiche ne tranche pas, parce que nous ne l’avons pas vérifié** : la revalorisation du capital au fil des ans. Les prix des funérailles montent, et un capital figé peut ne plus couvrir ce qu’il était censé couvrir. Les sources que nous avons pu lire ne s’accordent pas sur l’étendue de l’obligation légale — elle est rattachée aux contrats **en prestations**, tandis que pour les contrats **en capital** certaines la présentent comme un engagement professionnel et non comme une règle de loi. Nous n’avons pas pu consulter le texte en vigueur lui-même. Donc : poser la question par écrit à l’assureur, et faire figurer la réponse dans le contrat. Nous préférons marquer ce vide que le combler.',
+      'Du côté religieux, le reproche est celui de l’assurance commerciale, et ce site le détaille ailleurs : le **gharar** — l’incertitude sur l’événement comme sur le montant —, le **ribâ** et le **maysir**. L’**Académie internationale du fiqh islamique**, réunie à Djeddah en **décembre 1985**, a adopté sur ce point sa **résolution n° 9** : le contrat d’assurance commerciale à prime fixe comporte un gharar majeur qui vicie le contrat, l’alternative conforme étant l’assurance **coopérative** (taʿāwunī), bâtie sur l’entraide et la donation. Pour l’automobile, le **Conseil européen de la fatwa et de la recherche** admet la souscription **là où la loi l’impose**, au titre de la nécessité. **Et c’est là que la comparaison s’arrête : aucune loi n’impose un contrat obsèques.** La condition même de la dérogation manque. Ce raisonnement est celui des instances nommées — ce site le rapporte, il ne prononce rien.',
+      'Reste ce qui est rarement dit, et qui contourne la question plutôt que de la trancher. **Payer des prestations funéraires à l’avance** auprès d’un opérateur, sans enveloppe d’assurance, est l’achat de services déterminés : la question du gharar ne s’y pose pas dans les mêmes termes. **Mettre de l’argent de côté** et le dire à sa famille non plus. Et pour le rapatriement, qui est le vrai sujet de beaucoup de familles — le Sénat le relie à près de 80 % des cas, faute de carré musulman dans la commune : certaines assurances rapatriement sont vendues dans des mosquées ou par des associations, **et le lieu de vente ne dit rien de la structure du contrat.** C’est le document qui le dit : ce qu’il garantit, pour qui, et jusqu’à quand.',
+      'Trois choses à faire, dans cet ordre, et aucune n’est urgente tant que la question ne se pose pas. Appeler **la mairie** pour savoir s’il existe un carré musulman dans la commune — c’est ce qui décide du rapatriement, donc du coût. Se faire remettre un contrat **avant** d’en avoir besoin, et exiger la liste détaillée que la loi impose. Et pour la règle elle-même, **un savant** : la qualification du contrat qu’on a sous les yeux est une question technique, et elle se traite avec le document en main. Ce site cite des textes et rapporte des avis ; il ne te dit pas quoi signer.',
+    ],
+    category: 'Pratique',
+    related: ['enterrement-musulman-france', 'assurance-vie-halal', 'assurance-auto-obligatoire-halal', 'riba-interet-islam', 'heritage-succession-france', 'deuil-idda-veuve'],
   },
   {
     slug: 'autopsie-islam-france',
@@ -3195,7 +3212,7 @@ export const QUESTIONS: QA[] = [
       'Deux renvois, parce que cette fiche s’arrête où commence le cas particulier. Les règles de la ‘idda varient selon les écoles et selon la situation — une grossesse change le calcul, et le délai d’une femme divorcée n’est pas celui d’une veuve : la situation personnelle se pose à un savant. Le volet patrimonial se traite avec un notaire. Ce que cette fiche veut éviter est précis : que personne ne reste enfermé en croyant que la religion l’exige, pendant que la banque et la caisse de retraite attendent.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'psy-therapie-islam', 'garde-enfants-divorce-france', 'autopsie-islam-france'],
+    related: ['enterrement-musulman-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'mariage-religieux-civil-france', 'psy-therapie-islam', 'garde-enfants-divorce-france', 'autopsie-islam-france', 'contrat-obseques-halal'],
   },
   {
     slug: 'mariage-religieux-civil-france',
@@ -3293,7 +3310,7 @@ export const QUESTIONS: QA[] = [
       'Cette fiche ne recommande **aucun produit et aucun montage**, et c’est volontaire : l’effet juridique et le statut religieux pointent ici dans des directions opposées, ce qui est exactement la situation où un site n’a rien à décider. Le volet patrimonial se traite avec un notaire, la règle avec un savant. Et une « solution héritage » proposée par un site commercial mérite d’être lue avec les deux moitiés en tête.',
     ],
     category: 'Pratique',
-    related: ['heritage-succession-france', 'riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'enterrement-musulman-france', 'divorce-religieux-civil-france', 'allocation-chomage-halal'],
+    related: ['heritage-succession-france', 'riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'enterrement-musulman-france', 'divorce-religieux-civil-france', 'allocation-chomage-halal', 'contrat-obseques-halal'],
   },
   {
     slug: 'assurance-auto-obligatoire-halal',
@@ -3310,7 +3327,7 @@ export const QUESTIONS: QA[] = [
       'Deux remarques pour finir, qui sont des réserves et non des conseils. L’alternative que la résolution de 1985 recommande est coopérative ; **si une offre de type takaful existe pour l’automobile en France, elle se vérifie au cas par cas** — ce site ne recense pas ce marché et ne recommande aucun établissement. Et cette fiche ne te dit pas que ton contrat est en règle devant Dieu : elle te dit qu’une obligation légale est invoquée par des instances nommées comme fondement d’une dérogation, que cette dérogation a une limite, et que ta situation se traite avec un savant. Ce site décrit des avis ; il n’en délivre aucun.',
     ],
     category: 'Pratique',
-    related: ['assurance-vie-halal', 'riba-interet-islam', 'credit-immobilier-halal', 'livret-a-interets-halal', 'heritage-succession-france', 'allocation-chomage-halal'],
+    related: ['assurance-vie-halal', 'riba-interet-islam', 'credit-immobilier-halal', 'livret-a-interets-halal', 'heritage-succession-france', 'allocation-chomage-halal', 'contrat-obseques-halal'],
   },
   {
     slug: 'allocation-chomage-halal',
@@ -3367,7 +3384,7 @@ export const QUESTIONS: QA[] = [
     short:
       'Prendre un traitement n’est pas un manque de foi : les savants encouragent de se soigner, l’esprit compris. Et l’arrêter pour jeûner peut être dangereux.',
     answer: [
-      'Prenons la vraie question d’abord, celle qui arrête des gens : **beaucoup renoncent à un traitement parce qu’on leur a dit que c’était manquer de confiance en Dieu**, ou qu’un croyant solide n’aurait pas besoin de cachets. Ce site répond déjà à cela pour la consultation : les savants contemporains encouragent de se soigner, et le hadith sur lequel ils s’appuient — « soignez-vous, car Allah n’a pas fait descendre de maladie sans faire descendre son remède » — **ne fait aucune exception pour l’esprit**. Et rien dans ce principe ne distingue un comprimé d’une conversation. **Refuser un soin par orgueil spirituel n’est pas de la piété.**',
+      'Prenons la vraie question d’abord, celle qui arrête des gens : **beaucoup renoncent à un traitement parce qu’on leur a dit que c’était manquer de confiance en Dieu**, ou qu’un croyant solide n’aurait pas besoin de cachets. Ce site répond déjà à cela pour la consultation : les savants contemporains encouragent de se soigner, et le hadith sur lequel ils s’appuient — « soignez-vous, car Allah n’a pas fait descendre de maladie sans faire descendre son remède » (Tirmidhi, Abou Dawoud) — **ne fait aucune exception pour l’esprit**. Et rien dans ce principe ne distingue un comprimé d’une conversation. **Refuser un soin par orgueil spirituel n’est pas de la piété.**',
       'Ce qui change avec un médicament n’est donc pas religieux, c’est pratique : un traitement a une **dose**, un **horaire**, et un **sevrage**. Et ce qui suit vaut pour toute la famille — antidépresseur, anxiolytique, somnifère, régulateur de l’humeur, neuroleptique : les psychotropes, quel que soit le nom sur la boîte. C’est de là que vient le vrai danger de cette fiche — pas de la règle, mais du calendrier.',
       '**Le Ramadan, et c’est la partie où l’erreur coûte cher.** La mécanique générale est ailleurs sur le site : un médicament avalé rompt le jeûne, et le malade est exempté. Mais le critère compte ici plus que la mécanique. L’exemption repose sur le **verset 2:184**, et la maladie qui la justifie est, comme le formulent les juristes, celle que le jeûne **aggraverait** ou dont il **retarderait la guérison**. Un traitement psychiatrique est précisément ce cas-là : **l’interrompre ou décaler ses prises de sa propre initiative n’est pas un petit ajustement.**',
       '**Et un fait vérifié que personne ne dit.** Les carnets de suivi français remis aux patients sous **lithium** rangent **le jeûne parmi les situations qui font monter la lithiémie**, et le déconseillent : la déshydratation concentre le médicament. Une étude prospective menée sur des patients bipolaires en contexte de jeûne musulman observe la même chose — baisse de la filtration rénale, hausse des concentrations — en précisant que la littérature sur le sujet reste **limitée**. Détail utile pour lever un obstacle : **une prise de sang de contrôle ne demande pas d’être à jeun.**',
@@ -3626,7 +3643,7 @@ export const QUESTIONS: QA[] = [
   {
     slug: 'qibla-direction-priere',
     question: 'Comment trouver la direction de la qibla ?',
-    verdict: '✅ On fait de son mieux — le Coran lui-même le dit (2:115)',
+    verdict: '✅ L’effort sincère suffit — les savants le lisent en 2:115',
     short:
       'Depuis la France, la qibla se situe globalement vers le sud-est. Et si tu ne peux pas la déterminer, ta prière reste valable : l’islam demande l’effort sincère, pas la précision au degré près.',
     answer: [

@@ -72,15 +72,17 @@ const PART_VISEE = 0.48;
 // le catalogue ne couvre pas. Un domaine a zero fiche n'est pas forcement un
 // sujet a prendre — il peut etre vide pour de bonnes raisons.
 const DOMAINES = {
-  'finance / argent':     /riba|interet|banque|credit|pret|assurance|hypoth|epargne|bourse|action|crypto|zakat|impot|dette|salaire/i,
-  'mort / heritage':      /mort|deces|funerail|enterr|incin|testament|heritage|succession|linceul|janaza|cimetiere|deuil|autopsie/i,
+  'finance / argent':     /riba|interet|banque|credit|pret|assurance|hypoth|epargne|bourse|action|crypto|zakat|impot|dette|salaire|chomage|allocation/i,
+  'mort / heritage':      /mort|deces|funerail|enterr|incin|testament|heritage|succession|linceul|janaza|cimetiere|deuil|autopsie|obseque/i,
   'famille / mariage':    /mariage|nikah|dot|mahr|divorce|talaq|fiancail|epouse|adoption|parents|enfant|allaitement|garde-enfants/i,
-  'sante / corps':        /vaccin|fiv|pma|contracep|avortement|don-organe|transfusion|greffe|psy|depression|dentiste|anesthes|medicament|chirurgie|esthetique/i,
-  'travail / droit':      /travail|employeur|conge|patron|contrat|entreprise|associe|caissier|restaurant-alcool/i,
+  'sante / corps':        /vaccin|fiv|pma|contracep|avortement|don-organe|transfusion|greffe|psy|depression|antidepresseur|circoncision|dentiste|anesthes|medicament|chirurgie|esthetique/i,
+  // `contrat` etait seul : il attrapait `contrat-obseques-halal`, qui n'a rien
+  // d'un sujet de travail. Un motif trop court classe au mauvais endroit.
+  'travail / droit':      /travail|employeur|conge|patron|contrat-travail|entreprise|associe|caissier|restaurant-alcool|voile|laicite/i,
   'priere / purete':      /priere|wudu|ablution|ghusl|tayammum|qibla|rakat|vernis|henne|lentilles|platre|regles|fajr/i,
   'ramadan / jeune':      /ramadan|jeune|iftar|suhur|dattes|salive/i,
   'vie sociale / loisirs':/musique|jeux|echecs|sport|tatouage|piercing|photo|reseaux|anniversaire|noel|chien|chat|cigarette|chicha|puff|serrer-la-main/i,
-  'apparence / parure':   /teinture|cheveux|levres|carmin|parfum|porter-or|maquillage/i,
+  'apparence / parure':   /teinture|cheveux|levres|carmin|parfum|porter-or|maquillage|barbe/i,
   'voyage / lieux':       /voyage|restaurant-halal|repas-halal-avion|pays-/i,
   'croyances / identite': /halal-definition|certification|convertir|prenom|ia-halal|mauvais-oeil|casher/i,
 };
