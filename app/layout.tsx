@@ -26,8 +26,13 @@ export const metadata: Metadata = {
     default: `${SITE_NAME} — ${SITE_TAGLINE}`,
     template: `%s — ${SITE_NAME}`,
   },
+  // 155 caracteres. Elle en faisait 179 jusqu'au 3 novembre : Google coupe a
+  // 160, donc elle s'affichait tranchee en plein mot (« …Ramadan, priere,
+  // voyag »), sur la seule page qui recoit des liens exterieurs. Le nom du site
+  // est deja dans le titre, le repeter ici coutait vingt-quatre caracteres.
+  // Garde : `scripts/test-affichage.mjs`.
   description:
-    "HalalGPT, l'IA musulmane : pose n'importe quelle question, la réponse tient toujours compte de l'islam. Additifs (E120, E471…), produits, Ramadan, prière, voyage, vie quotidienne.",
+    'Pose n’importe quelle question : la réponse tient compte de l’islam. Additifs (E120, E471…), produits et marques, Ramadan, prière, voyage, vie quotidienne.',
   openGraph: {
     siteName: SITE_NAME,
     type: 'website',
