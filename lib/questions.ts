@@ -3228,7 +3228,25 @@ export const QUESTIONS: QA[] = [
       'L’ordre pratique est simple : la mairie d’abord, le nikah ensuite, le même jour si on veut. Deux situations sortent du cadre de cette fiche et demandent un vrai conseil : un mariage contracté à l’étranger, dont la transcription en France suit ses propres règles, et un nikah déjà célébré sans acte civil — auquel cas la question se pose à un notaire ou à un avocat pour les conséquences patrimoniales, et à un imam pour le reste. Pas à un site.',
     ],
     category: 'Pratique',
-    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'mahr-dot-mariage-islam', 'prenom-musulman-obligatoire', 'heritage-succession-france', 'divorce-religieux-civil-france', 'garde-enfants-divorce-france'],
+    related: ['se-convertir-islam', 'enterrement-musulman-france', 'adoption-islam', 'mahr-dot-mariage-islam', 'prenom-musulman-obligatoire', 'heritage-succession-france', 'divorce-religieux-civil-france', 'nikah-pacs-france'],
+  },
+  {
+    slug: 'nikah-pacs-france',
+    question: 'Un nikah et un PACS, est-ce suffisant ?',
+    verdict: '⚠️ Non en droit — le partenaire pacsé n’hérite pas',
+    short:
+      'Le PACS n’est pas un mariage : sans testament, le partenaire survivant ne reçoit rien de la succession, et la pension de réversion reste réservée aux époux.',
+    answer: [
+      'Cette fiche dit l’étage du **droit**, et seulement lui. Ce que vaut un PACS du point de vue religieux — un engagement de vie commune enregistré, qui n’est pas un mariage — se demande à un savant, et ce site ne le tranche pas. Ce qui se vérifie, et qui change une vie, c’est ce que le PACS fait et ne fait pas devant la loi française. La fiche voisine a établi qu’un nikah seul n’a aucun effet juridique ; beaucoup de couples en tirent la suite logique — on ajoute un PACS, et la moitié légale est réglée. **Elle ne l’est pas.**',
+      'Commençons par ce que le PACS **donne**, parce qu’une fiche qui n’en dirait que du mal serait fausse. L’**article 515-4 du code civil** engage les partenaires à « une vie commune, ainsi qu’à une aide matérielle et une assistance réciproques », cette aide étant proportionnelle aux facultés de chacun sauf convention contraire. Les partenaires forment un **foyer fiscal commun**. Et la **Cour de cassation**, le **27 janvier 2021**, a jugé que le remboursement de l’emprunt du logement indivis peut relever de cette aide matérielle — avec cette conséquence à la séparation : celui qui a payé ne peut pas réclamer une créance à ce titre. Ce n’est donc pas un papier sans effet.',
+      '**Mais le partenaire pacsé n’est pas un héritier.** C’est le point central, et il surprend presque tout le monde. Là où l’époux survivant hérite de plein droit, le partenaire pacsé **ne reçoit rien de la succession s’il n’y a pas de testament**. Il a un droit temporaire : **douze mois** de jouissance gratuite du logement commun, rattaché à l’**article 515-6 du code civil** par renvoi à l’article 763 — et si le logement était loué, l’année de loyers est remboursée par la succession. Au-delà, rien n’est garanti.',
+      'Un **testament** corrige une partie du problème, et il a une limite qu’il faut connaître avant de se rassurer : il transmet au partenaire **dans la limite de la quotité disponible** seulement, la réserve des enfants leur revenant de droit. En revanche la fiscalité est favorable — avec un testament, le partenaire pacsé est **totalement exonéré de droits de succession** (**article 796-0 bis du code général des impôts**), exactement comme un époux. La loi lui refuse donc la qualité d’héritier tout en l’exonérant d’impôt quand il reçoit : les deux sont vraies en même temps.',
+      '**Et la pension de réversion reste réservée aux époux.** Des réponses ministérielles successives le disent : le PACS et le concubinage n’y ouvrent aucun droit, même lorsque des enfants sont nés de l’union — tandis qu’un conjoint **divorcé** peut en recevoir. La **Cour de cassation**, dans un arrêt publié du **23 janvier 2014**, a jugé cette différence de traitement conforme au principe d’égalité, les situations n’étant pas identiques. L’ouverture de la réversion aux partenaires pacsés a été débattue plusieurs fois au Parlement ; la loi n’a pas changé.',
+      'Il y a une manière religieuse de lire cela, et elle ne met pas la loi et la foi en concurrence — c’est celle que ce site retient déjà pour le mariage civil. La dot, l’entretien et la part successorale de l’épouse sont des **droits** qu’elle tient de la religion, pas des formalités. Un acte civil ne remplace pas le nikah : il rend ces droits opposables devant un juge. Or sur la succession, **le PACS ne les rend pas opposables.** Un nikah plus un PACS laisse donc exactement le trou que décrit la fiche voisine : au décès, sans testament, la veuve ne reçoit rien.',
+      'Trois choses, et aucune n’est un conseil patrimonial — ce site n’en donne pas. Savoir ce qu’on a signé : « partenaire » n’est pas « époux » en droit, et la différence se paie à la mort, pas à la signature. Si l’on reste pacsé, voir un **notaire** : le testament, la quotité disponible, l’attribution préférentielle du logement et l’assurance-vie sont son métier. Et pour la qualification religieuse du PACS lui-même, **un savant**. Cette fiche cite des textes ; elle ne dit à personne quoi signer.',
+    ],
+    category: 'Pratique',
+    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'mahr-dot-mariage-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal', 'deuil-idda-veuve'],
   },
   {
     slug: 'mahr-dot-mariage-islam',
@@ -3245,7 +3263,7 @@ export const QUESTIONS: QA[] = [
       'Un dernier point, et il relie cette fiche à sa voisine. **Sans mariage civil, l’épouse est juridiquement une concubine** : pas de régime matrimonial, pas de succession, pas de réversion. Un mahr différé posé sur cette situation-là s’appuie donc sur un socle déjà fragile. L’ordre pratique ne change pas : la mairie, puis le nikah. Pour le détail religieux — montant, minimum, différé, renonciation — **demande à un savant** ; pour le rendre opposable, **un notaire**. Ce site décrit ; il ne décide pas, et il ne devine pas.',
     ],
     category: 'Pratique',
-    related: ['mariage-religieux-civil-france', 'divorce-religieux-civil-france', 'heritage-succession-france', 'garde-enfants-divorce-france', 'riba-interet-islam'],
+    related: ['mariage-religieux-civil-france', 'divorce-religieux-civil-france', 'heritage-succession-france', 'garde-enfants-divorce-france', 'riba-interet-islam', 'nikah-pacs-france'],
   },
   {
     slug: 'divorce-religieux-civil-france',
@@ -3261,7 +3279,7 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique est la même que pour le mariage, à l’envers : **les deux démarches sont distinctes et il faut faire les deux.** La procédure civile — avocat, juge aux affaires familiales — est la seule qui produise des effets juridiques : pension, résidence des enfants, partage des biens. La démarche religieuse se règle auprès d’un imam. N’en faire qu’une laisse à moitié lié, et c’est presque toujours celui ou celle des deux qui a le moins de ressources qui en paie le prix.',
     ],
     category: 'Pratique',
-    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'mahr-dot-mariage-islam', 'deuil-idda-veuve', 'garde-enfants-divorce-france'],
+    related: ['mariage-religieux-civil-france', 'heritage-succession-france', 'enterrement-musulman-france', 'adoption-islam', 'mahr-dot-mariage-islam', 'deuil-idda-veuve', 'garde-enfants-divorce-france', 'nikah-pacs-france'],
   },
   {
     slug: 'garde-enfants-divorce-france',
@@ -3293,7 +3311,7 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique tient en trois points. **De son vivant, on peut préparer ; après le décès, on ne peut plus rien reprendre** — c’est tout le sujet. **Le montage se construit avec un notaire**, parce que la réserve, la quotité disponible, les donations antérieures, l’assurance-vie et les biens situés à l’étranger forment un ensemble où l’improvisation coûte cher. **Et la question religieuse se pose à un savant** qui connaîtra la composition exacte de la famille, puisque les parts en dépendent entièrement. Une fiche ne calcule pas une succession, et celle-ci n’essaie pas.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'don-organes-islam', 'riba-interet-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal', 'deuil-idda-veuve'],
+    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'nikah-pacs-france', 'riba-interet-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal', 'deuil-idda-veuve'],
   },
   {
     slug: 'assurance-vie-halal',
