@@ -418,7 +418,7 @@ export const QUESTIONS: QA[] = [
       'Deux conseils pratiques, et un renvoi. Comparez le **coût total** et non le taux : la marge d’une murabaha, les frais de montage, les honoraires de conseil et les actes notariés successifs d’une musharaka peuvent dépasser un crédit classique, surtout sur longue durée. Et pour la décision elle-même — qui engage un foyer sur vingt ans, sur une question où les savants divergent vraiment — adressez-vous à un savant qui connaît votre situation, et faites relire le montage par un notaire. Ce site décrit les avis ; il ne décide pas à votre place.',
     ],
     category: 'Pratique',
-    related: ['riba-interet-islam', 'halal-definition', 'travailler-restaurant-alcool', 'loto-jeux-hasard-halal', 'heritage-succession-france', 'assurance-vie-halal', 'livret-a-interets-halal', 'assurance-auto-obligatoire-halal'],
+    related: ['riba-interet-islam', 'halal-definition', 'dettes-defunt-islam', 'loto-jeux-hasard-halal', 'heritage-succession-france', 'assurance-vie-halal', 'livret-a-interets-halal', 'assurance-auto-obligatoire-halal'],
   },
   {
     slug: 'greffe-cheveux-halal',
@@ -3163,7 +3163,7 @@ export const QUESTIONS: QA[] = [
       'C’est ce dernier point qui explique le reste. Le Sénat relie l’absence de carré musulman à près de 80 % des rapatriements de corps — les familles qui ne trouvent pas de place ici renvoient le défunt au pays, à un coût élevé et dans l’urgence du deuil. D’où la seule chose vraiment utile à faire tant que la question ne se pose pas : se renseigner sur ce que propose sa commune, et regarder ce que valent un contrat obsèques ou une assurance rapatriement. Tout se décide en quarante-huit heures, au pire moment pour décider quoi que ce soit.',
     ],
     category: 'Pratique',
-    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'riba-interet-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'deuil-idda-veuve', 'autopsie-islam-france', 'contrat-obseques-halal'],
+    related: ['don-organes-islam', 'se-convertir-islam', 'psy-therapie-islam', 'dettes-defunt-islam', 'ghusl-grande-ablution', 'mariage-religieux-civil-france', 'heritage-succession-france', 'divorce-religieux-civil-france', 'deuil-idda-veuve', 'autopsie-islam-france', 'contrat-obseques-halal'],
   },
   {
     slug: 'contrat-obseques-halal',
@@ -3180,7 +3180,7 @@ export const QUESTIONS: QA[] = [
       'Trois choses à faire, dans cet ordre, et aucune n’est urgente tant que la question ne se pose pas. Appeler **la mairie** pour savoir s’il existe un carré musulman dans la commune — c’est ce qui décide du rapatriement, donc du coût. Se faire remettre un contrat **avant** d’en avoir besoin, et exiger la liste détaillée que la loi impose. Et pour la règle elle-même, **un savant** : la qualification du contrat qu’on a sous les yeux est une question technique, et elle se traite avec le document en main. Ce site cite des textes et rapporte des avis ; il ne te dit pas quoi signer.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'assurance-vie-halal', 'assurance-auto-obligatoire-halal', 'riba-interet-islam', 'heritage-succession-france', 'deuil-idda-veuve'],
+    related: ['enterrement-musulman-france', 'assurance-vie-halal', 'assurance-auto-obligatoire-halal', 'riba-interet-islam', 'heritage-succession-france', 'deuil-idda-veuve', 'dettes-defunt-islam'],
   },
   {
     slug: 'autopsie-islam-france',
@@ -3311,7 +3311,25 @@ export const QUESTIONS: QA[] = [
       'La conclusion pratique tient en trois points. **De son vivant, on peut préparer ; après le décès, on ne peut plus rien reprendre** — c’est tout le sujet. **Le montage se construit avec un notaire**, parce que la réserve, la quotité disponible, les donations antérieures, l’assurance-vie et les biens situés à l’étranger forment un ensemble où l’improvisation coûte cher. **Et la question religieuse se pose à un savant** qui connaîtra la composition exacte de la famille, puisque les parts en dépendent entièrement. Une fiche ne calcule pas une succession, et celle-ci n’essaie pas.',
     ],
     category: 'Pratique',
-    related: ['enterrement-musulman-france', 'mariage-religieux-civil-france', 'credit-immobilier-halal', 'nikah-pacs-france', 'riba-interet-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal', 'deuil-idda-veuve'],
+    related: ['enterrement-musulman-france', 'dettes-defunt-islam', 'credit-immobilier-halal', 'nikah-pacs-france', 'riba-interet-islam', 'divorce-religieux-civil-france', 'assurance-vie-halal', 'deuil-idda-veuve'],
+  },
+  {
+    slug: 'dettes-defunt-islam',
+    question: 'Doit-on payer les dettes d’un défunt ?',
+    verdict: '📖 Payées sur l’héritage, avant tout partage',
+    short:
+      'Les dettes se règlent sur l’héritage avant tout partage. Le droit français laisse trois choix à l’héritier, dont un qui plafonne ce qu’il devra payer.',
+    answer: [
+      'La question arrive toujours au même moment : quelqu’un vient de mourir, et un créancier se manifeste. Deux réflexes opposés font du mal, et les deux sont faux. Le premier, **« ce n’est pas à moi de payer »**, alors que la religion range la dette avant tout partage. Le second, et c’est le plus coûteux : **accepter la succession par piété**, pour honorer le mort, sans savoir ce qu’elle contient. Cette fiche sépare les deux étages — ce que la religion demande, ce que le droit français permet. Ils vont ici dans le même sens, ce qui n’est pas si fréquent.',
+      '**L’ordre que posent les juristes musulmans est précis, et la dette y vient tôt.** On règle d’abord les frais funéraires, **ensuite les dettes du défunt**, puis le legs — la **wasiyya**, qui ne peut excéder le tiers, comme l’explique la fiche voisine sur la succession —, et seulement après viennent les parts fixées des héritiers. La conséquence pratique est nette : **un partage fait avant le règlement des dettes se fait dans le mauvais ordre.** Et la dette se règle **sur la masse successorale** : c’est le patrimoine du défunt qui répond, pas celui des héritiers.',
+      'Le droit français, lui, ne force personne. L’**article 768 du code civil** ouvre à l’héritier **trois branches**, et ce choix compte plus que tout le reste de cette fiche : **accepter purement et simplement** ; **renoncer** ; ou **accepter à concurrence de l’actif net**, cette dernière réservée à l’héritier à vocation universelle ou à titre universel. La troisième est celle que presque personne ne connaît : elle fait accepter la succession tout en **plafonnant ce que l’héritier doit à la valeur de ce qu’il reçoit**. C’est exactement l’outil qui permet d’honorer la dette du défunt sans y laisser ses propres biens.',
+      '**Les délais, et le piège est là.** L’héritier ne peut être contraint de choisir avant **quatre mois** à compter de l’ouverture de la succession. Passé ce délai, un créancier, un cohéritier, un légataire ou l’État peut lui adresser une **sommation de prendre parti** — un acte **extrajudiciaire**, qu’une simple lettre recommandée ne remplace pas. Cette sommation ouvre **deux mois**, et **le silence vaut alors acceptation pure et simple.** Tant qu’aucune option n’a été exprimée et qu’aucun acte d’héritier n’a été fait, la renonciation reste possible jusqu’à **dix ans** ; l’inverse n’existe pas. Une acceptation pure et simple, même tacite par un acte d’héritier, ne se reprend pas — et l’acceptation à concurrence de l’actif net peut être convertie en acceptation pure et simple, jamais le contraire.',
+      'Une porte de secours existe, étroite. Pour une dette **qu’on ne pouvait pas connaître** au moment de l’acceptation, l’**article 786 du code civil** permet de demander au tribunal d’en être déchargé, dans les conditions et les délais que ce texte prévoit. Ce n’est pas un filet : c’est une procédure, et elle ne remplace pas le fait de regarder avant de s’engager.',
+      'Et voici ce qui mérite d’être dit clairement, parce que la peur fait prendre de mauvaises décisions. **Le devoir religieux est de régler les dettes du défunt sur son héritage ; il ne demande pas aux héritiers de se ruiner.** Choisir l’acceptation à concurrence de l’actif net n’est donc pas une dérobade : c’est la forme juridique de ce que l’ordre des juristes décrit déjà. Là où la fiche voisine décrit deux systèmes qui ne coïncident pas, celui-ci est un point où ils disent la même chose.',
+      'Trois choses, dans cet ordre. **Ne rien partager, ne rien vendre, ne rien prélever** avant d’avoir une idée du passif : certains gestes valent acceptation sans qu’on l’ait voulu. **Voir un notaire** sans attendre — l’inventaire, l’option et sa forme sont son métier, et le délai de quatre mois existe pour cela. **Et pour l’ordre religieux et les parts, un savant** : ce site décrit l’ordre que posent les juristes, il ne calcule aucune succession. Si une dette est réclamée à un héritier personnellement, c’est une question d’avocat, pas de piété.',
+    ],
+    category: 'Pratique',
+    related: ['heritage-succession-france', 'enterrement-musulman-france', 'riba-interet-islam', 'contrat-obseques-halal', 'deuil-idda-veuve', 'nikah-pacs-france'],
   },
   {
     slug: 'assurance-vie-halal',
