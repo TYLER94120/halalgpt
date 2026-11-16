@@ -1206,7 +1206,7 @@ export const QUESTIONS: QA[] = [
       'Autrement dit : « Quick est-il halal ? » n’a pas de réponse à l’échelle de l’enseigne, et chercher cette réponse sur un site tiers — celui-ci compris — est le mauvais réflexe. **La bonne question est « ce restaurant-ci est-il certifié, et par qui ? »**, et elle se pose là où vous commandez.',
     ],
     category: 'Produits',
-    related: ['mcdo-halal', 'burger-king-halal', 'kfc-halal', 'certifications-halal-france', 'isla-delice-halal'],
+    related: ['mcdo-halal', 'burger-king-halal', 'kfc-halal', 'certifications-halal-france', 'isla-delice-halal', 'pizza-hut-halal'],
   },
   {
     slug: 'burger-king-halal',
@@ -2502,7 +2502,7 @@ export const QUESTIONS: QA[] = [
       'L’alternative simple en France : le pays regorge de pizzerias halal indépendantes — souvent excellentes — et certaines chaînes locales 100 % halal se développent dans les grandes villes. Le comparatif se gagne rarement sur la pizza industrielle.',
     ],
     category: 'Produits',
-    related: ['subway-halal', 'kebab-halal', 'kfc-halal'],
+    related: ['subway-halal', 'kebab-halal', 'kfc-halal', 'pizza-hut-halal'],
   },
   {
     slug: 'o-tacos-halal',
