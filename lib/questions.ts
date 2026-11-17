@@ -2985,7 +2985,7 @@ export const QUESTIONS: QA[] = [
       'Deux réflexes pratiques, qui ne sont pas du droit mais du bon sens. **Demander tôt, et par écrit.** Tôt, parce que le seul motif de refus recevable est la désorganisation du service ou de l’entreprise — et qu’une désorganisation est bien plus facile à invoquer deux jours avant que deux mois avant. Par écrit, parce que c’est ce qui rend visible le motif d’un refus, s’il y en a un. Et anticiper : les dates de l’Aïd suivent le calendrier lunaire et avancent d’environ onze jours chaque année, ce qui les fait tomber un jour de semaine différent à chaque fois.',
     ],
     category: 'Pratique',
-    related: ['priere-travail', 'zakat-al-fitr-montant', 'travailler-restaurant-alcool', 'caissier-scanner-alcool', 'voile-travail-france', 'voile-ecole-france'],
+    related: ['priere-travail', 'zakat-al-fitr-montant', 'travailler-restaurant-alcool', 'caissier-scanner-alcool', 'voile-travail-france', 'voile-ecole-france', 'travailler-banque-halal'],
   },
   {
     slug: 'voile-travail-france',
@@ -3382,7 +3382,7 @@ export const QUESTIONS: QA[] = [
       'Pour ta situation — et surtout si tu hésites entre deux avis entendus — **demande à un savant**. Pour tes droits, la durée d’affiliation et les conditions exactes, **France Travail** : ce sont eux qui détiennent la réponse, et elle dépend de ton parcours. Ce site transmet le cadre et nomme la divergence ; il ne tranche ni l’un ni l’autre.',
     ],
     category: 'Pratique',
-    related: ['riba-interet-islam', 'livret-a-interets-halal', 'assurance-auto-obligatoire-halal', 'credit-immobilier-halal', 'conge-aid-travail'],
+    related: ['riba-interet-islam', 'livret-a-interets-halal', 'assurance-auto-obligatoire-halal', 'credit-immobilier-halal', 'conge-aid-travail', 'travailler-banque-halal'],
   },
   {
     slug: 'livret-a-interets-halal',
@@ -3399,7 +3399,7 @@ export const QUESTIONS: QA[] = [
       'Ce que cette fiche ne fait pas : elle ne te dit pas de fermer ton livret, ni de le garder. S’il y a des années d’intérêts accumulés, un livret au nom d’un enfant, ou une épargne dont tu as besoin, **demande à un savant** — ce sont des situations où le détail change la réponse. Ce site décrit des avis ; il n’en délivre aucun.',
     ],
     category: 'Pratique',
-    related: ['riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'assurance-vie-halal', 'zakat-al-fitr-montant', 'allocation-chomage-halal'],
+    related: ['riba-interet-islam', 'credit-immobilier-halal', 'assurance-auto-obligatoire-halal', 'assurance-vie-halal', 'zakat-al-fitr-montant', 'allocation-chomage-halal', 'travailler-banque-halal'],
   },
   {
     slug: 'ghusl-grande-ablution',
@@ -3617,7 +3617,25 @@ export const QUESTIONS: QA[] = [
       'La règle qui vaut dans les deux cas : plus l’alcool est central dans le métier — caviste, barman, rayon dédié — moins la tolérance s’applique. Et parce que cela touche à ton revenu et à ta famille, c’est exactement le genre de situation où il faut en parler à un savant qui connaît ton cas, pas trancher depuis une page web.',
     ],
     category: 'Vie quotidienne',
-    related: ['travailler-restaurant-alcool', 'vinaigre-halal', 'halal-definition', 'chat-maison-islam', 'reseaux-sociaux-islam', 'conge-aid-travail'],
+    related: ['travailler-restaurant-alcool', 'vinaigre-halal', 'halal-definition', 'chat-maison-islam', 'reseaux-sociaux-islam', 'conge-aid-travail', 'travailler-banque-halal'],
+  },
+  {
+    slug: 'travailler-banque-halal',
+    question: 'Peut-on travailler dans une banque ?',
+    verdict: '📖 Avis divergents — la question porte sur ton poste',
+    short:
+      'Le hadith sur l’intérêt nomme celui qui rédige l’acte et les témoins : la question porte sur ton poste. Et les avis divergent sur ceux qui n’y touchent pas.',
+    answer: [
+      'Avant tout, ce que cette fiche ne fera pas. **Elle ne te dira pas si ton emploi est licite**, et pas par prudence de façade : nous n’avons pas pu établir laquelle des positions en présence est majoritaire, et prétendre le contraire serait te tromper sur un sujet qui touche ton revenu et ta famille. Ce qu’elle peut faire, c’est te donner la bonne question — parce que la plupart des gens posent la mauvaise.',
+      '**La mauvaise question est « est-ce que mon employeur est une banque ».** La bonne se lit dans le texte même. Le hadith rapporté par **Mouslim** sur l’intérêt ne vise pas un établissement : il vise des **personnes**, nommées une par une — celui qui consomme l’intérêt, celui qui le verse, **celui qui rédige l’acte, et les deux témoins** — « ils sont tous égaux ». Ce que le texte désigne, c’est donc une participation, et la participation se mesure à ce que font tes mains. La fiche de ce site sur le **ribâ** porte ce hadith et son attribution.',
+      '**De là, une première zone sans ambiguïté pour personne.** Un poste dont le travail *est* l’intérêt — monter un crédit à intérêt, en calculer les échéances, en rédiger ou en valider les actes, en vendre le produit, en contrôler la conformité — tombe directement dans ce que le texte nomme. Sur ce point, les avis que nous avons lus ne divergent pas : ils divergent sur tout le reste.',
+      '**Et c’est là que le désaccord est réel, et sérieux des deux côtés.** Une position tient que l’emploi dans une banque pratiquant l’intérêt n’est pas permis **même dans un poste qui n’y touche pas** — ménage, gardiennage, informatique, ressources humaines —, au motif que c’est aider à ce qui est interdit : l’institution ne fonctionne pas sans ses murs ni ses machines. Cette position admet une exception en cas de contrainte réelle, à condition de continuer à chercher autre chose. L’autre position distingue le poste de l’employeur, comme ce site le décrit déjà pour le caissier qui scanne de l’alcool : celui qui ne choisit rien, ne conseille rien et ne touche aucune commission n’est pas la personne que le texte désigne. **Nous ne savons pas laquelle des deux prévaut** ; nous savons que les deux sont défendues par des gens qui connaissent le sujet.',
+      '**Le dégradé, lui, fait l’accord des deux côtés** — et c’est ce qui est le plus utile à retenir. Plus l’intérêt est au cœur du métier, moins une tolérance s’applique ; plus il en est loin, plus elle est invoquée. Un chargé de crédit et un agent d’entretien ne sont pas dans la même situation, quelle que soit la position qu’on suive. C’est exactement la règle que ce site énonce pour l’alcool : caviste et caissier ne sont pas au même endroit du dégradé.',
+      '**Le conseil pratique que les deux positions permettent : cherche la sortie par le haut avant de chercher une fatwa.** Une mutation interne vers un service qui ne traite pas de crédit, un autre employeur, une formation — c’est souvent possible et rarement tenté. Et personne ne demande à quelqu’un de démissionner sans autre revenu : ceux qui autorisent le font au titre du besoin, ce qui suppose précisément de continuer à chercher. **Ce site ne recense pas le marché de la finance islamique en France et ne recommande aucun établissement** ; si une offre conforme existe près de toi, elle se vérifie au cas par cas.',
+      'Pour finir, la seule chose que cette fiche affirme : **ta situation se traite avec un savant qui la connaît** — ton poste exact, tes charges, ce que tu peux changer et à quel délai. Une page web ne sait rien de tout cela. Ce qu’elle pouvait faire, elle l’a fait : te montrer que le texte parle de rôles, pas d’enseignes, et que le désaccord porte sur les postes périphériques, pas sur le cœur du métier.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['riba-interet-islam', 'caissier-scanner-alcool', 'travailler-restaurant-alcool', 'credit-immobilier-halal', 'livret-a-interets-halal', 'halal-definition'],
   },
   {
     slug: 'ia-halal',

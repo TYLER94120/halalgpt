@@ -137,8 +137,34 @@ const trous = [];
 // Trois domaines ont ete ajoutes et quelques mots manquants aussi. Et
 // surtout ce compteur : une grille qui ne dit pas ce qu'elle rate se lit
 // comme si elle etait complete.
-for (const [nom, re] of Object.entries(DOMAINES)) {
-  const fiches = QUESTIONS.filter((q) => re.test(q.slug));
+// UNE FICHE NE COMPTE QUE DANS UN DOMAINE, le premier qui la reconnait.
+//
+// Mesure du 17 novembre : `travailler-banque-halal` repondait a la fois a
+// « travail » (travail/droit) et a « banque » (finance/argent), et la grille
+// l'a compte DEUX fois — finance est passe de 8 a 9 et travail/droit de 6 a 7
+// pour une seule fiche neuve. Une grille de couverture qui additionne deux fois
+// la meme page annonce un catalogue plus fourni qu'il n'est, c'est-a-dire
+// exactement l'inverse de son travail. Le 3 novembre j'avais corrige le meme
+// defaut en retrecissant un mot-cle (`contrat` devenu `contrat-travail`) ; ce
+// n'etait qu'un cas, pas la cause. La cause est ici.
+//
+// L'ampleur mesuree apres correction : SIX domaines etaient gonfles, pas deux.
+// priere 21→20, ramadan 15→14, vie sociale 19→18, apparence 7→5, voyage 31→29.
+// La somme des domaines egale desormais le nombre de fiches non alimentaires,
+// ce qui n'avait jamais ete le cas. Les « domaines les plus minces » lus ces
+// dernieres semaines etaient donc legerement faux — apparence/parure, annoncee
+// a 7, est en realite a 5, a egalite avec mort/heritage.
+//
+// CONSEQUENCE A CONNAITRE : l'ORDRE des cles de DOMAINES decide maintenant du
+// classement d'une fiche a l'intersection. `travailler-banque-halal` repond a
+// « banque » et a « travail » ; finance venant en premier, elle est comptee en
+// finance. C'est deterministe et assume, mais ce n'est pas un jugement de sens :
+// deplacer une cle deplace des fiches. A savoir avant de reordonner.
+const domaines = Object.entries(DOMAINES);
+const domaineDe = (q) => domaines.find(([, re]) => re.test(q.slug))?.[0];
+
+for (const [nom, re] of domaines) {
+  const fiches = QUESTIONS.filter((q) => domaineDe(q) === nom);
   const horsNourriture = fiches.filter((q) => !NOURRITURE.has(q.category));
   const marque = horsNourriture.length === 0 ? '  ← VIDE'
     : horsNourriture.length <= 3 ? '  ← mince'
