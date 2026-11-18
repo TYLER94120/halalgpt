@@ -82,7 +82,7 @@ const DOMAINES = {
   'priere / purete':      /priere|wudu|ablution|ghusl|tayammum|qibla|rakat|vernis|henne|lentilles|platre|regles|fajr/i,
   'ramadan / jeune':      /ramadan|jeune|iftar|suhur|dattes|salive/i,
   'vie sociale / loisirs':/musique|jeux|echecs|sport|tatouage|piercing|photo|reseaux|anniversaire|noel|chien|chat|cigarette|chicha|puff|serrer-la-main/i,
-  'apparence / parure':   /teinture|cheveux|levres|carmin|parfum|porter-or|maquillage|barbe/i,
+  'apparence / parure':   /teinture|cheveux|levres|carmin|parfum|porter-or|maquillage|barbe|perruque/i,
   'voyage / lieux':       /voyage|restaurant-halal|repas-halal-avion|pays-/i,
   'croyances / identite': /halal-definition|certification|convertir|prenom|ia-halal|mauvais-oeil|casher/i,
 };

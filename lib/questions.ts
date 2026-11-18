@@ -435,6 +435,25 @@ export const QUESTIONS: QA[] = [
     related: ['don-organes-islam', 'piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'chicha-halal', 'puff-vape-halal'],
   },
   {
+    slug: 'perruque-islam',
+    question: 'Une perruque est-elle permise en islam ?',
+    verdict: '📖 Avis divergents — la perte de cheveux change la question',
+    short:
+      'Une perruque n’est pas une greffe — elle ajoute ce qui ne pousse plus. Les avis divergent, et plusieurs instances distinguent le cas de la maladie.',
+    answer: [
+      'Cette question arrive le plus souvent au pire moment : une chimiothérapie commence, les cheveux tombent, et quelqu’un se demande si une perruque lui est permise. **Ce site ne tranchera pas ton cas** — il n’en a ni la compétence ni la légitimité. Mais il peut t’éviter deux erreurs : croire que la réponse est évidemment oui, et croire qu’elle est évidemment non. Elle n’est ni l’une ni l’autre, et la raison est précise.',
+      '**Première chose, et elle surprend ceux qui ont lu notre fiche sur la greffe : une perruque n’est pas une greffe.** Tout l’argument de la greffe est qu’il s’agit d’une **autogreffe** — on redéplace tes propres cheveux, rien ne vient de l’extérieur. Une perruque fait exactement le contraire : elle **ajoute**. C’est pourquoi ce n’est pas le même texte qui s’applique. Celui que les juristes invoquent ici est le hadith que porte déjà cette fiche voisine : « Allah a maudit celle qui ajoute des cheveux et celle qui demande qu’on lui en ajoute » (**Boukhari et Mouslim**). Qui lit « les cheveux, c’est permis » après la fiche sur la greffe se trompe de raisonnement.',
+      '**La lecture restrictive** tient donc que la perruque est précisément l’ajout que le texte nomme — y compris une perruque simplement posée sur la tête, sans attache. Elle est défendue notamment dans une lecture malikite, avec cette remarque que quelqu’un qui la suit n’est pas excessif : une femme qui a perdu ses cheveux garde de quoi se couvrir la tête, et se couvrir n’est pas ajouter.',
+      '**La lecture permissive sépare le cas de la maladie**, et elle s’appuie sur la distinction que ce site utilise déjà pour la greffe : **effacer un défaut n’est pas ajouter un ornement.** Deux positions nommées vont dans ce sens. **Dār al-Iftāʾ d’Égypte** a retenu cet avis en **2016**, pour des enfants qui avaient perdu leurs cheveux sous chimiothérapie. Et **cheikh al-Outhaymîn**, interrogé sur une femme dont les cheveux étaient tombés sans espoir de repousse, a jugé qu’il n’y avait pas de mal à porter une perruque dans ce cas — tout en tenant la perruque d’embellissement pour interdite. La même logique a conduit l’**Académie internationale du fiqh islamique** (OCI) à ranger, en **2007**, la greffe de cheveux en cas de chute parmi les actes esthétiques permis.',
+      '**Et une limite sur ces deux attributions, parce qu’elle compte.** Nous les avons lues **relayées par des sites**, pas dans les décisions elles-mêmes : les sources primaires sont hors d’atteinte depuis cette machine. Nous les rapportons donc comme des positions attribuées, et non comme des textes que nous aurions vérifiés. Si ce point décide pour toi, c’est exactement ce qu’il faut faire vérifier par un savant.',
+      '**Un point pratique que personne ne relie, et il vaut la lecture.** Pour la grande ablution, l’eau doit atteindre le cuir chevelu : une perruque s’enlève, comme des extensions imperméables ou de faux ongles. La fiche de ce site sur le **ghusl** le dit déjà pour les extensions ; cela vaut ici à l’identique. Ce n’est pas une question de licéité, c’est une question de validité de l’ablution — deux choses différentes qu’on confond souvent.',
+      'Du côté français, le mécanisme vaut d’être connu, car beaucoup l’ignorent. Une **prothèse capillaire** est prise en charge sur **prescription médicale** mentionnant explicitement le lien avec une chimiothérapie ou une radiothérapie crânienne, et cette prescription se renouvelle tous les douze mois. Les modèles sont répartis en **classes** — la première en cheveux synthétiques, à prix plafonné ; la seconde à un tarif supérieur —, et une mutuelle responsable couvre souvent le reste. **Nous ne donnons pas les montants** : les sources que nous avons pu lire ne concordent pas entre elles pour 2026, et un chiffre faux sur une dépense de santé coûte plus qu’un chiffre absent. La page de référence est celle de l’Assurance Maladie sur la prise en charge des perruques, et ta mutuelle a un forfait à vérifier.',
+      'Pour finir, et c’est le seul conseil que cette fiche se permette : **parle-en à un savant qui connaît ta situation** — s’agit-il d’une perte due à un traitement, d’une alopécie installée, ou d’une envie de changer de tête ? Les avis ne disent pas la même chose dans ces trois cas, et personne ne devrait avoir à deviner lequel le concerne au milieu d’une maladie.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'ghusl-grande-ablution', 'piercing-halal', 'barbe-islam'],
+  },
+  {
     slug: 'travailler-restaurant-alcool',
     question: 'Peut-on travailler dans un restaurant qui sert de l’alcool ?',
     verdict: '⚠️ Servir ou vendre : évité par la majorité — les autres postes se discutent',
@@ -2815,7 +2834,7 @@ export const QUESTIONS: QA[] = [
       'Comme souvent, la question cache la vraie grille de lecture : parure admise et discrète d’un côté, transformation corporelle suivie de modes de l’autre. Pour un piercing déjà posé, le retrait laisse au pire une trace minime — la situation se corrige facilement, contrairement au tatouage.',
     ],
     category: 'Vie quotidienne',
-    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal', 'porter-or-homme-islam', 'serrer-la-main-islam'],
+    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal', 'porter-or-homme-islam', 'serrer-la-main-islam', 'perruque-islam'],
   },
   {
     slug: 'vernis-ongles-priere',
@@ -3413,7 +3432,7 @@ export const QUESTIONS: QA[] = [
       'La forme complète, celle de la sunna : intention, laver les mains, laver les parties intimes, faire des ablutions complètes comme pour la prière, verser l’eau trois fois sur la tête en frottant le cuir chevelu, puis laver tout le corps en commençant par le côté droit. Deux précisions utiles : les femmes n’ont pas l’obligation de défaire leurs tresses pour le ghusl d’impureté majeure si l’eau atteint la racine (hadith d’Oumm Salama) ; et vernis, faux ongles ou extensions imperméables doivent être retirés, puisqu’ils empêchent l’eau d’atteindre la peau. Sans eau ou en cas de maladie, le tayammum (ablution sèche) prend le relais.',
     ],
     category: 'Prière',
-    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles', 'wudu-annule-quoi', 'lentilles-contact-ablutions', 'platre-pansement-ablutions'],
+    related: ['se-convertir-islam', 'ablutions-chaussettes', 'vernis-ongles-priere', 'priere-femme-regles', 'wudu-annule-quoi', 'lentilles-contact-ablutions', 'platre-pansement-ablutions', 'perruque-islam'],
   },
   {
     slug: 'antidepresseurs-halal',
@@ -3783,7 +3802,7 @@ export const QUESTIONS: QA[] = [
       'Pour le poids de la règle selon ton école : **un savant**. Si une sanction est en jeu au travail : **un juriste, un syndicat ou le Défenseur des droits** — l’arrêt de 2020 montre qu’un licenciement sur ce motif peut être annulé. Ce site donne l’étage du droit parce que c’est celui qui se vérifie, et il nomme la divergence religieuse plutôt que de choisir dedans.',
     ],
     category: 'Vie quotidienne',
-    related: ['teinture-cheveux-islam', 'porter-or-homme-islam', 'voile-travail-france', 'chirurgie-esthetique-halal', 'piercing-halal', 'circoncision-islam-france'],
+    related: ['teinture-cheveux-islam', 'porter-or-homme-islam', 'voile-travail-france', 'chirurgie-esthetique-halal', 'piercing-halal', 'circoncision-islam-france', 'perruque-islam'],
   },
   {
     slug: 'teinture-cheveux-islam',
@@ -3797,7 +3816,7 @@ export const QUESTIONS: QA[] = [
       'Reste une question que beaucoup oublient et qui est la plus concrète : la teinture empêche-t-elle l’eau d’atteindre le cheveu lors des ablutions ? La réponse dépend du produit. Le henné et les colorations qui pénètrent le cheveu en le teignant laissent passer l’eau : les ablutions sont valides. En revanche, tout produit qui forme une pellicule imperméable en surface doit être retiré avant les ablutions et le ghusl — c’est le même raisonnement que pour le vernis à ongles. En cas de doute sur un produit précis, lis sa composition, et pour ta situation, demande à un savant.',
     ],
     category: 'Vie quotidienne',
-    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal', 'barbe-islam', 'henne-ablutions-priere'],
+    related: ['vernis-ongles-priere', 'ghusl-grande-ablution', 'greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'tatouage-halal', 'barbe-islam', 'henne-ablutions-priere', 'perruque-islam'],
   },
   {
     slug: 'porter-or-homme-islam',
