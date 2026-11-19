@@ -82,7 +82,7 @@ const DOMAINES = {
   'priere / purete':      /priere|wudu|ablution|ghusl|tayammum|qibla|rakat|vernis|henne|lentilles|platre|regles|fajr/i,
   'ramadan / jeune':      /ramadan|jeune|iftar|suhur|dattes|salive/i,
   'vie sociale / loisirs':/musique|jeux|echecs|sport|tatouage|piercing|photo|reseaux|anniversaire|noel|chien|chat|cigarette|chicha|puff|serrer-la-main/i,
-  'apparence / parure':   /teinture|cheveux|levres|carmin|parfum|porter-or|maquillage|barbe|perruque/i,
+  'apparence / parure':   /teinture|cheveux|levres|carmin|parfum|porter-or|maquillage|barbe|perruque|sourcil|epilation/i,
   'voyage / lieux':       /voyage|restaurant-halal|repas-halal-avion|pays-/i,
   'croyances / identite': /halal-definition|certification|convertir|prenom|ia-halal|mauvais-oeil|casher/i,
 };
@@ -154,6 +154,14 @@ const trous = [];
 // ce qui n'avait jamais ete le cas. Les « domaines les plus minces » lus ces
 // dernieres semaines etaient donc legerement faux — apparence/parure, annoncee
 // a 7, est en realite a 5, a egalite avec mort/heritage.
+//
+// ET UN FAIT A TENIR POUR ACQUIS : une fiche sur un sujet NEUF sera hors
+// grille. Les 18 et 19 novembre, deux fiches neuves, deux fois hors grille —
+// `perruque`, puis `sourcil`. C'est logique : un sujet qui n'existait pas dans
+// le catalogue n'existe pas davantage dans une liste de mots-cles tiree du
+// catalogue. Le compteur de hors-grille est donc le garde-fou qui marche, et le
+// bon geste est d'ajouter le mot-cle EN MEME TEMPS que la fiche, pas la nuit
+// suivante. Ecrire une fiche, c'est aussi la classer.
 //
 // CONSEQUENCE A CONNAITRE : l'ORDRE des cles de DOMAINES decide maintenant du
 // classement d'une fiche a l'intersection. `travailler-banque-halal` repond a

@@ -435,6 +435,23 @@ export const QUESTIONS: QA[] = [
     related: ['don-organes-islam', 'piercing-halal', 'vernis-ongles-priere', 'ghusl-grande-ablution', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'chicha-halal', 'puff-vape-halal'],
   },
   {
+    slug: 'epilation-sourcils-islam',
+    question: 'Peut-on s’épiler les sourcils ?',
+    verdict: '📖 Avis divergents sur la forme — l’entre-sourcils fait l’accord',
+    short:
+      'Le hadith vise l’amincissement et le redessin. Retirer les poils entre les sourcils fait l’accord ; sur la forme, les avis divergent réellement.',
+    answer: [
+      'C’est l’une des questions les plus posées et les plus mal traitées, parce qu’on y répond presque toujours par un seul mot — permis, ou interdit — là où les savants distinguent **quatre gestes différents**. Commençons par le texte, puisque c’est lui qui nomme la chose : un hadith rapporté par **Boukhari et Mouslim** maudit celles qui se tatouent, **s’épilent les sourcils** ou se liment les dents pour la beauté, « changeant ainsi la création d’Allah ». Ce texte, la fiche de ce site sur la chirurgie esthétique le porte déjà, et c’est le même critère qui gouverne ici.',
+      '**Le dégradé, du plus accordé au plus discuté — et c’est tout l’apport de cette page.** Retirer les poils **entre** les sourcils : aucune divergence sérieuse, parce qu’ils ne font pas partie des sourcils. Couper ce qui **dépasse**, quand les poils sont devenus trop longs, sans amincir ni changer la forme : largement toléré. **Amincir** le sourcil ou **le redessiner** : c’est là que le désaccord commence, et il est réel. **Changer complètement l’aspect** — le sourcil très fin, entièrement refait : c’est le cœur de ce que le texte désigne, et peu d’avis le défendent.',
+      '**Et sur la zone qui divise, nous ne savons pas quel avis prévaut.** Il faut le dire, parce que les pages qui tranchent le font sans preuve. Les sources que nous avons pu lire se contredisent **sur ce point précis** : certaines annoncent que la majorité interdit, d’autres que l’avis le plus fort permet de redessiner. Plusieurs savants **malikites** restreignent l’interdiction au cas où l’on rend les sourcils très fins en changeant complètement leur aspect. Une position intermédiaire permet à la femme mariée de le faire avec l’accord de son mari. **Ces trois positions existent ; laquelle est majoritaire, nous ne l’avons pas établi.**',
+      '**Le reste du visage est une autre question**, et on les confond souvent. Pour les poils du visage hors sourcils — duvet, joues, front —, beaucoup de savants ne voient pas d’inconvénient à les retirer, parce que le texte ne les nomme pas. **An-Nawawī** a été plus sévère et rattachait l’épilation du visage à celle des sourcils ; certains hanbalites l’autorisent avec l’accord du mari. Autrement dit : ce que tu lis sur les sourcils ne se transporte pas tel quel au duvet, et l’inverse non plus.',
+      '**Une limite sur nos sources, qui vaut d’être écrite.** Les positions ci-dessus, nous les avons lues sur des sites et des forums, pas dans des décisions d’instances — et plusieurs se contredisent sur ce que tient la majorité. Nous les rapportons comme des positions attribuées. Un savant de confiance, lui, saura dire ce qui prévaut dans l’école que tu suis, ce qu’une page web ne peut pas faire.',
+      'Deux remarques pour finir, qui évitent des malentendus. **Le maquillage n’est pas concerné** : un crayon à sourcils ne modifie rien, il se retire. Et **« non permanent » n’est pas le critère** — l’épilation ne l’est pas, et c’est pourtant elle que le texte nomme. Ce qui est visé, c’est l’altération de l’apparence créée, pas la durée du geste. C’est la précision que nous avons dû apporter à notre propre fiche sur la chirurgie esthétique, qui laissait croire le contraire.',
+    ],
+    category: 'Vie quotidienne',
+    related: ['chirurgie-esthetique-halal', 'perruque-islam', 'teinture-cheveux-islam', 'rouge-levres-carmin-halal', 'tatouage-halal', 'barbe-islam'],
+  },
+  {
     slug: 'perruque-islam',
     question: 'Une perruque est-elle permise en islam ?',
     verdict: '📖 Avis divergents — la perte de cheveux change la question',
@@ -451,7 +468,7 @@ export const QUESTIONS: QA[] = [
       'Pour finir, et c’est le seul conseil que cette fiche se permette : **parle-en à un savant qui connaît ta situation** — s’agit-il d’une perte due à un traitement, d’une alopécie installée, ou d’une envie de changer de tête ? Les avis ne disent pas la même chose dans ces trois cas, et personne ne devrait avoir à deviner lequel le concerne au milieu d’une maladie.',
     ],
     category: 'Vie quotidienne',
-    related: ['greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'ghusl-grande-ablution', 'piercing-halal', 'barbe-islam'],
+    related: ['greffe-cheveux-halal', 'chirurgie-esthetique-halal', 'teinture-cheveux-islam', 'ghusl-grande-ablution', 'piercing-halal', 'barbe-islam', 'epilation-sourcils-islam'],
   },
   {
     slug: 'travailler-restaurant-alcool',
@@ -2834,7 +2851,7 @@ export const QUESTIONS: QA[] = [
       'Comme souvent, la question cache la vraie grille de lecture : parure admise et discrète d’un côté, transformation corporelle suivie de modes de l’autre. Pour un piercing déjà posé, le retrait laisse au pire une trace minime — la situation se corrige facilement, contrairement au tatouage.',
     ],
     category: 'Vie quotidienne',
-    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal', 'porter-or-homme-islam', 'serrer-la-main-islam', 'perruque-islam'],
+    related: ['tatouage-halal', 'vernis-ongles-priere', 'rouge-levres-carmin-halal', 'porter-or-homme-islam', 'serrer-la-main-islam', 'perruque-islam', 'epilation-sourcils-islam'],
   },
   {
     slug: 'vernis-ongles-priere',
@@ -2862,7 +2879,7 @@ export const QUESTIONS: QA[] = [
       'La sortie par le haut est facile : les gammes sans carmin sont nombreuses (colorants minéraux, la mention « vegan » garantit l’absence de cochenille), et les marques de cosmétiques certifiés halal se multiplient. Pour celles qui veulent le rouge parfait sans la question : il existe, littéralement dans le même rayon.',
     ],
     category: 'Vie quotidienne',
-    related: ['e120-halal', 'parfum-alcool-halal', 'maquillage-ramadan', 'vegan-halal'],
+    related: ['e120-halal', 'parfum-alcool-halal', 'maquillage-ramadan', 'vegan-halal', 'epilation-sourcils-islam'],
   },
   {
     slug: 'musique-halal',
@@ -3682,7 +3699,7 @@ export const QUESTIONS: QA[] = [
     answer: [
       'La chirurgie qui répare est traitée comme un soin, et les savants contemporains l’autorisent largement : reconstruction après un accident, une brûlure ou un cancer, correction d’une malformation de naissance comme une fente labiale, réparation d’une cloison nasale qui empêche de respirer, chirurgie de la main après un traumatisme. Le principe est celui du hadith connu : « Ô serviteurs d’Allah, soignez-vous, car Allah n’a pas fait descendre de maladie sans faire descendre son remède » (Tirmidhi, Abou Dawoud). Ici, on ne change pas une création : on remet en état ce qui a été abîmé.',
       'La chirurgie purement esthétique sur un corps sain est, elle, écartée par la majorité. Deux textes fondent cette position. Le Coran rapporte le serment de Satan : « … et je leur commanderai de changer la création d’Allah » (sourate 4, verset 119). Et un hadith rapporté par Boukhari et Mouslim maudit celles qui se tatouent, s’épilent les sourcils ou se liment les dents pour la beauté, « changeant ainsi la création d’Allah ». C’est cette dernière formule qui sert de critère aux savants : l’intention d’embellir en modifiant durablement un corps qui n’a rien.',
-      'Entre les deux, une zone grise que personne ne tranche à ta place : une oreille très décollée, un nez qui provoque des moqueries quotidiennes, une cicatrice visible qui rend la vie sociale difficile. Plusieurs savants contemporains y voient une souffrance réelle à lever, et non une simple coquetterie ; d’autres maintiennent l’interdit. Si tu es dans ce cas, deux démarches valent mieux qu’une décision solitaire : expose ta situation précise à un savant de confiance, et ne néglige pas l’accompagnement psychologique, qui règle parfois ce que le bistouri ne réglerait pas. À noter enfin : le maquillage, la coiffure, les soins non permanents ne relèvent pas de ce débat.',
+      'Entre les deux, une zone grise que personne ne tranche à ta place : une oreille très décollée, un nez qui provoque des moqueries quotidiennes, une cicatrice visible qui rend la vie sociale difficile. Plusieurs savants contemporains y voient une souffrance réelle à lever, et non une simple coquetterie ; d’autres maintiennent l’interdit. Si tu es dans ce cas, deux démarches valent mieux qu’une décision solitaire : expose ta situation précise à un savant de confiance, et ne néglige pas l’accompagnement psychologique, qui règle parfois ce que le bistouri ne réglerait pas. À noter enfin : le maquillage et la coiffure ne relèvent pas de ce débat. **Mais « non permanent » n’est pas le critère**, et cette fiche l’a longtemps laissé croire : le hadith cité plus haut nomme l’épilation des sourcils, qui ne l’est pas. Le critère est l’altération durable de l’apparence créée, pas la durée du geste — et pour les sourcils précisément, ce site a désormais sa fiche.',
     ],
     category: 'Vie quotidienne',
     related: ['greffe-cheveux-halal', 'tatouage-halal', 'piercing-halal', 'psy-therapie-islam', 'teinture-cheveux-islam', 'adoption-islam', 'don-organes-islam', 'e901-cire-abeille-halal'],
@@ -3802,7 +3819,7 @@ export const QUESTIONS: QA[] = [
       'Pour le poids de la règle selon ton école : **un savant**. Si une sanction est en jeu au travail : **un juriste, un syndicat ou le Défenseur des droits** — l’arrêt de 2020 montre qu’un licenciement sur ce motif peut être annulé. Ce site donne l’étage du droit parce que c’est celui qui se vérifie, et il nomme la divergence religieuse plutôt que de choisir dedans.',
     ],
     category: 'Vie quotidienne',
-    related: ['teinture-cheveux-islam', 'porter-or-homme-islam', 'voile-travail-france', 'chirurgie-esthetique-halal', 'piercing-halal', 'circoncision-islam-france', 'perruque-islam'],
+    related: ['teinture-cheveux-islam', 'porter-or-homme-islam', 'voile-travail-france', 'chirurgie-esthetique-halal', 'piercing-halal', 'circoncision-islam-france', 'perruque-islam', 'epilation-sourcils-islam'],
   },
   {
     slug: 'teinture-cheveux-islam',
