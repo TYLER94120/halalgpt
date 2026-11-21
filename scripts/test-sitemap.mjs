@@ -18,6 +18,7 @@
 // dont Next ecrit les dates.
 
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 
 const BASE = process.env.BASE ?? 'http://127.0.0.1:3330';
 
@@ -30,7 +31,61 @@ const dire = (ok, quoi, detail = '') => {
 const dates = JSON.parse(readFileSync(new URL('../lib/dates-fiches.json', import.meta.url), 'utf8'));
 const fiches = Object.keys(dates);
 
-const xml = await (await fetch(`${BASE}/sitemap.xml`)).text();
+// ── 0. AUCUNE DATE INVENTEE — hors reseau, exact, sans faux positif ─────
+//
+// POURQUOI CETTE SECTION (21 novembre).
+//
+// L'en-tete de `dates-fiches.mjs` porte la regle depuis le premier jour :
+// « ces dates ne sont jamais inventees ; une date de mise a jour fausse est une
+// promesse fausse, faite au lecteur autant qu'a Google ». **Rien ne
+// l'appliquait.** Le 20 novembre, la methode la violait sans bruit — le bloc
+// suivi par `git log -L` incluait deux lignes identiques dans les 258 entrees,
+// d'ou six fausses dates de mise a jour annoncees a Google.
+//
+// Ce controle n'attrape PAS cette erreur-la : savoir si une date est la BONNE
+// demande de refaire le calcul. Il attrape l'autre moitie, et exactement :
+// toute date du fichier doit etre l'horodatage d'un commit ayant touche
+// `lib/questions.ts`. Une date qui n'en vient pas a ete ecrite a la main,
+// corrompue, ou fabriquee. Zero faux positif possible.
+//
+// ET CE QU'ON A ESSAYE AVANT, pour ne pas le refaire. Un controle croise par
+// `git log -S` sur des fragments du texte de chaque fiche : il a signale 35
+// fiches sur 40. La raison est ecrite dans l'en-tete du script qu'il pretendait
+// valider — `-S` ne voit que les changements de NOMBRE d'occurrences, il
+// « manque completement » les enrichissements, c'est-a-dire precisement ce que
+// la date de modification mesure. **Un validateur bati sur la technique que la
+// documentation declare aveugle a la chose mesuree ne valide rien.**
+const commitsConnus = new Set(
+  execFileSync('git', ['log', '--format=%cI', '--', 'lib/questions.ts'], { encoding: 'utf8' })
+    .trim().split('\n').filter(Boolean),
+);
+const orphelines = [];
+for (const [slug, d] of Object.entries(dates)) {
+  for (const champ of ['publie', 'modifie']) {
+    if (!commitsConnus.has(d[champ])) orphelines.push(`${slug}.${champ} = ${d[champ]}`);
+  }
+}
+dire(
+  orphelines.length === 0,
+  `les ${fiches.length * 2} dates viennent toutes d'un commit reel (${commitsConnus.size} commits)`,
+  orphelines.slice(0, 5).join(', '),
+);
+
+// ── Le reseau. Son absence dit « mesure impossible », pas « site casse ». ──
+let xml;
+try {
+  xml = await (await fetch(`${BASE}/sitemap.xml`)).text();
+} catch (e) {
+  console.error(`\n⚠ MESURE IMPOSSIBLE — ${BASE} ne repond pas.`);
+  console.error(`  ${e.message}`);
+  console.error('  Lancer : npm run build && npx next start -p 3330');
+  console.error('  La section 0 a ete mesuree ; les suivantes non.\n');
+  // Et si la section 0 a DEJA trouve un defaut, c'est 1 et pas 2 : « mesure
+  // impossible » ne doit jamais effacer un defaut deja mesure. Trouve par
+  // l'essai d'acceptation du 21 novembre — une date fabriquee etait bien
+  // signalee, et le code de sortie restait 2 parce que le serveur manquait.
+  process.exit(echecs === 0 ? 2 : 1);
+}
 
 // Un <url> par entree : on lit l'adresse et la date cote a cote.
 const entrees = new Map();
