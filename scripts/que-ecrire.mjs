@@ -74,7 +74,11 @@ const PART_VISEE = 0.48;
 const DOMAINES = {
   'finance / argent':     /riba|interet|banque|credit|pret|assurance|hypoth|epargne|bourse|action|crypto|zakat|impot|dette|salaire|chomage|allocation/i,
   'mort / heritage':      /mort|deces|funerail|enterr|incin|testament|heritage|succession|linceul|janaza|cimetiere|deuil|autopsie|obseque/i,
-  'famille / mariage':    /mariage|nikah|dot|mahr|divorce|talaq|fiancail|epouse|adoption|parents|enfant|allaitement|garde-enfants/i,
+  // `virginite` est place ici et non dans `sante / corps` : l'examen est medical,
+  // mais le sujet de la fiche est la pression familiale autour d'un mariage. Le
+  // premier motif qui correspond l'emporte, donc le choix de la ligne EST la
+  // classification — c'est la lecon du 17 novembre.
+  'famille / mariage':    /mariage|nikah|dot|mahr|divorce|talaq|fiancail|epouse|adoption|parents|enfant|allaitement|garde-enfants|virginite/i,
   'sante / corps':        /vaccin|fiv|pma|contracep|avortement|don-organe|transfusion|greffe|psy|depression|antidepresseur|circoncision|dentiste|anesthes|medicament|chirurgie|esthetique/i,
   // `contrat` etait seul : il attrapait `contrat-obseques-halal`, qui n'a rien
   // d'un sujet de travail. Un motif trop court classe au mauvais endroit.
